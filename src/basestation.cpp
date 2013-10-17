@@ -1,12 +1,5 @@
-class basestation {
-public:
-    int x_co;
-    int y_co;
-    double tx;
+#include "basestation.hpp"
 
-    basestation(int x, int y, double t) {
-        x_co = x;
-        y_co = y;
-        tx = t;
-    }
-};
+// void basestation::print() {
+//     printf("X Co-ordinate: %d\nY Co-ordinate: %d\nTransmit Signal: %d\n", x_co, y_co, tx);
+// }

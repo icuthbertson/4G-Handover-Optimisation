@@ -1,6 +1,6 @@
 CC=g++
 CFLAGS=-I.
-DEPS = basestation.hpp mobile.hpp
+DEPS = basestation.hpp mobile.hpp basestation.cpp mobile.cpp 
 OBJ = simulation.cpp
 
 %.o: %.c $(DEPS)

@@ -1,12 +1,5 @@
-class mobile {
-public:
-    int x_co;
-    int y_co;
-    double rx;
+#include "mobile.hpp"
 
-    mobile(int x, int y, double r) {
-        x_co = x;
-        y_co = y;
-        rx = r;
-    }
-};
+// void mobile::print() {
+//     printf("X Co-ordinate: %d\nY Co-ordinate: %d\nReceive Signal: %d\n", x_co, y_co, rx);
+// }
