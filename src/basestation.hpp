@@ -19,6 +19,14 @@ public:
     }
     // void print();
     void print() {
-    	printf("Basestation %d\nX Co-ordinate: %d\nY Co-ordinate: %d\nTransmit Signal: %f\n\n", id, x_co, y_co, tx);
+    	printf("Basestation %d\nX Co-ordinate: %d\nY Co-ordinate: %d\nTransmit Signal: %.2f\n\n", id, x_co, y_co, tx);
 	}
+
+    int getID() {
+        return id;
+    }
+
+    double getTX() {
+        return tx;
+    }
 };
