@@ -3,6 +3,7 @@
  * The mobile class is used to represent a mobile phone that
  * will move around a number of basestations.
  */
+#include <stdio.h>
 class mobile {
 private:
     /* Private Variables
@@ -119,7 +120,16 @@ public:
      * passed in.
      */
     void moveMobile(int x, int y) {
-        x_co = x;
-        y_co = y;
+        x_co += x;
+        y_co += y;
+    }
+    int getX() {
+	return x_co;
+    }
+    int getY() {
+	return y_co;
+    }
+    int getConnectedTo() {
+	return connected;
     }
 };

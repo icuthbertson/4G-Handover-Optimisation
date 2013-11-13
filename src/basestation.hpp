@@ -3,6 +3,7 @@
  * The basestation class is used to represent a basestaton that will
  * have other basestations near by and a mobile moving around them.
  */
+#include <stdio.h>
 class basestation {
 private:
     /* Private Variables
@@ -89,5 +90,11 @@ public:
      */
     double getTX() {
         return tx;
+    }
+    int getX() {
+	return x_co;
+    }
+    int getY() {
+	return y_co;
     }
 };
