@@ -4,6 +4,7 @@
  */
 
 #include <iostream>
+#include <math.h>
 #include "basestation.hpp"
 #include "mobile.hpp"
 
@@ -58,15 +59,17 @@ void output() {
  * ***just a basic method right now***
  */
 void checkBasestations() {
-	double bestTX = 0;
-	int bestID = 0;
+	double bestClosest = 10000000;
+	int connected, bestID = mobiles[0].getConnectedTo();
 	for(int i=0; i<(sizeof(bStations)/sizeof(*bStations)); i++) {
-		if(bStations[i].getTX() > bestTX) {
-			bestTX = bStations[i].getTX();
+		if(sqrt((abs((bStations[i].getX()-mobiles[0].getX()))^2) + (abs((bStations[i].getY()-mobiles[0].getY()))^2)) < bestClosest) {
+			bestClosest = sqrt((abs((bStations[i].getX()-mobiles[0].getX()))^2) + (abs((bStations[i].getY()-mobiles[0].getY()))^2));
 			bestID = bStations[i].getID();
 		}
 	}
-	mobiles[0].switchBasestation(bestID);
+	if(connected != bestID) {
+             	mobiles[0].switchBasestation(bestID);
+	}
 }
 /* Method
  ****************************
