@@ -13,7 +13,7 @@
 #include<functional>
 #include<cstdlib>
 #include<iostream>
-#include <windows.h>
+//#include <windows.h>
 
 class event_handler;
 

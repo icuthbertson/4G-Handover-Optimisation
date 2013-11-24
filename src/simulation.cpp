@@ -5,8 +5,8 @@
 
 #include <iostream>
 #include <math.h>
-#include "basestation.hpp"
-#include "mobile.hpp"
+#include "basestation.h"
+#include "mobile.h"
 
 basestation bStations[9];
 mobile mobiles[9];
@@ -60,10 +60,13 @@ void output() {
  */
 void checkBasestations() {
 	double bestClosest = 10000000;
-	int connected, bestID = mobiles[0].getConnectedTo();
+	double test = 0.0;
+	int connected = mobiles[0].getConnectedTo();
+	int bestID = mobiles[0].getConnectedTo();
 	for(int i=0; i<(sizeof(bStations)/sizeof(*bStations)); i++) {
-		if(sqrt((abs((bStations[i].getX()-mobiles[0].getX()))^2) + (abs((bStations[i].getY()-mobiles[0].getY()))^2)) < bestClosest) {
-			bestClosest = sqrt((abs((bStations[i].getX()-mobiles[0].getX()))^2) + (abs((bStations[i].getY()-mobiles[0].getY()))^2));
+	test = sqrt((abs((bStations[i].getX()-mobiles[0].getX()))^2) + (abs((bStations[i].getY()-mobiles[0].getY()))^2));
+		if(test < bestClosest) {
+			bestClosest = test;
 			bestID = bStations[i].getID();
 		}
 	}
