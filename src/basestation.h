@@ -4,6 +4,7 @@
  * have other basestations near by and a mobile moving around them.
  */
 #include <stdio.h>
+#include <math.h>
 class basestation {
 private:
     /* Private Variables
@@ -15,17 +16,21 @@ private:
      *           the class is found. 
      * double tx: Double value that denoted the signal strength being transmitted
      *            from this instance of the class.
+     * double f:  Double value that denoted the frequency the transmitter transmits
+     *            at in MHz.
+	 * double hb: Double value that denoted the height of the base station.
      */
 	int id;
     int x_co;
     int y_co;
-    double tx;
+    double f;
+    double hb;
 public:
     basestation();
-    basestation(int idNum, int x, int y, double t);
+    basestation(int idNum, int x, int y, double freq, double hBase);
     void print();
     int getID();
-    double getTX();
     int getX();
     int getY();
+    double getProp(double d, double hm);
 };

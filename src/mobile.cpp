@@ -13,7 +13,8 @@ mobile::mobile() {
     id = 0;
 	x_co = 0;
 	y_co = 0;
-	rx = 0.0;
+	connected = 1;
+	h = 2.0;
 }
 /* Constructor
  ****************************
@@ -29,12 +30,12 @@ mobile::mobile() {
  * Description: Class constructor that create an instance of basestation
  * with all parameters are passed in.
  */
-mobile::mobile(int num, int x, int y, double r, int con) {
+mobile::mobile(int num, int x, int y, int con, double height) {
     id = num;
     x_co = x;
     y_co = y;
-    rx = r;
     connected = con;
+    h = height;
 }
 /* Method
  ****************************
@@ -46,7 +47,7 @@ mobile::mobile(int num, int x, int y, double r, int con) {
  * parameters of the class.
  */
 void mobile::print() {
-    printf("Mobile %d\nX Co-ordinate: %d\nY Co-ordinate: %d\nReceive Signal: %.2f\nConnected To Basestation: %d\n\n", id, x_co, y_co, rx, connected);
+    printf("Mobile %d\nX Co-ordinate: %d\nY Co-ordinate: %d\nConnected To Basestation: %d\n\n", id, x_co, y_co, connected);
 }
 /* Method
  ****************************
@@ -63,12 +64,12 @@ void mobile::print() {
  * was created using the basic constructor to have it's variables
  * set.
  */
-void mobile::setmobile(int num, int x, int y, double r, int con) {
+void mobile::setmobile(int num, int x, int y, int con, double height) {
 	id = num;
     x_co = x;
     y_co = y;
-    rx = r;
     connected = con;
+    h = height;
 }
 /* Method
  ****************************
@@ -127,9 +128,20 @@ int mobile::getY() {
  ****************************
  * Parameters Passed in: N/A 
  ****************************
- * Description: Method that returns the id of the basestation that
+ * Description: Method that returns the id of the mobile that
  * the mobile is currently connected to.
  */
 int mobile::getConnectedTo() {
 	return connected;
+}
+/* Method
+ ****************************
+ * Return Type: double
+ ****************************
+ * Parameters Passed in: N/A 
+ ****************************
+ * Description: Method that returns the height of the mobile.
+ */
+double mobile::getHeight() {
+	return h;
 }

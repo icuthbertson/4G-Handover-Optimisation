@@ -17,20 +17,22 @@ private:
      *            from this instance of the class.
      * int connected: Integer values that denoted the id number of the basestation
      *                this instance of the class is "connected" to.
+	 * double h: Double value that denoted the height of the mobile.
      */
 	int id;
     int x_co;
     int y_co;
-    double rx;
     int connected;
+    double h;
 public:
     mobile();
-    mobile(int num, int x, int y, double r, int con);
+    mobile(int num, int x, int y, int con, double height);
     void print();
-	void setmobile(int num, int x, int y, double r, int con);
+	void setmobile(int num, int x, int y, int con, double height);
     void switchBasestation(int newBasestation);
     void moveMobile(int x, int y);
     int getX();
     int getY();
     int getConnectedTo();
+    double getHeight();
 };

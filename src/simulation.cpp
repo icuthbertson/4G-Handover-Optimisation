@@ -20,16 +20,16 @@ mobile mobiles[9];
  * and mobiles.
  */
 void setup() {
-	bStations[0] = basestation(1,0,0,0);
-	bStations[1] = basestation(2,50,0,0);
-	bStations[2] = basestation(3,100,0,0);
-	bStations[3] = basestation(4,0,50,50);
-	bStations[4] = basestation(5,50,50,0);
-	bStations[5] = basestation(6,100,50,0);
-	bStations[6] = basestation(7,0,100,0);
-	bStations[7] = basestation(8,50,100,0);
-	bStations[8] = basestation(9,100,100,0);
-	mobiles[0] = mobile(1,0,0,50.0,1);
+	bStations[0] = basestation(1,0,0,1500,69);
+	bStations[1] = basestation(2,50,0,1500,69);
+	bStations[2] = basestation(3,100,0,1500,69);
+	bStations[3] = basestation(4,0,50,1500,69);
+	bStations[4] = basestation(5,50,50,1500,69);
+	bStations[5] = basestation(6,100,50,1500,69);
+	bStations[6] = basestation(7,0,100,1500,69);
+	bStations[7] = basestation(8,50,100,1500,69);
+	bStations[8] = basestation(9,100,100,1500,69);
+	mobiles[0] = mobile(1,0,50,1,2);
 }
 /* Method
  ****************************
@@ -59,17 +59,22 @@ void output() {
  * ***just a basic method right now***
  */
 void checkBasestations() {
-	double bestClosest = 10000000;
-	double test = 0.0;
+	double bestProp = 0;
+	double dist = 0.0;
+	double prop = 0.0;
+	double h = mobiles[0].getHeight();
 	int connected = mobiles[0].getConnectedTo();
 	int bestID = mobiles[0].getConnectedTo();
 	for(int i=0; i<(sizeof(bStations)/sizeof(*bStations)); i++) {
-	test = sqrt((abs((bStations[i].getX()-mobiles[0].getX()))^2) + (abs((bStations[i].getY()-mobiles[0].getY()))^2));
-		if(test < bestClosest) {
-			bestClosest = test;
+		dist = sqrt((abs((bStations[i].getX()-mobiles[0].getX()))^2) + (abs((bStations[i].getY()-mobiles[0].getY()))^2));
+		printf("dist: %f\n",dist);
+		prop = bStations[i].getProp(dist,h);
+		if(prop > bestProp) {
+			bestProp = prop;
 			bestID = bStations[i].getID();
 		}
 	}
+	printf("bestProp: %f\n",bestProp);
 	if(connected != bestID) {
              	mobiles[0].switchBasestation(bestID);
 	}
