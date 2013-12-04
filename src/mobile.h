@@ -4,6 +4,7 @@
  * will move around a number of basestations.
  */
 #include <stdio.h>
+#include <stdlib.h>
 class mobile {
 private:
     /* Private Variables
@@ -28,6 +29,7 @@ public:
     mobile();
     mobile(int num, int x, int y, int con, double height);
     void print();
+    void printCos();
 	void setmobile(int num, int x, int y, int con, double height);
     void switchBasestation(int newBasestation);
     void moveMobile(int x, int y);
@@ -35,4 +37,5 @@ public:
     int getY();
     int getConnectedTo();
     double getHeight();
+    void moveRandom();
 };

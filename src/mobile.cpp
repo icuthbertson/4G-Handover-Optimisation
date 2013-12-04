@@ -52,6 +52,18 @@ void mobile::print() {
 /* Method
  ****************************
  * Return Type: void
+ **************************** 
+ * Parameters Passed in: N/A
+ ****************************
+ * Description: Method that does a formetted print out of the
+ * x and y co-ordinates of the mobile.
+ */
+void mobile::printCos() {
+    printf("X Co-ordinate: %d\nY Co-ordinate: %d\n\n", x_co, y_co);
+}
+/* Method
+ ****************************
+ * Return Type: void
  ****************************
  * Parameters Passed in:
  * int num
@@ -97,8 +109,8 @@ void mobile::switchBasestation(int newBasestation) {
  * passed in.
  */
 void mobile::moveMobile(int x, int y) {
-    x_co += x;
-    y_co += y;
+    x_co = (x_co+x)%100;
+    y_co = (y_co+y)%100;
 }
 /* Method
  ****************************
@@ -144,4 +156,26 @@ int mobile::getConnectedTo() {
  */
 double mobile::getHeight() {
 	return h;
+}
+/* Method
+ ****************************
+ * Return Type: int
+ ****************************
+ * Parameters Passed in: N/A 
+ ****************************
+ * Description: Method that returns a number that will define the
+ * random movement the mobile will make.
+ */
+void mobile::moveRandom() {
+	int move = (rand()%1000000)%4;
+	switch(move) {
+	case 1: moveMobile(1,0);
+		break;
+	case 2: moveMobile(-1,0);
+		break;
+	case 3: moveMobile(0,1);
+		break;
+	case 4: moveMobile(0,-1);
+		break;	
+	}
 }
