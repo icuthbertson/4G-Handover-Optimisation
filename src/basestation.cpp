@@ -13,7 +13,8 @@ basestation::basestation() {
     id = 0;
 	x_co = 0;
 	y_co = 0;
-	tx = 0.0;
+	f = 0.0;
+	hb = 0.0;
 }
 /* Constructor
  ****************************
@@ -28,11 +29,12 @@ basestation::basestation() {
  * Description: Class constructor that create an instance of basestation
  * with all parameters are passed in.
  */
-basestation::basestation(int idNum, int x, int y, double t) {
+basestation::basestation(int idNum, int x, int y, double freq, double hBase) {
 	id = idNum;
     x_co = x;
     y_co = y;
-    tx = t;
+    f = freq;
+    hb = hBase;
 }
 /* Method
  ****************************
@@ -44,7 +46,7 @@ basestation::basestation(int idNum, int x, int y, double t) {
  * parameters of the class.
  */
 void basestation::print() {
-    printf("Basestation %d\nX Co-ordinate: %d\nY Co-ordinate: %d\nTransmit Signal: %.2f\n\n", id, x_co, y_co, tx);
+    printf("Basestation %d\nX Co-ordinate: %d\nY Co-ordinate: %d\n\n", id, x_co, y_co);
 }
 /* Method
  ****************************
@@ -60,24 +62,12 @@ int basestation::getID() {
 }
 /* Method
  ****************************
- * Return Type: double
- ****************************
- * Parameters Passed in: N/A 
- ****************************
- * Description: Method that returns the transmission strength from 
- * this instance of the basestation class.
- */
-double basestation::getTX() {
-    return tx;
-}
-/* Method
- ****************************
  * Return Type: int
  ****************************
  * Parameters Passed in: N/A 
  ****************************
  * Description: Method that returns the value of the x co-ordinate.
- */
+ */ 
 int basestation::getX() {
 	return x_co;
 }
@@ -91,4 +81,17 @@ int basestation::getX() {
  */
 int basestation::getY() {
 	return y_co;
+}
+/* Method
+ ****************************
+ * Return Type: int
+ ****************************
+ * Parameters Passed in: d, hm 
+ ****************************
+ * Description: Method that returns the path loss using the 
+ * Okumura-Hata propagation model. d in km, hm in m.
+ */
+double basestation::getProp(double d, double hm) {
+	double ch = 0.8 + (1.1 * log10(f) - 0.7) * hm - 1.56 * log10(f);
+	return 69.55 + 26.16 * log10(f) - 13.82 * log10(hb) - ch + (44.9 - 6.55 * log10(hb)) * log10(d);
 }
