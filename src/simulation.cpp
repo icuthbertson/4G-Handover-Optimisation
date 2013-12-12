@@ -59,7 +59,7 @@ void output() {
  * ***just a basic method right now***
  */
 void checkBasestations() {
-	double bestProp = 0;
+	double bestProp = 123456789;
 	double dist = 0.0;
 	double prop = 0.0;
 	double h = mobiles[0].getHeight();
@@ -67,16 +67,22 @@ void checkBasestations() {
 	int bestID = mobiles[0].getConnectedTo();
 	for(int i=0; i<(sizeof(bStations)/sizeof(*bStations)); i++) {
 		dist = sqrt((abs((bStations[i].getX()-mobiles[0].getX()))^2) + (abs((bStations[i].getY()-mobiles[0].getY()))^2));
-		printf("dist: %f\n",dist);
-		prop = bStations[i].getProp(dist,h);
-		if(prop > bestProp) {
-			bestProp = prop;
+		printf("%d: dist: %f\n",i,dist);
+		//prop = bStations[i].getProp(dist,h);
+		//printf("prop: %f\n",prop);
+		//if(prop > bestProp) {
+		//	bestProp = prop;
+		//	bestID = bStations[i].getID();
+		//}
+		if(dist < bestProp) {
+			bestProp = dist;
 			bestID = bStations[i].getID();
 		}
 	}
-	printf("bestProp: %f\n",bestProp);
+	//printf("bestProp: %f\n",bestProp);
+	printf("bestID: %d\n",bestID);
 	if(connected != bestID) {
-             	mobiles[0].switchBasestation(bestID);
+    	mobiles[0].switchBasestation(bestID);
 	}
 }
 /* Method
@@ -93,11 +99,14 @@ int main() {
 	printf("Simulation started...\n");
 
 	setup();
-	output();
-
-	checkBasestations();
-	output();
-
+	
+	for(int i=0; i<1000; i++) {
+		mobiles[0].moveRandom();
+		checkBasestations();
+		printf("%d: Connected: %d\n",i,mobiles[0].getConnectedTo());
+		mobiles[0].printCos();
+	}
+	
 	printf("end...\n");
 	return 0;
 }
