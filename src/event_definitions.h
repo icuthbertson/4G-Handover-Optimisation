@@ -1,5 +1,3 @@
-
-
 #if !defined(_event_definitions_h_)
 #define _event_definitions_h_
 

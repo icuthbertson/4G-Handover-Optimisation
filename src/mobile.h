@@ -5,7 +5,9 @@
  */
 #include <stdio.h>
 #include <stdlib.h>
-class mobile {
+#include "event_handler.h"
+#include "event_definitions.h"
+class mobile : public event_handler {
 private:
     /* Private Variables
      ****************************
@@ -26,8 +28,8 @@ private:
     int connected;
     double h;
 public:
-    mobile();
-    mobile(int num, int x, int y, int con, double height);
+    mobile(scheduler* gs);
+    mobile(scheduler* gs, int num, int x, int y, int con, double height);
     void print();
     void printCos();
 	void setmobile(int num, int x, int y, int con, double height);
@@ -38,4 +40,6 @@ public:
     int getConnectedTo();
     double getHeight();
     void moveRandom();
+protected:
+	virtual void handler(const event* received);
 };

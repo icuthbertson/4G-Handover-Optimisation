@@ -22,7 +22,7 @@ class event;
 // method often resulted in much confusion for those unfamiliar with CNCL.
 class event_handler {
 public:
-	event_handler(scheduler* gs): globalScheduler(gs) {};
+	event_handler(scheduler* gs) : globalScheduler(gs) {};
 	event_handler(const event_handler& rhs) : globalScheduler(rhs.globalScheduler) {};
 	virtual ~event_handler() {};
 	virtual void handler(const event* received) = 0;

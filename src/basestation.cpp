@@ -9,7 +9,7 @@
  * Description: Basic class constructor that create an instance of basestation
  * with all parameters set to zero.
  */
-basestation::basestation() {
+basestation::basestation(scheduler* gs) : event_handler(gs) {
     id = 0;
 	x_co = 0;
 	y_co = 0;
@@ -29,13 +29,19 @@ basestation::basestation() {
  * Description: Class constructor that create an instance of basestation
  * with all parameters are passed in.
  */
-basestation::basestation(int idNum, int x, int y, double freq, double hBase) {
+basestation::basestation(scheduler* gs, int idNum, int x, int y, double freq, double hBase) : event_handler(gs) {
 	id = idNum;
     x_co = x;
     y_co = y;
     f = freq;
     hb = hBase;
 }
+
+void basestation::handler(const event* received)
+{
+	
+}
+
 /* Method
  ****************************
  * Return Type: void

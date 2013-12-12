@@ -5,8 +5,12 @@
 
 #include <iostream>
 #include "handover_management.h"
+#include "event_handler.h"
+#include "event_definitions.h"
+#include "scheduler.h"
 
-handover_management hm;
+scheduler gs;
+handover_management hm(&gs);
 /* Method
  ****************************
  * Return Type: int

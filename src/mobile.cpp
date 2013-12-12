@@ -9,7 +9,7 @@
  * Description: Basic class constructor that create an instance of basestation
  * with all parameters set to zero.
  */
-mobile::mobile() {
+mobile::mobile(scheduler* gs) : event_handler(gs) {
     id = 0;
 	x_co = 0;
 	y_co = 0;
@@ -30,13 +30,19 @@ mobile::mobile() {
  * Description: Class constructor that create an instance of basestation
  * with all parameters are passed in.
  */
-mobile::mobile(int num, int x, int y, int con, double height) {
+mobile::mobile(scheduler* gs, int num, int x, int y, int con, double height) : event_handler(gs) {
     id = num;
     x_co = x;
     y_co = y;
     connected = con;
     h = height;
 }
+
+void mobile::handler(const event* received)
+{
+	
+}
+
 /* Method
  ****************************
  * Return Type: void
