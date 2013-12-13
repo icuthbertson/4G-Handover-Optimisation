@@ -7,6 +7,7 @@
 #include <math.h>
 #include "event_handler.h"
 #include "event_definitions.h"
+
 class basestation : public event_handler {
 private:
     /* Private Variables
@@ -30,6 +31,7 @@ private:
 public:
     basestation(scheduler* gs);
     basestation(scheduler* gs, int idNum, int x, int y, double freq, double hBase);
+    ~basestation();
     void print();
     int getID();
     int getX();

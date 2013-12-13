@@ -21,6 +21,10 @@ handover_management::handover_management(scheduler* gs) : event_handler(gs) {
 	mobiles[0] = new mobile(gs,1,0,50,1,3);
 }
 
+handover_management::~handover_management() {
+	globalScheduler->remove_from(this);
+	globalScheduler->remove_to(this);
+}
 void handover_management::handler(const event* received)
 {
 	
@@ -84,5 +88,5 @@ void handover_management::output() {
  * Description: Method that calls the move method for a specified mobile.
  */
 void handover_management::moveMobile(int index) {
-	mobiles[0]->moveRandom();
+	send_now(new event(MOVE));
 }

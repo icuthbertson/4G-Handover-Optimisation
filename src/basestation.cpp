@@ -37,9 +37,39 @@ basestation::basestation(scheduler* gs, int idNum, int x, int y, double freq, do
     hb = hBase;
 }
 
+basestation::~basestation() {
+	globalScheduler->remove_from(this);
+	globalScheduler->remove_to(this);
+}
+
 void basestation::handler(const event* received)
 {
-	
+/*
+	switch(received->label) {
+		case PRINT:
+			print();
+			break;
+		case ID:
+			//int* x = id;
+			//payloadType<int> arg (&id);
+			send_now(new event(ID, id, received->sender)); 
+			send_delay(new event(ID, id), 100.0);
+			getID();
+			break;
+		case X:
+			send_now(new event(X, *x_co, received->sender)); 
+			break;
+		case Y:
+			send_now(new event(X, *y_co, received->sender)); 
+			break;
+		case PROP:
+			send_now(new event(X, *id, received->sender));
+			break;
+		default:
+			// program should not reach here
+			break;
+	} // end switch statement
+	*/
 }
 
 /* Method

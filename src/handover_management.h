@@ -33,6 +33,7 @@ private:
 							  
 public:
     handover_management(scheduler* gs);
+    ~handover_management();
 	void makeDecision();
 	void output();
 	void moveMobile(int index);

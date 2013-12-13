@@ -3,8 +3,8 @@
 #include <list>
 #include <algorithm>
 #include <functional>
-#include "event_handler.h"
-#include "event_definitions.h"
+#include "src/event_handler.h"
+#include "src/event_definitions.h"
 #include "trafficGen.h"
 #include "estimator.h"
 #include <fstream>

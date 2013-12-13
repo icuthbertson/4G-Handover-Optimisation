@@ -38,9 +38,21 @@ mobile::mobile(scheduler* gs, int num, int x, int y, int con, double height) : e
     h = height;
 }
 
+mobile::~mobile() {
+	globalScheduler->remove_from(this);
+	globalScheduler->remove_to(this);
+}
+
 void mobile::handler(const event* received)
 {
-	
+	switch(received->label) {
+		case MOVE:
+			moveRandom();
+			break;
+		default:
+			// program should not reach here
+			break;
+	} // end switch statement
 }
 
 /* Method

@@ -8,8 +8,15 @@
 #include <iostream>
 
 
-template<class T> class payloadType  {
+template<class T> 
+class payloadType  {
 public:
+	//payloadType(T* arg) {myObject = arg; std::cerr << "\n size = " << sizeof(this);};
+	//~payloadType() {};
+	//void print() {std::cerr << "\ncontents = " << (&myObject);}
+	//T* get() const {return myObject;} // fn may not be needed
+//protected:
+	//T* myObject;
 };
 
 class event_handler;

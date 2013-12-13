@@ -7,6 +7,7 @@
 #include <stdlib.h>
 #include "event_handler.h"
 #include "event_definitions.h"
+
 class mobile : public event_handler {
 private:
     /* Private Variables
@@ -30,6 +31,7 @@ private:
 public:
     mobile(scheduler* gs);
     mobile(scheduler* gs, int num, int x, int y, int con, double height);
+    ~mobile();
     void print();
     void printCos();
 	void setmobile(int num, int x, int y, int con, double height);

@@ -8,6 +8,7 @@
 #include "event_handler.h"
 #include "event_definitions.h"
 #include "scheduler.h"
+#include "event_definitions.h"
 
 scheduler gs;
 handover_management hm(&gs);
