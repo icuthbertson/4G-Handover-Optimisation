@@ -13,12 +13,12 @@
 template<class T> 
 class payloadType  {
 public:
-	payloadType(T* arg) {myObject = arg; std::cerr << "\n size = " << sizeof(this);};
-	~payloadType() {};
-	void print() {std::cerr << "\ncontents = " << (&myObject);}
-	T* get() const {return myObject;} // fn may not be needed
+	//payloadType(T* arg) {myObject = arg; std::cerr << "\n size = " << sizeof(this);};
+	//~payloadType() {};
+	//void print() {std::cerr << "\ncontents = " << (&myObject);}
+	//T* get() const {return myObject;} // fn may not be needed
 protected:
-	T* myObject;
+	//T* myObject;
 };
 
 #endif // !defined(AFX_PAYLOADTYPE_H__A86757E3_AA3D_422D_B18B_4499F7C2DFA4__INCLUDED_)
