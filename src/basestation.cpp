@@ -53,7 +53,7 @@ void basestation::handler(const event* received)
 		case ID:
 			//int* x = id;
 			//payloadType<int> &id;
-			//send_now(new event(ID, reinterpret_cast<payloadType<class T>*>(id), received->sender)); 
+			send_now(new event(ID, reinterpret_cast<payloadType<class T>*>(id), received->sender)); 
 			//send_delay(new event(ID, id), 100.0);
 			getID();
 			break;

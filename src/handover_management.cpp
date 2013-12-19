@@ -27,7 +27,13 @@ handover_management::~handover_management() {
 }
 void handover_management::handler(const event* received)
 {
-	
+	switch(received->label) {
+		case MOVE:
+			//send_now(new event(MOVE));
+		default:
+			// program should not reach here
+			break;
+	} // end switch statement
 }
 
 /* Method
