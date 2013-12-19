@@ -51,20 +51,23 @@ void basestation::handler(const event* received)
 			print();
 			break;
 		case ID:
-			//int* x = id;
-			//payloadType<int> &id;
 			send_now(new event(ID, reinterpret_cast<payloadType<class T>*>(id), received->sender)); 
-			//send_delay(new event(ID, id), 100.0);
 			getID();
 			break;
 		case X:
-			//send_now(new event(X, *x_co, received->sender)); 
+			send_now(new event(X, reinterpret_cast<payloadType<class T>*>(x_co), received->sender)); 
 			break;
 		case Y:
-			//send_now(new event(X, *y_co, received->sender)); 
+			send_now(new event(X, reinterpret_cast<payloadType<class T>*>(x_co), received->sender));
 			break;
 		case PROP:
-			//send_now(new event(X, *id, received->sender));
+			propPacket* rec;
+			double prop;
+			doublePacket* packet;
+			rec = reinterpret_cast<propPacket*>(received->getAttachment());
+			prop = getProp(rec->dist,rec->height);
+			packet = new doublePacket(prop);
+			send_now(new event(PROP, reinterpret_cast<payloadType<class T>*>(packet), received->sender));
 			break;
 		default:
 			// program should not reach here

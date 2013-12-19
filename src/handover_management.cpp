@@ -94,5 +94,5 @@ void handover_management::output() {
  * Description: Method that calls the move method for a specified mobile.
  */
 void handover_management::moveMobile(int index) {
-	send_now(new event(MOVE));
+	send_now(new event(MOVE, mobiles[0]));
 }
