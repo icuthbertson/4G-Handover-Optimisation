@@ -6,18 +6,7 @@
 #define AFX_EVENT_H__E580E878_67D1_4438_AF10_1DA04917D99C__INCLUDED_
 
 #include <iostream>
-
-
-template<class T> 
-class payloadType  {
-public:
-	//payloadType(T* arg) {myObject = arg; std::cerr << "\n size = " << sizeof(this);};
-	//~payloadType() {};
-	//void print() {std::cerr << "\ncontents = " << (&myObject);}
-	//T* get() const {return myObject;} // fn may not be needed
-//protected:
-	//T* myObject;
-};
+#include "payloadType.h"
 
 class event_handler;
 
