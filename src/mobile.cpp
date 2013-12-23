@@ -49,6 +49,8 @@ void mobile::handler(const event* received)
 		case MOVE:
 			moveRandom();
 			break;
+		case PRINT:
+			print();
 		default:
 			// program should not reach here
 			break;
@@ -127,8 +129,34 @@ void mobile::switchBasestation(int newBasestation) {
  * passed in.
  */
 void mobile::moveMobile(int x, int y) {
-    x_co = (x_co+x)%100;
-    y_co = (y_co+y)%100;
+	// if((x_co+x)>100) {
+	// 	x_co -= x;
+	// } else if((x_co+x)<0) {
+	// 	x_co += x;
+	// } else {
+	// 	x_co += x;
+	// }
+	// if((y_co+y)>100) {
+	// 	y_co -= y;
+	// } else if((y_co+y)<0) {
+	// 	y_co += y;
+	// } else {
+	// 	y_co += y;
+	// }
+
+	if((x_co+x)>100 || (x_co+x)<0) {
+		x_co -= x;
+	} else {
+		x_co += x;
+	}
+	if((y_co+y)>100 || (y_co+y)<0) {
+		y_co -= y;
+	} else {
+		y_co += y;
+	}
+
+	//x_co = (x_co+x)%100;
+	//y_co = (y_co+y)%100;
 }
 /* Method
  ****************************
@@ -187,13 +215,13 @@ double mobile::getHeight() {
 void mobile::moveRandom() {
 	int move = (rand()%1000000)%4;
 	switch(move) {
-	case 1: moveMobile(1,0);
+	case 0: moveMobile(1,0);
 		break;
-	case 2: moveMobile(-1,0);
+	case 1: moveMobile(-1,0);
 		break;
-	case 3: moveMobile(0,1);
+	case 2: moveMobile(0,1);
 		break;
-	case 4: moveMobile(0,-1);
+	case 3: moveMobile(0,-1);
 		break;	
 	}
 }

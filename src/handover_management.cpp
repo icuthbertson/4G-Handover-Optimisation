@@ -19,17 +19,25 @@ handover_management::handover_management(scheduler* gs) : event_handler(gs) {
 	bStations[7] = new basestation(gs,8,50,100,2000,85);
 	bStations[8] = new basestation(gs,9,100,100,2000,75);
 	mobiles[0] = new mobile(gs,1,0,50,1,3);
+
+	for(int i=0; i<1000; i++) {
+		send_delay(new event(MOVE,mobiles[0]),(i*100.0));
+		send_delay(new event(PRINT),((100.0*i)+50.0));
+	}
 }
 
 handover_management::~handover_management() {
 	globalScheduler->remove_from(this);
 	globalScheduler->remove_to(this);
 }
+
 void handover_management::handler(const event* received)
 {
 	switch(received->label) {
 		case MOVE:
 			//send_now(new event(MOVE));
+		case PRINT:
+			send_now(new event(PRINT,mobiles[0]));
 		default:
 			// program should not reach here
 			break;
