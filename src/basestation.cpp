@@ -50,24 +50,30 @@ void basestation::handler(const event* received)
 		case PRINT:
 			print();
 			break;
-		case ID:
-			send_now(new event(ID, reinterpret_cast<payloadType<class T>*>(id), received->sender)); 
-			getID();
-			break;
-		case X:
-			send_now(new event(X, reinterpret_cast<payloadType<class T>*>(x_co), received->sender)); 
-			break;
-		case Y:
-			send_now(new event(X, reinterpret_cast<payloadType<class T>*>(x_co), received->sender));
-			break;
 		case PROP:
-			propPacket* rec;
+			propRequestPacket* packet;
 			double prop;
-			doublePacket* packet;
-			rec = reinterpret_cast<propPacket*>(received->getAttachment());
-			prop = getProp(rec->dist,rec->height);
-			packet = new doublePacket(prop);
-			send_now(new event(PROP, reinterpret_cast<payloadType<class T>*>(packet), received->sender));
+			propSendPacket* sendPacket;
+
+			packet = reinterpret_cast<propRequestPacket*>(received->getAttachment());
+			fprintf(stderr, "basestation, packet = reinterpret_cast<propRequestPacket*>(received->getAttachment());\n");
+
+			double temp1;
+			temp1 = packet->dist;
+			fprintf(stderr, "dist\n");
+
+			double temp2;
+			temp2 = packet->height;
+			fprintf(stderr, "height\n");
+
+			prop = getProp(packet->dist,packet->height);
+			fprintf(stderr, "basestation, prop = getProp(packet->dist,packet->height);\n");
+
+			sendPacket = new propSendPacket(id,prop);
+			fprintf(stderr, "basestation, prop = getProp(packet->dist,packet->height);\n");
+
+
+			send_delay(new event(PROP, reinterpret_cast<payloadType<class T>*>(sendPacket), received->sender),5.0);
 			break;
 		default:
 			// program should not reach here

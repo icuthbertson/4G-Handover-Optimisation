@@ -18,12 +18,23 @@ handover_management::handover_management(scheduler* gs) : event_handler(gs) {
 	bStations[6] = new basestation(gs,7,0,100,2000,60);
 	bStations[7] = new basestation(gs,8,50,100,2000,85);
 	bStations[8] = new basestation(gs,9,100,100,2000,75);
+	prop[0] = 0.0;
+	prop[1] = 0.0;
+	prop[2] = 0.0;
+	prop[3] = 0.0;
+	prop[4] = 0.0;
+	prop[5] = 0.0;
+	prop[6] = 0.0;
+	prop[7] = 0.0;
+	prop[8] = 0.0;
 	mobiles[0] = new mobile(gs,1,0,50,1,3);
 
 	for(int i=0; i<1000; i++) {
 		send_delay(new event(MOVE,mobiles[0]),(i*100.0));
-		send_delay(new event(PRINT),((100.0*i)+50.0));
+		send_delay(new event(PRINT),((i*100.0)+50.0));
 	}
+	send_now(new event(PROP,bStations[0]));
+	fprintf(stderr, "handover_management, after: send_now(new event(PROP,bStations[0]));\n");
 }
 
 handover_management::~handover_management() {
@@ -34,8 +45,13 @@ handover_management::~handover_management() {
 void handover_management::handler(const event* received)
 {
 	switch(received->label) {
-		case MOVE:
-			//send_now(new event(MOVE));
+		case PROP:
+			propSendPacket* packet;
+			packet = reinterpret_cast<propSendPacket*> (received->getAttachment());
+    		prop[packet->id] = packet->prop;
+    		printf("id:%d prop:%f\n",packet->id,packet->prop);
+    		send_now(new event(PROP,bStations[(packet->id+1)%9]));
+   			delete packet;
 		case PRINT:
 			send_now(new event(PRINT,mobiles[0]));
 		default:

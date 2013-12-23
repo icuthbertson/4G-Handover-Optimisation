@@ -41,5 +41,9 @@ int main() {
 
 	// hm.output();
 	printf("end...\n");
+
+	delete gs;
+	delete hm;
+
 	return 0;
 }

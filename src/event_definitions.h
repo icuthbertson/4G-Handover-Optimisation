@@ -3,21 +3,23 @@
 
 enum{MOVE,PRINT,ID,X,Y,PROP};
 
-class propPacket {
+class propRequestPacket {
 	public:
 		int dist;
 		int height;
-		propPacket(int dist, int height) {
+		propRequestPacket(int dist, int height) {
 			this->dist = dist;
 			this->height = height;
 		}
 };
 
-class doublePacket {
+class propSendPacket {
 	public:
-		double doub;
-		doublePacket(double doub) {
-			this->doub = doub;
+		int id;
+		double prop;
+		propSendPacket(int id, double prop) {
+			this->id = id;
+			this->prop = prop;
 		}
 };
 
