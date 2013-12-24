@@ -5,9 +5,9 @@ enum{MOVE,PRINT,ID,X,Y,PROP};
 
 class propRequestPacket {
 	public:
-		int dist;
-		int height;
-		propRequestPacket(int dist, int height) {
+		double dist;
+		double height;
+		propRequestPacket(double dist, double height) {
 			this->dist = dist;
 			this->height = height;
 		}
