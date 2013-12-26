@@ -50,10 +50,12 @@ void mobile::handler(const event* received)
 	switch(received->label) {
 		case MOVE:
 			moveRandom();
-			send_delay(new event(POLL,received->sender),5.0);
+			print();
+			send_delay(new event(POLL,received->sender),1.0);
 			break;
 		case PRINT:
 			print();
+			break;
 		default:
 			// program should not reach here
 			break;

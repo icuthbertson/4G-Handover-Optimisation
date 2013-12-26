@@ -61,7 +61,9 @@ void basestation::handler(const event* received)
 
 			sendPacket = new propSendPacket(id,prop);
 
-			send_delay(new event(PROP, reinterpret_cast<payloadType<class T>*>(sendPacket), received->sender),5.0);
+			// send_delay(new event(PROP, received->sender),10.0);
+
+			send_delay(new event(PROP,reinterpret_cast<payloadType<class T>*>(sendPacket), received->sender),10.0);
 			printf("Basestation: %d\n",id);
 			delete recPacket;
 			break;

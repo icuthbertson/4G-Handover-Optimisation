@@ -31,7 +31,7 @@ handover_management::handover_management(scheduler* gs) : event_handler(gs) {
 
 	for(int i=0; i<15; i++) {
 		send_delay(new event(MOVE,mobiles[0]),(i*100.0));
-		send_delay(new event(PRINT),(((i*100.0)+50.0)));
+		// send_delay(new event(PRINT),(((i*100.0)+50.0)));
 
 		// for(int j=0; j<9; j++) {
 		// 	send_delay(new event(PROP,reinterpret_cast<payloadType<class T>*>(firstPacket),bStations[j]),(i*100)+2+j));
@@ -60,47 +60,55 @@ void handover_management::handler(const event* received)
 			recPacket = reinterpret_cast<propSendPacket*> (received->getAttachment());
     		prop[recPacket->id] = recPacket->prop;
     		printf("id:%d prop:%f\n",recPacket->id,recPacket->prop);
-
-   			// double dist;
-			// propRequestPacket* sendPacket;
-
-			// int new_id;
-			// new_id = ((recPacket->id)+1)%9;
-
-			// if(new_id < 9) {
-			// 	dist = sqrt((abs((bStations[new_id]->getX()-mobiles[0]->getX()))^2) + (abs((bStations[new_id]->getY()-mobiles[0]->getY()))^2));
-			// 	printf("%f\n", dist);
-			// 	sendPacket = new propRequestPacket(dist,mobiles[0]->getHeight());
-	
-   			//send_now(new event(PROP,reinterpret_cast<payloadType<class T>*>(sendPacket),bStations[new_id]));
-			// } else {
-			// 	delete sendPacket;
-			// }
-
+			// std::cout << "here\n";
    			delete recPacket;
+   			break;
    		case POLL:
-   			propRequestPacket* sendPacket;
+   			propRequestPacket* sendPacket0;
+   			propRequestPacket* sendPacket1;
+   			propRequestPacket* sendPacket2;
+   			propRequestPacket* sendPacket3;
+   			propRequestPacket* sendPacket4;
+			propRequestPacket* sendPacket5;
+   			propRequestPacket* sendPacket6;
+   			propRequestPacket* sendPacket7;
+   			propRequestPacket* sendPacket8;
    			double dist;
    			double height;
    			height = mobiles[0]->getHeight();
 
-   			for(int i=0; i<9; i++) {
-   				dist = sqrt((abs((bStations[i]->getX()-mobiles[0]->getX()))^2) + (abs((bStations[i]->getY()-mobiles[0]->getY()))^2));
-   				sendPacket = new propRequestPacket(dist,height);
+   			dist = sqrt((abs((bStations[0]->getX()-mobiles[0]->getX()))^2) + (abs((bStations[0]->getY()-mobiles[0]->getY()))^2));
+   			sendPacket0 = new propRequestPacket(dist,height);
+   			dist = sqrt((abs((bStations[1]->getX()-mobiles[0]->getX()))^2) + (abs((bStations[1]->getY()-mobiles[0]->getY()))^2));
+   			sendPacket1 = new propRequestPacket(dist,height);
+   			dist = sqrt((abs((bStations[2]->getX()-mobiles[0]->getX()))^2) + (abs((bStations[2]->getY()-mobiles[0]->getY()))^2));
+   			sendPacket2 = new propRequestPacket(dist,height);
+   			dist = sqrt((abs((bStations[3]->getX()-mobiles[0]->getX()))^2) + (abs((bStations[3]->getY()-mobiles[0]->getY()))^2));
+   			sendPacket3 = new propRequestPacket(dist,height);
+   			dist = sqrt((abs((bStations[4]->getX()-mobiles[0]->getX()))^2) + (abs((bStations[4]->getY()-mobiles[0]->getY()))^2));
+   			sendPacket4 = new propRequestPacket(dist,height);
+   			dist = sqrt((abs((bStations[5]->getX()-mobiles[0]->getX()))^2) + (abs((bStations[5]->getY()-mobiles[0]->getY()))^2));
+			sendPacket5 = new propRequestPacket(dist,height);
+			dist = sqrt((abs((bStations[6]->getX()-mobiles[0]->getX()))^2) + (abs((bStations[6]->getY()-mobiles[0]->getY()))^2));
+   			sendPacket6 = new propRequestPacket(dist,height);
+   			dist = sqrt((abs((bStations[7]->getX()-mobiles[0]->getX()))^2) + (abs((bStations[7]->getY()-mobiles[0]->getY()))^2));
+   			sendPacket7 = new propRequestPacket(dist,height);
+   			dist = sqrt((abs((bStations[8]->getX()-mobiles[0]->getX()))^2) + (abs((bStations[8]->getY()-mobiles[0]->getY()))^2));
+   			sendPacket8 = new propRequestPacket(dist,height);
 
-   				send_delay(new event(PROP,reinterpret_cast<payloadType<class T>*>(sendPacket),bStations[i]),5.0);
-   			}
-   			// propRequestPacket* sendPacket;
-   			// double dist;
-   			// double height;
-   			// height = mobiles[0]->getHeight();
-   			// dist = sqrt((abs((bStations[0]->getX()-mobiles[0]->getX()))^2) + (abs((bStations[0]->getY()-mobiles[0]->getY()))^2));
-
-   			// sendPacket = new propRequestPacket(dist,height);
-
-   			// send_now(new event(PROP,reinterpret_cast<payloadType<class T>*>(sendPacket),bStations[0]));
+   			send_delay(new event(PROP,reinterpret_cast<payloadType<class T>*>(sendPacket0),bStations[0]),1.0);
+   			send_delay(new event(PROP,reinterpret_cast<payloadType<class T>*>(sendPacket1),bStations[1]),2.0);
+   			send_delay(new event(PROP,reinterpret_cast<payloadType<class T>*>(sendPacket2),bStations[2]),3.0);
+   			send_delay(new event(PROP,reinterpret_cast<payloadType<class T>*>(sendPacket3),bStations[3]),4.0);
+   			send_delay(new event(PROP,reinterpret_cast<payloadType<class T>*>(sendPacket4),bStations[4]),5.0);
+			send_delay(new event(PROP,reinterpret_cast<payloadType<class T>*>(sendPacket5),bStations[5]),6.0);
+   			send_delay(new event(PROP,reinterpret_cast<payloadType<class T>*>(sendPacket6),bStations[6]),7.0);
+   			send_delay(new event(PROP,reinterpret_cast<payloadType<class T>*>(sendPacket7),bStations[7]),8.0);
+   			send_delay(new event(PROP,reinterpret_cast<payloadType<class T>*>(sendPacket8),bStations[8]),9.0);
 		case PRINT:
-			send_now(new event(PRINT,mobiles[0]));
+			//send_now(new event(PRINT,mobiles[0]));
+			//mobiles[0]->print();
+			break;
 		default:
 			// program should not reach here
 			break;
