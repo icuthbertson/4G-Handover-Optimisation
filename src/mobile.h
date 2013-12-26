@@ -22,12 +22,14 @@ private:
      * int connected: Integer values that denoted the id number of the basestation
      *                this instance of the class is "connected" to.
 	 * double h: Double value that denoted the height of the mobile.
+     * int count: Integer used to stop the simulation after a set number of steps.
      */
 	int id;
     int x_co;
     int y_co;
     int connected;
     double h;
+    int count;
 public:
     mobile(scheduler* gs);
     mobile(scheduler* gs, int num, int x, int y, int con, double height);

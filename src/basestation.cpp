@@ -56,24 +56,13 @@ void basestation::handler(const event* received)
 			propSendPacket* sendPacket;
 
 			recPacket = reinterpret_cast<propRequestPacket*>(received->getAttachment());
-			fprintf(stderr, "basestation, packet = reinterpret_cast<propRequestPacket*>(received->getAttachment());\n");
-
-			int temp1;
-			temp1 = recPacket->dist;
-			fprintf(stderr, "dist: %d\n",temp1);
-
-			int temp2;
-			temp2 = recPacket->height;
-			fprintf(stderr, "height: %d\n",temp2);
 
 			prop = getProp(recPacket->dist,recPacket->height);
-			fprintf(stderr, "basestation, prop = getProp(packet->dist,packet->height);\n");
 
 			sendPacket = new propSendPacket(id,prop);
-			fprintf(stderr, "basestation, prop = getProp(packet->dist,packet->height);\n");
-
 
 			send_delay(new event(PROP, reinterpret_cast<payloadType<class T>*>(sendPacket), received->sender),5.0);
+			printf("Basestation: %d\n",id);
 			delete recPacket;
 			break;
 		default:

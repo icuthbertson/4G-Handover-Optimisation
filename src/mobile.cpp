@@ -15,6 +15,7 @@ mobile::mobile(scheduler* gs) : event_handler(gs) {
 	y_co = 0;
 	connected = 1;
 	h = 2.0;
+	count = 0;
 }
 /* Constructor
  ****************************
@@ -36,6 +37,7 @@ mobile::mobile(scheduler* gs, int num, int x, int y, int con, double height) : e
     y_co = y;
     connected = con;
     h = height;
+    count = 0;
 }
 
 mobile::~mobile() {
@@ -48,6 +50,7 @@ void mobile::handler(const event* received)
 	switch(received->label) {
 		case MOVE:
 			moveRandom();
+			send_delay(new event(POLL,received->sender),5.0);
 			break;
 		case PRINT:
 			print();
@@ -55,6 +58,10 @@ void mobile::handler(const event* received)
 			// program should not reach here
 			break;
 	} // end switch statement
+	count++;
+	if(count > 15) {
+		globalScheduler->stop();
+	}
 }
 
 /* Method
