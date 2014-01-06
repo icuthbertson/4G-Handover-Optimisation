@@ -9,12 +9,13 @@
  * Description: Basic class constructor that create an instance of basestation
  * with all parameters set to zero.
  */
-mobile::mobile() {
+mobile::mobile(scheduler* gs) : event_handler(gs) {
     id = 0;
 	x_co = 0;
 	y_co = 0;
 	connected = 1;
 	h = 2.0;
+	count = 0;
 }
 /* Constructor
  ****************************
@@ -30,13 +31,41 @@ mobile::mobile() {
  * Description: Class constructor that create an instance of basestation
  * with all parameters are passed in.
  */
-mobile::mobile(int num, int x, int y, int con, double height) {
+mobile::mobile(scheduler* gs, int num, int x, int y, int con, double height) : event_handler(gs) {
     id = num;
     x_co = x;
     y_co = y;
     connected = con;
     h = height;
+    count = 0;
 }
+
+mobile::~mobile() {
+	globalScheduler->remove_from(this);
+	globalScheduler->remove_to(this);
+}
+
+void mobile::handler(const event* received)
+{
+	switch(received->label) {
+		case MOVE:
+			moveRandom();
+			print();
+			send_delay(new event(POLL,received->sender),1.0);
+			break;
+		case PRINT:
+			print();
+			break;
+		default:
+			// program should not reach here
+			break;
+	} // end switch statement
+	count++;
+	if(count > 15) {
+		globalScheduler->stop();
+	}
+}
+
 /* Method
  ****************************
  * Return Type: void
@@ -109,8 +138,34 @@ void mobile::switchBasestation(int newBasestation) {
  * passed in.
  */
 void mobile::moveMobile(int x, int y) {
-    x_co = (x_co+x)%100;
-    y_co = (y_co+y)%100;
+	// if((x_co+x)>100) {
+	// 	x_co -= x;
+	// } else if((x_co+x)<0) {
+	// 	x_co += x;
+	// } else {
+	// 	x_co += x;
+	// }
+	// if((y_co+y)>100) {
+	// 	y_co -= y;
+	// } else if((y_co+y)<0) {
+	// 	y_co += y;
+	// } else {
+	// 	y_co += y;
+	// }
+
+	if((x_co+x)>100 || (x_co+x)<0) {
+		x_co -= x;
+	} else {
+		x_co += x;
+	}
+	if((y_co+y)>100 || (y_co+y)<0) {
+		y_co -= y;
+	} else {
+		y_co += y;
+	}
+
+	//x_co = (x_co+x)%100;
+	//y_co = (y_co+y)%100;
 }
 /* Method
  ****************************
@@ -169,13 +224,13 @@ double mobile::getHeight() {
 void mobile::moveRandom() {
 	int move = (rand()%1000000)%4;
 	switch(move) {
-	case 1: moveMobile(1,0);
+	case 0: moveMobile(1,0);
 		break;
-	case 2: moveMobile(-1,0);
+	case 1: moveMobile(-1,0);
 		break;
-	case 3: moveMobile(0,1);
+	case 2: moveMobile(0,1);
 		break;
-	case 4: moveMobile(0,-1);
+	case 3: moveMobile(0,-1);
 		break;	
 	}
 }

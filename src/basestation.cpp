@@ -1,4 +1,5 @@
 #include "basestation.h"
+//#include "payloadType.h"
 
 /* Constructor
  ****************************
@@ -9,7 +10,7 @@
  * Description: Basic class constructor that create an instance of basestation
  * with all parameters set to zero.
  */
-basestation::basestation() {
+basestation::basestation(scheduler* gs) : event_handler(gs) {
     id = 0;
 	x_co = 0;
 	y_co = 0;
@@ -29,13 +30,50 @@ basestation::basestation() {
  * Description: Class constructor that create an instance of basestation
  * with all parameters are passed in.
  */
-basestation::basestation(int idNum, int x, int y, double freq, double hBase) {
+basestation::basestation(scheduler* gs, int idNum, int x, int y, double freq, double hBase) : event_handler(gs) {
 	id = idNum;
     x_co = x;
     y_co = y;
     f = freq;
     hb = hBase;
 }
+
+basestation::~basestation() {
+	globalScheduler->remove_from(this);
+	globalScheduler->remove_to(this);
+}
+
+void basestation::handler(const event* received)
+{
+
+	switch(received->label) {
+		case PRINT:
+			print();
+			break;
+		case PROP:
+			propRequestPacket* recPacket;
+			double prop;
+			propSendPacket* sendPacket;
+
+			recPacket = reinterpret_cast<propRequestPacket*>(received->getAttachment());
+
+			prop = getProp(recPacket->dist,recPacket->height);
+
+			sendPacket = new propSendPacket(id,prop);
+
+			// send_delay(new event(PROP, received->sender),10.0);
+
+			send_delay(new event(PROP,reinterpret_cast<payloadType<class T>*>(sendPacket), received->sender),10.0);
+			printf("Basestation: %d\n",id);
+			delete recPacket;
+			break;
+		default:
+			// program should not reach here
+			break;
+	} // end switch statement
+	
+}
+
 /* Method
  ****************************
  * Return Type: void

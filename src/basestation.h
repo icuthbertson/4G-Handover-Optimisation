@@ -5,7 +5,10 @@
  */
 #include <stdio.h>
 #include <math.h>
-class basestation {
+#include "event_handler.h"
+#include "event_definitions.h"
+
+class basestation : public event_handler {
 private:
     /* Private Variables
      ****************************
@@ -26,11 +29,14 @@ private:
     double f;
     double hb;
 public:
-    basestation();
-    basestation(int idNum, int x, int y, double freq, double hBase);
+    basestation(scheduler* gs);
+    basestation(scheduler* gs, int idNum, int x, int y, double freq, double hBase);
+    ~basestation();
     void print();
     int getID();
     int getX();
     int getY();
     double getProp(double d, double hm);
+protected:
+	virtual void handler(const event* received);
 };

@@ -7,18 +7,27 @@
 #include <math.h>
 #include "basestation.h"
 #include "mobile.h"
-class handover_management {
+#include "event_handler.h"
+#include "event_definitions.h"
+class handover_management : public event_handler {
 private:
     /* Private Variables
      ****************************
-     * basestation[] bStations: array of basestations.
-     * mobile[] mobiles: array of mobiles.
+     * basestation bStations[]: array of basestations.
+     * double prop[9]: array of path loss from basestations.
+     * mobile mobiles[]: array of mobiles.
      */
-	basestation bStations[9];
-	mobile mobiles[1];
+	
+	basestation* bStations[9];
+	double prop[9];
+	mobile* mobiles[1];
+							  
 public:
-    handover_management();
+    handover_management(scheduler* gs);
+    ~handover_management();
 	void makeDecision();
 	void output();
 	void moveMobile(int index);
+protected:
+	virtual void handler(const event* received);
 };

@@ -1,5 +1,5 @@
 CC = g++
-CFLAGS = -Wall -pedantic -g
+CFLAGS = -g
 LDFLAGS = -lm
 
 simulation.o :
@@ -23,8 +23,11 @@ payloadType.o :
 scheduler.o :
 	${CC} ${CFLAGS} -c src/scheduler.cpp
 
-all : event_handler.o payloadType.o  scheduler.o handover_management.o basestation.o mobile.o simulation.o
-	${CC} ${CFLAGS} basestation.o mobile.o handover_management.o simulation.o event_handler.o payloadType.o scheduler.o ${LDFLAGS} -o bin/simulation
+event.o :
+	${CC} ${CFLAGS} -c src/event.cpp
+
+all : event.o event_handler.o payloadType.o  scheduler.o handover_management.o basestation.o mobile.o simulation.o
+	${CC} ${CFLAGS} basestation.o mobile.o handover_management.o simulation.o event_handler.o payloadType.o scheduler.o event.o ${LDFLAGS} -o bin/simulation
 	mv event_handler.o payloadType.o scheduler.o basestation.o mobile.o handover_management.o simulation.o bin
 	rm -rf *.o
 	

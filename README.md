@@ -11,3 +11,5 @@ Movement Models:
 http://en.wikipedia.org/wiki/Random_walk
 http://en.wikipedia.org/wiki/Brownian_motion
 http://en.wikipedia.org/wiki/Wiener_process
+
+remembering to break out of case statements is more important than in C++ than java...

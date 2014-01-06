@@ -5,8 +5,13 @@
 
 #include <iostream>
 #include "handover_management.h"
+#include "event_handler.h"
+#include "event_definitions.h"
+#include "scheduler.h"
+#include "event_definitions.h"
 
-handover_management hm;
+// scheduler gs;
+// handover_management hm;
 /* Method
  ****************************
  * Return Type: int
@@ -20,11 +25,14 @@ handover_management hm;
 int main() {
 	printf("Simulation started...\n");
 	
-	for(int i=0; i<1000; i++) {
-		hm.moveMobile(1);
-		hm.makeDecision();
-	}
-	
+	scheduler* gs = new scheduler();
+	handover_management* hm = new handover_management(gs);
+	gs->start();
+
 	printf("end...\n");
+
+	delete gs;
+	delete hm;
+
 	return 0;
 }

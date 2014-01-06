@@ -6,11 +6,7 @@
 #define AFX_EVENT_H__E580E878_67D1_4438_AF10_1DA04917D99C__INCLUDED_
 
 #include <iostream>
-
-
-template<class T> class payloadType  {
-public:
-};
+#include "payloadType.h"
 
 class event_handler;
 
