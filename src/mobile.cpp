@@ -76,7 +76,7 @@ void mobile::handler(const event* received)
  * parameters of the class.
  */
 void mobile::print() {
-    printf("Mobile %d\nX Co-ordinate: %d\nY Co-ordinate: %d\nConnected To Basestation: %d\n\n", id, x_co, y_co, connected);
+    printf("Mobile %d\nX Co-ordinate: %f\nY Co-ordinate: %f\nConnected To Basestation: %d\n\n", id, x_co, y_co, connected);
 }
 /* Method
  ****************************
@@ -88,7 +88,7 @@ void mobile::print() {
  * x and y co-ordinates of the mobile.
  */
 void mobile::printCos() {
-    printf("X Co-ordinate: %d\nY Co-ordinate: %d\n\n", x_co, y_co);
+    printf("X Co-ordinate: %f\nY Co-ordinate: %f\n\n", x_co, y_co);
 }
 /* Method
  ****************************
@@ -137,56 +137,44 @@ void mobile::switchBasestation(int newBasestation) {
  * by changing it's x_co and y_co variables to the values
  * passed in.
  */
-void mobile::moveMobile(int x, int y) {
-	// if((x_co+x)>100) {
-	// 	x_co -= x;
-	// } else if((x_co+x)<0) {
-	// 	x_co += x;
-	// } else {
-	// 	x_co += x;
-	// }
-	// if((y_co+y)>100) {
-	// 	y_co -= y;
-	// } else if((y_co+y)<0) {
-	// 	y_co += y;
-	// } else {
-	// 	y_co += y;
-	// }
+void mobile::moveMobile(double x, double y) {
+	fprintf(stderr, "X:%f Y:%f deltaX:%f deltaY:%f\n", x_co, y_co, x, y);
 
-	if((x_co+x)>100 || (x_co+x)<0) {
-		x_co -= x;
+	if((x_co+x)>100) {
+		x_co = 100-(x+x_co-100);
+	} else if((x_co+x)<0) {
+		x_co = 0+(abs(x)-x_co);
 	} else {
 		x_co += x;
 	}
-	if((y_co+y)>100 || (y_co+y)<0) {
-		y_co -= y;
+	if((y_co+y)>100) {
+		y_co = 100-(abs(y)+y_co-100);
+	} else if((y_co+y)<0) {
+		y_co = 0-(y+y_co);
 	} else {
 		y_co += y;
 	}
-
-	//x_co = (x_co+x)%100;
-	//y_co = (y_co+y)%100;
 }
 /* Method
  ****************************
- * Return Type: int
+ * Return Type: double
  ****************************
  * Parameters Passed in: N/A 
  ****************************
  * Description: Method that returns the value of the y co-ordinate.
  */
-int mobile::getX() {
+double mobile::getX() {
 	return x_co;
 }
 /* Method
  ****************************
- * Return Type: int
+ * Return Type: double
  ****************************
  * Parameters Passed in: N/A 
  ****************************
  * Description: Method that returns the value of the y co-ordinate.
  */
-int mobile::getY() {
+double mobile::getY() {
 	return y_co;
 }
 /* Method
@@ -222,15 +210,12 @@ double mobile::getHeight() {
  * random movement the mobile will make.
  */
 void mobile::moveRandom() {
-	int move = (rand()%1000000)%4;
-	switch(move) {
-	case 0: moveMobile(1,0);
-		break;
-	case 1: moveMobile(-1,0);
-		break;
-	case 2: moveMobile(0,1);
-		break;
-	case 3: moveMobile(0,-1);
-		break;	
-	}
+	int angle = rand()%360; //0 to 359 degrees
+	int speed = (rand()%4)+2; //1 to 4 m/s
+	int duration = (rand()%20)+5; //5 to 25s
+
+	double deltaX = duration*speed*sin(angle);
+	double deltaY = duration*speed*cos(angle);
+
+	moveMobile(deltaX, deltaY);
 }

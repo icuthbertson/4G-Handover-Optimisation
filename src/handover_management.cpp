@@ -31,20 +31,7 @@ handover_management::handover_management(scheduler* gs) : event_handler(gs) {
 
 	for(int i=0; i<15; i++) {
 		send_delay(new event(MOVE,mobiles[0]),(i*100.0));
-		// send_delay(new event(PRINT),(((i*100.0)+50.0)));
-
-		// for(int j=0; j<9; j++) {
-		// 	send_delay(new event(PROP,reinterpret_cast<payloadType<class T>*>(firstPacket),bStations[j]),(i*100)+2+j));
-		// }	
 	}
-
-	// double dist;
-	// propRequestPacket* firstPacket;
-
-	// dist = sqrt((abs((bStations[0]->getX()-mobiles[0]->getX()))^2) + (abs((bStations[0]->getY()-mobiles[0]->getY()))^2));
-	// firstPacket = new propRequestPacket(dist,mobiles[0]->getHeight());
-	
-	// send_now(new event(PROP,reinterpret_cast<payloadType<class T>*>(firstPacket),bStations[0]));
 }
 
 handover_management::~handover_management() {
@@ -60,7 +47,6 @@ void handover_management::handler(const event* received)
 			recPacket = reinterpret_cast<propSendPacket*> (received->getAttachment());
     		prop[recPacket->id] = recPacket->prop;
     		printf("id:%d prop:%f\n",recPacket->id,recPacket->prop);
-			// std::cout << "here\n";
    			delete recPacket;
    			break;
    		case POLL:
