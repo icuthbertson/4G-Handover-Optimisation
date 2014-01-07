@@ -143,12 +143,12 @@ void mobile::moveMobile(double x, double y) {
 	if((x_co+x)>100) {
 		x_co = 100-(x+x_co-100);
 	} else if((x_co+x)<0) {
-		x_co = 0+(abs(x)-x_co);
+		x_co = 0-(x+x_co);
 	} else {
 		x_co += x;
 	}
 	if((y_co+y)>100) {
-		y_co = 100-(abs(y)+y_co-100);
+		y_co = 100-(y+y_co-100);
 	} else if((y_co+y)<0) {
 		y_co = 0-(y+y_co);
 	} else {
