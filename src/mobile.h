@@ -5,6 +5,7 @@
  */
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 #include "event_handler.h"
 #include "event_definitions.h"
 
@@ -13,9 +14,9 @@ private:
     /* Private Variables
      ****************************
      * int id: Unique interger values that indentifies this instance of the class.
-     * int x_co: Integer value that denotes where of the x-axis this instance of
+     * double x_co: Integer value that denotes where of the x-axis this instance of
      *           the class is found. 
-     * int y_co: Integer value that denotes where of the y-axis this instance of
+     * double y_co: Integer value that denotes where of the y-axis this instance of
      *           the class is found. 
      * double tx: Double value that denoted the signal strength being transmitted
      *            from this instance of the class.
@@ -25,8 +26,8 @@ private:
      * int count: Integer used to stop the simulation after a set number of steps.
      */
 	int id;
-    int x_co;
-    int y_co;
+    double x_co;
+    double y_co;
     int connected;
     double h;
     int count;
@@ -38,9 +39,9 @@ public:
     void printCos();
 	void setmobile(int num, int x, int y, int con, double height);
     void switchBasestation(int newBasestation);
-    void moveMobile(int x, int y);
-    int getX();
-    int getY();
+    void moveMobile(double x, double y);
+    double getX();
+    double getY();
     int getConnectedTo();
     double getHeight();
     void moveRandom();
