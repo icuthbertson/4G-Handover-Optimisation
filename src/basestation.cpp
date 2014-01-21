@@ -37,12 +37,29 @@ basestation::basestation(scheduler* gs, int idNum, int x, int y, double freq, do
     f = freq;
     hb = hBase;
 }
-
+/* Destructor
+ ****************************
+ * Return Type: N/A 
+ ****************************
+ * Parameters Passed in: N/A
+ ****************************
+ * Description: Class destrcutor that removes an instance of this class
+ * from the schedular and any messages still waiting to be passed.
+ */
 basestation::~basestation() {
 	globalScheduler->remove_from(this);
 	globalScheduler->remove_to(this);
 }
-
+/* Method
+ ****************************
+ * Return Type: N/A 
+ ****************************
+ * Parameters Passed in:
+ * const event* received
+ ****************************
+ * Description: Class hanlder that takes in a event and does the
+ * required action depending on the event that was received.
+ */
 void basestation::handler(const event* received)
 {
 
@@ -73,7 +90,6 @@ void basestation::handler(const event* received)
 	} // end switch statement
 	
 }
-
 /* Method
  ****************************
  * Return Type: void

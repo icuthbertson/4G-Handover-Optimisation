@@ -39,12 +39,29 @@ mobile::mobile(scheduler* gs, int num, int x, int y, int con, double height) : e
     h = height;
     count = 0;
 }
-
+/* Destructor
+ ****************************
+ * Return Type: N/A 
+ ****************************
+ * Parameters Passed in: N/A
+ ****************************
+ * Description: Class destrcutor that removes an instance of this class
+ * from the schedular and any messages still waiting to be passed.
+ */
 mobile::~mobile() {
 	globalScheduler->remove_from(this);
 	globalScheduler->remove_to(this);
 }
-
+/* Method
+ ****************************
+ * Return Type: N/A 
+ ****************************
+ * Parameters Passed in:
+ * const event* received
+ ****************************
+ * Description: Class hanlder that takes in a event and does the
+ * required action depending on the event that was received.
+ */
 void mobile::handler(const event* received)
 {
 	switch(received->label) {

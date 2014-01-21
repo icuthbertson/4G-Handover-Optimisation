@@ -18,8 +18,6 @@ private:
      *           the class is found. 
      * double y_co: Integer value that denotes where of the y-axis this instance of
      *           the class is found. 
-     * double tx: Double value that denoted the signal strength being transmitted
-     *            from this instance of the class.
      * int connected: Integer values that denoted the id number of the basestation
      *                this instance of the class is "connected" to.
 	 * double h: Double value that denoted the height of the mobile.

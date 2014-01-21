@@ -33,12 +33,29 @@ handover_management::handover_management(scheduler* gs) : event_handler(gs) {
 		send_delay(new event(MOVE,mobiles[0]),(i*100.0));
 	}
 }
-
+/* Method
+ ****************************
+ * Return Type: N/A 
+ ****************************
+ * Parameters Passed in:
+ * const event* received
+ ****************************
+ * Description: Class hanlder that takes in a event and does the
+ * required action depending on the event that was received.
+ */
 handover_management::~handover_management() {
 	globalScheduler->remove_from(this);
 	globalScheduler->remove_to(this);
 }
-
+/* Destructor
+ ****************************
+ * Return Type: N/A 
+ ****************************
+ * Parameters Passed in: N/A
+ ****************************
+ * Description: Class destrcutor that removes an instance of this class
+ * from the schedular and any messages still waiting to be passed.
+ */
 void handover_management::handler(const event* received)
 {
 	switch(received->label) {

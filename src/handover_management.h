@@ -14,14 +14,12 @@ private:
     /* Private Variables
      ****************************
      * basestation bStations[]: array of basestations.
-     * double prop[9]: array of path loss from basestations.
+     * double prop[]: array of path loss from basestations.
      * mobile mobiles[]: array of mobiles.
      */
-	
 	basestation* bStations[9];
 	double prop[9];
-	mobile* mobiles[1];
-							  
+	mobile* mobiles[1];				  
 public:
     handover_management(scheduler* gs);
     ~handover_management();
