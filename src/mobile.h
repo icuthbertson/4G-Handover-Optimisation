@@ -24,6 +24,12 @@ private:
      *                this instance of the class is "connected" to.
 	 * double h: Double value that denoted the height of the mobile.
      * int count: Integer used to stop the simulation after a set number of steps.
+     * double spetTime: Double used for timing each step.
+     * int speed: Used for random walk.
+     * int angle: Used for random walk.
+     * int duration: Used for random walk.
+     * int minusX: Used for bouncing off walls in the random walk.
+     * int minusY: Used for bouncing off walls in the random walk.
      */
 	int id;
     double x_co;
@@ -33,6 +39,12 @@ private:
     int connected;
     double h;
     int count;
+    double stepTime;
+    int speed;
+    int angle;
+    int duration;
+    int minusX;
+    int minusY;
 public:
     mobile(scheduler* gs);
     mobile(scheduler* gs, int num, int x, int y, int con, double height);
@@ -41,7 +53,7 @@ public:
     void printCos();
 	void setmobile(int num, int x, int y, int con, double height);
     void switchBasestation(int newBasestation);
-    void moveMobile(double x, double y);
+    void moveMobile();
     double getX();
     double getY();
     int getConnectedTo();

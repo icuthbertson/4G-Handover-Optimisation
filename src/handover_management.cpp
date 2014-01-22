@@ -29,11 +29,9 @@ handover_management::handover_management(scheduler* gs) : event_handler(gs) {
 	prop[8] = 0.0;
 	mobiles[0] = new mobile(gs,1,750,750,4,1);
 	threshold = -125.0;
-	handoverTime;
+	handoverTime = 0.25;
 
-	for(int i=0; i<15; i++) {
-		send_delay(new event(MOVE,mobiles[0]),(i*100.0));
-	}
+	send_delay(new event(MOVE,mobiles[0]),0.0);
 }
 /* Method
  ****************************

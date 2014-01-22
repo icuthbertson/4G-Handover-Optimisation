@@ -16,6 +16,9 @@ mobile::mobile(scheduler* gs) : event_handler(gs) {
 	connected = 1;
 	h = 2.0;
 	count = 0;
+	stepTime = 0.0;
+	minusX = 1;
+	minusY = 1;
 }
 /* Constructor
  ****************************
@@ -38,6 +41,9 @@ mobile::mobile(scheduler* gs, int num, int x, int y, int con, double height) : e
     connected = con;
     h = height;
     count = 0;
+    stepTime = 0.025;
+    minusX = 1;
+	minusY = 1;
 }
 /* Destructor
  ****************************
@@ -68,7 +74,11 @@ void mobile::handler(const event* received)
 		case MOVE:
 			moveRandom();
 			print();
-			send_delay(new event(POLL,received->sender),1.0);
+			count++;
+			//send_delay(new event(POLL,received->sender),1.0);
+			break;
+		case STEP:
+			moveMobile();
 			break;
 		case PRINT:
 			print();
@@ -77,7 +87,6 @@ void mobile::handler(const event* received)
 			// program should not reach here
 			break;
 	} // end switch statement
-	count++;
 	if(count > 15) {
 		globalScheduler->stop();
 	}
@@ -154,22 +163,34 @@ void mobile::switchBasestation(int newBasestation) {
  * by changing it's x_co and y_co variables to the values
  * passed in.
  */
-void mobile::moveMobile(double x, double y) {
-	fprintf(stderr, "\nX:%f Y:%f deltaX:%f deltaY:%f\n", x_co, y_co, x, y);
-
-	if((x_co+x)>1500) {
-		x_co = 1500-(x+x_co-1500);
-	} else if((x_co+x)<0) {
-		x_co = 0-(x+x_co);
+void mobile::moveMobile() {
+	if(duration>0) {
+		//move
+		if((x_co+(minusX*speed*duration*stepTime*sin(angle)))>1500) {
+			minusX = -1;
+			x_co = 1500-((minusX*speed*duration*stepTime*sin(angle))+x_co-1500);
+		} else if((x_co+(minusX*speed*duration*stepTime*sin(angle)))<0) {
+			minusX = -1;
+			x_co = 0-((minusX*speed*duration*stepTime*sin(angle))+x_co);
+		} else {
+			x_co = x_co+(minusX*speed*duration*stepTime*sin(angle));
+		}
+		if((y_co+(minusY*speed*duration*stepTime*cos(angle)))>1500) {
+			minusY = -1;
+			y_co = 1500-((minusY*speed*duration*stepTime*cos(angle))+y_co-1500);
+		} else if((y_co+(minusY*speed*duration*stepTime*cos(angle)))<0) {
+			minusY = -1;
+			y_co = 0-((minusY*speed*duration*stepTime*cos(angle))+y_co);
+		} else {
+			y_co = y_co+(minusY*speed*duration*stepTime*cos(angle));
+		}
+		duration -= stepTime;
+		send_delay(new event(STEP),stepTime);
+		fprintf(stderr, "x_co:%f y_co:%f\n", x_co,y_co);
 	} else {
-		x_co += x;
-	}
-	if((y_co+y)>1500) {
-		y_co = 1500-(y+y_co-1500);
-	} else if((y_co+y)<0) {
-		y_co = 0-(y+y_co);
-	} else {
-		y_co += y;
+		send_now(new event(MOVE));
+		minusX = 1;
+		minusY = 1;
 	}
 }
 /* Method
@@ -227,12 +248,13 @@ double mobile::getHeight() {
  * random movement the mobile will make.
  */
 void mobile::moveRandom() {
-	int angle = rand()%360; //0 to 359 degrees
-	int speed = (rand()%4)+2; //1 to 4 m/s
-	int duration = (rand()%100)+50; //5 to 25s
+	angle = rand()%360; //0 to 359 degrees
+	speed = (rand()%4)+2; //1 to 4 m/s
+	duration = (rand()%100)+50; //5 to 25s
 
 	double deltaX = duration*speed*sin(angle);
 	double deltaY = duration*speed*cos(angle);
 
-	moveMobile(deltaX, deltaY);
+	fprintf(stderr, "\nX_Co:%f Y_Co:%f deltaX:%f deltaY:%f\n", x_co,y_co,deltaX,deltaY);
+	moveMobile();
 }
