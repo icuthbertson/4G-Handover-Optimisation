@@ -17,8 +17,6 @@ mobile::mobile(scheduler* gs) : event_handler(gs) {
 	h = 2.0;
 	count = 0;
 	stepTime = 0.0;
-	minusX = 1;
-	minusY = 1;
 }
 /* Constructor
  ****************************
@@ -41,9 +39,7 @@ mobile::mobile(scheduler* gs, int num, int x, int y, int con, double height) : e
     connected = con;
     h = height;
     count = 0;
-    stepTime = 0.025;
-    minusX = 1;
-	minusY = 1;
+    stepTime = 0.01;
 }
 /* Destructor
  ****************************
@@ -87,7 +83,7 @@ void mobile::handler(const event* received)
 			// program should not reach here
 			break;
 	} // end switch statement
-	if(count > 15) {
+	if(count > 50) {
 		globalScheduler->stop();
 	}
 }
@@ -165,32 +161,35 @@ void mobile::switchBasestation(int newBasestation) {
  */
 void mobile::moveMobile() {
 	if(duration>0) {
-		//move
-		if((x_co+(minusX*speed*duration*stepTime*sin(angle)))>1500) {
-			minusX = -1;
-			x_co = 1500-((minusX*speed*duration*stepTime*sin(angle))+x_co-1500);
-		} else if((x_co+(minusX*speed*duration*stepTime*sin(angle)))<0) {
-			minusX = -1;
-			x_co = 0-((minusX*speed*duration*stepTime*sin(angle))+x_co);
+		if((x_co+(speed*stepTime*sin(angle)))>1500) {
+			x_co = 1500;
+			duration = 0;
+		} else if((x_co+(speed*stepTime*sin(angle)))<0) {
+			x_co = 0;
+			duration = 0;
 		} else {
-			x_co = x_co+(minusX*speed*duration*stepTime*sin(angle));
+			x_co = x_co+(speed*stepTime*sin(angle));
 		}
-		if((y_co+(minusY*speed*duration*stepTime*cos(angle)))>1500) {
-			minusY = -1;
-			y_co = 1500-((minusY*speed*duration*stepTime*cos(angle))+y_co-1500);
-		} else if((y_co+(minusY*speed*duration*stepTime*cos(angle)))<0) {
-			minusY = -1;
-			y_co = 0-((minusY*speed*duration*stepTime*cos(angle))+y_co);
+		if((y_co+(speed*stepTime*cos(angle)))>1500) {
+			y_co = 1500;
+			duration = 0;
+		} else if((y_co+(speed*stepTime*cos(angle)))<0) {
+			y_co = 0;
+			duration = 0;
 		} else {
-			y_co = y_co+(minusY*speed*duration*stepTime*cos(angle));
+			y_co = y_co+(speed*stepTime*cos(angle));
 		}
-		duration -= stepTime;
-		send_delay(new event(STEP),stepTime);
+		if(duration==0) {
+			send_now(new event(MOVE));
+		} else {
+			duration -= stepTime;
+			// fprintf(stderr, "duration:%f\n", duration);
+			send_delay(new event(STEP),stepTime);
+		}
 		fprintf(stderr, "x_co:%f y_co:%f\n", x_co,y_co);
 	} else {
+
 		send_now(new event(MOVE));
-		minusX = 1;
-		minusY = 1;
 	}
 }
 /* Method
@@ -255,6 +254,6 @@ void mobile::moveRandom() {
 	double deltaX = duration*speed*sin(angle);
 	double deltaY = duration*speed*cos(angle);
 
-	fprintf(stderr, "\nX_Co:%f Y_Co:%f deltaX:%f deltaY:%f\n", x_co,y_co,deltaX,deltaY);
+	fprintf(stderr, "\nX_Co:%f Y_Co:%f deltaX:%f deltaY:%f\nspeed:%f duration:%f\n", x_co,y_co,deltaX,deltaY,speed,duration);
 	moveMobile();
 }

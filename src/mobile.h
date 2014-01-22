@@ -25,11 +25,9 @@ private:
 	 * double h: Double value that denoted the height of the mobile.
      * int count: Integer used to stop the simulation after a set number of steps.
      * double spetTime: Double used for timing each step.
-     * int speed: Used for random walk.
+     * double speed: Used for random walk.
      * int angle: Used for random walk.
-     * int duration: Used for random walk.
-     * int minusX: Used for bouncing off walls in the random walk.
-     * int minusY: Used for bouncing off walls in the random walk.
+     * double duration: Used for random walk.
      */
 	int id;
     double x_co;
@@ -40,11 +38,9 @@ private:
     double h;
     int count;
     double stepTime;
-    int speed;
+    double speed;
     int angle;
-    int duration;
-    int minusX;
-    int minusY;
+    double duration;
 public:
     mobile(scheduler* gs);
     mobile(scheduler* gs, int num, int x, int y, int con, double height);
