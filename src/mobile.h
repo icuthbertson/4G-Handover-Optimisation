@@ -14,10 +14,12 @@ private:
     /* Private Variables
      ****************************
      * int id: Unique interger values that indentifies this instance of the class.
-     * double x_co: Integer value that denotes where of the x-axis this instance of
+     * double x_co: Double value that denotes where of the x-axis this instance of
      *           the class is found. 
-     * double y_co: Integer value that denotes where of the y-axis this instance of
+     * double y_co: Double value that denotes where of the y-axis this instance of
      *           the class is found. 
+     * double destX: Double that denotes the current X destination for the random walk.
+     * double destY: Double that denotes the current Y destination for the random walk.
      * int connected: Integer values that denoted the id number of the basestation
      *                this instance of the class is "connected" to.
 	 * double h: Double value that denoted the height of the mobile.
@@ -26,6 +28,8 @@ private:
 	int id;
     double x_co;
     double y_co;
+    double destX;
+    double destY;
     int connected;
     double h;
     int count;

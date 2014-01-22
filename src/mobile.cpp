@@ -93,7 +93,7 @@ void mobile::handler(const event* received)
  * parameters of the class.
  */
 void mobile::print() {
-    printf("Mobile %d\nX Co-ordinate: %f\nY Co-ordinate: %f\nConnected To Basestation: %d\n\n", id, x_co, y_co, connected);
+    printf("Mobile %d\nX Co-ordinate: %f\nY Co-ordinate: %f\nConnected To Basestation: %d\n", id, x_co, y_co, connected);
 }
 /* Method
  ****************************
@@ -155,17 +155,17 @@ void mobile::switchBasestation(int newBasestation) {
  * passed in.
  */
 void mobile::moveMobile(double x, double y) {
-	fprintf(stderr, "X:%f Y:%f deltaX:%f deltaY:%f\n", x_co, y_co, x, y);
+	fprintf(stderr, "\nX:%f Y:%f deltaX:%f deltaY:%f\n", x_co, y_co, x, y);
 
-	if((x_co+x)>100) {
-		x_co = 100-(x+x_co-100);
+	if((x_co+x)>1500) {
+		x_co = 1500-(x+x_co-1500);
 	} else if((x_co+x)<0) {
 		x_co = 0-(x+x_co);
 	} else {
 		x_co += x;
 	}
-	if((y_co+y)>100) {
-		y_co = 100-(y+y_co-100);
+	if((y_co+y)>1500) {
+		y_co = 1500-(y+y_co-1500);
 	} else if((y_co+y)<0) {
 		y_co = 0-(y+y_co);
 	} else {
@@ -229,7 +229,7 @@ double mobile::getHeight() {
 void mobile::moveRandom() {
 	int angle = rand()%360; //0 to 359 degrees
 	int speed = (rand()%4)+2; //1 to 4 m/s
-	int duration = (rand()%20)+5; //5 to 25s
+	int duration = (rand()%100)+50; //5 to 25s
 
 	double deltaX = duration*speed*sin(angle);
 	double deltaY = duration*speed*cos(angle);

@@ -16,10 +16,14 @@ private:
      * basestation bStations[]: array of basestations.
      * double prop[]: array of path loss from basestations.
      * mobile mobiles[]: array of mobiles.
+     * double threshold: threshold value for call dropping.
+     * double handoverTime: time it will take to complete a handover.
      */
 	basestation* bStations[9];
 	double prop[9];
-	mobile* mobiles[1];				  
+	mobile* mobiles[1];		
+	double threshold;	
+	double handoverTime;	  
 public:
     handover_management(scheduler* gs);
     ~handover_management();

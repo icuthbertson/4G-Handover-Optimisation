@@ -80,7 +80,7 @@ void basestation::handler(const event* received)
 
 			// send_delay(new event(PROP, received->sender),10.0);
 
-			send_delay(new event(PROP,reinterpret_cast<payloadType<class T>*>(sendPacket), received->sender),10.0);
+			send_delay(new event(PROP,reinterpret_cast<payloadType<class T>*>(sendPacket), received->sender),1.0);
 			printf("Basestation: %d\n",id);
 			delete recPacket;
 			break;
@@ -146,6 +146,7 @@ int basestation::getY() {
  * Okumura-Hata propagation model. d in km, hm in m.
  */
 double basestation::getProp(double d, double hm) {
-	double ch = 0.8 + (1.1 * log10(f) - 0.7) * hm - 1.56 * log10(f);
-	return 69.55 + 26.16 * log10(f) - 13.82 * log10(hb) - ch + (44.9 - 6.55 * log10(hb)) * log10(d);
+	double ch = 0.8 + ((1.1 * log10(f) - 0.7) * hm) - (1.56 * log10(f));
+	double prop = 69.55 + (26.16 * log10(f)) - (13.82 * log10(hb)) - ch + ((44.9 - (6.55 * log10(hb))) * log10(d/1000)); //divide by 1000 for km
+	return prop;
 }
