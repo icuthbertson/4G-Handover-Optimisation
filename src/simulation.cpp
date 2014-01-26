@@ -3,12 +3,12 @@
  * The main code that will run the simulation
  */
 
-#include <iostream>
-#include "handover_management.h"
+// #include <iostream>
+// #include "handover_management.h"
 #include "event_handler.h"
-#include "event_definitions.h"
+// #include "event_definitions.h"
 #include "scheduler.h"
-#include "event_definitions.h"
+#include "globals.h"
 
 // scheduler gs;
 // handover_management hm;

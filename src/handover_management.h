@@ -4,18 +4,15 @@
  * have other basestations near by and a mobile moving around them.
  */
 
-#if !defined(_handover_management_h_)
-#define _handover_management_h_
+#if !defined(_HANDOVER_MANAGMENT_H_)
+#define _HANDOVER_MANAGEMENT_H_
 
-#include <stdio.h>
-#include <math.h>
-#include "mobile.h"
-#include "basestation.h"
+// #include <stdio.h>
+// #include <math.h>
+// #include "mobile.h"
+// #include "basestation.h"
 #include "event_handler.h"
-#include "event_definitions.h"
-
-// basestation* getBasestation(int id);
-// mobile* getMobile(int id);
+// #include "event_definitions.h"
 
 // basestation* bStations[9];
 // mobile* mobiles[1];	
@@ -44,5 +41,8 @@ public:
 protected:
 	virtual void handler(const event* received);
 };
+
+// basestation* getBasestation(int id);
+// mobile* getMobile(int id);
 
 #endif

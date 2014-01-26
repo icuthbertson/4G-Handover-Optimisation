@@ -4,15 +4,15 @@
  * have other basestations near by and a mobile moving around them.
  */
 
-#if !defined(_basestation_h_)
-#define _basestation_h_
+#if !defined(_BASESTATION_H_)
+#define _BASESTATION_H_
 
-#include <stdio.h>
-#include <math.h>
+// #include <stdio.h>
+// #include <math.h>
 #include "event_handler.h"
-#include "event_definitions.h"
-#include "handover_management.h"
-#include "mobile.h"
+// #include "event_definitions.h"
+// #include "handover_management.h"
+// #include "mobile.h"
 
 class basestation : public event_handler {
 private:

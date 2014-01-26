@@ -1,10 +1,11 @@
-#include "mobile.h"
+// #include "mobile.h"
 // #include <stdio.h>
 // #include <stdlib.h>
 // #include <math.h>
 // #include "event_definitions.h"
 // #include "handover_management.h"
 // #include "basestation.h"
+#include "globals.h"
 
 /* Constructor
  ****************************
@@ -77,7 +78,7 @@ void mobile::handler(const event* received)
 			moveRandom();
 			print();
 			count++;
-			// send_delay(new event(POLL,handover_management->getThis()),1.0);
+			send_delay(new event(POLL,received->sender),1.0);
 			break;
 		case STEP:
 			moveMobile();

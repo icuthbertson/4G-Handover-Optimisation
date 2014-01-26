@@ -4,16 +4,16 @@
  * will move around a number of basestations.
  */
 
-#if !defined(_mobile_h_)
-#define _mobile_h_
+#if !defined(_MOBILE_H_)
+#define _MOBILE_H_
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <math.h>
 #include "event_handler.h"
-#include "event_definitions.h"
-#include "handover_management.h"
-#include "basestation.h"
+// #include "event_definitions.h"
+// #include "handover_management.h"
+// #include "basestation.h"
 
 class mobile : public event_handler {
 private:

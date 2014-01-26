@@ -1,4 +1,4 @@
-#include "basestation.h"
+// #include "basestation.h"
 // #include <stdio.h>
 // #include <math.h>
 // #include "event_handler.h"
@@ -7,6 +7,7 @@
 // #include "handover_management.h"
 // #include "mobile.h"
 // #include "globals.h"
+#include "globals.h"
 
 /* Constructor
  ****************************

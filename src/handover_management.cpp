@@ -1,9 +1,10 @@
-#include "handover_management.h"
+// #include "handover_management.h"
 // #include <stdio.h>
 // #include <math.h>
 // #include "mobile.h"
 // #include "basestation.h"
 // #include "event_definitions.h"
+#include "globals.h"
 
 // basestation* bStations[9];
 // mobile* mobiles[1];	
