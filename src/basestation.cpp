@@ -1,13 +1,10 @@
-// #include "basestation.h"
-// #include <stdio.h>
-// #include <math.h>
-// #include "event_handler.h"
-// #include "event_definitions.h"
-// #include "payloadType.h"
-// #include "handover_management.h"
-// #include "mobile.h"
-// #include "globals.h"
-#include "globals.h"
+#include "basestation.h"
+#include <stdio.h>
+#include <math.h>
+#include "event_definitions.h"
+#include "mobiles.h"
+#include "hm.h"
+#include "prop.h"
 
 /* Constructor
  ****************************
@@ -85,8 +82,6 @@ void basestation::handler(const event* received)
 			prop = getProp(recPacket->dist,recPacket->height);
 
 			sendPacket = new propSendPacket(id,prop);
-
-			// send_delay(new event(PROP, received->sender),10.0);
 
 			send_delay(new event(PROP,reinterpret_cast<payloadType<class T>*>(sendPacket), received->sender),1.0);
 			printf("Basestation: %d\n",id);

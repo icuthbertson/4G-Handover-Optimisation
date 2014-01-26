@@ -8,10 +8,12 @@
 #include "event_handler.h"
 // #include "event_definitions.h"
 #include "scheduler.h"
-#include "globals.h"
+// #include "globals.h"
+#include "bstations.h"
+#include "hm.h"
+#include "mobiles.h"
+#include "prop.h"
 
-// scheduler gs;
-// handover_management hm;
 /* Method
  ****************************
  * Return Type: int
@@ -22,11 +24,36 @@
  * setting up the basestations and mobiles, outputting, checking the
  * basestations and then outputting again.
  */
+
+scheduler* gs = new scheduler();
+
+double prop[] = {0.0,
+				 0.0,
+				 0.0,
+				 0.0,
+				 0.0,
+				 0.0,
+				 0.0,
+				 0.0,
+				 0.0};
+
+basestation* bStations[] = { new basestation(gs,0,0,0,1500,60),
+							 new basestation(gs,1,750,0,1500,60),
+							 new basestation(gs,2,1500,0,1500,60),
+							 new basestation(gs,3,0,750,1500,60),
+							 new basestation(gs,4,750,750,1500,60),
+							 new basestation(gs,5,1500,750,1500,60),
+							 new basestation(gs,6,0,1500,1500,60),
+							 new basestation(gs,7,750,1500,1500,60),
+							 new basestation(gs,8,1500,1500,1500,60)};
+
+mobile* mobiles[] = {new mobile(gs,1,750,750,4,1)};
+
+handover_management* hm = new handover_management(gs);
+
 int main() {
 	printf("Simulation started...\n");
 	
-	scheduler* gs = new scheduler();
-	handover_management* hm = new handover_management(gs);
 	gs->start();
 
 	printf("end...\n");

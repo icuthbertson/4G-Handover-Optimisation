@@ -1,11 +1,11 @@
-// #include "mobile.h"
-// #include <stdio.h>
-// #include <stdlib.h>
-// #include <math.h>
-// #include "event_definitions.h"
-// #include "handover_management.h"
-// #include "basestation.h"
-#include "globals.h"
+#include "mobile.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include "event_definitions.h"
+#include "hm.h"
+#include "bstations.h"
+#include "prop.h"
 
 /* Constructor
  ****************************
@@ -23,7 +23,6 @@ mobile::mobile(scheduler* gs) : event_handler(gs) {
 	connected = 1;
 	h = 2.0;
 	count = 0;
-	stepTime = 0.0;
 }
 /* Constructor
  ****************************
@@ -46,7 +45,6 @@ mobile::mobile(scheduler* gs, int num, int x, int y, int con, double height) : e
     connected = con;
     h = height;
     count = 0;
-    stepTime = 0.01;
 }
 /* Destructor
  ****************************
@@ -78,11 +76,27 @@ void mobile::handler(const event* received)
 			moveRandom();
 			print();
 			count++;
-			send_delay(new event(POLL,received->sender),1.0);
+			send_now(new event(POLL));
 			break;
 		case STEP:
 			moveMobile();
 			break;
+		case POLL:
+			double dist;
+			propRequestPacket* sendPacket;
+			for(int i=0; i<9;i++) {
+				dist = sqrt(pow((bStations[i]->getX()-getX()),2.0) + pow((bStations[i]->getY()-getY()),2.0));
+   				sendPacket = new propRequestPacket(dist,h);
+   				send_delay(new event(PROP,reinterpret_cast<payloadType<class T>*>(sendPacket),bStations[i]),1.0);
+			}
+			break;
+		case PROP:
+			propSendPacket* recPacket;
+			recPacket = reinterpret_cast<propSendPacket*> (received->getAttachment());
+    		prop[recPacket->id] = -(recPacket->prop);
+    		printf("id:%d Rx:%f dB\n",recPacket->id,prop[recPacket->id]);
+   			delete recPacket;
+   			break;
 		case PRINT:
 			print();
 			break;
@@ -146,30 +160,29 @@ void mobile::switchBasestation(int newBasestation) {
  */
 void mobile::moveMobile() {
 	if(duration>0) {
-		if((x_co+(speed*stepTime*sin(angle)))>1500) {
+		if((x_co+(speed*STEPTIME*sin(angle)))>1500) {
 			x_co = 1500;
 			duration = 0;
-		} else if((x_co+(speed*stepTime*sin(angle)))<0) {
+		} else if((x_co+(speed*STEPTIME*sin(angle)))<0) {
 			x_co = 0;
 			duration = 0;
 		} else {
-			x_co = x_co+(speed*stepTime*sin(angle));
+			x_co = x_co+(speed*STEPTIME*sin(angle));
 		}
-		if((y_co+(speed*stepTime*cos(angle)))>1500) {
+		if((y_co+(speed*STEPTIME*cos(angle)))>1500) {
 			y_co = 1500;
 			duration = 0;
-		} else if((y_co+(speed*stepTime*cos(angle)))<0) {
+		} else if((y_co+(speed*STEPTIME*cos(angle)))<0) {
 			y_co = 0;
 			duration = 0;
 		} else {
-			y_co = y_co+(speed*stepTime*cos(angle));
+			y_co = y_co+(speed*STEPTIME*cos(angle));
 		}
 		if(duration==0) {
 			send_now(new event(MOVE));
 		} else {
-			duration -= stepTime;
-			// fprintf(stderr, "duration:%f\n", duration);
-			send_delay(new event(STEP),stepTime);
+			duration -= STEPTIME;
+			send_delay(new event(STEP),STEPTIME);
 		}
 		fprintf(stderr, "x_co:%f y_co:%f\n", x_co,y_co);
 	} else {
