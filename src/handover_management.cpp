@@ -1,4 +1,12 @@
 #include "handover_management.h"
+// #include <stdio.h>
+// #include <math.h>
+// #include "mobile.h"
+// #include "basestation.h"
+// #include "event_definitions.h"
+
+// basestation* bStations[9];
+// mobile* mobiles[1];	
 
 /* Constructor
  ****************************
@@ -178,3 +186,11 @@ void handover_management::output() {
 void handover_management::moveMobile(int index) {
 	send_now(new event(MOVE, mobiles[0]));
 }
+
+// basestation* getBasestation(int id) {
+// 	return bStations[id];
+// }
+
+// mobile* getMobile(int id) {
+// 	return mobiles[id];
+// }

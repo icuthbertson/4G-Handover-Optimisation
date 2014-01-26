@@ -1,4 +1,10 @@
 #include "mobile.h"
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <math.h>
+// #include "event_definitions.h"
+// #include "handover_management.h"
+// #include "basestation.h"
 
 /* Constructor
  ****************************
@@ -71,7 +77,7 @@ void mobile::handler(const event* received)
 			moveRandom();
 			print();
 			count++;
-			//send_delay(new event(POLL,received->sender),1.0);
+			// send_delay(new event(POLL,handover_management->getThis()),1.0);
 			break;
 		case STEP:
 			moveMobile();
@@ -111,28 +117,6 @@ void mobile::print() {
  */
 void mobile::printCos() {
     printf("X Co-ordinate: %f\nY Co-ordinate: %f\n\n", x_co, y_co);
-}
-/* Method
- ****************************
- * Return Type: void
- ****************************
- * Parameters Passed in:
- * int num
- * int x
- * int y
- * double r
- * int con
- ****************************
- * Description: Method that allows an instance of the class that
- * was created using the basic constructor to have it's variables
- * set.
- */
-void mobile::setmobile(int num, int x, int y, int con, double height) {
-	id = num;
-    x_co = x;
-    y_co = y;
-    connected = con;
-    h = height;
 }
 /* Method
  ****************************

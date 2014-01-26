@@ -3,11 +3,17 @@
  * The mobile class is used to represent a mobile phone that
  * will move around a number of basestations.
  */
+
+#if !defined(_mobile_h_)
+#define _mobile_h_
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
 #include "event_handler.h"
 #include "event_definitions.h"
+#include "handover_management.h"
+#include "basestation.h"
 
 class mobile : public event_handler {
 private:
@@ -47,7 +53,6 @@ public:
     ~mobile();
     void print();
     void printCos();
-	void setmobile(int num, int x, int y, int con, double height);
     void switchBasestation(int newBasestation);
     void moveMobile();
     double getX();
@@ -58,3 +63,5 @@ public:
 protected:
 	virtual void handler(const event* received);
 };
+
+#endif

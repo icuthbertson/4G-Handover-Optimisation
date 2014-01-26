@@ -3,12 +3,23 @@
  * The basestation class is used to represent a basestaton that will
  * have other basestations near by and a mobile moving around them.
  */
+
+#if !defined(_handover_management_h_)
+#define _handover_management_h_
+
 #include <stdio.h>
 #include <math.h>
-#include "basestation.h"
 #include "mobile.h"
+#include "basestation.h"
 #include "event_handler.h"
 #include "event_definitions.h"
+
+// basestation* getBasestation(int id);
+// mobile* getMobile(int id);
+
+// basestation* bStations[9];
+// mobile* mobiles[1];	
+
 class handover_management : public event_handler {
 private:
     /* Private Variables
@@ -33,3 +44,5 @@ public:
 protected:
 	virtual void handler(const event* received);
 };
+
+#endif
