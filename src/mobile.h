@@ -7,13 +7,7 @@
 #if !defined(_MOBILE_H_)
 #define _MOBILE_H_
 
-// #include <stdio.h>
-// #include <stdlib.h>
-// #include <math.h>
 #include "event_handler.h"
-// #include "event_definitions.h"
-// #include "handover_management.h"
-// #include "basestation.h"
 
 class mobile : public event_handler {
 private:
@@ -30,7 +24,6 @@ private:
      *                this instance of the class is "connected" to.
 	 * double h: Double value that denoted the height of the mobile.
      * int count: Integer used to stop the simulation after a set number of steps.
-     * double spetTime: Double used for timing each step.
      * double speed: Used for random walk.
      * int angle: Used for random walk.
      * double duration: Used for random walk.
@@ -43,10 +36,11 @@ private:
     int connected;
     double h;
     int count;
-    double stepTime;
     double speed;
     int angle;
     double duration;
+    double TTT;
+    double hys;
 public:
     mobile(scheduler* gs);
     mobile(scheduler* gs, int num, int x, int y, int con, double height);
