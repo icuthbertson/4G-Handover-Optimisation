@@ -76,10 +76,10 @@ void mobile::handler(const event* received)
 			moveRandom();
 			print();
 			count++;
-			send_now(new event(POLL));
 			break;
 		case STEP:
 			moveMobile();
+			send_now(new event(POLL));
 			break;
 		case POLL:
 			double dist;
@@ -87,14 +87,16 @@ void mobile::handler(const event* received)
 			for(int i=0; i<9;i++) {
 				dist = sqrt(pow((bStations[i]->getX()-getX()),2.0) + pow((bStations[i]->getY()-getY()),2.0));
    				sendPacket = new propRequestPacket(dist,h);
-   				send_delay(new event(PROP,reinterpret_cast<payloadType<class T>*>(sendPacket),bStations[i]),1.0);
+   				send_now(new event(PROP,reinterpret_cast<payloadType<class T>*>(sendPacket),bStations[i]));
 			}
 			break;
 		case PROP:
 			propSendPacket* recPacket;
 			recPacket = reinterpret_cast<propSendPacket*> (received->getAttachment());
-    		prop[recPacket->id] = -(recPacket->prop);
-    		printf("id:%d Rx:%f dB\n",recPacket->id,prop[recPacket->id]);
+			previous_prop[recPacket->id] = current_prop[recPacket->id];
+    		current_prop[recPacket->id] = -(recPacket->prop);
+    		//printf("Current: id:%d Rx:%f dB\nPrevious: id:%d Rx:%f dB\n",recPacket->id,current_prop[recPacket->id],recPacket->id,previous_prop[recPacket->id]);
+   			checkProp(recPacket->id);
    			delete recPacket;
    			break;
 		case PRINT:
@@ -184,10 +186,9 @@ void mobile::moveMobile() {
 			duration -= STEPTIME;
 			send_delay(new event(STEP),STEPTIME);
 		}
-		fprintf(stderr, "x_co:%f y_co:%f\n", x_co,y_co);
+		//fprintf(stderr, "x_co:%f y_co:%f\n", x_co,y_co);
 	} else {
-
-		send_now(new event(MOVE));
+		send_delay(new event(MOVE),1.0);
 	}
 }
 /* Method
@@ -252,6 +253,18 @@ void mobile::moveRandom() {
 	double deltaX = duration*speed*sin(angle);
 	double deltaY = duration*speed*cos(angle);
 
-	fprintf(stderr, "\nX_Co:%f Y_Co:%f deltaX:%f deltaY:%f\nspeed:%f duration:%f\n", x_co,y_co,deltaX,deltaY,speed,duration);
+	//fprintf(stderr, "\nX_Co:%f Y_Co:%f deltaX:%f deltaY:%f\nspeed:%f duration:%f\n", x_co,y_co,deltaX,deltaY,speed,duration);
 	moveMobile();
+}
+
+void mobile::checkProp(int id) {
+	if((previous_prop[id] > current_prop[connected]+hys) && (current_prop[id] > current_prop[connected]+hys)) {
+		TTTtest[id] -= STEPTIME;
+		if(TTTtest[id] == 0) {
+			//send measurement report
+			fprintf(stderr, "Should switch to basestation: %d\n", id);
+		}
+	} else {
+		TTTtest[id] = TTT;
+	}
 }

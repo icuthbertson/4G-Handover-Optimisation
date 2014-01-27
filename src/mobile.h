@@ -39,8 +39,6 @@ private:
     double speed;
     int angle;
     double duration;
-    double TTT;
-    double hys;
 public:
     mobile(scheduler* gs);
     mobile(scheduler* gs, int num, int x, int y, int con, double height);
@@ -54,6 +52,7 @@ public:
     int getConnectedTo();
     double getHeight();
     void moveRandom();
+    void checkProp(int id);
 protected:
 	virtual void handler(const event* received);
 };
