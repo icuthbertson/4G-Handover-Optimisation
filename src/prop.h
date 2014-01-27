@@ -8,4 +8,6 @@ extern int TTTtest[];
 extern double hys;
 extern double TTT;
 
+extern bool handingOver;
+
 #endif

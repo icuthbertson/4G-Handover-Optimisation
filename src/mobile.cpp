@@ -258,13 +258,22 @@ void mobile::moveRandom() {
 }
 
 void mobile::checkProp(int id) {
-	if((previous_prop[id] > current_prop[connected]+hys) && (current_prop[id] > current_prop[connected]+hys)) {
-		TTTtest[id] -= STEPTIME;
-		if(TTTtest[id] == 0) {
-			//send measurement report
-			fprintf(stderr, "Should switch to basestation: %d\n", id);
+	if(!handingOver) {
+		if((previous_prop[id] > current_prop[connected]+hys) && (current_prop[id] > current_prop[connected]+hys)) {
+			TTTtest[id] -= STEPTIME;
+			if(TTTtest[id] <= 0) {
+				//send measurement report
+				reportPacket* sendPacket;
+				sendPacket = new reportPacket(id);
+				send_delay(new event(REPORT,reinterpret_cast<payloadType<class T>*>(sendPacket),bStations[id]), HANDOVER_TIME);
+				fprintf(stderr, "Should switch to basestation: %d\n", id);
+				for(int i=0; i<9; i++) {
+					TTTtest[i] = TTT;
+				}
+				handingOver = true;
+			}
+		} else {
+			TTTtest[id] = TTT;
 		}
-	} else {
-		TTTtest[id] = TTT;
 	}
 }

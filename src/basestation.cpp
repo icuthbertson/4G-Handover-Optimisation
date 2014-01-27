@@ -1,4 +1,4 @@
-#include "basestation.h"
+#include "bstations.h"
 #include <stdio.h>
 #include <math.h>
 #include "event_definitions.h"
@@ -21,6 +21,7 @@ basestation::basestation(scheduler* gs) : event_handler(gs) {
 	y_co = 0;
 	f = 0.0;
 	hb = 0.0;
+	connected = false;
 }
 /* Constructor
  ****************************
@@ -35,12 +36,13 @@ basestation::basestation(scheduler* gs) : event_handler(gs) {
  * Description: Class constructor that create an instance of basestation
  * with all parameters are passed in.
  */
-basestation::basestation(scheduler* gs, int idNum, int x, int y, double freq, double hBase) : event_handler(gs) {
+basestation::basestation(scheduler* gs, int idNum, int x, int y, double freq, double hBase, bool conn) : event_handler(gs) {
 	id = idNum;
     x_co = x;
     y_co = y;
     f = freq;
     hb = hBase;
+    connected = conn;
 }
 /* Destructor
  ****************************
@@ -86,6 +88,22 @@ void basestation::handler(const event* received)
 			send_now(new event(PROP,reinterpret_cast<payloadType<class T>*>(sendPacket), received->sender));
 			//printf("Basestation: %d\n",id);
 			delete recPacket;
+			break;
+		case REPORT:
+			reportPacket* repPacket;
+			repPacket = reinterpret_cast<reportPacket*>(received->getAttachment());
+
+			fprintf(stderr, "%d\n", repPacket->id);
+
+			bStations[repPacket->id]->nowServing();
+			this->connected = false;
+			mobiles[0]->switchBasestation(repPacket->id);
+
+			handingOver = false;
+
+			delete repPacket;
+			break;
+		case SWITCH:
 			break;
 		default:
 			// program should not reach here
@@ -152,4 +170,8 @@ double basestation::getProp(double d, double hm) {
 	double ch = 0.8 + ((1.1 * log10(f) - 0.7) * hm) - (1.56 * log10(f));
 	double prop = 69.55 + (26.16 * log10(f)) - (13.82 * log10(hb)) - ch + ((44.9 - (6.55 * log10(hb))) * log10(d/1000)); //divide by 1000 for km
 	return prop;
+}
+
+void basestation::nowServing() {
+	connected = true;
 }

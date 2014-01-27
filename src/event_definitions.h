@@ -5,7 +5,7 @@
 #define STEPTIME 0.01
 #define HANDOVER_TIME 0.25
 
-enum{MOVE,PRINT,ID,X,Y,PROP,POLL,STEP};
+enum{MOVE,PRINT,ID,X,Y,PROP,POLL,STEP,REPORT,SWITCH};
 
 class propRequestPacket {
 	public:
@@ -24,6 +24,14 @@ class propSendPacket {
 		propSendPacket(int id, double prop) {
 			this->id = id;
 			this->prop = prop;
+		}
+};
+
+class reportPacket {
+	public:
+		int id;
+		reportPacket(int id) {
+			this->id = id;
 		}
 };
 

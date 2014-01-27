@@ -27,15 +27,17 @@ private:
     int y_co;
     double f;
     double hb;
+    bool connected;
 public:
     basestation(scheduler* gs);
-    basestation(scheduler* gs, int idNum, int x, int y, double freq, double hBase);
+    basestation(scheduler* gs, int idNum, int x, int y, double freq, double hBase, bool conn);
     ~basestation();
     void print();
     int getID();
     int getX();
     int getY();
     double getProp(double d, double hm);
+    void nowServing();
 protected:
 	virtual void handler(const event* received);
 };

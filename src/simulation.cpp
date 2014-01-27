@@ -50,6 +50,8 @@ double previous_prop[] = {0.0,
 double TTT = 0.1;
 double hys = 2.5;
 
+bool handingOver = false;
+
 int TTTtest[] = {TTT,
 				 TTT,
 				 TTT,
@@ -60,15 +62,15 @@ int TTTtest[] = {TTT,
 				 TTT,
 				 TTT};
 
-basestation* bStations[] = {new basestation(gs,0,0,0,1500,60),
-							new basestation(gs,1,750,0,1500,60),
-							new basestation(gs,2,1500,0,1500,60),
-							new basestation(gs,3,0,750,1500,60),
-							new basestation(gs,4,750,750,1500,60),
-							new basestation(gs,5,1500,750,1500,60),
-							new basestation(gs,6,0,1500,1500,60),
-							new basestation(gs,7,750,1500,1500,60),
-							new basestation(gs,8,1500,1500,1500,60)};
+basestation* bStations[] = {new basestation(gs,0,0,0,1500,60,false),
+							new basestation(gs,1,750,0,1500,60,false),
+							new basestation(gs,2,1500,0,1500,60,false),
+							new basestation(gs,3,0,750,1500,60,false),
+							new basestation(gs,4,750,750,1500,60,true),
+							new basestation(gs,5,1500,750,1500,60,false),
+							new basestation(gs,6,0,1500,1500,60,false),
+							new basestation(gs,7,750,1500,1500,60,false),
+							new basestation(gs,8,1500,1500,1500,60,false)};
 
 mobile* mobiles[] = {new mobile(gs,1,750,750,4,1)};
 
