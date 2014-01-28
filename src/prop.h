@@ -14,6 +14,5 @@ extern int drop;
 extern int pingpong;
 extern int handovers;
 extern bool checkPingPong;
-extern int previousid;
 
 #endif

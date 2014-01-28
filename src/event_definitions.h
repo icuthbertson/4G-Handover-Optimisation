@@ -36,4 +36,12 @@ class reportPacket {
 		}
 };
 
+class pingPongPacket {
+	public:
+		int id;
+		pingPongPacket(int id) {
+			this->id = id;
+		}
+};
+
 #endif

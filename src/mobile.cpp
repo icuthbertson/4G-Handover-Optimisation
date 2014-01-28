@@ -23,6 +23,7 @@ mobile::mobile(scheduler* gs) : event_handler(gs) {
 	connected = 1;
 	h = 2.0;
 	count = 0;
+	wall = 0;
 }
 /* Constructor
  ****************************
@@ -45,6 +46,7 @@ mobile::mobile(scheduler* gs, int num, int x, int y, int con, double height) : e
     connected = con;
     h = height;
     count = 0;
+    wall = 0;
 }
 /* Destructor
  ****************************
@@ -100,10 +102,13 @@ void mobile::handler(const event* received)
    			delete recPacket;
    			break;
    		case PINGPONG:
-   			if(connected == previousid) {
+   			pingPongPacket* pingPacket;
+   			pingPacket = reinterpret_cast<pingPongPacket*> (received->getAttachment());
+
+   			if(connected == pingPacket->id) {
    				pingpong++;
-   				checkPingPong = false;
    			}
+   			delete pingPacket;
    			break;
 		case PRINT:
 			print();
@@ -112,7 +117,7 @@ void mobile::handler(const event* received)
 			// program should not reach here
 			break;
 	} // end switch statement
-	if(count > 1000) {
+	if(count > 100) {
 		fprintf(stdout, "\nFinal Report\nHandovers: %d\nDropped: %d\nPing-Pong: %d\n", handovers,drop,pingpong);
 		globalScheduler->stop();
 	}
@@ -169,23 +174,33 @@ void mobile::switchBasestation(int newBasestation) {
  */
 void mobile::moveMobile() {
 	if(duration>0) {
-		if((x_co+(speed*STEPTIME*sin(angle)))>1500) {
-			x_co = 1500;
+		if((x_co+(speed*STEPTIME*sin(angle*PI/180)))>1500) {
+			x_co = 1500.0;
 			duration = 0;
-		} else if((x_co+(speed*STEPTIME*sin(angle)))<0) {
-			x_co = 0;
+			wall = 3;
+			fprintf(stderr, "STEP EAST\n");
+		} else if((x_co+(speed*STEPTIME*sin(angle*PI/180)))<0) {
+			x_co = 0.0;
 			duration = 0;
+			wall = 1;
+			fprintf(stderr, "STEP WEST\n");
 		} else {
-			x_co = x_co+(speed*STEPTIME*sin(angle));
+			x_co = x_co+(speed*STEPTIME*sin(angle*PI/180));
 		}
-		if((y_co+(speed*STEPTIME*cos(angle)))>1500) {
-			y_co = 1500;
-			duration = 0;
-		} else if((y_co+(speed*STEPTIME*cos(angle)))<0) {
-			y_co = 0;
-			duration = 0;
-		} else {
-			y_co = y_co+(speed*STEPTIME*cos(angle));
+		if(wall==0) { 
+			if((y_co+(speed*STEPTIME*cos(angle*PI/180)))>1500) {
+				y_co = 1500.0;
+				duration = 0;
+				wall = 2;
+				fprintf(stderr, "STEP NORTH\n");
+			} else if((y_co+(speed*STEPTIME*cos(angle*PI/180)))<0) {
+				y_co = 0.0;
+				duration = 0;
+				wall = 4;
+				fprintf(stderr, "STEP SOUTH\n");
+			} else {
+				y_co = y_co+(speed*STEPTIME*cos(angle*PI/180));
+			}
 		}
 		if(duration==0) {
 			send_now(new event(MOVE));
@@ -253,14 +268,34 @@ double mobile::getHeight() {
  * random movement the mobile will make.
  */
 void mobile::moveRandom() {
-	angle = rand()%360; //0 to 359 degrees
+	if(wall==1) {
+		angle = (rand()%180)-90; //90 to -89 degrees
+		if(angle < 0) {
+			angle += 360;
+		}
+		fprintf(stderr, "WEST\n");
+	} else if(wall==2) {
+		angle = (rand()%180)+180; //180 to 359 degrees
+		fprintf(stderr, "NORTH\n");
+	} else if(wall==3) {
+		angle = (rand()%180)+90; //90 to 269 degrees
+		fprintf(stderr, "EAST\n");
+	} else if (wall==4) {
+		angle = (rand()%180); //0 to 179 degrees
+		fprintf(stderr, "SOUTH\n");
+	} else {
+		angle = rand()%360; //0 to 359 degrees
+	}
+
 	speed = (rand()%4)+2; //1 to 4 m/s
-	duration = (rand()%100)+50; //5 to 25s
-
-	double deltaX = duration*speed*sin(angle);
-	double deltaY = duration*speed*cos(angle);
-
+	duration = (rand()%100)+50; //50 to 100s
+	
+	double deltaX = duration*speed*sin(angle*PI/180);
+	double deltaY = duration*speed*cos(angle*PI/180);
 	//fprintf(stderr, "\nX_Co:%f Y_Co:%f deltaX:%f deltaY:%f\nspeed:%f duration:%f\n", x_co,y_co,deltaX,deltaY,speed,duration);
+
+	wall = 0;
+
 	moveMobile();
 }
 
@@ -284,6 +319,7 @@ void mobile::checkProp(int id) {
 			for(int i=0; i<9; i++) {
 				TTTtest[i] = TTT;
 			}
+			fprintf(stderr, "DROPPED!!!\n");
 		}
 	}
 	if(!handingOver && id!=connected) {

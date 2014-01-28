@@ -9,6 +9,8 @@
 
 #include "event_handler.h"
 
+#define PI 3.14159265
+
 class mobile : public event_handler {
 private:
     /* Private Variables
@@ -39,6 +41,7 @@ private:
     double speed;
     int angle;
     double duration;
+    int wall;
 public:
     mobile(scheduler* gs);
     mobile(scheduler* gs, int num, int x, int y, int con, double height);
