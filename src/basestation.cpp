@@ -93,13 +93,16 @@ void basestation::handler(const event* received)
 			reportPacket* repPacket;
 			repPacket = reinterpret_cast<reportPacket*>(received->getAttachment());
 
-			fprintf(stderr, "%d\n", repPacket->id);
+			for(int i=0; i<9; i++) {
+				printf("Basestation %d: %f dbm\n",i,current_prop[i]);
+			}
 
 			bStations[repPacket->id]->nowServing();
 			this->connected = false;
 			mobiles[0]->switchBasestation(repPacket->id);
 
 			handingOver = false;
+			dropped = false;
 
 			delete repPacket;
 			break;

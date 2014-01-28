@@ -107,6 +107,7 @@ void mobile::handler(const event* received)
 			break;
 	} // end switch statement
 	if(count > 50) {
+		fprintf(stdout, "\nFinal Report\nDropped: %d\nPing-Pong: %d\n", drop,pingpong);
 		globalScheduler->stop();
 	}
 }
@@ -258,14 +259,35 @@ void mobile::moveRandom() {
 }
 
 void mobile::checkProp(int id) {
-	if(!handingOver) {
-		if((previous_prop[id] > current_prop[connected]+hys) && (current_prop[id] > current_prop[connected]+hys)) {
+	if(id==connected) {
+		if(current_prop[id] < THRESHOLD) {
+			//called dropped!
+			drop++;
+			double highest = -300.0;
+			int highestid = 0;
+			for(int j=0; j<9; j++) {
+				if(current_prop[j] > highest) {
+					highest = current_prop[j];
+					highestid = j;
+				}
+			}
+			reportPacket* sendPacket;
+			sendPacket = new reportPacket(highestid);
+			send_now(new event(REPORT,reinterpret_cast<payloadType<class T>*>(sendPacket),bStations[connected]));
+			fprintf(stderr, "Should switch to basestation: %d\n", id);
+			for(int i=0; i<9; i++) {
+				TTTtest[i] = TTT;
+			}
+		}
+	}
+	if(!handingOver && id!=connected) {
+		if(/*(previous_prop[id] >= current_prop[connected]+hys) && */(current_prop[id] >= current_prop[connected]+hys)) {
 			TTTtest[id] -= STEPTIME;
 			if(TTTtest[id] <= 0) {
 				//send measurement report
 				reportPacket* sendPacket;
 				sendPacket = new reportPacket(id);
-				send_delay(new event(REPORT,reinterpret_cast<payloadType<class T>*>(sendPacket),bStations[id]), HANDOVER_TIME);
+				send_delay(new event(REPORT,reinterpret_cast<payloadType<class T>*>(sendPacket),bStations[connected]), HANDOVER_TIME);
 				fprintf(stderr, "Should switch to basestation: %d\n", id);
 				for(int i=0; i<9; i++) {
 					TTTtest[i] = TTT;

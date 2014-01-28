@@ -10,4 +10,8 @@ extern double TTT;
 
 extern bool handingOver;
 
+extern int drop;
+extern int pingpong;
+extern bool dropped;
+
 #endif
