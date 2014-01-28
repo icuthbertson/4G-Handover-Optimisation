@@ -54,7 +54,9 @@ bool handingOver = false;
 
 int drop = 0;
 int pingpong = 0;
-bool dropped = false;
+int handovers = 0;
+bool checkPingPong = false;
+int previousid = 4;
 
 int TTTtest[] = {TTT,
 				 TTT,

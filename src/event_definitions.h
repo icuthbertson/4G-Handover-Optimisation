@@ -1,12 +1,12 @@
 #if !defined(_event_definitions_h_)
 #define _event_definitions_h_
 
-#define THRESHOLD -120.0
+#define THRESHOLD -120.5
 #define STEPTIME 0.01
 #define HANDOVER_TIME 0.25
 #define T_CRIT 5
 
-enum{MOVE,PRINT,ID,X,Y,PROP,POLL,STEP,REPORT,SWITCH};
+enum{MOVE,PRINT,ID,X,Y,PROP,POLL,STEP,REPORT,SWITCH,PINGPONG};
 
 class propRequestPacket {
 	public:

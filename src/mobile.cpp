@@ -99,6 +99,12 @@ void mobile::handler(const event* received)
    			checkProp(recPacket->id);
    			delete recPacket;
    			break;
+   		case PINGPONG:
+   			if(connected == previousid) {
+   				pingpong++;
+   				checkPingPong = false;
+   			}
+   			break;
 		case PRINT:
 			print();
 			break;
@@ -106,8 +112,8 @@ void mobile::handler(const event* received)
 			// program should not reach here
 			break;
 	} // end switch statement
-	if(count > 50) {
-		fprintf(stdout, "\nFinal Report\nDropped: %d\nPing-Pong: %d\n", drop,pingpong);
+	if(count > 1000) {
+		fprintf(stdout, "\nFinal Report\nHandovers: %d\nDropped: %d\nPing-Pong: %d\n", handovers,drop,pingpong);
 		globalScheduler->stop();
 	}
 }
@@ -274,7 +280,7 @@ void mobile::checkProp(int id) {
 			reportPacket* sendPacket;
 			sendPacket = new reportPacket(highestid);
 			send_now(new event(REPORT,reinterpret_cast<payloadType<class T>*>(sendPacket),bStations[connected]));
-			fprintf(stderr, "Should switch to basestation: %d\n", id);
+			//fprintf(stderr, "Should switch to basestation: %d\n", id);
 			for(int i=0; i<9; i++) {
 				TTTtest[i] = TTT;
 			}

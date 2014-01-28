@@ -102,7 +102,12 @@ void basestation::handler(const event* received)
 			mobiles[0]->switchBasestation(repPacket->id);
 
 			handingOver = false;
-			dropped = false;
+			checkPingPong = true;
+			handovers++;
+
+			previousid = this->id;
+
+			send_delay(new event(PINGPONG,received->sender),T_CRIT);
 
 			delete repPacket;
 			break;
