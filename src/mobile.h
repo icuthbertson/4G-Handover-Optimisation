@@ -42,6 +42,8 @@ private:
     int angle;
     double duration;
     int wall;
+    int minusX;
+    int minusY;
 public:
     mobile(scheduler* gs);
     mobile(scheduler* gs, int num, int x, int y, int con, double height);
