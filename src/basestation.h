@@ -28,6 +28,8 @@ private:
     double f;
     double hb;
     bool connected;
+    bool pingpong;
+    double pingpongTime;
 public:
     basestation(scheduler* gs);
     basestation(scheduler* gs, int idNum, int x, int y, double freq, double hBase, bool conn);

@@ -11,8 +11,10 @@ extern double TTT;
 extern bool handingOver;
 
 extern int drop;
-extern int pingpong;
+extern int pingpongCount;
 extern int handovers;
 extern bool checkPingPong;
+
+extern int previous_id;
 
 #endif

@@ -53,8 +53,10 @@ double hys = 2.5;
 bool handingOver = false;
 
 int drop = 0;
-int pingpong = 0;
+int pingpongCount = 0;
 int handovers = 0;
+
+int previous_id = 0;
 
 int TTTtest[] = {TTT,
 				 TTT,

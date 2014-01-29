@@ -110,7 +110,7 @@ void mobile::handler(const event* received)
    			pingPacket = reinterpret_cast<pingPongPacket*> (received->getAttachment());
 
    			if(connected == pingPacket->id) {
-   				pingpong++;
+   				pingpongCount++;
    			}
    			delete pingPacket;
    			break;
@@ -121,8 +121,8 @@ void mobile::handler(const event* received)
 			// program should not reach here
 			break;
 	} // end switch statement
-	if(count > 100) {
-		fprintf(stdout, "\nFinal Report\nHandovers: %d\nDropped: %d\nPing-Pong: %d\n", handovers,drop,pingpong);
+	if(count > 5000) {
+		fprintf(stdout, "\nFinal Report\nHandovers: %d\nDropped: %d\nPing-Pong: %d\n", handovers,drop,pingpongCount);
 		globalScheduler->stop();
 	}
 }
@@ -183,13 +183,13 @@ void mobile::moveMobile() {
 			// duration = 0;
 			// wall = 3;
 			minusX = -1;
-			fprintf(stderr, "STEP EAST\n");
+			// fprintf(stderr, "STEP EAST\n");
 		} else if((x_co+(minusX*speed*STEPTIME*sin(angle*PI/180)))<0) {
 			// x_co = 0.0;
 			// duration = 0;
 			// wall = 1;
 			minusX = -1;
-			fprintf(stderr, "STEP WEST\n");
+			// fprintf(stderr, "STEP WEST\n");
 		} else {
 			x_co = x_co+(minusX*speed*STEPTIME*sin(angle*PI/180));
 		}
@@ -199,13 +199,13 @@ void mobile::moveMobile() {
 				// duration = 0;
 				// wall = 2;
 				minusY = -1;
-				fprintf(stderr, "STEP NORTH\n");
+				// fprintf(stderr, "STEP NORTH\n");
 			} else if((y_co+(minusY*speed*STEPTIME*cos(angle*PI/180)))<0) {
 				// y_co = 0.0;
 				// duration = 0;
 				// wall = 4;
 				minusY = -1;
-				fprintf(stderr, "STEP SOUTH\n");
+				// fprintf(stderr, "STEP SOUTH\n");
 			} else {
 				y_co = y_co+(minusY*speed*STEPTIME*cos(angle*PI/180));
 			}

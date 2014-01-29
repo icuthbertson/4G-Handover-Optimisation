@@ -22,6 +22,8 @@ basestation::basestation(scheduler* gs) : event_handler(gs) {
 	f = 0.0;
 	hb = 0.0;
 	connected = false;
+	pingpong = false;
+	pingpongTime = 0.0;
 }
 /* Constructor
  ****************************
@@ -43,6 +45,8 @@ basestation::basestation(scheduler* gs, int idNum, int x, int y, double freq, do
     f = freq;
     hb = hBase;
     connected = conn;
+    pingpong = false;
+    pingpongTime = 0.0;
 }
 /* Destructor
  ****************************
@@ -104,14 +108,26 @@ void basestation::handler(const event* received)
 			handingOver = false;
 			handovers++;
 
-			pingPongPacket* pingPacket;
-			pingPacket = new pingPongPacket(this->id);
+			if(pingpongTime > 0) {
+				pingpongCount++;
+			}
 
-			send_delay(new event(PINGPONG,reinterpret_cast<payloadType<class T>*>(pingPacket),mobiles[0]),T_CRIT);
+			previous_id = this->id;
+			if(pingpongTime > 0) {
+				pingpongTime += T_CRIT;
+			} else {
+				pingpongTime = T_CRIT;
+			}
+
+			// pingPongPacket* pingPacket;
+			// pingPacket = new pingPongPacket(this->id);
+
+			// send_delay(new event(PINGPONG,reinterpret_cast<payloadType<class T>*>(pingPacket),bStations[repPacket->id]),T_CRIT);
 
 			delete repPacket;
 			break;
-		case SWITCH:
+		case PINGPONG:
+			pingpong = false;
 			break;
 		default:
 			// program should not reach here
@@ -175,6 +191,8 @@ int basestation::getY() {
  * Okumura-Hata propagation model. d in km, hm in m.
  */
 double basestation::getProp(double d, double hm) {
+	pingpongTime -= STEPTIME;
+
 	double ch = 0.8 + ((1.1 * log10(f) - 0.7) * hm) - (1.56 * log10(f));
 	double prop = 69.55 + (26.16 * log10(f)) - (13.82 * log10(hb)) - ch + ((44.9 - (6.55 * log10(hb))) * log10(d/1000)); //divide by 1000 for km
 	return prop;
@@ -182,4 +200,5 @@ double basestation::getProp(double d, double hm) {
 
 void basestation::nowServing() {
 	connected = true;
+	pingpong = true;
 }
