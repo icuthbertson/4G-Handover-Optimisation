@@ -108,7 +108,17 @@ void basestation::handler(const event* received)
 			deadzone = false;
 			handovers++;
 
+			for(int j=0; j<(T_CRIT/STEPTIME); j++) {
+				send_delay(new event(PINGPONG),STEPTIME);
+			}
+
 			delete repPacket;
+			break;
+		case PINGPONG:
+			if (connected) {
+				pingpongCount++;
+			}
+			globalScheduler->remove_from(this);
 			break;
 		default:
 			// program should not reach here

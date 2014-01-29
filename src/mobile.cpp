@@ -120,7 +120,7 @@ void mobile::handler(const event* received)
 			// program should not reach here
 			break;
 	} // end switch statement
-	if(count > 100) {
+	if(count > 1000) {
 		fprintf(stdout, "\nFinal Report\nHandovers: %d\nDropped: %d\nPing-Pong: %d\nDeadzones: %d\n", handovers,drop,pingpongCount,deadzoneRecovers);
 		globalScheduler->stop();
 	}
@@ -265,9 +265,7 @@ void mobile::moveRandom() {
 	
 	double deltaX = duration*speed*sin(angle*PI/180);
 	double deltaY = duration*speed*cos(angle*PI/180);
-	//fprintf(stderr, "\nX_Co:%f Y_Co:%f deltaX:%f deltaY:%f\nspeed:%f duration:%f\n", x_co,y_co,deltaX,deltaY,speed,duration);
-
-	// wall = 0;
+	fprintf(stderr, "\nX_Co:%f Y_Co:%f deltaX:%f deltaY:%f\nspeed:%f duration:%f\n", x_co,y_co,deltaX,deltaY,speed,duration);
 
 	minusX = 1;
 	minusY = 1;
