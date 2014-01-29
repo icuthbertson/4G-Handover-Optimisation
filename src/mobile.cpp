@@ -3,7 +3,6 @@
 #include <stdlib.h>
 #include <math.h>
 #include "event_definitions.h"
-#include "hm.h"
 #include "bstations.h"
 #include "prop.h"
 
@@ -51,6 +50,7 @@ mobile::mobile(scheduler* gs, int num, int x, int y, int con, double height) : e
     wall = 0;
     minusX = 1;
 	minusY = 1;
+	send_delay(new event(MOVE),0.0);
 }
 /* Destructor
  ****************************
@@ -99,7 +99,6 @@ void mobile::handler(const event* received)
 		case PROP:
 			propSendPacket* recPacket;
 			recPacket = reinterpret_cast<propSendPacket*> (received->getAttachment());
-			previous_prop[recPacket->id] = current_prop[recPacket->id];
     		current_prop[recPacket->id] = -(recPacket->prop);
     		//printf("Current: id:%d Rx:%f dB\nPrevious: id:%d Rx:%f dB\n",recPacket->id,current_prop[recPacket->id],recPacket->id,previous_prop[recPacket->id]);
    			checkProp(recPacket->id);
@@ -121,8 +120,8 @@ void mobile::handler(const event* received)
 			// program should not reach here
 			break;
 	} // end switch statement
-	if(count > 5000) {
-		fprintf(stdout, "\nFinal Report\nHandovers: %d\nDropped: %d\nPing-Pong: %d\n", handovers,drop,pingpongCount);
+	if(count > 100) {
+		fprintf(stdout, "\nFinal Report\nHandovers: %d\nDropped: %d\nPing-Pong: %d\nDeadzones: %d\n", handovers,drop,pingpongCount,deadzoneRecovers);
 		globalScheduler->stop();
 	}
 }
@@ -179,33 +178,17 @@ void mobile::switchBasestation(int newBasestation) {
 void mobile::moveMobile() {
 	if(duration>0) {
 		if((x_co+(minusX*speed*STEPTIME*sin(angle*PI/180)))>1500) {
-			// x_co = 1500.0;
-			// duration = 0;
-			// wall = 3;
 			minusX = -1;
-			// fprintf(stderr, "STEP EAST\n");
 		} else if((x_co+(minusX*speed*STEPTIME*sin(angle*PI/180)))<0) {
-			// x_co = 0.0;
-			// duration = 0;
-			// wall = 1;
 			minusX = -1;
-			// fprintf(stderr, "STEP WEST\n");
 		} else {
 			x_co = x_co+(minusX*speed*STEPTIME*sin(angle*PI/180));
 		}
 		if(wall==0) { 
 			if((y_co+(minusY*speed*STEPTIME*cos(angle*PI/180)))>1500) {
-				// y_co = 1500.0;
-				// duration = 0;
-				// wall = 2;
 				minusY = -1;
-				// fprintf(stderr, "STEP NORTH\n");
 			} else if((y_co+(minusY*speed*STEPTIME*cos(angle*PI/180)))<0) {
-				// y_co = 0.0;
-				// duration = 0;
-				// wall = 4;
 				minusY = -1;
-				// fprintf(stderr, "STEP SOUTH\n");
 			} else {
 				y_co = y_co+(minusY*speed*STEPTIME*cos(angle*PI/180));
 			}
@@ -276,25 +259,6 @@ double mobile::getHeight() {
  * random movement the mobile will make.
  */
 void mobile::moveRandom() {
-	// if(wall==1) {
-	// 	angle = (rand()%180)-90; //90 to -89 degrees
-	// 	if(angle < 0) {
-	// 		angle += 360;
-	// 	}
-	// 	fprintf(stderr, "WEST\n");
-	// } else if(wall==2) {
-	// 	angle = (rand()%180)+180; //180 to 359 degrees
-	// 	fprintf(stderr, "NORTH\n");
-	// } else if(wall==3) {
-	// 	angle = (rand()%180)+90; //90 to 269 degrees
-	// 	fprintf(stderr, "EAST\n");
-	// } else if (wall==4) {
-	// 	angle = (rand()%180); //0 to 179 degrees
-	// 	fprintf(stderr, "SOUTH\n");
-	// } else {
-	// 	angle = rand()%360; //0 to 359 degrees
-	// }
-
 	angle = rand()%360; //0 to 359 degrees
 	speed = (rand()%4)+2; //1 to 4 m/s
 	duration = (rand()%100)+50; //50 to 100s
@@ -312,44 +276,64 @@ void mobile::moveRandom() {
 }
 
 void mobile::checkProp(int id) {
-	if(id==connected) {
-		if(current_prop[id] < THRESHOLD) {
-			//called dropped!
-			drop++;
-			double highest = -300.0;
-			int highestid = 0;
-			for(int j=0; j<9; j++) {
-				if(current_prop[j] > highest) {
-					highest = current_prop[j];
-					highestid = j;
-				}
-			}
-			reportPacket* sendPacket;
-			sendPacket = new reportPacket(highestid);
-			send_now(new event(REPORT,reinterpret_cast<payloadType<class T>*>(sendPacket),bStations[connected]));
-			//fprintf(stderr, "Should switch to basestation: %d\n", id);
-			for(int i=0; i<9; i++) {
-				TTTtest[i] = TTT;
-			}
-			fprintf(stderr, "DROPPED!!!\n");
+	if(deadzone) {
+		if(current_prop[id]>THRESHOLD) {
+			fprintf(stderr, "DEADZONE RECOVER\n");
+			deadzoneRecovers++;
+			reportPacket* reconPacket;
+			reconPacket = new reportPacket(id);
+			send_now(new event(REPORT,reinterpret_cast<payloadType<class T>*>(reconPacket),bStations[connected]));
 		}
-	}
-	if(!handingOver && id!=connected) {
-		if(/*(previous_prop[id] >= current_prop[connected]+hys) && */(current_prop[id] >= current_prop[connected]+hys)) {
-			TTTtest[id] -= STEPTIME;
-			if(TTTtest[id] <= 0) {
-				//send measurement report
-				reportPacket* sendPacket;
-				sendPacket = new reportPacket(id);
-				send_delay(new event(REPORT,reinterpret_cast<payloadType<class T>*>(sendPacket),bStations[connected]), HANDOVER_TIME);
-				fprintf(stderr, "Should switch to basestation: %d\n", id);
-				for(int i=0; i<9; i++) {
-					TTTtest[i] = TTT;
+	} else if(!deadzone) {
+		if(id==connected) {
+			if(current_prop[id] < THRESHOLD) {
+				//called dropped!
+				int thresCount = 0;
+				for(int k=0; k<9; k++) {
+					if(current_prop[k] < THRESHOLD) {
+						thresCount++;
+					} 
 				}
-				handingOver = true;
+				if(thresCount == 9) {
+					deadzone = true;
+				} else {
+					drop++;
+					double highest = -300.0;
+					int highestid = 0;
+					for(int j=0; j<9; j++) {
+						if(current_prop[j] > highest) {
+							highest = current_prop[j];
+							highestid = j;
+						}
+					}
+					reportPacket* sendPacket;
+					sendPacket = new reportPacket(highestid);
+					send_now(new event(REPORT,reinterpret_cast<payloadType<class T>*>(sendPacket),bStations[connected]));
+					//fprintf(stderr, "Should switch to basestation: %d\n", id);
+					for(int i=0; i<9; i++) {
+						TTTtest[i] = TTT;
+					}
+					fprintf(stderr, "DROPPED!!!\n");
+				}
 			}
-		} else {
-			TTTtest[id] = TTT;
+		}
+		if(!handingOver && id!=connected && !deadzone) {
+			if(current_prop[id] >= current_prop[connected]+hys) {
+				TTTtest[id] -= STEPTIME;
+				if(TTTtest[id] <= 0) {
+					//send measurement report
+					reportPacket* sendPacket;
+					sendPacket = new reportPacket(id);
+					send_delay(new event(REPORT,reinterpret_cast<payloadType<class T>*>(sendPacket),bStations[connected]), HANDOVER_TIME);
+					fprintf(stderr, "Should switch to basestation: %d\n", id);
+					for(int i=0; i<9; i++) {
+						TTTtest[i] = TTT;
+					}
+					handingOver = true;
+				}
+			} else {
+				TTTtest[id] = TTT;
+			}
 		}
 	}
 }

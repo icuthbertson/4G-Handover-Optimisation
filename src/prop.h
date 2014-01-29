@@ -2,7 +2,6 @@
 #define _PROP_H_
 
 extern double current_prop[];
-extern double previous_prop[];
 extern int TTTtest[];
 
 extern double hys;
@@ -16,5 +15,8 @@ extern int handovers;
 extern bool checkPingPong;
 
 extern int previous_id;
+
+extern bool deadzone;
+extern int deadzoneRecovers;
 
 #endif
