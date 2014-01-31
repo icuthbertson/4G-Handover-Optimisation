@@ -99,19 +99,10 @@ void mobile::handler(const event* received)
 		case PROP:
 			propSendPacket* recPacket;
 			recPacket = reinterpret_cast<propSendPacket*> (received->getAttachment());
-    		current_prop[recPacket->id] = -(recPacket->prop);
+    		current_prop[recPacket->id] = recPacket->prop;
     		//printf("Current: id:%d Rx:%f dB\nPrevious: id:%d Rx:%f dB\n",recPacket->id,current_prop[recPacket->id],recPacket->id,previous_prop[recPacket->id]);
    			checkProp(recPacket->id);
    			delete recPacket;
-   			break;
-   		case PINGPONG:
-   			pingPongPacket* pingPacket;
-   			pingPacket = reinterpret_cast<pingPongPacket*> (received->getAttachment());
-
-   			if(connected == pingPacket->id) {
-   				pingpongCount++;
-   			}
-   			delete pingPacket;
    			break;
 		case PRINT:
 			print();
@@ -120,7 +111,7 @@ void mobile::handler(const event* received)
 			// program should not reach here
 			break;
 	} // end switch statement
-	if(count > 1000) {
+	if(count > 100) {
 		fprintf(stdout, "\nFinal Report\nHandovers: %d\nDropped: %d\nPing-Pong: %d\nDeadzones: %d\n", handovers,drop,pingpongCount,deadzoneRecovers);
 		globalScheduler->stop();
 	}
@@ -136,7 +127,7 @@ void mobile::handler(const event* received)
  * parameters of the class.
  */
 void mobile::print() {
-    printf("Mobile %d\nX Co-ordinate: %f\nY Co-ordinate: %f\nConnected To Basestation: %d\n", id, x_co, y_co, connected);
+    printf("Sim Time: %f - Mobile %d\nX Co-ordinate: %f\nY Co-ordinate: %f\nConnected To Basestation: %d\n", simTime,id, x_co, y_co, connected);
 }
 /* Method
  ****************************
@@ -176,6 +167,7 @@ void mobile::switchBasestation(int newBasestation) {
  * passed in.
  */
 void mobile::moveMobile() {
+	simTime += STEPTIME;
 	if(duration>0) {
 		if((x_co+(minusX*speed*STEPTIME*sin(angle*PI/180)))>1500) {
 			minusX = -1;
@@ -265,7 +257,7 @@ void mobile::moveRandom() {
 	
 	double deltaX = duration*speed*sin(angle*PI/180);
 	double deltaY = duration*speed*cos(angle*PI/180);
-	fprintf(stderr, "\nX_Co:%f Y_Co:%f deltaX:%f deltaY:%f\nspeed:%f duration:%f\n", x_co,y_co,deltaX,deltaY,speed,duration);
+	fprintf(stderr, "\nSim Time: %f - X_Co:%f Y_Co:%f deltaX:%f deltaY:%f\nspeed:%f duration:%f\n", simTime,x_co,y_co,deltaX,deltaY,speed,duration);
 
 	minusX = 1;
 	minusY = 1;
@@ -276,7 +268,7 @@ void mobile::moveRandom() {
 void mobile::checkProp(int id) {
 	if(deadzone) {
 		if(current_prop[id]>THRESHOLD) {
-			fprintf(stderr, "DEADZONE RECOVER\n");
+			fprintf(stderr, "Sim Time: %f - DEADZONE RECOVER\n",simTime);
 			deadzoneRecovers++;
 			reportPacket* reconPacket;
 			reconPacket = new reportPacket(id);
@@ -310,8 +302,9 @@ void mobile::checkProp(int id) {
 					//fprintf(stderr, "Should switch to basestation: %d\n", id);
 					for(int i=0; i<9; i++) {
 						TTTtest[i] = TTT;
+						globalScheduler->remove_from(bStations[i]);
 					}
-					fprintf(stderr, "DROPPED!!!\n");
+					fprintf(stderr, "Sim Time: %f - DROPPED!!!\n",simTime);
 				}
 			}
 		}
@@ -323,7 +316,7 @@ void mobile::checkProp(int id) {
 					reportPacket* sendPacket;
 					sendPacket = new reportPacket(id);
 					send_delay(new event(REPORT,reinterpret_cast<payloadType<class T>*>(sendPacket),bStations[connected]), HANDOVER_TIME);
-					fprintf(stderr, "Should switch to basestation: %d\n", id);
+					fprintf(stderr, "Sim Time: %f - Should switch to basestation: %d\n", simTime,id);
 					for(int i=0; i<9; i++) {
 						TTTtest[i] = TTT;
 					}

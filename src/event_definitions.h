@@ -1,7 +1,7 @@
 #if !defined(_event_definitions_h_)
 #define _event_definitions_h_
 
-#define THRESHOLD -120.5
+#define THRESHOLD -95.0
 #define STEPTIME 0.01
 #define HANDOVER_TIME 0.25
 #define T_CRIT 5

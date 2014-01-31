@@ -33,8 +33,8 @@ double current_prop[] = {0.0,
 				 		 0.0,
 				 		 0.0};
 
-double TTT = 0.1;
-double hys = 2.5;
+double TTT = 0.256;
+double hys = 5.0;
 
 bool handingOver = false;
 
@@ -46,6 +46,8 @@ int previous_id = 0;
 
 bool deadzone = false;
 int deadzoneRecovers = 0;
+
+double simTime = 0.0;
 
 int TTTtest[] = {TTT,
 				 TTT,
