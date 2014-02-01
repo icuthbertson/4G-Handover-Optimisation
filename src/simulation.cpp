@@ -33,8 +33,8 @@ double current_prop[] = {0.0,
 				 		 0.0,
 				 		 0.0};
 
-double TTT = 0.256;
-double hys = 5.0;
+double TTT = 1.024;
+double hys = 7.5;
 
 bool handingOver = false;
 

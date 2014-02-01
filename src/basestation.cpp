@@ -188,7 +188,7 @@ double basestation::getProp(double d, double hm) {
 	double ch = 0.8 + ((1.1 * log10(f) - 0.7) * hm) - (1.56 * log10(f));
 	double prop = 69.55 + (26.16 * log10(f)) - (13.82 * log10(hb)) - ch + ((44.9 - (6.55 * log10(hb))) * log10(d/1000)); //divide by 1000 for km
 	
-	double fading = ((rand()%90)-45)/10;
+	double fading = ((rand()%70)-35)/10;
 
 	return (tx-prop+fading);
 }

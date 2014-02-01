@@ -299,7 +299,7 @@ void mobile::checkProp(int id) {
 					reportPacket* sendPacket;
 					sendPacket = new reportPacket(highestid);
 					send_now(new event(REPORT,reinterpret_cast<payloadType<class T>*>(sendPacket),bStations[connected]));
-					//fprintf(stderr, "Should switch to basestation: %d\n", id);
+					fprintf(stderr, "Should switch to basestation: %d\n", id);
 					for(int i=0; i<9; i++) {
 						TTTtest[i] = TTT;
 						globalScheduler->remove_from(bStations[i]);
