@@ -1,7 +1,12 @@
 #if !defined(_event_definitions_h_)
 #define _event_definitions_h_
 
-enum{MOVE,PRINT,ID,X,Y,PROP,POLL};
+#define THRESHOLD -97.5
+#define STEPTIME 0.01
+#define HANDOVER_TIME 0.25
+#define T_CRIT 5
+
+enum{MOVE,PRINT,ID,X,Y,PROP,POLL,STEP,REPORT,SWITCH,PINGPONG};
 
 class propRequestPacket {
 	public:
@@ -20,6 +25,22 @@ class propSendPacket {
 		propSendPacket(int id, double prop) {
 			this->id = id;
 			this->prop = prop;
+		}
+};
+
+class reportPacket {
+	public:
+		int id;
+		reportPacket(int id) {
+			this->id = id;
+		}
+};
+
+class pingPongPacket {
+	public:
+		int id;
+		pingPongPacket(int id) {
+			this->id = id;
 		}
 };
 

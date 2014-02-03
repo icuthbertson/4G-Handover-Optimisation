@@ -1,4 +1,10 @@
 #include "mobile.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include "event_definitions.h"
+#include "bstations.h"
+#include "prop.h"
 
 /* Constructor
  ****************************
@@ -16,6 +22,9 @@ mobile::mobile(scheduler* gs) : event_handler(gs) {
 	connected = 1;
 	h = 2.0;
 	count = 0;
+	wall = 0;
+	minusX = 1;
+	minusY = 1;
 }
 /* Constructor
  ****************************
@@ -38,21 +47,63 @@ mobile::mobile(scheduler* gs, int num, int x, int y, int con, double height) : e
     connected = con;
     h = height;
     count = 0;
+    wall = 0;
+    minusX = 1;
+	minusY = 1;
+	send_delay(new event(MOVE),0.0);
 }
-
+/* Destructor
+ ****************************
+ * Return Type: N/A 
+ ****************************
+ * Parameters Passed in: N/A
+ ****************************
+ * Description: Class destrcutor that removes an instance of this class
+ * from the schedular and any messages still waiting to be passed.
+ */
 mobile::~mobile() {
 	globalScheduler->remove_from(this);
 	globalScheduler->remove_to(this);
 }
-
+/* Method
+ ****************************
+ * Return Type: N/A 
+ ****************************
+ * Parameters Passed in:
+ * const event* received
+ ****************************
+ * Description: Class hanlder that takes in a event and does the
+ * required action depending on the event that was received.
+ */
 void mobile::handler(const event* received)
 {
 	switch(received->label) {
 		case MOVE:
 			moveRandom();
 			print();
-			send_delay(new event(POLL,received->sender),1.0);
+			count++;
 			break;
+		case STEP:
+			moveMobile();
+			send_now(new event(POLL));
+			break;
+		case POLL:
+			double dist;
+			propRequestPacket* sendPacket;
+			for(int i=0; i<9;i++) {
+				dist = sqrt(pow((bStations[i]->getX()-getX()),2.0) + pow((bStations[i]->getY()-getY()),2.0));
+   				sendPacket = new propRequestPacket(dist,h);
+   				send_now(new event(PROP,reinterpret_cast<payloadType<class T>*>(sendPacket),bStations[i]));
+			}
+			break;
+		case PROP:
+			propSendPacket* recPacket;
+			recPacket = reinterpret_cast<propSendPacket*> (received->getAttachment());
+    		current_prop[recPacket->id] = recPacket->prop;
+    		//printf("Current: id:%d Rx:%f dB\nPrevious: id:%d Rx:%f dB\n",recPacket->id,current_prop[recPacket->id],recPacket->id,previous_prop[recPacket->id]);
+   			checkProp(recPacket->id);
+   			delete recPacket;
+   			break;
 		case PRINT:
 			print();
 			break;
@@ -60,8 +111,8 @@ void mobile::handler(const event* received)
 			// program should not reach here
 			break;
 	} // end switch statement
-	count++;
-	if(count > 15) {
+	if(count > 100) {
+		fprintf(stdout, "\nFinal Report\nHandovers: %d\nDropped: %d\nPing-Pong: %d\nDeadzones: %d\n", handovers,drop,pingpongCount,deadzoneRecovers);
 		globalScheduler->stop();
 	}
 }
@@ -76,7 +127,7 @@ void mobile::handler(const event* received)
  * parameters of the class.
  */
 void mobile::print() {
-    printf("Mobile %d\nX Co-ordinate: %f\nY Co-ordinate: %f\nConnected To Basestation: %d\n\n", id, x_co, y_co, connected);
+    printf("Sim Time: %f - Mobile %d\nX Co-ordinate: %f\nY Co-ordinate: %f\nConnected To Basestation: %d\n", simTime,id, x_co, y_co, connected);
 }
 /* Method
  ****************************
@@ -89,28 +140,6 @@ void mobile::print() {
  */
 void mobile::printCos() {
     printf("X Co-ordinate: %f\nY Co-ordinate: %f\n\n", x_co, y_co);
-}
-/* Method
- ****************************
- * Return Type: void
- ****************************
- * Parameters Passed in:
- * int num
- * int x
- * int y
- * double r
- * int con
- ****************************
- * Description: Method that allows an instance of the class that
- * was created using the basic constructor to have it's variables
- * set.
- */
-void mobile::setmobile(int num, int x, int y, int con, double height) {
-	id = num;
-    x_co = x;
-    y_co = y;
-    connected = con;
-    h = height;
 }
 /* Method
  ****************************
@@ -137,22 +166,34 @@ void mobile::switchBasestation(int newBasestation) {
  * by changing it's x_co and y_co variables to the values
  * passed in.
  */
-void mobile::moveMobile(double x, double y) {
-	fprintf(stderr, "X:%f Y:%f deltaX:%f deltaY:%f\n", x_co, y_co, x, y);
-
-	if((x_co+x)>100) {
-		x_co = 100-(x+x_co-100);
-	} else if((x_co+x)<0) {
-		x_co = 0-(x+x_co);
+void mobile::moveMobile() {
+	simTime += STEPTIME;
+	if(duration>0) {
+		if((x_co+(minusX*speed*STEPTIME*sin(angle*PI/180)))>1500) {
+			minusX = -1;
+		} else if((x_co+(minusX*speed*STEPTIME*sin(angle*PI/180)))<0) {
+			minusX = -1;
+		} else {
+			x_co = x_co+(minusX*speed*STEPTIME*sin(angle*PI/180));
+		}
+		if(wall==0) { 
+			if((y_co+(minusY*speed*STEPTIME*cos(angle*PI/180)))>1500) {
+				minusY = -1;
+			} else if((y_co+(minusY*speed*STEPTIME*cos(angle*PI/180)))<0) {
+				minusY = -1;
+			} else {
+				y_co = y_co+(minusY*speed*STEPTIME*cos(angle*PI/180));
+			}
+		}
+		if(duration==0) {
+			send_now(new event(MOVE));
+		} else {
+			duration -= STEPTIME;
+			send_delay(new event(STEP),STEPTIME);
+		}
+		//fprintf(stderr, "x_co:%f y_co:%f\n", x_co,y_co);
 	} else {
-		x_co += x;
-	}
-	if((y_co+y)>100) {
-		y_co = 100-(y+y_co-100);
-	} else if((y_co+y)<0) {
-		y_co = 0-(y+y_co);
-	} else {
-		y_co += y;
+		send_delay(new event(MOVE),1.0);
 	}
 }
 /* Method
@@ -210,12 +251,80 @@ double mobile::getHeight() {
  * random movement the mobile will make.
  */
 void mobile::moveRandom() {
-	int angle = rand()%360; //0 to 359 degrees
-	int speed = (rand()%4)+2; //1 to 4 m/s
-	int duration = (rand()%20)+5; //5 to 25s
+	angle = rand()%360; //0 to 359 degrees
+	speed = (rand()%4)+2; //1 to 4 m/s
+	duration = (rand()%100)+50; //50 to 100s
+	
+	double deltaX = duration*speed*sin(angle*PI/180);
+	double deltaY = duration*speed*cos(angle*PI/180);
+	fprintf(stderr, "\nSim Time: %f - X_Co:%f Y_Co:%f deltaX:%f deltaY:%f\nspeed:%f duration:%f\n", simTime,x_co,y_co,deltaX,deltaY,speed,duration);
 
-	double deltaX = duration*speed*sin(angle);
-	double deltaY = duration*speed*cos(angle);
+	minusX = 1;
+	minusY = 1;
 
-	moveMobile(deltaX, deltaY);
+	moveMobile();
+}
+
+void mobile::checkProp(int id) {
+	if(deadzone) {
+		if(current_prop[id]>THRESHOLD) {
+			fprintf(stderr, "Sim Time: %f - DEADZONE RECOVER\n",simTime);
+			deadzoneRecovers++;
+			reportPacket* reconPacket;
+			reconPacket = new reportPacket(id);
+			send_now(new event(REPORT,reinterpret_cast<payloadType<class T>*>(reconPacket),bStations[connected]));
+		}
+	} else if(!deadzone) {
+		if(id==connected) {
+			if(current_prop[id] < THRESHOLD) {
+				//called dropped!
+				int thresCount = 0;
+				for(int k=0; k<9; k++) {
+					if(current_prop[k] < THRESHOLD) {
+						thresCount++;
+					} 
+				}
+				if(thresCount == 9) {
+					deadzone = true;
+				} else {
+					drop++;
+					double highest = -300.0;
+					int highestid = 0;
+					for(int j=0; j<9; j++) {
+						if(current_prop[j] > highest) {
+							highest = current_prop[j];
+							highestid = j;
+						}
+					}
+					reportPacket* sendPacket;
+					sendPacket = new reportPacket(highestid);
+					send_now(new event(REPORT,reinterpret_cast<payloadType<class T>*>(sendPacket),bStations[connected]));
+					fprintf(stderr, "Should switch to basestation: %d\n", id);
+					for(int i=0; i<9; i++) {
+						TTTtest[i] = TTT;
+						globalScheduler->remove_from(bStations[i]);
+					}
+					fprintf(stderr, "Sim Time: %f - DROPPED!!!\n",simTime);
+				}
+			}
+		}
+		if(!handingOver && id!=connected && !deadzone) {
+			if(current_prop[id] >= current_prop[connected]+hys) {
+				TTTtest[id] -= STEPTIME;
+				if(TTTtest[id] <= 0) {
+					//send measurement report
+					reportPacket* sendPacket;
+					sendPacket = new reportPacket(id);
+					send_delay(new event(REPORT,reinterpret_cast<payloadType<class T>*>(sendPacket),bStations[connected]), HANDOVER_TIME);
+					fprintf(stderr, "Sim Time: %f - Should switch to basestation: %d\n", simTime,id);
+					for(int i=0; i<9; i++) {
+						TTTtest[i] = TTT;
+					}
+					handingOver = true;
+				}
+			} else {
+				TTTtest[id] = TTT;
+			}
+		}
+	}
 }

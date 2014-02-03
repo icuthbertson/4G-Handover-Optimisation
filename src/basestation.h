@@ -3,10 +3,11 @@
  * The basestation class is used to represent a basestaton that will
  * have other basestations near by and a mobile moving around them.
  */
-#include <stdio.h>
-#include <math.h>
+
+#if !defined(_BASESTATION_H_)
+#define _BASESTATION_H_
+
 #include "event_handler.h"
-#include "event_definitions.h"
 
 class basestation : public event_handler {
 private:
@@ -17,8 +18,6 @@ private:
      *           the class is found. 
      * int y_co: Integer value that denotes where of the y-axis this instance of
      *           the class is found. 
-     * double tx: Double value that denoted the signal strength being transmitted
-     *            from this instance of the class.
      * double f:  Double value that denoted the frequency the transmitter transmits
      *            at in MHz.
 	 * double hb: Double value that denoted the height of the base station.
@@ -28,15 +27,22 @@ private:
     int y_co;
     double f;
     double hb;
+    bool connected;
+    bool pingpong;
+    double pingpongTime;
+    double tx;
 public:
     basestation(scheduler* gs);
-    basestation(scheduler* gs, int idNum, int x, int y, double freq, double hBase);
+    basestation(scheduler* gs, int idNum, int x, int y, double freq, double hBase, bool conn);
     ~basestation();
     void print();
     int getID();
     int getX();
     int getY();
     double getProp(double d, double hm);
+    void nowServing();
 protected:
 	virtual void handler(const event* received);
 };
+
+#endif

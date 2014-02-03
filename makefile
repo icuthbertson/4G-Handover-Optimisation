@@ -11,9 +11,6 @@ mobile.o :
 basestation.o :
 	${CC} ${CFLAGS} -c src/basestation.cpp
 
-handover_management.o :
-	${CC} ${CFLAGS} -c src/handover_management.cpp
-
 event_handler.o :
 	${CC} ${CFLAGS} -c src/event_handler.cpp
 	
@@ -26,9 +23,9 @@ scheduler.o :
 event.o :
 	${CC} ${CFLAGS} -c src/event.cpp
 
-all : event.o event_handler.o payloadType.o  scheduler.o handover_management.o basestation.o mobile.o simulation.o
-	${CC} ${CFLAGS} basestation.o mobile.o handover_management.o simulation.o event_handler.o payloadType.o scheduler.o event.o ${LDFLAGS} -o bin/simulation
-	mv event_handler.o payloadType.o scheduler.o basestation.o mobile.o handover_management.o simulation.o bin
+all : event.o event_handler.o payloadType.o  scheduler.o basestation.o mobile.o simulation.o
+	${CC} ${CFLAGS} basestation.o mobile.o simulation.o event_handler.o payloadType.o scheduler.o event.o ${LDFLAGS} -o bin/simulation
+	mv event_handler.o payloadType.o scheduler.o basestation.o mobile.o simulation.o bin
 	rm -rf *.o
 	
 clean :

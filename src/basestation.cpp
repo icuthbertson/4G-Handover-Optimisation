@@ -1,5 +1,13 @@
-#include "basestation.h"
-//#include "payloadType.h"
+#include "bstations.h"
+#include <stdio.h>
+#include <math.h>
+#include "event_definitions.h"
+#include "mobiles.h"
+#include "prop.h"
+#include <random>
+
+std::default_random_engine generator;
+std::lognormal_distribution<double> distribution(0.0,0.6);
 
 /* Constructor
  ****************************
@@ -16,6 +24,10 @@ basestation::basestation(scheduler* gs) : event_handler(gs) {
 	y_co = 0;
 	f = 0.0;
 	hb = 0.0;
+	connected = false;
+	pingpong = false;
+	pingpongTime = 0.0;
+	tx = 28.0;
 }
 /* Constructor
  ****************************
@@ -30,19 +42,40 @@ basestation::basestation(scheduler* gs) : event_handler(gs) {
  * Description: Class constructor that create an instance of basestation
  * with all parameters are passed in.
  */
-basestation::basestation(scheduler* gs, int idNum, int x, int y, double freq, double hBase) : event_handler(gs) {
+basestation::basestation(scheduler* gs, int idNum, int x, int y, double freq, double hBase, bool conn) : event_handler(gs) {
 	id = idNum;
     x_co = x;
     y_co = y;
     f = freq;
     hb = hBase;
+    connected = conn;
+    pingpong = false;
+    pingpongTime = 0.0;
+    tx = 28.0;
 }
-
+/* Destructor
+ ****************************
+ * Return Type: N/A 
+ ****************************
+ * Parameters Passed in: N/A
+ ****************************
+ * Description: Class destrcutor that removes an instance of this class
+ * from the schedular and any messages still waiting to be passed.
+ */
 basestation::~basestation() {
 	globalScheduler->remove_from(this);
 	globalScheduler->remove_to(this);
 }
-
+/* Method
+ ****************************
+ * Return Type: N/A 
+ ****************************
+ * Parameters Passed in:
+ * const event* received
+ ****************************
+ * Description: Class hanlder that takes in a event and does the
+ * required action depending on the event that was received.
+ */
 void basestation::handler(const event* received)
 {
 
@@ -61,11 +94,38 @@ void basestation::handler(const event* received)
 
 			sendPacket = new propSendPacket(id,prop);
 
-			// send_delay(new event(PROP, received->sender),10.0);
-
-			send_delay(new event(PROP,reinterpret_cast<payloadType<class T>*>(sendPacket), received->sender),10.0);
-			printf("Basestation: %d\n",id);
+			send_now(new event(PROP,reinterpret_cast<payloadType<class T>*>(sendPacket), received->sender));
+			//printf("Basestation: %d\n",id);
 			delete recPacket;
+			break;
+		case REPORT:
+			reportPacket* repPacket;
+			repPacket = reinterpret_cast<reportPacket*>(received->getAttachment());
+
+			for(int i=0; i<9; i++) {
+				printf("Sim Time: %f - Basestation %d: %f dbm\n",simTime,i,current_prop[i]);
+			}
+
+			bStations[repPacket->id]->nowServing();
+			this->connected = false;
+			mobiles[0]->switchBasestation(repPacket->id);
+
+			handingOver = false;
+			deadzone = false;
+			handovers++;
+
+			for(int j=0; j<(T_CRIT/STEPTIME); j++) {
+				send_delay(new event(PINGPONG),STEPTIME*j);
+			}
+
+			delete repPacket;
+			break;
+		case PINGPONG:
+			if (connected) {
+				printf("Sim Time: %f - PINGPONG!\n",simTime);
+				pingpongCount++;
+				globalScheduler->remove_from(this);
+			}
 			break;
 		default:
 			// program should not reach here
@@ -73,7 +133,6 @@ void basestation::handler(const event* received)
 	} // end switch statement
 	
 }
-
 /* Method
  ****************************
  * Return Type: void
@@ -130,6 +189,16 @@ int basestation::getY() {
  * Okumura-Hata propagation model. d in km, hm in m.
  */
 double basestation::getProp(double d, double hm) {
-	double ch = 0.8 + (1.1 * log10(f) - 0.7) * hm - 1.56 * log10(f);
-	return 69.55 + 26.16 * log10(f) - 13.82 * log10(hb) - ch + (44.9 - 6.55 * log10(hb)) * log10(d);
+	double ch = 0.8 + ((1.1 * log10(f) - 0.7) * hm) - (1.56 * log10(f));
+	double prop = 69.55 + (26.16 * log10(f)) - (13.82 * log10(hb)) - ch + ((44.9 - (6.55 * log10(hb))) * log10(d/1000)); //divide by 1000 for km
+	
+	// double fading = ((rand()%70)-35)/10;
+
+	double fading = distribution(generator);
+
+	return (tx-prop-fading);
+}
+
+void basestation::nowServing() {
+	connected = true;
 }

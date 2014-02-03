@@ -1,0 +1,7 @@
+basestations peridically request mobile for measurement report
+(send messages to all basestations for set times and test if the mobile is connected to that basestation to continue or not)
+
+mobile polls basestations and sends measurements back to the source basestation
+basestation makes decision and requests handover to target basestation
+
+send old id in packet after t_crit and check that way

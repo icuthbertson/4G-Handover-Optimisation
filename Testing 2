@@ -1,0 +1,2232 @@
+Last login: Wed Jan 29 22:38:09 on ttys000
+11:46: {~} -> cd Documents/
+11:46: {~/Documents} -> cd Programming/
+11:46: {~/Documents/Programming} -> cd 4G-Handover-Optimisation/
+11:46: {~/Documents/Programming/4G-Handover-Optimisation} -> ./bin/simulation 
+Simulation started...
+
+Sim Time: 0.000000 - X_Co:750.000000 Y_Co:750.000000 deltaX:-339.666290 deltaY:-144.179788
+speed:3.000000 duration:123.000000
+Sim Time: 0.010000 - Mobile 1
+X Co-ordinate: 749.972385
+Y Co-ordinate: 749.988278
+Connected To Basestation: 4
+
+Sim Time: 123.010000 - X_Co:410.333710 Y_Co:605.820212 deltaX:255.004418 deltaY:-68.328227
+speed:2.000000 duration:132.000000
+Sim Time: 123.020000 - Mobile 1
+X Co-ordinate: 410.353028
+Y Co-ordinate: 605.815036
+Connected To Basestation: 4
+Sim Time: 124.110000 - Should switch to basestation: 3
+Sim Time: 124.350000 - Basestation 0: -96.929639 dbm
+Sim Time: 124.350000 - Basestation 1: -92.120622 dbm
+Sim Time: 124.350000 - Basestation 2: -100.578344 dbm
+Sim Time: 124.350000 - Basestation 3: -91.488183 dbm
+Sim Time: 124.350000 - Basestation 4: -87.943035 dbm
+Sim Time: 124.350000 - Basestation 5: -102.756395 dbm
+Sim Time: 124.350000 - Basestation 6: -102.213254 dbm
+Sim Time: 124.350000 - Basestation 7: -97.777484 dbm
+Sim Time: 124.350000 - Basestation 8: -107.365262 dbm
+Sim Time: 124.360000 - Should switch to basestation: 4
+Sim Time: 124.600000 - Basestation 0: -93.932901 dbm
+Sim Time: 124.600000 - Basestation 1: -96.113365 dbm
+Sim Time: 124.600000 - Basestation 2: -102.572714 dbm
+Sim Time: 124.600000 - Basestation 3: -85.504627 dbm
+Sim Time: 124.600000 - Basestation 4: -85.927578 dbm
+Sim Time: 124.600000 - Basestation 5: -100.750315 dbm
+Sim Time: 124.600000 - Basestation 6: -101.217942 dbm
+Sim Time: 124.600000 - Basestation 7: -99.776744 dbm
+Sim Time: 124.600000 - Basestation 8: -105.362282 dbm
+Sim Time: 124.610000 - PINGPONG!
+Sim Time: 125.030000 - Should switch to basestation: 3
+Sim Time: 125.270000 - Basestation 0: -99.941668 dbm
+Sim Time: 125.270000 - Basestation 1: -98.093918 dbm
+Sim Time: 125.270000 - Basestation 2: -107.557616 dbm
+Sim Time: 125.270000 - Basestation 3: -89.548607 dbm
+Sim Time: 125.270000 - Basestation 4: -87.886122 dbm
+Sim Time: 125.270000 - Basestation 5: -98.734010 dbm
+Sim Time: 125.270000 - Basestation 6: -101.230507 dbm
+Sim Time: 125.270000 - Basestation 7: -99.774779 dbm
+Sim Time: 125.270000 - Basestation 8: -103.354297 dbm
+Sim Time: 125.280000 - PINGPONG!
+Sim Time: 125.340000 - Should switch to basestation: 4
+Sim Time: 125.580000 - Basestation 0: -98.945737 dbm
+Sim Time: 125.580000 - Basestation 1: -100.084920 dbm
+Sim Time: 125.580000 - Basestation 2: -106.550625 dbm
+Sim Time: 125.580000 - Basestation 3: -91.568911 dbm
+Sim Time: 125.580000 - Basestation 4: -86.866925 dbm
+Sim Time: 125.580000 - Basestation 5: -102.726461 dbm
+Sim Time: 125.580000 - Basestation 6: -102.236322 dbm
+Sim Time: 125.580000 - Basestation 7: -104.773880 dbm
+Sim Time: 125.580000 - Basestation 8: -106.350603 dbm
+Sim Time: 125.590000 - PINGPONG!
+Sim Time: 125.880000 - Should switch to basestation: 3
+Sim Time: 126.120000 - Basestation 0: -93.952845 dbm
+Sim Time: 126.120000 - Basestation 1: -98.069248 dbm
+Sim Time: 126.120000 - Basestation 2: -100.538440 dbm
+Sim Time: 126.120000 - Basestation 3: -88.604211 dbm
+Sim Time: 126.120000 - Basestation 4: -89.833464 dbm
+Sim Time: 126.120000 - Basestation 5: -102.713303 dbm
+Sim Time: 126.120000 - Basestation 6: -97.246455 dbm
+Sim Time: 126.120000 - Basestation 7: -99.772327 dbm
+Sim Time: 126.120000 - Basestation 8: -106.344172 dbm
+Sim Time: 126.130000 - PINGPONG!
+Sim Time: 126.180000 - Should switch to basestation: 4
+Sim Time: 126.420000 - Basestation 0: -96.956804 dbm
+Sim Time: 126.420000 - Basestation 1: -93.060542 dbm
+Sim Time: 126.420000 - Basestation 2: -100.531666 dbm
+Sim Time: 126.420000 - Basestation 3: -87.623786 dbm
+Sim Time: 126.420000 - Basestation 4: -86.814863 dbm
+Sim Time: 126.420000 - Basestation 5: -103.705989 dbm
+Sim Time: 126.420000 - Basestation 6: -99.252085 dbm
+Sim Time: 126.420000 - Basestation 7: -100.771472 dbm
+Sim Time: 126.420000 - Basestation 8: -104.340601 dbm
+Sim Time: 126.430000 - PINGPONG!
+Sim Time: 127.760000 - Should switch to basestation: 3
+Sim Time: 128.010000 - Basestation 0: -96.977912 dbm
+Sim Time: 128.010000 - Basestation 1: -97.014407 dbm
+Sim Time: 128.010000 - Basestation 2: -101.495716 dbm
+Sim Time: 128.010000 - Basestation 3: -88.727091 dbm
+Sim Time: 128.010000 - Basestation 4: -87.716132 dbm
+Sim Time: 128.010000 - Basestation 5: -104.667171 dbm
+Sim Time: 128.010000 - Basestation 6: -99.281942 dbm
+Sim Time: 128.010000 - Basestation 7: -100.767035 dbm
+Sim Time: 128.010000 - Basestation 8: -110.321686 dbm
+Sim Time: 128.010000 - PINGPONG!
+Sim Time: 128.030000 - Should switch to basestation: 4
+Sim Time: 128.280000 - Basestation 0: -97.981517 dbm
+Sim Time: 128.280000 - Basestation 1: -97.006574 dbm
+Sim Time: 128.280000 - Basestation 2: -104.489603 dbm
+Sim Time: 128.280000 - Basestation 3: -91.744561 dbm
+Sim Time: 128.280000 - Basestation 4: -89.699342 dbm
+Sim Time: 128.280000 - Basestation 5: -102.660571 dbm
+Sim Time: 128.280000 - Basestation 6: -103.287015 dbm
+Sim Time: 128.280000 - Basestation 7: -104.766297 dbm
+Sim Time: 128.280000 - Basestation 8: -105.318477 dbm
+Sim Time: 128.280000 - PINGPONG!
+
+Sim Time: 255.020000 - X_Co:665.338128 Y_Co:537.491985 deltaX:-401.786846 deltaY:42.229497
+speed:4.000000 duration:101.000000
+Sim Time: 255.030000 - Mobile 1
+X Co-ordinate: 665.298347
+Y Co-ordinate: 537.496166
+Connected To Basestation: 4
+Sim Time: 320.370000 - Should switch to basestation: 3
+Sim Time: 320.620000 - Basestation 0: -99.163462 dbm
+Sim Time: 320.620000 - Basestation 1: -95.472187 dbm
+Sim Time: 320.620000 - Basestation 2: -100.444688 dbm
+Sim Time: 320.620000 - Basestation 3: -89.721222 dbm
+Sim Time: 320.620000 - Basestation 4: -88.901193 dbm
+Sim Time: 320.620000 - Basestation 5: -101.945543 dbm
+Sim Time: 320.620000 - Basestation 6: -99.692066 dbm
+Sim Time: 320.620000 - Basestation 7: -101.378811 dbm
+Sim Time: 320.620000 - Basestation 8: -104.693607 dbm
+Sim Time: 320.640000 - Should switch to basestation: 4
+Sim Time: 320.890000 - Basestation 0: -93.152383 dbm
+Sim Time: 320.890000 - Basestation 1: -99.486516 dbm
+Sim Time: 320.890000 - Basestation 2: -104.456474 dbm
+Sim Time: 320.890000 - Basestation 3: -89.687947 dbm
+Sim Time: 320.890000 - Basestation 4: -87.934088 dbm
+Sim Time: 320.890000 - Basestation 5: -99.959057 dbm
+Sim Time: 320.890000 - Basestation 6: -101.684558 dbm
+Sim Time: 320.890000 - Basestation 7: -102.382679 dbm
+Sim Time: 320.890000 - Basestation 8: -106.701064 dbm
+Sim Time: 320.890000 - PINGPONG!
+Sim Time: 320.980000 - Should switch to basestation: 3
+Sim Time: 321.230000 - Basestation 0: -99.138458 dbm
+Sim Time: 321.230000 - Basestation 1: -92.504573 dbm
+Sim Time: 321.230000 - Basestation 2: -103.471304 dbm
+Sim Time: 321.230000 - Basestation 3: -92.645948 dbm
+Sim Time: 321.230000 - Basestation 4: -87.975453 dbm
+Sim Time: 321.230000 - Basestation 5: -103.976059 dbm
+Sim Time: 321.230000 - Basestation 6: -100.675115 dbm
+Sim Time: 321.230000 - Basestation 7: -105.387571 dbm
+Sim Time: 321.230000 - Basestation 8: -105.710454 dbm
+Sim Time: 321.230000 - PINGPONG!
+Sim Time: 321.340000 - Should switch to basestation: 4
+Sim Time: 321.590000 - Basestation 0: -93.123745 dbm
+Sim Time: 321.590000 - Basestation 1: -99.523710 dbm
+Sim Time: 321.590000 - Basestation 2: -104.486993 dbm
+Sim Time: 321.590000 - Basestation 3: -93.601361 dbm
+Sim Time: 321.590000 - Basestation 4: -86.019182 dbm
+Sim Time: 321.590000 - Basestation 5: -105.994041 dbm
+Sim Time: 321.590000 - Basestation 6: -100.665132 dbm
+Sim Time: 321.590000 - Basestation 7: -101.392776 dbm
+Sim Time: 321.590000 - Basestation 8: -107.720397 dbm
+Sim Time: 321.590000 - PINGPONG!
+Sim Time: 322.640000 - Should switch to basestation: 3
+Sim Time: 322.890000 - Basestation 0: -98.070886 dbm
+Sim Time: 322.890000 - Basestation 1: -96.592953 dbm
+Sim Time: 322.890000 - Basestation 2: -108.543526 dbm
+Sim Time: 322.890000 - Basestation 3: -91.439330 dbm
+Sim Time: 322.890000 - Basestation 4: -91.176482 dbm
+Sim Time: 322.890000 - Basestation 5: -100.058804 dbm
+Sim Time: 322.890000 - Basestation 6: -98.629208 dbm
+Sim Time: 322.890000 - Basestation 7: -105.411792 dbm
+Sim Time: 322.890000 - Basestation 8: -105.756310 dbm
+Sim Time: 322.890000 - PINGPONG!
+Sim Time: 323.010000 - Should switch to basestation: 4
+Sim Time: 323.260000 - Basestation 0: -99.055921 dbm
+Sim Time: 323.260000 - Basestation 1: -98.612700 dbm
+Sim Time: 323.260000 - Basestation 2: -103.559582 dbm
+Sim Time: 323.260000 - Basestation 3: -87.392918 dbm
+Sim Time: 323.260000 - Basestation 4: -89.221078 dbm
+Sim Time: 323.260000 - Basestation 5: -102.077188 dbm
+Sim Time: 323.260000 - Basestation 6: -101.619020 dbm
+Sim Time: 323.260000 - Basestation 7: -101.417266 dbm
+Sim Time: 323.260000 - Basestation 8: -104.766533 dbm
+Sim Time: 323.260000 - PINGPONG!
+Sim Time: 323.330000 - Should switch to basestation: 3
+Sim Time: 323.580000 - Basestation 0: -97.043007 dbm
+Sim Time: 323.580000 - Basestation 1: -96.629791 dbm
+Sim Time: 323.580000 - Basestation 2: -104.573456 dbm
+Sim Time: 323.580000 - Basestation 3: -90.352672 dbm
+Sim Time: 323.580000 - Basestation 4: -89.259584 dbm
+Sim Time: 323.580000 - Basestation 5: -103.093070 dbm
+Sim Time: 323.580000 - Basestation 6: -103.610222 dbm
+Sim Time: 323.580000 - Basestation 7: -104.422023 dbm
+Sim Time: 323.580000 - Basestation 8: -108.775375 dbm
+Sim Time: 323.580000 - PINGPONG!
+Sim Time: 323.870000 - Should switch to basestation: 4
+Sim Time: 324.120000 - Basestation 0: -100.021275 dbm
+Sim Time: 324.120000 - Basestation 1: -98.658661 dbm
+Sim Time: 324.120000 - Basestation 2: -104.596843 dbm
+Sim Time: 324.120000 - Basestation 3: -89.284533 dbm
+Sim Time: 324.120000 - Basestation 4: -90.324429 dbm
+Sim Time: 324.120000 - Basestation 5: -105.119834 dbm
+Sim Time: 324.120000 - Basestation 6: -99.595404 dbm
+Sim Time: 324.120000 - Basestation 7: -104.430096 dbm
+Sim Time: 324.120000 - Basestation 8: -106.790296 dbm
+Sim Time: 324.120000 - PINGPONG!
+Sim Time: 324.520000 - Should switch to basestation: 3
+Sim Time: 324.770000 - Basestation 0: -94.995219 dbm
+Sim Time: 324.770000 - Basestation 1: -95.693457 dbm
+Sim Time: 324.770000 - Basestation 2: -107.624951 dbm
+Sim Time: 324.770000 - Basestation 3: -88.202137 dbm
+Sim Time: 324.770000 - Basestation 4: -88.402262 dbm
+Sim Time: 324.770000 - Basestation 5: -103.151990 dbm
+Sim Time: 324.770000 - Basestation 6: -105.577614 dbm
+Sim Time: 324.770000 - Basestation 7: -101.439892 dbm
+Sim Time: 324.770000 - Basestation 8: -106.808259 dbm
+Sim Time: 324.770000 - PINGPONG!
+Sim Time: 324.870000 - Should switch to basestation: 4
+Sim Time: 325.120000 - Basestation 0: -99.981236 dbm
+Sim Time: 325.120000 - Basestation 1: -98.712213 dbm
+Sim Time: 325.120000 - Basestation 2: -103.640066 dbm
+Sim Time: 325.120000 - Basestation 3: -89.157598 dbm
+Sim Time: 325.120000 - Basestation 4: -88.444072 dbm
+Sim Time: 325.120000 - Basestation 5: -102.169277 dbm
+Sim Time: 325.120000 - Basestation 6: -101.568056 dbm
+Sim Time: 325.120000 - Basestation 7: -97.445201 dbm
+Sim Time: 325.120000 - Basestation 8: -106.817932 dbm
+Sim Time: 325.120000 - PINGPONG!
+Sim Time: 325.940000 - Should switch to basestation: 3
+Sim Time: 326.190000 - Basestation 0: -94.938693 dbm
+Sim Time: 326.190000 - Basestation 1: -95.769637 dbm
+Sim Time: 326.190000 - Basestation 2: -103.686194 dbm
+Sim Time: 326.190000 - Basestation 3: -90.020686 dbm
+Sim Time: 326.190000 - Basestation 4: -91.571448 dbm
+Sim Time: 326.190000 - Basestation 5: -99.222008 dbm
+Sim Time: 326.190000 - Basestation 6: -101.538931 dbm
+Sim Time: 326.190000 - Basestation 7: -103.461582 dbm
+Sim Time: 326.190000 - Basestation 8: -103.847506 dbm
+Sim Time: 326.190000 - PINGPONG!
+Sim Time: 326.230000 - Should switch to basestation: 4
+Sim Time: 326.480000 - Basestation 0: -97.927217 dbm
+Sim Time: 326.480000 - Basestation 1: -93.785222 dbm
+Sim Time: 326.480000 - Basestation 2: -105.698674 dbm
+Sim Time: 326.480000 - Basestation 3: -87.983383 dbm
+Sim Time: 326.480000 - Basestation 4: -85.605856 dbm
+Sim Time: 326.480000 - Basestation 5: -101.236269 dbm
+Sim Time: 326.480000 - Basestation 6: -101.531062 dbm
+Sim Time: 326.480000 - Basestation 7: -104.466061 dbm
+Sim Time: 326.480000 - Basestation 8: -107.855522 dbm
+Sim Time: 326.480000 - PINGPONG!
+Sim Time: 326.690000 - Should switch to basestation: 3
+Sim Time: 326.940000 - Basestation 0: -92.909062 dbm
+Sim Time: 326.940000 - Basestation 1: -95.809961 dbm
+Sim Time: 326.940000 - Basestation 2: -107.718451 dbm
+Sim Time: 326.940000 - Basestation 3: -88.924039 dbm
+Sim Time: 326.940000 - Basestation 4: -84.660333 dbm
+Sim Time: 326.940000 - Basestation 5: -103.258864 dbm
+Sim Time: 326.940000 - Basestation 6: -98.518602 dbm
+Sim Time: 326.940000 - Basestation 7: -103.473199 dbm
+Sim Time: 326.940000 - Basestation 8: -108.868238 dbm
+Sim Time: 326.940000 - PINGPONG!
+Sim Time: 327.180000 - Should switch to basestation: 4
+Sim Time: 327.430000 - Basestation 0: -96.889788 dbm
+Sim Time: 327.430000 - Basestation 1: -97.836336 dbm
+Sim Time: 327.430000 - Basestation 2: -108.739493 dbm
+Sim Time: 327.430000 - Basestation 3: -88.860590 dbm
+Sim Time: 327.430000 - Basestation 4: -87.718228 dbm
+Sim Time: 327.430000 - Basestation 5: -103.282895 dbm
+Sim Time: 327.430000 - Basestation 6: -101.505358 dbm
+Sim Time: 327.430000 - Basestation 7: -103.480848 dbm
+Sim Time: 327.430000 - Basestation 8: -105.881783 dbm
+Sim Time: 327.430000 - PINGPONG!
+Sim Time: 327.720000 - Should switch to basestation: 3
+Sim Time: 327.970000 - Basestation 0: -99.868626 dbm
+Sim Time: 327.970000 - Basestation 1: -94.865431 dbm
+Sim Time: 327.970000 - Basestation 2: -105.762651 dbm
+Sim Time: 327.970000 - Basestation 3: -92.790384 dbm
+Sim Time: 327.970000 - Basestation 4: -88.781867 dbm
+Sim Time: 327.970000 - Basestation 5: -103.309336 dbm
+Sim Time: 327.970000 - Basestation 6: -103.490799 dbm
+Sim Time: 327.970000 - Basestation 7: -103.489333 dbm
+Sim Time: 327.970000 - Basestation 8: -104.896712 dbm
+Sim Time: 327.970000 - PINGPONG!
+Sim Time: 328.120000 - Should switch to basestation: 4
+Sim Time: 328.370000 - Basestation 0: -97.853004 dbm
+Sim Time: 328.370000 - Basestation 1: -95.887001 dbm
+Sim Time: 328.370000 - Basestation 2: -106.779785 dbm
+Sim Time: 328.370000 - Basestation 3: -87.738188 dbm
+Sim Time: 328.370000 - Basestation 4: -85.828896 dbm
+Sim Time: 328.370000 - Basestation 5: -99.328894 dbm
+Sim Time: 328.370000 - Basestation 6: -105.480038 dbm
+Sim Time: 328.370000 - Basestation 7: -104.495654 dbm
+Sim Time: 328.370000 - Basestation 8: -106.907771 dbm
+Sim Time: 328.370000 - PINGPONG!
+Sim Time: 328.520000 - Should switch to basestation: 3
+Sim Time: 328.770000 - Basestation 0: -98.837429 dbm
+Sim Time: 328.770000 - Basestation 1: -94.908586 dbm
+Sim Time: 328.770000 - Basestation 2: -107.796901 dbm
+Sim Time: 328.770000 - Basestation 3: -92.685828 dbm
+Sim Time: 328.770000 - Basestation 4: -85.875831 dbm
+Sim Time: 328.770000 - Basestation 5: -101.348426 dbm
+Sim Time: 328.770000 - Basestation 6: -104.469298 dbm
+Sim Time: 328.770000 - Basestation 7: -98.502006 dbm
+Sim Time: 328.770000 - Basestation 8: -106.918830 dbm
+Sim Time: 328.770000 - PINGPONG!
+Sim Time: 328.790000 - Should switch to basestation: 4
+Sim Time: 329.040000 - Basestation 0: -95.826942 dbm
+Sim Time: 329.040000 - Basestation 1: -94.923164 dbm
+Sim Time: 329.040000 - Basestation 2: -101.808445 dbm
+Sim Time: 329.040000 - Basestation 3: -89.650391 dbm
+Sim Time: 329.040000 - Basestation 4: -88.907459 dbm
+Sim Time: 329.040000 - Basestation 5: -106.361597 dbm
+Sim Time: 329.040000 - Basestation 6: -104.462061 dbm
+Sim Time: 329.040000 - Basestation 7: -102.506311 dbm
+Sim Time: 329.040000 - Basestation 8: -104.926295 dbm
+Sim Time: 329.040000 - PINGPONG!
+Sim Time: 329.310000 - Should switch to basestation: 3
+Sim Time: 329.560000 - Basestation 0: -96.806805 dbm
+Sim Time: 329.560000 - Basestation 1: -95.951259 dbm
+Sim Time: 329.560000 - Basestation 2: -100.830655 dbm
+Sim Time: 329.560000 - Basestation 3: -92.581930 dbm
+Sim Time: 329.560000 - Basestation 4: -92.968251 dbm
+Sim Time: 329.560000 - Basestation 5: -102.386931 dbm
+Sim Time: 329.560000 - Basestation 6: -103.448148 dbm
+Sim Time: 329.560000 - Basestation 7: -99.514642 dbm
+Sim Time: 329.560000 - Basestation 8: -103.940672 dbm
+Sim Time: 329.560000 - PINGPONG!
+Sim Time: 329.740000 - Should switch to basestation: 4
+Sim Time: 329.990000 - Basestation 0: -92.790214 dbm
+Sim Time: 329.990000 - Basestation 1: -96.974510 dbm
+Sim Time: 329.990000 - Basestation 2: -107.849000 dbm
+Sim Time: 329.990000 - Basestation 3: -89.525105 dbm
+Sim Time: 329.990000 - Basestation 4: -87.018401 dbm
+Sim Time: 329.990000 - Basestation 5: -102.407850 dbm
+Sim Time: 329.990000 - Basestation 6: -101.436671 dbm
+Sim Time: 329.990000 - Basestation 7: -104.521571 dbm
+Sim Time: 329.990000 - Basestation 8: -104.952562 dbm
+Sim Time: 329.990000 - PINGPONG!
+Sim Time: 330.090000 - Should switch to basestation: 3
+Sim Time: 330.340000 - Basestation 0: -96.776751 dbm
+Sim Time: 330.340000 - Basestation 1: -99.993446 dbm
+Sim Time: 330.340000 - Basestation 2: -106.863916 dbm
+Sim Time: 330.340000 - Basestation 3: -86.478710 dbm
+Sim Time: 330.340000 - Basestation 4: -91.059139 dbm
+Sim Time: 330.340000 - Basestation 5: -100.424856 dbm
+Sim Time: 330.340000 - Basestation 6: -105.427346 dbm
+Sim Time: 330.340000 - Basestation 7: -98.527236 dbm
+Sim Time: 330.340000 - Basestation 8: -110.962240 dbm
+Sim Time: 330.340000 - PINGPONG!
+Sim Time: 330.640000 - Should switch to basestation: 4
+Sim Time: 330.890000 - Basestation 0: -94.755668 dbm
+Sim Time: 330.890000 - Basestation 1: -98.023225 dbm
+Sim Time: 330.890000 - Basestation 2: -101.887330 dbm
+Sim Time: 330.890000 - Basestation 3: -91.405541 dbm
+Sim Time: 330.890000 - Basestation 4: -86.123010 dbm
+Sim Time: 330.890000 - Basestation 5: -99.451542 dbm
+Sim Time: 330.890000 - Basestation 6: -97.412727 dbm
+Sim Time: 330.890000 - Basestation 7: -99.536187 dbm
+Sim Time: 330.890000 - Basestation 8: -102.977448 dbm
+Sim Time: 330.890000 - PINGPONG!
+Sim Time: 331.020000 - Should switch to basestation: 3
+Sim Time: 331.270000 - Basestation 0: -95.741156 dbm
+Sim Time: 331.270000 - Basestation 1: -94.043813 dbm
+Sim Time: 331.270000 - Basestation 2: -104.903487 dbm
+Sim Time: 331.270000 - Basestation 3: -91.354801 dbm
+Sim Time: 331.270000 - Basestation 4: -86.167035 dbm
+Sim Time: 331.270000 - Basestation 5: -101.469954 dbm
+Sim Time: 331.270000 - Basestation 6: -101.402650 dbm
+Sim Time: 331.270000 - Basestation 7: -102.542405 dbm
+Sim Time: 331.270000 - Basestation 8: -103.987955 dbm
+Sim Time: 331.270000 - PINGPONG!
+Sim Time: 331.280000 - Should switch to basestation: 4
+Sim Time: 331.530000 - Basestation 0: -94.731251 dbm
+Sim Time: 331.530000 - Basestation 1: -98.057907 dbm
+Sim Time: 331.530000 - Basestation 2: -108.914533 dbm
+Sim Time: 331.530000 - Basestation 3: -88.319996 dbm
+Sim Time: 331.530000 - Basestation 4: -89.197107 dbm
+Sim Time: 331.530000 - Basestation 5: -100.482538 dbm
+Sim Time: 331.530000 - Basestation 6: -99.395766 dbm
+Sim Time: 331.530000 - Basestation 7: -105.546675 dbm
+Sim Time: 331.530000 - Basestation 8: -103.995145 dbm
+Sim Time: 331.530000 - PINGPONG!
+Sim Time: 331.560000 - Should switch to basestation: 3
+Sim Time: 331.810000 - Basestation 0: -94.720609 dbm
+Sim Time: 331.810000 - Basestation 1: -93.073091 dbm
+Sim Time: 331.810000 - Basestation 2: -108.926421 dbm
+Sim Time: 331.810000 - Basestation 3: -89.282433 dbm
+Sim Time: 331.810000 - Basestation 4: -93.229448 dbm
+Sim Time: 331.810000 - Basestation 5: -105.496079 dbm
+Sim Time: 331.810000 - Basestation 6: -102.388363 dbm
+Sim Time: 331.810000 - Basestation 7: -98.551287 dbm
+Sim Time: 331.810000 - Basestation 8: -106.002888 dbm
+Sim Time: 331.810000 - PINGPONG!
+Sim Time: 331.860000 - Should switch to basestation: 4
+Sim Time: 332.110000 - Basestation 0: -95.709233 dbm
+Sim Time: 332.110000 - Basestation 1: -96.089366 dbm
+Sim Time: 332.110000 - Basestation 2: -101.939149 dbm
+Sim Time: 332.110000 - Basestation 3: -87.242093 dbm
+Sim Time: 332.110000 - Basestation 4: -86.264048 dbm
+Sim Time: 332.110000 - Basestation 5: -102.510575 dbm
+Sim Time: 332.110000 - Basestation 6: -97.380443 dbm
+Sim Time: 332.110000 - Basestation 7: -101.556246 dbm
+Sim Time: 332.110000 - Basestation 8: -106.011183 dbm
+Sim Time: 332.110000 - PINGPONG!
+Sim Time: 332.220000 - Should switch to basestation: 3
+Sim Time: 332.470000 - Basestation 0: -91.695618 dbm
+Sim Time: 332.470000 - Basestation 1: -97.108905 dbm
+Sim Time: 332.470000 - Basestation 2: -101.954409 dbm
+Sim Time: 332.470000 - Basestation 3: -90.193557 dbm
+Sim Time: 332.470000 - Basestation 4: -89.305496 dbm
+Sim Time: 332.470000 - Basestation 5: -103.527951 dbm
+Sim Time: 332.470000 - Basestation 6: -101.370955 dbm
+Sim Time: 332.470000 - Basestation 7: -97.562219 dbm
+Sim Time: 332.470000 - Basestation 8: -107.021138 dbm
+Sim Time: 332.470000 - PINGPONG!
+Sim Time: 332.770000 - Should switch to basestation: 4
+Sim Time: 333.020000 - Basestation 0: -98.674897 dbm
+Sim Time: 333.020000 - Basestation 1: -94.138775 dbm
+Sim Time: 333.020000 - Basestation 2: -104.977697 dbm
+Sim Time: 333.020000 - Basestation 3: -88.119135 dbm
+Sim Time: 333.020000 - Basestation 4: -90.368671 dbm
+Sim Time: 333.020000 - Basestation 5: -102.554462 dbm
+Sim Time: 333.020000 - Basestation 6: -99.356494 dbm
+Sim Time: 333.020000 - Basestation 7: -102.571392 dbm
+Sim Time: 333.020000 - Basestation 8: -111.036347 dbm
+Sim Time: 333.020000 - PINGPONG!
+Sim Time: 333.150000 - Should switch to basestation: 3
+Sim Time: 333.400000 - Basestation 0: -96.660637 dbm
+Sim Time: 333.400000 - Basestation 1: -100.159425 dbm
+Sim Time: 333.400000 - Basestation 2: -108.993768 dbm
+Sim Time: 333.400000 - Basestation 3: -89.067524 dbm
+Sim Time: 333.400000 - Basestation 4: -90.412215 dbm
+Sim Time: 333.400000 - Basestation 5: -107.572751 dbm
+Sim Time: 333.400000 - Basestation 6: -99.346527 dbm
+Sim Time: 333.400000 - Basestation 7: -103.577762 dbm
+Sim Time: 333.400000 - Basestation 8: -109.046856 dbm
+Sim Time: 333.400000 - PINGPONG!
+Sim Time: 333.610000 - Should switch to basestation: 4
+Sim Time: 333.860000 - Basestation 0: -92.643436 dbm
+Sim Time: 333.860000 - Basestation 1: -93.184436 dbm
+Sim Time: 333.860000 - Basestation 2: -107.013202 dbm
+Sim Time: 333.860000 - Basestation 3: -88.004835 dbm
+Sim Time: 333.860000 - Basestation 4: -91.464810 dbm
+Sim Time: 333.860000 - Basestation 5: -106.594863 dbm
+Sim Time: 333.860000 - Basestation 6: -102.334489 dbm
+Sim Time: 333.860000 - Basestation 7: -101.585510 dbm
+Sim Time: 333.860000 - Basestation 8: -109.059576 dbm
+Sim Time: 333.860000 - PINGPONG!
+Sim Time: 333.890000 - Should switch to basestation: 3
+Sim Time: 334.140000 - Basestation 0: -95.632999 dbm
+Sim Time: 334.140000 - Basestation 1: -97.199667 dbm
+Sim Time: 334.140000 - Basestation 2: -108.025020 dbm
+Sim Time: 334.140000 - Basestation 3: -88.966564 dbm
+Sim Time: 334.140000 - Basestation 4: -87.496763 dbm
+Sim Time: 334.140000 - Basestation 5: -103.608307 dbm
+Sim Time: 334.140000 - Basestation 6: -98.327176 dbm
+Sim Time: 334.140000 - Basestation 7: -103.590245 dbm
+Sim Time: 334.140000 - Basestation 8: -110.067319 dbm
+Sim Time: 334.140000 - PINGPONG!
+Sim Time: 334.510000 - Should switch to basestation: 4
+Sim Time: 334.760000 - Basestation 0: -98.609979 dbm
+Sim Time: 334.760000 - Basestation 1: -95.233411 dbm
+Sim Time: 334.760000 - Basestation 2: -106.051159 dbm
+Sim Time: 334.760000 - Basestation 3: -86.881511 dbm
+Sim Time: 334.760000 - Basestation 4: -85.567349 dbm
+Sim Time: 334.760000 - Basestation 5: -103.638034 dbm
+Sim Time: 334.760000 - Basestation 6: -97.311021 dbm
+Sim Time: 334.760000 - Basestation 7: -97.600783 dbm
+Sim Time: 334.760000 - Basestation 8: -105.084464 dbm
+Sim Time: 334.760000 - PINGPONG!
+Sim Time: 334.840000 - Should switch to basestation: 3
+Sim Time: 335.090000 - Basestation 0: -99.597778 dbm
+Sim Time: 335.090000 - Basestation 1: -100.251382 dbm
+Sim Time: 335.090000 - Basestation 2: -107.065056 dbm
+Sim Time: 335.090000 - Basestation 3: -91.836066 dbm
+Sim Time: 335.090000 - Basestation 4: -91.604826 dbm
+Sim Time: 335.090000 - Basestation 5: -107.653833 dbm
+Sim Time: 335.090000 - Basestation 6: -97.302444 dbm
+Sim Time: 335.090000 - Basestation 7: -105.606421 dbm
+Sim Time: 335.090000 - Basestation 8: -110.093589 dbm
+Sim Time: 335.090000 - PINGPONG!
+Sim Time: 335.460000 - Should switch to basestation: 4
+Sim Time: 335.710000 - Basestation 0: -95.574951 dbm
+Sim Time: 335.710000 - Basestation 1: -96.285163 dbm
+Sim Time: 335.710000 - Basestation 2: -105.091133 dbm
+Sim Time: 335.710000 - Basestation 3: -83.750357 dbm
+Sim Time: 335.710000 - Basestation 4: -91.675061 dbm
+Sim Time: 335.710000 - Basestation 5: -100.683473 dbm
+Sim Time: 335.710000 - Basestation 6: -102.286373 dbm
+Sim Time: 335.710000 - Basestation 7: -101.617067 dbm
+Sim Time: 335.710000 - Basestation 8: -111.110734 dbm
+Sim Time: 335.710000 - PINGPONG!
+Sim Time: 335.720000 - Should switch to basestation: 3
+Sim Time: 335.970000 - Basestation 0: -96.565416 dbm
+Sim Time: 335.970000 - Basestation 1: -92.299336 dbm
+Sim Time: 335.970000 - Basestation 2: -108.102056 dbm
+Sim Time: 335.970000 - Basestation 3: -90.714286 dbm
+Sim Time: 335.970000 - Basestation 4: -90.704447 dbm
+Sim Time: 335.970000 - Basestation 5: -106.695886 dbm
+Sim Time: 335.970000 - Basestation 6: -102.279650 dbm
+Sim Time: 335.970000 - Basestation 7: -98.621553 dbm
+Sim Time: 335.970000 - Basestation 8: -110.117924 dbm
+Sim Time: 335.970000 - PINGPONG!
+Sim Time: 336.120000 - Should switch to basestation: 4
+Sim Time: 336.370000 - Basestation 0: -92.550792 dbm
+Sim Time: 336.370000 - Basestation 1: -98.321149 dbm
+Sim Time: 336.370000 - Basestation 2: -108.118847 dbm
+Sim Time: 336.370000 - Basestation 3: -87.658643 dbm
+Sim Time: 336.370000 - Basestation 4: -88.749576 dbm
+Sim Time: 336.370000 - Basestation 5: -99.714963 dbm
+Sim Time: 336.370000 - Basestation 6: -97.269325 dbm
+Sim Time: 336.370000 - Basestation 7: -99.628478 dbm
+Sim Time: 336.370000 - Basestation 8: -110.128985 dbm
+Sim Time: 336.370000 - PINGPONG!
+Sim Time: 336.410000 - Should switch to basestation: 3
+Sim Time: 336.660000 - Basestation 0: -98.540223 dbm
+Sim Time: 336.660000 - Basestation 1: -93.336969 dbm
+Sim Time: 336.660000 - Basestation 2: -103.131010 dbm
+Sim Time: 336.660000 - Basestation 3: -84.618188 dbm
+Sim Time: 336.660000 - Basestation 4: -89.782236 dbm
+Sim Time: 336.660000 - Basestation 5: -101.728780 dbm
+Sim Time: 336.660000 - Basestation 6: -100.261854 dbm
+Sim Time: 336.660000 - Basestation 7: -100.633517 dbm
+Sim Time: 336.660000 - Basestation 8: -105.137004 dbm
+Sim Time: 336.660000 - PINGPONG!
+Sim Time: 337.770000 - Should switch to basestation: 4
+Sim Time: 338.020000 - Basestation 0: -94.491040 dbm
+Sim Time: 338.020000 - Basestation 1: -96.411218 dbm
+Sim Time: 338.020000 - Basestation 2: -105.187934 dbm
+Sim Time: 338.020000 - Basestation 3: -91.427188 dbm
+Sim Time: 338.020000 - Basestation 4: -92.934730 dbm
+Sim Time: 338.020000 - Basestation 5: -104.793411 dbm
+Sim Time: 338.020000 - Basestation 6: -98.226980 dbm
+Sim Time: 338.020000 - Basestation 7: -103.657353 dbm
+Sim Time: 338.020000 - Basestation 8: -109.174608 dbm
+Sim Time: 338.020000 - PINGPONG!
+Sim Time: 338.060000 - Should switch to basestation: 3
+Sim Time: 338.310000 - Basestation 0: -95.480635 dbm
+Sim Time: 338.310000 - Basestation 1: -99.427063 dbm
+Sim Time: 338.310000 - Basestation 2: -104.200047 dbm
+Sim Time: 338.310000 - Basestation 3: -88.386184 dbm
+Sim Time: 338.310000 - Basestation 4: -90.967105 dbm
+Sim Time: 338.310000 - Basestation 5: -100.807158 dbm
+Sim Time: 338.310000 - Basestation 6: -102.219579 dbm
+Sim Time: 338.310000 - Basestation 7: -103.662479 dbm
+Sim Time: 338.310000 - Basestation 8: -106.182627 dbm
+Sim Time: 338.310000 - PINGPONG!
+
+Sim Time: 356.030000 - X_Co:263.551282 Y_Co:579.721481 deltaX:285.197204 deltaY:40.081854
+speed:3.000000 duration:96.000000
+Sim Time: 356.040000 - Mobile 1
+X Co-ordinate: 263.580990
+Y Co-ordinate: 579.725657
+Connected To Basestation: 3
+Sim Time: 378.470000 - Should switch to basestation: 4
+Sim Time: 378.720000 - Basestation 0: -96.764090 dbm
+Sim Time: 378.720000 - Basestation 1: -100.739648 dbm
+Sim Time: 378.720000 - Basestation 2: -109.313484 dbm
+Sim Time: 378.720000 - Basestation 3: -87.984882 dbm
+Sim Time: 378.720000 - Basestation 4: -91.854333 dbm
+Sim Time: 378.720000 - Basestation 5: -106.814398 dbm
+Sim Time: 378.720000 - Basestation 6: -101.969787 dbm
+Sim Time: 378.720000 - Basestation 7: -101.460672 dbm
+Sim Time: 378.720000 - Basestation 8: -107.104401 dbm
+Sim Time: 378.750000 - Should switch to basestation: 3
+Sim Time: 379.000000 - Basestation 0: -93.774977 dbm
+Sim Time: 379.000000 - Basestation 1: -93.731926 dbm
+Sim Time: 379.000000 - Basestation 2: -105.305869 dbm
+Sim Time: 379.000000 - Basestation 3: -86.012228 dbm
+Sim Time: 379.000000 - Basestation 4: -85.827974 dbm
+Sim Time: 379.000000 - Basestation 5: -105.804115 dbm
+Sim Time: 379.000000 - Basestation 6: -103.972388 dbm
+Sim Time: 379.000000 - Basestation 7: -99.454136 dbm
+Sim Time: 379.000000 - Basestation 8: -108.097305 dbm
+Sim Time: 379.000000 - PINGPONG!
+Sim Time: 380.940000 - Should switch to basestation: 4
+Sim Time: 381.190000 - Basestation 0: -95.860326 dbm
+Sim Time: 381.190000 - Basestation 1: -94.671928 dbm
+Sim Time: 381.190000 - Basestation 2: -105.246237 dbm
+Sim Time: 381.190000 - Basestation 3: -85.225122 dbm
+Sim Time: 381.190000 - Basestation 4: -87.620229 dbm
+Sim Time: 381.190000 - Basestation 5: -103.723428 dbm
+Sim Time: 381.190000 - Basestation 6: -97.993074 dbm
+Sim Time: 381.190000 - Basestation 7: -102.403164 dbm
+Sim Time: 381.190000 - Basestation 8: -108.041726 dbm
+Sim Time: 381.190000 - PINGPONG!
+Sim Time: 381.200000 - Should switch to basestation: 3
+Sim Time: 381.450000 - Basestation 0: -95.870481 dbm
+Sim Time: 381.450000 - Basestation 1: -93.664852 dbm
+Sim Time: 381.450000 - Basestation 2: -105.239149 dbm
+Sim Time: 381.450000 - Basestation 3: -87.250280 dbm
+Sim Time: 381.450000 - Basestation 4: -88.595377 dbm
+Sim Time: 381.450000 - Basestation 5: -100.713819 dbm
+Sim Time: 381.450000 - Basestation 6: -97.995570 dbm
+Sim Time: 381.450000 - Basestation 7: -102.397130 dbm
+Sim Time: 381.450000 - Basestation 8: -110.035118 dbm
+Sim Time: 381.450000 - PINGPONG!
+Sim Time: 384.020000 - Should switch to basestation: 4
+Sim Time: 384.270000 - Basestation 0: -93.980920 dbm
+Sim Time: 384.270000 - Basestation 1: -97.588755 dbm
+Sim Time: 384.270000 - Basestation 2: -106.162158 dbm
+Sim Time: 384.270000 - Basestation 3: -88.521532 dbm
+Sim Time: 384.270000 - Basestation 4: -91.323197 dbm
+Sim Time: 384.270000 - Basestation 5: -105.609182 dbm
+Sim Time: 384.270000 - Basestation 6: -99.023181 dbm
+Sim Time: 384.270000 - Basestation 7: -104.331932 dbm
+Sim Time: 384.270000 - Basestation 8: -102.963318 dbm
+Sim Time: 384.270000 - PINGPONG!
+Sim Time: 384.340000 - Should switch to basestation: 3
+Sim Time: 384.590000 - Basestation 0: -99.993485 dbm
+Sim Time: 384.590000 - Basestation 1: -95.580196 dbm
+Sim Time: 384.590000 - Basestation 2: -107.153408 dbm
+Sim Time: 384.590000 - Basestation 3: -85.552124 dbm
+Sim Time: 384.590000 - Basestation 4: -87.292004 dbm
+Sim Time: 384.590000 - Basestation 5: -105.597261 dbm
+Sim Time: 384.590000 - Basestation 6: -104.026376 dbm
+Sim Time: 384.590000 - Basestation 7: -101.324563 dbm
+Sim Time: 384.590000 - Basestation 8: -108.955156 dbm
+Sim Time: 384.590000 - PINGPONG!
+Sim Time: 384.850000 - Should switch to basestation: 4
+Sim Time: 385.100000 - Basestation 0: -96.013523 dbm
+Sim Time: 385.100000 - Basestation 1: -96.566589 dbm
+Sim Time: 385.100000 - Basestation 2: -101.139458 dbm
+Sim Time: 385.100000 - Basestation 3: -84.600801 dbm
+Sim Time: 385.100000 - Basestation 4: -92.242157 dbm
+Sim Time: 385.100000 - Basestation 5: -103.578240 dbm
+Sim Time: 385.100000 - Basestation 6: -101.031495 dbm
+Sim Time: 385.100000 - Basestation 7: -101.312830 dbm
+Sim Time: 385.100000 - Basestation 8: -104.942141 dbm
+Sim Time: 385.100000 - PINGPONG!
+Sim Time: 385.110000 - Should switch to basestation: 3
+Sim Time: 385.360000 - Basestation 0: -99.023744 dbm
+Sim Time: 385.360000 - Basestation 1: -95.559668 dbm
+Sim Time: 385.360000 - Basestation 2: -104.132343 dbm
+Sim Time: 385.360000 - Basestation 3: -88.625579 dbm
+Sim Time: 385.360000 - Basestation 4: -91.216683 dbm
+Sim Time: 385.360000 - Basestation 5: -106.568534 dbm
+Sim Time: 385.360000 - Basestation 6: -101.034117 dbm
+Sim Time: 385.360000 - Basestation 7: -100.306854 dbm
+Sim Time: 385.360000 - Basestation 8: -109.935502 dbm
+Sim Time: 385.360000 - PINGPONG!
+Sim Time: 385.530000 - Should switch to basestation: 4
+Sim Time: 385.780000 - Basestation 0: -99.040264 dbm
+Sim Time: 385.780000 - Basestation 1: -99.548510 dbm
+Sim Time: 385.780000 - Basestation 2: -107.120846 dbm
+Sim Time: 385.780000 - Basestation 3: -90.665551 dbm
+Sim Time: 385.780000 - Basestation 4: -88.175443 dbm
+Sim Time: 385.780000 - Basestation 5: -99.552841 dbm
+Sim Time: 385.780000 - Basestation 6: -99.038370 dbm
+Sim Time: 385.780000 - Basestation 7: -101.297210 dbm
+Sim Time: 385.780000 - Basestation 8: -109.924775 dbm
+Sim Time: 385.780000 - PINGPONG!
+Sim Time: 385.820000 - Should switch to basestation: 3
+Sim Time: 386.070000 - Basestation 0: -97.051677 dbm
+Sim Time: 386.070000 - Basestation 1: -92.540822 dbm
+Sim Time: 386.070000 - Basestation 2: -103.112906 dbm
+Sim Time: 386.070000 - Basestation 3: -83.693111 dbm
+Sim Time: 386.070000 - Basestation 4: -86.146902 dbm
+Sim Time: 386.070000 - Basestation 5: -103.541995 dbm
+Sim Time: 386.070000 - Basestation 6: -103.041320 dbm
+Sim Time: 386.070000 - Basestation 7: -102.290557 dbm
+Sim Time: 386.070000 - Basestation 8: -103.917365 dbm
+Sim Time: 386.070000 - PINGPONG!
+Sim Time: 387.160000 - Should switch to basestation: 4
+Sim Time: 387.410000 - Basestation 0: -95.104477 dbm
+Sim Time: 387.410000 - Basestation 1: -99.505472 dbm
+Sim Time: 387.410000 - Basestation 2: -105.076186 dbm
+Sim Time: 387.410000 - Basestation 3: -85.820045 dbm
+Sim Time: 387.410000 - Basestation 4: -85.014333 dbm
+Sim Time: 387.410000 - Basestation 5: -106.491774 dbm
+Sim Time: 387.410000 - Basestation 6: -98.055081 dbm
+Sim Time: 387.410000 - Basestation 7: -102.259880 dbm
+Sim Time: 387.410000 - Basestation 8: -107.883093 dbm
+Sim Time: 387.410000 - PINGPONG!
+Sim Time: 387.440000 - Should switch to basestation: 3
+Sim Time: 387.690000 - Basestation 0: -96.115522 dbm
+Sim Time: 387.690000 - Basestation 1: -97.498122 dbm
+Sim Time: 387.690000 - Basestation 2: -105.068507 dbm
+Sim Time: 387.690000 - Basestation 3: -90.846482 dbm
+Sim Time: 387.690000 - Basestation 4: -88.986487 dbm
+Sim Time: 387.690000 - Basestation 5: -101.481257 dbm
+Sim Time: 387.690000 - Basestation 6: -101.057985 dbm
+Sim Time: 387.690000 - Basestation 7: -100.253484 dbm
+Sim Time: 387.690000 - Basestation 8: -103.875925 dbm
+Sim Time: 387.690000 - PINGPONG!
+Sim Time: 387.700000 - Should switch to basestation: 4
+Sim Time: 387.950000 - Basestation 0: -95.125783 dbm
+Sim Time: 387.950000 - Basestation 1: -94.491308 dbm
+Sim Time: 387.950000 - Basestation 2: -102.061375 dbm
+Sim Time: 387.950000 - Basestation 3: -84.871005 dbm
+Sim Time: 387.950000 - Basestation 4: -87.960584 dbm
+Sim Time: 387.950000 - Basestation 5: -103.471486 dbm
+Sim Time: 387.950000 - Basestation 6: -103.060689 dbm
+Sim Time: 387.950000 - Basestation 7: -97.247549 dbm
+Sim Time: 387.950000 - Basestation 8: -104.869266 dbm
+Sim Time: 387.950000 - PINGPONG!
+Sim Time: 387.970000 - Should switch to basestation: 3
+Sim Time: 388.220000 - Basestation 0: -96.136442 dbm
+Sim Time: 388.220000 - Basestation 1: -95.484243 dbm
+Sim Time: 388.220000 - Basestation 2: -104.053967 dbm
+Sim Time: 388.220000 - Basestation 3: -86.896442 dbm
+Sim Time: 388.220000 - Basestation 4: -85.933639 dbm
+Sim Time: 388.220000 - Basestation 5: -105.461331 dbm
+Sim Time: 388.220000 - Basestation 6: -101.063506 dbm
+Sim Time: 388.220000 - Basestation 7: -104.241390 dbm
+Sim Time: 388.220000 - Basestation 8: -106.862350 dbm
+Sim Time: 388.220000 - PINGPONG!
+Sim Time: 388.590000 - Should switch to basestation: 4
+Sim Time: 388.840000 - Basestation 0: -93.160933 dbm
+Sim Time: 388.840000 - Basestation 1: -98.468067 dbm
+Sim Time: 388.840000 - Basestation 2: -102.036949 dbm
+Sim Time: 388.840000 - Basestation 3: -84.954750 dbm
+Sim Time: 388.840000 - Basestation 4: -91.871587 dbm
+Sim Time: 388.840000 - Basestation 5: -100.437986 dbm
+Sim Time: 388.840000 - Basestation 6: -99.070009 dbm
+Sim Time: 388.840000 - Basestation 7: -98.227263 dbm
+Sim Time: 388.840000 - Basestation 8: -106.846460 dbm
+Sim Time: 388.840000 - PINGPONG!
+Sim Time: 389.020000 - Should switch to basestation: 3
+Sim Time: 389.270000 - Basestation 0: -96.177931 dbm
+Sim Time: 389.270000 - Basestation 1: -100.456884 dbm
+Sim Time: 389.270000 - Basestation 2: -104.025140 dbm
+Sim Time: 389.270000 - Basestation 3: -83.995103 dbm
+Sim Time: 389.270000 - Basestation 4: -87.828402 dbm
+Sim Time: 389.270000 - Basestation 5: -107.421773 dbm
+Sim Time: 389.270000 - Basestation 6: -102.074546 dbm
+Sim Time: 389.270000 - Basestation 7: -102.217480 dbm
+Sim Time: 389.270000 - Basestation 8: -106.835432 dbm
+Sim Time: 389.270000 - PINGPONG!
+Sim Time: 389.480000 - Should switch to basestation: 4
+Sim Time: 389.730000 - Basestation 0: -98.196126 dbm
+Sim Time: 389.730000 - Basestation 1: -95.444956 dbm
+Sim Time: 389.730000 - Basestation 2: -105.012502 dbm
+Sim Time: 389.730000 - Basestation 3: -88.038193 dbm
+Sim Time: 389.730000 - Basestation 4: -88.782071 dbm
+Sim Time: 389.730000 - Basestation 5: -102.404408 dbm
+Sim Time: 389.730000 - Basestation 6: -104.079424 dbm
+Sim Time: 389.730000 - Basestation 7: -97.207027 dbm
+Sim Time: 389.730000 - Basestation 8: -102.823630 dbm
+Sim Time: 389.730000 - PINGPONG!
+Sim Time: 389.790000 - Should switch to basestation: 3
+Sim Time: 390.040000 - Basestation 0: -97.208393 dbm
+Sim Time: 390.040000 - Basestation 1: -93.436936 dbm
+Sim Time: 390.040000 - Basestation 2: -105.003982 dbm
+Sim Time: 390.040000 - Basestation 3: -88.067186 dbm
+Sim Time: 390.040000 - Basestation 4: -84.750769 dbm
+Sim Time: 390.040000 - Basestation 5: -102.392694 dbm
+Sim Time: 390.040000 - Basestation 6: -98.082727 dbm
+Sim Time: 390.040000 - Basestation 7: -105.199990 dbm
+Sim Time: 390.040000 - Basestation 8: -106.815672 dbm
+Sim Time: 390.040000 - PINGPONG!
+Sim Time: 390.260000 - Should switch to basestation: 4
+Sim Time: 390.510000 - Basestation 0: -96.227002 dbm
+Sim Time: 390.510000 - Basestation 1: -94.424809 dbm
+Sim Time: 390.510000 - Basestation 2: -104.991060 dbm
+Sim Time: 390.510000 - Basestation 3: -86.111073 dbm
+Sim Time: 390.510000 - Basestation 4: -88.703189 dbm
+Sim Time: 390.510000 - Basestation 5: -106.374916 dbm
+Sim Time: 390.510000 - Basestation 6: -97.087755 dbm
+Sim Time: 390.510000 - Basestation 7: -98.189332 dbm
+Sim Time: 390.510000 - Basestation 8: -106.803602 dbm
+Sim Time: 390.510000 - PINGPONG!
+Sim Time: 390.520000 - Should switch to basestation: 3
+Sim Time: 390.770000 - Basestation 0: -95.237301 dbm
+Sim Time: 390.770000 - Basestation 1: -98.418116 dbm
+Sim Time: 390.770000 - Basestation 2: -108.983910 dbm
+Sim Time: 390.770000 - Basestation 3: -92.135315 dbm
+Sim Time: 390.770000 - Basestation 4: -90.676805 dbm
+Sim Time: 390.770000 - Basestation 5: -105.365072 dbm
+Sim Time: 390.770000 - Basestation 6: -98.090548 dbm
+Sim Time: 390.770000 - Basestation 7: -101.183443 dbm
+Sim Time: 390.770000 - Basestation 8: -108.796922 dbm
+Sim Time: 390.770000 - PINGPONG!
+Sim Time: 391.430000 - Should switch to basestation: 4
+Sim Time: 391.680000 - Basestation 0: -94.273373 dbm
+Sim Time: 391.680000 - Basestation 1: -94.394781 dbm
+Sim Time: 391.680000 - Basestation 2: -105.958869 dbm
+Sim Time: 391.680000 - Basestation 3: -92.219955 dbm
+Sim Time: 391.680000 - Basestation 4: -86.584105 dbm
+Sim Time: 391.680000 - Basestation 5: -104.330565 dbm
+Sim Time: 391.680000 - Basestation 6: -103.100388 dbm
+Sim Time: 391.680000 - Basestation 7: -101.162863 dbm
+Sim Time: 391.680000 - Basestation 8: -109.773526 dbm
+Sim Time: 391.680000 - PINGPONG!
+Sim Time: 391.830000 - Should switch to basestation: 3
+Sim Time: 392.080000 - Basestation 0: -92.289241 dbm
+Sim Time: 392.080000 - Basestation 1: -99.384569 dbm
+Sim Time: 392.080000 - Basestation 2: -106.947855 dbm
+Sim Time: 392.080000 - Basestation 3: -89.257059 dbm
+Sim Time: 392.080000 - Basestation 4: -91.543180 dbm
+Sim Time: 392.080000 - Basestation 5: -106.315371 dbm
+Sim Time: 392.080000 - Basestation 6: -99.104744 dbm
+Sim Time: 392.080000 - Basestation 7: -103.153833 dbm
+Sim Time: 392.080000 - Basestation 8: -103.763235 dbm
+Sim Time: 392.080000 - PINGPONG!
+Sim Time: 392.450000 - Should switch to basestation: 4
+Sim Time: 392.700000 - Basestation 0: -96.313852 dbm
+Sim Time: 392.700000 - Basestation 1: -97.368793 dbm
+Sim Time: 392.700000 - Basestation 2: -103.930776 dbm
+Sim Time: 392.700000 - Basestation 3: -86.314449 dbm
+Sim Time: 392.700000 - Basestation 4: -88.479532 dbm
+Sim Time: 392.700000 - Basestation 5: -103.291789 dbm
+Sim Time: 392.700000 - Basestation 6: -105.111535 dbm
+Sim Time: 392.700000 - Basestation 7: -97.139858 dbm
+Sim Time: 392.700000 - Basestation 8: -107.747274 dbm
+Sim Time: 392.700000 - PINGPONG!
+Sim Time: 392.750000 - Should switch to basestation: 3
+Sim Time: 393.000000 - Basestation 0: -95.325766 dbm
+Sim Time: 393.000000 - Basestation 1: -99.361184 dbm
+Sim Time: 393.000000 - Basestation 2: -104.922508 dbm
+Sim Time: 393.000000 - Basestation 3: -88.342165 dbm
+Sim Time: 393.000000 - Basestation 4: -90.448640 dbm
+Sim Time: 393.000000 - Basestation 5: -100.280364 dbm
+Sim Time: 393.000000 - Basestation 6: -104.114837 dbm
+Sim Time: 393.000000 - Basestation 7: -97.133105 dbm
+Sim Time: 393.000000 - Basestation 8: -104.739546 dbm
+Sim Time: 393.000000 - PINGPONG!
+Sim Time: 393.070000 - Should switch to basestation: 4
+Sim Time: 393.320000 - Basestation 0: -99.338480 dbm
+Sim Time: 393.320000 - Basestation 1: -94.353084 dbm
+Sim Time: 393.320000 - Basestation 2: -106.913687 dbm
+Sim Time: 393.320000 - Basestation 3: -89.371691 dbm
+Sim Time: 393.320000 - Basestation 4: -90.415620 dbm
+Sim Time: 393.320000 - Basestation 5: -100.268168 dbm
+Sim Time: 393.320000 - Basestation 6: -100.118371 dbm
+Sim Time: 393.320000 - Basestation 7: -98.125908 dbm
+Sim Time: 393.320000 - Basestation 8: -108.731301 dbm
+Sim Time: 393.320000 - PINGPONG!
+Sim Time: 393.530000 - Should switch to basestation: 3
+Sim Time: 393.780000 - Basestation 0: -95.356763 dbm
+Sim Time: 393.780000 - Basestation 1: -97.341472 dbm
+Sim Time: 393.780000 - Basestation 2: -104.901002 dbm
+Sim Time: 393.780000 - Basestation 3: -88.414064 dbm
+Sim Time: 393.780000 - Basestation 4: -89.368031 dbm
+Sim Time: 393.780000 - Basestation 5: -106.250617 dbm
+Sim Time: 393.780000 - Basestation 6: -102.123472 dbm
+Sim Time: 393.780000 - Basestation 7: -100.115574 dbm
+Sim Time: 393.780000 - Basestation 8: -103.719443 dbm
+Sim Time: 393.780000 - PINGPONG!
+Sim Time: 393.820000 - Should switch to basestation: 4
+Sim Time: 394.070000 - Basestation 0: -96.368294 dbm
+Sim Time: 394.070000 - Basestation 1: -93.334170 dbm
+Sim Time: 394.070000 - Basestation 2: -107.893002 dbm
+Sim Time: 394.070000 - Basestation 3: -84.440737 dbm
+Sim Time: 394.070000 - Basestation 4: -91.337953 dbm
+Sim Time: 394.070000 - Basestation 5: -106.239542 dbm
+Sim Time: 394.070000 - Basestation 6: -99.126701 dbm
+Sim Time: 394.070000 - Basestation 7: -102.109066 dbm
+Sim Time: 394.070000 - Basestation 8: -109.711964 dbm
+Sim Time: 394.070000 - PINGPONG!
+Sim Time: 394.110000 - Should switch to basestation: 3
+Sim Time: 394.360000 - Basestation 0: -100.379829 dbm
+Sim Time: 394.360000 - Basestation 1: -96.326883 dbm
+Sim Time: 394.360000 - Basestation 2: -102.885000 dbm
+Sim Time: 394.360000 - Basestation 3: -91.467376 dbm
+Sim Time: 394.360000 - Basestation 4: -90.307817 dbm
+Sim Time: 394.360000 - Basestation 5: -104.228458 dbm
+Sim Time: 394.360000 - Basestation 6: -101.129940 dbm
+Sim Time: 394.360000 - Basestation 7: -99.102564 dbm
+Sim Time: 394.360000 - Basestation 8: -106.704482 dbm
+Sim Time: 394.360000 - PINGPONG!
+Sim Time: 394.510000 - Should switch to basestation: 4
+Sim Time: 394.760000 - Basestation 0: -94.395745 dbm
+Sim Time: 394.760000 - Basestation 1: -93.316857 dbm
+Sim Time: 394.760000 - Basestation 2: -102.873960 dbm
+Sim Time: 394.760000 - Basestation 3: -88.504067 dbm
+Sim Time: 394.760000 - Basestation 4: -88.266154 dbm
+Sim Time: 394.760000 - Basestation 5: -103.213156 dbm
+Sim Time: 394.760000 - Basestation 6: -104.134424 dbm
+Sim Time: 394.760000 - Basestation 7: -103.093605 dbm
+Sim Time: 394.760000 - Basestation 8: -110.694159 dbm
+Sim Time: 394.760000 - PINGPONG!
+Sim Time: 394.980000 - Should switch to basestation: 3
+Sim Time: 395.230000 - Basestation 0: -94.414454 dbm
+Sim Time: 395.230000 - Basestation 1: -95.305112 dbm
+Sim Time: 395.230000 - Basestation 2: -102.860982 dbm
+Sim Time: 395.230000 - Basestation 3: -88.547101 dbm
+Sim Time: 395.230000 - Basestation 4: -88.217055 dbm
+Sim Time: 395.230000 - Basestation 5: -101.195156 dbm
+Sim Time: 395.230000 - Basestation 6: -101.139716 dbm
+Sim Time: 395.230000 - Basestation 7: -100.083091 dbm
+Sim Time: 395.230000 - Basestation 8: -105.682023 dbm
+Sim Time: 395.230000 - PINGPONG!
+Sim Time: 395.260000 - Should switch to basestation: 4
+Sim Time: 395.510000 - Basestation 0: -93.425605 dbm
+Sim Time: 395.510000 - Basestation 1: -96.298133 dbm
+Sim Time: 395.510000 - Basestation 2: -107.853248 dbm
+Sim Time: 395.510000 - Basestation 3: -88.572697 dbm
+Sim Time: 395.510000 - Basestation 4: -88.187731 dbm
+Sim Time: 395.510000 - Basestation 5: -104.184421 dbm
+Sim Time: 395.510000 - Basestation 6: -101.142882 dbm
+Sim Time: 395.510000 - Basestation 7: -101.076835 dbm
+Sim Time: 395.510000 - Basestation 8: -105.674790 dbm
+Sim Time: 395.510000 - PINGPONG!
+Sim Time: 396.120000 - Should switch to basestation: 3
+Sim Time: 396.370000 - Basestation 0: -96.459872 dbm
+Sim Time: 396.370000 - Basestation 1: -96.276787 dbm
+Sim Time: 396.370000 - Basestation 2: -108.829481 dbm
+Sim Time: 396.370000 - Basestation 3: -88.651126 dbm
+Sim Time: 396.370000 - Basestation 4: -85.097315 dbm
+Sim Time: 396.370000 - Basestation 5: -101.151402 dbm
+Sim Time: 396.370000 - Basestation 6: -102.152661 dbm
+Sim Time: 396.370000 - Basestation 7: -101.057652 dbm
+Sim Time: 396.370000 - Basestation 8: -105.652560 dbm
+Sim Time: 396.370000 - PINGPONG!
+Sim Time: 396.670000 - Should switch to basestation: 4
+Sim Time: 396.920000 - Basestation 0: -96.481802 dbm
+Sim Time: 396.920000 - Basestation 1: -96.263206 dbm
+Sim Time: 396.920000 - Basestation 2: -104.814272 dbm
+Sim Time: 396.920000 - Basestation 3: -86.701134 dbm
+Sim Time: 396.920000 - Basestation 4: -88.039213 dbm
+Sim Time: 396.920000 - Basestation 5: -101.130245 dbm
+Sim Time: 396.920000 - Basestation 6: -98.158961 dbm
+Sim Time: 396.920000 - Basestation 7: -103.045410 dbm
+Sim Time: 396.920000 - Basestation 8: -105.638331 dbm
+Sim Time: 396.920000 - PINGPONG!
+Sim Time: 396.990000 - Should switch to basestation: 3
+Sim Time: 397.240000 - Basestation 0: -94.494567 dbm
+Sim Time: 397.240000 - Basestation 1: -99.255329 dbm
+Sim Time: 397.240000 - Basestation 2: -102.805419 dbm
+Sim Time: 397.240000 - Basestation 3: -88.730176 dbm
+Sim Time: 397.240000 - Basestation 4: -84.005308 dbm
+Sim Time: 397.240000 - Basestation 5: -103.117921 dbm
+Sim Time: 397.240000 - Basestation 6: -101.162643 dbm
+Sim Time: 397.240000 - Basestation 7: -104.038297 dbm
+Sim Time: 397.240000 - Basestation 8: -105.630048 dbm
+Sim Time: 397.240000 - PINGPONG!
+Sim Time: 397.420000 - Should switch to basestation: 4
+Sim Time: 397.670000 - Basestation 0: -93.511725 dbm
+Sim Time: 397.670000 - Basestation 1: -98.244774 dbm
+Sim Time: 397.670000 - Basestation 2: -106.793520 dbm
+Sim Time: 397.670000 - Basestation 3: -89.769139 dbm
+Sim Time: 397.670000 - Basestation 4: -87.959632 dbm
+Sim Time: 397.670000 - Basestation 5: -102.101344 dbm
+Sim Time: 397.670000 - Basestation 6: -104.167608 dbm
+Sim Time: 397.670000 - Basestation 7: -100.028750 dbm
+Sim Time: 397.670000 - Basestation 8: -108.618914 dbm
+Sim Time: 397.670000 - PINGPONG!
+Sim Time: 398.470000 - Should switch to basestation: 3
+Sim Time: 398.720000 - Basestation 0: -96.553651 dbm
+Sim Time: 398.720000 - Basestation 1: -94.219142 dbm
+Sim Time: 398.720000 - Basestation 2: -108.764444 dbm
+Sim Time: 398.720000 - Basestation 3: -90.863983 dbm
+Sim Time: 398.720000 - Basestation 4: -85.847528 dbm
+Sim Time: 398.720000 - Basestation 5: -102.060786 dbm
+Sim Time: 398.720000 - Basestation 6: -104.179824 dbm
+Sim Time: 398.720000 - Basestation 7: -104.005492 dbm
+Sim Time: 398.720000 - Basestation 8: -106.591702 dbm
+Sim Time: 398.720000 - PINGPONG!
+Sim Time: 398.880000 - Should switch to basestation: 4
+Sim Time: 399.130000 - Basestation 0: -96.570032 dbm
+Sim Time: 399.130000 - Basestation 1: -93.209189 dbm
+Sim Time: 399.130000 - Basestation 2: -104.753083 dbm
+Sim Time: 399.130000 - Basestation 3: -89.900902 dbm
+Sim Time: 399.130000 - Basestation 4: -91.803534 dbm
+Sim Time: 399.130000 - Basestation 5: -100.044918 dbm
+Sim Time: 399.130000 - Basestation 6: -98.184629 dbm
+Sim Time: 399.130000 - Basestation 7: -100.996431 dbm
+Sim Time: 399.130000 - Basestation 8: -109.581068 dbm
+Sim Time: 399.130000 - PINGPONG!
+Sim Time: 399.450000 - Should switch to basestation: 3
+Sim Time: 399.700000 - Basestation 0: -96.592815 dbm
+Sim Time: 399.700000 - Basestation 1: -94.195404 dbm
+Sim Time: 399.700000 - Basestation 2: -101.737282 dbm
+Sim Time: 399.700000 - Basestation 3: -85.952121 dbm
+Sim Time: 399.700000 - Basestation 4: -90.742164 dbm
+Sim Time: 399.700000 - Basestation 5: -100.022829 dbm
+Sim Time: 399.700000 - Basestation 6: -99.191341 dbm
+Sim Time: 399.700000 - Basestation 7: -100.983853 dbm
+Sim Time: 399.700000 - Basestation 8: -104.566275 dbm
+Sim Time: 399.700000 - PINGPONG!
+Sim Time: 399.760000 - Should switch to basestation: 4
+Sim Time: 400.010000 - Basestation 0: -94.605211 dbm
+Sim Time: 400.010000 - Basestation 1: -92.187932 dbm
+Sim Time: 400.010000 - Basestation 2: -103.728685 dbm
+Sim Time: 400.010000 - Basestation 3: -88.979924 dbm
+Sim Time: 400.010000 - Basestation 4: -85.708685 dbm
+Sim Time: 400.010000 - Basestation 5: -107.010801 dbm
+Sim Time: 400.010000 - Basestation 6: -103.195007 dbm
+Sim Time: 400.010000 - Basestation 7: -99.977023 dbm
+Sim Time: 400.010000 - Basestation 8: -106.558226 dbm
+Sim Time: 400.010000 - PINGPONG!
+Sim Time: 400.790000 - Should switch to basestation: 3
+Sim Time: 401.040000 - Basestation 0: -93.646417 dbm
+Sim Time: 401.040000 - Basestation 1: -99.163237 dbm
+Sim Time: 401.040000 - Basestation 2: -106.700104 dbm
+Sim Time: 401.040000 - Basestation 3: -87.072038 dbm
+Sim Time: 401.040000 - Basestation 4: -83.596931 dbm
+Sim Time: 401.040000 - Basestation 5: -106.970766 dbm
+Sim Time: 401.040000 - Basestation 6: -99.207266 dbm
+Sim Time: 401.040000 - Basestation 7: -103.954376 dbm
+Sim Time: 401.040000 - Basestation 8: -102.531461 dbm
+Sim Time: 401.040000 - PINGPONG!
+Sim Time: 401.060000 - Should switch to basestation: 4
+Sim Time: 401.310000 - Basestation 0: -99.657224 dbm
+Sim Time: 401.310000 - Basestation 1: -93.156797 dbm
+Sim Time: 401.310000 - Basestation 2: -101.692608 dbm
+Sim Time: 401.310000 - Basestation 3: -88.096117 dbm
+Sim Time: 401.310000 - Basestation 4: -87.567503 dbm
+Sim Time: 401.310000 - Basestation 5: -100.960253 dbm
+Sim Time: 401.310000 - Basestation 6: -102.210500 dbm
+Sim Time: 401.310000 - Basestation 7: -97.948453 dbm
+Sim Time: 401.310000 - Basestation 8: -106.524440 dbm
+Sim Time: 401.310000 - PINGPONG!
+Sim Time: 401.380000 - Should switch to basestation: 3
+Sim Time: 401.630000 - Basestation 0: -97.670035 dbm
+Sim Time: 401.630000 - Basestation 1: -92.149182 dbm
+Sim Time: 401.630000 - Basestation 2: -106.683721 dbm
+Sim Time: 401.630000 - Basestation 3: -92.124619 dbm
+Sim Time: 401.630000 - Basestation 4: -90.532554 dbm
+Sim Time: 401.630000 - Basestation 5: -105.947783 dbm
+Sim Time: 401.630000 - Basestation 6: -98.214343 dbm
+Sim Time: 401.630000 - Basestation 7: -103.941439 dbm
+Sim Time: 401.630000 - Basestation 8: -104.516116 dbm
+Sim Time: 401.630000 - PINGPONG!
+Sim Time: 401.700000 - Should switch to basestation: 4
+Sim Time: 401.950000 - Basestation 0: -97.682849 dbm
+Sim Time: 401.950000 - Basestation 1: -93.141587 dbm
+Sim Time: 401.950000 - Basestation 2: -105.674832 dbm
+Sim Time: 401.950000 - Basestation 3: -92.153082 dbm
+Sim Time: 401.950000 - Basestation 4: -90.497526 dbm
+Sim Time: 401.950000 - Basestation 5: -104.935302 dbm
+Sim Time: 401.950000 - Basestation 6: -100.218198 dbm
+Sim Time: 401.950000 - Basestation 7: -101.934432 dbm
+Sim Time: 401.950000 - Basestation 8: -102.507789 dbm
+Sim Time: 401.950000 - PINGPONG!
+Sim Time: 401.980000 - Should switch to basestation: 3
+Sim Time: 402.230000 - Basestation 0: -99.694064 dbm
+Sim Time: 402.230000 - Basestation 1: -96.134957 dbm
+Sim Time: 402.230000 - Basestation 2: -105.667052 dbm
+Sim Time: 402.230000 - Basestation 3: -91.177955 dbm
+Sim Time: 402.230000 - Basestation 4: -87.466812 dbm
+Sim Time: 402.230000 - Basestation 5: -102.924373 dbm
+Sim Time: 402.230000 - Basestation 6: -98.221581 dbm
+Sim Time: 402.230000 - Basestation 7: -101.928307 dbm
+Sim Time: 402.230000 - Basestation 8: -108.500500 dbm
+Sim Time: 402.230000 - PINGPONG!
+Sim Time: 402.270000 - Should switch to basestation: 4
+Sim Time: 402.520000 - Basestation 0: -97.705681 dbm
+Sim Time: 402.520000 - Basestation 1: -99.128107 dbm
+Sim Time: 402.520000 - Basestation 2: -105.658992 dbm
+Sim Time: 402.520000 - Basestation 3: -93.203684 dbm
+Sim Time: 402.520000 - Basestation 4: -85.434938 dbm
+Sim Time: 402.520000 - Basestation 5: -105.913045 dbm
+Sim Time: 402.520000 - Basestation 6: -100.225093 dbm
+Sim Time: 402.520000 - Basestation 7: -99.921970 dbm
+Sim Time: 402.520000 - Basestation 8: -102.492948 dbm
+Sim Time: 402.520000 - PINGPONG!
+Sim Time: 402.690000 - Should switch to basestation: 3
+Sim Time: 402.940000 - Basestation 0: -98.722511 dbm
+Sim Time: 402.940000 - Basestation 1: -97.118214 dbm
+Sim Time: 402.940000 - Basestation 2: -107.647315 dbm
+Sim Time: 402.940000 - Basestation 3: -89.240890 dbm
+Sim Time: 402.940000 - Basestation 4: -84.388659 dbm
+Sim Time: 402.940000 - Basestation 5: -104.896622 dbm
+Sim Time: 402.940000 - Basestation 6: -101.230198 dbm
+Sim Time: 402.940000 - Basestation 7: -103.912803 dbm
+Sim Time: 402.940000 - Basestation 8: -109.482007 dbm
+Sim Time: 402.940000 - PINGPONG!
+Sim Time: 403.010000 - Should switch to basestation: 4
+Sim Time: 403.260000 - Basestation 0: -96.735336 dbm
+Sim Time: 403.260000 - Basestation 1: -95.110700 dbm
+Sim Time: 403.260000 - Basestation 2: -103.638416 dbm
+Sim Time: 403.260000 - Basestation 3: -89.269192 dbm
+Sim Time: 403.260000 - Basestation 4: -87.353307 dbm
+Sim Time: 403.260000 - Basestation 5: -100.884097 dbm
+Sim Time: 403.260000 - Basestation 6: -101.234100 dbm
+Sim Time: 403.260000 - Basestation 7: -98.905827 dbm
+Sim Time: 403.260000 - Basestation 8: -104.473668 dbm
+Sim Time: 403.260000 - PINGPONG!
+Sim Time: 403.350000 - Should switch to basestation: 3
+Sim Time: 403.600000 - Basestation 0: -98.748967 dbm
+Sim Time: 403.600000 - Basestation 1: -98.102739 dbm
+Sim Time: 403.600000 - Basestation 2: -101.628958 dbm
+Sim Time: 403.600000 - Basestation 3: -92.299220 dbm
+Sim Time: 403.600000 - Basestation 4: -84.315657 dbm
+Sim Time: 403.600000 - Basestation 5: -102.870778 dbm
+Sim Time: 403.600000 - Basestation 6: -102.238259 dbm
+Sim Time: 403.600000 - Basestation 7: -97.898423 dbm
+Sim Time: 403.600000 - Basestation 8: -105.464804 dbm
+Sim Time: 403.600000 - PINGPONG!
+Sim Time: 403.610000 - Should switch to basestation: 4
+Sim Time: 403.860000 - Basestation 0: -95.759392 dbm
+Sim Time: 403.860000 - Basestation 1: -98.096665 dbm
+Sim Time: 403.860000 - Basestation 2: -104.621723 dbm
+Sim Time: 403.860000 - Basestation 3: -88.322153 dbm
+Sim Time: 403.860000 - Basestation 4: -87.286805 dbm
+Sim Time: 403.860000 - Basestation 5: -99.860584 dbm
+Sim Time: 403.860000 - Basestation 6: -101.241448 dbm
+Sim Time: 403.860000 - Basestation 7: -98.892768 dbm
+Sim Time: 403.860000 - Basestation 8: -103.458023 dbm
+Sim Time: 403.860000 - PINGPONG!
+
+Sim Time: 452.040000 - X_Co:548.748486 Y_Co:619.803335 deltaX:-248.578516 deltaY:-149.361043
+speed:2.000000 duration:145.000000
+Sim Time: 452.050000 - Mobile 1
+X Co-ordinate: 548.731342
+Y Co-ordinate: 619.793034
+Connected To Basestation: 4
+Sim Time: 532.660000 - Should switch to basestation: 3
+Sim Time: 532.910000 - Basestation 0: -93.753637 dbm
+Sim Time: 532.910000 - Basestation 1: -92.867502 dbm
+Sim Time: 532.910000 - Basestation 2: -106.233321 dbm
+Sim Time: 532.910000 - Basestation 3: -90.282897 dbm
+Sim Time: 532.910000 - Basestation 4: -85.240536 dbm
+Sim Time: 532.910000 - Basestation 5: -105.938486 dbm
+Sim Time: 532.910000 - Basestation 6: -102.088840 dbm
+Sim Time: 532.910000 - Basestation 7: -103.733422 dbm
+Sim Time: 532.910000 - Basestation 8: -105.836351 dbm
+Sim Time: 532.920000 - Should switch to basestation: 4
+Sim Time: 533.170000 - Basestation 0: -95.743294 dbm
+Sim Time: 533.170000 - Basestation 1: -95.867786 dbm
+Sim Time: 533.170000 - Basestation 2: -107.236669 dbm
+Sim Time: 533.170000 - Basestation 3: -92.274415 dbm
+Sim Time: 533.170000 - Basestation 4: -84.259230 dbm
+Sim Time: 533.170000 - Basestation 5: -105.944843 dbm
+Sim Time: 533.170000 - Basestation 6: -102.089833 dbm
+Sim Time: 533.170000 - Basestation 7: -101.739088 dbm
+Sim Time: 533.170000 - Basestation 8: -107.841426 dbm
+Sim Time: 533.170000 - PINGPONG!
+Sim Time: 533.840000 - Should switch to basestation: 3
+Sim Time: 534.090000 - Basestation 0: -96.706648 dbm
+Sim Time: 534.090000 - Basestation 1: -90.868871 dbm
+Sim Time: 534.090000 - Basestation 2: -102.248527 dbm
+Sim Time: 534.090000 - Basestation 3: -91.244468 dbm
+Sim Time: 534.090000 - Basestation 4: -88.325183 dbm
+Sim Time: 534.090000 - Basestation 5: -105.967314 dbm
+Sim Time: 534.090000 - Basestation 6: -100.093373 dbm
+Sim Time: 534.090000 - Basestation 7: -98.759130 dbm
+Sim Time: 534.090000 - Basestation 8: -106.859371 dbm
+Sim Time: 534.090000 - PINGPONG!
+Sim Time: 534.100000 - Should switch to basestation: 4
+Sim Time: 534.350000 - Basestation 0: -97.696277 dbm
+Sim Time: 534.350000 - Basestation 1: -94.869199 dbm
+Sim Time: 534.350000 - Basestation 2: -107.251880 dbm
+Sim Time: 534.350000 - Basestation 3: -90.236024 dbm
+Sim Time: 534.350000 - Basestation 4: -88.343768 dbm
+Sim Time: 534.350000 - Basestation 5: -102.973659 dbm
+Sim Time: 534.350000 - Basestation 6: -100.094382 dbm
+Sim Time: 534.350000 - Basestation 7: -104.764792 dbm
+Sim Time: 534.350000 - Basestation 8: -106.864439 dbm
+Sim Time: 534.350000 - PINGPONG!
+Sim Time: 534.420000 - Should switch to basestation: 3
+Sim Time: 534.670000 - Basestation 0: -94.683504 dbm
+Sim Time: 534.670000 - Basestation 1: -90.869616 dbm
+Sim Time: 534.670000 - Basestation 2: -106.256009 dbm
+Sim Time: 534.670000 - Basestation 3: -90.225643 dbm
+Sim Time: 534.670000 - Basestation 4: -89.366609 dbm
+Sim Time: 534.670000 - Basestation 5: -103.981465 dbm
+Sim Time: 534.670000 - Basestation 6: -102.095627 dbm
+Sim Time: 534.670000 - Basestation 7: -99.771761 dbm
+Sim Time: 534.670000 - Basestation 8: -108.870673 dbm
+Sim Time: 534.670000 - PINGPONG!
+Sim Time: 534.690000 - Should switch to basestation: 4
+Sim Time: 534.940000 - Basestation 0: -95.672720 dbm
+Sim Time: 534.940000 - Basestation 1: -96.869980 dbm
+Sim Time: 534.940000 - Basestation 2: -101.259494 dbm
+Sim Time: 534.940000 - Basestation 3: -89.216894 dbm
+Sim Time: 534.940000 - Basestation 4: -91.385852 dbm
+Sim Time: 534.940000 - Basestation 5: -105.988049 dbm
+Sim Time: 534.940000 - Basestation 6: -104.096682 dbm
+Sim Time: 534.940000 - Basestation 7: -100.777639 dbm
+Sim Time: 534.940000 - Basestation 8: -108.875932 dbm
+Sim Time: 534.940000 - PINGPONG!
+Sim Time: 535.280000 - Should switch to basestation: 3
+Sim Time: 535.530000 - Basestation 0: -98.649131 dbm
+Sim Time: 535.530000 - Basestation 1: -95.870811 dbm
+Sim Time: 535.530000 - Basestation 2: -104.267113 dbm
+Sim Time: 535.530000 - Basestation 3: -91.197809 dbm
+Sim Time: 535.530000 - Basestation 4: -90.427814 dbm
+Sim Time: 535.530000 - Basestation 5: -103.002426 dbm
+Sim Time: 535.530000 - Basestation 6: -102.099001 dbm
+Sim Time: 535.530000 - Basestation 7: -101.790482 dbm
+Sim Time: 535.530000 - Basestation 8: -110.887416 dbm
+Sim Time: 535.530000 - PINGPONG!
+Sim Time: 535.620000 - Should switch to basestation: 4
+Sim Time: 535.870000 - Basestation 0: -98.635522 dbm
+Sim Time: 535.870000 - Basestation 1: -94.871312 dbm
+Sim Time: 535.870000 - Basestation 2: -104.271507 dbm
+Sim Time: 535.870000 - Basestation 3: -89.186831 dbm
+Sim Time: 535.870000 - Basestation 4: -86.451941 dbm
+Sim Time: 535.870000 - Basestation 5: -105.010705 dbm
+Sim Time: 535.870000 - Basestation 6: -101.100345 dbm
+Sim Time: 535.870000 - Basestation 7: -98.797881 dbm
+Sim Time: 535.870000 - Basestation 8: -109.894030 dbm
+Sim Time: 535.870000 - PINGPONG!
+Sim Time: 536.080000 - Should switch to basestation: 3
+Sim Time: 536.330000 - Basestation 0: -95.617093 dbm
+Sim Time: 536.330000 - Basestation 1: -92.872017 dbm
+Sim Time: 536.330000 - Basestation 2: -102.277454 dbm
+Sim Time: 536.330000 - Basestation 3: -88.172003 dbm
+Sim Time: 536.330000 - Basestation 4: -85.484518 dbm
+Sim Time: 536.330000 - Basestation 5: -103.021900 dbm
+Sim Time: 536.330000 - Basestation 6: -101.102172 dbm
+Sim Time: 536.330000 - Basestation 7: -104.807890 dbm
+Sim Time: 536.330000 - Basestation 8: -105.902974 dbm
+Sim Time: 536.330000 - PINGPONG!
+Sim Time: 536.620000 - Should switch to basestation: 4
+Sim Time: 536.870000 - Basestation 0: -94.595434 dbm
+Sim Time: 536.870000 - Basestation 1: -94.872883 dbm
+Sim Time: 536.870000 - Basestation 2: -103.284439 dbm
+Sim Time: 536.870000 - Basestation 3: -94.154630 dbm
+Sim Time: 536.870000 - Basestation 4: -88.522668 dbm
+Sim Time: 536.870000 - Basestation 5: -105.035033 dbm
+Sim Time: 536.870000 - Basestation 6: -101.104331 dbm
+Sim Time: 536.870000 - Basestation 7: -102.819637 dbm
+Sim Time: 536.870000 - Basestation 8: -103.913466 dbm
+Sim Time: 536.870000 - PINGPONG!
+Sim Time: 537.430000 - Should switch to basestation: 3
+Sim Time: 537.680000 - Basestation 0: -98.562895 dbm
+Sim Time: 537.680000 - Basestation 1: -96.874259 dbm
+Sim Time: 537.680000 - Basestation 2: -104.294925 dbm
+Sim Time: 537.680000 - Basestation 3: -93.128644 dbm
+Sim Time: 537.680000 - Basestation 4: -85.579704 dbm
+Sim Time: 537.680000 - Basestation 5: -99.054712 dbm
+Sim Time: 537.680000 - Basestation 6: -102.107597 dbm
+Sim Time: 537.680000 - Basestation 7: -101.837251 dbm
+Sim Time: 537.680000 - Basestation 8: -104.929191 dbm
+Sim Time: 537.680000 - PINGPONG!
+Sim Time: 537.820000 - Should switch to basestation: 4
+Sim Time: 538.070000 - Basestation 0: -96.547206 dbm
+Sim Time: 538.070000 - Basestation 1: -97.874955 dbm
+Sim Time: 538.070000 - Basestation 2: -101.299978 dbm
+Sim Time: 538.070000 - Basestation 3: -89.116164 dbm
+Sim Time: 538.070000 - Basestation 4: -88.607086 dbm
+Sim Time: 538.070000 - Basestation 5: -104.064179 dbm
+Sim Time: 538.070000 - Basestation 6: -99.109181 dbm
+Sim Time: 538.070000 - Basestation 7: -97.845729 dbm
+Sim Time: 538.070000 - Basestation 8: -106.936756 dbm
+Sim Time: 538.070000 - PINGPONG!
+Sim Time: 539.040000 - Should switch to basestation: 3
+Sim Time: 539.290000 - Basestation 0: -96.498034 dbm
+Sim Time: 539.290000 - Basestation 1: -97.877273 dbm
+Sim Time: 539.290000 - Basestation 2: -106.315799 dbm
+Sim Time: 539.290000 - Basestation 3: -87.077256 dbm
+Sim Time: 539.290000 - Basestation 4: -89.692408 dbm
+Sim Time: 539.290000 - Basestation 5: -99.093758 dbm
+Sim Time: 539.290000 - Basestation 6: -106.114186 dbm
+Sim Time: 539.290000 - Basestation 7: -101.872240 dbm
+Sim Time: 539.290000 - Basestation 8: -104.960397 dbm
+Sim Time: 539.290000 - PINGPONG!
+Sim Time: 539.370000 - Should switch to basestation: 4
+Sim Time: 539.620000 - Basestation 0: -94.484710 dbm
+Sim Time: 539.620000 - Basestation 1: -98.877937 dbm
+Sim Time: 539.620000 - Basestation 2: -101.320083 dbm
+Sim Time: 539.620000 - Basestation 3: -86.066766 dbm
+Sim Time: 539.620000 - Basestation 4: -88.715401 dbm
+Sim Time: 539.620000 - Basestation 5: -105.101750 dbm
+Sim Time: 539.620000 - Basestation 6: -102.115553 dbm
+Sim Time: 539.620000 - Basestation 7: -103.879408 dbm
+Sim Time: 539.620000 - Basestation 8: -106.966786 dbm
+Sim Time: 539.620000 - PINGPONG!
+Sim Time: 540.690000 - Should switch to basestation: 3
+Sim Time: 540.940000 - Basestation 0: -94.431308 dbm
+Sim Time: 540.940000 - Basestation 1: -91.880745 dbm
+Sim Time: 540.940000 - Basestation 2: -106.337233 dbm
+Sim Time: 540.940000 - Basestation 3: -88.024961 dbm
+Sim Time: 540.940000 - Basestation 4: -91.807007 dbm
+Sim Time: 540.940000 - Basestation 5: -103.133678 dbm
+Sim Time: 540.940000 - Basestation 6: -100.121075 dbm
+Sim Time: 540.940000 - Basestation 7: -98.908069 dbm
+Sim Time: 540.940000 - Basestation 8: -106.992311 dbm
+Sim Time: 540.940000 - PINGPONG!
+Sim Time: 540.980000 - Should switch to basestation: 4
+Sim Time: 541.230000 - Basestation 0: -97.419554 dbm
+Sim Time: 541.230000 - Basestation 1: -95.881396 dbm
+Sim Time: 541.230000 - Basestation 2: -102.341004 dbm
+Sim Time: 541.230000 - Basestation 3: -91.015809 dbm
+Sim Time: 541.230000 - Basestation 4: -91.827055 dbm
+Sim Time: 541.230000 - Basestation 5: -103.140685 dbm
+Sim Time: 541.230000 - Basestation 6: -99.122299 dbm
+Sim Time: 541.230000 - Basestation 7: -99.914363 dbm
+Sim Time: 541.230000 - Basestation 8: -103.997913 dbm
+Sim Time: 541.230000 - PINGPONG!
+Sim Time: 542.770000 - Should switch to basestation: 3
+Sim Time: 543.020000 - Basestation 0: -92.346825 dbm
+Sim Time: 543.020000 - Basestation 1: -98.885674 dbm
+Sim Time: 543.020000 - Basestation 2: -104.364311 dbm
+Sim Time: 543.020000 - Basestation 3: -85.959590 dbm
+Sim Time: 543.020000 - Basestation 4: -91.950188 dbm
+Sim Time: 543.020000 - Basestation 5: -100.183866 dbm
+Sim Time: 543.020000 - Basestation 6: -98.129951 dbm
+Sim Time: 543.020000 - Basestation 7: -101.953191 dbm
+Sim Time: 543.020000 - Basestation 8: -111.032446 dbm
+Sim Time: 543.020000 - PINGPONG!
+Sim Time: 543.150000 - Should switch to basestation: 4
+Sim Time: 543.400000 - Basestation 0: -93.331346 dbm
+Sim Time: 543.400000 - Basestation 1: -94.886641 dbm
+Sim Time: 543.400000 - Basestation 2: -103.369265 dbm
+Sim Time: 543.400000 - Basestation 3: -88.947716 dbm
+Sim Time: 543.400000 - Basestation 4: -87.976194 dbm
+Sim Time: 543.400000 - Basestation 5: -103.193018 dbm
+Sim Time: 543.400000 - Basestation 6: -105.131597 dbm
+Sim Time: 543.400000 - Basestation 7: -100.961430 dbm
+Sim Time: 543.400000 - Basestation 8: -104.039766 dbm
+Sim Time: 543.400000 - PINGPONG!
+Sim Time: 543.430000 - Should switch to basestation: 3
+Sim Time: 543.680000 - Basestation 0: -92.319931 dbm
+Sim Time: 543.680000 - Basestation 1: -96.887367 dbm
+Sim Time: 543.680000 - Basestation 2: -106.372917 dbm
+Sim Time: 543.680000 - Basestation 3: -90.938979 dbm
+Sim Time: 543.680000 - Basestation 4: -87.995326 dbm
+Sim Time: 543.680000 - Basestation 5: -103.199759 dbm
+Sim Time: 543.680000 - Basestation 6: -102.132813 dbm
+Sim Time: 543.680000 - Basestation 7: -99.967499 dbm
+Sim Time: 543.680000 - Basestation 8: -107.045158 dbm
+Sim Time: 543.680000 - PINGPONG!
+Sim Time: 543.910000 - Should switch to basestation: 4
+Sim Time: 544.160000 - Basestation 0: -95.300346 dbm
+Sim Time: 544.160000 - Basestation 1: -94.888636 dbm
+Sim Time: 544.160000 - Basestation 2: -101.379180 dbm
+Sim Time: 544.160000 - Basestation 3: -89.924031 dbm
+Sim Time: 544.160000 - Basestation 4: -86.028064 dbm
+Sim Time: 544.160000 - Basestation 5: -102.211308 dbm
+Sim Time: 544.160000 - Basestation 6: -101.134908 dbm
+Sim Time: 544.160000 - Basestation 7: -104.977901 dbm
+Sim Time: 544.160000 - Basestation 8: -108.054397 dbm
+Sim Time: 544.160000 - PINGPONG!
+Sim Time: 544.240000 - Should switch to basestation: 3
+Sim Time: 544.490000 - Basestation 0: -91.286869 dbm
+Sim Time: 544.490000 - Basestation 1: -94.889528 dbm
+Sim Time: 544.490000 - Basestation 2: -102.383487 dbm
+Sim Time: 544.490000 - Basestation 3: -86.913773 dbm
+Sim Time: 544.490000 - Basestation 4: -92.050529 dbm
+Sim Time: 544.490000 - Basestation 5: -103.219243 dbm
+Sim Time: 544.490000 - Basestation 6: -100.136355 dbm
+Sim Time: 544.490000 - Basestation 7: -99.985051 dbm
+Sim Time: 544.490000 - Basestation 8: -107.060745 dbm
+Sim Time: 544.490000 - PINGPONG!
+Sim Time: 544.640000 - Should switch to basestation: 4
+Sim Time: 544.890000 - Basestation 0: -91.270518 dbm
+Sim Time: 544.890000 - Basestation 1: -96.890630 dbm
+Sim Time: 544.890000 - Basestation 2: -106.388711 dbm
+Sim Time: 544.890000 - Basestation 3: -93.901362 dbm
+Sim Time: 544.890000 - Basestation 4: -88.077713 dbm
+Sim Time: 544.890000 - Basestation 5: -107.228857 dbm
+Sim Time: 544.890000 - Basestation 6: -101.138116 dbm
+Sim Time: 544.890000 - Basestation 7: -102.993716 dbm
+Sim Time: 544.890000 - Basestation 8: -105.068436 dbm
+Sim Time: 544.890000 - PINGPONG!
+Sim Time: 545.000000 - Should switch to basestation: 3
+Sim Time: 545.250000 - Basestation 0: -94.255790 dbm
+Sim Time: 545.250000 - Basestation 1: -98.891641 dbm
+Sim Time: 545.250000 - Basestation 2: -106.393414 dbm
+Sim Time: 545.250000 - Basestation 3: -93.890213 dbm
+Sim Time: 545.250000 - Basestation 4: -88.102135 dbm
+Sim Time: 545.250000 - Basestation 5: -104.237504 dbm
+Sim Time: 545.250000 - Basestation 6: -101.139708 dbm
+Sim Time: 545.250000 - Basestation 7: -101.001513 dbm
+Sim Time: 545.250000 - Basestation 8: -108.075355 dbm
+Sim Time: 545.250000 - PINGPONG!
+Sim Time: 545.270000 - Should switch to basestation: 4
+Sim Time: 545.520000 - Basestation 0: -99.244735 dbm
+Sim Time: 545.520000 - Basestation 1: -97.892411 dbm
+Sim Time: 545.520000 - Basestation 2: -103.396943 dbm
+Sim Time: 545.520000 - Basestation 3: -91.881864 dbm
+Sim Time: 545.520000 - Basestation 4: -89.120424 dbm
+Sim Time: 545.520000 - Basestation 5: -100.243987 dbm
+Sim Time: 545.520000 - Basestation 6: -101.140906 dbm
+Sim Time: 545.520000 - Basestation 7: -103.007360 dbm
+Sim Time: 545.520000 - Basestation 8: -107.080542 dbm
+Sim Time: 545.520000 - PINGPONG!
+Sim Time: 545.710000 - Should switch to basestation: 3
+Sim Time: 545.960000 - Basestation 0: -99.226705 dbm
+Sim Time: 545.960000 - Basestation 1: -94.893688 dbm
+Sim Time: 545.960000 - Basestation 2: -106.402695 dbm
+Sim Time: 545.960000 - Basestation 3: -87.868282 dbm
+Sim Time: 545.960000 - Basestation 4: -90.150179 dbm
+Sim Time: 545.960000 - Basestation 5: -105.254545 dbm
+Sim Time: 545.960000 - Basestation 6: -102.142866 dbm
+Sim Time: 545.960000 - Basestation 7: -98.016886 dbm
+Sim Time: 545.960000 - Basestation 8: -107.088991 dbm
+Sim Time: 545.960000 - PINGPONG!
+Sim Time: 546.040000 - Should switch to basestation: 4
+Sim Time: 546.290000 - Basestation 0: -97.213170 dbm
+Sim Time: 546.290000 - Basestation 1: -91.894664 dbm
+Sim Time: 546.290000 - Basestation 2: -104.407011 dbm
+Sim Time: 546.290000 - Basestation 3: -93.858115 dbm
+Sim Time: 546.290000 - Basestation 4: -88.172455 dbm
+Sim Time: 546.290000 - Basestation 5: -100.262460 dbm
+Sim Time: 546.290000 - Basestation 6: -99.144342 dbm
+Sim Time: 546.290000 - Basestation 7: -105.024029 dbm
+Sim Time: 546.290000 - Basestation 8: -109.095324 dbm
+Sim Time: 546.290000 - PINGPONG!
+Sim Time: 546.380000 - Should switch to basestation: 3
+Sim Time: 546.630000 - Basestation 0: -95.199214 dbm
+Sim Time: 546.630000 - Basestation 1: -90.895686 dbm
+Sim Time: 546.630000 - Basestation 2: -103.411460 dbm
+Sim Time: 546.630000 - Basestation 3: -92.847658 dbm
+Sim Time: 546.630000 - Basestation 4: -89.195370 dbm
+Sim Time: 546.630000 - Basestation 5: -104.270610 dbm
+Sim Time: 546.630000 - Basestation 6: -102.145869 dbm
+Sim Time: 546.630000 - Basestation 7: -102.031387 dbm
+Sim Time: 546.630000 - Basestation 8: -109.101847 dbm
+Sim Time: 546.630000 - PINGPONG!
+Sim Time: 546.660000 - Should switch to basestation: 4
+Sim Time: 546.910000 - Basestation 0: -95.187713 dbm
+Sim Time: 546.910000 - Basestation 1: -94.896539 dbm
+Sim Time: 546.910000 - Basestation 2: -101.415125 dbm
+Sim Time: 546.910000 - Basestation 3: -90.839060 dbm
+Sim Time: 546.910000 - Basestation 4: -88.214214 dbm
+Sim Time: 546.910000 - Basestation 5: -100.277319 dbm
+Sim Time: 546.910000 - Basestation 6: -104.147131 dbm
+Sim Time: 546.910000 - Basestation 7: -103.037446 dbm
+Sim Time: 546.910000 - Basestation 8: -108.107216 dbm
+Sim Time: 546.910000 - PINGPONG!
+Sim Time: 547.650000 - Should switch to basestation: 3
+Sim Time: 547.900000 - Basestation 0: -96.146986 dbm
+Sim Time: 547.900000 - Basestation 1: -97.899646 dbm
+Sim Time: 547.900000 - Basestation 2: -100.428092 dbm
+Sim Time: 547.900000 - Basestation 3: -89.808759 dbm
+Sim Time: 547.900000 - Basestation 4: -90.280645 dbm
+Sim Time: 547.900000 - Basestation 5: -99.301019 dbm
+Sim Time: 547.900000 - Basestation 6: -101.151622 dbm
+Sim Time: 547.900000 - Basestation 7: -98.058860 dbm
+Sim Time: 547.900000 - Basestation 8: -104.126186 dbm
+Sim Time: 547.900000 - PINGPONG!
+Sim Time: 547.980000 - Should switch to basestation: 4
+Sim Time: 548.230000 - Basestation 0: -95.133389 dbm
+Sim Time: 548.230000 - Basestation 1: -94.900713 dbm
+Sim Time: 548.230000 - Basestation 2: -105.432418 dbm
+Sim Time: 548.230000 - Basestation 3: -91.798693 dbm
+Sim Time: 548.230000 - Basestation 4: -90.302721 dbm
+Sim Time: 548.230000 - Basestation 5: -102.308911 dbm
+Sim Time: 548.230000 - Basestation 6: -102.153130 dbm
+Sim Time: 548.230000 - Basestation 7: -102.065996 dbm
+Sim Time: 548.230000 - Basestation 8: -107.132503 dbm
+Sim Time: 548.230000 - PINGPONG!
+Sim Time: 548.390000 - Should switch to basestation: 3
+Sim Time: 548.640000 - Basestation 0: -93.116481 dbm
+Sim Time: 548.640000 - Basestation 1: -96.902059 dbm
+Sim Time: 548.640000 - Basestation 2: -106.437794 dbm
+Sim Time: 548.640000 - Basestation 3: -92.786211 dbm
+Sim Time: 548.640000 - Basestation 4: -89.330102 dbm
+Sim Time: 548.640000 - Basestation 5: -105.318711 dbm
+Sim Time: 548.640000 - Basestation 6: -102.155011 dbm
+Sim Time: 548.640000 - Basestation 7: -102.074859 dbm
+Sim Time: 548.640000 - Basestation 8: -108.140349 dbm
+Sim Time: 548.640000 - PINGPONG!
+Sim Time: 548.740000 - Should switch to basestation: 4
+Sim Time: 548.990000 - Basestation 0: -97.102035 dbm
+Sim Time: 548.990000 - Basestation 1: -90.903227 dbm
+Sim Time: 548.990000 - Basestation 2: -100.442386 dbm
+Sim Time: 548.990000 - Basestation 3: -91.775577 dbm
+Sim Time: 548.990000 - Basestation 4: -88.353435 dbm
+Sim Time: 548.990000 - Basestation 5: -103.327073 dbm
+Sim Time: 548.990000 - Basestation 6: -105.156624 dbm
+Sim Time: 548.990000 - Basestation 7: -105.082424 dbm
+Sim Time: 548.990000 - Basestation 8: -110.147043 dbm
+Sim Time: 548.990000 - PINGPONG!
+Sim Time: 549.260000 - Should switch to basestation: 3
+Sim Time: 549.510000 - Basestation 0: -91.080549 dbm
+Sim Time: 549.510000 - Basestation 1: -92.904995 dbm
+Sim Time: 549.510000 - Basestation 2: -104.449211 dbm
+Sim Time: 549.510000 - Basestation 3: -89.759815 dbm
+Sim Time: 549.510000 - Basestation 4: -86.388031 dbm
+Sim Time: 549.510000 - Basestation 5: -101.339488 dbm
+Sim Time: 549.510000 - Basestation 6: -100.159030 dbm
+Sim Time: 549.510000 - Basestation 7: -105.093661 dbm
+Sim Time: 549.510000 - Basestation 8: -111.156983 dbm
+Sim Time: 549.510000 - PINGPONG!
+Sim Time: 549.620000 - Should switch to basestation: 4
+Sim Time: 549.870000 - Basestation 0: -98.065660 dbm
+Sim Time: 549.870000 - Basestation 1: -98.906240 dbm
+Sim Time: 549.870000 - Basestation 2: -104.453938 dbm
+Sim Time: 549.870000 - Basestation 3: -93.748929 dbm
+Sim Time: 549.870000 - Basestation 4: -87.411934 dbm
+Sim Time: 549.870000 - Basestation 5: -102.348077 dbm
+Sim Time: 549.870000 - Basestation 6: -104.160704 dbm
+Sim Time: 549.870000 - Basestation 7: -102.101438 dbm
+Sim Time: 549.870000 - Basestation 8: -110.163861 dbm
+Sim Time: 549.870000 - PINGPONG!
+Sim Time: 550.020000 - Should switch to basestation: 3
+Sim Time: 550.270000 - Basestation 0: -96.049100 dbm
+Sim Time: 550.270000 - Basestation 1: -92.907646 dbm
+Sim Time: 550.270000 - Basestation 2: -106.459192 dbm
+Sim Time: 550.270000 - Basestation 3: -89.736858 dbm
+Sim Time: 550.270000 - Basestation 4: -92.438447 dbm
+Sim Time: 550.270000 - Basestation 5: -104.357616 dbm
+Sim Time: 550.270000 - Basestation 6: -106.162572 dbm
+Sim Time: 550.270000 - Basestation 7: -105.110078 dbm
+Sim Time: 550.270000 - Basestation 8: -109.171499 dbm
+Sim Time: 550.270000 - PINGPONG!
+Sim Time: 550.360000 - Should switch to basestation: 4
+Sim Time: 550.610000 - Basestation 0: -91.035013 dbm
+Sim Time: 550.610000 - Basestation 1: -94.908859 dbm
+Sim Time: 550.610000 - Basestation 2: -102.463660 dbm
+Sim Time: 550.610000 - Basestation 3: -91.726619 dbm
+Sim Time: 550.610000 - Basestation 4: -89.460944 dbm
+Sim Time: 550.610000 - Basestation 5: -100.365719 dbm
+Sim Time: 550.610000 - Basestation 6: -102.164165 dbm
+Sim Time: 550.610000 - Basestation 7: -102.117420 dbm
+Sim Time: 550.610000 - Basestation 8: -107.177989 dbm
+Sim Time: 550.610000 - PINGPONG!
+Sim Time: 550.760000 - Should switch to basestation: 3
+Sim Time: 551.010000 - Basestation 0: -98.018425 dbm
+Sim Time: 551.010000 - Basestation 1: -93.910306 dbm
+Sim Time: 551.010000 - Basestation 2: -104.468919 dbm
+Sim Time: 551.010000 - Basestation 3: -93.714597 dbm
+Sim Time: 551.010000 - Basestation 4: -85.487367 dbm
+Sim Time: 551.010000 - Basestation 5: -104.375248 dbm
+Sim Time: 551.010000 - Basestation 6: -98.166047 dbm
+Sim Time: 551.010000 - Basestation 7: -104.126056 dbm
+Sim Time: 551.010000 - Basestation 8: -107.185620 dbm
+Sim Time: 551.010000 - PINGPONG!
+Sim Time: 551.180000 - Should switch to basestation: 4
+Sim Time: 551.430000 - Basestation 0: -93.000990 dbm
+Sim Time: 551.430000 - Basestation 1: -92.911850 dbm
+Sim Time: 551.430000 - Basestation 2: -107.474443 dbm
+Sim Time: 551.430000 - Basestation 3: -88.702004 dbm
+Sim Time: 551.430000 - Basestation 4: -86.515059 dbm
+Sim Time: 551.430000 - Basestation 5: -104.385247 dbm
+Sim Time: 551.430000 - Basestation 6: -100.168031 dbm
+Sim Time: 551.430000 - Basestation 7: -101.135121 dbm
+Sim Time: 551.430000 - Basestation 8: -105.193628 dbm
+Sim Time: 551.430000 - PINGPONG!
+Sim Time: 551.730000 - Should switch to basestation: 3
+Sim Time: 551.980000 - Basestation 0: -94.978133 dbm
+Sim Time: 551.980000 - Basestation 1: -91.913909 dbm
+Sim Time: 551.980000 - Basestation 2: -108.481680 dbm
+Sim Time: 551.980000 - Basestation 3: -90.685557 dbm
+Sim Time: 551.980000 - Basestation 4: -92.551242 dbm
+Sim Time: 551.980000 - Basestation 5: -104.398331 dbm
+Sim Time: 551.980000 - Basestation 6: -105.170643 dbm
+Sim Time: 551.980000 - Basestation 7: -106.146990 dbm
+Sim Time: 551.980000 - Basestation 8: -107.204109 dbm
+Sim Time: 551.980000 - PINGPONG!
+Sim Time: 552.210000 - Should switch to basestation: 4
+Sim Time: 552.460000 - Basestation 0: -92.958161 dbm
+Sim Time: 552.460000 - Basestation 1: -97.915741 dbm
+Sim Time: 552.460000 - Basestation 2: -107.488000 dbm
+Sim Time: 552.460000 - Basestation 3: -92.671245 dbm
+Sim Time: 552.460000 - Basestation 4: -90.582747 dbm
+Sim Time: 552.460000 - Basestation 5: -103.409742 dbm
+Sim Time: 552.460000 - Basestation 6: -103.172934 dbm
+Sim Time: 552.460000 - Basestation 7: -100.157345 dbm
+Sim Time: 552.460000 - Basestation 8: -106.213250 dbm
+Sim Time: 552.460000 - PINGPONG!
+Sim Time: 553.070000 - Should switch to basestation: 3
+Sim Time: 553.320000 - Basestation 0: -90.922320 dbm
+Sim Time: 553.320000 - Basestation 1: -97.919103 dbm
+Sim Time: 553.320000 - Basestation 2: -107.499330 dbm
+Sim Time: 553.320000 - Basestation 3: -89.645702 dbm
+Sim Time: 553.320000 - Basestation 4: -93.639021 dbm
+Sim Time: 553.320000 - Basestation 5: -100.430167 dbm
+Sim Time: 553.320000 - Basestation 6: -103.177068 dbm
+Sim Time: 553.320000 - Basestation 7: -104.175890 dbm
+Sim Time: 553.320000 - Basestation 8: -106.229613 dbm
+Sim Time: 553.320000 - PINGPONG!
+Sim Time: 553.590000 - Should switch to basestation: 4
+Sim Time: 553.840000 - Basestation 0: -93.900613 dbm
+Sim Time: 553.840000 - Basestation 1: -95.921187 dbm
+Sim Time: 553.840000 - Basestation 2: -107.506187 dbm
+Sim Time: 553.840000 - Basestation 3: -86.630320 dbm
+Sim Time: 553.840000 - Basestation 4: -85.672941 dbm
+Sim Time: 553.840000 - Basestation 5: -104.442504 dbm
+Sim Time: 553.840000 - Basestation 6: -105.179585 dbm
+Sim Time: 553.840000 - Basestation 7: -103.187100 dbm
+Sim Time: 553.840000 - Basestation 8: -108.239499 dbm
+Sim Time: 553.840000 - PINGPONG!
+Sim Time: 553.950000 - Should switch to basestation: 3
+Sim Time: 554.200000 - Basestation 0: -90.885570 dbm
+Sim Time: 554.200000 - Basestation 1: -92.922651 dbm
+Sim Time: 554.200000 - Basestation 2: -102.510935 dbm
+Sim Time: 554.200000 - Basestation 3: -89.619698 dbm
+Sim Time: 554.200000 - Basestation 4: -87.696377 dbm
+Sim Time: 554.200000 - Basestation 5: -101.451040 dbm
+Sim Time: 554.200000 - Basestation 6: -104.181335 dbm
+Sim Time: 554.200000 - Basestation 7: -105.194858 dbm
+Sim Time: 554.200000 - Basestation 8: -106.246338 dbm
+Sim Time: 554.200000 - PINGPONG!
+Sim Time: 554.650000 - Should switch to basestation: 4
+Sim Time: 554.900000 - Basestation 0: -94.856282 dbm
+Sim Time: 554.900000 - Basestation 1: -94.925551 dbm
+Sim Time: 554.900000 - Basestation 2: -106.520174 dbm
+Sim Time: 554.900000 - Basestation 3: -93.599111 dbm
+Sim Time: 554.900000 - Basestation 4: -93.741840 dbm
+Sim Time: 554.900000 - Basestation 5: -105.467625 dbm
+Sim Time: 554.900000 - Basestation 6: -105.184756 dbm
+Sim Time: 554.900000 - Basestation 7: -106.209939 dbm
+Sim Time: 554.900000 - Basestation 8: -105.259629 dbm
+Sim Time: 554.900000 - PINGPONG!
+Sim Time: 555.140000 - Should switch to basestation: 3
+Sim Time: 555.390000 - Basestation 0: -95.835752 dbm
+Sim Time: 555.390000 - Basestation 1: -97.927622 dbm
+Sim Time: 555.390000 - Basestation 2: -106.526645 dbm
+Sim Time: 555.390000 - Basestation 3: -89.584751 dbm
+Sim Time: 555.390000 - Basestation 4: -87.773579 dbm
+Sim Time: 555.390000 - Basestation 5: -107.479224 dbm
+Sim Time: 555.390000 - Basestation 6: -102.187166 dbm
+Sim Time: 555.390000 - Basestation 7: -98.220492 dbm
+Sim Time: 555.390000 - Basestation 8: -106.268926 dbm
+Sim Time: 555.390000 - PINGPONG!
+Sim Time: 555.640000 - Should switch to basestation: 4
+Sim Time: 555.890000 - Basestation 0: -94.814778 dbm
+Sim Time: 555.890000 - Basestation 1: -97.929769 dbm
+Sim Time: 555.890000 - Basestation 2: -106.533251 dbm
+Sim Time: 555.890000 - Basestation 3: -86.570143 dbm
+Sim Time: 555.890000 - Basestation 4: -92.805894 dbm
+Sim Time: 555.890000 - Basestation 5: -102.491052 dbm
+Sim Time: 555.890000 - Basestation 6: -98.189636 dbm
+Sim Time: 555.890000 - Basestation 7: -104.231257 dbm
+Sim Time: 555.890000 - Basestation 8: -107.278406 dbm
+Sim Time: 555.890000 - PINGPONG!
+Sim Time: 555.910000 - Should switch to basestation: 3
+Sim Time: 556.160000 - Basestation 0: -95.803442 dbm
+Sim Time: 556.160000 - Basestation 1: -97.930943 dbm
+Sim Time: 556.160000 - Basestation 2: -108.536820 dbm
+Sim Time: 556.160000 - Basestation 3: -89.562273 dbm
+Sim Time: 556.160000 - Basestation 4: -90.823314 dbm
+Sim Time: 556.160000 - Basestation 5: -106.497435 dbm
+Sim Time: 556.160000 - Basestation 6: -102.190975 dbm
+Sim Time: 556.160000 - Basestation 7: -101.237069 dbm
+Sim Time: 556.160000 - Basestation 8: -108.283523 dbm
+Sim Time: 556.160000 - PINGPONG!
+Sim Time: 557.180000 - Should switch to basestation: 4
+Sim Time: 557.430000 - Basestation 0: -94.750022 dbm
+Sim Time: 557.430000 - Basestation 1: -98.936601 dbm
+Sim Time: 557.430000 - Basestation 2: -104.553619 dbm
+Sim Time: 557.430000 - Basestation 3: -93.525434 dbm
+Sim Time: 557.430000 - Basestation 4: -87.904972 dbm
+Sim Time: 557.430000 - Basestation 5: -106.527428 dbm
+Sim Time: 557.430000 - Basestation 6: -99.197320 dbm
+Sim Time: 557.430000 - Basestation 7: -106.264394 dbm
+Sim Time: 557.430000 - Basestation 8: -105.307568 dbm
+Sim Time: 557.430000 - PINGPONG!
+Sim Time: 557.490000 - Should switch to basestation: 3
+Sim Time: 557.740000 - Basestation 0: -96.736957 dbm
+Sim Time: 557.740000 - Basestation 1: -91.938016 dbm
+Sim Time: 557.740000 - Basestation 2: -106.557723 dbm
+Sim Time: 557.740000 - Basestation 3: -89.516487 dbm
+Sim Time: 557.740000 - Basestation 4: -89.924834 dbm
+Sim Time: 557.740000 - Basestation 5: -103.534741 dbm
+Sim Time: 557.740000 - Basestation 6: -101.198881 dbm
+Sim Time: 557.740000 - Basestation 7: -99.271061 dbm
+Sim Time: 557.740000 - Basestation 8: -105.313431 dbm
+Sim Time: 557.740000 - PINGPONG!
+Sim Time: 558.050000 - Should switch to basestation: 4
+Sim Time: 558.300000 - Basestation 0: -91.713333 dbm
+Sim Time: 558.300000 - Basestation 1: -94.940607 dbm
+Sim Time: 558.300000 - Basestation 2: -104.565140 dbm
+Sim Time: 558.300000 - Basestation 3: -87.500369 dbm
+Sim Time: 558.300000 - Basestation 4: -91.960646 dbm
+Sim Time: 558.300000 - Basestation 5: -101.547943 dbm
+Sim Time: 558.300000 - Basestation 6: -99.201713 dbm
+Sim Time: 558.300000 - Basestation 7: -99.283101 dbm
+Sim Time: 558.300000 - Basestation 8: -110.324017 dbm
+Sim Time: 558.300000 - PINGPONG!
+Sim Time: 558.530000 - Should switch to basestation: 3
+Sim Time: 558.780000 - Basestation 0: -94.693059 dbm
+Sim Time: 558.780000 - Basestation 1: -94.942862 dbm
+Sim Time: 558.780000 - Basestation 2: -108.571500 dbm
+Sim Time: 558.780000 - Basestation 3: -90.486601 dbm
+Sim Time: 558.780000 - Basestation 4: -91.991271 dbm
+Sim Time: 558.780000 - Basestation 5: -101.559250 dbm
+Sim Time: 558.780000 - Basestation 6: -102.204151 dbm
+Sim Time: 558.780000 - Basestation 7: -105.293418 dbm
+Sim Time: 558.780000 - Basestation 8: -106.333084 dbm
+Sim Time: 558.780000 - PINGPONG!
+Sim Time: 558.850000 - Should switch to basestation: 4
+Sim Time: 559.100000 - Basestation 0: -94.679530 dbm
+Sim Time: 559.100000 - Basestation 1: -97.944383 dbm
+Sim Time: 559.100000 - Basestation 2: -104.575742 dbm
+Sim Time: 559.100000 - Basestation 3: -92.477446 dbm
+Sim Time: 559.100000 - Basestation 4: -88.011651 dbm
+Sim Time: 559.100000 - Basestation 5: -102.566784 dbm
+Sim Time: 559.100000 - Basestation 6: -102.205783 dbm
+Sim Time: 559.100000 - Basestation 7: -105.300295 dbm
+Sim Time: 559.100000 - Basestation 8: -106.339126 dbm
+Sim Time: 559.100000 - PINGPONG!
+Sim Time: 559.190000 - Should switch to basestation: 3
+Sim Time: 559.440000 - Basestation 0: -96.665144 dbm
+Sim Time: 559.440000 - Basestation 1: -98.946014 dbm
+Sim Time: 559.440000 - Basestation 2: -108.580251 dbm
+Sim Time: 559.440000 - Basestation 3: -87.467740 dbm
+Sim Time: 559.440000 - Basestation 4: -92.033274 dbm
+Sim Time: 559.440000 - Basestation 5: -104.574785 dbm
+Sim Time: 559.440000 - Basestation 6: -101.207523 dbm
+Sim Time: 559.440000 - Basestation 7: -105.307600 dbm
+Sim Time: 559.440000 - Basestation 8: -107.345543 dbm
+Sim Time: 559.440000 - PINGPONG!
+Sim Time: 559.630000 - Should switch to basestation: 4
+Sim Time: 559.880000 - Basestation 0: -92.646509 dbm
+Sim Time: 559.880000 - Basestation 1: -91.948150 dbm
+Sim Time: 559.880000 - Basestation 2: -101.586088 dbm
+Sim Time: 559.880000 - Basestation 3: -87.455212 dbm
+Sim Time: 559.880000 - Basestation 4: -89.061209 dbm
+Sim Time: 559.880000 - Basestation 5: -106.585133 dbm
+Sim Time: 559.880000 - Basestation 6: -100.209782 dbm
+Sim Time: 559.880000 - Basestation 7: -105.317051 dbm
+Sim Time: 559.880000 - Basestation 8: -108.353844 dbm
+Sim Time: 559.880000 - PINGPONG!
+Sim Time: 559.910000 - Should switch to basestation: 3
+Sim Time: 560.160000 - Basestation 0: -94.634641 dbm
+Sim Time: 560.160000 - Basestation 1: -97.949523 dbm
+Sim Time: 560.160000 - Basestation 2: -104.589803 dbm
+Sim Time: 560.160000 - Basestation 3: -93.447259 dbm
+Sim Time: 560.160000 - Basestation 4: -92.078957 dbm
+Sim Time: 560.160000 - Basestation 5: -105.591715 dbm
+Sim Time: 560.160000 - Basestation 6: -98.211225 dbm
+Sim Time: 560.160000 - Basestation 7: -100.323064 dbm
+Sim Time: 560.160000 - Basestation 8: -109.359123 dbm
+Sim Time: 560.160000 - PINGPONG!
+Sim Time: 560.170000 - Should switch to basestation: 4
+Sim Time: 560.420000 - Basestation 0: -94.623613 dbm
+Sim Time: 560.420000 - Basestation 1: -94.950807 dbm
+Sim Time: 560.420000 - Basestation 2: -105.593254 dbm
+Sim Time: 560.420000 - Basestation 3: -85.439888 dbm
+Sim Time: 560.420000 - Basestation 4: -90.095419 dbm
+Sim Time: 560.420000 - Basestation 5: -102.597825 dbm
+Sim Time: 560.420000 - Basestation 6: -99.212568 dbm
+Sim Time: 560.420000 - Basestation 7: -104.328646 dbm
+Sim Time: 560.420000 - Basestation 8: -104.364024 dbm
+Sim Time: 560.420000 - PINGPONG!
+Sim Time: 560.600000 - Should switch to basestation: 3
+Sim Time: 560.850000 - Basestation 0: -97.605360 dbm
+Sim Time: 560.850000 - Basestation 1: -94.952952 dbm
+Sim Time: 560.850000 - Basestation 2: -106.598964 dbm
+Sim Time: 560.850000 - Basestation 3: -86.427725 dbm
+Sim Time: 560.850000 - Basestation 4: -93.122602 dbm
+Sim Time: 560.850000 - Basestation 5: -105.607924 dbm
+Sim Time: 560.850000 - Basestation 6: -104.214796 dbm
+Sim Time: 560.850000 - Basestation 7: -105.337877 dbm
+Sim Time: 560.850000 - Basestation 8: -110.372126 dbm
+Sim Time: 560.850000 - PINGPONG!
+Sim Time: 561.170000 - Should switch to basestation: 4
+Sim Time: 561.420000 - Basestation 0: -95.581135 dbm
+Sim Time: 561.420000 - Basestation 1: -91.955834 dbm
+Sim Time: 561.420000 - Basestation 2: -104.606536 dbm
+Sim Time: 561.420000 - Basestation 3: -89.411657 dbm
+Sim Time: 561.420000 - Basestation 4: -88.158557 dbm
+Sim Time: 561.420000 - Basestation 5: -101.621301 dbm
+Sim Time: 561.420000 - Basestation 6: -102.217764 dbm
+Sim Time: 561.420000 - Basestation 7: -103.350110 dbm
+Sim Time: 561.420000 - Basestation 8: -106.382858 dbm
+Sim Time: 561.420000 - PINGPONG!
+Sim Time: 561.480000 - Should switch to basestation: 3
+Sim Time: 561.730000 - Basestation 0: -90.567946 dbm
+Sim Time: 561.730000 - Basestation 1: -92.957421 dbm
+Sim Time: 561.730000 - Basestation 2: -106.610656 dbm
+Sim Time: 561.730000 - Basestation 3: -88.402946 dbm
+Sim Time: 561.730000 - Basestation 4: -92.178074 dbm
+Sim Time: 561.730000 - Basestation 5: -107.628572 dbm
+Sim Time: 561.730000 - Basestation 6: -99.219384 dbm
+Sim Time: 561.730000 - Basestation 7: -101.356761 dbm
+Sim Time: 561.730000 - Basestation 8: -107.388692 dbm
+Sim Time: 561.730000 - PINGPONG!
+Sim Time: 562.900000 - Should switch to basestation: 4
+Sim Time: 563.150000 - Basestation 0: -92.507407 dbm
+Sim Time: 563.150000 - Basestation 1: -94.964857 dbm
+Sim Time: 563.150000 - Basestation 2: -108.629543 dbm
+Sim Time: 563.150000 - Basestation 3: -92.363282 dbm
+Sim Time: 563.150000 - Basestation 4: -90.267139 dbm
+Sim Time: 563.150000 - Basestation 5: -107.661837 dbm
+Sim Time: 563.150000 - Basestation 6: -101.226865 dbm
+Sim Time: 563.150000 - Basestation 7: -99.387211 dbm
+Sim Time: 563.150000 - Basestation 8: -105.415385 dbm
+Sim Time: 563.150000 - PINGPONG!
+Sim Time: 563.180000 - Should switch to basestation: 3
+Sim Time: 563.430000 - Basestation 0: -94.495446 dbm
+Sim Time: 563.430000 - Basestation 1: -97.966355 dbm
+Sim Time: 563.430000 - Basestation 2: -107.633270 dbm
+Sim Time: 563.430000 - Basestation 3: -89.355508 dbm
+Sim Time: 563.430000 - Basestation 4: -87.284637 dbm
+Sim Time: 563.430000 - Basestation 5: -106.668388 dbm
+Sim Time: 563.430000 - Basestation 6: -99.228352 dbm
+Sim Time: 563.430000 - Basestation 7: -101.393212 dbm
+Sim Time: 563.430000 - Basestation 8: -107.420643 dbm
+Sim Time: 563.430000 - PINGPONG!
+Sim Time: 563.570000 - Should switch to basestation: 4
+Sim Time: 563.820000 - Basestation 0: -96.478772 dbm
+Sim Time: 563.820000 - Basestation 1: -90.968461 dbm
+Sim Time: 563.820000 - Basestation 2: -101.638464 dbm
+Sim Time: 563.820000 - Basestation 3: -90.344707 dbm
+Sim Time: 563.820000 - Basestation 4: -87.308973 dbm
+Sim Time: 563.820000 - Basestation 5: -105.677508 dbm
+Sim Time: 563.820000 - Basestation 6: -103.230429 dbm
+Sim Time: 563.820000 - Basestation 7: -99.401569 dbm
+Sim Time: 563.820000 - Basestation 8: -105.427963 dbm
+Sim Time: 563.820000 - PINGPONG!
+Sim Time: 564.060000 - Should switch to basestation: 3
+Sim Time: 564.310000 - Basestation 0: -96.457800 dbm
+Sim Time: 564.310000 - Basestation 1: -94.971137 dbm
+Sim Time: 564.310000 - Basestation 2: -104.644991 dbm
+Sim Time: 564.310000 - Basestation 3: -86.331179 dbm
+Sim Time: 564.310000 - Basestation 4: -93.339491 dbm
+Sim Time: 564.310000 - Basestation 5: -99.688960 dbm
+Sim Time: 564.310000 - Basestation 6: -101.233048 dbm
+Sim Time: 564.310000 - Basestation 7: -102.412066 dbm
+Sim Time: 564.310000 - Basestation 8: -107.437156 dbm
+Sim Time: 564.310000 - PINGPONG!
+Sim Time: 565.840000 - Should switch to basestation: 4
+Sim Time: 566.090000 - Basestation 0: -93.381411 dbm
+Sim Time: 566.090000 - Basestation 1: -92.981131 dbm
+Sim Time: 566.090000 - Basestation 2: -101.668728 dbm
+Sim Time: 566.090000 - Basestation 3: -93.282451 dbm
+Sim Time: 566.090000 - Basestation 4: -89.449814 dbm
+Sim Time: 566.090000 - Basestation 5: -103.730494 dbm
+Sim Time: 566.090000 - Basestation 6: -102.242660 dbm
+Sim Time: 566.090000 - Basestation 7: -102.450171 dbm
+Sim Time: 566.090000 - Basestation 8: -108.470500 dbm
+Sim Time: 566.090000 - PINGPONG!
+Sim Time: 566.210000 - Should switch to basestation: 3
+Sim Time: 566.460000 - Basestation 0: -95.365492 dbm
+Sim Time: 566.460000 - Basestation 1: -98.983263 dbm
+Sim Time: 566.460000 - Basestation 2: -102.673667 dbm
+Sim Time: 566.460000 - Basestation 3: -90.272405 dbm
+Sim Time: 566.460000 - Basestation 4: -91.472641 dbm
+Sim Time: 566.460000 - Basestation 5: -103.739114 dbm
+Sim Time: 566.460000 - Basestation 6: -100.244677 dbm
+Sim Time: 566.460000 - Basestation 7: -98.458086 dbm
+Sim Time: 566.460000 - Basestation 8: -107.477422 dbm
+Sim Time: 566.460000 - PINGPONG!
+Sim Time: 566.500000 - Should switch to basestation: 4
+Sim Time: 566.750000 - Basestation 0: -93.353005 dbm
+Sim Time: 566.750000 - Basestation 1: -94.984947 dbm
+Sim Time: 566.750000 - Basestation 2: -104.677539 dbm
+Sim Time: 566.750000 - Basestation 3: -89.264550 dbm
+Sim Time: 566.750000 - Basestation 4: -92.490507 dbm
+Sim Time: 566.750000 - Basestation 5: -102.745867 dbm
+Sim Time: 566.750000 - Basestation 6: -103.246263 dbm
+Sim Time: 566.750000 - Basestation 7: -106.464289 dbm
+Sim Time: 566.750000 - Basestation 8: -108.482845 dbm
+Sim Time: 566.750000 - PINGPONG!
+Sim Time: 566.930000 - Should switch to basestation: 3
+Sim Time: 567.180000 - Basestation 0: -96.334473 dbm
+Sim Time: 567.180000 - Basestation 1: -91.987465 dbm
+Sim Time: 567.180000 - Basestation 2: -101.683282 dbm
+Sim Time: 567.180000 - Basestation 3: -91.252937 dbm
+Sim Time: 567.180000 - Basestation 4: -88.516958 dbm
+Sim Time: 567.180000 - Basestation 5: -101.755875 dbm
+Sim Time: 567.180000 - Basestation 6: -102.248621 dbm
+Sim Time: 567.180000 - Basestation 7: -99.473484 dbm
+Sim Time: 567.180000 - Basestation 8: -105.490882 dbm
+Sim Time: 567.180000 - PINGPONG!
+Sim Time: 567.670000 - Should switch to basestation: 4
+Sim Time: 567.920000 - Basestation 0: -95.302537 dbm
+Sim Time: 567.920000 - Basestation 1: -90.991858 dbm
+Sim Time: 567.920000 - Basestation 2: -104.693172 dbm
+Sim Time: 567.920000 - Basestation 3: -88.233042 dbm
+Sim Time: 567.920000 - Basestation 4: -87.562364 dbm
+Sim Time: 567.920000 - Basestation 5: -100.773084 dbm
+Sim Time: 567.920000 - Basestation 6: -104.252700 dbm
+Sim Time: 567.920000 - Basestation 7: -99.489303 dbm
+Sim Time: 567.920000 - Basestation 8: -109.504704 dbm
+Sim Time: 567.920000 - PINGPONG!
+Sim Time: 567.930000 - Should switch to basestation: 3
+Sim Time: 568.180000 - Basestation 0: -96.291302 dbm
+Sim Time: 568.180000 - Basestation 1: -94.993418 dbm
+Sim Time: 568.180000 - Basestation 2: -106.696648 dbm
+Sim Time: 568.180000 - Basestation 3: -91.226080 dbm
+Sim Time: 568.180000 - Basestation 4: -88.578284 dbm
+Sim Time: 568.180000 - Basestation 5: -104.779126 dbm
+Sim Time: 568.180000 - Basestation 6: -102.254139 dbm
+Sim Time: 568.180000 - Basestation 7: -102.494859 dbm
+Sim Time: 568.180000 - Basestation 8: -105.509557 dbm
+Sim Time: 568.180000 - PINGPONG!
+Sim Time: 568.300000 - Should switch to basestation: 4
+Sim Time: 568.550000 - Basestation 0: -94.275303 dbm
+Sim Time: 568.550000 - Basestation 1: -90.995656 dbm
+Sim Time: 568.550000 - Basestation 2: -104.701596 dbm
+Sim Time: 568.550000 - Basestation 3: -89.216196 dbm
+Sim Time: 568.550000 - Basestation 4: -91.600909 dbm
+Sim Time: 568.550000 - Basestation 5: -100.787721 dbm
+Sim Time: 568.550000 - Basestation 6: -102.256192 dbm
+Sim Time: 568.550000 - Basestation 7: -104.502764 dbm
+Sim Time: 568.550000 - Basestation 8: -110.516461 dbm
+Sim Time: 568.550000 - PINGPONG!
+Sim Time: 568.560000 - Should switch to basestation: 3
+Sim Time: 568.810000 - Basestation 0: -90.264052 dbm
+Sim Time: 568.810000 - Basestation 1: -95.997239 dbm
+Sim Time: 568.810000 - Basestation 2: -104.705074 dbm
+Sim Time: 568.810000 - Basestation 3: -87.209269 dbm
+Sim Time: 568.810000 - Basestation 4: -90.616787 dbm
+Sim Time: 568.810000 - Basestation 5: -101.793757 dbm
+Sim Time: 568.810000 - Basestation 6: -103.257639 dbm
+Sim Time: 568.810000 - Basestation 7: -102.508318 dbm
+Sim Time: 568.810000 - Basestation 8: -107.521310 dbm
+Sim Time: 568.810000 - PINGPONG!
+Sim Time: 568.930000 - Should switch to basestation: 4
+Sim Time: 569.180000 - Basestation 0: -95.248028 dbm
+Sim Time: 569.180000 - Basestation 1: -96.999507 dbm
+Sim Time: 569.180000 - Basestation 2: -102.710025 dbm
+Sim Time: 569.180000 - Basestation 3: -87.199436 dbm
+Sim Time: 569.180000 - Basestation 4: -87.639351 dbm
+Sim Time: 569.180000 - Basestation 5: -99.802344 dbm
+Sim Time: 569.180000 - Basestation 6: -105.259704 dbm
+Sim Time: 569.180000 - Basestation 7: -102.516220 dbm
+Sim Time: 569.180000 - Basestation 8: -109.528208 dbm
+Sim Time: 569.180000 - PINGPONG!
+Sim Time: 569.340000 - Should switch to basestation: 3
+Sim Time: 569.590000 - Basestation 0: -97.230256 dbm
+Sim Time: 569.590000 - Basestation 1: -96.002043 dbm
+Sim Time: 569.590000 - Basestation 2: -100.715513 dbm
+Sim Time: 569.590000 - Basestation 3: -85.188575 dbm
+Sim Time: 569.590000 - Basestation 4: -90.664315 dbm
+Sim Time: 569.590000 - Basestation 5: -105.811854 dbm
+Sim Time: 569.590000 - Basestation 6: -104.261999 dbm
+Sim Time: 569.590000 - Basestation 7: -99.524974 dbm
+Sim Time: 569.590000 - Basestation 8: -109.535849 dbm
+Sim Time: 569.590000 - PINGPONG!
+Sim Time: 570.220000 - Should switch to basestation: 4
+Sim Time: 570.470000 - Basestation 0: -95.192051 dbm
+Sim Time: 570.470000 - Basestation 1: -96.007562 dbm
+Sim Time: 570.470000 - Basestation 2: -104.727299 dbm
+Sim Time: 570.470000 - Basestation 3: -86.165386 dbm
+Sim Time: 570.470000 - Basestation 4: -93.717749 dbm
+Sim Time: 570.470000 - Basestation 5: -99.832247 dbm
+Sim Time: 570.470000 - Basestation 6: -100.266952 dbm
+Sim Time: 570.470000 - Basestation 7: -102.543756 dbm
+Sim Time: 570.470000 - Basestation 8: -109.552234 dbm
+Sim Time: 570.470000 - PINGPONG!
+Sim Time: 570.540000 - Should switch to basestation: 3
+Sim Time: 570.790000 - Basestation 0: -97.178138 dbm
+Sim Time: 570.790000 - Basestation 1: -95.009595 dbm
+Sim Time: 570.790000 - Basestation 2: -108.731588 dbm
+Sim Time: 570.790000 - Basestation 3: -89.156996 dbm
+Sim Time: 570.790000 - Basestation 4: -90.737130 dbm
+Sim Time: 570.790000 - Basestation 5: -100.839656 dbm
+Sim Time: 570.790000 - Basestation 6: -103.268762 dbm
+Sim Time: 570.790000 - Basestation 7: -105.550583 dbm
+Sim Time: 570.790000 - Basestation 8: -108.558188 dbm
+Sim Time: 570.790000 - PINGPONG!
+Sim Time: 571.360000 - Should switch to basestation: 4
+Sim Time: 571.610000 - Basestation 0: -97.142438 dbm
+Sim Time: 571.610000 - Basestation 1: -98.014867 dbm
+Sim Time: 571.610000 - Basestation 2: -104.742581 dbm
+Sim Time: 571.610000 - Basestation 3: -89.135600 dbm
+Sim Time: 571.610000 - Basestation 4: -90.786678 dbm
+Sim Time: 571.610000 - Basestation 5: -104.858626 dbm
+Sim Time: 571.610000 - Basestation 6: -102.273423 dbm
+Sim Time: 571.610000 - Basestation 7: -100.568071 dbm
+Sim Time: 571.610000 - Basestation 8: -107.573434 dbm
+Sim Time: 571.610000 - PINGPONG!
+Sim Time: 571.730000 - Should switch to basestation: 3
+Sim Time: 571.980000 - Basestation 0: -92.126306 dbm
+Sim Time: 571.980000 - Basestation 1: -97.017275 dbm
+Sim Time: 571.980000 - Basestation 2: -101.747544 dbm
+Sim Time: 571.980000 - Basestation 3: -86.125995 dbm
+Sim Time: 571.980000 - Basestation 4: -92.808979 dbm
+Sim Time: 571.980000 - Basestation 5: -103.867179 dbm
+Sim Time: 571.980000 - Basestation 6: -104.275536 dbm
+Sim Time: 571.980000 - Basestation 7: -101.575959 dbm
+Sim Time: 571.980000 - Basestation 8: -110.580308 dbm
+Sim Time: 571.980000 - PINGPONG!
+Sim Time: 572.950000 - Should switch to basestation: 4
+Sim Time: 573.200000 - Basestation 0: -97.073014 dbm
+Sim Time: 573.200000 - Basestation 1: -92.025347 dbm
+Sim Time: 573.200000 - Basestation 2: -104.763921 dbm
+Sim Time: 573.200000 - Basestation 3: -89.094541 dbm
+Sim Time: 573.200000 - Basestation 4: -89.882269 dbm
+Sim Time: 573.200000 - Basestation 5: -102.895348 dbm
+Sim Time: 573.200000 - Basestation 6: -102.282549 dbm
+Sim Time: 573.200000 - Basestation 7: -105.601954 dbm
+Sim Time: 573.200000 - Basestation 8: -107.602952 dbm
+Sim Time: 573.200000 - PINGPONG!
+Sim Time: 573.240000 - Should switch to basestation: 3
+Sim Time: 573.490000 - Basestation 0: -97.060323 dbm
+Sim Time: 573.490000 - Basestation 1: -93.027295 dbm
+Sim Time: 573.490000 - Basestation 2: -100.767816 dbm
+Sim Time: 573.490000 - Basestation 3: -88.087114 dbm
+Sim Time: 573.490000 - Basestation 4: -93.899636 dbm
+Sim Time: 573.490000 - Basestation 5: -103.902037 dbm
+Sim Time: 573.490000 - Basestation 6: -101.284227 dbm
+Sim Time: 573.490000 - Basestation 7: -103.608130 dbm
+Sim Time: 573.490000 - Basestation 8: -107.608330 dbm
+Sim Time: 573.490000 - PINGPONG!
+Sim Time: 574.320000 - Should switch to basestation: 4
+Sim Time: 574.570000 - Basestation 0: -96.012983 dbm
+Sim Time: 574.570000 - Basestation 1: -95.034648 dbm
+Sim Time: 574.570000 - Basestation 2: -103.782330 dbm
+Sim Time: 574.570000 - Basestation 3: -85.059624 dbm
+Sim Time: 574.570000 - Basestation 4: -92.964130 dbm
+Sim Time: 574.570000 - Basestation 5: -102.926923 dbm
+Sim Time: 574.570000 - Basestation 6: -102.290508 dbm
+Sim Time: 574.570000 - Basestation 7: -99.631121 dbm
+Sim Time: 574.570000 - Basestation 8: -108.628339 dbm
+Sim Time: 574.570000 - PINGPONG!
+Sim Time: 574.630000 - Should switch to basestation: 3
+Sim Time: 574.880000 - Basestation 0: -90.999371 dbm
+Sim Time: 574.880000 - Basestation 1: -95.036788 dbm
+Sim Time: 574.880000 - Basestation 2: -104.786499 dbm
+Sim Time: 574.880000 - Basestation 3: -92.051783 dbm
+Sim Time: 574.880000 - Basestation 4: -88.982590 dbm
+Sim Time: 574.880000 - Basestation 5: -106.934059 dbm
+Sim Time: 574.880000 - Basestation 6: -98.292321 dbm
+Sim Time: 574.880000 - Basestation 7: -101.637718 dbm
+Sim Time: 574.880000 - Basestation 8: -104.634078 dbm
+Sim Time: 574.880000 - PINGPONG!
+Sim Time: 575.500000 - Should switch to basestation: 4
+Sim Time: 575.750000 - Basestation 0: -97.961118 dbm
+Sim Time: 575.750000 - Basestation 1: -93.042861 dbm
+Sim Time: 575.750000 - Basestation 2: -107.798204 dbm
+Sim Time: 575.750000 - Basestation 3: -87.029898 dbm
+Sim Time: 575.750000 - Basestation 4: -92.034268 dbm
+Sim Time: 575.750000 - Basestation 5: -107.954069 dbm
+Sim Time: 575.750000 - Basestation 6: -106.297433 dbm
+Sim Time: 575.750000 - Basestation 7: -100.656223 dbm
+Sim Time: 575.750000 - Basestation 8: -110.650171 dbm
+Sim Time: 575.750000 - PINGPONG!
+Sim Time: 575.770000 - Should switch to basestation: 3
+Sim Time: 576.020000 - Basestation 0: -90.949230 dbm
+Sim Time: 576.020000 - Basestation 1: -97.044766 dbm
+Sim Time: 576.020000 - Basestation 2: -104.801838 dbm
+Sim Time: 576.020000 - Basestation 3: -89.023142 dbm
+Sim Time: 576.020000 - Basestation 4: -92.050269 dbm
+Sim Time: 576.020000 - Basestation 5: -102.960274 dbm
+Sim Time: 576.020000 - Basestation 6: -98.299026 dbm
+Sim Time: 576.020000 - Basestation 7: -99.661964 dbm
+Sim Time: 576.020000 - Basestation 8: -105.655161 dbm
+Sim Time: 576.020000 - PINGPONG!
+Sim Time: 576.940000 - Should switch to basestation: 4
+Sim Time: 577.190000 - Basestation 0: -91.897625 dbm
+Sim Time: 577.190000 - Basestation 1: -95.053133 dbm
+Sim Time: 577.190000 - Basestation 2: -104.817596 dbm
+Sim Time: 577.190000 - Basestation 3: -87.994064 dbm
+Sim Time: 577.190000 - Basestation 4: -89.119402 dbm
+Sim Time: 577.190000 - Basestation 5: -103.987136 dbm
+Sim Time: 577.190000 - Basestation 6: -99.305970 dbm
+Sim Time: 577.190000 - Basestation 7: -101.686829 dbm
+Sim Time: 577.190000 - Basestation 8: -107.676769 dbm
+Sim Time: 577.190000 - PINGPONG!
+Sim Time: 577.200000 - Should switch to basestation: 3
+Sim Time: 577.220000 - DROPPED!!!
+Sim Time: 577.220000 - Basestation 0: -94.896742 dbm
+Sim Time: 577.220000 - Basestation 1: -98.053278 dbm
+Sim Time: 577.220000 - Basestation 2: -104.817865 dbm
+Sim Time: 577.220000 - Basestation 3: -89.993570 dbm
+Sim Time: 577.220000 - Basestation 4: -95.121170 dbm
+Sim Time: 577.220000 - Basestation 5: -104.987824 dbm
+Sim Time: 577.220000 - Basestation 6: -99.306149 dbm
+Sim Time: 577.220000 - Basestation 7: -103.687466 dbm
+Sim Time: 577.220000 - Basestation 8: -107.677323 dbm
+Sim Time: 577.450000 - Basestation 0: -96.886138 dbm
+Sim Time: 577.450000 - Basestation 1: -94.055017 dbm
+Sim Time: 577.450000 - Basestation 2: -104.821100 dbm
+Sim Time: 577.450000 - Basestation 3: -88.987646 dbm
+Sim Time: 577.450000 - Basestation 4: -90.134720 dbm
+Sim Time: 577.450000 - Basestation 5: -106.993099 dbm
+Sim Time: 577.450000 - Basestation 6: -104.307522 dbm
+Sim Time: 577.450000 - Basestation 7: -102.692352 dbm
+Sim Time: 577.450000 - Basestation 8: -107.681567 dbm
+Sim Time: 578.680000 - Should switch to basestation: 4
+Sim Time: 578.930000 - Basestation 0: -90.820611 dbm
+Sim Time: 578.930000 - Basestation 1: -95.065912 dbm
+Sim Time: 578.930000 - Basestation 2: -106.841058 dbm
+Sim Time: 578.930000 - Basestation 3: -85.951425 dbm
+Sim Time: 578.930000 - Basestation 4: -91.221606 dbm
+Sim Time: 578.930000 - Basestation 5: -107.027002 dbm
+Sim Time: 578.930000 - Basestation 6: -105.316415 dbm
+Sim Time: 578.930000 - Basestation 7: -102.723772 dbm
+Sim Time: 578.930000 - Basestation 8: -108.708846 dbm
+Sim Time: 578.930000 - PINGPONG!
+Sim Time: 578.970000 - Should switch to basestation: 3
+Sim Time: 579.160000 - DROPPED!!!
+Sim Time: 579.160000 - Basestation 0: -93.810851 dbm
+Sim Time: 579.160000 - Basestation 1: -95.067556 dbm
+Sim Time: 579.160000 - Basestation 2: -105.844027 dbm
+Sim Time: 579.160000 - Basestation 3: -85.946086 dbm
+Sim Time: 579.160000 - Basestation 4: -95.235062 dbm
+Sim Time: 579.160000 - Basestation 5: -103.032264 dbm
+Sim Time: 579.160000 - Basestation 6: -99.317806 dbm
+Sim Time: 579.160000 - Basestation 7: -101.728652 dbm
+Sim Time: 579.160000 - Basestation 8: -105.713081 dbm
+Sim Time: 579.220000 - Basestation 0: -97.807744 dbm
+Sim Time: 579.220000 - Basestation 1: -96.068080 dbm
+Sim Time: 579.220000 - Basestation 2: -104.844972 dbm
+Sim Time: 579.220000 - Basestation 3: -88.944390 dbm
+Sim Time: 579.220000 - Basestation 4: -95.238570 dbm
+Sim Time: 579.220000 - Basestation 5: -100.033637 dbm
+Sim Time: 579.220000 - Basestation 6: -99.318169 dbm
+Sim Time: 579.220000 - Basestation 7: -102.729925 dbm
+Sim Time: 579.220000 - Basestation 8: -106.714185 dbm
+Sim Time: 580.040000 - Should switch to basestation: 4
+Sim Time: 580.290000 - Basestation 0: -94.760191 dbm
+Sim Time: 580.290000 - Basestation 1: -97.076177 dbm
+Sim Time: 580.290000 - Basestation 2: -101.859419 dbm
+Sim Time: 580.290000 - Basestation 3: -86.918610 dbm
+Sim Time: 580.290000 - Basestation 4: -88.300990 dbm
+Sim Time: 580.290000 - Basestation 5: -104.058094 dbm
+Sim Time: 580.290000 - Basestation 6: -101.324675 dbm
+Sim Time: 580.290000 - Basestation 7: -106.752618 dbm
+Sim Time: 580.290000 - Basestation 8: -103.733869 dbm
+Sim Time: 580.290000 - PINGPONG!
+Sim Time: 580.350000 - Should switch to basestation: 3
+Sim Time: 580.390000 - DROPPED!!!
+Sim Time: 580.390000 - Basestation 0: -96.756185 dbm
+Sim Time: 580.390000 - Basestation 1: -92.076865 dbm
+Sim Time: 580.390000 - Basestation 2: -100.860635 dbm
+Sim Time: 580.390000 - Basestation 3: -92.916455 dbm
+Sim Time: 580.390000 - Basestation 4: -95.306810 dbm
+Sim Time: 580.390000 - Basestation 5: -100.060377 dbm
+Sim Time: 580.390000 - Basestation 6: -105.325286 dbm
+Sim Time: 580.390000 - Basestation 7: -99.754738 dbm
+Sim Time: 580.390000 - Basestation 8: -106.735707 dbm
+Sim Time: 580.410000 - DROPPED!!!
+Sim Time: 580.410000 - Basestation 0: -92.755295 dbm
+Sim Time: 580.410000 - Basestation 1: -96.077095 dbm
+Sim Time: 580.410000 - Basestation 2: -108.861040 dbm
+Sim Time: 580.410000 - Basestation 3: -89.915737 dbm
+Sim Time: 580.410000 - Basestation 4: -91.307973 dbm
+Sim Time: 580.410000 - Basestation 5: -103.060834 dbm
+Sim Time: 580.410000 - Basestation 6: -102.325408 dbm
+Sim Time: 580.410000 - Basestation 7: -99.755162 dbm
+Sim Time: 580.410000 - Basestation 8: -104.736075 dbm
+Sim Time: 580.600000 - Basestation 0: -91.746391 dbm
+Sim Time: 580.600000 - Basestation 1: -95.078551 dbm
+Sim Time: 580.600000 - Basestation 2: -101.863607 dbm
+Sim Time: 580.600000 - Basestation 3: -88.911194 dbm
+Sim Time: 580.600000 - Basestation 4: -89.319024 dbm
+Sim Time: 580.600000 - Basestation 5: -106.065172 dbm
+Sim Time: 580.600000 - Basestation 6: -105.326570 dbm
+Sim Time: 580.600000 - Basestation 7: -104.759189 dbm
+Sim Time: 580.600000 - Basestation 8: -107.739567 dbm
+Sim Time: 580.680000 - Should switch to basestation: 4
+Sim Time: 580.930000 - Basestation 0: -93.731689 dbm
+Sim Time: 580.930000 - Basestation 1: -95.081092 dbm
+Sim Time: 580.930000 - Basestation 2: -107.868066 dbm
+Sim Time: 580.930000 - Basestation 3: -92.903326 dbm
+Sim Time: 580.930000 - Basestation 4: -95.338196 dbm
+Sim Time: 580.930000 - Basestation 5: -102.072704 dbm
+Sim Time: 580.930000 - Basestation 6: -102.328592 dbm
+Sim Time: 580.930000 - Basestation 7: -104.766183 dbm
+Sim Time: 580.930000 - Basestation 8: -107.745630 dbm
+Sim Time: 580.930000 - PINGPONG!
+Sim Time: 581.000000 - Should switch to basestation: 3
+Sim Time: 581.250000 - Basestation 0: -89.717422 dbm
+Sim Time: 581.250000 - Basestation 1: -92.083569 dbm
+Sim Time: 581.250000 - Basestation 2: -108.872392 dbm
+Sim Time: 581.250000 - Basestation 3: -88.895721 dbm
+Sim Time: 581.250000 - Basestation 4: -88.356764 dbm
+Sim Time: 581.250000 - Basestation 5: -100.080005 dbm
+Sim Time: 581.250000 - Basestation 6: -105.330557 dbm
+Sim Time: 581.250000 - Basestation 7: -102.772964 dbm
+Sim Time: 581.250000 - Basestation 8: -108.751507 dbm
+Sim Time: 581.250000 - PINGPONG!
+Sim Time: 584.410000 - Should switch to basestation: 4
+Sim Time: 584.660000 - Basestation 0: -90.564699 dbm
+Sim Time: 584.660000 - Basestation 1: -94.110798 dbm
+Sim Time: 584.660000 - Basestation 2: -107.918549 dbm
+Sim Time: 584.660000 - Basestation 3: -86.816294 dbm
+Sim Time: 584.660000 - Basestation 4: -93.553154 dbm
+Sim Time: 584.660000 - Basestation 5: -104.157597 dbm
+Sim Time: 584.660000 - Basestation 6: -106.351790 dbm
+Sim Time: 584.660000 - Basestation 7: -102.845127 dbm
+Sim Time: 584.660000 - Basestation 8: -104.813992 dbm
+Sim Time: 584.660000 - PINGPONG!
+Sim Time: 584.680000 - Should switch to basestation: 3
+Sim Time: 584.910000 - DROPPED!!!
+Sim Time: 584.910000 - Basestation 0: -96.553903 dbm
+Sim Time: 584.910000 - Basestation 1: -98.112771 dbm
+Sim Time: 584.910000 - Basestation 2: -105.921802 dbm
+Sim Time: 584.910000 - Basestation 3: -85.810816 dbm
+Sim Time: 584.910000 - Basestation 4: -95.567448 dbm
+Sim Time: 584.910000 - Basestation 5: -105.163271 dbm
+Sim Time: 584.910000 - Basestation 6: -100.353368 dbm
+Sim Time: 584.910000 - Basestation 7: -101.850411 dbm
+Sim Time: 584.910000 - Basestation 8: -108.818562 dbm
+Sim Time: 584.930000 - Basestation 0: -97.552553 dbm
+Sim Time: 584.930000 - Basestation 1: -98.113018 dbm
+Sim Time: 584.930000 - Basestation 2: -104.922209 dbm
+Sim Time: 584.930000 - Basestation 3: -87.810132 dbm
+Sim Time: 584.930000 - Basestation 4: -94.568591 dbm
+Sim Time: 584.930000 - Basestation 5: -106.163725 dbm
+Sim Time: 584.930000 - Basestation 6: -104.353494 dbm
+Sim Time: 584.930000 - Basestation 7: -98.850834 dbm
+Sim Time: 584.930000 - Basestation 8: -108.818928 dbm
+Sim Time: 585.400000 - Should switch to basestation: 4
+Sim Time: 585.650000 - Basestation 0: -95.520124 dbm
+Sim Time: 585.650000 - Basestation 1: -96.118985 dbm
+Sim Time: 585.650000 - Basestation 2: -104.931972 dbm
+Sim Time: 585.650000 - Basestation 3: -91.793793 dbm
+Sim Time: 585.650000 - Basestation 4: -95.609674 dbm
+Sim Time: 585.650000 - Basestation 5: -104.180055 dbm
+Sim Time: 585.650000 - Basestation 6: -102.358054 dbm
+Sim Time: 585.650000 - Basestation 7: -104.866047 dbm
+Sim Time: 585.650000 - Basestation 8: -111.832083 dbm
+Sim Time: 585.650000 - PINGPONG!
+Sim Time: 585.660000 - DROPPED!!!
+Sim Time: 585.660000 - Basestation 0: -95.520124 dbm
+Sim Time: 585.660000 - Basestation 1: -96.118985 dbm
+Sim Time: 585.660000 - Basestation 2: -104.931972 dbm
+Sim Time: 585.660000 - Basestation 3: -91.793793 dbm
+Sim Time: 585.660000 - Basestation 4: -95.610244 dbm
+Sim Time: 585.660000 - Basestation 5: -106.180281 dbm
+Sim Time: 585.660000 - Basestation 6: -102.358117 dbm
+Sim Time: 585.660000 - Basestation 7: -100.866258 dbm
+Sim Time: 585.660000 - Basestation 8: -108.832266 dbm
+Sim Time: 585.730000 - Should switch to basestation: 4
+Sim Time: 585.980000 - Basestation 0: -91.505242 dbm
+Sim Time: 585.980000 - Basestation 1: -92.121742 dbm
+Sim Time: 585.980000 - Basestation 2: -105.936449 dbm
+Sim Time: 585.980000 - Basestation 3: -85.786349 dbm
+Sim Time: 585.980000 - Basestation 4: -91.628465 dbm
+Sim Time: 585.980000 - Basestation 5: -104.187533 dbm
+Sim Time: 585.980000 - Basestation 6: -105.360151 dbm
+Sim Time: 585.980000 - Basestation 7: -103.873017 dbm
+Sim Time: 585.980000 - Basestation 8: -107.838109 dbm
+Sim Time: 585.980000 - PINGPONG!
+Sim Time: 586.040000 - Should switch to basestation: 3
+Sim Time: 586.050000 - DROPPED!!!
+Sim Time: 586.050000 - Basestation 0: -97.502535 dbm
+Sim Time: 586.050000 - Basestation 1: -95.122245 dbm
+Sim Time: 586.050000 - Basestation 2: -108.937263 dbm
+Sim Time: 586.050000 - Basestation 3: -85.784999 dbm
+Sim Time: 586.050000 - Basestation 4: -95.632448 dbm
+Sim Time: 586.050000 - Basestation 5: -108.189119 dbm
+Sim Time: 586.050000 - Basestation 6: -99.360597 dbm
+Sim Time: 586.050000 - Basestation 7: -104.874495 dbm
+Sim Time: 586.050000 - Basestation 8: -109.839387 dbm
+Sim Time: 586.290000 - Basestation 0: -95.491251 dbm
+Sim Time: 586.290000 - Basestation 1: -99.124345 dbm
+Sim Time: 586.290000 - Basestation 2: -104.940655 dbm
+Sim Time: 586.290000 - Basestation 3: -90.779383 dbm
+Sim Time: 586.290000 - Basestation 4: -87.646095 dbm
+Sim Time: 586.290000 - Basestation 5: -107.194556 dbm
+Sim Time: 586.290000 - Basestation 6: -106.362126 dbm
+Sim Time: 586.290000 - Basestation 7: -105.879563 dbm
+Sim Time: 586.290000 - Basestation 8: -111.843767 dbm
+
+Sim Time: 597.050000 - X_Co:300.169969 Y_Co:470.442292 deltaX:-183.544461 deltaY:262.128653
+speed:4.000000 duration:80.000000
+Sim Time: 597.060000 - Mobile 1
+X Co-ordinate: 300.147026
+Y Co-ordinate: 470.475058
+Connected To Basestation: 3
+
+Final Report
+Handovers: 199
+Dropped: 7
+Ping-Pong: 183
+Deadzones: 0
+end...
+11:46: {~/Documents/Programming/4G-Handover-Optimisation} -> 
+
+
+params 4.5 -> -4.5 fading

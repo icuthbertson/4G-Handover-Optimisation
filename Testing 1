@@ -1,0 +1,1251 @@
+Last login: Wed Jan 29 21:05:27 on ttys000
+22:38: {~} -> cd Documents/
+22:38: {~/Documents} -> cd Programming/
+22:38: {~/Documents/Programming} -> cd 4G-Handover-Optimisation/
+22:38: {~/Documents/Programming/4G-Handover-Optimisation} -> ./bin/simulation 
+Simulation started...
+
+X_Co:750.000000 Y_Co:750.000000 deltaX:-339.666290 deltaY:-144.179788
+speed:3.000000 duration:123.000000
+Mobile 1
+X Co-ordinate: 749.972385
+Y Co-ordinate: 749.988278
+Connected To Basestation: 4
+
+X_Co:410.333710 Y_Co:605.820212 deltaX:-300.442798 deltaY:-384.549249
+speed:4.000000 duration:122.000000
+Mobile 1
+X Co-ordinate: 410.309083
+Y Co-ordinate: 605.788691
+Connected To Basestation: 4
+Should switch to basestation: 3
+Basestation 0: -121.987593 dbm
+Basestation 1: -123.300918 dbm
+Basestation 2: -132.927212 dbm
+Basestation 3: -116.622463 dbm
+Basestation 4: -119.151123 dbm
+Basestation 5: -132.043034 dbm
+Basestation 6: -130.161643 dbm
+Basestation 7: -130.611668 dbm
+Basestation 8: -135.669756 dbm
+Should switch to basestation: 0
+Basestation 0: -115.700848 dbm
+Basestation 1: -123.099865 dbm
+Basestation 2: -133.702196 dbm
+Basestation 3: -118.253843 dbm
+Basestation 4: -124.123018 dbm
+Basestation 5: -133.951021 dbm
+Basestation 6: -131.859925 dbm
+Basestation 7: -133.119446 dbm
+Basestation 8: -137.500347 dbm
+
+X_Co:109.890911 Y_Co:221.270963 deltaX:118.767100 deltaY:266.755274
+speed:4.000000 duration:73.000000
+Mobile 1
+X Co-ordinate: 109.907181
+Y Co-ordinate: 221.307505
+Connected To Basestation: 0
+Should switch to basestation: 3
+Basestation 0: -118.257877 dbm
+Basestation 1: -124.120146 dbm
+Basestation 2: -133.949090 dbm
+Basestation 3: -115.703332 dbm
+Basestation 4: -123.095385 dbm
+Basestation 5: -133.699928 dbm
+Basestation 6: -130.806373 dbm
+Basestation 7: -132.243694 dbm
+Basestation 8: -137.035364 dbm
+
+X_Co:228.658011 Y_Co:488.026237 deltaX:217.469273 deltaY:-74.880675
+speed:2.000000 duration:115.000000
+Mobile 1
+X Co-ordinate: 228.676922
+Y Co-ordinate: 488.019725
+Connected To Basestation: 3
+DROPPED!!!
+Basestation 0: -122.007763 dbm
+Basestation 1: -120.262605 dbm
+Basestation 2: -131.479057 dbm
+Basestation 3: -120.500423 dbm
+Basestation 4: -118.280855 dbm
+Basestation 5: -131.102650 dbm
+Basestation 6: -131.580572 dbm
+Basestation 7: -131.156433 dbm
+Basestation 8: -135.498222 dbm
+
+X_Co:446.127284 Y_Co:413.145561 deltaX:407.243365 deltaY:-366.683571
+speed:4.000000 duration:137.000000
+Mobile 1
+X Co-ordinate: 446.157009
+Y Co-ordinate: 413.118796
+Connected To Basestation: 4
+Should switch to basestation: 1
+Basestation 0: -122.773540 dbm
+Basestation 1: -115.968265 dbm
+Basestation 2: -129.686866 dbm
+Basestation 3: -123.873507 dbm
+Basestation 4: -118.511844 dbm
+Basestation 5: -130.129158 dbm
+Basestation 6: -133.057738 dbm
+Basestation 7: -131.910500 dbm
+Basestation 8: -135.416324 dbm
+
+X_Co:853.370649 Y_Co:46.461990 deltaX:-392.055730 deltaY:-48.138393
+speed:5.000000 duration:79.000000
+Mobile 1
+X Co-ordinate: 853.321022
+Y Co-ordinate: 46.455897
+Connected To Basestation: 1
+
+X_Co:461.314919 Y_Co:1.681098 deltaX:36.254136 deltaY:-99.607418
+speed:2.000000 duration:53.000000
+Mobile 1
+X Co-ordinate: 461.321760
+Y Co-ordinate: 1.662304
+Connected To Basestation: 1
+
+X_Co:497.575895 Y_Co:97.943210 deltaX:-303.511463 deltaY:104.507376
+speed:3.000000 duration:107.000000
+Mobile 1
+X Co-ordinate: 497.547530
+Y Co-ordinate: 97.952977
+Connected To Basestation: 1
+Should switch to basestation: 0
+Basestation 0: -115.056563 dbm
+Basestation 1: -117.602665 dbm
+Basestation 2: -131.735401 dbm
+Basestation 3: -123.957971 dbm
+Basestation 4: -124.797118 dbm
+Basestation 5: -133.296299 dbm
+Basestation 6: -134.158162 dbm
+Basestation 7: -134.371659 dbm
+Basestation 8: -137.747789 dbm
+
+X_Co:194.064432 Y_Co:202.450586 deltaX:287.326061 deltaY:342.421866
+speed:3.000000 duration:149.000000
+Mobile 1
+X Co-ordinate: 194.083716
+Y Co-ordinate: 202.473567
+Connected To Basestation: 0
+DROPPED!!!
+Basestation 0: -120.500051 dbm
+Basestation 1: -121.021169 dbm
+Basestation 2: -132.151666 dbm
+Basestation 3: -119.467992 dbm
+Basestation 4: -120.065947 dbm
+Basestation 5: -131.957542 dbm
+Basestation 6: -131.527089 dbm
+Basestation 7: -131.643495 dbm
+Basestation 8: -136.059174 dbm
+Should switch to basestation: 4
+Basestation 0: -122.971085 dbm
+Basestation 1: -121.502652 dbm
+Basestation 2: -131.767979 dbm
+Basestation 3: -119.551466 dbm
+Basestation 4: -117.022453 dbm
+Basestation 5: -130.913820 dbm
+Basestation 6: -130.891679 dbm
+Basestation 7: -130.433793 dbm
+Basestation 8: -135.116407 dbm
+
+X_Co:481.390493 Y_Co:544.872452 deltaX:-52.532888 deltaY:-161.679608
+speed:2.000000 duration:85.000000
+Mobile 1
+X Co-ordinate: 481.384313
+Y Co-ordinate: 544.853431
+Connected To Basestation: 4
+
+X_Co:428.857605 Y_Co:383.192844 deltaX:246.151446 deltaY:-30.223597
+speed:4.000000 duration:62.000000
+Mobile 1
+X Co-ordinate: 428.897307
+Y Co-ordinate: 383.187969
+Connected To Basestation: 4
+
+X_Co:675.048752 Y_Co:352.964373 deltaX:-265.146991 deltaY:199.802586
+speed:4.000000 duration:83.000000
+Mobile 1
+X Co-ordinate: 675.016807
+Y Co-ordinate: 352.988445
+Connected To Basestation: 4
+
+X_Co:409.901762 Y_Co:552.766959 deltaX:125.994876 deltaY:365.915689
+speed:3.000000 duration:129.000000
+Mobile 1
+X Co-ordinate: 409.911529
+Y Co-ordinate: 552.795324
+Connected To Basestation: 4
+
+X_Co:535.896637 Y_Co:918.682648 deltaX:218.604449 deltaY:569.484060
+speed:5.000000 duration:122.000000
+Mobile 1
+X Co-ordinate: 535.914556
+Y Co-ordinate: 918.729327
+Connected To Basestation: 4
+Should switch to basestation: 7
+Basestation 0: -133.448628 dbm
+Basestation 1: -131.668990 dbm
+Basestation 2: -134.809459 dbm
+Basestation 3: -125.310177 dbm
+Basestation 4: -117.211476 dbm
+Basestation 5: -128.882867 dbm
+Basestation 6: -124.565140 dbm
+Basestation 7: -114.626335 dbm
+Basestation 8: -128.437824 dbm
+
+X_Co:754.501086 Y_Co:1488.166708 deltaX:258.202284 deltaY:78.940361
+speed:2.000000 duration:135.000000
+Mobile 1
+X Co-ordinate: 754.520212
+Y Co-ordinate: 1488.172555
+Connected To Basestation: 7
+
+X_Co:1012.703370 Y_Co:1432.890913 deltaX:255.578796 deltaY:119.178350
+speed:2.000000 duration:141.000000
+Mobile 1
+X Co-ordinate: 1012.721497
+Y Co-ordinate: 1432.899366
+Connected To Basestation: 7
+Should switch to basestation: 8
+Basestation 0: -138.650547 dbm
+Basestation 1: -135.788947 dbm
+Basestation 2: -135.640116 dbm
+Basestation 3: -134.066698 dbm
+Basestation 4: -127.130974 dbm
+Basestation 5: -126.625052 dbm
+Basestation 6: -131.540007 dbm
+Basestation 7: -116.471071 dbm
+Basestation 8: -113.935214 dbm
+
+X_Co:1268.282166 Y_Co:1447.927671 deltaX:139.772455 deltaY:-62.230706
+speed:3.000000 duration:51.000000
+Mobile 1
+X Co-ordinate: 1268.309572
+Y Co-ordinate: 1447.915469
+Connected To Basestation: 8
+
+X_Co:1408.082028 Y_Co:1385.684763 deltaX:-22.911438 deltaY:186.598676
+speed:2.000000 duration:94.000000
+Mobile 1
+X Co-ordinate: 1408.079590
+Y Co-ordinate: 1385.704614
+Connected To Basestation: 8
+
+X_Co:1385.170590 Y_Co:1427.709167 deltaX:138.963582 deltaY:261.352488
+speed:4.000000 duration:74.000000
+Mobile 1
+X Co-ordinate: 1385.189369
+Y Co-ordinate: 1427.744485
+Connected To Basestation: 8
+
+X_Co:1475.853717 Y_Co:1310.912859 deltaX:190.544338 deltaY:-92.934683
+speed:4.000000 duration:53.000000
+Mobile 1
+X Co-ordinate: 1475.889669
+Y Co-ordinate: 1310.895324
+Connected To Basestation: 8
+
+X_Co:1333.556643 Y_Co:1217.960642 deltaX:-243.801946 deltaY:312.052257
+speed:4.000000 duration:99.000000
+Mobile 1
+X Co-ordinate: 1333.532017
+Y Co-ordinate: 1217.992162
+Connected To Basestation: 8
+Should switch to basestation: 7
+Basestation 0: -138.176464 dbm
+Basestation 1: -135.392264 dbm
+Basestation 2: -135.547687 dbm
+Basestation 3: -133.315762 dbm
+Basestation 4: -126.190517 dbm
+Basestation 5: -126.731597 dbm
+Basestation 6: -130.697040 dbm
+Basestation 7: -113.968084 dbm
+Basestation 8: -116.514481 dbm
+
+X_Co:1089.754697 Y_Co:1469.966479 deltaX:-214.649435 deltaY:-222.275999
+speed:3.000000 duration:103.000000
+Mobile 1
+X Co-ordinate: 1089.733857
+Y Co-ordinate: 1469.944899
+Connected To Basestation: 7
+
+X_Co:875.105261 Y_Co:1247.690480 deltaX:-138.997018 deltaY:70.822517
+speed:2.000000 duration:78.000000
+Mobile 1
+X Co-ordinate: 875.087441
+Y Co-ordinate: 1247.699560
+Connected To Basestation: 7
+
+X_Co:736.108243 Y_Co:1318.512997 deltaX:383.229341 deltaY:-357.367140
+speed:4.000000 duration:131.000000
+Mobile 1
+X Co-ordinate: 736.137497
+Y Co-ordinate: 1318.485717
+Connected To Basestation: 7
+Should switch to basestation: 4
+Basestation 0: -134.951404 dbm
+Basestation 1: -130.870994 dbm
+Basestation 2: -131.949192 dbm
+Basestation 3: -130.081275 dbm
+Basestation 4: -116.506878 dbm
+Basestation 5: -122.125100 dbm
+Basestation 6: -130.529779 dbm
+Basestation 7: -119.038501 dbm
+Basestation 8: -123.398566 dbm
+
+X_Co:1119.337584 Y_Co:961.145858 deltaX:312.676187 deltaY:-145.803300
+speed:3.000000 duration:115.000000
+Mobile 1
+X Co-ordinate: 1119.364773
+Y Co-ordinate: 961.133179
+Connected To Basestation: 4
+Should switch to basestation: 5
+Basestation 0: -135.255259 dbm
+Basestation 1: -129.813433 dbm
+Basestation 2: -129.375559 dbm
+Basestation 3: -131.833946 dbm
+Basestation 4: -118.126336 dbm
+Basestation 5: -115.582975 dbm
+Basestation 6: -133.148056 dbm
+Basestation 7: -124.241339 dbm
+Basestation 8: -123.258212 dbm
+
+X_Co:1432.013771 Y_Co:815.342558 deltaX:428.952542 deltaY:-29.995283
+speed:5.000000 duration:86.000000
+Mobile 1
+X Co-ordinate: 1432.063649
+Y Co-ordinate: 815.339070
+Connected To Basestation: 5
+
+X_Co:1139.079087 Y_Co:785.347275 deltaX:-16.995369 deltaY:-194.257966
+speed:3.000000 duration:65.000000
+Mobile 1
+X Co-ordinate: 1139.076473
+Y Co-ordinate: 785.317389
+Connected To Basestation: 5
+
+X_Co:1122.081104 Y_Co:591.059423 deltaX:-85.556514 deltaY:-126.842749
+speed:3.000000 duration:51.000000
+Mobile 1
+X Co-ordinate: 1122.064328
+Y Co-ordinate: 591.034552
+Connected To Basestation: 5
+Should switch to basestation: 4
+Basestation 0: -132.105195 dbm
+Basestation 1: -122.637135 dbm
+Basestation 2: -123.763498 dbm
+Basestation 3: -130.841229 dbm
+Basestation 4: -116.095058 dbm
+Basestation 5: -118.615440 dbm
+Basestation 6: -134.812255 dbm
+Basestation 7: -129.776449 dbm
+Basestation 8: -130.216299 dbm
+
+X_Co:1036.507814 Y_Co:464.191803 deltaX:-187.549550 deltaY:201.122267
+speed:5.000000 duration:55.000000
+Mobile 1
+X Co-ordinate: 1036.473714
+Y Co-ordinate: 464.228371
+Connected To Basestation: 4
+
+X_Co:848.924164 Y_Co:665.350637 deltaX:514.047194 deltaY:532.311453
+speed:5.000000 duration:148.000000
+Mobile 1
+X Co-ordinate: 848.958897
+Y Co-ordinate: 665.386604
+Connected To Basestation: 4
+Should switch to basestation: 5
+Basestation 0: -135.675000 dbm
+Basestation 1: -130.619579 dbm
+Basestation 2: -130.167242 dbm
+Basestation 3: -132.047754 dbm
+Basestation 4: -119.166278 dbm
+Basestation 5: -116.625578 dbm
+Basestation 6: -132.927896 dbm
+Basestation 7: -123.296209 dbm
+Basestation 8: -121.973170 dbm
+Should switch to basestation: 8
+Basestation 0: -137.661767 dbm
+Basestation 1: -133.234021 dbm
+Basestation 2: -131.777953 dbm
+Basestation 3: -134.226122 dbm
+Basestation 4: -124.563568 dbm
+Basestation 5: -117.823905 dbm
+Basestation 6: -134.000218 dbm
+Basestation 7: -123.661709 dbm
+Basestation 8: -115.262998 dbm
+
+X_Co:1362.971358 Y_Co:1197.662090 deltaX:-204.364826 deltaY:-184.010918
+speed:5.000000 duration:55.000000
+Mobile 1
+X Co-ordinate: 1362.934200
+Y Co-ordinate: 1197.628634
+Connected To Basestation: 8
+Should switch to basestation: 5
+Basestation 0: -136.481837 dbm
+Basestation 1: -131.755045 dbm
+Basestation 2: -130.914991 dbm
+Basestation 3: -132.856179 dbm
+Basestation 4: -121.460671 dbm
+Basestation 5: -117.052149 dbm
+Basestation 6: -133.188817 dbm
+Basestation 7: -122.946425 dbm
+Basestation 8: -119.587655 dbm
+
+X_Co:1158.569374 Y_Co:1013.617716 deltaX:-142.833463 deltaY:182.818494
+speed:2.000000 duration:116.000000
+Mobile 1
+X Co-ordinate: 1158.557061
+Y Co-ordinate: 1013.633476
+Connected To Basestation: 5
+DROPPED!!!
+Basestation 0: -135.747461 dbm
+Basestation 1: -131.468807 dbm
+Basestation 2: -131.744463 dbm
+Basestation 3: -131.385939 dbm
+Basestation 4: -119.086791 dbm
+Basestation 5: -120.500522 dbm
+Basestation 6: -131.583867 dbm
+Basestation 7: -120.112915 dbm
+Basestation 8: -121.354466 dbm
+Should switch to basestation: 7
+Basestation 0: -135.886856 dbm
+Basestation 1: -132.170131 dbm
+Basestation 2: -132.831244 dbm
+Basestation 3: -131.009815 dbm
+Basestation 4: -119.722601 dbm
+Basestation 5: -122.828676 dbm
+Basestation 6: -130.549731 dbm
+Basestation 7: -117.201759 dbm
+Basestation 8: -121.292249 dbm
+
+X_Co:1015.735911 Y_Co:1196.436210 deltaX:-72.768261 deltaY:-253.773088
+speed:3.000000 duration:88.000000
+Mobile 1
+X Co-ordinate: 1015.727642
+Y Co-ordinate: 1196.407372
+Connected To Basestation: 7
+Should switch to basestation: 4
+Basestation 0: -134.882137 dbm
+Basestation 1: -130.852888 dbm
+Basestation 2: -132.022146 dbm
+Basestation 3: -129.933069 dbm
+Basestation 4: -116.297117 dbm
+Basestation 5: -122.372411 dbm
+Basestation 6: -130.379678 dbm
+Basestation 7: -118.837631 dbm
+Basestation 8: -123.578519 dbm
+
+X_Co:942.967650 Y_Co:942.663122 deltaX:259.213297 deltaY:-356.776494
+speed:3.000000 duration:147.000000
+Mobile 1
+X Co-ordinate: 942.985283
+Y Co-ordinate: 942.638851
+Connected To Basestation: 4
+Should switch to basestation: 5
+Basestation 0: -133.507566 dbm
+Basestation 1: -125.519437 dbm
+Basestation 2: -124.828555 dbm
+Basestation 3: -131.632939 dbm
+Basestation 4: -117.034050 dbm
+Basestation 5: -114.504834 dbm
+Basestation 6: -134.713251 dbm
+Basestation 7: -128.680994 dbm
+Basestation 8: -128.242711 dbm
+
+X_Co:1202.180947 Y_Co:585.886628 deltaX:-33.200765 deltaY:-170.803130
+speed:2.000000 duration:87.000000
+Mobile 1
+X Co-ordinate: 1202.177131
+Y Co-ordinate: 585.866996
+Connected To Basestation: 5
+
+X_Co:1168.980182 Y_Co:415.083498 deltaX:-436.708219 deltaY:61.375335
+speed:3.000000 duration:147.000000
+Mobile 1
+X Co-ordinate: 1168.950474
+Y Co-ordinate: 415.087673
+Connected To Basestation: 5
+Should switch to basestation: 4
+Basestation 0: -131.453713 dbm
+Basestation 1: -120.368092 dbm
+Basestation 2: -122.263979 dbm
+Basestation 3: -130.995561 dbm
+Basestation 4: -117.941624 dbm
+Basestation 5: -120.474523 dbm
+Basestation 6: -135.396201 dbm
+Basestation 7: -131.020128 dbm
+Basestation 8: -131.499757 dbm
+
+X_Co:732.271964 Y_Co:476.458833 deltaX:12.334359 deltaY:-117.353584
+speed:2.000000 duration:59.000000
+Mobile 1
+X Co-ordinate: 732.274054
+Y Co-ordinate: 476.438943
+Connected To Basestation: 4
+
+X_Co:744.608413 Y_Co:359.085359 deltaX:-71.553372 deltaY:-368.110194
+speed:3.000000 duration:125.000000
+Mobile 1
+X Co-ordinate: 744.602689
+Y Co-ordinate: 359.055910
+Connected To Basestation: 4
+Should switch to basestation: 1
+Basestation 0: -126.492400 dbm
+Basestation 1: -113.928368 dbm
+Basestation 2: -126.770908 dbm
+Basestation 3: -127.011510 dbm
+Basestation 4: -116.484036 dbm
+Basestation 5: -127.271041 dbm
+Basestation 6: -134.022779 dbm
+Basestation 7: -131.543824 dbm
+Basestation 8: -134.122167 dbm
+
+X_Co:673.055042 Y_Co:9.027289 deltaX:355.460704 deltaY:95.245409
+speed:4.000000 duration:92.000000
+Mobile 1
+X Co-ordinate: 673.093679
+Y Co-ordinate: 9.037642
+Connected To Basestation: 1
+
+X_Co:1028.515746 Y_Co:104.272698 deltaX:121.721771 deltaY:23.660316
+speed:2.000000 duration:62.000000
+Mobile 1
+X Co-ordinate: 1028.535378
+Y Co-ordinate: 104.276514
+Connected To Basestation: 1
+
+X_Co:1150.257149 Y_Co:127.936830 deltaX:0.000002 deltaY:-432.000000
+speed:3.000000 duration:144.000000
+Mobile 1
+X Co-ordinate: 1150.257149
+Y Co-ordinate: 127.906830
+Connected To Basestation: 1
+
+X_Co:1150.257150 Y_Co:304.066830 deltaX:-276.988220 deltaY:-520.939081
+speed:5.000000 duration:118.000000
+Mobile 1
+X Co-ordinate: 1150.233677
+Y Co-ordinate: 304.022682
+Connected To Basestation: 1
+
+X_Co:873.268930 Y_Co:216.875755 deltaX:206.193087 deltaY:-87.523772
+speed:4.000000 duration:56.000000
+Mobile 1
+X Co-ordinate: 873.305751
+Y Co-ordinate: 216.860126
+Connected To Basestation: 1
+
+X_Co:1079.498838 Y_Co:129.336353 deltaX:307.800079 deltaY:341.846620
+speed:4.000000 duration:115.000000
+Mobile 1
+X Co-ordinate: 1079.525603
+Y Co-ordinate: 129.366079
+Connected To Basestation: 1
+Should switch to basestation: 2
+Basestation 0: -131.968857 dbm
+Basestation 1: -118.800343 dbm
+Basestation 2: -116.266338 dbm
+Basestation 3: -132.994860 dbm
+Basestation 4: -123.607047 dbm
+Basestation 5: -122.415617 dbm
+Basestation 6: -137.313012 dbm
+Basestation 7: -133.623803 dbm
+Basestation 8: -133.344124 dbm
+Should switch to basestation: 5
+Basestation 0: -134.272029 dbm
+Basestation 1: -124.636567 dbm
+Basestation 2: -117.750250 dbm
+Basestation 3: -134.050579 dbm
+Basestation 4: -123.756849 dbm
+Basestation 5: -115.198682 dbm
+Basestation 6: -137.268922 dbm
+Basestation 7: -132.456980 dbm
+Basestation 8: -130.772136 dbm
+
+X_Co:1387.298917 Y_Co:471.182973 deltaX:-87.657942 deltaY:-216.961022
+speed:2.000000 duration:117.000000
+Mobile 1
+X Co-ordinate: 1387.291425
+Y Co-ordinate: 471.164430
+Connected To Basestation: 5
+Should switch to basestation: 2
+Basestation 0: -134.013805 dbm
+Basestation 1: -123.690148 dbm
+Basestation 2: -115.263191 dbm
+Basestation 3: -134.235966 dbm
+Basestation 4: -124.576012 dbm
+Basestation 5: -117.791687 dbm
+Basestation 6: -137.665817 dbm
+Basestation 7: -133.233949 dbm
+Basestation 8: -131.768618 dbm
+
+X_Co:1299.640975 Y_Co:254.221951 deltaX:-306.183385 deltaY:-48.494686
+speed:5.000000 duration:62.000000
+Mobile 1
+X Co-ordinate: 1299.591590
+Y Co-ordinate: 254.214129
+Connected To Basestation: 2
+Should switch to basestation: 1
+Basestation 0: -130.829385 dbm
+Basestation 1: -116.062367 dbm
+Basestation 2: -118.633738 dbm
+Basestation 3: -132.097782 dbm
+Basestation 4: -122.633323 dbm
+Basestation 5: -123.780476 dbm
+Basestation 6: -136.875090 dbm
+Basestation 7: -133.459405 dbm
+Basestation 8: -133.731817 dbm
+
+X_Co:993.408205 Y_Co:205.719443 deltaX:-326.401303 deltaY:-264.314566
+speed:3.000000 duration:140.000000
+Mobile 1
+X Co-ordinate: 993.384891
+Y Co-ordinate: 205.700564
+Connected To Basestation: 1
+
+X_Co:667.006902 Y_Co:58.590628 deltaX:-332.618470 deltaY:-269.349129
+speed:4.000000 duration:107.000000
+Mobile 1
+X Co-ordinate: 666.975816
+Y Co-ordinate: 58.565456
+Connected To Basestation: 1
+
+X_Co:334.388432 Y_Co:210.760300 deltaX:250.077014 deltaY:-258.962327
+speed:4.000000 duration:90.000000
+Mobile 1
+X Co-ordinate: 334.416218
+Y Co-ordinate: 210.731526
+Connected To Basestation: 1
+
+X_Co:584.465446 Y_Co:48.218279 deltaX:-183.696529 deltaY:211.318681
+speed:5.000000 duration:56.000000
+Mobile 1
+X Co-ordinate: 584.432643
+Y Co-ordinate: 48.256014
+Connected To Basestation: 1
+
+X_Co:400.736114 Y_Co:259.574696 deltaX:-272.293510 deltaY:512.109602
+speed:4.000000 duration:145.000000
+Mobile 1
+X Co-ordinate: 400.717335
+Y Co-ordinate: 259.610014
+Connected To Basestation: 1
+DROPPED!!!
+Basestation 0: -119.410229 dbm
+Basestation 1: -120.500531 dbm
+Basestation 2: -132.138001 dbm
+Basestation 3: -120.071553 dbm
+Basestation 4: -121.072460 dbm
+Basestation 5: -132.255809 dbm
+Basestation 6: -131.969834 dbm
+Basestation 7: -132.173575 dbm
+Basestation 8: -136.403860 dbm
+Should switch to basestation: 3
+Basestation 0: -120.268694 dbm
+Basestation 1: -122.423656 dbm
+Basestation 2: -132.827156 dbm
+Basestation 3: -117.726019 dbm
+Basestation 4: -120.627454 dbm
+Basestation 5: -132.440506 dbm
+Basestation 6: -130.973114 dbm
+Basestation 7: -131.521936 dbm
+Basestation 8: -136.211442 dbm
+
+X_Co:128.442604 Y_Co:771.684298 deltaX:183.761554 deltaY:226.926621
+speed:4.000000 duration:73.000000
+Mobile 1
+X Co-ordinate: 128.467777
+Y Co-ordinate: 771.715384
+Connected To Basestation: 3
+
+X_Co:312.204158 Y_Co:998.610919 deltaX:20.988990 deltaY:-107.978990
+speed:2.000000 duration:55.000000
+Mobile 1
+X Co-ordinate: 312.207974
+Y Co-ordinate: 998.591286
+Connected To Basestation: 3
+
+X_Co:333.196964 Y_Co:890.612296 deltaX:29.267970 deltaY:278.466131
+speed:5.000000 duration:56.000000
+Mobile 1
+X Co-ordinate: 333.202190
+Y Co-ordinate: 890.662022
+Connected To Basestation: 3
+DROPPED!!!
+Basestation 0: -132.127204 dbm
+Basestation 1: -132.234139 dbm
+Basestation 2: -136.385449 dbm
+Basestation 3: -120.500308 dbm
+Basestation 4: -121.020015 dbm
+Basestation 5: -132.151121 dbm
+Basestation 6: -119.469288 dbm
+Basestation 7: -120.065550 dbm
+Basestation 8: -131.957159 dbm
+
+X_Co:362.470160 Y_Co:1169.128153 deltaX:42.898010 deltaY:-349.376245
+speed:4.000000 duration:88.000000
+Mobile 1
+X Co-ordinate: 362.475035
+Y Co-ordinate: 1169.088451
+Connected To Basestation: 6
+DROPPED!!!
+Basestation 0: -131.667299 dbm
+Basestation 1: -131.707022 dbm
+Basestation 2: -136.052822 dbm
+Basestation 3: -119.834428 dbm
+Basestation 4: -120.036650 dbm
+Basestation 5: -131.879191 dbm
+Basestation 6: -120.500616 dbm
+Basestation 7: -120.685065 dbm
+Basestation 8: -132.009562 dbm
+
+X_Co:405.368170 Y_Co:819.751908 deltaX:-82.413777 deltaY:168.973280
+speed:2.000000 duration:94.000000
+Mobile 1
+X Co-ordinate: 405.359403
+Y Co-ordinate: 819.769883
+Connected To Basestation: 3
+
+X_Co:322.954393 Y_Co:988.725188 deltaX:-292.223556 deltaY:83.793755
+speed:4.000000 duration:76.000000
+Mobile 1
+X Co-ordinate: 322.915943
+Y Co-ordinate: 988.736213
+Connected To Basestation: 3
+
+X_Co:30.730837 Y_Co:1072.518942 deltaX:401.960002 deltaY:-178.964122
+speed:5.000000 duration:88.000000
+Mobile 1
+X Co-ordinate: 30.776515
+Y Co-ordinate: 1072.498605
+Connected To Basestation: 3
+Should switch to basestation: 4
+Basestation 0: -129.312718 dbm
+Basestation 1: -128.871465 dbm
+Basestation 2: -134.403356 dbm
+Basestation 3: -117.597166 dbm
+Basestation 4: -115.018781 dbm
+Basestation 5: -130.755956 dbm
+Basestation 6: -124.826003 dbm
+Basestation 7: -123.981737 dbm
+Basestation 8: -132.528572 dbm
+
+X_Co:432.690839 Y_Co:893.554820 deltaX:-359.517618 deltaY:-175.348460
+speed:4.000000 duration:100.000000
+Mobile 1
+X Co-ordinate: 432.654887
+Y Co-ordinate: 893.537285
+Connected To Basestation: 4
+Should switch to basestation: 3
+Basestation 0: -128.117472 dbm
+Basestation 1: -128.564063 dbm
+Basestation 2: -134.663144 dbm
+Basestation 3: -114.401715 dbm
+Basestation 4: -116.965901 dbm
+Basestation 5: -131.624523 dbm
+Basestation 6: -124.977212 dbm
+Basestation 7: -125.655960 dbm
+Basestation 8: -133.553449 dbm
+
+X_Co:73.173221 Y_Co:718.206360 deltaX:-479.028846 deltaY:75.870713
+speed:5.000000 duration:97.000000
+Mobile 1
+X Co-ordinate: 73.123837
+Y Co-ordinate: 718.214181
+Connected To Basestation: 3
+
+X_Co:405.876039 Y_Co:794.077073 deltaX:-364.607259 deltaY:-31.899004
+speed:3.000000 duration:122.000000
+Mobile 1
+X Co-ordinate: 405.846153
+Y Co-ordinate: 794.074458
+Connected To Basestation: 3
+
+X_Co:41.268780 Y_Co:762.178069 deltaX:666.689630 deltaY:-105.593263
+speed:5.000000 duration:135.000000
+Mobile 1
+X Co-ordinate: 41.318164
+Y Co-ordinate: 762.170247
+Connected To Basestation: 3
+Should switch to basestation: 4
+Basestation 0: -126.454312 dbm
+Basestation 1: -125.874721 dbm
+Basestation 2: -133.193662 dbm
+Basestation 3: -116.606090 dbm
+Basestation 4: -114.013296 dbm
+Basestation 5: -130.693050 dbm
+Basestation 6: -127.822051 dbm
+Basestation 7: -127.345853 dbm
+Basestation 8: -133.762802 dbm
+
+X_Co:707.958410 Y_Co:656.584806 deltaX:152.130184 deltaY:-157.535416
+speed:3.000000 duration:73.000000
+Mobile 1
+X Co-ordinate: 707.979250
+Y Co-ordinate: 656.563226
+Connected To Basestation: 4
+
+X_Co:860.088594 Y_Co:499.049390 deltaX:-80.716755 deltaY:221.767458
+speed:2.000000 duration:118.000000
+Mobile 1
+X Co-ordinate: 860.081753
+Y Co-ordinate: 499.068184
+Connected To Basestation: 4
+
+X_Co:779.371838 Y_Co:720.816848 deltaX:307.182016 deltaY:215.091164
+speed:5.000000 duration:75.000000
+Mobile 1
+X Co-ordinate: 779.412796
+Y Co-ordinate: 720.845527
+Connected To Basestation: 4
+
+X_Co:1086.553855 Y_Co:935.908012 deltaX:-234.547853 deltaY:-67.255516
+speed:4.000000 duration:61.000000
+Mobile 1
+X Co-ordinate: 1086.515404
+Y Co-ordinate: 935.896987
+Connected To Basestation: 4
+
+X_Co:851.967551 Y_Co:868.641471 deltaX:67.373175 deltaY:-175.513120
+speed:2.000000 duration:94.000000
+Mobile 1
+X Co-ordinate: 851.974718
+Y Co-ordinate: 868.622799
+Connected To Basestation: 4
+
+X_Co:919.340726 Y_Co:693.128351 deltaX:-529.283749 deltaY:246.809062
+speed:4.000000 duration:146.000000
+Mobile 1
+X Co-ordinate: 919.304474
+Y Co-ordinate: 693.145256
+Connected To Basestation: 4
+
+X_Co:390.056977 Y_Co:939.937413 deltaX:523.917103 deltaY:-471.737076
+speed:5.000000 duration:141.000000
+Mobile 1
+X Co-ordinate: 390.094134
+Y Co-ordinate: 939.903956
+Connected To Basestation: 4
+
+X_Co:913.974080 Y_Co:468.200337 deltaX:405.942641 deltaY:-172.312427
+speed:3.000000 duration:147.000000
+Mobile 1
+X Co-ordinate: 914.001695
+Y Co-ordinate: 468.188615
+Connected To Basestation: 4
+DROPPED!!!
+Basestation 0: -132.009547 dbm
+Basestation 1: -120.457946 dbm
+Basestation 2: -120.026733 dbm
+Basestation 3: -132.017979 dbm
+Basestation 4: -120.500351 dbm
+Basestation 5: -120.070647 dbm
+Basestation 6: -136.208569 dbm
+Basestation 7: -131.941813 dbm
+Basestation 8: -131.855762 dbm
+
+X_Co:1319.916721 Y_Co:295.887910 deltaX:-374.486076 deltaY:19.625982
+speed:5.000000 duration:75.000000
+Mobile 1
+X Co-ordinate: 1319.866789
+Y Co-ordinate: 295.890527
+Connected To Basestation: 2
+Should switch to basestation: 1
+Basestation 0: -130.968647 dbm
+Basestation 1: -117.706191 dbm
+Basestation 2: -120.260508 dbm
+Basestation 3: -131.523653 dbm
+Basestation 4: -120.640671 dbm
+Basestation 5: -122.438218 dbm
+Basestation 6: -136.215397 dbm
+Basestation 7: -132.448235 dbm
+Basestation 8: -132.835490 dbm
+
+X_Co:945.430645 Y_Co:315.513891 deltaX:42.370156 deltaY:-240.293092
+speed:4.000000 duration:61.000000
+Mobile 1
+X Co-ordinate: 945.437591
+Y Co-ordinate: 315.474499
+Connected To Basestation: 1
+
+X_Co:987.807747 Y_Co:75.181407 deltaX:-316.701821 deltaY:102.902657
+speed:3.000000 duration:111.000000
+Mobile 1
+X Co-ordinate: 987.779215
+Y Co-ordinate: 75.190678
+Connected To Basestation: 1
+
+X_Co:671.105927 Y_Co:178.084065 deltaX:-417.192999 deltaY:-417.193003
+speed:5.000000 duration:118.000000
+Mobile 1
+X Co-ordinate: 671.070571
+Y Co-ordinate: 178.048709
+Connected To Basestation: 1
+Should switch to basestation: 0
+Basestation 0: -115.101867 dbm
+Basestation 1: -117.653658 dbm
+Basestation 2: -131.745339 dbm
+Basestation 3: -123.889587 dbm
+Basestation 4: -124.743426 dbm
+Basestation 5: -133.281987 dbm
+Basestation 6: -134.121697 dbm
+Basestation 7: -134.338155 dbm
+Basestation 8: -137.728000 dbm
+
+X_Co:253.912928 Y_Co:239.142736 deltaX:-233.109559 deltaY:20.394443
+speed:2.000000 duration:117.000000
+Mobile 1
+X Co-ordinate: 253.893004
+Y Co-ordinate: 239.144479
+Connected To Basestation: 0
+
+X_Co:20.803368 Y_Co:259.537178 deltaX:-105.484081 deltaY:-306.348019
+speed:4.000000 duration:81.000000
+Mobile 1
+X Co-ordinate: 20.790345
+Y Co-ordinate: 259.499357
+Connected To Basestation: 0
+
+X_Co:84.679839 Y_Co:46.795498 deltaX:148.865612 deltaY:-334.357637
+speed:3.000000 duration:122.000000
+Mobile 1
+X Co-ordinate: 84.692041
+Y Co-ordinate: 46.768092
+Connected To Basestation: 0
+
+X_Co:233.545452 Y_Co:287.560403 deltaX:527.856955 deltaY:93.075424
+speed:4.000000 duration:134.000000
+Mobile 1
+X Co-ordinate: 233.584844
+Y Co-ordinate: 287.567349
+Connected To Basestation: 0
+Should switch to basestation: 1
+DROPPED!!!
+Basestation 0: -120.500698 dbm
+Basestation 1: -117.986786 dbm
+Basestation 2: -131.004308 dbm
+Basestation 3: -122.230691 dbm
+Basestation 4: -120.330572 dbm
+Basestation 5: -131.446890 dbm
+Basestation 6: -132.694369 dbm
+Basestation 7: -132.291068 dbm
+Basestation 8: -136.117709 dbm
+Basestation 0: -120.516958 dbm
+Basestation 1: -117.974482 dbm
+Basestation 2: -130.996450 dbm
+Basestation 3: -122.240032 dbm
+Basestation 4: -120.317168 dbm
+Basestation 5: -131.438532 dbm
+Basestation 6: -132.695750 dbm
+Basestation 7: -132.287652 dbm
+Basestation 8: -136.112827 dbm
+
+X_Co:761.402407 Y_Co:380.635827 deltaX:98.081571 deltaY:140.075000
+speed:3.000000 duration:57.000000
+Mobile 1
+X Co-ordinate: 761.419614
+Y Co-ordinate: 380.660402
+Connected To Basestation: 1
+Should switch to basestation: 4
+Basestation 0: -127.593588 dbm
+Basestation 1: -116.524867 dbm
+Basestation 2: -126.681195 dbm
+Basestation 3: -127.114615 dbm
+Basestation 4: -113.977668 dbm
+Basestation 5: -126.135214 dbm
+Basestation 6: -133.673877 dbm
+Basestation 7: -130.697474 dbm
+Basestation 8: -133.294838 dbm
+
+X_Co:859.501185 Y_Co:520.735402 deltaX:252.437122 deltaY:-252.437120
+speed:3.000000 duration:119.000000
+Mobile 1
+X Co-ordinate: 859.522398
+Y Co-ordinate: 520.714188
+Connected To Basestation: 4
+Should switch to basestation: 1
+Basestation 0: -130.900378 dbm
+Basestation 1: -117.752804 dbm
+Basestation 2: -120.616611 dbm
+Basestation 3: -131.372778 dbm
+Basestation 4: -120.272638 dbm
+Basestation 5: -122.404107 dbm
+Basestation 6: -136.091260 dbm
+Basestation 7: -132.300796 dbm
+Basestation 8: -132.754940 dbm
+
+X_Co:1111.938307 Y_Co:268.298281 deltaX:-337.463498 deltaY:402.173330
+speed:5.000000 duration:105.000000
+Mobile 1
+X Co-ordinate: 1111.906167
+Y Co-ordinate: 268.336584
+Connected To Basestation: 1
+Should switch to basestation: 4
+Basestation 0: -130.401330 dbm
+Basestation 1: -118.872575 dbm
+Basestation 2: -123.559212 dbm
+Basestation 3: -129.951282 dbm
+Basestation 4: -116.314965 dbm
+Basestation 5: -122.335766 dbm
+Basestation 6: -134.888888 dbm
+Basestation 7: -130.851014 dbm
+Basestation 8: -132.008911 dbm
+
+X_Co:774.474809 Y_Co:670.471612 deltaX:237.521819 deltaY:105.751528
+speed:5.000000 duration:52.000000
+Mobile 1
+X Co-ordinate: 774.520486
+Y Co-ordinate: 670.491949
+Connected To Basestation: 4
+
+X_Co:1012.042305 Y_Co:776.243476 deltaX:-13.811783 deltaY:197.517682
+speed:2.000000 duration:99.000000
+Mobile 1
+X Co-ordinate: 1012.040910
+Y Co-ordinate: 776.263427
+Connected To Basestation: 4
+
+X_Co:998.230522 Y_Co:973.761158 deltaX:136.777689 deltaY:110.760389
+speed:2.000000 duration:88.000000
+Mobile 1
+X Co-ordinate: 998.246065
+Y Co-ordinate: 973.773744
+Connected To Basestation: 4
+
+X_Co:1135.008211 Y_Co:1084.521547 deltaX:62.997243 deltaY:-296.378723
+speed:3.000000 duration:101.000000
+Mobile 1
+X Co-ordinate: 1135.014448
+Y Co-ordinate: 1084.492203
+Connected To Basestation: 4
+Should switch to basestation: 5
+Basestation 0: -135.251244 dbm
+Basestation 1: -129.809976 dbm
+Basestation 2: -129.377274 dbm
+Basestation 3: -131.827886 dbm
+Basestation 4: -118.111472 dbm
+Basestation 5: -115.598226 dbm
+Basestation 6: -133.143329 dbm
+Basestation 7: -124.236082 dbm
+Basestation 8: -123.264755 dbm
+
+X_Co:1198.005454 Y_Co:788.142824 deltaX:63.355958 deltaY:400.013778
+speed:5.000000 duration:81.000000
+Mobile 1
+X Co-ordinate: 1198.013276
+Y Co-ordinate: 788.192209
+Connected To Basestation: 5
+Should switch to basestation: 8
+Basestation 0: -137.256030 dbm
+Basestation 1: -132.964084 dbm
+Basestation 2: -132.016870 dbm
+Basestation 3: -133.517260 dbm
+Basestation 4: -123.447940 dbm
+Basestation 5: -119.008806 dbm
+Basestation 6: -133.221554 dbm
+Basestation 7: -122.173320 dbm
+Basestation 8: -116.441168 dbm
+
+X_Co:1261.361413 Y_Co:1188.156602 deltaX:-257.668198 deltaY:98.909553
+speed:4.000000 duration:69.000000
+Mobile 1
+X Co-ordinate: 1261.324069
+Y Co-ordinate: 1188.170937
+Connected To Basestation: 8
+Should switch to basestation: 7
+Basestation 0: -136.717865 dbm
+Basestation 1: -133.218825 dbm
+Basestation 2: -133.513183 dbm
+Basestation 3: -131.959811 dbm
+Basestation 4: -122.170051 dbm
+Basestation 5: -123.439324 dbm
+Basestation 6: -130.862769 dbm
+Basestation 7: -116.454575 dbm
+Basestation 8: -119.007352 dbm
+
+X_Co:1003.655871 Y_Co:1287.080489 deltaX:33.990741 deltaY:-388.515932
+speed:3.000000 duration:130.000000
+Mobile 1
+X Co-ordinate: 1003.658486
+Y Co-ordinate: 1287.050604
+Connected To Basestation: 7
+Should switch to basestation: 4
+Basestation 0: -135.116134 dbm
+Basestation 1: -130.912022 dbm
+Basestation 2: -131.765220 dbm
+Basestation 3: -130.434964 dbm
+Basestation 4: -117.021002 dbm
+Basestation 5: -121.497055 dbm
+Basestation 6: -130.894369 dbm
+Basestation 7: -119.558090 dbm
+Basestation 8: -122.971283 dbm
+
+X_Co:1037.646612 Y_Co:898.564557 deltaX:99.220679 deltaY:-510.446135
+speed:5.000000 duration:104.000000
+Mobile 1
+X Co-ordinate: 1037.656152
+Y Co-ordinate: 898.515476
+Connected To Basestation: 4
+
+X_Co:1136.867291 Y_Co:388.118422 deltaX:280.670210 deltaY:-49.489730
+speed:3.000000 duration:95.000000
+Mobile 1
+X Co-ordinate: 1136.896836
+Y Co-ordinate: 388.113213
+Connected To Basestation: 4
+DROPPED!!!
+Basestation 0: -132.188616 dbm
+Basestation 1: -120.905479 dbm
+Basestation 2: -120.053830 dbm
+Basestation 3: -132.105491 dbm
+Basestation 4: -120.500653 dbm
+Basestation 5: -119.595442 dbm
+Basestation 6: -136.205739 dbm
+Basestation 7: -131.847169 dbm
+Basestation 8: -131.668211 dbm
+Should switch to basestation: 2
+Basestation 0: -134.766963 dbm
+Basestation 1: -125.076958 dbm
+Basestation 2: -114.381488 dbm
+Basestation 3: -134.943272 dbm
+Basestation 4: -125.729517 dbm
+Basestation 5: -116.893090 dbm
+Basestation 6: -138.098151 dbm
+Basestation 7: -133.572330 dbm
+Basestation 8: -131.607334 dbm
+
+X_Co:1417.537501 Y_Co:338.628692 deltaX:-125.800585 deltaY:-81.695856
+speed:3.000000 duration:50.000000
+Mobile 1
+X Co-ordinate: 1417.512341
+Y Co-ordinate: 338.612353
+Connected To Basestation: 2
+
+X_Co:1291.711756 Y_Co:256.916497 deltaX:20.508404 deltaY:-293.283831
+speed:2.000000 duration:147.000000
+Mobile 1
+X Co-ordinate: 1291.713151
+Y Co-ordinate: 256.896546
+Connected To Basestation: 2
+
+X_Co:1312.220160 Y_Co:36.355086 deltaX:148.628965 deltaY:133.826121
+speed:2.000000 duration:100.000000
+Mobile 1
+X Co-ordinate: 1312.235023
+Y Co-ordinate: 36.368468
+Connected To Basestation: 2
+
+X_Co:1460.849125 Y_Co:170.181207 deltaX:62.000000 deltaY:-107.387150
+speed:2.000000 duration:62.000000
+Mobile 1
+X Co-ordinate: 1460.859125
+Y Co-ordinate: 170.163887
+Connected To Basestation: 2
+
+X_Co:1477.149126 Y_Co:62.776737 deltaX:-161.605376 deltaY:11.300548
+speed:3.000000 duration:54.000000
+Mobile 1
+X Co-ordinate: 1477.119199
+Y Co-ordinate: 62.778829
+Connected To Basestation: 2
+
+X_Co:1315.513822 Y_Co:74.079377 deltaX:-150.893576 deltaY:-173.583204
+speed:2.000000 duration:115.000000
+Mobile 1
+X Co-ordinate: 1315.500701
+Y Co-ordinate: 74.064283
+Connected To Basestation: 2
+
+X_Co:1164.620246 Y_Co:99.513090 deltaX:-110.508947 deltaY:273.519236
+speed:5.000000 duration:59.000000
+Mobile 1
+X Co-ordinate: 1164.601516
+Y Co-ordinate: 99.559449
+Connected To Basestation: 2
+DROPPED!!!
+Basestation 0: -131.077456 dbm
+Basestation 1: -118.205399 dbm
+Basestation 2: -120.500377 dbm
+Basestation 3: -131.470415 dbm
+Basestation 4: -120.279017 dbm
+Basestation 5: -122.065400 dbm
+Basestation 6: -136.106196 dbm
+Basestation 7: -132.240582 dbm
+Basestation 8: -132.617285 dbm
+
+X_Co:1054.092569 Y_Co:373.078686 deltaX:301.129122 deltaY:261.767553
+speed:3.000000 duration:133.000000
+Mobile 1
+X Co-ordinate: 1054.115211
+Y Co-ordinate: 373.098368
+Connected To Basestation: 1
+DROPPED!!!
+Basestation 0: -131.725284 dbm
+Basestation 1: -120.500029 dbm
+Basestation 2: -121.433442 dbm
+Basestation 3: -131.432520 dbm
+Basestation 4: -118.993706 dbm
+Basestation 5: -120.127421 dbm
+Basestation 6: -135.718179 dbm
+Basestation 7: -131.352172 dbm
+Basestation 8: -131.570527 dbm
+Should switch to basestation: 5
+Basestation 0: -132.861627 dbm
+Basestation 1: -122.978073 dbm
+Basestation 2: -121.511857 dbm
+Basestation 3: -132.130578 dbm
+Basestation 4: -119.544330 dbm
+Basestation 5: -117.013518 dbm
+Basestation 6: -135.819452 dbm
+Basestation 7: -130.886376 dbm
+Basestation 8: -130.428329 dbm
+
+X_Co:1355.221691 Y_Co:634.846239 deltaX:138.344900 deltaY:-599.237589
+speed:5.000000 duration:123.000000
+Mobile 1
+X Co-ordinate: 1355.232939
+Y Co-ordinate: 634.797520
+Connected To Basestation: 5
+Should switch to basestation: 2
+Basestation 0: -134.921736 dbm
+Basestation 1: -125.351114 dbm
+Basestation 2: -114.204360 dbm
+Basestation 3: -135.096385 dbm
+Basestation 4: -125.987572 dbm
+Basestation 5: -116.794142 dbm
+Basestation 6: -138.198760 dbm
+Basestation 7: -133.662944 dbm
+Basestation 8: -131.597817 dbm
+
+X_Co:1493.566592 Y_Co:35.608649 deltaX:13.192010 deltaY:377.769733
+speed:3.000000 duration:126.000000
+Mobile 1
+X Co-ordinate: 1493.567639
+Y Co-ordinate: 35.638631
+Connected To Basestation: 2
+Should switch to basestation: 5
+Basestation 0: -135.735731 dbm
+Basestation 1: -127.043914 dbm
+Basestation 2: -116.483270 dbm
+Basestation 3: -135.584439 dbm
+Basestation 4: -126.526909 dbm
+Basestation 5: -113.925532 dbm
+Basestation 6: -138.307774 dbm
+Basestation 7: -133.443129 dbm
+Basestation 8: -130.693042 dbm
+
+X_Co:1493.240980 Y_Co:413.378382 deltaX:127.781682 deltaY:96.290404
+speed:2.000000 duration:80.000000
+Mobile 1
+X Co-ordinate: 1493.256952
+Y Co-ordinate: 413.390418
+Connected To Basestation: 5
+
+Final Report
+Handovers: 53
+Dropped: 11
+Ping-Pong: 0
+Deadzones: 0
+end...
+22:38: {~/Documents/Programming/4G-Handover-Optimisation} -> 

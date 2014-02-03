@@ -3,48 +3,63 @@
  * The mobile class is used to represent a mobile phone that
  * will move around a number of basestations.
  */
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
+
+#if !defined(_MOBILE_H_)
+#define _MOBILE_H_
+
 #include "event_handler.h"
-#include "event_definitions.h"
+
+#define PI 3.14159265
 
 class mobile : public event_handler {
 private:
     /* Private Variables
      ****************************
      * int id: Unique interger values that indentifies this instance of the class.
-     * double x_co: Integer value that denotes where of the x-axis this instance of
+     * double x_co: Double value that denotes where of the x-axis this instance of
      *           the class is found. 
-     * double y_co: Integer value that denotes where of the y-axis this instance of
+     * double y_co: Double value that denotes where of the y-axis this instance of
      *           the class is found. 
-     * double tx: Double value that denoted the signal strength being transmitted
-     *            from this instance of the class.
+     * double destX: Double that denotes the current X destination for the random walk.
+     * double destY: Double that denotes the current Y destination for the random walk.
      * int connected: Integer values that denoted the id number of the basestation
      *                this instance of the class is "connected" to.
 	 * double h: Double value that denoted the height of the mobile.
      * int count: Integer used to stop the simulation after a set number of steps.
+     * double speed: Used for random walk.
+     * int angle: Used for random walk.
+     * double duration: Used for random walk.
      */
 	int id;
     double x_co;
     double y_co;
+    double destX;
+    double destY;
     int connected;
     double h;
     int count;
+    double speed;
+    int angle;
+    double duration;
+    int wall;
+    int minusX;
+    int minusY;
 public:
     mobile(scheduler* gs);
     mobile(scheduler* gs, int num, int x, int y, int con, double height);
     ~mobile();
     void print();
     void printCos();
-	void setmobile(int num, int x, int y, int con, double height);
     void switchBasestation(int newBasestation);
-    void moveMobile(double x, double y);
+    void moveMobile();
     double getX();
     double getY();
     int getConnectedTo();
     double getHeight();
     void moveRandom();
+    void checkProp(int id);
 protected:
 	virtual void handler(const event* received);
 };
+
+#endif
