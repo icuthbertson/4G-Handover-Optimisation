@@ -2,7 +2,7 @@
 #define _PROP_H_
 
 extern double current_prop[];
-extern int TTTtest[];
+extern double TTTtest[];
 
 extern double hys;
 extern double TTT;

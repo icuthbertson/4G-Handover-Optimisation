@@ -33,8 +33,8 @@ double current_prop[] = {0.0,
 				 		 0.0,
 				 		 0.0};
 
-double TTT = 1.024;
-double hys = 7.5;
+double TTT = 0.512;
+double hys = 7.0;
 
 bool handingOver = false;
 
@@ -49,15 +49,15 @@ int deadzoneRecovers = 0;
 
 double simTime = 0.0;
 
-int TTTtest[] = {TTT,
-				 TTT,
-				 TTT,
-				 TTT,
-				 TTT,
-				 TTT,
-				 TTT,
-				 TTT,
-				 TTT};
+double TTTtest[] = {TTT,
+				 	TTT,
+				 	TTT,
+				 	TTT,
+				 	TTT,
+				 	TTT,
+				 	TTT,
+				 	TTT,
+				 	TTT};
 
 basestation* bStations[] = {new basestation(gs,0,0,0,1500,60,false),
 							new basestation(gs,1,750,0,1500,60,false),

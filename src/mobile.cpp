@@ -265,6 +265,70 @@ void mobile::moveRandom() {
 	moveMobile();
 }
 
+// void mobile::checkProp(int id) {
+// 	if(deadzone) {
+// 		if(current_prop[id]>THRESHOLD) {
+// 			fprintf(stderr, "Sim Time: %f - DEADZONE RECOVER\n",simTime);
+// 			deadzoneRecovers++;
+// 			reportPacket* reconPacket;
+// 			reconPacket = new reportPacket(id);
+// 			send_now(new event(REPORT,reinterpret_cast<payloadType<class T>*>(reconPacket),bStations[connected]));
+// 		}
+// 	} else if(!deadzone) {
+// 		if(id==connected) {
+// 			if(current_prop[id] < THRESHOLD) {
+// 				//called dropped!
+// 				int thresCount = 0;
+// 				for(int k=0; k<9; k++) {
+// 					if(current_prop[k] < THRESHOLD) {
+// 						thresCount++;
+// 					} 
+// 				}
+// 				if(thresCount == 9) {
+// 					deadzone = true;
+// 				} else {
+// 					drop++;
+// 					double highest = -300.0;
+// 					int highestid = 0;
+// 					for(int j=0; j<9; j++) {
+// 						if(current_prop[j] > highest) {
+// 							highest = current_prop[j];
+// 							highestid = j;
+// 						}
+// 					}
+// 					reportPacket* sendPacket;
+// 					sendPacket = new reportPacket(highestid);
+// 					send_now(new event(REPORT,reinterpret_cast<payloadType<class T>*>(sendPacket),bStations[connected]));
+// 					fprintf(stderr, "Should switch to basestation: %d\n", id);
+// 					for(int i=0; i<9; i++) {
+// 						TTTtest[i] = TTT;
+// 						globalScheduler->remove_from(bStations[i]);
+// 					}
+// 					fprintf(stderr, "Sim Time: %f - DROPPED - Basestation: %d\n",simTime,connected);
+// 				}
+// 			}
+// 		}
+// 		if(!handingOver && id!=connected && !deadzone) {
+// 			if(current_prop[id] >= current_prop[connected]+hys) {
+// 				TTTtest[id] -= STEPTIME;
+// 				if(TTTtest[id] <= 0) {
+// 					//send measurement report
+// 					reportPacket* sendPacket;
+// 					sendPacket = new reportPacket(id);
+// 					send_delay(new event(REPORT,reinterpret_cast<payloadType<class T>*>(sendPacket),bStations[connected]), HANDOVER_TIME);
+// 					fprintf(stderr, "Sim Time: %f - Should switch to basestation: %d\n", simTime,id);
+// 					for(int i=0; i<9; i++) {
+// 						TTTtest[i] = TTT;
+// 					}
+// 					handingOver = true;
+// 				}
+// 			} else {
+// 				TTTtest[id] = TTT;
+// 			}
+// 		}
+// 	}
+// }
+
 void mobile::checkProp(int id) {
 	if(deadzone) {
 		if(current_prop[id]>THRESHOLD) {
@@ -304,7 +368,7 @@ void mobile::checkProp(int id) {
 						TTTtest[i] = TTT;
 						globalScheduler->remove_from(bStations[i]);
 					}
-					fprintf(stderr, "Sim Time: %f - DROPPED!!!\n",simTime);
+					fprintf(stderr, "Sim Time: %f - DROPPED - Basestation: %d\n",simTime,connected);
 				}
 			}
 		}

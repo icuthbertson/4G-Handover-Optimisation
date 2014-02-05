@@ -7,7 +7,7 @@
 #include <random>
 
 std::default_random_engine generator;
-std::lognormal_distribution<double> distribution(0.0,0.6);
+std::normal_distribution<double> distribution(0.0,6.0);
 
 /* Constructor
  ****************************
@@ -27,7 +27,7 @@ basestation::basestation(scheduler* gs) : event_handler(gs) {
 	connected = false;
 	pingpong = false;
 	pingpongTime = 0.0;
-	tx = 28.0;
+	tx = 48.0;
 }
 /* Constructor
  ****************************
@@ -51,7 +51,7 @@ basestation::basestation(scheduler* gs, int idNum, int x, int y, double freq, do
     connected = conn;
     pingpong = false;
     pingpongTime = 0.0;
-    tx = 28.0;
+    tx = 48.0;
 }
 /* Destructor
  ****************************
@@ -110,9 +110,12 @@ void basestation::handler(const event* received)
 			this->connected = false;
 			mobiles[0]->switchBasestation(repPacket->id);
 
+			if(handingOver) {
+				handovers++;
+			}
+
 			handingOver = false;
 			deadzone = false;
-			handovers++;
 
 			for(int j=0; j<(T_CRIT/STEPTIME); j++) {
 				send_delay(new event(PINGPONG),STEPTIME*j);
@@ -122,7 +125,7 @@ void basestation::handler(const event* received)
 			break;
 		case PINGPONG:
 			if (connected) {
-				printf("Sim Time: %f - PINGPONG!\n",simTime);
+				printf("Sim Time: %f - PINGPONG! - Basestation: %d\n",simTime,id);
 				pingpongCount++;
 				globalScheduler->remove_from(this);
 			}
@@ -186,17 +189,20 @@ int basestation::getY() {
  * Parameters Passed in: d, hm 
  ****************************
  * Description: Method that returns the path loss using the 
- * Okumura-Hata propagation model. d in km, hm in m.
+ * Okumura-Hata for urban areas propagation model. d in km, hm in m.
  */
 double basestation::getProp(double d, double hm) {
+	//for small or medium sized city
 	double ch = 0.8 + ((1.1 * log10(f) - 0.7) * hm) - (1.56 * log10(f));
 	double prop = 69.55 + (26.16 * log10(f)) - (13.82 * log10(hb)) - ch + ((44.9 - (6.55 * log10(hb))) * log10(d/1000)); //divide by 1000 for km
 	
 	// double fading = ((rand()%70)-35)/10;
 
-	double fading = distribution(generator);
+	double fading = 0.0;
 
-	return (tx-prop-fading);
+	fading = distribution(generator);
+
+	return (tx-prop+fading);
 }
 
 void basestation::nowServing() {
