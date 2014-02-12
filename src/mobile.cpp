@@ -111,8 +111,9 @@ void mobile::handler(const event* received)
 			// program should not reach here
 			break;
 	} // end switch statement
-	if(count > 100) {
-		fprintf(stdout, "\nFinal Report\nHandovers: %d\nDropped: %d\nPing-Pong: %d\nDeadzones: %d\n", handovers,drop,pingpongCount,deadzoneRecovers);
+	if(count > 1000) {
+		fprintf(stdout, "\nFinal Report\nHandovers: %d\nDropped: %d\nPing-Pong: %d\nHandover Failures: %d\n", handovers,drop,pingpongCount,handoverFailures);
+		fprintf(stdout, "Final TTT: %f Final hys: %f\n", TTT,hys);
 		globalScheduler->stop();
 	}
 }
@@ -342,7 +343,15 @@ void mobile::checkProp(int id) {
 		if(id==connected) {
 			if(current_prop[id] < THRESHOLD) {
 				//called dropped!
+				learn(0); //call machine learning pass drop
 				int thresCount = 0;
+				if(handingOver) {
+					handoverFailures++;
+					for(int l=0; l<9; l++) {
+						globalScheduler->remove_to(bStations[l]);
+					}
+					handingOver = false;
+				}
 				for(int k=0; k<9; k++) {
 					if(current_prop[k] < THRESHOLD) {
 						thresCount++;

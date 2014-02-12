@@ -128,6 +128,7 @@ void basestation::handler(const event* received)
 				printf("Sim Time: %f - PINGPONG! - Basestation: %d\n",simTime,id);
 				pingpongCount++;
 				globalScheduler->remove_from(this);
+				learn(1); //call machine learning pass pingpong
 			}
 			break;
 		default:

@@ -12,3 +12,9 @@
 *.lai
 *.la
 *.a
+
+a.out
+
+lnd.cpp
+
+nd.cpp
