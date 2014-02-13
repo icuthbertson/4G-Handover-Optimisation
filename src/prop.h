@@ -7,6 +7,12 @@ extern double TTTtest[];
 extern double hys;
 extern double TTT;
 
+extern int hysindex;
+extern int TTTindex;
+
+extern double TTTArray[];
+extern double hysArray[];
+
 extern bool handingOver;
 
 extern int drop;

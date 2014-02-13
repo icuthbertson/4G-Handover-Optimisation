@@ -9,6 +9,8 @@
 #include "bstations.h"
 #include "mobiles.h"
 #include "prop.h"
+#include "opt.h"
+#include <random>
 
 /* Method
  ****************************
@@ -72,14 +74,53 @@ double hysArray[] = {0.0,
 					 9.5,
 					 10.0};
 
-int TTTindex = 7;
-int hysindex = 10;
+int hys_weighting[] = {0,
+					 0,
+					 0,
+					 0,
+					 0,
+					 0,
+					 0,
+					 0,
+					 0,
+					 0,
+					 0,
+					 0,
+					 0,
+					 0,
+					 0,
+					 0};
+
+int TTT_weighting[] = {0,
+					 0,
+					 0,
+					 0,
+					 0,
+					 0,
+					 0,
+					 0,
+					 0,
+					 0,
+					 0,
+					 0,
+					 0,
+					 0,
+					 0,
+					 0,
+					 0,
+					 0,
+					 0,
+					 0,
+					 0};
+
+int TTTindex = 1/*rand()%TTTmaxindex*/;
+int hysindex = 1/*rand()%hysmaxindex*/;
 
 int TTTmaxindex = 15;
 int hysmaxindex = 20;
 
-double TTT = 0.256;
-double hys = 5.0;
+double TTT = TTTArray[TTTindex];
+double hys = hysArray[hysindex];
 
 bool handingOver = false;
 
@@ -116,6 +157,8 @@ basestation* bStations[] = {new basestation(gs,0,0,0,1500,60,false),
 							new basestation(gs,8,1500,1500,1500,60,false)};
 
 mobile* mobiles[] = {new mobile(gs,1,750,750,4,1)};
+
+optimise* learning  = new optimise(gs); 
 
 void learn(int learn) {
 	if(learn == 1) {
