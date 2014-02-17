@@ -10,6 +10,9 @@ extern double TTT;
 extern int hysindex;
 extern int TTTindex;
 
+extern int hysmaxindex;
+extern int TTTnaxindex;
+
 extern double TTTArray[];
 extern double hysArray[];
 

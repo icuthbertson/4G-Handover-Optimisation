@@ -9,7 +9,7 @@
 #include "bstations.h"
 #include "mobiles.h"
 #include "prop.h"
-#include "opt.h"
+// #include "opt.h"
 #include <random>
 
 /* Method
@@ -158,7 +158,7 @@ basestation* bStations[] = {new basestation(gs,0,0,0,1500,60,false),
 
 mobile* mobiles[] = {new mobile(gs,1,750,750,4,1)};
 
-optimise* learning  = new optimise(gs); 
+// optimise* learning  = new optimise(gs); 
 
 void learn(int learn) {
 	if(learn == 1) {

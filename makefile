@@ -11,8 +11,17 @@ mobile.o :
 basestation.o :
 	${CC} ${CFLAGS} -c src/basestation.cpp
 
-optimise.o :
-	${CC} ${CFLAGS} -c src/optimise.cpp
+agent.o :
+	${CC} ${CFLAGS} -c src/agent.cpp
+
+state.o :
+	${CC} ${CFLAGS} -c src/state.cpp
+
+action.o :
+	${CC} ${CFLAGS} -c src/action.cpp
+
+q_learning.o :
+	${CC} ${CFLAGS} -c src/q_learning.cpp
 
 event_handler.o :
 	${CC} ${CFLAGS} -c src/event_handler.cpp
@@ -26,9 +35,9 @@ scheduler.o :
 event.o :
 	${CC} ${CFLAGS} -c src/event.cpp
 
-all : event.o event_handler.o payloadType.o  scheduler.o optimise.o basestation.o mobile.o simulation.o
-	${CC} ${CFLAGS} optimise.o basestation.o mobile.o simulation.o event_handler.o payloadType.o scheduler.o event.o ${LDFLAGS} -o bin/simulation
-	mv event_handler.o payloadType.o scheduler.o optimise.o basestation.o mobile.o simulation.o bin
+all : event.o event_handler.o payloadType.o scheduler.o q_learning.o action.o state.o agent.o basestation.o mobile.o simulation.o
+	${CC} ${CFLAGS} q_learning.o action.o state.o agent.o basestation.o mobile.o simulation.o event_handler.o payloadType.o scheduler.o event.o ${LDFLAGS} -o bin/simulation
+	mv event_handler.o payloadType.o scheduler.o q_learning.o action.o state.o agent.o basestation.o mobile.o simulation.o bin
 	rm -rf *.o
 	
 clean :

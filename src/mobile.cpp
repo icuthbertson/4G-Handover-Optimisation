@@ -5,7 +5,7 @@
 #include "event_definitions.h"
 #include "bstations.h"
 #include "prop.h"
-#include "opt.h"
+// #include "opt.h"
 
 /* Constructor
  ****************************
@@ -115,7 +115,7 @@ void mobile::handler(const event* received)
 	if(count > 100) {
 		fprintf(stdout, "\nFinal Report\nHandovers: %d\nDropped: %d\nPing-Pong: %d\nHandover Failures: %d\n", handovers,drop,pingpongCount,drop);
 		fprintf(stdout, "Final TTT: %f Final hys: %f\n", TTT,hys);
-		learning->print();
+		// learning->print();
 		globalScheduler->stop();
 	}
 }
@@ -345,9 +345,9 @@ void mobile::checkProp(int id) {
 		if(id==connected) {
 			if(current_prop[id] < THRESHOLD) {
 				//called dropped!
-				TTT_weighting[TTTindex] -= 1;
-				hys_weighting[hysindex] -= 1;
-				learning->learn(); //call machine learning
+				// TTT_weighting[TTTindex] -= 1;
+				// hys_weighting[hysindex] -= 1;
+				// learning->learn(); //call machine learning
 				int thresCount = 0;
 				if(handingOver) {
 					handoverFailures++;

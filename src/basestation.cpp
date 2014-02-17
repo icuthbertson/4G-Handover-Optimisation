@@ -4,7 +4,7 @@
 #include "event_definitions.h"
 #include "mobiles.h"
 #include "prop.h"
-#include "opt.h"
+// #include "opt.h"
 #include <random>
 
 std::default_random_engine generator;
@@ -118,8 +118,8 @@ void basestation::handler(const event* received)
 			handingOver = false;
 			deadzone = false;
 
-			TTT_weighting[TTTindex] += 1;
-			hys_weighting[hysindex] += 1;
+			// TTT_weighting[TTTindex] += 1;
+			// hys_weighting[hysindex] += 1;
 
 			for(int j=0; j<(T_CRIT/STEPTIME); j++) {
 				send_delay(new event(PINGPONG),STEPTIME*j);
@@ -132,9 +132,9 @@ void basestation::handler(const event* received)
 				printf("Sim Time: %f - PINGPONG! - Basestation: %d\n",simTime,id);
 				pingpongCount++;
 				globalScheduler->remove_from(this);
-				TTT_weighting[TTTindex] -= 2;
-				hys_weighting[hysindex] -= 2;
-				learning->learn(); //call machine learning
+				// TTT_weighting[TTTindex] -= 2;
+				// hys_weighting[hysindex] -= 2;
+				// learning->learn(); //call machine learning
 			}
 			break;
 		default:
@@ -209,7 +209,7 @@ double basestation::getProp(double d, double hm) {
 
 	fading = distribution(generator);
 
-	return (tx-prop+fading);
+	return (tx-prop-fading);
 }
 
 void basestation::nowServing() {
