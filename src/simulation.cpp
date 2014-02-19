@@ -9,6 +9,7 @@
 #include "bstations.h"
 #include "mobiles.h"
 #include "prop.h"
+#include "q_learning.h"
 // #include "opt.h"
 #include <random>
 
@@ -113,14 +114,14 @@ int TTT_weighting[] = {0,
 					 0,
 					 0};
 
-int TTTindex = 1/*rand()%TTTmaxindex*/;
-int hysindex = 1/*rand()%hysmaxindex*/;
+int TTTindex;
+int hysindex;
 
 int TTTmaxindex = 15;
 int hysmaxindex = 20;
 
-double TTT = TTTArray[TTTindex];
-double hys = hysArray[hysindex];
+double TTT;
+double hys;
 
 bool handingOver = false;
 
@@ -128,6 +129,10 @@ int drop = 0;
 int pingpongCount = 0;
 int handovers = 0;
 int handoverFailures = 0;
+
+int rewardDrop = 0;
+int rewardPing = 0;
+int rewardHandover = 0;
 
 int previous_id = 0;
 
@@ -158,6 +163,8 @@ basestation* bStations[] = {new basestation(gs,0,0,0,1500,60,false),
 
 mobile* mobiles[] = {new mobile(gs,1,750,750,4,1)};
 
+q_learning* q;
+
 // optimise* learning  = new optimise(gs); 
 
 void learn(int learn) {
@@ -183,9 +190,21 @@ void learn(int learn) {
 }
 
 int main() {
+	srand(time(0));
+
+	TTTindex = rand()%15;
+	hysindex = rand()%20;
+
+	TTT = TTTArray[TTTindex];
+	hys = hysArray[hysindex];
+
+	q = new q_learning(gs,TTTindex,hysindex);
+
 	printf("Simulation started...\n");
 	
 	gs->start();
+
+	q->print();
 
 	printf("end...\n");
 

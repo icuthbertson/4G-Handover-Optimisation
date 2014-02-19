@@ -112,7 +112,7 @@ void mobile::handler(const event* received)
 			// program should not reach here
 			break;
 	} // end switch statement
-	if(count > 100) {
+	if(count > 1000) {
 		fprintf(stdout, "\nFinal Report\nHandovers: %d\nDropped: %d\nPing-Pong: %d\nHandover Failures: %d\n", handovers,drop,pingpongCount,drop);
 		fprintf(stdout, "Final TTT: %f Final hys: %f\n", TTT,hys);
 		// learning->print();
@@ -335,7 +335,7 @@ void mobile::moveRandom() {
 void mobile::checkProp(int id) {
 	if(deadzone) {
 		if(current_prop[id]>THRESHOLD) {
-			fprintf(stderr, "Sim Time: %f - DEADZONE RECOVER\n",simTime);
+			// fprintf(stderr, "Sim Time: %f - DEADZONE RECOVER\n",simTime);
 			deadzoneRecovers++;
 			reportPacket* reconPacket;
 			reconPacket = new reportPacket(id);
@@ -365,6 +365,7 @@ void mobile::checkProp(int id) {
 					deadzone = true;
 				} else {
 					drop++;
+					rewardDrop++;
 					double highest = -300.0;
 					int highestid = 0;
 					for(int j=0; j<9; j++) {
@@ -376,12 +377,12 @@ void mobile::checkProp(int id) {
 					reportPacket* sendPacket;
 					sendPacket = new reportPacket(highestid);
 					send_now(new event(REPORT,reinterpret_cast<payloadType<class T>*>(sendPacket),bStations[connected]));
-					fprintf(stderr, "Should switch to basestation: %d\n", id);
+					// fprintf(stderr, "Should switch to basestation: %d\n", id);
 					for(int i=0; i<9; i++) {
 						TTTtest[i] = TTT;
 						globalScheduler->remove_from(bStations[i]);
 					}
-					fprintf(stderr, "Sim Time: %f - DROPPED - Basestation: %d\n",simTime,connected);
+					// fprintf(stderr, "Sim Time: %f - DROPPED - Basestation: %d\n",simTime,connected);
 				}
 			}
 		}
@@ -393,7 +394,7 @@ void mobile::checkProp(int id) {
 					reportPacket* sendPacket;
 					sendPacket = new reportPacket(id);
 					send_delay(new event(REPORT,reinterpret_cast<payloadType<class T>*>(sendPacket),bStations[connected]), HANDOVER_TIME);
-					fprintf(stderr, "Sim Time: %f - Should switch to basestation: %d\n", simTime,id);
+					// fprintf(stderr, "Sim Time: %f - Should switch to basestation: %d\n", simTime,id);
 					for(int i=0; i<9; i++) {
 						TTTtest[i] = TTT;
 					}

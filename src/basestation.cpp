@@ -103,9 +103,9 @@ void basestation::handler(const event* received)
 			reportPacket* repPacket;
 			repPacket = reinterpret_cast<reportPacket*>(received->getAttachment());
 
-			for(int i=0; i<9; i++) {
-				printf("Sim Time: %f - Basestation %d: %f dbm\n",simTime,i,current_prop[i]);
-			}
+			// for(int i=0; i<9; i++) {
+			// 	printf("Sim Time: %f - Basestation %d: %f dbm\n",simTime,i,current_prop[i]);
+			// }
 
 			bStations[repPacket->id]->nowServing();
 			this->connected = false;
@@ -113,6 +113,7 @@ void basestation::handler(const event* received)
 
 			if(handingOver) {
 				handovers++;
+				rewardHandover++;
 			}
 
 			handingOver = false;
@@ -129,8 +130,9 @@ void basestation::handler(const event* received)
 			break;
 		case PINGPONG:
 			if (connected) {
-				printf("Sim Time: %f - PINGPONG! - Basestation: %d\n",simTime,id);
+				// printf("Sim Time: %f - PINGPONG! - Basestation: %d\n",simTime,id);
 				pingpongCount++;
+				rewardPing++;
 				globalScheduler->remove_from(this);
 				// TTT_weighting[TTTindex] -= 2;
 				// hys_weighting[hysindex] -= 2;
