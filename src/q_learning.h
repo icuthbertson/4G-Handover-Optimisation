@@ -5,7 +5,7 @@
 
 #define ALPHA 0.1
 #define GAMMA 0.9
-#define NUMSTATES 300
+#define NUMSTATES 336
 #define LENGTH 8
 
 // //      0   1   2   3   4   5   6   7   8   9   10  11  12  13  14  15  16  17  18  19  20

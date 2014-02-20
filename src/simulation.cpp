@@ -117,8 +117,8 @@ int TTT_weighting[] = {0,
 int TTTindex;
 int hysindex;
 
-int TTTmaxindex = 15;
-int hysmaxindex = 20;
+int TTTmaxindex = 16;
+int hysmaxindex = 21;
 
 double TTT;
 double hys;
@@ -192,8 +192,8 @@ void learn(int learn) {
 int main() {
 	srand(time(0));
 
-	TTTindex = rand()%15;
-	hysindex = rand()%20;
+	TTTindex = rand()%TTTmaxindex;
+	hysindex = rand()%hysmaxindex;
 
 	TTT = TTTArray[TTTindex];
 	hys = hysArray[hysindex];
