@@ -4,11 +4,12 @@
 #include "event_definitions.h"
 #include "mobiles.h"
 #include "prop.h"
+#include "q.h"
 // #include "opt.h"
 #include <random>
 
 std::default_random_engine generator;
-std::normal_distribution<double> distribution(0.0,6.0);
+std::normal_distribution<double> distribution(0.0,8.0);
 
 /* Constructor
  ****************************
@@ -134,6 +135,9 @@ void basestation::handler(const event* received)
 				pingpongCount++;
 				rewardPing++;
 				globalScheduler->remove_from(this);
+				if(function == 2) {//runnning policy
+					send_now(new event(POLICY,q));
+				}
 				// TTT_weighting[TTTindex] -= 2;
 				// hys_weighting[hysindex] -= 2;
 				// learning->learn(); //call machine learning

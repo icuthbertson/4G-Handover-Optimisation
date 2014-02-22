@@ -9,7 +9,9 @@
 #include "bstations.h"
 #include "mobiles.h"
 #include "prop.h"
-#include "q_learning.h"
+// #include "q_learning.h"
+#include "q.h"
+#include <iostream>
 // #include "opt.h"
 #include <random>
 
@@ -76,43 +78,43 @@ double hysArray[] = {0.0,
 					 10.0};
 
 int hys_weighting[] = {0,
-					 0,
-					 0,
-					 0,
-					 0,
-					 0,
-					 0,
-					 0,
-					 0,
-					 0,
-					 0,
-					 0,
-					 0,
-					 0,
-					 0,
-					 0};
+					   0,
+					   0,
+					   0,
+					   0,
+					   0,
+					   0,
+					   0,
+					   0,
+					   0,
+					   0,
+					   0,
+					   0,
+					   0,
+					   0,
+					   0};
 
 int TTT_weighting[] = {0,
-					 0,
-					 0,
-					 0,
-					 0,
-					 0,
-					 0,
-					 0,
-					 0,
-					 0,
-					 0,
-					 0,
-					 0,
-					 0,
-					 0,
-					 0,
-					 0,
-					 0,
-					 0,
-					 0,
-					 0};
+					   0,
+					   0,
+					   0,
+					   0,
+					   0,
+					   0,
+					   0,
+					   0,
+					   0,
+					   0,
+					   0,
+					   0,
+					   0,
+					   0,
+					   0,
+					   0,
+					   0,
+					   0,
+					   0,
+					   0};
 
 int TTTindex;
 int hysindex;
@@ -140,6 +142,8 @@ bool deadzone = false;
 int deadzoneRecovers = 0;
 
 double simTime = 0.0;
+
+int function;
 
 double TTTtest[] = {TTT,
 				 	TTT,
@@ -198,13 +202,31 @@ int main() {
 	TTT = TTTArray[TTTindex];
 	hys = hysArray[hysindex];
 
-	q = new q_learning(gs,TTTindex,hysindex);
+	std::cout << "Enter what operation you would like to undertake.\n";
+	std::cout << "1 for generating / updating policy\n";
+	std::cout << "2 for using the policy\n";
+	std:: cout << "Please enter:\n";
 
-	printf("Simulation started...\n");
-	
+	int arg;
+	std::cin >> arg;
+
+	if(arg == 1) {
+		// q-learning
+		printf("Q-Learning started...\n");
+		function = 1;
+	} else if (arg == 2) {
+		// use policy
+		printf("Simulation started...\n");
+		function = 2;
+	}
+
+		q = new q_learning(gs,TTTindex,hysindex);
+
 	gs->start();
 
-	q->print();
+	if(function == 1) {
+		q->print();
+	}
 
 	printf("end...\n");
 

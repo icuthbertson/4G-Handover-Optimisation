@@ -5,26 +5,40 @@
 #include <fstream>
 
 q_learning::q_learning(scheduler* gs, int TTT, int hys) : event_handler(gs) {
-	int q;
-	std::ifstream qFile ("q.txt");
+	int startState = (TTT*20)+hys;
+	if(function == 1) { //for creating policy
+		int q = 0;
+		std::ifstream qFile ("q.txt");
 
-	if(qFile.is_open()) {
-		for(int i=0; i<NUMSTATES; i++) {
-			for(int j=0; j<NUMSTATES; j++) {
-				qFile>>q;
-				Q[i][j] = q; //read Q in
+		if(qFile.is_open()) {
+			for(int i=0; i<NUMSTATES; i++) {
+				for(int j=0; j<NUMSTATES; j++) {
+					qFile>>q;
+					Q[i][j] = q; //read Q in
+				}
 			}
 		}
+
+    	qFile.close();
+
+		current_state = startState;
+		action = 0;
+		next_state = 0;
+		firstPass = true;
+
+		send_delay(new event(LEARN),60);
+	} else if(function == 2) { //for using policy
+		std::cout << "here";
+		std::ifstream pFile ("policy.txt");
+
+		if(pFile.is_open()) {
+			for(int i=0; i<NUMSTATES; i++) {
+				pFile >> policyArray[i];
+			}
+		}
+
+		current_state = startState;
 	}
-
-    qFile.close();
-
-	int startState = (TTT*20)+hys;
-	current_state = startState;
-	action = 0;
-	next_state = 0;
-	firstPass = true;
-	send_delay(new event(LEARN),60);
 }
 
 q_learning::~q_learning() {
@@ -39,6 +53,11 @@ void q_learning::handler(const event* received)
 		case LEARN:
 			printf("HERE\n");
 			learn();
+			break;
+		case POLICY:
+			//change state depending on policy
+			changeState();
+			break;
 		default:
 			// program should not reach here
 			break;
@@ -156,6 +175,12 @@ void q_learning::changeTTThys() {
 	printf("New: TTT: %f hys: %f\n", TTT,hys);
 }
 
+void q_learning::changeState() {
+	next_state = policyArray[current_state];
+	changeTTThys();
+	current_state = next_state;
+}
+
 void q_learning::print() {
 	// for(int i=0; i<NUMSTATES; i++) {
 	// 	for(int j=0; j<NUMSTATES; j++) {
@@ -180,27 +205,32 @@ void q_learning::print() {
 
 int q_learning::policy(int current) {
     double maxValue = -99999;
-    int policyGotoState = current; // For testing cause not all Q's have values yet
+    int maxNext = -1; // For testing cause not all Q's have values yet
     for (int i = 0; i < LENGTH; i++) {
         int nextState = *(actions[current]+i);
 
-        if(nextState != -1) {	
-
+        if(nextState != -1) {
           	double value = getQ(current,nextState);
  
            	if (value > maxValue) {
                	maxValue = value;
-           	    policyGotoState = nextState;
+           	    maxNext = nextState;
            	}
        	}
     }
-    return policyGotoState;
+    return maxNext;
 }
 
 void q_learning::printPolicy() {
-    for (int i=0; i < NUMSTATES; i++) {
-        int current = i;
-        int next =  policy(current);
-        printf("From %d Next %d\n",current,next);
-    }           
+	std::ofstream pFile ("policy.txt");
+
+	if(pFile.is_open()) {
+    	for (int i=0; i < NUMSTATES; i++) {
+    	    int current = i;
+    	    int next =  policy(current);
+    	    pFile << next << "\n";
+    	    printf("From %d Next %d\n",current,next);
+    	}    
+    } 
+    pFile.close();      
 }

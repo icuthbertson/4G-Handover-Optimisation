@@ -36,6 +36,8 @@ extern int deadzoneRecovers;
 
 extern double simTime;
 
+extern int function;
+
 void learn(int learn);
 
 #endif

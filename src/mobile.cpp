@@ -5,6 +5,7 @@
 #include "event_definitions.h"
 #include "bstations.h"
 #include "prop.h"
+#include "q.h"
 // #include "opt.h"
 
 /* Constructor
@@ -112,7 +113,7 @@ void mobile::handler(const event* received)
 			// program should not reach here
 			break;
 	} // end switch statement
-	if(count > 1000) {
+	if(count > 100) {
 		fprintf(stdout, "\nFinal Report\nHandovers: %d\nDropped: %d\nPing-Pong: %d\nHandover Failures: %d\n", handovers,drop,pingpongCount,drop);
 		fprintf(stdout, "Final TTT: %f Final hys: %f\n", TTT,hys);
 		// learning->print();
@@ -348,6 +349,9 @@ void mobile::checkProp(int id) {
 				// TTT_weighting[TTTindex] -= 1;
 				// hys_weighting[hysindex] -= 1;
 				// learning->learn(); //call machine learning
+				if(function == 2) {//runnning policy
+					send_now(new event(POLICY,q));
+				}
 				int thresCount = 0;
 				if(handingOver) {
 					handoverFailures++;
