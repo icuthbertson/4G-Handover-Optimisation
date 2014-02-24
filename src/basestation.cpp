@@ -9,7 +9,7 @@
 #include <random>
 
 std::default_random_engine generator;
-std::normal_distribution<double> distribution(0.0,8.0);
+std::normal_distribution<double> distribution(0.0,6.0);
 
 /* Constructor
  ****************************
