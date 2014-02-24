@@ -9,6 +9,11 @@
 #include "bstations.h"
 #include "mobiles.h"
 #include "prop.h"
+// #include "q_learning.h"
+#include "q.h"
+#include <iostream>
+// #include "opt.h"
+#include <random>
 
 /* Method
  ****************************
@@ -72,14 +77,53 @@ double hysArray[] = {0.0,
 					 9.5,
 					 10.0};
 
-int TTTindex = 7;
-int hysindex = 10;
+int hys_weighting[] = {0,
+					   0,
+					   0,
+					   0,
+					   0,
+					   0,
+					   0,
+					   0,
+					   0,
+					   0,
+					   0,
+					   0,
+					   0,
+					   0,
+					   0,
+					   0};
 
-int TTTmaxindex = 15;
-int hysmaxindex = 20;
+int TTT_weighting[] = {0,
+					   0,
+					   0,
+					   0,
+					   0,
+					   0,
+					   0,
+					   0,
+					   0,
+					   0,
+					   0,
+					   0,
+					   0,
+					   0,
+					   0,
+					   0,
+					   0,
+					   0,
+					   0,
+					   0,
+					   0};
 
-double TTT = 0.256;
-double hys = 5.0;
+int TTTindex;
+int hysindex;
+
+int TTTmaxindex = 16;
+int hysmaxindex = 21;
+
+double TTT;
+double hys;
 
 bool handingOver = false;
 
@@ -88,12 +132,18 @@ int pingpongCount = 0;
 int handovers = 0;
 int handoverFailures = 0;
 
+int rewardDrop = 0;
+int rewardPing = 0;
+int rewardHandover = 0;
+
 int previous_id = 0;
 
 bool deadzone = false;
 int deadzoneRecovers = 0;
 
 double simTime = 0.0;
+
+int function;
 
 double TTTtest[] = {TTT,
 				 	TTT,
@@ -116,6 +166,10 @@ basestation* bStations[] = {new basestation(gs,0,0,0,1500,60,false),
 							new basestation(gs,8,1500,1500,1500,60,false)};
 
 mobile* mobiles[] = {new mobile(gs,1,750,750,4,1)};
+
+q_learning* q;
+
+// optimise* learning  = new optimise(gs); 
 
 void learn(int learn) {
 	if(learn == 1) {
@@ -140,9 +194,42 @@ void learn(int learn) {
 }
 
 int main() {
-	printf("Simulation started...\n");
-	
+	srand(time(0));
+
+	TTTindex = rand()%TTTmaxindex;
+	hysindex = rand()%hysmaxindex;
+
+	// TTTindex = 0;
+	// hysindex = 0;
+
+	TTT = TTTArray[TTTindex];
+	hys = hysArray[hysindex];
+
+	std::cout << "Enter what operation you would like to undertake.\n";
+	std::cout << "1 for generating / updating policy\n";
+	std::cout << "2 for using the policy\n";
+	std:: cout << "Please enter:\n";
+
+	int arg;
+	std::cin >> arg;
+
+	if(arg == 1) {
+		// q-learning
+		printf("Q-Learning started...\n");
+		function = 1;
+	} else if (arg == 2) {
+		// use policy
+		printf("Simulation started...\n");
+		function = 2;
+	}
+
+		q = new q_learning(gs,TTTindex,hysindex);
+
 	gs->start();
+
+	if(function == 1) {
+		q->print();
+	}
 
 	printf("end...\n");
 

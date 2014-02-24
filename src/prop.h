@@ -7,12 +7,26 @@ extern double TTTtest[];
 extern double hys;
 extern double TTT;
 
+extern int hysindex;
+extern int TTTindex;
+
+extern int hysmaxindex;
+extern int TTTnaxindex;
+
+extern double TTTArray[];
+extern double hysArray[];
+
 extern bool handingOver;
 
 extern int drop;
 extern int pingpongCount;
 extern int handovers;
 extern int handoverFailures;
+
+extern int rewardDrop;
+extern int rewardPing;
+extern int rewardHandover;
+
 extern bool checkPingPong;
 
 extern int previous_id;
@@ -21,6 +35,8 @@ extern bool deadzone;
 extern int deadzoneRecovers;
 
 extern double simTime;
+
+extern int function;
 
 void learn(int learn);
 

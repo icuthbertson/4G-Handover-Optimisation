@@ -4,6 +4,8 @@
 #include "event_definitions.h"
 #include "mobiles.h"
 #include "prop.h"
+#include "q.h"
+// #include "opt.h"
 #include <random>
 
 std::default_random_engine generator;
@@ -102,9 +104,9 @@ void basestation::handler(const event* received)
 			reportPacket* repPacket;
 			repPacket = reinterpret_cast<reportPacket*>(received->getAttachment());
 
-			for(int i=0; i<9; i++) {
-				printf("Sim Time: %f - Basestation %d: %f dbm\n",simTime,i,current_prop[i]);
-			}
+			// for(int i=0; i<9; i++) {
+			// 	printf("Sim Time: %f - Basestation %d: %f dbm\n",simTime,i,current_prop[i]);
+			// }
 
 			bStations[repPacket->id]->nowServing();
 			this->connected = false;
@@ -112,10 +114,14 @@ void basestation::handler(const event* received)
 
 			if(handingOver) {
 				handovers++;
+				rewardHandover++;
 			}
 
 			handingOver = false;
 			deadzone = false;
+
+			// TTT_weighting[TTTindex] += 1;
+			// hys_weighting[hysindex] += 1;
 
 			for(int j=0; j<(T_CRIT/STEPTIME); j++) {
 				send_delay(new event(PINGPONG),STEPTIME*j);
@@ -125,10 +131,16 @@ void basestation::handler(const event* received)
 			break;
 		case PINGPONG:
 			if (connected) {
-				printf("Sim Time: %f - PINGPONG! - Basestation: %d\n",simTime,id);
+				// printf("Sim Time: %f - PINGPONG! - Basestation: %d\n",simTime,id);
 				pingpongCount++;
+				rewardPing++;
 				globalScheduler->remove_from(this);
-				learn(1); //call machine learning pass pingpong
+				if(function == 2) {//runnning policy
+					send_now(new event(POLICY,q));
+				}
+				// TTT_weighting[TTTindex] -= 2;
+				// hys_weighting[hysindex] -= 2;
+				// learning->learn(); //call machine learning
 			}
 			break;
 		default:
@@ -203,7 +215,7 @@ double basestation::getProp(double d, double hm) {
 
 	fading = distribution(generator);
 
-	return (tx-prop+fading);
+	return (tx-prop-fading);
 }
 
 void basestation::nowServing() {
