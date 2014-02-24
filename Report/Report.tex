@@ -1,0 +1,169 @@
+\documentclass[12pt, oneside]{report}
+%\usepackage{titling}
+\usepackage{setspace}
+\usepackage[british]{babel}
+\usepackage{acro}
+\usepackage[toc,page]{appendix}
+\acsetup{first-style=short,list-heading=chapter*}
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=C++,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=1
+}
+
+\usepackage[showframe = true, a4paper, top=2.5cm, left=4.0cm, right=2.5cm, bottom=2.5cm]{geometry}
+%\usepackage{vmargin}
+%\setmarginsrb           { 40mm}  % left margin
+%                        { 25mm}  % top margin
+%                        { 25mm}  % right margin
+%                        { 25mm}  % bottom margin
+%                        {  0pt}  % head height
+%                        {  0mm}  % head sep
+%                        {  0pt}  % foot height
+%                        {  0mm}  % foot sep
+
+%\setlength{\droptitle}{-4em}     % Eliminate the default vertical space
+%\addtolength{\droptitle}{-16pt}   % Only a guess. Use this for adjustment
+
+%\usepackage[compact]{titlesec}
+%\titlespacing{\section}{0pt}{*0}{*0}
+%\titlespacing{\subsection}{0pt}{*0}{*0}
+%\titlespacing{\subsubsection}{0pt}{*0}{*0}
+
+
+\DeclareAcronym{enodeb}{
+  short = eNodeB ,
+  long  = Evolved Node B ,
+  sort = e ,
+  class = nomencl
+}
+
+\DeclareAcronym{ue}{
+  short = UE ,
+  long  = User Equipment ,
+  sort = u ,
+  class = nomencl
+}
+
+\DeclareAcronym{lte}{
+  short = LTE ,
+  long  = Long Term Evolution ,
+  sort = l ,
+  class = nomencl
+}
+
+\DeclareAcronym{4g}{
+  short = 4G ,
+  long  = Fourth Generation ,
+  sort = 4 ,
+  class = nomencl
+}
+
+\DeclareAcronym{umts}{
+  short = UMTS ,
+  long  = Universal Mobile Telecommunications System ,
+  sort = u ,
+  class = nomencl
+}
+
+\DeclareAcronym{3g}{
+  short = 3G ,
+  long  = Third Generation ,
+  sort = 3 ,
+  class = nomencl
+}
+
+\title{Handover Optimisation in 4G Systems}
+\author{
+        Iain Cuthbertson \\
+        201015895\\
+        Computer \& Electronic Systems\\
+        University of Strathclyde\\
+        \\
+        April 2014\\
+}
+
+\date{}
+
+\renewcommand*{\familydefault}{\rmdefault}
+\onehalfspacing
+ 
+\begin{document}
+
+\maketitle
+
+\pagenumbering{roman}
+
+\chapter*{Abstract}
+This is the paper's abstract \ldots
+\addcontentsline{toc}{chapter}{Abstract}
+\pagebreak
+
+\chapter*{Acknowledgements}
+ Thanks Mum!
+\addcontentsline{toc}{chapter}{Acknowledgements}
+\pagebreak
+
+\tableofcontents
+\pagebreak
+
+\pagenumbering{arabic}
+
+\printacronyms[include-classes=nomencl,name=Nomenclature]
+\addcontentsline{toc}{chapter}{Nomenclature}
+\pagebreak
+
+\listoffigures
+\addcontentsline{toc}{chapter}{List of Figures}
+\pagebreak
+
+\chapter{Introduction}
+This is time for all good men to come to the aid of their party!
+
+\chapter{LTE}\label{lte}
+\section{Overview}
+Mobile communications is on to its fourth generation of network infrastructure with \ac{lte} (Long Term Evolution) (\ac{4g}). This network infrastructure is an improvement upon Universal Mobile Telecommunications System (\ac{umts}), which is a third generation network (\ac{3g}).
+
+\chapter{Machine Learning}\label{machine learning}
+\section{Overview}
+\section{Q-Learning}\label{qlearning}
+
+\chapter{Future Work}\label{future work}
+
+\chapter{Conclusion}\label{conclusion}
+We worked hard, and achieved very little.
+
+\pagebreak
+
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliography{Report}
+\bibliographystyle{plain}
+
+\begin{appendices}
+\chapter{System Design and Evaluation}
+The contents...
+
+\lstinputlisting[language=c++]{../src/mobile.cpp}
+
+\end{appendices}
+
+\end{document}

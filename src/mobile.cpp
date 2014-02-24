@@ -102,7 +102,8 @@ void mobile::handler(const event* received)
 			propSendPacket* recPacket;
 			recPacket = reinterpret_cast<propSendPacket*> (received->getAttachment());
     		current_prop[recPacket->id] = recPacket->prop;
-    		//printf("Current: id:%d Rx:%f dB\nPrevious: id:%d Rx:%f dB\n",recPacket->id,current_prop[recPacket->id],recPacket->id,previous_prop[recPacket->id]);
+    		//printf("Current: id:%d Rx:%f dB\nPrevious: id:%d Rx:%f dB\n",recPacket->id,current_prop[recPacket->id],
+    		//recPacket->id,previous_prop[recPacket->id]);
    			checkProp(recPacket->id);
    			delete recPacket;
    			break;
