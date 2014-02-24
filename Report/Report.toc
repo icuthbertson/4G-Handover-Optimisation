@@ -5,12 +5,18 @@
 \contentsline {chapter}{List of Figures}{2}
 \contentsline {chapter}{\numberline {1}Introduction}{3}
 \contentsline {chapter}{\numberline {2}LTE}{4}
-\contentsline {section}{\numberline {2.1}Overview}{4}
+\contentsline {section}{\numberline {2.1}Self Organising Network}{4}
+\contentsline {section}{\numberline {2.2}Handover Procedure}{4}
+\contentsline {subsection}{\numberline {2.2.1}Handover Parameters}{4}
+\contentsline {subsection}{\numberline {2.2.2}Handover Triggers}{4}
 \contentsline {chapter}{\numberline {3}Machine Learning}{5}
-\contentsline {section}{\numberline {3.1}Overview}{5}
-\contentsline {section}{\numberline {3.2}Q-Learning}{5}
-\contentsline {chapter}{\numberline {4}Future Work}{6}
-\contentsline {chapter}{\numberline {5}Conclusion}{7}
-\contentsline {chapter}{Bibliography}{8}
-\contentsline {chapter}{Appendices}{9}
-\contentsline {chapter}{\numberline {A}System Design and Evaluation}{10}
+\contentsline {section}{\numberline {3.1}Reinforcement Learning}{6}
+\contentsline {section}{\numberline {3.2}Q-Learning}{6}
+\contentsline {chapter}{\numberline {4}Handover Parameter Optimisation}{7}
+\contentsline {section}{\numberline {4.1}Approach}{7}
+\contentsline {section}{\numberline {4.2}Results}{7}
+\contentsline {chapter}{\numberline {5}Future Work}{8}
+\contentsline {chapter}{\numberline {6}Conclusions}{9}
+\contentsline {chapter}{Bibliography}{10}
+\contentsline {chapter}{Appendices}{11}
+\contentsline {chapter}{\numberline {A}System Design and Evaluation}{12}

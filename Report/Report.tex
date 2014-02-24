@@ -1,5 +1,4 @@
 \documentclass[12pt, oneside]{report}
-%\usepackage{titling}
 \usepackage{setspace}
 \usepackage[british]{babel}
 \usepackage{acro}
@@ -31,66 +30,8 @@
 }
 
 \usepackage[showframe = true, a4paper, top=2.5cm, left=4.0cm, right=2.5cm, bottom=2.5cm]{geometry}
-%\usepackage{vmargin}
-%\setmarginsrb           { 40mm}  % left margin
-%                        { 25mm}  % top margin
-%                        { 25mm}  % right margin
-%                        { 25mm}  % bottom margin
-%                        {  0pt}  % head height
-%                        {  0mm}  % head sep
-%                        {  0pt}  % foot height
-%                        {  0mm}  % foot sep
 
-%\setlength{\droptitle}{-4em}     % Eliminate the default vertical space
-%\addtolength{\droptitle}{-16pt}   % Only a guess. Use this for adjustment
-
-%\usepackage[compact]{titlesec}
-%\titlespacing{\section}{0pt}{*0}{*0}
-%\titlespacing{\subsection}{0pt}{*0}{*0}
-%\titlespacing{\subsubsection}{0pt}{*0}{*0}
-
-
-\DeclareAcronym{enodeb}{
-  short = eNodeB ,
-  long  = Evolved Node B ,
-  sort = e ,
-  class = nomencl
-}
-
-\DeclareAcronym{ue}{
-  short = UE ,
-  long  = User Equipment ,
-  sort = u ,
-  class = nomencl
-}
-
-\DeclareAcronym{lte}{
-  short = LTE ,
-  long  = Long Term Evolution ,
-  sort = l ,
-  class = nomencl
-}
-
-\DeclareAcronym{4g}{
-  short = 4G ,
-  long  = Fourth Generation ,
-  sort = 4 ,
-  class = nomencl
-}
-
-\DeclareAcronym{umts}{
-  short = UMTS ,
-  long  = Universal Mobile Telecommunications System ,
-  sort = u ,
-  class = nomencl
-}
-
-\DeclareAcronym{3g}{
-  short = 3G ,
-  long  = Third Generation ,
-  sort = 3 ,
-  class = nomencl
-}
+\input{acro.tex}
 
 \title{Handover Optimisation in 4G Systems}
 \author{
@@ -140,16 +81,41 @@ This is the paper's abstract \ldots
 This is time for all good men to come to the aid of their party!
 
 \chapter{LTE}\label{lte}
-\section{Overview}
 Mobile communications is on to its fourth generation of network infrastructure with \ac{lte} (Long Term Evolution) (\ac{4g}). This network infrastructure is an improvement upon Universal Mobile Telecommunications System (\ac{umts}), which is a third generation network (\ac{3g}).
+\section{Self Organising Network}\label{self organising network}
+\section{Handover Procedure}\label{handover procedure}
+\subsection{Handover Parameters}\label{handover parameters}
+\subsection{Handover Triggers}\label{handover triggers}
 
 \chapter{Machine Learning}\label{machine learning}
-\section{Overview}
+Machine learning is a form of artificial intelligence (\ac{ai}) that involves designing and studying systems and algorithms with the ability to learn from data. This field of AI has many applications within research (such as system optimisation), products (such as image recognition) and advertising (such as adverts that use a users browsing history). There are many different paradigms that machine learning algorithms use. Algorithms can use training sets to train an algorithm to give appropriate outputs; other algorithms look for patterns in data; while others use the notion of rewards to find out if an action could be considered correct or not.~\cite{alpaydin2010introduction} Three of the most popular types of machine learning algorithms are:
+
+\begin{itemize}
+  \item \textbf{Supervised learning} is where an algorithm is trained using a training set of data. This set of data includes inputs and the known outputs for those inputs. The training set is used to fine-tune the parameters in the algorithm. The purpose of this kind of algorithm is to learn a general mapping between inputs and outputs so that the algorithm can give an accurate output for an unknown input. This type of algorithm is generally used in classifier systems.
+  \item \textbf{Unsupervised learning} algorithms only know about the inputs they are given. The goal of such an algorithm is to try and find patterns or structure within the input data. Such algorithm would be given inputs and any patterns that are contained would become more and more common the more inputs the algorithm is given.
+  \item \textbf{Reinforcement learning} uses an intelligent agent to perform actions within an environment. Any such action will yield a reward to the agent and the agent’s goal is to learn about how the environment reacts to any given action. The agent then uses this knowledge to try and maximise its reward gains.
+\end{itemize}
+
+The chosen type of machine learning chosen for the project is Reinforcement learning due to its ability to use the notion of states and rewards. These notions can be mapped to a set of TTT and Hys values as well as the performance of that set respectively.
+
+\section{Reinforcement Learning}\label{reinforcement learning}
 \section{Q-Learning}\label{qlearning}
+In Q-Learning an agent tries to discover an optimal policy from its history of interactions with the environment.
+\begin{center}
+$<s_{0},a_{0},r_{1},s_{1},a_{1},r_{2},s_{2},a_{2}...>$
+\end{center}
+
+\begin{center}
+$<s,a,r,s'>$
+\end{center}
+
+\chapter{Handover Parameter Optimisation}\label{handover parameter optimisation}
+\section{Approach}\label{approach}
+\section{Results}\label{results}
 
 \chapter{Future Work}\label{future work}
 
-\chapter{Conclusion}\label{conclusion}
+\chapter{Conclusions}\label{conclusion}
 We worked hard, and achieved very little.
 
 \pagebreak
@@ -162,7 +128,7 @@ We worked hard, and achieved very little.
 \chapter{System Design and Evaluation}
 The contents...
 
-\lstinputlisting[language=c++]{../src/mobile.cpp}
+%\lstinputlisting[language=c++]{../src/mobile.cpp}
 
 \end{appendices}
 
