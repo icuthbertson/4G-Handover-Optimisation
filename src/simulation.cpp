@@ -199,8 +199,8 @@ int main() {
 	TTTindex = rand()%TTTmaxindex;
 	hysindex = rand()%hysmaxindex;
 
-	// TTTindex = 0;
-	// hysindex = 0;
+	// TTTindex = 15;
+	// hysindex = 20;
 
 	TTT = TTTArray[TTTindex];
 	hys = hysArray[hysindex];

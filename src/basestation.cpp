@@ -131,7 +131,7 @@ void basestation::handler(const event* received)
 			break;
 		case PINGPONG:
 			if (connected) {
-				// printf("Sim Time: %f - PINGPONG! - Basestation: %d\n",simTime,id);
+				printf("Sim Time: %f - PINGPONG! - Basestation: %d\n",simTime,id);
 				pingpongCount++;
 				rewardPing++;
 				globalScheduler->remove_from(this);

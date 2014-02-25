@@ -27,6 +27,7 @@ mobile::mobile(scheduler* gs) : event_handler(gs) {
 	wall = 0;
 	minusX = 1;
 	minusY = 1;
+	trigger = false;
 }
 /* Constructor
  ****************************
@@ -52,6 +53,7 @@ mobile::mobile(scheduler* gs, int num, int x, int y, int con, double height) : e
     wall = 0;
     minusX = 1;
 	minusY = 1;
+	trigger = false;
 	send_delay(new event(MOVE),0.0);
 }
 /* Destructor
@@ -286,7 +288,7 @@ void mobile::moveRandom() {
 // void mobile::checkProp(int id) {
 // 	if(deadzone) {
 // 		if(current_prop[id]>THRESHOLD) {
-// 			fprintf(stderr, "Sim Time: %f - DEADZONE RECOVER\n",simTime);
+// 			// fprintf(stderr, "Sim Time: %f - DEADZONE RECOVER\n",simTime);
 // 			deadzoneRecovers++;
 // 			reportPacket* reconPacket;
 // 			reconPacket = new reportPacket(id);
@@ -296,7 +298,17 @@ void mobile::moveRandom() {
 // 		if(id==connected) {
 // 			if(current_prop[id] < THRESHOLD) {
 // 				//called dropped!
+// 				// TTT_weighting[TTTindex] -= 1;
+// 				// hys_weighting[hysindex] -= 1;
+// 				// learning->learn(); //call machine learning
 // 				int thresCount = 0;
+// 				if(handingOver) {
+// 					handoverFailures++;
+// 					for(int l=0; l<9; l++) {
+// 						globalScheduler->remove_to(bStations[l]);
+// 					}
+// 					handingOver = false;
+// 				}
 // 				for(int k=0; k<9; k++) {
 // 					if(current_prop[k] < THRESHOLD) {
 // 						thresCount++;
@@ -306,6 +318,10 @@ void mobile::moveRandom() {
 // 					deadzone = true;
 // 				} else {
 // 					drop++;
+// 					rewardDrop++;
+// 					if(function == 2) {//runnning policy
+// 						send_now(new event(POLICY,q));
+// 					}
 // 					double highest = -300.0;
 // 					int highestid = 0;
 // 					for(int j=0; j<9; j++) {
@@ -317,7 +333,7 @@ void mobile::moveRandom() {
 // 					reportPacket* sendPacket;
 // 					sendPacket = new reportPacket(highestid);
 // 					send_now(new event(REPORT,reinterpret_cast<payloadType<class T>*>(sendPacket),bStations[connected]));
-// 					fprintf(stderr, "Should switch to basestation: %d\n", id);
+// 					// fprintf(stderr, "Should switch to basestation: %d\n", id);
 // 					for(int i=0; i<9; i++) {
 // 						TTTtest[i] = TTT;
 // 						globalScheduler->remove_from(bStations[i]);
@@ -325,12 +341,32 @@ void mobile::moveRandom() {
 // 					fprintf(stderr, "Sim Time: %f - DROPPED - Basestation: %d\n",simTime,connected);
 // 				}
 // 			}
-// 		} else if(!handingOver) {
-// 			if(current_prop[id] >= current_prop[connected]+hys) {
-// 				reportPacket* tttPacket;
-// 				tttPacket = new reportPacket(id);
-// 				send_delay(new event(TTTCHECK,reinterpret_cast<payloadType<class T>*>(tttPacket)), TTT);
-// 			} 
+// 		} else if(!handingOver && id !=connected) {
+// 			if(trigger == false) {
+// 				if(current_prop[id] >= current_prop[connected]+hys) {
+// 					trigger = true;
+// 				}
+// 			} else {
+// 				TTTtest[id] -= STEPTIME;
+// 				if(TTTtest[id] <= 0) {
+// 					if(current_prop[id] >= current_prop[connected]+hys) {
+// 						//send measurement report
+// 						reportPacket* sendPacket;
+// 						sendPacket = new reportPacket(id);
+// 						send_delay(new event(REPORT,reinterpret_cast<payloadType<class T>*>(sendPacket),bStations[connected]), HANDOVER_TIME);
+// 						fprintf(stderr, "Sim Time: %f - Switch to basestation: %d\n", simTime,id);
+// 						for(int i=0; i<9; i++) {
+// 							TTTtest[i] = TTT;
+// 						}
+// 						handingOver = true;
+// 						trigger = false;
+// 					} else {
+// 						TTTtest[id] = TTT;
+// 						trigger = false;
+
+// 					}
+// 				}
+// 			}
 // 		}
 // 	}
 // }
@@ -391,98 +427,23 @@ void mobile::checkProp(int id) {
 					// fprintf(stderr, "Sim Time: %f - DROPPED - Basestation: %d\n",simTime,connected);
 				}
 			}
-		} else if(!handingOver && id !=connected) {
-			TTTtest[id] -= STEPTIME;
-			if((TTTtest[id] <= 0) && (current_prop[id] >= current_prop[connected]+hys)) {
+		} else if(!handingOver && !deadzone) {
+			if(current_prop[id] >= current_prop[connected]+hys) {
+				TTTtest[id] -= STEPTIME;
 				if(TTTtest[id] <= 0) {
 					//send measurement report
 					reportPacket* sendPacket;
 					sendPacket = new reportPacket(id);
 					send_delay(new event(REPORT,reinterpret_cast<payloadType<class T>*>(sendPacket),bStations[connected]), HANDOVER_TIME);
-					fprintf(stderr, "Sim Time: %f - Switch to basestation: %d\n", simTime,id);
+					// fprintf(stderr, "Sim Time: %f - Should switch to basestation: %d\n", simTime,id);
 					for(int i=0; i<9; i++) {
 						TTTtest[i] = TTT;
 					}
 					handingOver = true;
 				}
-			} 
+			} else {
+				TTTtest[id] = TTT;
+			}
 		}
 	}
 }
-
-// void mobile::checkProp(int id) {
-// 	if(deadzone) {
-// 		if(current_prop[id]>THRESHOLD) {
-// 			// fprintf(stderr, "Sim Time: %f - DEADZONE RECOVER\n",simTime);
-// 			deadzoneRecovers++;
-// 			reportPacket* reconPacket;
-// 			reconPacket = new reportPacket(id);
-// 			send_now(new event(REPORT,reinterpret_cast<payloadType<class T>*>(reconPacket),bStations[connected]));
-// 		}
-// 	} else if(!deadzone) {
-// 		if(id==connected) {
-// 			if(current_prop[id] < THRESHOLD) {
-// 				//called dropped!
-// 				// TTT_weighting[TTTindex] -= 1;
-// 				// hys_weighting[hysindex] -= 1;
-// 				// learning->learn(); //call machine learning
-// 				int thresCount = 0;
-// 				if(handingOver) {
-// 					handoverFailures++;
-// 					for(int l=0; l<9; l++) {
-// 						globalScheduler->remove_to(bStations[l]);
-// 					}
-// 					handingOver = false;
-// 				}
-// 				for(int k=0; k<9; k++) {
-// 					if(current_prop[k] < THRESHOLD) {
-// 						thresCount++;
-// 					} 
-// 				}
-// 				if(thresCount == 9) {
-// 					deadzone = true;
-// 				} else {
-// 					drop++;
-// 					rewardDrop++;
-// 					if(function == 2) {//runnning policy
-// 						send_now(new event(POLICY,q));
-// 					}
-// 					double highest = -300.0;
-// 					int highestid = 0;
-// 					for(int j=0; j<9; j++) {
-// 						if(current_prop[j] > highest) {
-// 							highest = current_prop[j];
-// 							highestid = j;
-// 						}
-// 					}
-// 					reportPacket* sendPacket;
-// 					sendPacket = new reportPacket(highestid);
-// 					send_now(new event(REPORT,reinterpret_cast<payloadType<class T>*>(sendPacket),bStations[connected]));
-// 					// fprintf(stderr, "Should switch to basestation: %d\n", id);
-// 					for(int i=0; i<9; i++) {
-// 						TTTtest[i] = TTT;
-// 						globalScheduler->remove_from(bStations[i]);
-// 					}
-// 					// fprintf(stderr, "Sim Time: %f - DROPPED - Basestation: %d\n",simTime,connected);
-// 				}
-// 			}
-// 		} else if(!handingOver && !deadzone) {
-// 			if(current_prop[id] >= current_prop[connected]+hys) {
-// 				TTTtest[id] -= STEPTIME;
-// 				if(TTTtest[id] <= 0) {
-// 					//send measurement report
-// 					reportPacket* sendPacket;
-// 					sendPacket = new reportPacket(id);
-// 					send_delay(new event(REPORT,reinterpret_cast<payloadType<class T>*>(sendPacket),bStations[connected]), HANDOVER_TIME);
-// 					// fprintf(stderr, "Sim Time: %f - Should switch to basestation: %d\n", simTime,id);
-// 					for(int i=0; i<9; i++) {
-// 						TTTtest[i] = TTT;
-// 					}
-// 					handingOver = true;
-// 				}
-// 			} else {
-// 				TTTtest[id] = TTT;
-// 			}
-// 		}
-// 	}
-// }

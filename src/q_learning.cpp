@@ -5,7 +5,7 @@
 #include <fstream>
 
 q_learning::q_learning(scheduler* gs, int TTT, int hys) : event_handler(gs) {
-	int startState = (TTT*20)+hys;
+	int startState = (TTT*21)+hys;
 	if(function == 1) { //for creating policy
 		int q = 0;
 		std::ifstream qFile ("q.txt");
@@ -28,7 +28,6 @@ q_learning::q_learning(scheduler* gs, int TTT, int hys) : event_handler(gs) {
 
 		send_delay(new event(LEARN),60);
 	} else if(function == 2) { //for using policy
-		std::cout << "here";
 		std::ifstream pFile ("policy.txt");
 
 		if(pFile.is_open()) {
