@@ -21,7 +21,6 @@ extern bool handingOver;
 extern int drop;
 extern int pingpongCount;
 extern int handovers;
-extern int handoverFailures;
 
 extern int rewardDrop;
 extern int rewardPing;

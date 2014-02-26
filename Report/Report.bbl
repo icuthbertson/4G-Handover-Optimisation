@@ -5,4 +5,20 @@ Ethem Alpaydin.
 \newblock {\em Introduction to Machine Learning, Second Edition}.
 \newblock MIT press, 2010.
 
+\bibitem{barto1998reinforcement}
+Andrew~G Barto and Richard~S Sutton.
+\newblock {\em Reinforcement learning: An introduction}.
+\newblock MIT press, 1998.
+
+\bibitem{cox2012introduction}
+Christopher Cox.
+\newblock {\em An introduction to LTE: LTE, LTE-advanced, SAE and 4G mobile
+  communications}.
+\newblock John Wiley \& Sons, 2012.
+
+\bibitem{poole2010artificial}
+David~L Poole and Alan~K Mackworth.
+\newblock {\em Artificial Intelligence: Foundations of Computational Agents}.
+\newblock Cambridge University Press, 2010.
+
 \end{thebibliography}

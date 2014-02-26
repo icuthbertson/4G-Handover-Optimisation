@@ -130,7 +130,7 @@ void mobile::handler(const event* received)
 			break;
 	} // end switch statement
 	if(count > 100) {
-		fprintf(stdout, "\nFinal Report\nHandovers: %d\nDropped: %d\nPing-Pong: %d\nHandover Failures: %d\n", handovers,drop,pingpongCount,drop);
+		fprintf(stdout, "\nFinal Report\nHandovers: %d\nDropped: %d\nPing-Pong: %d\n", handovers,drop,pingpongCount);
 		fprintf(stdout, "Final TTT: %f Final hys: %f\n", TTT,hys);
 		// learning->print();
 		globalScheduler->stop();
@@ -303,7 +303,6 @@ void mobile::moveRandom() {
 // 				// learning->learn(); //call machine learning
 // 				int thresCount = 0;
 // 				if(handingOver) {
-// 					handoverFailures++;
 // 					for(int l=0; l<9; l++) {
 // 						globalScheduler->remove_to(bStations[l]);
 // 					}
@@ -389,7 +388,6 @@ void mobile::checkProp(int id) {
 				// learning->learn(); //call machine learning
 				int thresCount = 0;
 				if(handingOver) {
-					handoverFailures++;
 					for(int l=0; l<9; l++) {
 						globalScheduler->remove_to(bStations[l]);
 					}

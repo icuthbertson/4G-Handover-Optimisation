@@ -86,6 +86,7 @@ Mobile communications is on to its fourth generation of network infrastructure w
 \section{Handover Procedure}\label{handover procedure}
 \subsection{Handover Parameters}\label{handover parameters}
 \subsection{Handover Triggers}\label{handover triggers}
+~\cite{cox2012introduction}
 
 \chapter{Machine Learning}\label{machine learning}
 Machine learning is a form of artificial intelligence (\ac{ai}) that involves designing and studying systems and algorithms with the ability to learn from data. This field of AI has many applications within research (such as system optimisation), products (such as image recognition) and advertising (such as adverts that use a users browsing history). There are many different paradigms that machine learning algorithms use. Algorithms can use training sets to train an algorithm to give appropriate outputs; other algorithms look for patterns in data; while others use the notion of rewards to find out if an action could be considered correct or not.~\cite{alpaydin2010introduction} Three of the most popular types of machine learning algorithms are:
@@ -99,6 +100,7 @@ Machine learning is a form of artificial intelligence (\ac{ai}) that involves de
 The chosen type of machine learning chosen for the project is Reinforcement learning due to its ability to use the notion of states and rewards. These notions can be mapped to a set of TTT and Hys values as well as the performance of that set respectively.
 
 \section{Reinforcement Learning}\label{reinforcement learning}
+~\cite{barto1998reinforcement}
 \section{Q-Learning}\label{qlearning}
 In Q-Learning an agent tries to discover an optimal policy from its history of interactions with the environment.
 \begin{center}
@@ -108,6 +110,12 @@ $<s_{0},a_{0},r_{1},s_{1},a_{1},r_{2},s_{2},a_{2}...>$
 \begin{center}
 $<s,a,r,s'>$
 \end{center}
+
+\begin{center}
+$Q[s,a] = (1-\alpha) Q[s,a] + \alpha(r+ {\gamma}max_{a'} Q[s',a']).$
+$Q[s,a] = Q[s,a] + {\alpha}(r+ {\gamma}max_{a'} Q[s',a'] - Q[s,a])$
+\end{center}
+~\cite{poole2010artificial}
 
 \chapter{Handover Parameter Optimisation}\label{handover parameter optimisation}
 \section{Approach}\label{approach}

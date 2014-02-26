@@ -67,7 +67,7 @@ void q_learning::handler(const event* received)
 void q_learning::learn() {
 	if(!firstPass) {
 		double Q = getQ(current_state,action);
-		double value = Q + ALPHA * (reward() + GAMMA * maxQ(current_state)) - Q;
+		double value = Q + ALPHA * (reward() + GAMMA * maxQ(current_state) - Q);
 
     	updateQ(current_state, action, value);
 

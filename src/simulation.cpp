@@ -130,7 +130,6 @@ bool handingOver = false;
 int drop = 0;
 int pingpongCount = 0;
 int handovers = 0;
-int handoverFailures = 0;
 
 int rewardDrop = 0;
 int rewardPing = 0;
