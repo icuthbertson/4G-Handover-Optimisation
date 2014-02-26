@@ -54,15 +54,9 @@
 
 \pagenumbering{roman}
 
-\chapter*{Abstract}
-This is the paper's abstract \ldots
-\addcontentsline{toc}{chapter}{Abstract}
-\pagebreak
+\input{chapters/abstract.tex}
 
-\chapter*{Acknowledgements}
- Thanks Mum!
-\addcontentsline{toc}{chapter}{Acknowledgements}
-\pagebreak
+\input{chapters/ack.tex}
 
 \tableofcontents
 \pagebreak
@@ -77,56 +71,17 @@ This is the paper's abstract \ldots
 \addcontentsline{toc}{chapter}{List of Figures}
 \pagebreak
 
-\chapter{Introduction}
-This is time for all good men to come to the aid of their party!
+\input{chapters/intro.tex}
 
-\chapter{LTE}\label{lte}
-Mobile communications is on to its fourth generation of network infrastructure with \ac{lte} (Long Term Evolution) (\ac{4g}). This network infrastructure is an improvement upon Universal Mobile Telecommunications System (\ac{umts}), which is a third generation network (\ac{3g}).
-\section{Self Organising Network}\label{self organising network}
-\section{Handover Procedure}\label{handover procedure}
-\subsection{Handover Parameters}\label{handover parameters}
-\subsection{Handover Triggers}\label{handover triggers}
-~\cite{cox2012introduction}
+\input{chapters/lte.tex}
 
-\chapter{Machine Learning}\label{machine learning}
-Machine learning is a form of artificial intelligence (\ac{ai}) that involves designing and studying systems and algorithms with the ability to learn from data. This field of AI has many applications within research (such as system optimisation), products (such as image recognition) and advertising (such as adverts that use a users browsing history). There are many different paradigms that machine learning algorithms use. Algorithms can use training sets to train an algorithm to give appropriate outputs; other algorithms look for patterns in data; while others use the notion of rewards to find out if an action could be considered correct or not.~\cite{alpaydin2010introduction} Three of the most popular types of machine learning algorithms are:
+\input{chapters/machine_learning.tex}
 
-\begin{itemize}
-  \item \textbf{Supervised learning} is where an algorithm is trained using a training set of data. This set of data includes inputs and the known outputs for those inputs. The training set is used to fine-tune the parameters in the algorithm. The purpose of this kind of algorithm is to learn a general mapping between inputs and outputs so that the algorithm can give an accurate output for an unknown input. This type of algorithm is generally used in classifier systems.
-  \item \textbf{Unsupervised learning} algorithms only know about the inputs they are given. The goal of such an algorithm is to try and find patterns or structure within the input data. Such algorithm would be given inputs and any patterns that are contained would become more and more common the more inputs the algorithm is given.
-  \item \textbf{Reinforcement learning} uses an intelligent agent to perform actions within an environment. Any such action will yield a reward to the agent and the agent’s goal is to learn about how the environment reacts to any given action. The agent then uses this knowledge to try and maximise its reward gains.
-\end{itemize}
+\input{chapters/hand_opt.tex}
 
-The chosen type of machine learning chosen for the project is Reinforcement learning due to its ability to use the notion of states and rewards. These notions can be mapped to a set of TTT and Hys values as well as the performance of that set respectively.
+\input{chapters/future.tex}
 
-\section{Reinforcement Learning}\label{reinforcement learning}
-~\cite{barto1998reinforcement}
-\section{Q-Learning}\label{qlearning}
-In Q-Learning an agent tries to discover an optimal policy from its history of interactions with the environment.
-\begin{center}
-$<s_{0},a_{0},r_{1},s_{1},a_{1},r_{2},s_{2},a_{2}...>$
-\end{center}
-
-\begin{center}
-$<s,a,r,s'>$
-\end{center}
-
-\begin{center}
-$Q[s,a] = (1-\alpha) Q[s,a] + \alpha(r+ {\gamma}max_{a'} Q[s',a']).$
-$Q[s,a] = Q[s,a] + {\alpha}(r+ {\gamma}max_{a'} Q[s',a'] - Q[s,a])$
-\end{center}
-~\cite{poole2010artificial}
-
-\chapter{Handover Parameter Optimisation}\label{handover parameter optimisation}
-\section{Approach}\label{approach}
-\section{Results}\label{results}
-
-\chapter{Future Work}\label{future work}
-
-\chapter{Conclusions}\label{conclusion}
-We worked hard, and achieved very little.
-
-\pagebreak
+\input{chapters/conclusion.tex}
 
 \addcontentsline{toc}{chapter}{Bibliography}
 \bibliography{Report}
