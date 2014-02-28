@@ -1,6 +1,8 @@
 \documentclass[12pt, oneside]{report}
 \usepackage{setspace}
 \usepackage[british]{babel}
+\usepackage{graphicx}
+%\usepackage{float}
 \usepackage{acro}
 \usepackage[toc,page]{appendix}
 \acsetup{first-style=short,list-heading=chapter*}
@@ -71,11 +73,17 @@
 \addcontentsline{toc}{chapter}{List of Figures}
 \pagebreak
 
+\listoftables
+\addcontentsline{toc}{chapter}{List of Tables}
+\pagebreak
+
 \input{chapters/intro.tex}
 
 \input{chapters/lte.tex}
 
 \input{chapters/machine_learning.tex}
+
+\input{chapters/simulation.tex}
 
 \input{chapters/hand_opt.tex}
 
@@ -85,7 +93,7 @@
 
 \addcontentsline{toc}{chapter}{Bibliography}
 \bibliography{Report}
-\bibliographystyle{plain}
+\bibliographystyle{ieeetr}
 
 \begin{appendices}
 \chapter{System Design and Evaluation}
