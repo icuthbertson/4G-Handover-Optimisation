@@ -106,4 +106,16 @@ int main() {
   	}
 
   	fixFile.close();
+
+  	std::ofstream qd ("qDrop.txt");
+  	std::ofstream qp ("qPing.txt");
+
+  	for(int i=0; i<(336*336);i++) {
+ 		qd << "0\n";
+ 		qp << "0\n";
+  	}
+
+  	qd.close();
+  	qp.close();
+
 }

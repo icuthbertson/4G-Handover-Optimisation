@@ -129,7 +129,7 @@ void mobile::handler(const event* received)
 			// program should not reach here
 			break;
 	} // end switch statement
-	if(count > 100) {
+	if(count > 10000) {
 		fprintf(stdout, "\nFinal Report\nHandovers: %d\nDropped: %d\nPing-Pong: %d\n", handovers,drop,pingpongCount);
 		fprintf(stdout, "Final TTT: %f Final hys: %f\n", TTT,hys);
 		// learning->print();
@@ -404,7 +404,7 @@ void mobile::checkProp(int id) {
 					drop++;
 					rewardDrop++;
 					if(function == 2) {//runnning policy
-						send_now(new event(POLICY,q));
+						send_now(new event(POLICYDROP,q));
 					}
 					double highest = -300.0;
 					int highestid = 0;

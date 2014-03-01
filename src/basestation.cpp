@@ -136,7 +136,7 @@ void basestation::handler(const event* received)
 				rewardPing++;
 				globalScheduler->remove_from(this);
 				if(function == 2) {//runnning policy
-					send_now(new event(POLICY,q));
+					send_now(new event(POLICYPING,q));
 				}
 				// TTT_weighting[TTTindex] -= 2;
 				// hys_weighting[hysindex] -= 2;

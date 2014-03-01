@@ -17,8 +17,10 @@
 \contentsline {section}{\numberline {4.1}Simulation Parameters}{10}
 \contentsline {section}{\numberline {4.2}Simulation Testing}{10}
 \contentsline {chapter}{\numberline {5}Handover Parameter Optimisation}{11}
-\contentsline {section}{\numberline {5.1}Approach}{11}
-\contentsline {section}{\numberline {5.2}Results}{11}
+\contentsline {section}{\numberline {5.1}Approach 1}{11}
+\contentsline {section}{\numberline {5.2}Approach 2}{11}
+\contentsline {section}{\numberline {5.3}Approach 3}{11}
+\contentsline {section}{\numberline {5.4}Comparisons and Results}{11}
 \contentsline {chapter}{\numberline {6}Future Work}{12}
 \contentsline {chapter}{\numberline {7}Conclusions}{13}
 \contentsline {chapter}{Bibliography}{14}
