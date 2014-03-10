@@ -16,6 +16,7 @@ private:
 	int policy_ping[NUMSTATES];
 	int current_state;
 	int next_state;
+	int previous_state;
 	int action;
 	bool firstPass;
 	double maxQ(int state, int type);
@@ -28,6 +29,7 @@ private:
 	void learn();
 	int policy(int current, int type);
 	void changeState(int type);
+	void shake(int type);
 public:
 	q_learning(scheduler* gs, int TTT, int hys);
 	~q_learning();

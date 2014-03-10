@@ -47,6 +47,7 @@ q_learning::q_learning(scheduler* gs, int TTT, int hys) : event_handler(gs) {
 		pPing.close();
 
 		current_state = startState;
+		previous_state = -1;
 	}
 }
 
@@ -55,12 +56,9 @@ q_learning::~q_learning() {
 	globalScheduler->remove_to(this);
 }
 
-void q_learning::handler(const event* received)
-{
-
+void q_learning::handler(const event* received) {
 	switch(received->label) {
 		case LEARN:
-			printf("HERE\n");
 			learn();
 			break;
 		case POLICYDROP:
@@ -70,17 +68,10 @@ void q_learning::handler(const event* received)
 		case POLICYPING:
 			changeState(1);
 			break;
-		// case DROP:
-		// 	learn(0);
-		// 	break;
-		// case PING:
-		// 	learn(1);
-		// 	break;
 		default:
 			// program should not reach here
 			break;
 	} // end switch statement
-	
 }
 
 void q_learning::learn() {
@@ -167,55 +158,87 @@ double q_learning::getRewardPing() {
 
 void q_learning::changeTTThys() {
 	if(next_state >= 0 && next_state < 21) {
-		TTT = TTTArray[0];
-		hys = hysArray[next_state-0];
+		TTTindex = 0;
+		TTT = TTTArray[TTTindex];
+		hysindex = next_state-0;
+		hys = hysArray[hysindex];
 	} else if(next_state >= 21 && next_state < 42) {
-		TTT = TTTArray[1];
-		hys = hysArray[next_state-21];
+		TTTindex = 1;
+		TTT = TTTArray[TTTindex];
+		hysindex = next_state-21;
+		hys = hysArray[hysindex];
 	} else if(next_state >= 42 && next_state < 63) {
-		TTT = TTTArray[2];
-		hys = hysArray[next_state-42];
+		TTTindex = 2;
+		TTT = TTTArray[TTTindex];
+		hysindex = next_state-42;
+		hys = hysArray[hysindex];
 	} else if(next_state >= 63 && next_state < 84) {
-		TTT = TTTArray[3];
-		hys = hysArray[next_state-63];
+		TTTindex = 3;
+		TTT = TTTArray[TTTindex];
+		hysindex = next_state-63;
+		hys = hysArray[hysindex];
 	} else if(next_state >= 84 && next_state < 105) {
-		TTT = TTTArray[4];
-		hys = hysArray[next_state-84];
+		TTTindex = 4;
+		TTT = TTTArray[TTTindex];
+		hysindex = next_state-84;
+		hys = hysArray[hysindex];
 	} else if(next_state >= 105 && next_state < 126) {
-		TTT = TTTArray[5];
-		hys = hysArray[next_state-105];
+		TTTindex = 5;
+		TTT = TTTArray[TTTindex];
+		hysindex = next_state-105;
+		hys = hysArray[hysindex];
 	} else if(next_state >= 126 && next_state < 147) {
-		TTT = TTTArray[6];
-		hys = hysArray[next_state-126];
+		TTTindex = 6;
+		TTT = TTTArray[TTTindex];
+		hysindex = next_state-126;
+		hys = hysArray[hysindex];
 	} else if(next_state >= 147 && next_state < 168) {
-		TTT = TTTArray[7];
-		hys = hysArray[next_state-147];
+		TTTindex = 7;
+		TTT = TTTArray[TTTindex];
+		hysindex = next_state-147;
+		hys = hysArray[hysindex];
 	} else if(next_state >= 168 && next_state < 189) {
-		TTT = TTTArray[8];
-		hys = hysArray[next_state-168];
+		TTTindex = 8;
+		TTT = TTTArray[TTTindex];
+		hysindex = next_state-168;
+		hys = hysArray[hysindex];
 	} else if(next_state >= 189 && next_state < 210) {
-		TTT = TTTArray[9];
-		hys = hysArray[next_state-189];
+		TTTindex = 9;
+		TTT = TTTArray[TTTindex];
+		hysindex = next_state-189;
+		hys = hysArray[hysindex];
 	} else if(next_state >= 210 && next_state < 231) {
-		TTT = TTTArray[10];
-		hys = hysArray[next_state-210];
+		TTTindex = 10;
+		TTT = TTTArray[TTTindex];
+		hysindex = next_state-210;
+		hys = hysArray[hysindex];
 	} else if(next_state >= 231 && next_state < 252) {
-		TTT = TTTArray[11];
-		hys = hysArray[next_state-231];
+		TTTindex = 11;
+		TTT = TTTArray[TTTindex];
+		hysindex = next_state-231;
+		hys = hysArray[hysindex];
 	} else if(next_state >= 252 && next_state < 273) {
-		TTT = TTTArray[12];
-		hys = hysArray[next_state-252];
+		TTTindex = 12;
+		TTT = TTTArray[TTTindex];
+		hysindex = next_state-252;
+		hys = hysArray[hysindex];
 	} else if(next_state >= 273 && next_state < 294) {
-		TTT = TTTArray[13];
-		hys = hysArray[next_state-273];
+		TTTindex = 13;
+		TTT = TTTArray[TTTindex];
+		hysindex = next_state-273;
+		hys = hysArray[hysindex];
 	} else if(next_state >= 294 && next_state < 315) {
-		TTT = TTTArray[14];
-		hys = hysArray[next_state-294];
+		TTTindex = 14;
+		TTT = TTTArray[TTTindex];
+		hysindex = next_state-294;
+		hys = hysArray[hysindex];
 	} else if(next_state >= 315 && next_state < 336) {
-		TTT = TTTArray[15];
-		hys = hysArray[next_state-315];
+		TTTindex = 15;
+		TTT = TTTArray[TTTindex];
+		hysindex = next_state-315;
+		hys = hysArray[hysindex];
 	}
-	printf("New: TTT: %f hys: %f\n", TTT,hys);
+	printf("State: %d - New: TTT: %f hys: %f\n", next_state,TTT,hys);
 }
 
 void q_learning::changeState(int type) {
@@ -224,8 +247,40 @@ void q_learning::changeState(int type) {
 	} else {
 		next_state = policy_ping[current_state];
 	}
-	changeTTThys();
-	current_state = next_state;
+
+	if(next_state == previous_state) {
+		// changeTTThys();
+		shake(type);
+		previous_state = current_state;
+		current_state = next_state;
+	} else {
+		changeTTThys();
+		previous_state = current_state;
+		current_state = next_state;
+	}
+}
+
+void q_learning::shake(int type) {
+	if(type == 0) {
+		if(TTTindex-1 >= 0) {
+			TTTindex -= 1;
+			TTT = TTTArray[TTTindex];
+		} 
+		if(hysindex-1 >= 0) {
+			hysindex -= 1;
+			hys = hysArray[hysindex];
+		}
+	} else {
+		if(TTTindex+1 <= TTTmaxindex) {
+			TTTindex += 1;
+			TTT = TTTArray[TTTindex];
+		} 
+		if(hysindex+1 <= hysmaxindex) {
+			hysindex += 1;
+			hys = hysArray[hysindex];
+		}
+	}
+	printf("New: TTT: %f hys: %f\n", TTT,hys);
 }
 
 void q_learning::print() {

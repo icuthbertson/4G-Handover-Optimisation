@@ -5,24 +5,25 @@
 \contentsline {chapter}{List of Figures}{2}
 \contentsline {chapter}{List of Tables}{3}
 \contentsline {chapter}{\numberline {1}Introduction}{4}
-\contentsline {chapter}{\numberline {2}LTE}{5}
-\contentsline {section}{\numberline {2.1}Self Organising Network}{5}
-\contentsline {section}{\numberline {2.2}Handover Procedure}{5}
-\contentsline {subsection}{\numberline {2.2.1}Handover Parameters}{5}
-\contentsline {subsection}{\numberline {2.2.2}Handover Triggers}{5}
-\contentsline {chapter}{\numberline {3}Machine Learning}{8}
-\contentsline {section}{\numberline {3.1}Reinforcement Learning}{9}
-\contentsline {section}{\numberline {3.2}Q-Learning}{9}
-\contentsline {chapter}{\numberline {4}Simulation Design}{10}
-\contentsline {section}{\numberline {4.1}Simulation Parameters}{10}
-\contentsline {section}{\numberline {4.2}Simulation Testing}{10}
-\contentsline {chapter}{\numberline {5}Handover Parameter Optimisation}{11}
-\contentsline {section}{\numberline {5.1}Approach 1}{11}
-\contentsline {section}{\numberline {5.2}Approach 2}{11}
-\contentsline {section}{\numberline {5.3}Approach 3}{11}
-\contentsline {section}{\numberline {5.4}Comparisons and Results}{11}
-\contentsline {chapter}{\numberline {6}Future Work}{12}
-\contentsline {chapter}{\numberline {7}Conclusions}{13}
-\contentsline {chapter}{Bibliography}{14}
-\contentsline {chapter}{Appendices}{15}
-\contentsline {chapter}{\numberline {A}System Design and Evaluation}{16}
+\contentsline {chapter}{\numberline {2}Related Work}{5}
+\contentsline {chapter}{\numberline {3}LTE}{6}
+\contentsline {section}{\numberline {3.1}Self Organising Network}{6}
+\contentsline {section}{\numberline {3.2}Handover Procedure}{6}
+\contentsline {subsection}{\numberline {3.2.1}Handover Parameters}{6}
+\contentsline {subsection}{\numberline {3.2.2}Handover Triggers}{9}
+\contentsline {chapter}{\numberline {4}Machine Learning}{10}
+\contentsline {section}{\numberline {4.1}Reinforcement Learning}{11}
+\contentsline {section}{\numberline {4.2}Q-Learning}{11}
+\contentsline {chapter}{\numberline {5}Simulation Design}{13}
+\contentsline {section}{\numberline {5.1}Simulation Parameters}{13}
+\contentsline {section}{\numberline {5.2}Simulation Testing}{13}
+\contentsline {chapter}{\numberline {6}Handover Parameter Optimisation}{14}
+\contentsline {section}{\numberline {6.1}Approach 1}{14}
+\contentsline {section}{\numberline {6.2}Approach 2}{14}
+\contentsline {section}{\numberline {6.3}Approach 3}{14}
+\contentsline {section}{\numberline {6.4}Comparisons and Results}{14}
+\contentsline {chapter}{\numberline {7}Future Work}{15}
+\contentsline {chapter}{\numberline {8}Conclusions}{16}
+\contentsline {chapter}{Bibliography}{17}
+\contentsline {chapter}{Appendices}{18}
+\contentsline {chapter}{\numberline {A}System Design and Evaluation}{19}

@@ -27,11 +27,11 @@ private:
     int y_co;
     double f;
     double hb;
-    bool connected;
     bool pingpong;
     double pingpongTime;
     double tx;
 public:
+    bool connected;
     basestation(scheduler* gs);
     basestation(scheduler* gs, int idNum, int x, int y, double freq, double hBase, bool conn);
     ~basestation();

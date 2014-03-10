@@ -11,7 +11,7 @@ extern int hysindex;
 extern int TTTindex;
 
 extern int hysmaxindex;
-extern int TTTnaxindex;
+extern int TTTmaxindex;
 
 extern double TTTArray[];
 extern double hysArray[];

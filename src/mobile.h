@@ -55,6 +55,7 @@ public:
     void moveMobile();
     double getX();
     double getY();
+    void resetMobile();
     int getConnectedTo();
     double getHeight();
     void moveRandom();

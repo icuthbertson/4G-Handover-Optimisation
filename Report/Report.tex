@@ -2,10 +2,12 @@
 \usepackage{setspace}
 \usepackage[british]{babel}
 \usepackage{graphicx}
-%\usepackage{float}
+\usepackage{float}
 \usepackage{acro}
 \usepackage[toc,page]{appendix}
 \acsetup{first-style=short,list-heading=chapter*}
+
+\usepackage[parfill]{parskip}
 
 \usepackage{listings}
 \usepackage{color}
@@ -31,7 +33,7 @@
   tabsize=1
 }
 
-\usepackage[showframe = true, a4paper, top=2.5cm, left=4.0cm, right=2.5cm, bottom=2.5cm]{geometry}
+\usepackage[showframe = false, a4paper, top=2.5cm, left=4.0cm, right=2.5cm, bottom=2.5cm]{geometry}
 
 \input{acro.tex}
 
@@ -78,6 +80,8 @@
 \pagebreak
 
 \input{chapters/intro.tex}
+
+\input{chapters/related.tex}
 
 \input{chapters/lte.tex}
 

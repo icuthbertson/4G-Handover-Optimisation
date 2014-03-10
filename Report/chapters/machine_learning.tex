@@ -6,10 +6,20 @@ Machine learning is a form of artificial intelligence (\ac{ai}) that involves de
   \item \textbf{Unsupervised learning} algorithms only know about the inputs they are given. The goal of such an algorithm is to try and find patterns or structure within the input data. Such algorithm would be given inputs and any patterns that are contained would become more and more common the more inputs the algorithm is given.
   \item \textbf{Reinforcement learning} uses an intelligent agent to perform actions within an environment. Any such action will yield a reward to the agent and the agent’s goal is to learn about how the environment reacts to any given action. The agent then uses this knowledge to try and maximise its reward gains.
 \end{itemize}
-
-The chosen type of machine learning chosen for the project is Reinforcement learning due to its ability to use the notion of states and rewards. These notions can be mapped to a set of TTT and hys values as well as the performance of that set respectively.
-
 \section{Reinforcement Learning}\label{reinforcement learning}
+In reinforcement learning an intelligent agent is learning what action to do at any given time to maximise the notion of a reward. In the beginning the agent has no knowledge of what action it should take from any state within the learning environment. It must instead learn through trail and error, exploring all possible actions and finding the ones that perform the best.
+
+A basic model for reinforcement learning is as follows:
+\begin{itemize}
+\item A set of States ($S$).
+\item A set of actions from the set of States ($A$).
+\item A reward function ($R$).
+\end{itemize}
+
+The trade-off between exploration and exploitation is one of the main features of reinforcement and can greatly affect the performance of a chosen algorithm. A reinforcement learning algorithm must contemplate this trade-off of whether to exploit an action that resulted in a large reward or to explore other actions with the possibility of receiving a greater reward.
+
+Another main feature of reinforcement learning is that the problem in question is taken into context as a whole. This is different from other types of machine learning algorithms, as they will not considered how the results of any sub-problems may affect the problem as a whole.
+
 ~\cite{barto1998reinforcement}
 \section{Q-Learning}\label{qlearning}
 In Q-Learning an agent tries to discover an optimal policy from its history of interactions with the environment.
@@ -21,8 +31,12 @@ $<s_{0},a_{0},r_{1},s_{1},a_{1},r_{2},s_{2},a_{2}...>$
 $<s,a,r,s'>$
 \end{center}
 
-\begin{center}
-$Q[s,a] = (1-\alpha) Q[s,a] + \alpha(r+ {\gamma}max_{a'} Q[s',a']).$
-$Q[s,a] = Q[s,a] + {\alpha}(r+ {\gamma}max_{a'} Q[s',a'] - Q[s,a])$
-\end{center}
+
+\begin{equation}
+Q[s,a] = (1-\alpha) Q[s,a] + \alpha(r+ {\gamma}max_{a'} Q[s',a'])
+\end{equation}
+\begin{equation}
+Q[s,a] = Q[s,a] + {\alpha}(r+ {\gamma}max_{a'} Q[s',a'] - Q[s,a])
+\end{equation}
+
 ~\cite{poole2010artificial}

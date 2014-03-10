@@ -5,7 +5,7 @@
 #include "mobiles.h"
 #include "prop.h"
 #include "q.h"
-// #include "opt.h"
+#include "simple.h"
 #include <random>
 
 std::default_random_engine generator;
@@ -130,13 +130,17 @@ void basestation::handler(const event* received)
 			delete repPacket;
 			break;
 		case PINGPONG:
-			if (connected) {
+			if(connected) {
 				printf("Sim Time: %f - PINGPONG! - Basestation: %d\n",simTime,id);
 				pingpongCount++;
 				rewardPing++;
-				globalScheduler->remove_from(this);
+				for(int i=0; i<9; i++) {
+					globalScheduler->remove_to(bStations[i]);
+				}
 				if(function == 2) {//runnning policy
 					send_now(new event(POLICYPING,q));
+				} else if(function == 3) {
+					send_now(new event(POLICYPING,simple));
 				}
 				// TTT_weighting[TTTindex] -= 2;
 				// hys_weighting[hysindex] -= 2;
