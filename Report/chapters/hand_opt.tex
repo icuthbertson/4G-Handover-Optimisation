@@ -1,5 +1,21 @@
 \chapter{Handover Parameter Optimisation}\label{handover parameter optimisation}
-\section{Approach 1}\label{approach1}
-\section{Approach 2}\label{approach2}
-\section{Approach 3}\label{approach3}
-\section{Comparisons and Results}\label{results}
+\section{Approach}\label{approach}
+The approach taken for optimising the handover parameters in LTE uses a Q-Learning algorithm based on the process given in Section~\ref{sec:qlearning}. In the approach the model of the environment has a state for every combination of TTT and hys; giving a total number of states of 336. An action within the model can move to any other state that is different by one of the following changes to the handover parameters:
+
+\begin{enumerate}
+	\item A single increase of TTT.
+	\item A single increase of hys.
+	\item A single increase of both TTT and hys.
+	\item A single decrease of TTT.
+	\item A single decrease of hys.
+	\item A single decrease of both TTT and hys.
+\end{enumerate}
+
+Having the actions only change the parameters by one value each time not only allows for refined optimisation of the parameters but it also makes sure that no large changes can suddenly happen.
+
+Due to the nature to the kind of problem that is being solved, the reward gained by an action is dynamic and is likely to be different each time it is taken. Rewards are based on the number of drop and ping-pong’s accumulated in the simulation for current state in the environment model. The reward is given to the agent and the Q-Value for that state is updated just before agent selects the next action to take.  The agent selects a new action in discrete time steps, this allows for the simulation to run for fixed periods of time with TTT-hys pairs specified by a state in the environment model.
+
+After the agent has been given enough time to try every action at least once the Q-Learning is terminated and a policy is generated. This policy can then be used to attempt to optimise the handover parameters by changing the TTT and hys values after a call is dropped or the connection ping-pongs between base stations.
+
+
+\section{Results}\label{results}

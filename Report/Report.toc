@@ -1,6 +1,6 @@
 \select@language {british}
-\contentsline {chapter}{Abstract}{i}
-\contentsline {chapter}{Acknowledgements}{ii}
+\contentsline {chapter}{Abstract}{ii}
+\contentsline {chapter}{Acknowledgements}{iii}
 \contentsline {chapter}{Nomenclature}{1}
 \contentsline {chapter}{List of Figures}{2}
 \contentsline {chapter}{List of Tables}{3}
@@ -13,17 +13,15 @@
 \contentsline {subsection}{\numberline {3.2.2}Handover Triggers}{9}
 \contentsline {chapter}{\numberline {4}Machine Learning}{10}
 \contentsline {section}{\numberline {4.1}Reinforcement Learning}{11}
-\contentsline {section}{\numberline {4.2}Q-Learning}{11}
-\contentsline {chapter}{\numberline {5}Simulation Design}{13}
-\contentsline {section}{\numberline {5.1}Simulation Parameters}{13}
-\contentsline {section}{\numberline {5.2}Simulation Testing}{13}
-\contentsline {chapter}{\numberline {6}Handover Parameter Optimisation}{14}
-\contentsline {section}{\numberline {6.1}Approach 1}{14}
-\contentsline {section}{\numberline {6.2}Approach 2}{14}
-\contentsline {section}{\numberline {6.3}Approach 3}{14}
-\contentsline {section}{\numberline {6.4}Comparisons and Results}{14}
-\contentsline {chapter}{\numberline {7}Future Work}{15}
-\contentsline {chapter}{\numberline {8}Conclusions}{16}
-\contentsline {chapter}{Bibliography}{17}
-\contentsline {chapter}{Appendices}{18}
-\contentsline {chapter}{\numberline {A}System Design and Evaluation}{19}
+\contentsline {section}{\numberline {4.2}Q-Learning}{12}
+\contentsline {chapter}{\numberline {5}Simulation Design}{15}
+\contentsline {section}{\numberline {5.1}Simulation Parameters}{15}
+\contentsline {section}{\numberline {5.2}Simulation Testing}{15}
+\contentsline {chapter}{\numberline {6}Handover Parameter Optimisation}{16}
+\contentsline {section}{\numberline {6.1}Approach}{16}
+\contentsline {section}{\numberline {6.2}Results}{17}
+\contentsline {chapter}{\numberline {7}Future Work}{18}
+\contentsline {chapter}{\numberline {8}Conclusions}{19}
+\contentsline {chapter}{Bibliography}{20}
+\contentsline {chapter}{Appendices}{21}
+\contentsline {chapter}{\numberline {A}System Design and Evaluation}{22}
