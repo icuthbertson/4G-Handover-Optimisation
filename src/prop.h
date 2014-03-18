@@ -30,7 +30,6 @@ extern bool checkPingPong;
 
 extern int previous_id;
 
-extern bool deadzone;
 extern int deadzoneRecovers;
 
 extern double simTime;

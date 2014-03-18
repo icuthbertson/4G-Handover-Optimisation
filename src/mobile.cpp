@@ -28,7 +28,15 @@ mobile::mobile(scheduler* gs) : event_handler(gs) {
 	wall = 0;
 	minusX = 1;
 	minusY = 1;
-	trigger = false;
+	trigger[0] = false;
+	trigger[1] = false;
+	trigger[2] = false;
+	trigger[3] = false;
+	trigger[4] = false;
+	trigger[5] = false;
+	trigger[6] = false;
+	trigger[7] = false;
+	trigger[8] = false;
 }
 /* Constructor
  ****************************
@@ -54,7 +62,15 @@ mobile::mobile(scheduler* gs, int num, int x, int y, int con, double height) : e
     wall = 0;
     minusX = 1;
 	minusY = 1;
-	trigger = false;
+	trigger[0] = false;
+	trigger[1] = false;
+	trigger[2] = false;
+	trigger[3] = false;
+	trigger[4] = false;
+	trigger[5] = false;
+	trigger[6] = false;
+	trigger[7] = false;
+	trigger[8] = false;
 	send_delay(new event(MOVE),0.0);
 }
 /* Destructor
@@ -130,7 +146,7 @@ void mobile::handler(const event* received)
 			// program should not reach here
 			break;
 	} // end switch statement
-	if(simTime > 10000) {
+	if(simTime > 1000000) {
 		fprintf(stdout, "\nFinal Report\nHandovers: %d\nDropped: %d\nPing-Pong: %d\n", handovers,drop,pingpongCount);
 		fprintf(stdout, "Final TTT: %f Final hys: %f\n", TTT,hys);
 		// learning->print();
@@ -190,7 +206,7 @@ void mobile::switchBasestation(int newBasestation) {
 void mobile::moveMobile() {
 	simTime += STEPTIME;
 	if(duration>0) {
-		if((x_co+(minusX*speed*STEPTIME*sin(angle*PI/180)))>2000) {
+		if((x_co+(minusX*speed*STEPTIME*sin(angle*PI/180)))>7000) {
 			minusX = -1;
 		} else if((x_co+(minusX*speed*STEPTIME*sin(angle*PI/180)))<0) {
 			minusX = -1;
@@ -198,7 +214,7 @@ void mobile::moveMobile() {
 			x_co = x_co+(minusX*speed*STEPTIME*sin(angle*PI/180));
 		}
 		if(wall==0) { 
-			if((y_co+(minusY*speed*STEPTIME*cos(angle*PI/180)))>2000) {
+			if((y_co+(minusY*speed*STEPTIME*cos(angle*PI/180)))>7000) {
 				minusY = -1;
 			} else if((y_co+(minusY*speed*STEPTIME*cos(angle*PI/180)))<0) {
 				minusY = -1;
@@ -291,9 +307,10 @@ void mobile::checkProp(int id) {
 		if(current_prop[id]<THRESHOLD) {
 			drop++;
 			rewardDrop++;
+			printf("Sim Time: %f - Prop: %f - Basestation: %d\n",simTime,current_prop[id],id);
 			fprintf(stderr, "Sim Time: %f - DROPPED - Basestation: %d\n",simTime,connected);
 			if(function == 2) {//runnning policy
-				send_now(new event(POLICYDROP,q));
+				send_now(new event(POLICY,q));
 			} else if(function == 3) {
 				send_now(new event(POLICYDROP,simple));
 			}
@@ -304,35 +321,21 @@ void mobile::checkProp(int id) {
 				handingOver = false;
 			}
 			//reset mobile
+			bStations[connected]->connected = false;
 			resetMobile();
 			for(int i=0; i<9; i++) {
  				TTTtest[i] = TTT;
+ 				trigger[i] = false;
  			}
 		}
 	} else {
 		if(!handingOver) {
-			// if(current_prop[id] >= current_prop[connected]+hys) {
-			// 	TTTtest[id] -= STEPTIME;
- 		// 		if(TTTtest[id] <= 0) {
- 		// 			//send measurement report
- 		// 			reportPacket* sendPacket;
- 		// 			sendPacket = new reportPacket(id);
- 		// 			send_delay(new event(REPORT,reinterpret_cast<payloadType<class T>*>(sendPacket),bStations[connected]), HANDOVER_TIME);
- 		// 			// fprintf(stderr, "Sim Time: %f - Should switch to basestation: %d\n", simTime,id);
- 		// 			for(int i=0; i<9; i++) {
- 		// 				TTTtest[i] = TTT;
- 		// 			}
- 		// 		handingOver = true;
- 		// 		} 
- 		// 	}else {
- 		// 		TTTtest[id] = TTT;
- 		// 	}
-			if(trigger == false) {
+			if(trigger[id] == false) {
  				if(current_prop[id] >= current_prop[connected]+hys) {
- 					trigger = true;
+ 					trigger[id] = true;
  					// fprintf(stderr, "Sim Time: %f - %d Serving: %f\n%d Triggered: %f\n", simTime,connected,current_prop[connected],id,current_prop[id]);
  				}
- 			} else if(trigger == true){
+ 			} else if(trigger[id] == true){
 				if(TTTtest[id] <= 0) {
 					if(current_prop[id] >= current_prop[connected]+hys) {
 						// fprintf(stderr, "Sim Time: %f - %d Serving: %f\n%d Triggered: %f\n", simTime,connected,current_prop[connected],id,current_prop[id]);
@@ -343,12 +346,12 @@ void mobile::checkProp(int id) {
 						fprintf(stderr, "Sim Time: %f - Switch to basestation: %d\n", simTime,id);
 						for(int i=0; i<9; i++) {
 							TTTtest[i] = TTT;
+							trigger[i] = false;
 						}
 						handingOver = true;
-						trigger = false;
 					} else {
 						TTTtest[id] = TTT;
-						trigger = false;
+						trigger[id] = false;
 
 					}
  				}
@@ -359,11 +362,51 @@ void mobile::checkProp(int id) {
 }
 
 void mobile::resetMobile() {
-	x_co = 1000;
-	y_co = 1000;
-	connected = 4;
-	for(int i=0; i<9; i++) {
-		bStations[i]->connected = false;
+	int resetBasestation = -1;
+	resetBasestation = rand()%9;
+
+	switch(resetBasestation){
+		case 0:
+			x_co = 0.0;
+			y_co = 0.0;
+			break;
+		case 1:
+			x_co = 3500.0;
+			y_co = 0.0;
+			break;
+		case 2:
+			x_co = 7000.0;
+			y_co = 0.0;
+			break;
+		case 3:
+			x_co = 0.0;
+			y_co = 3500.0;
+			break;
+		case 4:
+			x_co = 3500.0;
+			y_co = 3500.0;
+			break;
+		case 5:
+			x_co = 7000.0;
+			y_co = 3500.0;
+			break;
+		case 6:
+			x_co = 0.0;
+			y_co = 7000.0;
+			break;
+		case 7:
+			x_co = 3500.0;
+			y_co = 7000.0;
+			break;
+		case 8:
+			x_co = 7000.0;
+			y_co = 7000.0;
+			break;
+		default:
+			// program should not reach here
+			break;
 	}
-	bStations[4]->nowServing();
+
+	bStations[resetBasestation]->nowServing();
+	connected = resetBasestation;
 }

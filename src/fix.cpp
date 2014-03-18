@@ -109,10 +109,12 @@ int main() {
 
   	std::ofstream qd ("qDrop.txt");
   	std::ofstream qp ("qPing.txt");
+  	std::ofstream q ("q.txt");
 
   	for(int i=0; i<(336*336);i++) {
  		qd << "0\n";
  		qp << "0\n";
+ 		q << "0\n";
   	}
 
   	qd.close();

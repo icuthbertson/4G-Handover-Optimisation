@@ -3,11 +3,15 @@
 \usepackage[british]{babel}
 \usepackage{graphicx}
 \usepackage{float}
-\usepackage{acro}
+\usepackage[printonlyused]{acronym}
 \usepackage[toc,page]{appendix}
-\acsetup{first-style=short,list-heading=chapter*}
 
 \usepackage[parfill]{parskip}
+
+\usepackage{amsmath}
+
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
 
 \usepackage{listings}
 \usepackage{color}
@@ -35,8 +39,6 @@
 
 \usepackage[showframe = false, a4paper, top=2.5cm, left=4.0cm, right=2.5cm, bottom=2.5cm]{geometry}
 
-\input{acro.tex}
-
 \title{Handover Optimisation in 4G Systems}
 \author{
         Iain Cuthbertson \\
@@ -50,7 +52,8 @@
 \date{}
 
 \renewcommand*{\familydefault}{\rmdefault}
-\onehalfspacing
+%\onehalfspacing
+\doublespacing
  
 \begin{document}
 
@@ -59,8 +62,6 @@
 \pagenumbering{roman}
 
 \input{chapters/declare.tex}
-
-\pagebreak
 
 \input{chapters/abstract.tex}
 
@@ -71,8 +72,8 @@
 
 \pagenumbering{arabic}
 
-\printacronyms[include-classes=nomencl,name=Nomenclature]
-\addcontentsline{toc}{chapter}{Nomenclature}
+\acresetall
+\input{acro.tex}
 \pagebreak
 
 \listoffigures

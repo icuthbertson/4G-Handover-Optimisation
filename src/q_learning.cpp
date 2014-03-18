@@ -5,49 +5,40 @@
 #include <fstream>
 
 q_learning::q_learning(scheduler* gs, int TTT, int hys) : event_handler(gs) {
-	int startState = (TTT*21)+hys;
+	int startState = (TTT*20)+hys;
 	if(function == 1) { //for creating policy
-		int qDrop = 0;
-		int qPing = 0;
-		std::ifstream qd ("qDrop.txt");
-		std::ifstream qp ("qPing.txt");
+		double q = 0.0;
+		std::ifstream qFile ("q.txt");
 
-		if(qd.is_open() && qp.is_open()) {
+		if(qFile.is_open()) {
 			for(int i=0; i<NUMSTATES; i++) {
 				for(int j=0; j<NUMSTATES; j++) {
-					qd>>qDrop;
-					qp>>qPing;
-					Qdrop[i][j] = qDrop; //read Q in
-					Qping[i][j] = qPing;
+					qFile>>q;
+					Q[i][j] = q; //read Q in
 				}
 			}
 		}
 
-    	qd.close();
-    	qp.close();
+    	qFile.close();
 
 		current_state = startState;
 		action = 0;
 		next_state = 0;
 		firstPass = true;
+		allActions = false;
 
-		send_delay(new event(LEARN),60);
+		send_delay(new event(LEARN),180);
 	} else if(function == 2) { //for using policy
-		std::ifstream pDrop ("policyDrop.txt");
-		std::ifstream pPing ("policyPing.txt");
+		std::cout << "here";
+		std::ifstream pFile ("policy.txt");
 
-		if(pDrop.is_open() && pPing.is_open()) {
+		if(pFile.is_open()) {
 			for(int i=0; i<NUMSTATES; i++) {
-				pDrop >> policy_drop[i];
-				pPing >> policy_ping[i];
+				pFile >> policyArray[i];
 			}
 		}
 
-		pDrop.close();
-		pPing.close();
-
 		current_state = startState;
-		previous_state = -1;
 	}
 }
 
@@ -56,36 +47,32 @@ q_learning::~q_learning() {
 	globalScheduler->remove_to(this);
 }
 
-void q_learning::handler(const event* received) {
+void q_learning::handler(const event* received)
+{
+	if(allActions == true) {
+		globalScheduler->stop();
+	}
 	switch(received->label) {
 		case LEARN:
 			learn();
 			break;
-		case POLICYDROP:
+		case POLICY:
 			//change state depending on policy
-			changeState(0);
-			break;
-		case POLICYPING:
-			changeState(1);
+			changeState();
 			break;
 		default:
 			// program should not reach here
 			break;
 	} // end switch statement
+
 }
 
 void q_learning::learn() {
 	if(!firstPass) {
-		double Q = 0;
-		double value = 0;
+		double Q = getQ(current_state,action);
+		double value = Q + ALPHA * (reward() + GAMMA * maxQ(current_state) - Q);
 
-		Q = getPingQ(current_state,action);
-		value = Q + ALPHA * (getRewardDrop() + GAMMA * maxQ(current_state,0) - Q);
-    	updateQ(current_state, action, value, 0);
-
-		Q = getPingQ(current_state,action);
-		value = Q + ALPHA * (getRewardPing() + GAMMA * maxQ(current_state,1) - Q);
-    	updateQ(current_state, action, value, 1);
+    	updateQ(current_state, action, value);
 
     	current_state = next_state;
 	} else {
@@ -103,20 +90,16 @@ void q_learning::learn() {
 	//change TTT and hys
 	changeTTThys();
 
-	send_delay(new event(LEARN),60);
+	send_delay(new event(LEARN),180);
 }
 
-double q_learning::maxQ(int state, int type) {
+double q_learning::maxQ(int state) {
 	int* nextstates = actions[state];
 	double maxq = -999999;
 	double q = 0.0;
 	for(int i=0; i<LENGTH; i++) {
 		if(*(nextstates+i) != -1) {
-			if(type == 0) {
-            	q = Qdrop[state][*(nextstates+i)];
-        	} else {
-        		q = Qping[state][*(nextstates+i)];
-        	}
+            q = Q[state][*(nextstates+i)];
             if (q > maxq)
                 maxq = q;
 		}
@@ -124,33 +107,18 @@ double q_learning::maxQ(int state, int type) {
 	return maxq;
 }
 
-double q_learning::getDropQ(int state, int action) {
-	return Qdrop[state][action];
+double q_learning::getQ(int state, int action) {
+	return Q[state][action];
 }
 
-double q_learning::getPingQ(int state, int action) {
-	return Qping[state][action];
+void q_learning::updateQ(int state, int action, double q) {
+	Q[state][action] = q;
 }
 
-void q_learning::updateQ(int state, int action, double q, int type) {
-	if(type == 0) {
-		Qdrop[state][action] = q;
-	} else {
-		Qping[state][action] = q;
-	}
-}
-
-double q_learning::getRewardDrop() {
+double q_learning::reward() {
 	double reward = 0.0;
-	reward = -rewardDrop;
+	reward = rewardHandover-(rewardDrop + rewardPing);
 	rewardDrop = 0;
-	rewardHandover = 0;
-	return reward;
-}
-
-double q_learning::getRewardPing() {
-	double reward = 0.0;
-	reward = -rewardPing;
 	rewardHandover = 0;
 	rewardPing = 0;
 	return reward;
@@ -241,46 +209,10 @@ void q_learning::changeTTThys() {
 	printf("State: %d - New: TTT: %f hys: %f\n", next_state,TTT,hys);
 }
 
-void q_learning::changeState(int type) {
-	if(type == 0) {
-		next_state = policy_drop[current_state];
-	} else {
-		next_state = policy_ping[current_state];
-	}
-
-	if(next_state == previous_state) {
-		// changeTTThys();
-		shake(type);
-		previous_state = current_state;
-		current_state = next_state;
-	} else {
-		changeTTThys();
-		previous_state = current_state;
-		current_state = next_state;
-	}
-}
-
-void q_learning::shake(int type) {
-	if(type == 0) {
-		if(TTTindex-1 >= 0) {
-			TTTindex -= 1;
-			TTT = TTTArray[TTTindex];
-		} 
-		if(hysindex-1 >= 0) {
-			hysindex -= 1;
-			hys = hysArray[hysindex];
-		}
-	} else {
-		if(TTTindex+1 <= TTTmaxindex) {
-			TTTindex += 1;
-			TTT = TTTArray[TTTindex];
-		} 
-		if(hysindex+1 <= hysmaxindex) {
-			hysindex += 1;
-			hys = hysArray[hysindex];
-		}
-	}
-	printf("New: TTT: %f hys: %f\n", TTT,hys);
+void q_learning::changeState() {
+	next_state = policyArray[current_state];
+	changeTTThys();
+	current_state = next_state;
 }
 
 void q_learning::print() {
@@ -293,34 +225,26 @@ void q_learning::print() {
 	printPolicy();
 
 	//print Q to file
-	std::ofstream qd ("qDrop.txt");
-	std::ofstream qp ("qPing.txt");
-	if (qd.is_open() && qp.is_open()) {
+	std::ofstream qFile ("q.txt");
+	if (qFile.is_open()) {
 		for(int i=0; i<NUMSTATES; i++) {
 			for(int j=0; j<NUMSTATES; j++) {
-    			qd << Qdrop[i][j] << "\n";
-    			qp << Qping[i][j] << "\n";
+    			qFile << Q[i][j] << "\n";
   			}
   		}
   	}
 
-  	qd.close();
-  	qp.close();
+  	qFile.close();
 }
 
-int q_learning::policy(int current, int type) {
+int q_learning::policy(int current) {
     double maxValue = -99999;
     int maxNext = -1; // For testing cause not all Q's have values yet
     for (int i = 0; i < LENGTH; i++) {
         int nextState = *(actions[current]+i);
 
         if(nextState != -1) {
-        	double value = 0;
-        	if(type == 0) {
-          		value = getDropQ(current,nextState);
-          	} else {
-          		value = getPingQ(current,nextState);
-          	}
+          	double value = getQ(current,nextState);
  
            	if (value > maxValue) {
                	maxValue = value;
@@ -328,30 +252,20 @@ int q_learning::policy(int current, int type) {
            	}
        	}
     }
+    // printf("State: %d Value: %f\n",current,maxValue);
     return maxNext;
 }
 
 void q_learning::printPolicy() {
-	std::ofstream pDrop ("policyDrop.txt");
-	std::ofstream pPing ("policyPing.txt");
+	std::ofstream pFile ("policy.txt");
 
-	if(pDrop.is_open()) {
+	if(pFile.is_open()) {
     	for (int i=0; i < NUMSTATES; i++) {
     	    int current = i;
-    	    int next =  policy(current,0);
-    	    pDrop << next << "\n";
+    	    int next =  policy(current);
+    	    pFile << next << "\n";
     	    printf("From %d Next %d\n",current,next);
     	}    
     } 
-
-    if(pPing.is_open()) {
-    	for (int i=0; i < NUMSTATES; i++) {
-    	    int current = i;
-    	    int next =  policy(current,1);
-    	    pPing << next << "\n";
-    	    printf("From %d Next %d\n",current,next);
-    	}    
-    } 
-    pDrop.close();
-    pPing.close();      
+    pFile.close();      
 }

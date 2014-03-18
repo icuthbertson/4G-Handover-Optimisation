@@ -54,9 +54,6 @@ int rewardHandover = 0;
 
 int previous_id = 0;
 
-bool deadzone = false;
-int deadzoneRecovers = 0;
-
 double simTime = 0.0;
 
 int function;
@@ -71,17 +68,17 @@ double TTTtest[] = {TTT,
 				 	TTT,
 				 	TTT};
 
-basestation* bStations[] = {new basestation(gs,0,0,0,1500,60,false),
-							new basestation(gs,1,1000,0,1500,60,false),
-							new basestation(gs,2,2000,0,1500,60,false),
-							new basestation(gs,3,0,1000,1500,60,false),
-							new basestation(gs,4,1000,1000,1500,60,true),
-							new basestation(gs,5,2000,1000,1500,60,false),
-							new basestation(gs,6,0,2000,1500,60,false),
-							new basestation(gs,7,1000,2000,1500,60,false),
-							new basestation(gs,8,2000,2000,1500,60,false)};
+basestation* bStations[] = {new basestation(gs,0,0,0,2000,60,false),
+							new basestation(gs,1,3500,0,2000,60,false),
+							new basestation(gs,2,7000,0,2000,60,false),
+							new basestation(gs,3,0,3500,2000,60,false),
+							new basestation(gs,4,3500,3500,2000,60,true),
+							new basestation(gs,5,7000,3500,2000,60,false),
+							new basestation(gs,6,0,7000,2000,60,false),
+							new basestation(gs,7,3500,7000,2000,60,false),
+							new basestation(gs,8,7000,7000,2000,60,false)};
 
-mobile* mobiles[] = {new mobile(gs,1,1000,1000,4,1)};
+mobile* mobiles[] = {new mobile(gs,1,3500,3500,4,1)};
 
 q_learning* q;
 simple_learning* simple;

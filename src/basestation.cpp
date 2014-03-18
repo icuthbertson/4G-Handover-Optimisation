@@ -107,26 +107,27 @@ void basestation::handler(const event* received)
 			// for(int i=0; i<9; i++) {
 			// 	printf("Sim Time: %f - Basestation %d: %f dbm\n",simTime,i,current_prop[i]);
 			// }
-
-			bStations[repPacket->id]->nowServing();
-			this->connected = false;
-			mobiles[0]->switchBasestation(repPacket->id);
-
 			if(handingOver) {
-				handovers++;
-				rewardHandover++;
+
+
+				bStations[repPacket->id]->nowServing();
+				this->connected = false;
+				mobiles[0]->switchBasestation(repPacket->id);
+
+				if(handingOver) {
+					handovers++;
+					rewardHandover++;
+				}
+
+				handingOver = false;
+
+				// TTT_weighting[TTTindex] += 1;
+				// hys_weighting[hysindex] += 1;
+
+				for(int j=0; j<(T_CRIT/STEPTIME); j++) {
+					send_delay(new event(PINGPONG),STEPTIME*j);
+				}
 			}
-
-			handingOver = false;
-			deadzone = false;
-
-			// TTT_weighting[TTTindex] += 1;
-			// hys_weighting[hysindex] += 1;
-
-			for(int j=0; j<(T_CRIT/STEPTIME); j++) {
-				send_delay(new event(PINGPONG),STEPTIME*j);
-			}
-
 			delete repPacket;
 			break;
 		case PINGPONG:
@@ -138,7 +139,7 @@ void basestation::handler(const event* received)
 					globalScheduler->remove_to(bStations[i]);
 				}
 				if(function == 2) {//runnning policy
-					send_now(new event(POLICYPING,q));
+					send_now(new event(POLICY,q));
 				} else if(function == 3) {
 					send_now(new event(POLICYPING,simple));
 				}
@@ -206,12 +207,12 @@ int basestation::getY() {
  * Parameters Passed in: d, hm 
  ****************************
  * Description: Method that returns the path loss using the 
- * Okumura-Hata for urban areas propagation model. d in km, hm in m.
+ * Cost231-Hata for urban areas propagation model. d in km, hm in m.
  */
 double basestation::getProp(double d, double hm) {
 	//for small or medium sized city
-	double ch = 0.8 + ((1.1 * log10(f) - 0.7) * hm) - (1.56 * log10(f));
-	double prop = 69.55 + (26.16 * log10(f)) - (13.82 * log10(hb)) - ch + ((44.9 - (6.55 * log10(hb))) * log10(d/1000)); //divide by 1000 for km
+	double ahr = 0.8 + ((1.1 * log10(f) - 0.7) * hm) - (1.56 * log10(f));
+	double prop = 46.3 + (33.9 * log10(f)) - (13.82 * log10(hb)) - ahr + ((44.9 - (6.55 * log10(hb))) * log10(d/1000)); //divide by 1000 for km
 	
 	// double fading = ((rand()%70)-35)/10;
 
@@ -219,7 +220,7 @@ double basestation::getProp(double d, double hm) {
 
 	fading = distribution(generator);
 
-	return (tx-prop-fading);
+	return (tx-prop/*-fading*/);
 }
 
 void basestation::nowServing() {

@@ -1,3 +1,45 @@
 \chapter{Simulation Design}
 \section{Simulation Parameters}
+\subsection{Propagation Model}
+\subsubsection{Okumura-Hata Model}
+\begin{equation}\label{eq:okumura}
+L_{u}=69.55+26.16log_{10}f-13.82log_{10}h_{B}-C_{h}+[44.9-6.55log_{10}h_{B}]log_{10}d 
+\end{equation}
+\begin{equation}\label{eq:oksmall}
+C_{H}=0.8+(1.1log_{10}f-0.7)h_{m}-1.56log_{10}f
+\end{equation}
+\begin{equation}\label{eq:oklarge}
+C_{H}=
+	\begin{cases}
+	8.29(log_{10}(1.54h_{M}))^{2}-1.1 & \mbox{if } 150 \leq f \leq 200 \\
+	3.2(log_{10}(11.75h_{M}))^{2}-4.97 & \mbox{if } 200 < f \leq 1500
+	\end{cases}
+\end{equation}
+
+\subsubsection{Egli Model}
+\begin{equation}
+P_{R50}=0.668G_{B}G_{M}[\frac{h_{B}h_{M}}{d^{2}}]^{2}[\frac{40}{f}]^{2}P_{T}
+\end{equation}
+
+\subsubsection{Cost231-Hata Model}
+\begin{equation}
+L=46.3+33.9logf-13.82log{h_{B}}-a(h_{R})+[44.9-6.55log{h_{B}}]log{d}+C
+\end{equation}
+\begin{equation}
+a(h_{R})=(1.1log{f}-0.7)h_{R}-(1.58log{f}-0.8)
+\end{equation}
+\begin{equation}
+C=
+	\begin{cases}
+	0 dB & \mbox{for medium cities and suburban areas} \\
+	3 dB & \mbox{for metropolitan areas}
+	\end{cases}
+\end{equation}
+
+\subsection{Mobility Model}
+
+\subsubsection{Random Direction}
+
+\subsubsection{Random Waypoint}
+
 \section{Simulation Testing}

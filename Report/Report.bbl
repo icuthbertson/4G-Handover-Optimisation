@@ -1,10 +1,15 @@
 \begin{thebibliography}{1}
 
+\bibitem{poole2010artificial}
+D.~L. Poole and A.~K. Mackworth, {\em Artificial Intelligence: Foundations of
+  Computational Agents}.
+\newblock Cambridge University Press, 2010.
+
 \bibitem{feng2008self}
 S.~Feng and E.~Seidel, ``Self-organizing networks (son) in 3gpp long term
   evolution,'' {\em Nomor Research GmbH, Munich, Germany}, 2008.
 
-\bibitem{3gpp2012proto}
+\bibitem{3gpp2012triggers}
 3GPP TS 36.331 V10.7.0, {\em LTE; Evolved Universal Terrestrial Radio Access
   (E-UTRA); Radio Resource Control (RRC); Protocol specification (Release 10)},
   November 2012.
@@ -21,10 +26,5 @@ E.~Alpaydin, {\em Introduction to Machine Learning}.
 \bibitem{barto1998reinforcement}
 A.~G. Barto and R.~S. Sutton, {\em Reinforcement learning: An introduction}.
 \newblock MIT press, 1998.
-
-\bibitem{poole2010artificial}
-D.~L. Poole and A.~K. Mackworth, {\em Artificial Intelligence: Foundations of
-  Computational Agents}.
-\newblock Cambridge University Press, 2010.
 
 \end{thebibliography}
