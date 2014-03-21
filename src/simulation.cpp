@@ -206,7 +206,7 @@ int main() {
 		q->print();
 	}
 
-	std::ofstream hFile ("results/only_prop/handover.txt");
+	std::ofstream hFile ("results/only_prop/opt/handover.txt");
 	if(hFile.is_open()) {
 		for (std::vector<double>::iterator it = handover_total.begin() ; it != handover_total.end(); it++) {
     	    hFile << *it << "\n";
@@ -214,7 +214,7 @@ int main() {
     } 
     hFile.close();  
 
-    std::ofstream dFile ("results/only_prop/drop.txt");
+    std::ofstream dFile ("results/only_prop/opt/drop.txt");
 	if(dFile.is_open()) {
 		for (std::vector<double>::iterator it = drop_total.begin() ; it != drop_total.end(); it++) {
     	    dFile << *it << "\n";
@@ -222,7 +222,7 @@ int main() {
     } 
     dFile.close();    
 
-    std::ofstream pFile ("results/only_prop/ping.txt");
+    std::ofstream pFile ("results/only_prop/opt/ping.txt");
 	if(pFile.is_open()) {
 		for (std::vector<double>::iterator it = pingpong_total.begin() ; it != pingpong_total.end(); it++) {
     	    pFile << *it << "\n";

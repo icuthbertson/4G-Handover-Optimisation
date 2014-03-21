@@ -364,93 +364,106 @@ void mobile::checkProp(int id) {
 	}
 }
 
+// void mobile::resetMobile() {
+// 	// switch(connected){
+// 	// 	case 0:
+// 	// 		x_co = 500.0;
+// 	// 		y_co = 500.0;
+// 	// 		break;
+// 	// 	case 1:
+// 	// 		x_co = 3750.0;
+// 	// 		y_co = 0.0;
+// 	// 		break;
+// 	// 	case 2:
+// 	// 		x_co = 6250.0;
+// 	// 		y_co = 2000.0;
+// 	// 		break;
+// 	// 	case 3:
+// 	// 		x_co = 0.0;
+// 	// 		y_co = 4000.0;
+// 	// 		break;
+// 	// 	case 4:
+// 	// 		x_co = 3000.0;
+// 	// 		y_co = 3000.0;
+// 	// 		break;
+// 	// 	case 5:
+// 	// 		x_co = 6000.0;
+// 	// 		y_co = 5000.0;
+// 	// 		break;
+// 	// 	case 6:
+// 	// 		x_co = 3000.0;
+// 	// 		y_co = 6000.0;
+// 	// 		break;
+// 	// 	case 7:
+// 	// 		x_co = 0.0;
+// 	// 		y_co = 7500.0;
+// 	// 		break;
+// 	// 	case 8:
+// 	// 		x_co = 3000.0;
+// 	// 		y_co = 9000.0;
+// 	// 		break;
+// 	// 	case 9:
+// 	// 		x_co = 6000.0;
+// 	// 		y_co = 8000.0;
+// 	// 	default:
+// 	// 		// program should not reach here
+// 	// 		break;
+// 	// }
+
+// 	switch(connected){
+// 		case 0:
+// 			x_co = 500.0;
+// 			y_co = 500.0;
+// 			break;
+// 		case 1:
+// 			x_co = 3000.0;
+// 			y_co = 0.0;
+// 			break;
+// 		case 2:
+// 			x_co = 5500.0;
+// 			y_co = 500.0;
+// 			break;
+// 		case 3:
+// 			x_co = 0.0;
+// 			y_co = 3000.0;
+// 			break;
+// 		case 4:
+// 			x_co = 3000.0;
+// 			y_co = 3000.0;
+// 			break;
+// 		case 5:
+// 			x_co = 6000.0;
+// 			y_co = 3000.0;
+// 			break;
+// 		case 6:
+// 			x_co = 500.0;
+// 			y_co = 5500.0;
+// 			break;
+// 		case 7:
+// 			x_co = 3000.0;
+// 			y_co = 6000.0;
+// 			break;
+// 		case 8:
+// 			x_co = 5500.0;
+// 			y_co = 5500.0;
+// 			break;
+// 		default:
+// 			// program should not reach here
+// 			break;
+// 	}
+
+// 	bStations[connected]->nowServing();
+// }
+
 void mobile::resetMobile() {
-	// switch(connected){
-	// 	case 0:
-	// 		x_co = 500.0;
-	// 		y_co = 500.0;
-	// 		break;
-	// 	case 1:
-	// 		x_co = 3750.0;
-	// 		y_co = 0.0;
-	// 		break;
-	// 	case 2:
-	// 		x_co = 6250.0;
-	// 		y_co = 2000.0;
-	// 		break;
-	// 	case 3:
-	// 		x_co = 0.0;
-	// 		y_co = 4000.0;
-	// 		break;
-	// 	case 4:
-	// 		x_co = 3000.0;
-	// 		y_co = 3000.0;
-	// 		break;
-	// 	case 5:
-	// 		x_co = 6000.0;
-	// 		y_co = 5000.0;
-	// 		break;
-	// 	case 6:
-	// 		x_co = 3000.0;
-	// 		y_co = 6000.0;
-	// 		break;
-	// 	case 7:
-	// 		x_co = 0.0;
-	// 		y_co = 7500.0;
-	// 		break;
-	// 	case 8:
-	// 		x_co = 3000.0;
-	// 		y_co = 9000.0;
-	// 		break;
-	// 	case 9:
-	// 		x_co = 6000.0;
-	// 		y_co = 8000.0;
-	// 	default:
-	// 		// program should not reach here
-	// 		break;
-	// }
-
-	switch(connected){
-		case 0:
-			x_co = 500.0;
-			y_co = 500.0;
-			break;
-		case 1:
-			x_co = 3000.0;
-			y_co = 0.0;
-			break;
-		case 2:
-			x_co = 5500.0;
-			y_co = 500.0;
-			break;
-		case 3:
-			x_co = 0.0;
-			y_co = 3000.0;
-			break;
-		case 4:
-			x_co = 3000.0;
-			y_co = 3000.0;
-			break;
-		case 5:
-			x_co = 6000.0;
-			y_co = 3000.0;
-			break;
-		case 6:
-			x_co = 500.0;
-			y_co = 5500.0;
-			break;
-		case 7:
-			x_co = 3000.0;
-			y_co = 6000.0;
-			break;
-		case 8:
-			x_co = 5500.0;
-			y_co = 5500.0;
-			break;
-		default:
-			// program should not reach here
-			break;
+	double highest = -300.0;
+	int highestid = 0;
+	for(int j=0; j<NUM_BASESTATION; j++) {
+		if(current_prop[j] > highest) {
+			highest = current_prop[j];
+			highestid = j;
+		}
 	}
-
-	bStations[connected]->nowServing();
+	connected = highestid;
+	bStations[highestid]->nowServing();
 }
