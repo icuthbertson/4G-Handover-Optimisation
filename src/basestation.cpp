@@ -117,6 +117,7 @@ void basestation::handler(const event* received)
 				if(handingOver) {
 					handovers++;
 					rewardHandover++;
+					handover_total.push_back(simTime);
 				}
 
 				handingOver = false;
@@ -135,7 +136,8 @@ void basestation::handler(const event* received)
 				printf("Sim Time: %f - PINGPONG! - Basestation: %d\n",simTime,id);
 				pingpongCount++;
 				rewardPing++;
-				for(int i=0; i<9; i++) {
+				pingpong_total.push_back(simTime);
+				for(int i=0; i<NUM_BASESTATION; i++) {
 					globalScheduler->remove_to(bStations[i]);
 				}
 				if(function == 2) {//runnning policy

@@ -1,6 +1,8 @@
 #if !(_PROP_H_)
 #define _PROP_H_
 
+#include <vector>
+
 extern double current_prop[];
 extern double TTTtest[];
 
@@ -36,6 +38,12 @@ extern double simTime;
 
 extern int function;
 
+extern std::vector<double> handover_total;
+extern std::vector<double> drop_total;
+extern std::vector<double> pingpong_total;
+
 void learn(int learn);
+
+#define NUM_BASESTATION 9
 
 #endif

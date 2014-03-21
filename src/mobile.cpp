@@ -37,6 +37,7 @@ mobile::mobile(scheduler* gs) : event_handler(gs) {
 	trigger[6] = false;
 	trigger[7] = false;
 	trigger[8] = false;
+	// trigger[9] = false;
 }
 /* Constructor
  ****************************
@@ -71,6 +72,7 @@ mobile::mobile(scheduler* gs, int num, int x, int y, int con, double height) : e
 	trigger[6] = false;
 	trigger[7] = false;
 	trigger[8] = false;
+	// trigger[9] = false;
 	send_delay(new event(MOVE),0.0);
 }
 /* Destructor
@@ -111,7 +113,7 @@ void mobile::handler(const event* received)
 		case POLL:
 			double dist;
 			propRequestPacket* sendPacket;
-			for(int i=0; i<9;i++) {
+			for(int i=0; i<NUM_BASESTATION;i++) {
 				dist = sqrt(pow((bStations[i]->getX()-getX()),2.0) + pow((bStations[i]->getY()-getY()),2.0));
    				sendPacket = new propRequestPacket(dist,h);
    				send_now(new event(PROP,reinterpret_cast<payloadType<class T>*>(sendPacket),bStations[i]));
@@ -146,7 +148,7 @@ void mobile::handler(const event* received)
 			// program should not reach here
 			break;
 	} // end switch statement
-	if(simTime > 1000000) {
+	if(simTime > 100000) {
 		fprintf(stdout, "\nFinal Report\nHandovers: %d\nDropped: %d\nPing-Pong: %d\n", handovers,drop,pingpongCount);
 		fprintf(stdout, "Final TTT: %f Final hys: %f\n", TTT,hys);
 		// learning->print();
@@ -206,7 +208,7 @@ void mobile::switchBasestation(int newBasestation) {
 void mobile::moveMobile() {
 	simTime += STEPTIME;
 	if(duration>0) {
-		if((x_co+(minusX*speed*STEPTIME*sin(angle*PI/180)))>7000) {
+		if((x_co+(minusX*speed*STEPTIME*sin(angle*PI/180)))>6000) {
 			minusX = -1;
 		} else if((x_co+(minusX*speed*STEPTIME*sin(angle*PI/180)))<0) {
 			minusX = -1;
@@ -214,7 +216,7 @@ void mobile::moveMobile() {
 			x_co = x_co+(minusX*speed*STEPTIME*sin(angle*PI/180));
 		}
 		if(wall==0) { 
-			if((y_co+(minusY*speed*STEPTIME*cos(angle*PI/180)))>7000) {
+			if((y_co+(minusY*speed*STEPTIME*cos(angle*PI/180)))>6000) {
 				minusY = -1;
 			} else if((y_co+(minusY*speed*STEPTIME*cos(angle*PI/180)))<0) {
 				minusY = -1;
@@ -290,7 +292,7 @@ double mobile::getHeight() {
 void mobile::moveRandom() {
 	angle = rand()%360; //0 to 359 degrees
 	speed = (rand()%4)+2; //1 to 4 m/s
-	duration = (rand()%100)+50; //50 to 100s
+	duration = (rand()%100)+100; //100 to 200s
 	
 	double deltaX = duration*speed*sin(angle*PI/180);
 	double deltaY = duration*speed*cos(angle*PI/180);
@@ -307,6 +309,7 @@ void mobile::checkProp(int id) {
 		if(current_prop[id]<THRESHOLD) {
 			drop++;
 			rewardDrop++;
+			drop_total.push_back(simTime);
 			printf("Sim Time: %f - Prop: %f - Basestation: %d\n",simTime,current_prop[id],id);
 			fprintf(stderr, "Sim Time: %f - DROPPED - Basestation: %d\n",simTime,connected);
 			if(function == 2) {//runnning policy
@@ -315,7 +318,7 @@ void mobile::checkProp(int id) {
 				send_now(new event(POLICYDROP,simple));
 			}
 			if(handingOver) {
-				for(int l=0; l<9; l++) {
+				for(int l=0; l<NUM_BASESTATION; l++) {
 					globalScheduler->remove_to(bStations[l]);
 				}
 				handingOver = false;
@@ -323,7 +326,7 @@ void mobile::checkProp(int id) {
 			//reset mobile
 			bStations[connected]->connected = false;
 			resetMobile();
-			for(int i=0; i<9; i++) {
+			for(int i=0; i<NUM_BASESTATION; i++) {
  				TTTtest[i] = TTT;
  				trigger[i] = false;
  			}
@@ -344,7 +347,7 @@ void mobile::checkProp(int id) {
 						sendPacket = new reportPacket(id);
 						send_delay(new event(REPORT,reinterpret_cast<payloadType<class T>*>(sendPacket),bStations[connected]), HANDOVER_TIME);
 						fprintf(stderr, "Sim Time: %f - Switch to basestation: %d\n", simTime,id);
-						for(int i=0; i<9; i++) {
+						for(int i=0; i<NUM_BASESTATION; i++) {
 							TTTtest[i] = TTT;
 							trigger[i] = false;
 						}
@@ -362,51 +365,92 @@ void mobile::checkProp(int id) {
 }
 
 void mobile::resetMobile() {
-	int resetBasestation = -1;
-	resetBasestation = rand()%9;
+	// switch(connected){
+	// 	case 0:
+	// 		x_co = 500.0;
+	// 		y_co = 500.0;
+	// 		break;
+	// 	case 1:
+	// 		x_co = 3750.0;
+	// 		y_co = 0.0;
+	// 		break;
+	// 	case 2:
+	// 		x_co = 6250.0;
+	// 		y_co = 2000.0;
+	// 		break;
+	// 	case 3:
+	// 		x_co = 0.0;
+	// 		y_co = 4000.0;
+	// 		break;
+	// 	case 4:
+	// 		x_co = 3000.0;
+	// 		y_co = 3000.0;
+	// 		break;
+	// 	case 5:
+	// 		x_co = 6000.0;
+	// 		y_co = 5000.0;
+	// 		break;
+	// 	case 6:
+	// 		x_co = 3000.0;
+	// 		y_co = 6000.0;
+	// 		break;
+	// 	case 7:
+	// 		x_co = 0.0;
+	// 		y_co = 7500.0;
+	// 		break;
+	// 	case 8:
+	// 		x_co = 3000.0;
+	// 		y_co = 9000.0;
+	// 		break;
+	// 	case 9:
+	// 		x_co = 6000.0;
+	// 		y_co = 8000.0;
+	// 	default:
+	// 		// program should not reach here
+	// 		break;
+	// }
 
-	switch(resetBasestation){
+	switch(connected){
 		case 0:
-			x_co = 0.0;
-			y_co = 0.0;
+			x_co = 500.0;
+			y_co = 500.0;
 			break;
 		case 1:
-			x_co = 3500.0;
+			x_co = 3000.0;
 			y_co = 0.0;
 			break;
 		case 2:
-			x_co = 7000.0;
-			y_co = 0.0;
+			x_co = 5500.0;
+			y_co = 500.0;
 			break;
 		case 3:
 			x_co = 0.0;
-			y_co = 3500.0;
+			y_co = 3000.0;
 			break;
 		case 4:
-			x_co = 3500.0;
-			y_co = 3500.0;
+			x_co = 3000.0;
+			y_co = 3000.0;
 			break;
 		case 5:
-			x_co = 7000.0;
-			y_co = 3500.0;
+			x_co = 6000.0;
+			y_co = 3000.0;
 			break;
 		case 6:
-			x_co = 0.0;
-			y_co = 7000.0;
+			x_co = 500.0;
+			y_co = 5500.0;
 			break;
 		case 7:
-			x_co = 3500.0;
-			y_co = 7000.0;
+			x_co = 3000.0;
+			y_co = 6000.0;
 			break;
 		case 8:
-			x_co = 7000.0;
-			y_co = 7000.0;
+			x_co = 5500.0;
+			y_co = 5500.0;
 			break;
 		default:
 			// program should not reach here
 			break;
 	}
 
-	bStations[resetBasestation]->nowServing();
-	connected = resetBasestation;
+	bStations[connected]->nowServing();
 }

@@ -13,6 +13,7 @@
 #include <iostream>
 #include "simple.h"
 #include <random>
+#include <fstream>
 
 /* Method
  ****************************
@@ -27,7 +28,7 @@
 
 scheduler* gs = new scheduler();
 
-double current_prop[9];
+double current_prop[NUM_BASESTATION];
 
 double TTTArray[16];
 
@@ -68,20 +69,36 @@ double TTTtest[] = {TTT,
 				 	TTT,
 				 	TTT};
 
-basestation* bStations[] = {new basestation(gs,0,0,0,2000,60,false),
-							new basestation(gs,1,3500,0,2000,60,false),
-							new basestation(gs,2,7000,0,2000,60,false),
-							new basestation(gs,3,0,3500,2000,60,false),
-							new basestation(gs,4,3500,3500,2000,60,true),
-							new basestation(gs,5,7000,3500,2000,60,false),
-							new basestation(gs,6,0,7000,2000,60,false),
-							new basestation(gs,7,3500,7000,2000,60,false),
-							new basestation(gs,8,7000,7000,2000,60,false)};
+// basestation* bStations[] = {new basestation(gs,0,500,500,2000,60,false),
+// 							new basestation(gs,1,3750,0,2000,60,false),
+// 							new basestation(gs,2,6250,2000,2000,60,false),
+// 							new basestation(gs,3,0,4000,2000,60,false),
+// 							new basestation(gs,4,3000,3000,2000,60,true),
+// 							new basestation(gs,5,6000,5000,2000,60,false),
+// 							new basestation(gs,6,3000,6000,2000,60,false),
+// 							new basestation(gs,7,0,7500,2000,60,false),
+// 							new basestation(gs,8,3000,9000,2000,60,false),
+// 							new basestation(gs,9,6000,8000,2000,60,false)};
 
-mobile* mobiles[] = {new mobile(gs,1,3500,3500,4,1)};
+
+basestation* bStations[] = {new basestation(gs,0,500,500,2000,60,false),
+							new basestation(gs,1,3000,0,2000,60,false),
+							new basestation(gs,2,5500,500,2000,60,false),
+							new basestation(gs,3,0,3000,2000,60,false),
+							new basestation(gs,4,3000,3000,2000,60,true),
+							new basestation(gs,5,6000,3000,2000,60,false),
+							new basestation(gs,6,500,5500,2000,60,false),
+							new basestation(gs,7,3000,6000,2000,60,false),
+							new basestation(gs,8,5500,5500,2000,60,false)};
+
+mobile* mobiles[] = {new mobile(gs,1,3000,3000,4,1)};
 
 q_learning* q;
 simple_learning* simple;
+
+std::vector<double> handover_total;
+std::vector<double> drop_total;
+std::vector<double> pingpong_total;
 
 int main() {
 	srand(time(0));
@@ -98,6 +115,7 @@ int main() {
 	current_prop[6] = 0.0;
 	current_prop[7] = 0.0;
 	current_prop[8] = 0.0;
+	// current_prop[9] = 0.0;
 
 	TTTArray[0] = 0.0;
 	TTTArray[1] = 0.04;
@@ -151,6 +169,7 @@ int main() {
 	std::cout << "1 for generating / updating policy\n";
 	std::cout << "2 for using the policy\n";
 	std::cout << "3 for simple learning\n";
+	std::cout << "4 for no learning\n";
 	std:: cout << "Please enter:\n";
 
 	int arg;
@@ -167,6 +186,14 @@ int main() {
 	} else if(arg == 3) {
 		printf("Simple-Learning started...\n");
 		function = 3;
+	} else if(arg == 4) {
+		printf("No learning simulation...\n");
+		printf("Enter index for TTT\n");
+		std::cin >> TTTindex;
+		TTT = TTTArray[TTTindex];
+		printf("Enter index for hys\n");
+		std::cin >> hysindex;
+		hys = hysArray[hysindex];
 	}
 
 	q = new q_learning(gs,TTTindex,hysindex);
@@ -178,6 +205,30 @@ int main() {
 	if(function == 1) {
 		q->print();
 	}
+
+	std::ofstream hFile ("results/only_prop/handover.txt");
+	if(hFile.is_open()) {
+		for (std::vector<double>::iterator it = handover_total.begin() ; it != handover_total.end(); it++) {
+    	    hFile << *it << "\n";
+    	}    
+    } 
+    hFile.close();  
+
+    std::ofstream dFile ("results/only_prop/drop.txt");
+	if(dFile.is_open()) {
+		for (std::vector<double>::iterator it = drop_total.begin() ; it != drop_total.end(); it++) {
+    	    dFile << *it << "\n";
+    	}    
+    } 
+    dFile.close();    
+
+    std::ofstream pFile ("results/only_prop/ping.txt");
+	if(pFile.is_open()) {
+		for (std::vector<double>::iterator it = pingpong_total.begin() ; it != pingpong_total.end(); it++) {
+    	    pFile << *it << "\n";
+    	}    
+    } 
+    pFile.close();    
 
 	printf("end...\n");
 
