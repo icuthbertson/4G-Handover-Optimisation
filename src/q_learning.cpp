@@ -5,28 +5,31 @@
 #include <fstream>
 
 q_learning::q_learning(scheduler* gs, int TTT, int hys) : event_handler(gs) {
-	int startState = (TTT*20)+hys;
-	if(function == 1) { //for creating policy
-		double q = 0.0;
-		std::ifstream qFile ("q.txt");
+	int startState = (TTT*21)+hys;
+	printf("Start State: %d\n",startState);
 
-		if(qFile.is_open()) {
-			for(int i=0; i<NUMSTATES; i++) {
-				for(int j=0; j<NUMSTATES; j++) {
-					qFile>>q;
-					Q[i][j] = q; //read Q in
-				}
+
+	double q = 0.0;
+	std::ifstream qFile ("q.txt");
+
+	if(qFile.is_open()) {
+		for(int i=0; i<NUMSTATES; i++) {
+			for(int j=0; j<NUMSTATES; j++) {
+				qFile>>q;
+				Q[i][j] = q; //read Q in
 			}
 		}
+	}
 
-    	qFile.close();
+   	qFile.close();
 
-		current_state = startState;
-		action = 0;
-		next_state = 0;
-		firstPass = true;
-		allActions = false;
+	current_state = startState;
+	action = 0;
+	next_state = 0;
+	firstPass = true;
+	allActions = false;
 
+	if(function == 1) {
 		send_delay(new event(LEARN),180);
 	} else if(function == 2) { //for using policy
 		std::cout << "here";
@@ -117,7 +120,7 @@ void q_learning::updateQ(int state, int action, double q) {
 
 double q_learning::reward() {
 	double reward = 0.0;
-	reward = rewardHandover-(rewardDrop + rewardPing);
+	reward = rewardHandover-(10*rewardDrop + 2*rewardPing);
 	rewardDrop = 0;
 	rewardHandover = 0;
 	rewardPing = 0;
@@ -211,6 +214,15 @@ void q_learning::changeTTThys() {
 
 void q_learning::changeState() {
 	next_state = policyArray[current_state];
+
+	double Q = getQ(current_state,action);
+	double value = Q + ALPHA * (reward() + GAMMA * maxQ(current_state) - Q);
+
+    updateQ(current_state, action, value);
+
+    int updatePolicy = policy(current_state);
+    policyArray[current_state] = updatePolicy;
+
 	changeTTThys();
 	current_state = next_state;
 }

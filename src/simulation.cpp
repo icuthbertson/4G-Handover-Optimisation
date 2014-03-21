@@ -82,16 +82,16 @@ double TTTtest[] = {TTT,
 
 
 basestation* bStations[] = {new basestation(gs,0,500,500,2000,60,false),
-							new basestation(gs,1,3000,0,2000,60,false),
-							new basestation(gs,2,5500,500,2000,60,false),
-							new basestation(gs,3,0,3000,2000,60,false),
-							new basestation(gs,4,3000,3000,2000,60,true),
-							new basestation(gs,5,6000,3000,2000,60,false),
-							new basestation(gs,6,500,5500,2000,60,false),
-							new basestation(gs,7,3000,6000,2000,60,false),
-							new basestation(gs,8,5500,5500,2000,60,false)};
+							new basestation(gs,1,2000,0,2000,60,false),
+							new basestation(gs,2,3500,500,2000,60,false),
+							new basestation(gs,3,0,2000,2000,60,false),
+							new basestation(gs,4,2000,2000,2000,60,true),
+							new basestation(gs,5,4000,2000,2000,60,false),
+							new basestation(gs,6,500,3500,2000,60,false),
+							new basestation(gs,7,2000,4000,2000,60,false),
+							new basestation(gs,8,3500,3500,2000,60,false)};
 
-mobile* mobiles[] = {new mobile(gs,1,3000,3000,4,1)};
+mobile* mobiles[] = {new mobile(gs,1,2000,2000,4,1)};
 
 q_learning* q;
 simple_learning* simple;
@@ -156,11 +156,11 @@ int main() {
 	hysArray[19] = 9.5;
 	hysArray[20] = 10.0;
 
-	TTTindex = rand()%(TTTmaxindex+1);
-	hysindex = rand()%(hysmaxindex+1);
+	// TTTindex = rand()%(TTTmaxindex+1);
+	// hysindex = rand()%(hysmaxindex+1);
 
-	// TTTindex = 15;
-	// hysindex = 20;
+	TTTindex = 7;
+	hysindex = 10;
 
 	TTT = TTTArray[TTTindex];
 	hys = hysArray[hysindex];
@@ -194,6 +194,7 @@ int main() {
 		printf("Enter index for hys\n");
 		std::cin >> hysindex;
 		hys = hysArray[hysindex];
+		function = 4;
 	}
 
 	q = new q_learning(gs,TTTindex,hysindex);
@@ -202,11 +203,9 @@ int main() {
 
 	gs->start();
 
-	if(function == 1) {
-		q->print();
-	}
+	q->print();
 
-	std::ofstream hFile ("results/only_prop/opt/handover.txt");
+	std::ofstream hFile ("results/fading/mid/handover.txt");
 	if(hFile.is_open()) {
 		for (std::vector<double>::iterator it = handover_total.begin() ; it != handover_total.end(); it++) {
     	    hFile << *it << "\n";
@@ -214,7 +213,7 @@ int main() {
     } 
     hFile.close();  
 
-    std::ofstream dFile ("results/only_prop/opt/drop.txt");
+    std::ofstream dFile ("results/fading/mid/drop.txt");
 	if(dFile.is_open()) {
 		for (std::vector<double>::iterator it = drop_total.begin() ; it != drop_total.end(); it++) {
     	    dFile << *it << "\n";
@@ -222,7 +221,7 @@ int main() {
     } 
     dFile.close();    
 
-    std::ofstream pFile ("results/only_prop/opt/ping.txt");
+    std::ofstream pFile ("results/fading/mid/ping.txt");
 	if(pFile.is_open()) {
 		for (std::vector<double>::iterator it = pingpong_total.begin() ; it != pingpong_total.end(); it++) {
     	    pFile << *it << "\n";
