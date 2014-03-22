@@ -3,8 +3,8 @@
 
 #include "event_handler.h"
 
-#define ALPHA 0.1 //learning rate / step size
-#define GAMMA 0.9 //how much possible future rewards matter
+#define ALPHA 0.5 //learning rate / step size
+#define GAMMA 0.7 //how much possible future rewards matter
 #define NUMSTATES 336
 #define LENGTH 8
 

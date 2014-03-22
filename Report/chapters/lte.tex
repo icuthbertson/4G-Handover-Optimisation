@@ -1,14 +1,14 @@
 \chapter{LTE}\label{lte}
 Mobile communications is on to its \ac{4G} of network infrastructure with \ac{LTE}. This network infrastructure is an improvement upon \ac{UMTS}, which is a \ac{3G} network. \ac{LTE} has \ac{DL} speeds of up to 300 Mbit/s and \ac{UL} speeds of 75 Mbit/s. This development was driven by the users want of faster download speeds for mobile services such as Video Streaming.
+
 \section{Self-Organising Network}\label{self organising network}
 \ac{SON}~\cite{feng2008self}
+
 \section{Handover}\label{handover}
 The process of handover is very important in mobile telecommunications. It involves moving the resource allocation for a mobile phone or a piece of \ac{UE} from one base station to another. This process is used to provide more \ac{QoS} to customers by allowing them to continue to use provided services even after moving out of range of the original serving base station. To keep with the QoS it is important that handovers are done fast, have little-to-no disruption to the users experience and are completed with a very high success rate. If a handover is unsuccessful it is likely that an on going call will be dropped due to there not being enough resources available on a base station, known as an \ac{eNodeB} in \ac{LTE}, or the received signal strength to the \ac{UE} drops below a certain threshold needed to maintain the call. Handovers are stated to take roughly 0.25 seconds to complete after the decision has been made for a handover to take place~\cite{3gpp2012triggers}.
 
-\ac{eNodeB} \ac{MME}
-
 \subsection{Parameters}\label{parameters}
-\ac{TTT} \ac{hys}
+In LTE there are two main parameters that are used in the handover process. These parameters are the \ac{TTT} and \ac{hys}. The hys is used to define how much better the \ac{RSS} of a neighbouring base station must be than the serving base station for a handover to be considered. The values of hys are defined in \ac{dB} and range from 0 to 10 dB in 0.5 dB increments, this results in there being 20 different values of hys. The full range of hys values can be seen in Table~\ref{tab:hys}.
 
 \begin{table}[H]
   \begin{center}

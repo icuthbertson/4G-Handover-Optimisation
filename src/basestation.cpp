@@ -222,7 +222,7 @@ double basestation::getProp(double d, double hm) {
 
 	fading = distribution(generator);
 
-	return (tx-prop-fading);
+	return (tx-prop/*+fading*/);
 }
 
 void basestation::nowServing() {

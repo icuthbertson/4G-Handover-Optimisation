@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.10.9)  17 MAR 2014 14:48
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.10.9)  22 MAR 2014 16:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -419,13 +419,17 @@ Package acronym Info: Label `acro:MME' newly defined as it shall be overridden
 although it is yet undefined on input line 8.
 Package acronym Info: Label `acro:TTT' overridden on input line 11.
 Package acronym Info: Label `acro:hys' overridden on input line 11.
- [7] [8] <figures/TTTgraph.jpg, id=51, 678.535pt x 340.27126pt>
+Package acronym Info: Label `acro:RSS' newly defined as it shall be overridden
+although it is yet undefined on input line 11.
+Package acronym Info: Label `acro:dB' newly defined as it shall be overridden
+although it is yet undefined on input line 11.
+ [7] <figures/TTTgraph.jpg, id=48, 678.535pt x 340.27126pt>
 File: figures/TTTgraph.jpg Graphic file (type jpg)
 
 <use figures/TTTgraph.jpg>
 Package pdftex.def Info: figures/TTTgraph.jpg used on input line 76.
 (pdftex.def)             Requested size: 206.28249pt x 103.44249pt.
- [9 <./figures/TTTgraph.jpg>]
+ [8 <./figures/TTTgraph.jpg>]
 Package acronym Info: Label `acro:PCell' newly defined as it shall be overridde
 n
 although it is yet undefined on input line 101.
@@ -433,7 +437,7 @@ Package acronym Info: Label `acro:SCell' newly defined as it shall be overridde
 n
 although it is yet undefined on input line 101.
 )
-(./chapters/machine_learning.tex [10]
+(./chapters/machine_learning.tex [9]
 Chapter 4.
 Package acronym Info: Label `acro:AI' newly defined as it shall be overridden
 although it is yet undefined on input line 2.
@@ -443,51 +447,50 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 5.
- [11
+ [10
 
-] [12]
-[13] [14] <figures/q-learning.jpg, id=75, 466.74374pt x 405.515pt>
+] [11]
+[12] <figures/q-learning.jpg, id=68, 466.74374pt x 405.515pt>
 File: figures/q-learning.jpg Graphic file (type jpg)
 
 <use figures/q-learning.jpg>
 Package pdftex.def Info: figures/q-learning.jpg used on input line 59.
 (pdftex.def)             Requested size: 206.28249pt x 179.21916pt.
- [15 <./figures/q-learning.jpg>])
-(./chapters/simulation.tex [16]
+ [13 <./figures/q-learning.jpg>])
+(./chapters/simulation.tex [14]
 Chapter 5.
-[17
+) (./chapters/hand_opt.tex [15
 
-]) (./chapters/hand_opt.tex [18]
+] [16]
 Chapter 6.
-[19
-
-]
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ™ in font cmr12!
-) (./chapters/future.tex [20]
+[17
+
+]) (./chapters/future.tex [18]
 Chapter 7.
-) (./chapters/conclusion.tex [21
+) (./chapters/conclusion.tex [19
 
 ]
 Chapter 8.
-) [22
+) [20
 
-] (./Report.bbl) [23
+] (./Report.bbl) [21
 
-] [24
+] [22
 
 
 ]
 Appendix A.
-[25
+[23
 
 ] (./Report.aux) ) 
 Here is how much of TeX's memory you used:
- 5136 strings out of 493315
- 72358 string characters out of 6137904
+ 5146 strings out of 493315
+ 72437 string characters out of 6137904
  156426 words of memory out of 5000000
- 8449 multiletter control sequences out of 15000+600000
+ 8459 multiletter control sequences out of 15000+600000
  11180 words of font info for 40 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  38i,10n,58p,1081b,272s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -504,10 +507,10 @@ mr17.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
 pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pf
 b></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb
 >
-Output written on Report.pdf (31 pages, 373329 bytes).
+Output written on Report.pdf (29 pages, 373164 bytes).
 PDF statistics:
- 155 PDF objects out of 1000 (max. 8388607)
- 106 compressed objects within 2 object streams
+ 148 PDF objects out of 1000 (max. 8388607)
+ 101 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
