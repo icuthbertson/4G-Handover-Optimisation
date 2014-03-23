@@ -208,7 +208,7 @@ void mobile::switchBasestation(int newBasestation) {
 void mobile::moveMobile() {
 	simTime += STEPTIME;
 	if(duration>0) {
-		if((x_co+(minusX*speed*STEPTIME*sin(angle*PI/180)))>6000) {
+		if((x_co+(minusX*speed*STEPTIME*sin(angle*PI/180)))>4000) {
 			minusX = -1;
 		} else if((x_co+(minusX*speed*STEPTIME*sin(angle*PI/180)))<0) {
 			minusX = -1;
@@ -216,7 +216,7 @@ void mobile::moveMobile() {
 			x_co = x_co+(minusX*speed*STEPTIME*sin(angle*PI/180));
 		}
 		if(wall==0) { 
-			if((y_co+(minusY*speed*STEPTIME*cos(angle*PI/180)))>6000) {
+			if((y_co+(minusY*speed*STEPTIME*cos(angle*PI/180)))>4000) {
 				minusY = -1;
 			} else if((y_co+(minusY*speed*STEPTIME*cos(angle*PI/180)))<0) {
 				minusY = -1;
@@ -317,12 +317,12 @@ void mobile::checkProp(int id) {
 			} else if(function == 3) {
 				send_now(new event(POLICYDROP,simple));
 			}
-			if(handingOver) {
-				for(int l=0; l<NUM_BASESTATION; l++) {
-					globalScheduler->remove_to(bStations[l]);
-				}
-				handingOver = false;
+			
+			for(int l=0; l<NUM_BASESTATION; l++) {
+				globalScheduler->remove_to(bStations[l]);
 			}
+			handingOver = false;
+			
 			//reset mobile
 			bStations[connected]->connected = false;
 			resetMobile();

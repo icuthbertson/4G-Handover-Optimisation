@@ -1,10 +1,9 @@
 \select@language {british}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Graph of TTT values.}}{10}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Graph of TTT values.}}{8}
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Image of Q-Learning process~\cite {poole2010artificial}.}}{13}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Image of Q-Learning process.}}{15}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
