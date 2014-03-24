@@ -5,11 +5,10 @@
 #include "mobiles.h"
 #include "prop.h"
 #include "q.h"
-#include "simple.h"
 #include <random>
 
 std::default_random_engine generator;
-std::normal_distribution<double> distribution(0.0,2.0);
+//std::normal_distribution<double> distribution(0.0,2.0);
 
 /* Constructor
  ****************************
@@ -26,9 +25,9 @@ basestation::basestation(scheduler* gs) : event_handler(gs) {
 	y_co = 0;
 	f = 0.0;
 	hb = 0.0;
-	connected = false;
-	pingpong = false;
-	pingpongTime = 0.0;
+	for(int i=0; i<NUM_MOBILES; i++) {
+    	connected[i] = false;
+    }
 	tx = 48.0;
 }
 /* Constructor
@@ -44,15 +43,15 @@ basestation::basestation(scheduler* gs) : event_handler(gs) {
  * Description: Class constructor that create an instance of basestation
  * with all parameters are passed in.
  */
-basestation::basestation(scheduler* gs, int idNum, int x, int y, double freq, double hBase, bool conn) : event_handler(gs) {
+basestation::basestation(scheduler* gs, int idNum, int x, int y, double freq, double hBase) : event_handler(gs) {
 	id = idNum;
     x_co = x;
     y_co = y;
     f = freq;
     hb = hBase;
-    connected = conn;
-    pingpong = false;
-    pingpongTime = 0.0;
+    for(int i=0; i<NUM_MOBILES; i++) {
+    	connected[i] = false;
+    }
     tx = 48.0;
 }
 /* Destructor
@@ -107,49 +106,48 @@ void basestation::handler(const event* received)
 			// for(int i=0; i<9; i++) {
 			// 	printf("Sim Time: %f - Basestation %d: %f dbm\n",simTime,i,current_prop[i]);
 			// }
-			if(handingOver) {
+			if(handingOver[repPacket->id_mob]) {
 
+				
+				bStations[repPacket->id_base]->nowServing(repPacket->id_mob);
+				this->connected[repPacket->id_mob] = false;
+				mobiles[repPacket->id_mob]->switchBasestation(repPacket->id_base);
+				handovers[repPacket->id_base]++;
+				rewardHandover[repPacket->id_base]++;
+				handover_total[repPacket->id_base].push_back(simTime[repPacket->id_mob]);
 
-				bStations[repPacket->id]->nowServing();
-				this->connected = false;
-				mobiles[0]->switchBasestation(repPacket->id);
+				handingOver[repPacket->id_mob] = false;
 
-				if(handingOver) {
-					handovers++;
-					rewardHandover++;
-					handover_total.push_back(simTime);
-				}
-
-				handingOver = false;
-
-				// TTT_weighting[TTTindex] += 1;
-				// hys_weighting[hysindex] += 1;
+				pingpongPacket* sendPacket;
+				sendPacket = new pingpongPacket(repPacket->id_mob);
 
 				for(int j=0; j<(T_CRIT/STEPTIME); j++) {
-					send_delay(new event(PINGPONG),STEPTIME*j);
+					send_delay(new event(PINGPONG,reinterpret_cast<payloadType<class T>*>(sendPacket)),STEPTIME*j);
+					// send_delay(new event(PINGPONG),STEPTIME*j);
 				}
 			}
 			delete repPacket;
 			break;
 		case PINGPONG:
-			if(connected) {
-				printf("Sim Time: %f - PINGPONG! - Basestation: %d\n",simTime,id);
-				pingpongCount++;
-				rewardPing++;
-				pingpong_total.push_back(simTime);
+			pingpongPacket* pingPacket;
+			pingPacket = reinterpret_cast<pingpongPacket*>(received->getAttachment());
+			if(connected[pingPacket->id]) {
+				// printf("Sim Time: %f - PINGPONG! - Basestation: %d\n",simTime[pingPacket->id],id);
+				pingpongCount[this->id]++;
+				rewardPing[this->id]++;
+				pingpong_total[this->id].push_back(simTime[pingPacket->id]);
 				for(int i=0; i<NUM_BASESTATION; i++) {
 					globalScheduler->remove_to(bStations[i]);
 				}
 				if(function == 2) {//runnning policy
-					send_now(new event(POLICY,q));
-				} else if(function == 3) {
-					send_now(new event(POLICYPING,simple));
+					send_now(new event(POLICY,q[this->id]));
 				}
 				// TTT_weighting[TTTindex] -= 2;
 				// hys_weighting[hysindex] -= 2;
 				// learning->learn(); //call machine learning
 			}
 			break;
+			delete pingPacket;
 		default:
 			// program should not reach here
 			break;
@@ -166,7 +164,8 @@ void basestation::handler(const event* received)
  * parameters of the class.
  */
 void basestation::print() {
-    printf("Basestation %d\nX Co-ordinate: %d\nY Co-ordinate: %d\n\n", id, x_co, y_co);
+    fprintf(stdout, "\nBasestation ID: %d - Final Report\nHandovers: %d\nDropped: %d\nPing-Pong: %d\n", id,handovers[id],drop[id],pingpongCount[id]);
+	fprintf(stdout, "Final TTT: %f Final hys: %f\n", TTT[id],hys[id]);
 }
 /* Method
  ****************************
@@ -214,17 +213,17 @@ int basestation::getY() {
 double basestation::getProp(double d, double hm) {
 	//for small or medium sized city
 	double ahr = 0.8 + ((1.1 * log10(f) - 0.7) * hm) - (1.56 * log10(f));
-	double prop = 46.3 + (33.9 * log10(f)) - (13.82 * log10(hb)) - ahr + ((44.9 - (6.55 * log10(hb))) * log10(d/1000))+3; //divide by 1000 for km
+	double prop = 46.3 + (33.9 * log10(f)) - (13.82 * log10(hb)) - ahr + ((44.9 - (6.55 * log10(hb))) * log10(d/1000)); //divide by 1000 for km
 	
 	// double fading = ((rand()%70)-35)/10;
 
-	double fading = 0.0;
+	//double fading = 0.0;
 
-	fading = distribution(generator);
+	//fading = distribution(generator);
 
-	return (tx-prop+fading);
+	return (tx-prop/*+fading*/);
 }
 
-void basestation::nowServing() {
-	connected = true;
+void basestation::nowServing(int id) {
+	connected[id] = true;
 }

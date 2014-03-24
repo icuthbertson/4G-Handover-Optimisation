@@ -3,6 +3,6 @@
 
 #include "q_learning.h"
 
-extern q_learning* q;
+extern q_learning* q[];
 
 #endif

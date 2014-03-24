@@ -30,16 +30,18 @@ class propSendPacket {
 
 class reportPacket {
 	public:
-		int id;
-		reportPacket(int id) {
-			this->id = id;
+		int id_base;
+		int id_mob;
+		reportPacket(int id_base, int id_mob) {
+			this->id_base = id_base;
+			this->id_mob = id_mob;
 		}
 };
 
-class pingPongPacket {
+class pingpongPacket {
 	public:
 		int id;
-		pingPongPacket(int id) {
+		pingpongPacket(int id) {
 			this->id = id;
 		}
 };

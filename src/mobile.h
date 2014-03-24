@@ -45,6 +45,8 @@ private:
     int minusX;
     int minusY;
     bool trigger[9];
+    double current_prop[9];
+    double TTTtest[9];
 public:
     mobile(scheduler* gs);
     mobile(scheduler* gs, int num, int x, int y, int con, double height);

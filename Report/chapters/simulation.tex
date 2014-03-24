@@ -1,6 +1,18 @@
 \chapter{Simulation Design}
+The simulation is a very important part of the project. It is required to provide the basic functionality of a LTE network. For simplicity the simulation was broken down into two main components; the mobile (UE) and the base station (eNodeB). Due to the project revolving around the handover process in LTE it made sense for the two main components on the simulation to be the mobile and base station as it is the mobile the triggers the measurement report and the base station that makes the decision on whether a handover should take place or not. Since the A3 event trigger is the most common I decided that it would be the only trigger implemented in the simulation to reduce the complexity within the simulation.
+
+It was required for the mobile to be able to move freely around a group of base stations. It was decided that this movement should be random because if any machine learning algorithm can handle random movement then it should also be able to handle regimented movement. The movement that the mobile follows is defined by a Mobility Model and the choice of mobility model is explained in Section~\ref{mobility}.
+
+In wireless communications the received signal strength from a transmitter degrades the further away from the transmitter the receiver is. A propagation model can be used to define the way in which the signal strength degrades. The propagation model is very important to the simulation as it will defined how far away from a base station the mobile can be without dropping the call. A comparison and explanation of the choice of propagation model can be seen in Section~\ref{propagation}.
 \section{Simulation Parameters}
-\subsection{Propagation Model}
+
+\subsection{Mobility Model}\label{mobility}
+
+\subsubsection{Random Direction}
+
+\subsubsection{Random Waypoint}
+
+\subsection{Propagation Model}\label{propagation}
 \subsubsection{Okumura-Hata Model}
 \begin{equation}\label{eq:okumura}
 L_{u}=69.55+26.16log_{10}f-13.82log_{10}h_{B}-C_{h}+[44.9-6.55log_{10}h_{B}]log_{10}d 
@@ -36,10 +48,6 @@ C=
 	\end{cases}
 \end{equation}
 
-\subsection{Mobility Model}
 
-\subsubsection{Random Direction}
-
-\subsubsection{Random Waypoint}
 
 \section{Simulation Testing}

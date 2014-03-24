@@ -4,7 +4,8 @@
 #include <random>
 #include <fstream>
 
-q_learning::q_learning(scheduler* gs, int TTT, int hys) : event_handler(gs) {
+q_learning::q_learning(scheduler* gs, int id, int TTT, int hys) : event_handler(gs) {
+	this->id = id;
 	int startState = (TTT*21)+hys;
 	printf("Start State: %d\n",startState);
 
@@ -40,8 +41,6 @@ q_learning::q_learning(scheduler* gs, int TTT, int hys) : event_handler(gs) {
 				pFile >> policyArray[i];
 			}
 		}
-
-		current_state = startState;
 	}
 }
 
@@ -120,96 +119,96 @@ void q_learning::updateQ(int state, int action, double q) {
 
 double q_learning::reward() {
 	double reward = 0.0;
-	reward = rewardHandover-(10*rewardDrop + 2*rewardPing);
-	rewardDrop = 0;
-	rewardHandover = 0;
-	rewardPing = 0;
+	reward = rewardHandover[id]-(10*rewardDrop[id] + 2*rewardPing[id]);
+	rewardDrop[id] = 0;
+	rewardHandover[id] = 0;
+	rewardPing[id] = 0;
 	return reward;
 }
 
 void q_learning::changeTTThys() {
 	if(next_state >= 0 && next_state < 21) {
-		TTTindex = 0;
-		TTT = TTTArray[TTTindex];
-		hysindex = next_state-0;
-		hys = hysArray[hysindex];
+		TTTindex[id] = 0;
+		TTT[id] = TTTArray[TTTindex[id]];
+		hysindex[id] = next_state-0;
+		hys[id] = hysArray[hysindex[id]];
 	} else if(next_state >= 21 && next_state < 42) {
-		TTTindex = 1;
-		TTT = TTTArray[TTTindex];
-		hysindex = next_state-21;
-		hys = hysArray[hysindex];
+		TTTindex[id] = 1;
+		TTT[id] = TTTArray[TTTindex[id]];
+		hysindex[id] = next_state-21;
+		hys[id] = hysArray[hysindex[id]];
 	} else if(next_state >= 42 && next_state < 63) {
-		TTTindex = 2;
-		TTT = TTTArray[TTTindex];
-		hysindex = next_state-42;
-		hys = hysArray[hysindex];
+		TTTindex[id] = 2;
+		TTT[id] = TTTArray[TTTindex[id]];
+		hysindex[id] = next_state-42;
+		hys[id] = hysArray[hysindex[id]];
 	} else if(next_state >= 63 && next_state < 84) {
-		TTTindex = 3;
-		TTT = TTTArray[TTTindex];
-		hysindex = next_state-63;
-		hys = hysArray[hysindex];
+		TTTindex[id] = 3;
+		TTT[id] = TTTArray[TTTindex[id]];
+		hysindex[id] = next_state-63;
+		hys[id] = hysArray[hysindex[id]];
 	} else if(next_state >= 84 && next_state < 105) {
-		TTTindex = 4;
-		TTT = TTTArray[TTTindex];
-		hysindex = next_state-84;
-		hys = hysArray[hysindex];
+		TTTindex[id] = 4;
+		TTT[id] = TTTArray[TTTindex[id]];
+		hysindex[id] = next_state-84;
+		hys[id] = hysArray[hysindex[id]];
 	} else if(next_state >= 105 && next_state < 126) {
-		TTTindex = 5;
-		TTT = TTTArray[TTTindex];
-		hysindex = next_state-105;
-		hys = hysArray[hysindex];
+		TTTindex[id] = 5;
+		TTT[id] = TTTArray[TTTindex[id]];
+		hysindex[id] = next_state-105;
+		hys[id] = hysArray[hysindex[id]];
 	} else if(next_state >= 126 && next_state < 147) {
-		TTTindex = 6;
-		TTT = TTTArray[TTTindex];
-		hysindex = next_state-126;
-		hys = hysArray[hysindex];
+		TTTindex[id] = 6;
+		TTT[id] = TTTArray[TTTindex[id]];
+		hysindex[id] = next_state-126;
+		hys[id] = hysArray[hysindex[id]];
 	} else if(next_state >= 147 && next_state < 168) {
-		TTTindex = 7;
-		TTT = TTTArray[TTTindex];
-		hysindex = next_state-147;
-		hys = hysArray[hysindex];
+		TTTindex[id] = 7;
+		TTT[id] = TTTArray[TTTindex[id]];
+		hysindex[id] = next_state-147;
+		hys[id] = hysArray[hysindex[id]];
 	} else if(next_state >= 168 && next_state < 189) {
-		TTTindex = 8;
-		TTT = TTTArray[TTTindex];
-		hysindex = next_state-168;
-		hys = hysArray[hysindex];
+		TTTindex[id] = 8;
+		TTT[id] = TTTArray[TTTindex[id]];
+		hysindex[id] = next_state-168;
+		hys[id] = hysArray[hysindex[id]];
 	} else if(next_state >= 189 && next_state < 210) {
-		TTTindex = 9;
-		TTT = TTTArray[TTTindex];
-		hysindex = next_state-189;
-		hys = hysArray[hysindex];
+		TTTindex[id] = 9;
+		TTT[id] = TTTArray[TTTindex[id]];
+		hysindex[id] = next_state-189;
+		hys[id] = hysArray[hysindex[id]];
 	} else if(next_state >= 210 && next_state < 231) {
-		TTTindex = 10;
-		TTT = TTTArray[TTTindex];
-		hysindex = next_state-210;
-		hys = hysArray[hysindex];
+		TTTindex[id] = 10;
+		TTT[id] = TTTArray[TTTindex[id]];
+		hysindex[id] = next_state-210;
+		hys[id] = hysArray[hysindex[id]];
 	} else if(next_state >= 231 && next_state < 252) {
-		TTTindex = 11;
-		TTT = TTTArray[TTTindex];
-		hysindex = next_state-231;
-		hys = hysArray[hysindex];
+		TTTindex[id] = 11;
+		TTT[id] = TTTArray[TTTindex[id]];
+		hysindex[id] = next_state-231;
+		hys[id] = hysArray[hysindex[id]];
 	} else if(next_state >= 252 && next_state < 273) {
-		TTTindex = 12;
-		TTT = TTTArray[TTTindex];
-		hysindex = next_state-252;
-		hys = hysArray[hysindex];
+		TTTindex[id] = 12;
+		TTT[id] = TTTArray[TTTindex[id]];
+		hysindex[id] = next_state-252;
+		hys[id] = hysArray[hysindex[id]];
 	} else if(next_state >= 273 && next_state < 294) {
-		TTTindex = 13;
-		TTT = TTTArray[TTTindex];
-		hysindex = next_state-273;
-		hys = hysArray[hysindex];
+		TTTindex[id] = 13;
+		TTT[id] = TTTArray[TTTindex[id]];
+		hysindex[id] = next_state-273;
+		hys[id] = hysArray[hysindex[id]];
 	} else if(next_state >= 294 && next_state < 315) {
-		TTTindex = 14;
-		TTT = TTTArray[TTTindex];
-		hysindex = next_state-294;
-		hys = hysArray[hysindex];
+		TTTindex[id] = 14;
+		TTT[id] = TTTArray[TTTindex[id]];
+		hysindex[id] = next_state-294;
+		hys[id] = hysArray[hysindex[id]];
 	} else if(next_state >= 315 && next_state < 336) {
-		TTTindex = 15;
-		TTT = TTTArray[TTTindex];
-		hysindex = next_state-315;
-		hys = hysArray[hysindex];
+		TTTindex[id] = 15;
+		TTT[id] = TTTArray[TTTindex[id]];
+		hysindex[id] = next_state-315;
+		hys[id] = hysArray[hysindex[id]];
 	}
-	printf("State: %d - New: TTT: %f hys: %f\n", next_state,TTT,hys);
+	// printf("Learner: %d State: %d - New: TTT: %f hys: %f\n", id,next_state,TTT[id],hys[id]);
 }
 
 void q_learning::changeState() {

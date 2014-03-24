@@ -10,6 +10,7 @@
 
 class q_learning : public event_handler {
 private:
+	int id;
 	double Q[NUMSTATES][NUMSTATES];
 	int policyArray[NUMSTATES];
 	int current_state;
@@ -26,7 +27,7 @@ private:
 	int policy(int current);
 	void changeState();
 public:
-	q_learning(scheduler* gs, int TTT, int hys);
+	q_learning(scheduler* gs, int id, int TTT, int hys);
 	~q_learning();
 	void print();
 	void printPolicy();

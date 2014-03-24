@@ -6,7 +6,6 @@
 #include "bstations.h"
 #include "prop.h"
 #include "q.h"
-#include "simple.h"
 // #include "opt.h"
 
 /* Constructor
@@ -23,6 +22,7 @@ mobile::mobile(scheduler* gs) : event_handler(gs) {
 	x_co = 0;
 	y_co = 0;
 	connected = 1;
+	bStations[connected]->connected[this->id] = true;
 	h = 2.0;
 	count = 0;
 	wall = 0;
@@ -38,6 +38,10 @@ mobile::mobile(scheduler* gs) : event_handler(gs) {
 	trigger[7] = false;
 	trigger[8] = false;
 	// trigger[9] = false;
+	for(int i=0; i<NUM_BASESTATION; i++) {
+		current_prop[i] = 0.0;
+		TTTtest[i] = TTT[i];
+	}
 }
 /* Constructor
  ****************************
@@ -58,6 +62,7 @@ mobile::mobile(scheduler* gs, int num, int x, int y, int con, double height) : e
     x_co = x;
     y_co = y;
     connected = con;
+    bStations[connected]->connected[this->id] = true;
     h = height;
     count = 0;
     wall = 0;
@@ -148,9 +153,7 @@ void mobile::handler(const event* received)
 			// program should not reach here
 			break;
 	} // end switch statement
-	if(simTime > 100000) {
-		fprintf(stdout, "\nFinal Report\nHandovers: %d\nDropped: %d\nPing-Pong: %d\n", handovers,drop,pingpongCount);
-		fprintf(stdout, "Final TTT: %f Final hys: %f\n", TTT,hys);
+	if(simTime[id] > 10000) {
 		// learning->print();
 		globalScheduler->stop();
 	}
@@ -166,7 +169,8 @@ void mobile::handler(const event* received)
  * parameters of the class.
  */
 void mobile::print() {
-    printf("Sim Time: %f - Mobile %d\nX Co-ordinate: %f\nY Co-ordinate: %f\nConnected To Basestation: %d\n", simTime,id, x_co, y_co, connected);
+    // fprintf(stdout, "\nID: %d - Final Report\nHandovers: %d\nDropped: %d\nPing-Pong: %d\n", id,handovers,drop,pingpongCount);
+	// fprintf(stdout, "Final TTT: %f Final hys: %f\n", TTT[connected],hys[connected]);
 }
 /* Method
  ****************************
@@ -206,9 +210,9 @@ void mobile::switchBasestation(int newBasestation) {
  * passed in.
  */
 void mobile::moveMobile() {
-	simTime += STEPTIME;
+	simTime[this->id] += STEPTIME;
 	if(duration>0) {
-		if((x_co+(minusX*speed*STEPTIME*sin(angle*PI/180)))>4000) {
+		if((x_co+(minusX*speed*STEPTIME*sin(angle*PI/180)))>6000) {
 			minusX = -1;
 		} else if((x_co+(minusX*speed*STEPTIME*sin(angle*PI/180)))<0) {
 			minusX = -1;
@@ -216,7 +220,7 @@ void mobile::moveMobile() {
 			x_co = x_co+(minusX*speed*STEPTIME*sin(angle*PI/180));
 		}
 		if(wall==0) { 
-			if((y_co+(minusY*speed*STEPTIME*cos(angle*PI/180)))>4000) {
+			if((y_co+(minusY*speed*STEPTIME*cos(angle*PI/180)))>6000) {
 				minusY = -1;
 			} else if((y_co+(minusY*speed*STEPTIME*cos(angle*PI/180)))<0) {
 				minusY = -1;
@@ -296,7 +300,7 @@ void mobile::moveRandom() {
 	
 	double deltaX = duration*speed*sin(angle*PI/180);
 	double deltaY = duration*speed*cos(angle*PI/180);
-	fprintf(stderr, "\nSim Time: %f - X_Co:%f Y_Co:%f deltaX:%f deltaY:%f\nspeed:%f duration:%f\n", simTime,x_co,y_co,deltaX,deltaY,speed,duration);
+	fprintf(stderr, "\nSim Time: %f - ID %d - X_Co:%f Y_Co:%f deltaX:%f deltaY:%f\nspeed:%f duration:%f\n",simTime[id],id,x_co,y_co,deltaX,deltaY,speed,duration);
 
 	minusX = 1;
 	minusY = 1;
@@ -307,53 +311,51 @@ void mobile::moveRandom() {
 void mobile::checkProp(int id) {
 	if(id == connected) {
 		if(current_prop[id]<THRESHOLD) {
-			drop++;
-			rewardDrop++;
-			drop_total.push_back(simTime);
-			printf("Sim Time: %f - Prop: %f - Basestation: %d\n",simTime,current_prop[id],id);
-			fprintf(stderr, "Sim Time: %f - DROPPED - Basestation: %d\n",simTime,connected);
+			drop[connected]++;
+			rewardDrop[connected]++;
+			drop_total[connected].push_back(simTime[this->id]);
+			// printf("Sim Time: %f - ID: %d - Prop: %f - Basestation: %d\n",simTime[this->id],id,current_prop[id],id);
+			// fprintf(stderr, "Sim Time: %f - ID: %d - DROPPED - Basestation: %d\n",simTime[this->id],id,connected);
 			if(function == 2) {//runnning policy
-				send_now(new event(POLICY,q));
-			} else if(function == 3) {
-				send_now(new event(POLICYDROP,simple));
+				send_now(new event(POLICY,q[connected]));
 			}
 			
 			for(int l=0; l<NUM_BASESTATION; l++) {
 				globalScheduler->remove_to(bStations[l]);
 			}
-			handingOver = false;
+			handingOver[this->id] = false;
 			
 			//reset mobile
-			bStations[connected]->connected = false;
+			bStations[connected]->connected[this->id] = false;
 			resetMobile();
 			for(int i=0; i<NUM_BASESTATION; i++) {
- 				TTTtest[i] = TTT;
+ 				TTTtest[i] = TTT[connected];
  				trigger[i] = false;
  			}
 		}
 	} else {
-		if(!handingOver) {
+		if(!handingOver[this->id]) {
 			if(trigger[id] == false) {
- 				if(current_prop[id] >= current_prop[connected]+hys) {
+ 				if(current_prop[id] >= current_prop[connected]+hys[connected]) {
  					trigger[id] = true;
  					// fprintf(stderr, "Sim Time: %f - %d Serving: %f\n%d Triggered: %f\n", simTime,connected,current_prop[connected],id,current_prop[id]);
  				}
  			} else if(trigger[id] == true){
 				if(TTTtest[id] <= 0) {
-					if(current_prop[id] >= current_prop[connected]+hys) {
+					if(current_prop[id] >= current_prop[connected]+hys[connected]) {
 						// fprintf(stderr, "Sim Time: %f - %d Serving: %f\n%d Triggered: %f\n", simTime,connected,current_prop[connected],id,current_prop[id]);
 						//send measurement report
 						reportPacket* sendPacket;
-						sendPacket = new reportPacket(id);
+						sendPacket = new reportPacket(id,this->id);
 						send_delay(new event(REPORT,reinterpret_cast<payloadType<class T>*>(sendPacket),bStations[connected]), HANDOVER_TIME);
-						fprintf(stderr, "Sim Time: %f - Switch to basestation: %d\n", simTime,id);
+						// fprintf(stderr, "Sim Time: %f - ID: %d - Switch to basestation: %d\n",simTime[this->id],this->id,id);
 						for(int i=0; i<NUM_BASESTATION; i++) {
-							TTTtest[i] = TTT;
+							TTTtest[i] = TTT[connected];
 							trigger[i] = false;
 						}
-						handingOver = true;
+						handingOver[this->id] = true;
 					} else {
-						TTTtest[id] = TTT;
+						TTTtest[id] = TTT[connected];
 						trigger[id] = false;
 
 					}
@@ -465,5 +467,5 @@ void mobile::resetMobile() {
 		}
 	}
 	connected = highestid;
-	bStations[highestid]->nowServing();
+	bStations[highestid]->nowServing(this->id);
 }

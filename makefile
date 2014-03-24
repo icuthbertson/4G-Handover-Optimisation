@@ -14,9 +14,6 @@ basestation.o :
 q_learning.o :
 	${CC} ${CFLAGS} -c src/q_learning.cpp
 
-simple_learning.o :
-	${CC} ${CFLAGS} -c src/simple_learning.cpp
-
 event_handler.o :
 	${CC} ${CFLAGS} -c src/event_handler.cpp
 	
@@ -29,9 +26,9 @@ scheduler.o :
 event.o :
 	${CC} ${CFLAGS} -c src/event.cpp
 
-all : event.o event_handler.o payloadType.o scheduler.o simple_learning.o q_learning.o basestation.o mobile.o simulation.o
-	${CC} ${CFLAGS} simple_learning.o q_learning.o basestation.o mobile.o simulation.o event_handler.o payloadType.o scheduler.o event.o ${LDFLAGS} -o bin/simulation
-	mv event_handler.o payloadType.o scheduler.o simple_learning.o q_learning.o basestation.o mobile.o simulation.o bin
+all : event.o event_handler.o payloadType.o scheduler.o q_learning.o basestation.o mobile.o simulation.o
+	${CC} ${CFLAGS} q_learning.o basestation.o mobile.o simulation.o event_handler.o payloadType.o scheduler.o event.o ${LDFLAGS} -o bin/simulation
+	mv event_handler.o payloadType.o scheduler.o q_learning.o basestation.o mobile.o simulation.o bin
 	rm -rf *.o
 	
 clean :

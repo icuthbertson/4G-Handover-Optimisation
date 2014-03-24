@@ -11,25 +11,25 @@
 \contentsline {section}{\numberline {2.3}Handover}{8}
 \contentsline {subsection}{\numberline {2.3.1}Parameters}{8}
 \contentsline {subsection}{\numberline {2.3.2}Procedure}{10}
-\contentsline {chapter}{\numberline {3}Machine Learning}{12}
-\contentsline {section}{\numberline {3.1}Reinforcement Learning}{13}
-\contentsline {section}{\numberline {3.2}Q-Learning}{14}
-\contentsline {subsection}{\numberline {3.2.1}Example}{15}
-\contentsline {chapter}{\numberline {4}Simulation Design}{16}
-\contentsline {section}{\numberline {4.1}Simulation Parameters}{16}
-\contentsline {subsection}{\numberline {4.1.1}Propagation Model}{16}
-\contentsline {subsubsection}{\numberline {4.1.1.1}Okumura-Hata Model}{16}
-\contentsline {subsubsection}{\numberline {4.1.1.2}Egli Model}{16}
-\contentsline {subsubsection}{\numberline {4.1.1.3}Cost231-Hata Model}{16}
-\contentsline {subsection}{\numberline {4.1.2}Mobility Model}{17}
-\contentsline {subsubsection}{\numberline {4.1.2.1}Random Direction}{17}
-\contentsline {subsubsection}{\numberline {4.1.2.2}Random Waypoint}{17}
-\contentsline {section}{\numberline {4.2}Simulation Testing}{17}
-\contentsline {chapter}{\numberline {5}Handover Parameter Optimisation}{18}
-\contentsline {section}{\numberline {5.1}Approach}{18}
-\contentsline {section}{\numberline {5.2}Results}{19}
-\contentsline {chapter}{\numberline {6}Future Work}{20}
-\contentsline {chapter}{\numberline {7}Conclusions}{21}
-\contentsline {chapter}{Bibliography}{22}
-\contentsline {chapter}{Appendices}{23}
-\contentsline {chapter}{\numberline {A}System Design and Evaluation}{24}
+\contentsline {chapter}{\numberline {3}Machine Learning}{13}
+\contentsline {section}{\numberline {3.1}Reinforcement Learning}{14}
+\contentsline {section}{\numberline {3.2}Q-Learning}{15}
+\contentsline {subsection}{\numberline {3.2.1}Example}{16}
+\contentsline {chapter}{\numberline {4}Simulation Design}{17}
+\contentsline {section}{\numberline {4.1}Simulation Parameters}{18}
+\contentsline {subsection}{\numberline {4.1.1}Mobility Model}{18}
+\contentsline {subsubsection}{\numberline {4.1.1.1}Random Direction}{18}
+\contentsline {subsubsection}{\numberline {4.1.1.2}Random Waypoint}{18}
+\contentsline {subsection}{\numberline {4.1.2}Propagation Model}{18}
+\contentsline {subsubsection}{\numberline {4.1.2.1}Okumura-Hata Model}{18}
+\contentsline {subsubsection}{\numberline {4.1.2.2}Egli Model}{18}
+\contentsline {subsubsection}{\numberline {4.1.2.3}Cost231-Hata Model}{18}
+\contentsline {section}{\numberline {4.2}Simulation Testing}{18}
+\contentsline {chapter}{\numberline {5}Handover Parameter Optimisation}{19}
+\contentsline {section}{\numberline {5.1}Approach}{19}
+\contentsline {section}{\numberline {5.2}Results}{20}
+\contentsline {chapter}{\numberline {6}Future Work}{21}
+\contentsline {chapter}{\numberline {7}Conclusions}{22}
+\contentsline {chapter}{Bibliography}{23}
+\contentsline {chapter}{Appendices}{24}
+\contentsline {chapter}{\numberline {A}System Design and Evaluation}{25}

@@ -27,20 +27,18 @@ private:
     int y_co;
     double f;
     double hb;
-    bool pingpong;
-    double pingpongTime;
     double tx;
 public:
-    bool connected;
+    bool connected[10];
     basestation(scheduler* gs);
-    basestation(scheduler* gs, int idNum, int x, int y, double freq, double hBase, bool conn);
+    basestation(scheduler* gs, int idNum, int x, int y, double freq, double hBase);
     ~basestation();
     void print();
     int getID();
     int getX();
     int getY();
     double getProp(double d, double hm);
-    void nowServing();
+    void nowServing(int id);
 protected:
 	virtual void handler(const event* received);
 };

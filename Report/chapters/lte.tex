@@ -105,7 +105,7 @@ The TTT is a length of time, defined in seconds, that is used to define how long
 There are 336 different combinations of TTT and hys values. Having such a large range of combinations means that pairs of values can mean that a neighbouring eNodeB has to be better by a large hys but for a small TTT or vice-versa. This makes for an interesting dynamic for which pairs of values will work the best in any given environment.
 
 \subsection{Procedure}\label{procedure}
-In LTE there are eight different triggers defined for initiating handovers within LTE. Table~\ref{tab:trigger} shows different trigger events and how they are defined. 
+In LTE there are eight different triggers defined for initiating handovers within LTE. Table~\ref{tab:trigger} shows different trigger events and how they are defined~\cite{3gpp2012triggers}. 
 
 \begin{table}[H]
   \begin{center}
@@ -136,4 +136,12 @@ RSS_{Neighbouring} + hys > RSS_{Serving}
 Place holder for image of event A3
 
 When a handover event is triggered a measurement report is sent from the UE to the serving eNodeB. The measurement report contains the information required for the serving eNodeB to make a decision on whether to initiate the handover or not. If the handover is triggered the serving eNodeB will signal to the neighbouring eNodeB that is to become the new serving eNodeB. If the serving eNodeB decides not to initiate the handover then no more action is taken until another handover event is triggered.
-~\cite{3gpp2012triggers}
+
+The full, high-level, procedure for a LTE handover is as follows:
+\begin{enumerate}
+	\item If a neighbouring eNodeB is found to be better than the serving eNodeB a measurement report is sent by the UE to the serving eNodeB.
+	\item The serving eNodeB considers the information in the measurement report and decides whether or not a handover should take place.
+	\item If it is decided that a handover should take place then a message is sent to the neighbouring eNodeB to prepare resources for the UE.
+	\item Once the resources are ready for the UE the new serving eNodeB sends a message to the old eNodeB to release the resources it previously had for the UE
+	\item Finally a message is sent to the MME to finalise the handover process.
+\end{enumerate}
