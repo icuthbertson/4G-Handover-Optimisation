@@ -171,15 +171,7 @@ mobile* mobiles[] = {new mobile(gs,0,500,500,0,1),
 				 	 new mobile(gs,9,500,500,0,1)};
 
 
-q_learning* q[] = {new q_learning(gs,0,TTTindex[0],hysindex[0]),
-				   new q_learning(gs,1,TTTindex[1],hysindex[1]),
-				   new q_learning(gs,2,TTTindex[2],hysindex[2]),
-				   new q_learning(gs,3,TTTindex[3],hysindex[3]),
-				   new q_learning(gs,4,TTTindex[4],hysindex[4]),
-				   new q_learning(gs,5,TTTindex[5],hysindex[5]),
-				   new q_learning(gs,6,TTTindex[6],hysindex[6]),
-				   new q_learning(gs,7,TTTindex[7],hysindex[7]),
-				   new q_learning(gs,8,TTTindex[8],hysindex[8])};
+q_learning* q[NUM_BASESTATION];
 
 std::vector<double> handover_total[] = {std::vector<double>(),
     								 	std::vector<double>(),
@@ -299,6 +291,16 @@ int main() {
 		}
 		function = 4;
 	}
+
+	q[0] = new q_learning(gs,0,TTTindex[0],hysindex[0]);
+	q[1] = new q_learning(gs,1,TTTindex[1],hysindex[1]);
+	q[2] = new q_learning(gs,2,TTTindex[2],hysindex[2]);
+	q[3] = new q_learning(gs,3,TTTindex[3],hysindex[3]);
+	q[4] = new q_learning(gs,4,TTTindex[4],hysindex[4]);
+	q[5] = new q_learning(gs,5,TTTindex[5],hysindex[5]);
+	q[6] = new q_learning(gs,6,TTTindex[6],hysindex[6]);
+	q[7] = new q_learning(gs,7,TTTindex[7],hysindex[7]);
+	q[8] = new q_learning(gs,8,TTTindex[8],hysindex[8]);
 
 	gs->start();
 

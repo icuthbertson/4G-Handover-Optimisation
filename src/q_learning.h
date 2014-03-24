@@ -2,6 +2,7 @@
 #define _Q_LEARNING_H_
 
 #include "event_handler.h"
+#include <string>
 
 #define ALPHA 0.9 //learning rate / step size
 #define GAMMA 0.5 //how much possible future rewards matter
@@ -18,6 +19,8 @@ private:
 	int action;
 	bool firstPass;
 	bool allActions;
+	std::string qString;
+	std::string policyString;
 	double maxQ(int state);
 	double getQ(int state, int action);
 	void updateQ(int state, int action, double q);

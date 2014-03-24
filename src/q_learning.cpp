@@ -3,15 +3,24 @@
 #include "event_definitions.h"
 #include <random>
 #include <fstream>
+#include <iostream>
+#include <sstream>
 
 q_learning::q_learning(scheduler* gs, int id, int TTT, int hys) : event_handler(gs) {
 	this->id = id;
 	int startState = (TTT*21)+hys;
 	printf("Start State: %d\n",startState);
 
+	std::stringstream sstmq;
+	sstmq << "q_arrays/q" << id << ".txt";
+	qString = sstmq.str();
+
+	std::stringstream sstmp;
+	sstmp << "policy/policy" << id << ".txt";
+	policyString = sstmp.str();
 
 	double q = 0.0;
-	std::ifstream qFile ("q.txt");
+	std::ifstream qFile (qString);
 
 	if(qFile.is_open()) {
 		for(int i=0; i<NUMSTATES; i++) {
@@ -33,8 +42,7 @@ q_learning::q_learning(scheduler* gs, int id, int TTT, int hys) : event_handler(
 	if(function == 1) {
 		send_delay(new event(LEARN),180);
 	} else if(function == 2) { //for using policy
-		std::cout << "here";
-		std::ifstream pFile ("policy.txt");
+		std::ifstream pFile (policyString);
 
 		if(pFile.is_open()) {
 			for(int i=0; i<NUMSTATES; i++) {
@@ -236,7 +244,7 @@ void q_learning::print() {
 	printPolicy();
 
 	//print Q to file
-	std::ofstream qFile ("q.txt");
+	std::ofstream qFile (qString);
 	if (qFile.is_open()) {
 		for(int i=0; i<NUMSTATES; i++) {
 			for(int j=0; j<NUMSTATES; j++) {
@@ -268,7 +276,7 @@ int q_learning::policy(int current) {
 }
 
 void q_learning::printPolicy() {
-	std::ofstream pFile ("policy.txt");
+	std::ofstream pFile (policyString);
 
 	if(pFile.is_open()) {
     	for (int i=0; i < NUMSTATES; i++) {

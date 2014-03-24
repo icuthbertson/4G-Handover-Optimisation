@@ -295,7 +295,7 @@ double mobile::getHeight() {
  */
 void mobile::moveRandom() {
 	angle = rand()%360; //0 to 359 degrees
-	speed = (rand()%4)+2; //1 to 4 m/s
+	speed = (rand()%3)+1; //1 to 4 m/s
 	duration = (rand()%100)+100; //100 to 200s
 	
 	double deltaX = duration*speed*sin(angle*PI/180);
