@@ -232,6 +232,8 @@ void q_learning::changeState() {
 
 	changeTTThys();
 	current_state = next_state;
+
+	stateChanges[id].push_back(current_state);
 }
 
 void q_learning::print() {

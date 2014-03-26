@@ -5,6 +5,8 @@
 \contentsline {chapter}{List of Figures}{3}
 \contentsline {chapter}{List of Tables}{4}
 \contentsline {chapter}{\numberline {1}Introduction}{5}
+\contentsline {section}{\numberline {1.1}Project Objectives}{5}
+\contentsline {section}{\numberline {1.2}Related Work}{5}
 \contentsline {chapter}{\numberline {2}LTE}{6}
 \contentsline {section}{\numberline {2.1}Network Structure}{6}
 \contentsline {section}{\numberline {2.2}Self-Organising Network}{7}
@@ -16,20 +18,15 @@
 \contentsline {section}{\numberline {3.2}Q-Learning}{15}
 \contentsline {subsection}{\numberline {3.2.1}Example}{16}
 \contentsline {chapter}{\numberline {4}Simulation Design}{17}
-\contentsline {section}{\numberline {4.1}Simulation Parameters}{18}
-\contentsline {subsection}{\numberline {4.1.1}Mobility Model}{18}
-\contentsline {subsubsection}{\numberline {4.1.1.1}Random Direction}{18}
-\contentsline {subsubsection}{\numberline {4.1.1.2}Random Waypoint}{18}
-\contentsline {subsection}{\numberline {4.1.2}Propagation Model}{18}
-\contentsline {subsubsection}{\numberline {4.1.2.1}Okumura-Hata Model}{18}
-\contentsline {subsubsection}{\numberline {4.1.2.2}Egli Model}{18}
-\contentsline {subsubsection}{\numberline {4.1.2.3}Cost231-Hata Model}{18}
-\contentsline {section}{\numberline {4.2}Simulation Testing}{18}
-\contentsline {chapter}{\numberline {5}Handover Parameter Optimisation}{19}
-\contentsline {section}{\numberline {5.1}Approach}{19}
-\contentsline {section}{\numberline {5.2}Results}{20}
-\contentsline {chapter}{\numberline {6}Future Work}{21}
-\contentsline {chapter}{\numberline {7}Conclusions}{22}
-\contentsline {chapter}{Bibliography}{23}
-\contentsline {chapter}{Appendices}{24}
-\contentsline {chapter}{\numberline {A}System Design and Evaluation}{25}
+\contentsline {section}{\numberline {4.1}Discrete Event Simulation}{17}
+\contentsline {section}{\numberline {4.2}Mobility Model}{18}
+\contentsline {section}{\numberline {4.3}Propagation Model}{19}
+\contentsline {section}{\numberline {4.4}Simulation Testing}{21}
+\contentsline {chapter}{\numberline {5}Handover Parameter Optimisation}{22}
+\contentsline {section}{\numberline {5.1}Approach}{22}
+\contentsline {section}{\numberline {5.2}Results}{23}
+\contentsline {chapter}{\numberline {6}Future Work}{24}
+\contentsline {chapter}{\numberline {7}Conclusions}{25}
+\contentsline {chapter}{Bibliography}{26}
+\contentsline {chapter}{Appendices}{28}
+\contentsline {chapter}{\numberline {A}System Design and Evaluation}{29}

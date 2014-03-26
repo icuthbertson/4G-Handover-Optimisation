@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.10.9)  23 MAR 2014 22:43
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.10.9)  26 MAR 2014 00:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -435,7 +435,7 @@ although it is yet undefined on input line 32.
 Package acronym Info: Label `acro:dB' newly defined as it shall be overridden
 although it is yet undefined on input line 32.
  [8]
-[9] <figures/TTTgraph.jpg, id=55, 678.535pt x 340.27126pt>
+[9] <figures/TTTgraph.jpg, id=56, 678.535pt x 340.27126pt>
 File: figures/TTTgraph.jpg Graphic file (type jpg)
 
 <use figures/TTTgraph.jpg>
@@ -466,38 +466,44 @@ Package pdftex.def Info: figures/q-learning.jpg used on input line 59.
 (pdftex.def)             Requested size: 206.28249pt x 179.21916pt.
 ) (./chapters/simulation.tex [16 <./figures/q-learning.jpg>]
 Chapter 4.
+Package acronym Info: Label `acro:DES' newly defined as it shall be overridden
+although it is yet undefined on input line 8.
 [17
 
-]) (./chapters/hand_opt.tex [18]
+] [18]
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no ™ in font cmr12!
+ [19] [20]) (./chapters/hand_opt.tex [21]
 Chapter 5.
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ™ in font cmr12!
-[19
+[22
 
-]) (./chapters/future.tex [20]
+]) (./chapters/future.tex [23]
 Chapter 6.
-) (./chapters/conclusion.tex [21
+) (./chapters/conclusion.tex [24
 
 ]
 Chapter 7.
-) [22
+) [25
 
-] (./Report.bbl) [23
+] (./Report.bbl [26
 
-] [24
+]) [27] [28
 
 
 ]
 Appendix A.
-[25
+[29
 
 ] (./Report.aux) ) 
 Here is how much of TeX's memory you used:
- 5174 strings out of 493315
- 72581 string characters out of 6137904
+ 5193 strings out of 493315
+ 72827 string characters out of 6137904
  157414 words of memory out of 5000000
- 8493 multiletter control sequences out of 15000+600000
+ 8512 multiletter control sequences out of 15000+600000
  11180 words of font info for 40 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  38i,11n,58p,1366b,278s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -514,10 +520,10 @@ mr17.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
 pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pf
 b></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb
 >
-Output written on Report.pdf (31 pages, 386932 bytes).
+Output written on Report.pdf (35 pages, 396453 bytes).
 PDF statistics:
- 155 PDF objects out of 1000 (max. 8388607)
- 106 compressed objects within 2 object streams
+ 167 PDF objects out of 1000 (max. 8388607)
+ 114 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

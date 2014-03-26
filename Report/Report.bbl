@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{cox2012introduction}
 C.~Cox, {\em An introduction to LTE: LTE, LTE-advanced, SAE and 4G mobile
@@ -41,5 +41,20 @@ A.~G. Barto and R.~S. Sutton, {\em Reinforcement learning: An introduction}.
 D.~L. Poole and A.~K. Mackworth, {\em Artificial Intelligence: Foundations of
   Computational Agents}.
 \newblock Cambridge University Press, 2010.
+
+\bibitem{roy2010handbook}
+R.~Roy, {\em Handbook of Mobile Ad Hoc Networks for Mobility Models}.
+\newblock Springer, 2010.
+
+\bibitem{chebil2011comparison}
+J.~Chebil, A.~K. Lwas, M.~R. Islam, and A.~Zyoud, ``Comparison of empirical
+  propagation path loss models for mobile communications in the suburban area
+  of kuala lumpur,'' in {\em Mechatronics (ICOM), 2011 4th International
+  Conference On}, pp.~1--5, IEEE, 2011.
+
+\bibitem{shabbir2011comparison}
+N.~Shabbir, M.~T. Sadiq, H.~Kashif, and R.~Ullah, ``Comparison of radio
+  propagation models for long term evolution (lte) network.,'' {\em
+  International Journal of Next-Generation Networks}, vol.~3, no.~3, 2011.
 
 \end{thebibliography}

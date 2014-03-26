@@ -13,6 +13,8 @@
 #include <iostream>
 #include <random>
 #include <fstream>
+#include <string>
+#include <sstream>
 
 /* Method
  ****************************
@@ -30,24 +32,24 @@ scheduler* gs = new scheduler();
 double TTTArray[16];
 double hysArray[21];
 
-int TTTindex[] = {7,
-			  	  7,
-			  	  7,
-			  	  7,
-			  	  7,
-			  	  7,
-			  	  7,
-			  	  7,
-			  	  7};
-int hysindex[] = {10,
-			  	  10,
-			  	  10,
-			  	  10,
-			  	  10,
-			  	  10,
-			  	  10,
-			  	  10,
-			  	  10};
+int TTTindex[] = {3,
+			  	  3,
+			  	  3,
+			  	  3,
+			  	  3,
+			  	  3,
+			  	  3,
+			  	  3,
+			  	  3};
+int hysindex[] = {15,
+			  	  15,
+			  	  15,
+			  	  15,
+			  	  15,
+			  	  15,
+			  	  15,
+			  	  15,
+			  	  15};
 
 int TTTmaxindex;
 int hysmaxindex;
@@ -203,6 +205,21 @@ std::vector<double> pingpong_total[] = {std::vector<double>(),
     								 	std::vector<double>(),
     								 	std::vector<double>()};
 
+std::vector<int> stateChanges[] = {std::vector<int>(),
+    							   std::vector<int>(),
+    							   std::vector<int>(),
+    							   std::vector<int>(),
+    							   std::vector<int>(),
+    							   std::vector<int>(),
+    							   std::vector<int>(),
+    							   std::vector<int>(),
+    							   std::vector<int>()};
+
+std::string handoverString;
+std::string dropString;
+std::string pingString;
+std::string stateString;
+
 int main() {
 	srand(time(0));
 
@@ -282,12 +299,14 @@ int main() {
 		std::cin >> tempTTTindex;
 		for(int j=0; j<NUM_BASESTATION; j++) {
 			TTT[j] = TTTArray[tempTTTindex];
+			TTTindex[j] = tempTTTindex;
 		}
 		printf("Enter index for hys\n");
 		int temphysindex;
 		std::cin >> temphysindex;
 		for(int k=0; k<NUM_BASESTATION; k++) {
 			hys[k] = hysArray[temphysindex];
+			hysindex[k] = temphysindex;
 		}
 		function = 4;
 	}
@@ -309,30 +328,58 @@ int main() {
 		bStations[l]->print();
 		q[l]->print();
 	}
-	
-	// std::ofstream hFile ("results/fading/mid/handover.txt");
-	// if(hFile.is_open()) {
-	// 	for (std::vector<double>::iterator it = handover_total.begin() ; it != handover_total.end(); it++) {
- //    	    hFile << *it << "\n";
- //    	}    
- //    } 
- //    hFile.close();  
 
- //    std::ofstream dFile ("results/fading/mid/drop.txt");
-	// if(dFile.is_open()) {
-	// 	for (std::vector<double>::iterator it = drop_total.begin() ; it != drop_total.end(); it++) {
- //    	    dFile << *it << "\n";
- //    	}    
- //    } 
- //    dFile.close();    
+	for(int m=0; m<NUM_BASESTATION; m++) {
+		std::stringstream hString;
+		hString << "results/prop/opthighhys/basestation" << m << "/handover.txt";
+		handoverString = hString.str();
 
- //    std::ofstream pFile ("results/fading/mid/ping.txt");
-	// if(pFile.is_open()) {
-	// 	for (std::vector<double>::iterator it = pingpong_total.begin() ; it != pingpong_total.end(); it++) {
- //    	    pFile << *it << "\n";
- //    	}    
- //    } 
- //    pFile.close();    
+		std::stringstream dString;
+		dString<< "results/prop/opthighhys/basestation" << m << "/drop.txt";
+		dropString = dString.str();
+
+		std::stringstream pString;
+		pString << "results/prop/opthighhys/basestation" << m << "/ping.txt";
+		pingString = pString.str();
+
+		std::stringstream sString;
+		sString << "results/prop/opthighhys/basestation" << m << "/state.txt";
+		stateString = sString.str();
+
+
+
+		std::ofstream hFile (handoverString);
+		if(hFile.is_open()) {
+			for (std::vector<double>::iterator it=handover_total[m].begin() ; it!=handover_total[m].end(); it++) {
+    		    hFile << *it << "\n";
+    		}    
+    	} 
+    	hFile.close();  
+
+    	std::ofstream dFile (dropString);
+		if(dFile.is_open()) {
+			for (std::vector<double>::iterator it=drop_total[m].begin() ; it!=drop_total[m].end(); it++) {
+    		    dFile << *it << "\n";
+    		}    
+    	} 
+    	dFile.close();    
+
+    	std::ofstream pFile (pingString);
+		if(pFile.is_open()) {
+			for (std::vector<double>::iterator it=pingpong_total[m].begin() ; it!=pingpong_total[m].end(); it++) {
+    		    pFile << *it << "\n";
+    		}    
+    	} 
+    	pFile.close();    
+
+    	std::ofstream sFile (stateString);
+		if(sFile.is_open()) {
+			for (std::vector<int>::iterator it=stateChanges[m].begin() ; it!=stateChanges[m].end(); it++) {
+    		    sFile << *it << "\n";
+    		}    
+    	} 
+    	sFile.close();  
+    } 
 
 	printf("end...\n");
 

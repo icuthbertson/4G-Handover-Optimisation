@@ -153,7 +153,7 @@ void mobile::handler(const event* received)
 			// program should not reach here
 			break;
 	} // end switch statement
-	if(simTime[id] > 10000) {
+	if(simTime[id] > 100000) {
 		// learning->print();
 		globalScheduler->stop();
 	}
