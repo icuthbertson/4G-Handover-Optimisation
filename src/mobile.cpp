@@ -153,7 +153,7 @@ void mobile::handler(const event* received)
 			// program should not reach here
 			break;
 	} // end switch statement
-	if(simTime[id] > 100000) {
+	if(simTime[id] > 1000000) {
 		// learning->print();
 		globalScheduler->stop();
 	}
@@ -295,7 +295,7 @@ double mobile::getHeight() {
  */
 void mobile::moveRandom() {
 	angle = rand()%360; //0 to 359 degrees
-	speed = (rand()%3)+1; //1 to 4 m/s
+	speed = (rand()%10)+5; //10 to 15 m/s simulation car moving at roughly 30 miles per hour
 	duration = (rand()%100)+100; //100 to 200s
 	
 	double deltaX = duration*speed*sin(angle*PI/180);
