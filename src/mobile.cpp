@@ -153,7 +153,7 @@ void mobile::handler(const event* received)
 			// program should not reach here
 			break;
 	} // end switch statement
-	if(simTime[id] > 100000) {
+	if(simTime[id] > 1000000) {
 		// learning->print();
 		globalScheduler->stop();
 	}
@@ -212,7 +212,7 @@ void mobile::switchBasestation(int newBasestation) {
 void mobile::moveMobile() {
 	simTime[this->id] += STEPTIME;
 	if(duration>0) {
-		if((x_co+(minusX*speed*STEPTIME*sin(angle*PI/180)))>6000) {
+		if((x_co+(minusX*speed*STEPTIME*sin(angle*PI/180)))>4000) {
 			minusX = -1;
 		} else if((x_co+(minusX*speed*STEPTIME*sin(angle*PI/180)))<0) {
 			minusX = -1;
@@ -220,7 +220,7 @@ void mobile::moveMobile() {
 			x_co = x_co+(minusX*speed*STEPTIME*sin(angle*PI/180));
 		}
 		if(wall==0) { 
-			if((y_co+(minusY*speed*STEPTIME*cos(angle*PI/180)))>6000) {
+			if((y_co+(minusY*speed*STEPTIME*cos(angle*PI/180)))>4000) {
 				minusY = -1;
 			} else if((y_co+(minusY*speed*STEPTIME*cos(angle*PI/180)))<0) {
 				minusY = -1;
@@ -418,43 +418,43 @@ void mobile::checkProp(int id) {
 // 			y_co = 500.0;
 // 			break;
 // 		case 1:
-// 			x_co = 3000.0;
+// 			x_co = 2000.0;
 // 			y_co = 0.0;
 // 			break;
 // 		case 2:
-// 			x_co = 5500.0;
+// 			x_co = 3500.0;
 // 			y_co = 500.0;
 // 			break;
 // 		case 3:
 // 			x_co = 0.0;
-// 			y_co = 3000.0;
+// 			y_co = 2000.0;
 // 			break;
 // 		case 4:
-// 			x_co = 3000.0;
-// 			y_co = 3000.0;
+// 			x_co = 2000.0;
+// 			y_co = 2000.0;
 // 			break;
 // 		case 5:
-// 			x_co = 6000.0;
-// 			y_co = 3000.0;
+// 			x_co = 4000.0;
+// 			y_co = 2000.0;
 // 			break;
 // 		case 6:
 // 			x_co = 500.0;
-// 			y_co = 5500.0;
+// 			y_co = 3500.0;
 // 			break;
 // 		case 7:
-// 			x_co = 3000.0;
-// 			y_co = 6000.0;
+// 			x_co = 2000.0;
+// 			y_co = 4000.0;
 // 			break;
 // 		case 8:
-// 			x_co = 5500.0;
-// 			y_co = 5500.0;
+// 			x_co = 3500.0;
+// 			y_co = 3500.0;
 // 			break;
 // 		default:
 // 			// program should not reach here
 // 			break;
 // 	}
 
-// 	bStations[connected]->nowServing();
+// 	bStations[connected]->nowServing(this->id);
 // }
 
 void mobile::resetMobile() {

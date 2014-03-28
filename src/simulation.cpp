@@ -152,24 +152,24 @@ int function;
 // 							new basestation(gs,9,6000,8000,2000,60,false)};
 
 basestation* bStations[] = {new basestation(gs,0,500,500,2000,60),
-							new basestation(gs,1,3000,0,2000,60),
-							new basestation(gs,2,5500,500,2000,60),
-							new basestation(gs,3,0,3000,2000,60),
-							new basestation(gs,4,3000,3000,2000,60),
-							new basestation(gs,5,6000,3000,2000,60),
-							new basestation(gs,6,500,5500,2000,60),
-							new basestation(gs,7,3000,6000,2000,60),
-							new basestation(gs,8,5500,5500,2000,60)};
+							new basestation(gs,1,2000,0,2000,60),
+							new basestation(gs,2,3500,500,2000,60),
+							new basestation(gs,3,0,2000,2000,60),
+							new basestation(gs,4,2000,2000,2000,60),
+							new basestation(gs,5,4000,2000,2000,60),
+							new basestation(gs,6,500,3500,2000,60),
+							new basestation(gs,7,2000,4000,2000,60),
+							new basestation(gs,8,3500,3500,2000,60)};
 
 mobile* mobiles[] = {new mobile(gs,0,500,500,0,1),
-				 	 new mobile(gs,1,3000,0,1,1),
-				 	 new mobile(gs,2,5500,500,2,1),
-				 	 new mobile(gs,3,0,3000,3,1),
-				 	 new mobile(gs,4,3000,3000,4,1),
-				 	 new mobile(gs,5,6000,3000,5,1),
-				 	 new mobile(gs,6,500,5500,6,1),
-				 	 new mobile(gs,7,3000,6000,7,1),
-				 	 new mobile(gs,8,5500,5500,8,1),
+				 	 new mobile(gs,1,2000,0,1,1),
+				 	 new mobile(gs,2,3500,500,2,1),
+				 	 new mobile(gs,3,0,2000,3,1),
+				 	 new mobile(gs,4,2000,2000,4,1),
+				 	 new mobile(gs,5,4000,2000,5,1),
+				 	 new mobile(gs,6,500,3500,6,1),
+				 	 new mobile(gs,7,2000,4000,7,1),
+				 	 new mobile(gs,8,3500,3500,8,1),
 				 	 new mobile(gs,9,500,500,0,1)};
 
 
@@ -331,19 +331,19 @@ int main() {
 
 	for(int m=0; m<NUM_BASESTATION; m++) {
 		std::stringstream hString;
-		hString << "results/prop/opthighhys/basestation" << m << "/handover.txt";
+		hString << "results/fading/opthighhys/basestation" << m << "/handover.txt";
 		handoverString = hString.str();
 
 		std::stringstream dString;
-		dString<< "results/prop/opthighhys/basestation" << m << "/drop.txt";
+		dString<< "results/fading/opthighhys/basestation" << m << "/drop.txt";
 		dropString = dString.str();
 
 		std::stringstream pString;
-		pString << "results/prop/opthighhys/basestation" << m << "/ping.txt";
+		pString << "results/fading/opthighhys/basestation" << m << "/ping.txt";
 		pingString = pString.str();
 
 		std::stringstream sString;
-		sString << "results/prop/opthighhys/basestation" << m << "/state.txt";
+		sString << "results/fading/opthighhys/basestation" << m << "/state.txt";
 		stateString = sString.str();
 
 

@@ -8,7 +8,7 @@
 #include <random>
 
 std::default_random_engine generator;
-//std::normal_distribution<double> distribution(0.0,2.0);
+std::normal_distribution<double> distribution(0.0,3.0);
 
 /* Constructor
  ****************************
@@ -217,11 +217,11 @@ double basestation::getProp(double d, double hm) {
 	
 	// double fading = ((rand()%70)-35)/10;
 
-	//double fading = 0.0;
+	double fading = 0.0;
 
-	//fading = distribution(generator);
+	fading = distribution(generator);
 
-	return (tx-prop/*+fading*/);
+	return (tx-prop+fading);
 }
 
 void basestation::nowServing(int id) {
