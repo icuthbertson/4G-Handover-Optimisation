@@ -10,7 +10,7 @@
 
 /* Constructor
  ****************************
- * Return Type: N/A 
+ * Return Type: N/A
  ****************************
  * Parameters Passed in: N/A
  ****************************
@@ -45,12 +45,12 @@ mobile::mobile(scheduler* gs) : event_handler(gs) {
 }
 /* Constructor
  ****************************
- * Return Type: N/A 
+ * Return Type: N/A
  ****************************
- * Parameters Passed in: 
+ * Parameters Passed in:
  * int idNum
  * int x
- * int y 
+ * int y
  * double r
  * int con
  ****************************
@@ -82,7 +82,7 @@ mobile::mobile(scheduler* gs, int num, int x, int y, int con, double height) : e
 }
 /* Destructor
  ****************************
- * Return Type: N/A 
+ * Return Type: N/A
  ****************************
  * Parameters Passed in: N/A
  ****************************
@@ -95,7 +95,7 @@ mobile::~mobile() {
 }
 /* Method
  ****************************
- * Return Type: N/A 
+ * Return Type: N/A
  ****************************
  * Parameters Passed in:
  * const event* received
@@ -153,7 +153,7 @@ void mobile::handler(const event* received)
 			// program should not reach here
 			break;
 	} // end switch statement
-	if(simTime[id] > 100000) {
+	if(simTime[id] > 200000) {
 		// learning->print();
 		globalScheduler->stop();
 	}
@@ -162,7 +162,7 @@ void mobile::handler(const event* received)
 /* Method
  ****************************
  * Return Type: void
- **************************** 
+ ****************************
  * Parameters Passed in: N/A
  ****************************
  * Description: Method that does a formetted print out of all the
@@ -175,7 +175,7 @@ void mobile::print() {
 /* Method
  ****************************
  * Return Type: void
- **************************** 
+ ****************************
  * Parameters Passed in: N/A
  ****************************
  * Description: Method that does a formetted print out of the
@@ -219,7 +219,7 @@ void mobile::moveMobile() {
 		} else {
 			x_co = x_co+(minusX*speed*STEPTIME*sin(angle*PI/180));
 		}
-		if(wall==0) { 
+		if(wall==0) {
 			if((y_co+(minusY*speed*STEPTIME*cos(angle*PI/180)))>6000) {
 				minusY = -1;
 			} else if((y_co+(minusY*speed*STEPTIME*cos(angle*PI/180)))<0) {
@@ -243,7 +243,7 @@ void mobile::moveMobile() {
  ****************************
  * Return Type: double
  ****************************
- * Parameters Passed in: N/A 
+ * Parameters Passed in: N/A
  ****************************
  * Description: Method that returns the value of the y co-ordinate.
  */
@@ -254,7 +254,7 @@ double mobile::getX() {
  ****************************
  * Return Type: double
  ****************************
- * Parameters Passed in: N/A 
+ * Parameters Passed in: N/A
  ****************************
  * Description: Method that returns the value of the y co-ordinate.
  */
@@ -265,7 +265,7 @@ double mobile::getY() {
  ****************************
  * Return Type: int
  ****************************
- * Parameters Passed in: N/A 
+ * Parameters Passed in: N/A
  ****************************
  * Description: Method that returns the id of the mobile that
  * the mobile is currently connected to.
@@ -277,7 +277,7 @@ int mobile::getConnectedTo() {
  ****************************
  * Return Type: double
  ****************************
- * Parameters Passed in: N/A 
+ * Parameters Passed in: N/A
  ****************************
  * Description: Method that returns the height of the mobile.
  */
@@ -288,7 +288,7 @@ double mobile::getHeight() {
  ****************************
  * Return Type: int
  ****************************
- * Parameters Passed in: N/A 
+ * Parameters Passed in: N/A
  ****************************
  * Description: Method that returns a number that will define the
  * random movement the mobile will make.
@@ -297,7 +297,7 @@ void mobile::moveRandom() {
 	angle = rand()%360; //0 to 359 degrees
 	speed = (rand()%3)+1; //1 to 4 m/s
 	duration = (rand()%100)+100; //100 to 200s
-	
+
 	double deltaX = duration*speed*sin(angle*PI/180);
 	double deltaY = duration*speed*cos(angle*PI/180);
 	fprintf(stderr, "\nSim Time: %f - ID %d - X_Co:%f Y_Co:%f deltaX:%f deltaY:%f\nspeed:%f duration:%f\n",simTime[id],id,x_co,y_co,deltaX,deltaY,speed,duration);
@@ -319,12 +319,12 @@ void mobile::checkProp(int id) {
 			if(function == 2) {//runnning policy
 				send_now(new event(POLICY,q[connected]));
 			}
-			
+
 			for(int l=0; l<NUM_BASESTATION; l++) {
 				globalScheduler->remove_to(bStations[l]);
 			}
 			handingOver[this->id] = false;
-			
+
 			//reset mobile
 			bStations[connected]->connected[this->id] = false;
 			resetMobile();

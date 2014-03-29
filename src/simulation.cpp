@@ -331,19 +331,19 @@ int main() {
 
 	for(int m=0; m<NUM_BASESTATION; m++) {
 		std::stringstream hString;
-		hString << "results/prop/opthighhys/basestation" << m << "/handover.txt";
+		hString << "results/longer/highhys/basestation" << m << "/handover.txt";
 		handoverString = hString.str();
 
 		std::stringstream dString;
-		dString<< "results/prop/opthighhys/basestation" << m << "/drop.txt";
+		dString<< "results/longer/highhys/basestation" << m << "/drop.txt";
 		dropString = dString.str();
 
 		std::stringstream pString;
-		pString << "results/prop/opthighhys/basestation" << m << "/ping.txt";
+		pString << "results/longer/highhys/basestation" << m << "/ping.txt";
 		pingString = pString.str();
 
 		std::stringstream sString;
-		sString << "results/prop/opthighhys/basestation" << m << "/state.txt";
+		sString << "results/longer/highhys/basestation" << m << "/state.txt";
 		stateString = sString.str();
 
 
@@ -352,34 +352,34 @@ int main() {
 		if(hFile.is_open()) {
 			for (std::vector<double>::iterator it=handover_total[m].begin() ; it!=handover_total[m].end(); it++) {
     		    hFile << *it << "\n";
-    		}    
-    	} 
-    	hFile.close();  
+    		}
+    	}
+    	hFile.close();
 
     	std::ofstream dFile (dropString);
 		if(dFile.is_open()) {
 			for (std::vector<double>::iterator it=drop_total[m].begin() ; it!=drop_total[m].end(); it++) {
     		    dFile << *it << "\n";
-    		}    
-    	} 
-    	dFile.close();    
+    		}
+    	}
+    	dFile.close();
 
     	std::ofstream pFile (pingString);
 		if(pFile.is_open()) {
 			for (std::vector<double>::iterator it=pingpong_total[m].begin() ; it!=pingpong_total[m].end(); it++) {
     		    pFile << *it << "\n";
-    		}    
-    	} 
-    	pFile.close();    
+    		}
+    	}
+    	pFile.close();
 
     	std::ofstream sFile (stateString);
 		if(sFile.is_open()) {
 			for (std::vector<int>::iterator it=stateChanges[m].begin() ; it!=stateChanges[m].end(); it++) {
     		    sFile << *it << "\n";
-    		}    
-    	} 
-    	sFile.close();  
-    } 
+    		}
+    	}
+    	sFile.close();
+    }
 
 	printf("end...\n");
 
