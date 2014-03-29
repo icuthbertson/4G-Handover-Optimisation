@@ -33,23 +33,23 @@ double TTTArray[16];
 double hysArray[21];
 
 int TTTindex[] = {3,
-			  	  3,
-			  	  3,
-			  	  3,
-			  	  3,
-			  	  3,
-			  	  3,
-			  	  3,
-			  	  3};
+			      3,
+			      3,
+			      3,
+			      3,
+			      3,
+			      3,
+			      3,
+			      3};
 int hysindex[] = {15,
-			  	  15,
-			  	  15,
-			  	  15,
-			  	  15,
-			  	  15,
-			  	  15,
-			  	  15,
-			  	  15};
+			  	15,
+			  	15,
+			  	15,
+			  	15,
+			  	15,
+			  	15,
+			  	15,
+			  	15};
 
 int TTTmaxindex;
 int hysmaxindex;
@@ -79,51 +79,51 @@ int drop[] = {0,
 			  0,
 			  0};
 int pingpongCount[] = {0,
-			  		   0,
-			  		   0,
-			  		   0,
-			  		   0,
-			  		   0,
-			  		   0,
-			  		   0,
-			  		   0};
+			  		 0,
+			  		 0,
+			  		 0,
+			  		 0,
+			  		 0,
+			  		 0,
+			  		 0,
+			  		 0};
 int handovers[] = {0,
-			  	   0,
-			  	   0,
-			  	   0,
-			  	   0,
-			  	   0,
-			  	   0,
-			  	   0,
-			  	   0};
+			  	 0,
+			  	 0,
+			  	 0,
+			  	 0,
+			  	 0,
+			  	 0,
+			  	 0,
+			  	 0};
 
 int rewardDrop[] = {0,
-			  	    0,
-			  	    0,
-			  	    0,
-			  	    0,
-			  	    0,
-			  	    0,
-			  	    0,
-			  	    0};
+			  	  0,
+			  	  0,
+			  	  0,
+			  	  0,
+			  	  0,
+			  	  0,
+			  	  0,
+			  	  0};
 int rewardPing[] = {0,
-			  	    0,
-			  	    0,
-			  	    0,
-			  	    0,
-			  	    0,
-			  	    0,
-			  	    0,
-			  	    0};
+			  	  0,
+			  	  0,
+			  	  0,
+			  	  0,
+			  	  0,
+			  	  0,
+			  	  0,
+			  	  0};
 int rewardHandover[] = {0,
-			  	        0,
-			  	        0,
-			  	        0,
-			  	        0,
-			  	        0,
-			  	        0,
-			  	        0,
-			  	        0};
+			  	      0,
+			  	      0,
+			  	      0,
+			  	      0,
+			  	      0,
+			  	      0,
+			  	      0,
+			  	      0};
 
 int previous_id = 0;
 
@@ -162,28 +162,28 @@ basestation* bStations[] = {new basestation(gs,0,500,500,2000,60),
 							new basestation(gs,8,5500,5500,2000,60)};
 
 mobile* mobiles[] = {new mobile(gs,0,500,500,0,1),
-				 	 new mobile(gs,1,3000,0,1,1),
-				 	 new mobile(gs,2,5500,500,2,1),
-				 	 new mobile(gs,3,0,3000,3,1),
-				 	 new mobile(gs,4,3000,3000,4,1),
-				 	 new mobile(gs,5,6000,3000,5,1),
-				 	 new mobile(gs,6,500,5500,6,1),
-				 	 new mobile(gs,7,3000,6000,7,1),
-				 	 new mobile(gs,8,5500,5500,8,1),
-				 	 new mobile(gs,9,500,500,0,1)};
+				 	new mobile(gs,1,3000,0,1,1),
+				 	new mobile(gs,2,5500,500,2,1),
+				 	new mobile(gs,3,0,3000,3,1),
+				 	new mobile(gs,4,3000,3000,4,1),
+				 	new mobile(gs,5,6000,3000,5,1),
+				 	new mobile(gs,6,500,5500,6,1),
+				 	new mobile(gs,7,3000,6000,7,1),
+				 	new mobile(gs,8,5500,5500,8,1),
+				 	new mobile(gs,9,500,500,0,1)};
 
 
 q_learning* q[NUM_BASESTATION];
 
 std::vector<double> handover_total[] = {std::vector<double>(),
-    								 	std::vector<double>(),
-    								 	std::vector<double>(),
-    								 	std::vector<double>(),
-    								 	std::vector<double>(),
-    								 	std::vector<double>(),
-    								 	std::vector<double>(),
-    								 	std::vector<double>(),
-    								 	std::vector<double>()};
+    								    std::vector<double>(),
+    								    std::vector<double>(),
+    								    std::vector<double>(),
+    								    std::vector<double>(),
+    								    std::vector<double>(),
+    								    std::vector<double>(),
+    								    std::vector<double>(),
+    								    std::vector<double>()};
 
 std::vector<double> drop_total[] = {std::vector<double>(),
     								std::vector<double>(),
@@ -196,14 +196,14 @@ std::vector<double> drop_total[] = {std::vector<double>(),
     								std::vector<double>()};
 
 std::vector<double> pingpong_total[] = {std::vector<double>(),
-    								 	std::vector<double>(),
-    								 	std::vector<double>(),
-    								 	std::vector<double>(),
-    								 	std::vector<double>(),
-    								 	std::vector<double>(),
-    								 	std::vector<double>(),
-    								 	std::vector<double>(),
-    								 	std::vector<double>()};
+    								    std::vector<double>(),
+    								    std::vector<double>(),
+    								    std::vector<double>(),
+    								    std::vector<double>(),
+    								    std::vector<double>(),
+    								    std::vector<double>(),
+    								    std::vector<double>(),
+    								    std::vector<double>()};
 
 std::vector<int> stateChanges[] = {std::vector<int>(),
     							   std::vector<int>(),
@@ -331,19 +331,19 @@ int main() {
 
 	for(int m=0; m<NUM_BASESTATION; m++) {
 		std::stringstream hString;
-		hString << "results/prop/opthighhys/basestation" << m << "/handover.txt";
+		hString << "results/prop/highhys/basestation" << m << "/handover.txt";
 		handoverString = hString.str();
 
 		std::stringstream dString;
-		dString<< "results/prop/opthighhys/basestation" << m << "/drop.txt";
+		dString<< "results/prop/highhys/basestation" << m << "/drop.txt";
 		dropString = dString.str();
 
 		std::stringstream pString;
-		pString << "results/prop/opthighhys/basestation" << m << "/ping.txt";
+		pString << "results/prop/highhys/basestation" << m << "/ping.txt";
 		pingString = pString.str();
 
 		std::stringstream sString;
-		sString << "results/prop/opthighhys/basestation" << m << "/state.txt";
+		sString << "results/prop/highhys/basestation" << m << "/state.txt";
 		stateString = sString.str();
 
 
@@ -352,34 +352,34 @@ int main() {
 		if(hFile.is_open()) {
 			for (std::vector<double>::iterator it=handover_total[m].begin() ; it!=handover_total[m].end(); it++) {
     		    hFile << *it << "\n";
-    		}    
-    	} 
-    	hFile.close();  
+    		}
+    	}
+    	hFile.close();
 
     	std::ofstream dFile (dropString);
 		if(dFile.is_open()) {
 			for (std::vector<double>::iterator it=drop_total[m].begin() ; it!=drop_total[m].end(); it++) {
     		    dFile << *it << "\n";
-    		}    
-    	} 
-    	dFile.close();    
+    		}
+    	}
+    	dFile.close();
 
     	std::ofstream pFile (pingString);
 		if(pFile.is_open()) {
 			for (std::vector<double>::iterator it=pingpong_total[m].begin() ; it!=pingpong_total[m].end(); it++) {
     		    pFile << *it << "\n";
-    		}    
-    	} 
-    	pFile.close();    
+    		}
+    	}
+    	pFile.close();
 
     	std::ofstream sFile (stateString);
 		if(sFile.is_open()) {
 			for (std::vector<int>::iterator it=stateChanges[m].begin() ; it!=stateChanges[m].end(); it++) {
     		    sFile << *it << "\n";
-    		}    
-    	} 
-    	sFile.close();  
-    } 
+    		}
+    	}
+    	sFile.close();
+    }
 
 	printf("end...\n");
 
