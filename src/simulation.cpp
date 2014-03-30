@@ -32,24 +32,24 @@ scheduler* gs = new scheduler();
 double TTTArray[16];
 double hysArray[21];
 
-int TTTindex[] = {3,
-			      3,
-			      3,
-			      3,
-			      3,
-			      3,
-			      3,
-			      3,
-			      3};
-int hysindex[] = {15,
-			  	15,
-			  	15,
-			  	15,
-			  	15,
-			  	15,
-			  	15,
-			  	15,
-			  	15};
+int TTTindex[] = {7,
+			      7,
+			      7,
+			      7,
+			      7,
+			      7,
+			      7,
+			      7,
+			      7};
+int hysindex[] = {10,
+			  	10,
+			  	10,
+			  	10,
+			  	10,
+			  	10,
+			  	10,
+			  	10,
+			  	10};
 
 int TTTmaxindex;
 int hysmaxindex;
@@ -331,19 +331,19 @@ int main() {
 
 	for(int m=0; m<NUM_BASESTATION; m++) {
 		std::stringstream hString;
-		hString << "results/prop/highhys/basestation" << m << "/handover.txt";
+		hString << "results/longer/opthighhys/basestation" << m << "/handover.txt";
 		handoverString = hString.str();
 
 		std::stringstream dString;
-		dString<< "results/prop/highhys/basestation" << m << "/drop.txt";
+		dString<< "results/longer/opthighhys/basestation" << m << "/drop.txt";
 		dropString = dString.str();
 
 		std::stringstream pString;
-		pString << "results/prop/highhys/basestation" << m << "/ping.txt";
+		pString << "results/longer/opthighhys/basestation" << m << "/ping.txt";
 		pingString = pString.str();
 
 		std::stringstream sString;
-		sString << "results/prop/highhys/basestation" << m << "/state.txt";
+		sString << "results/longer/opthighhys/basestation" << m << "/state.txt";
 		stateString = sString.str();
 
 
