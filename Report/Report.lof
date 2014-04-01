@@ -1,11 +1,27 @@
 \select@language {british}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Graph of TTT values.}}{10}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Graph of TTT values.\relax }}{6}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Image of Q-Learning process.}}{16}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Image of Q-Learning process.\relax }}{12}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Graph of Optimised vs. Non-Optimised Results for Starting Point TTT=5.12s hys=10dB when UE traveling at walking speeds.\relax }}{21}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Illustration of how the TTT and hys values changed over time for large values when UE traveling at walking speeds.\relax }}{22}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Graph of Optimised vs. Non-Optimised Results for Starting Point TTT=0.256s hys=5dB when UE traveling at walking speeds.\relax }}{23}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Illustration of how the TTT and hys values changed over time for medium values when UE traveling at walking speeds.\relax }}{23}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Graph of Optimised vs. Non-Optimised Results for Starting Point TTT=0s hys=0dB when UE traveling at walking speeds.\relax }}{24}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Illustration of how the TTT and hys values changed over time for medium values when UE traveling at walking speeds.\relax }}{24}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Graph of Optimised vs. Non-Optimised Results for Starting Point TTT=0.08s hys=7.5dB when UE traveling at walking speeds.\relax }}{25}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Illustration of how the TTT and hys values changed over time for medium values when UE traveling at vehicle speeds.\relax }}{25}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Graph of Optimised vs. Non-Optimised Results for Starting Point TTT=5.12s hys=10dB when UE traveling at walking speeds.\relax }}{26}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Illustration of how the TTT and hys values changed over time for large values when UE traveling at vehicle speeds.\relax }}{26}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Graph of Optimised vs. Non-Optimised Results for Starting Point TTT=0.256s hys=5dB when UE traveling at vehicle speeds.\relax }}{27}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Illustration of how the TTT and hys values changed over time for medium values when UE traveling at vehicle speeds.\relax }}{27}
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Graph of Optimised vs. Non-Optimised Results for Starting Point TTT=0s hys=0dB when UE traveling at vehicle speeds.\relax }}{28}
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Illustration of how the TTT and hys values changed over time for medium values when UE traveling at vehicle speeds.\relax }}{28}
+\contentsline {figure}{\numberline {5.15}{\ignorespaces Graph of Optimised vs. Non-Optimised Results for Starting Point TTT=0.08s hys=7.5dB when UE traveling at vehicle speeds.\relax }}{29}
+\contentsline {figure}{\numberline {5.16}{\ignorespaces Illustration of how the TTT and hys values changed over time for medium values when UE traveling at vehicle speeds.\relax }}{29}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

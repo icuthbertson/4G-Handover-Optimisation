@@ -331,19 +331,19 @@ int main() {
 
 	for(int m=0; m<NUM_BASESTATION; m++) {
 		std::stringstream hString;
-		hString << "results/longer/highhys/basestation" << m << "/handover.txt";
+		hString << "results/longer/mid/basestation" << m << "/handover.txt";
 		handoverString = hString.str();
 
 		std::stringstream dString;
-		dString<< "results/longer/highhys/basestation" << m << "/drop.txt";
+		dString<< "results/longer/mid/basestation" << m << "/drop.txt";
 		dropString = dString.str();
 
 		std::stringstream pString;
-		pString << "results/longer/highhys/basestation" << m << "/ping.txt";
+		pString << "results/longer/mid/basestation" << m << "/ping.txt";
 		pingString = pString.str();
 
 		std::stringstream sString;
-		sString << "results/longer/highhys/basestation" << m << "/state.txt";
+		sString << "results/longer/mid/basestation" << m << "/state.txt";
 		stateString = sString.str();
 
 

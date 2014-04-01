@@ -2,7 +2,10 @@
 \usepackage{setspace}
 \usepackage[british]{babel}
 \usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
 \usepackage{float}
+\usepackage{multicol}
 \usepackage[printonlyused]{acronym}
 \usepackage[toc,page]{appendix}
 
@@ -70,8 +73,6 @@
 \tableofcontents
 \pagebreak
 
-\pagenumbering{arabic}
-
 \acresetall
 \input{acro.tex}
 \pagebreak
@@ -83,6 +84,8 @@
 \listoftables
 \addcontentsline{toc}{chapter}{List of Tables}
 \pagebreak
+
+\pagenumbering{arabic}
 
 \input{chapters/intro.tex}
 

@@ -12,10 +12,10 @@ std::default_random_engine generator;
 
 /* Constructor
  ****************************
- * Return Type: N/A 
+ * Return Type: N/A
  ****************************
  * Parameters Passed in: N/A
- **************************** 
+ ****************************
  * Description: Basic class constructor that create an instance of basestation
  * with all parameters set to zero.
  */
@@ -32,9 +32,9 @@ basestation::basestation(scheduler* gs) : event_handler(gs) {
 }
 /* Constructor
  ****************************
- * Return Type: N/A 
+ * Return Type: N/A
  ****************************
- * Parameters Passed in: 
+ * Parameters Passed in:
  * int idNum
  * int x
  * int y
@@ -56,7 +56,7 @@ basestation::basestation(scheduler* gs, int idNum, int x, int y, double freq, do
 }
 /* Destructor
  ****************************
- * Return Type: N/A 
+ * Return Type: N/A
  ****************************
  * Parameters Passed in: N/A
  ****************************
@@ -69,7 +69,7 @@ basestation::~basestation() {
 }
 /* Method
  ****************************
- * Return Type: N/A 
+ * Return Type: N/A
  ****************************
  * Parameters Passed in:
  * const event* received
@@ -107,8 +107,6 @@ void basestation::handler(const event* received)
 			// 	printf("Sim Time: %f - Basestation %d: %f dbm\n",simTime,i,current_prop[i]);
 			// }
 			if(handingOver[repPacket->id_mob]) {
-
-				
 				bStations[repPacket->id_base]->nowServing(repPacket->id_mob);
 				this->connected[repPacket->id_mob] = false;
 				mobiles[repPacket->id_mob]->switchBasestation(repPacket->id_base);
@@ -152,7 +150,7 @@ void basestation::handler(const event* received)
 			// program should not reach here
 			break;
 	} // end switch statement
-	
+
 }
 /* Method
  ****************************
@@ -183,10 +181,10 @@ int basestation::getID() {
  ****************************
  * Return Type: int
  ****************************
- * Parameters Passed in: N/A 
+ * Parameters Passed in: N/A
  ****************************
  * Description: Method that returns the value of the x co-ordinate.
- */ 
+ */
 int basestation::getX() {
 	return x_co;
 }
@@ -194,7 +192,7 @@ int basestation::getX() {
  ****************************
  * Return Type: int
  ****************************
- * Parameters Passed in: N/A 
+ * Parameters Passed in: N/A
  ****************************
  * Description: Method that returns the value of the y co-ordinate.
  */
@@ -205,16 +203,16 @@ int basestation::getY() {
  ****************************
  * Return Type: int
  ****************************
- * Parameters Passed in: d, hm 
+ * Parameters Passed in: d, hm
  ****************************
- * Description: Method that returns the path loss using the 
+ * Description: Method that returns the path loss using the
  * Cost231-Hata for urban areas propagation model. d in km, hm in m.
  */
 double basestation::getProp(double d, double hm) {
 	//for small or medium sized city
 	double ahr = 0.8 + ((1.1 * log10(f) - 0.7) * hm) - (1.56 * log10(f));
 	double prop = 46.3 + (33.9 * log10(f)) - (13.82 * log10(hb)) - ahr + ((44.9 - (6.55 * log10(hb))) * log10(d/1000)); //divide by 1000 for km
-	
+
 	// double fading = ((rand()%70)-35)/10;
 
 	//double fading = 0.0;
