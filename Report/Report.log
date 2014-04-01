@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.10.9)  1 APR 2014 03:18
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.10.9)  1 APR 2014 16:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -569,7 +569,7 @@ Package epstopdf Info: Source file: <figures/walking_figures/high/long_drop.eps
 (epstopdf)                    size: 12169 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/walking_figures/hi
 gh/long_drop-eps-converted-to.pdf figures/walking_figures/high/long_drop.eps>
-(epstopdf)             \includegraphics on input line 50.
+(epstopdf)             \includegraphics on input line 51.
 Package epstopdf Info: Output file is already uptodate.
 
 <figures/walking_figures/high/long_drop-eps-converted-to.pdf, id=114, 620.3175p
@@ -579,8 +579,9 @@ File: figures/walking_figures/high/long_drop-eps-converted-to.pdf Graphic file
 
 <use figures/walking_figures/high/long_drop-eps-converted-to.pdf>
 Package pdftex.def Info: figures/walking_figures/high/long_drop-eps-converted-t
-o.pdf used on input line 50.
+o.pdf used on input line 51.
 (pdftex.def)             Requested size: 309.42372pt x 224.80492pt.
+ [21]
 Package epstopdf Info: Source file: <figures/walking_figures/high/long_ttt.eps>
 
 (epstopdf)                    date: 2014-03-31 15:31:42
@@ -591,17 +592,17 @@ converted-to.pdf>
 (epstopdf)                    size: 8711 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/walking_figures/hi
 gh/long_ttt-eps-converted-to.pdf figures/walking_figures/high/long_ttt.eps>
-(epstopdf)             \includegraphics on input line 60.
+(epstopdf)             \includegraphics on input line 61.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/walking_figures/high/long_ttt-eps-converted-to.pdf, id=115, 620.3175pt
+<figures/walking_figures/high/long_ttt-eps-converted-to.pdf, id=118, 620.3175pt
  x 483.8075pt>
 File: figures/walking_figures/high/long_ttt-eps-converted-to.pdf Graphic file (
 type pdf)
 
 <use figures/walking_figures/high/long_ttt-eps-converted-to.pdf>
 Package pdftex.def Info: figures/walking_figures/high/long_ttt-eps-converted-to
-.pdf used on input line 60.
+.pdf used on input line 61.
 (pdftex.def)             Requested size: 202.15909pt x 157.67113pt.
 Package epstopdf Info: Source file: <figures/walking_figures/high/long_hys.eps>
 
@@ -613,19 +614,19 @@ converted-to.pdf>
 (epstopdf)                    size: 8684 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/walking_figures/hi
 gh/long_hys-eps-converted-to.pdf figures/walking_figures/high/long_hys.eps>
-(epstopdf)             \includegraphics on input line 67.
+(epstopdf)             \includegraphics on input line 68.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/walking_figures/high/long_hys-eps-converted-to.pdf, id=116, 620.3175pt
+<figures/walking_figures/high/long_hys-eps-converted-to.pdf, id=119, 620.3175pt
  x 480.79625pt>
 File: figures/walking_figures/high/long_hys-eps-converted-to.pdf Graphic file (
 type pdf)
 
 <use figures/walking_figures/high/long_hys-eps-converted-to.pdf>
 Package pdftex.def Info: figures/walking_figures/high/long_hys-eps-converted-to
-.pdf used on input line 67.
+.pdf used on input line 68.
 (pdftex.def)             Requested size: 202.15909pt x 156.68976pt.
- [21 <./figures/walking_figures/high/long_drop-eps-converted-to.pdf>]
+ [22 <./figures/walking_figures/high/long_drop-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figures/walking_figures/mid/long_drop.eps>
 
 (epstopdf)                    date: 2014-03-31 14:42:16
@@ -636,19 +637,19 @@ converted-to.pdf>
 (epstopdf)                    size: 14128 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/walking_figures/mi
 d/long_drop-eps-converted-to.pdf figures/walking_figures/mid/long_drop.eps>
-(epstopdf)             \includegraphics on input line 77.
+(epstopdf)             \includegraphics on input line 79.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/walking_figures/mid/long_drop-eps-converted-to.pdf, id=126, 620.3175pt
+<figures/walking_figures/mid/long_drop-eps-converted-to.pdf, id=129, 620.3175pt
  x 450.68375pt>
 File: figures/walking_figures/mid/long_drop-eps-converted-to.pdf Graphic file (
 type pdf)
 
 <use figures/walking_figures/mid/long_drop-eps-converted-to.pdf>
 Package pdftex.def Info: figures/walking_figures/mid/long_drop-eps-converted-to
-.pdf used on input line 77.
+.pdf used on input line 79.
 (pdftex.def)             Requested size: 309.42372pt x 224.80492pt.
- [22 <./figures/walking_figures/high/long_ttt-eps-converted-to.pdf> <./figures/
+ [23 <./figures/walking_figures/high/long_ttt-eps-converted-to.pdf> <./figures/
 walking_figures/high/long_hys-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figures/walking_figures/mid/long_ttt.eps>
 (epstopdf)                    date: 2014-03-31 15:23:40
@@ -659,16 +660,16 @@ onverted-to.pdf>
 (epstopdf)                    size: 8100 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/walking_figures/mi
 d/long_ttt-eps-converted-to.pdf figures/walking_figures/mid/long_ttt.eps>
-(epstopdf)             \includegraphics on input line 86.
+(epstopdf)             \includegraphics on input line 92.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/walking_figures/mid/long_ttt-eps-converted-to.pdf, id=141, 620.3175pt 
+<figures/walking_figures/mid/long_ttt-eps-converted-to.pdf, id=144, 620.3175pt 
 x 474.77374pt>
 File: figures/walking_figures/mid/long_ttt-eps-converted-to.pdf Graphic file (t
 ype pdf)
  <use figures/walking_figures/mid/long_ttt-eps-converted-to.pdf>
 Package pdftex.def Info: figures/walking_figures/mid/long_ttt-eps-converted-to.
-pdf used on input line 86.
+pdf used on input line 92.
 (pdftex.def)             Requested size: 202.15909pt x 154.72705pt.
 Package epstopdf Info: Source file: <figures/walking_figures/mid/long_hys.eps>
 (epstopdf)                    date: 2014-03-31 15:23:18
@@ -679,17 +680,19 @@ onverted-to.pdf>
 (epstopdf)                    size: 8321 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/walking_figures/mi
 d/long_hys-eps-converted-to.pdf figures/walking_figures/mid/long_hys.eps>
-(epstopdf)             \includegraphics on input line 93.
+(epstopdf)             \includegraphics on input line 99.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/walking_figures/mid/long_hys-eps-converted-to.pdf, id=142, 620.3175pt 
+<figures/walking_figures/mid/long_hys-eps-converted-to.pdf, id=145, 620.3175pt 
 x 474.77374pt>
 File: figures/walking_figures/mid/long_hys-eps-converted-to.pdf Graphic file (t
 ype pdf)
  <use figures/walking_figures/mid/long_hys-eps-converted-to.pdf>
 Package pdftex.def Info: figures/walking_figures/mid/long_hys-eps-converted-to.
-pdf used on input line 93.
+pdf used on input line 99.
 (pdftex.def)             Requested size: 202.15909pt x 154.72705pt.
+
+[24 <./figures/walking_figures/mid/long_drop-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figures/walking_figures/low/long_ping.eps>
 
 (epstopdf)                    date: 2014-03-31 14:42:02
@@ -700,21 +703,23 @@ converted-to.pdf>
 (epstopdf)                    size: 20754 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/walking_figures/lo
 w/long_ping-eps-converted-to.pdf figures/walking_figures/low/long_ping.eps>
-(epstopdf)             \includegraphics on input line 103.
+(epstopdf)             \includegraphics on input line 112.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/walking_figures/low/long_ping-eps-converted-to.pdf, id=143, 620.3175pt
+<figures/walking_figures/low/long_ping-eps-converted-to.pdf, id=155, 620.3175pt
  x 450.68375pt>
 File: figures/walking_figures/low/long_ping-eps-converted-to.pdf Graphic file (
 type pdf)
 
 <use figures/walking_figures/low/long_ping-eps-converted-to.pdf>
 Package pdftex.def Info: figures/walking_figures/low/long_ping-eps-converted-to
-.pdf used on input line 103.
+.pdf used on input line 112.
 (pdftex.def)             Requested size: 309.42372pt x 224.80492pt.
- [23 <./figures/walking_figures/mid/long_drop-eps-converted-to.pdf> <./figures/
-walking_figures/mid/long_ttt-eps-converted-to.pdf> <./figures/walking_figures/m
-id/long_hys-eps-converted-to.pdf>]
+ [25 <./figures/walking_figures/mid/long_ttt-eps-converted-to.pdf> <./figures/w
+alking_figures/mid/long_hys-eps-converted-to.pdf>]
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no ™ in font cmr12!
 Package epstopdf Info: Source file: <figures/walking_figures/low/long_ttt.eps>
 (epstopdf)                    date: 2014-03-31 15:22:52
 (epstopdf)                    size: 11342 bytes
@@ -724,16 +729,16 @@ onverted-to.pdf>
 (epstopdf)                    size: 7742 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/walking_figures/lo
 w/long_ttt-eps-converted-to.pdf figures/walking_figures/low/long_ttt.eps>
-(epstopdf)             \includegraphics on input line 112.
+(epstopdf)             \includegraphics on input line 123.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/walking_figures/low/long_ttt-eps-converted-to.pdf, id=163, 620.3175pt 
+<figures/walking_figures/low/long_ttt-eps-converted-to.pdf, id=169, 620.3175pt 
 x 474.77374pt>
 File: figures/walking_figures/low/long_ttt-eps-converted-to.pdf Graphic file (t
 ype pdf)
  <use figures/walking_figures/low/long_ttt-eps-converted-to.pdf>
 Package pdftex.def Info: figures/walking_figures/low/long_ttt-eps-converted-to.
-pdf used on input line 112.
+pdf used on input line 123.
 (pdftex.def)             Requested size: 202.15909pt x 154.72705pt.
 Package epstopdf Info: Source file: <figures/walking_figures/low/long_hys.eps>
 (epstopdf)                    date: 2014-03-31 15:22:28
@@ -744,17 +749,24 @@ onverted-to.pdf>
 (epstopdf)                    size: 7907 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/walking_figures/lo
 w/long_hys-eps-converted-to.pdf figures/walking_figures/low/long_hys.eps>
-(epstopdf)             \includegraphics on input line 119.
+(epstopdf)             \includegraphics on input line 130.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/walking_figures/low/long_hys-eps-converted-to.pdf, id=164, 620.3175pt 
+<figures/walking_figures/low/long_hys-eps-converted-to.pdf, id=170, 620.3175pt 
 x 474.77374pt>
 File: figures/walking_figures/low/long_hys-eps-converted-to.pdf Graphic file (t
 ype pdf)
  <use figures/walking_figures/low/long_hys-eps-converted-to.pdf>
 Package pdftex.def Info: figures/walking_figures/low/long_hys-eps-converted-to.
-pdf used on input line 119.
+pdf used on input line 130.
 (pdftex.def)             Requested size: 202.15909pt x 154.72705pt.
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no ™ in font cmr12!
+
+[26 <./figures/walking_figures/low/long_ping-eps-converted-to.pdf> <./figures/w
+alking_figures/low/long_ttt-eps-converted-to.pdf> <./figures/walking_figures/lo
+w/long_hys-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figures/walking_figures/highhys/long_drop.
 eps>
 (epstopdf)                    date: 2014-03-31 14:41:46
@@ -766,21 +778,18 @@ eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=figures/walking_figures/hi
 ghhys/long_drop-eps-converted-to.pdf figures/walking_figures/highhys/long_drop.
 eps>
-(epstopdf)             \includegraphics on input line 129.
+(epstopdf)             \includegraphics on input line 141.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/walking_figures/highhys/long_drop-eps-converted-to.pdf, id=165, 620.31
+<figures/walking_figures/highhys/long_drop-eps-converted-to.pdf, id=192, 620.31
 75pt x 450.68375pt>
 File: figures/walking_figures/highhys/long_drop-eps-converted-to.pdf Graphic fi
 le (type pdf)
 
 <use figures/walking_figures/highhys/long_drop-eps-converted-to.pdf>
 Package pdftex.def Info: figures/walking_figures/highhys/long_drop-eps-converte
-d-to.pdf used on input line 129.
+d-to.pdf used on input line 141.
 (pdftex.def)             Requested size: 309.42372pt x 224.80492pt.
- [24 <./figures/walking_figures/low/long_ping-eps-converted-to.pdf> <./figures/
-walking_figures/low/long_ttt-eps-converted-to.pdf> <./figures/walking_figures/l
-ow/long_hys-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figures/walking_figures/highhys/long_ttt.e
 ps>
 (epstopdf)                    date: 2014-03-31 15:21:58
@@ -792,17 +801,17 @@ ps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=figures/walking_figures/hi
 ghhys/long_ttt-eps-converted-to.pdf figures/walking_figures/highhys/long_ttt.ep
 s>
-(epstopdf)             \includegraphics on input line 138.
+(epstopdf)             \includegraphics on input line 152.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/walking_figures/highhys/long_ttt-eps-converted-to.pdf, id=186, 620.317
+<figures/walking_figures/highhys/long_ttt-eps-converted-to.pdf, id=193, 620.317
 5pt x 474.77374pt>
 File: figures/walking_figures/highhys/long_ttt-eps-converted-to.pdf Graphic fil
 e (type pdf)
 
 <use figures/walking_figures/highhys/long_ttt-eps-converted-to.pdf>
 Package pdftex.def Info: figures/walking_figures/highhys/long_ttt-eps-converted
--to.pdf used on input line 138.
+-to.pdf used on input line 152.
 (pdftex.def)             Requested size: 202.15909pt x 154.72705pt.
 Package epstopdf Info: Source file: <figures/walking_figures/highhys/long_hys.e
 ps>
@@ -815,18 +824,19 @@ ps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=figures/walking_figures/hi
 ghhys/long_hys-eps-converted-to.pdf figures/walking_figures/highhys/long_hys.ep
 s>
-(epstopdf)             \includegraphics on input line 145.
+(epstopdf)             \includegraphics on input line 159.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/walking_figures/highhys/long_hys-eps-converted-to.pdf, id=187, 620.317
+<figures/walking_figures/highhys/long_hys-eps-converted-to.pdf, id=194, 620.317
 5pt x 474.77374pt>
 File: figures/walking_figures/highhys/long_hys-eps-converted-to.pdf Graphic fil
 e (type pdf)
 
 <use figures/walking_figures/highhys/long_hys-eps-converted-to.pdf>
 Package pdftex.def Info: figures/walking_figures/highhys/long_hys-eps-converted
--to.pdf used on input line 145.
+-to.pdf used on input line 159.
 (pdftex.def)             Requested size: 202.15909pt x 154.72705pt.
+ [27 <./figures/walking_figures/highhys/long_drop-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figures/vehicle_figures/high/long_drop.eps
 >
 (epstopdf)                    date: 2014-03-31 14:35:50
@@ -837,21 +847,20 @@ Package epstopdf Info: Source file: <figures/vehicle_figures/high/long_drop.eps
 (epstopdf)                    size: 43253 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/vehicle_figures/hi
 gh/long_drop-eps-converted-to.pdf figures/vehicle_figures/high/long_drop.eps>
-(epstopdf)             \includegraphics on input line 156.
+(epstopdf)             \includegraphics on input line 173.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/vehicle_figures/high/long_drop-eps-converted-to.pdf, id=188, 620.3175p
+<figures/vehicle_figures/high/long_drop-eps-converted-to.pdf, id=204, 620.3175p
 t x 450.68375pt>
 File: figures/vehicle_figures/high/long_drop-eps-converted-to.pdf Graphic file 
 (type pdf)
 
 <use figures/vehicle_figures/high/long_drop-eps-converted-to.pdf>
 Package pdftex.def Info: figures/vehicle_figures/high/long_drop-eps-converted-t
-o.pdf used on input line 156.
+o.pdf used on input line 173.
 (pdftex.def)             Requested size: 309.42372pt x 224.80492pt.
- [25 <./figures/walking_figures/highhys/long_drop-eps-converted-to.pdf> <./figu
-res/walking_figures/highhys/long_ttt-eps-converted-to.pdf> <./figures/walking_f
-igures/highhys/long_hys-eps-converted-to.pdf>]
+ [28 <./figures/walking_figures/highhys/long_ttt-eps-converted-to.pdf> <./figur
+es/walking_figures/highhys/long_hys-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figures/vehicle_figures/high/long_ttt.eps>
 
 (epstopdf)                    date: 2014-03-31 15:33:22
@@ -862,17 +871,17 @@ converted-to.pdf>
 (epstopdf)                    size: 14256 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/vehicle_figures/hi
 gh/long_ttt-eps-converted-to.pdf figures/vehicle_figures/high/long_ttt.eps>
-(epstopdf)             \includegraphics on input line 165.
+(epstopdf)             \includegraphics on input line 184.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/vehicle_figures/high/long_ttt-eps-converted-to.pdf, id=208, 620.3175pt
+<figures/vehicle_figures/high/long_ttt-eps-converted-to.pdf, id=218, 620.3175pt
  x 483.8075pt>
 File: figures/vehicle_figures/high/long_ttt-eps-converted-to.pdf Graphic file (
 type pdf)
 
 <use figures/vehicle_figures/high/long_ttt-eps-converted-to.pdf>
 Package pdftex.def Info: figures/vehicle_figures/high/long_ttt-eps-converted-to
-.pdf used on input line 165.
+.pdf used on input line 184.
 (pdftex.def)             Requested size: 202.15909pt x 157.67113pt.
 Package epstopdf Info: Source file: <figures/vehicle_figures/high/long_hys.eps>
 
@@ -884,18 +893,19 @@ converted-to.pdf>
 (epstopdf)                    size: 12687 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/vehicle_figures/hi
 gh/long_hys-eps-converted-to.pdf figures/vehicle_figures/high/long_hys.eps>
-(epstopdf)             \includegraphics on input line 172.
+(epstopdf)             \includegraphics on input line 191.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/vehicle_figures/high/long_hys-eps-converted-to.pdf, id=209, 620.3175pt
+<figures/vehicle_figures/high/long_hys-eps-converted-to.pdf, id=219, 620.3175pt
  x 483.8075pt>
 File: figures/vehicle_figures/high/long_hys-eps-converted-to.pdf Graphic file (
 type pdf)
 
 <use figures/vehicle_figures/high/long_hys-eps-converted-to.pdf>
 Package pdftex.def Info: figures/vehicle_figures/high/long_hys-eps-converted-to
-.pdf used on input line 172.
+.pdf used on input line 191.
 (pdftex.def)             Requested size: 202.15909pt x 157.67113pt.
+ [29 <./figures/vehicle_figures/high/long_drop-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figures/vehicle_figures/mid/long_drop.eps>
 
 (epstopdf)                    date: 2014-03-31 14:31:42
@@ -906,21 +916,21 @@ converted-to.pdf>
 (epstopdf)                    size: 44612 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/vehicle_figures/mi
 d/long_drop-eps-converted-to.pdf figures/vehicle_figures/mid/long_drop.eps>
-(epstopdf)             \includegraphics on input line 182.
+(epstopdf)             \includegraphics on input line 202.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/vehicle_figures/mid/long_drop-eps-converted-to.pdf, id=210, 620.3175pt
+<figures/vehicle_figures/mid/long_drop-eps-converted-to.pdf, id=229, 620.3175pt
  x 450.68375pt>
 File: figures/vehicle_figures/mid/long_drop-eps-converted-to.pdf Graphic file (
 type pdf)
 
 <use figures/vehicle_figures/mid/long_drop-eps-converted-to.pdf>
 Package pdftex.def Info: figures/vehicle_figures/mid/long_drop-eps-converted-to
-.pdf used on input line 182.
+.pdf used on input line 202.
 (pdftex.def)             Requested size: 309.42372pt x 224.80492pt.
- [26 <./figures/vehicle_figures/high/long_drop-eps-converted-to.pdf> <./figures
-/vehicle_figures/high/long_ttt-eps-converted-to.pdf> <./figures/vehicle_figures
-/high/long_hys-eps-converted-to.pdf>]
+ [30 <./figures/vehicle_figures/high/long_ttt-eps-converted-to.pdf> <./figures/
+vehicle_figures/high/long_hys-eps-converted-to.pdf> <./figures/vehicle_figures/
+mid/long_drop-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figures/vehicle_figures/mid/long_ttt.eps>
 (epstopdf)                    date: 2014-03-31 15:35:36
 (epstopdf)                    size: 17974 bytes
@@ -930,16 +940,16 @@ onverted-to.pdf>
 (epstopdf)                    size: 10520 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/vehicle_figures/mi
 d/long_ttt-eps-converted-to.pdf figures/vehicle_figures/mid/long_ttt.eps>
-(epstopdf)             \includegraphics on input line 191.
+(epstopdf)             \includegraphics on input line 213.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/vehicle_figures/mid/long_ttt-eps-converted-to.pdf, id=231, 620.3175pt 
+<figures/vehicle_figures/mid/long_ttt-eps-converted-to.pdf, id=249, 620.3175pt 
 x 483.8075pt>
 File: figures/vehicle_figures/mid/long_ttt-eps-converted-to.pdf Graphic file (t
 ype pdf)
  <use figures/vehicle_figures/mid/long_ttt-eps-converted-to.pdf>
 Package pdftex.def Info: figures/vehicle_figures/mid/long_ttt-eps-converted-to.
-pdf used on input line 191.
+pdf used on input line 213.
 (pdftex.def)             Requested size: 202.15909pt x 157.67113pt.
 Package epstopdf Info: Source file: <figures/vehicle_figures/mid/long_hys.eps>
 (epstopdf)                    date: 2014-03-31 15:36:30
@@ -950,16 +960,16 @@ onverted-to.pdf>
 (epstopdf)                    size: 10170 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/vehicle_figures/mi
 d/long_hys-eps-converted-to.pdf figures/vehicle_figures/mid/long_hys.eps>
-(epstopdf)             \includegraphics on input line 198.
+(epstopdf)             \includegraphics on input line 220.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/vehicle_figures/mid/long_hys-eps-converted-to.pdf, id=232, 620.3175pt 
+<figures/vehicle_figures/mid/long_hys-eps-converted-to.pdf, id=250, 620.3175pt 
 x 483.8075pt>
 File: figures/vehicle_figures/mid/long_hys-eps-converted-to.pdf Graphic file (t
 ype pdf)
  <use figures/vehicle_figures/mid/long_hys-eps-converted-to.pdf>
 Package pdftex.def Info: figures/vehicle_figures/mid/long_hys-eps-converted-to.
-pdf used on input line 198.
+pdf used on input line 220.
 (pdftex.def)             Requested size: 202.15909pt x 157.67113pt.
 Package epstopdf Info: Source file: <figures/vehicle_figures/low/long_ping.eps>
 
@@ -971,21 +981,23 @@ converted-to.pdf>
 (epstopdf)                    size: 32672 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/vehicle_figures/lo
 w/long_ping-eps-converted-to.pdf figures/vehicle_figures/low/long_ping.eps>
-(epstopdf)             \includegraphics on input line 208.
+(epstopdf)             \includegraphics on input line 231.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/vehicle_figures/low/long_ping-eps-converted-to.pdf, id=233, 620.3175pt
+<figures/vehicle_figures/low/long_ping-eps-converted-to.pdf, id=251, 620.3175pt
  x 450.68375pt>
 File: figures/vehicle_figures/low/long_ping-eps-converted-to.pdf Graphic file (
 type pdf)
 
 <use figures/vehicle_figures/low/long_ping-eps-converted-to.pdf>
 Package pdftex.def Info: figures/vehicle_figures/low/long_ping-eps-converted-to
-.pdf used on input line 208.
+.pdf used on input line 231.
 (pdftex.def)             Requested size: 309.42372pt x 224.80492pt.
- [27 <./figures/vehicle_figures/mid/long_drop-eps-converted-to.pdf> <./figures/
-vehicle_figures/mid/long_ttt-eps-converted-to.pdf> <./figures/vehicle_figures/m
-id/long_hys-eps-converted-to.pdf>]
+ [31 <./figures/vehicle_figures/mid/long_ttt-eps-converted-to.pdf> <./figures/v
+ehicle_figures/mid/long_hys-eps-converted-to.pdf>]
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no ™ in font cmr12!
 Package epstopdf Info: Source file: <figures/vehicle_figures/low/long_ttt.eps>
 (epstopdf)                    date: 2014-03-31 15:34:48
 (epstopdf)                    size: 11379 bytes
@@ -995,16 +1007,16 @@ onverted-to.pdf>
 (epstopdf)                    size: 7648 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/vehicle_figures/lo
 w/long_ttt-eps-converted-to.pdf figures/vehicle_figures/low/long_ttt.eps>
-(epstopdf)             \includegraphics on input line 217.
+(epstopdf)             \includegraphics on input line 242.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/vehicle_figures/low/long_ttt-eps-converted-to.pdf, id=253, 620.3175pt 
+<figures/vehicle_figures/low/long_ttt-eps-converted-to.pdf, id=265, 620.3175pt 
 x 483.8075pt>
 File: figures/vehicle_figures/low/long_ttt-eps-converted-to.pdf Graphic file (t
 ype pdf)
  <use figures/vehicle_figures/low/long_ttt-eps-converted-to.pdf>
 Package pdftex.def Info: figures/vehicle_figures/low/long_ttt-eps-converted-to.
-pdf used on input line 217.
+pdf used on input line 242.
 (pdftex.def)             Requested size: 202.15909pt x 157.67113pt.
 Package epstopdf Info: Source file: <figures/vehicle_figures/low/long_hys.eps>
 (epstopdf)                    date: 2014-03-31 15:35:14
@@ -1015,17 +1027,24 @@ onverted-to.pdf>
 (epstopdf)                    size: 7732 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/vehicle_figures/lo
 w/long_hys-eps-converted-to.pdf figures/vehicle_figures/low/long_hys.eps>
-(epstopdf)             \includegraphics on input line 224.
+(epstopdf)             \includegraphics on input line 249.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/vehicle_figures/low/long_hys-eps-converted-to.pdf, id=254, 620.3175pt 
+<figures/vehicle_figures/low/long_hys-eps-converted-to.pdf, id=266, 620.3175pt 
 x 483.8075pt>
 File: figures/vehicle_figures/low/long_hys-eps-converted-to.pdf Graphic file (t
 ype pdf)
  <use figures/vehicle_figures/low/long_hys-eps-converted-to.pdf>
 Package pdftex.def Info: figures/vehicle_figures/low/long_hys-eps-converted-to.
-pdf used on input line 224.
+pdf used on input line 249.
 (pdftex.def)             Requested size: 202.15909pt x 157.67113pt.
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no ™ in font cmr12!
+
+[32 <./figures/vehicle_figures/low/long_ping-eps-converted-to.pdf> <./figures/v
+ehicle_figures/low/long_ttt-eps-converted-to.pdf> <./figures/vehicle_figures/lo
+w/long_hys-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figures/vehicle_figures/highhys/long_drop.
 eps>
 (epstopdf)                    date: 2014-03-31 14:34:48
@@ -1037,21 +1056,18 @@ eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=figures/vehicle_figures/hi
 ghhys/long_drop-eps-converted-to.pdf figures/vehicle_figures/highhys/long_drop.
 eps>
-(epstopdf)             \includegraphics on input line 234.
+(epstopdf)             \includegraphics on input line 260.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/vehicle_figures/highhys/long_drop-eps-converted-to.pdf, id=255, 620.31
+<figures/vehicle_figures/highhys/long_drop-eps-converted-to.pdf, id=287, 620.31
 75pt x 450.68375pt>
 File: figures/vehicle_figures/highhys/long_drop-eps-converted-to.pdf Graphic fi
 le (type pdf)
 
 <use figures/vehicle_figures/highhys/long_drop-eps-converted-to.pdf>
 Package pdftex.def Info: figures/vehicle_figures/highhys/long_drop-eps-converte
-d-to.pdf used on input line 234.
+d-to.pdf used on input line 260.
 (pdftex.def)             Requested size: 309.42372pt x 224.80492pt.
- [28 <./figures/vehicle_figures/low/long_ping-eps-converted-to.pdf> <./figures/
-vehicle_figures/low/long_ttt-eps-converted-to.pdf> <./figures/vehicle_figures/l
-ow/long_hys-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figures/vehicle_figures/highhys/long_ttt.e
 ps>
 (epstopdf)                    date: 2014-03-31 15:33:50
@@ -1063,17 +1079,17 @@ ps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=figures/vehicle_figures/hi
 ghhys/long_ttt-eps-converted-to.pdf figures/vehicle_figures/highhys/long_ttt.ep
 s>
-(epstopdf)             \includegraphics on input line 243.
+(epstopdf)             \includegraphics on input line 271.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/vehicle_figures/highhys/long_ttt-eps-converted-to.pdf, id=275, 620.317
+<figures/vehicle_figures/highhys/long_ttt-eps-converted-to.pdf, id=288, 620.317
 5pt x 483.8075pt>
 File: figures/vehicle_figures/highhys/long_ttt-eps-converted-to.pdf Graphic fil
 e (type pdf)
 
 <use figures/vehicle_figures/highhys/long_ttt-eps-converted-to.pdf>
 Package pdftex.def Info: figures/vehicle_figures/highhys/long_ttt-eps-converted
--to.pdf used on input line 243.
+-to.pdf used on input line 271.
 (pdftex.def)             Requested size: 202.15909pt x 157.67113pt.
 Package epstopdf Info: Source file: <figures/vehicle_figures/highhys/long_hys.e
 ps>
@@ -1086,37 +1102,37 @@ ps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=figures/vehicle_figures/hi
 ghhys/long_hys-eps-converted-to.pdf figures/vehicle_figures/highhys/long_hys.ep
 s>
-(epstopdf)             \includegraphics on input line 250.
+(epstopdf)             \includegraphics on input line 278.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/vehicle_figures/highhys/long_hys-eps-converted-to.pdf, id=276, 620.317
+<figures/vehicle_figures/highhys/long_hys-eps-converted-to.pdf, id=289, 620.317
 5pt x 483.8075pt>
 File: figures/vehicle_figures/highhys/long_hys-eps-converted-to.pdf Graphic fil
 e (type pdf)
 
 <use figures/vehicle_figures/highhys/long_hys-eps-converted-to.pdf>
 Package pdftex.def Info: figures/vehicle_figures/highhys/long_hys-eps-converted
--to.pdf used on input line 250.
+-to.pdf used on input line 278.
 (pdftex.def)             Requested size: 202.15909pt x 157.67113pt.
-)
-(./chapters/future.tex [29 <./figures/vehicle_figures/highhys/long_drop-eps-con
-verted-to.pdf> <./figures/vehicle_figures/highhys/long_ttt-eps-converted-to.pdf
-> <./figures/vehicle_figures/highhys/long_hys-eps-converted-to.pdf>]
+ [33 <./figures/vehicle_figures/highhys/long_drop-eps-converted-to.pdf>]) [34 <
+./figures/vehicle_figures/highhys/long_ttt-eps-converted-to.pdf> <./figures/veh
+icle_figures/highhys/long_hys-eps-converted-to.pdf>] (./chapters/future.tex [35
+]
 Chapter 6.
-) (./chapters/conclusion.tex [30
+) (./chapters/conclusion.tex [36
 
 ]
 Chapter 7.
-) [31
+) [37
 
-] (./Report.bbl [32
+] (./Report.bbl [38
 
-]) [33] [34
+]) [39] [40
 
 
 ]
 Appendix A.
-[35
+[41
 
 ] (./Report.aux) ) 
 Here is how much of TeX's memory you used:
@@ -1140,10 +1156,10 @@ pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10
 pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pf
 b></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
 </usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on Report.pdf (46 pages, 732501 bytes).
+Output written on Report.pdf (52 pages, 747042 bytes).
 PDF statistics:
- 361 PDF objects out of 1000 (max. 8388607)
- 247 compressed objects within 3 object streams
+ 380 PDF objects out of 1000 (max. 8388607)
+ 260 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  131 words of extra memory for PDF output out of 10000 (max. 10000000)
 
