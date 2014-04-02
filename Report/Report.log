@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.10.9)  1 APR 2014 16:28
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.10.9)  2 APR 2014 15:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -453,7 +453,16 @@ although it is yet undefined on input line 5.
 
 ] (./chapters/intro.tex
 Chapter 1.
-) (./chapters/lte.tex [1
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 6.
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 6.
+Package acronym Info: Label `acro:TTT' overridden on input line 12.
+Package acronym Info: Label `acro:hys' overridden on input line 12.
+)
+(./chapters/lte.tex [1
 
 ]
 Chapter 2.
@@ -493,12 +502,6 @@ although it is yet undefined on input line 9.
 Package acronym Info: Label `acro:S-GW' newly defined as it shall be overridden
 
 although it is yet undefined on input line 9.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 21.
- (/usr/local/texlive/2013/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 21.
 Package acronym Info: Label `acro:QoS' overridden on input line 29.
  [3]
 Package acronym Info: Label `acro:TTT' overridden on input line 32.
@@ -507,8 +510,7 @@ Package acronym Info: Label `acro:RSS' newly defined as it shall be overridden
 although it is yet undefined on input line 32.
 Package acronym Info: Label `acro:dB' newly defined as it shall be overridden
 although it is yet undefined on input line 32.
- [4]
-[5] <figures/lte/TTTgraph.jpg, id=59, 678.535pt x 340.27126pt>
+ [4] [5] <figures/lte/TTTgraph.jpg, id=59, 678.535pt x 340.27126pt>
 File: figures/lte/TTTgraph.jpg Graphic file (type jpg)
 
 <use figures/lte/TTTgraph.jpg>
@@ -1136,10 +1138,10 @@ Appendix A.
 
 ] (./Report.aux) ) 
 Here is how much of TeX's memory you used:
- 6561 strings out of 493315
- 102312 string characters out of 6137904
+ 6564 strings out of 493315
+ 102342 string characters out of 6137904
  181808 words of memory out of 5000000
- 9854 multiletter control sequences out of 15000+600000
+ 9857 multiletter control sequences out of 15000+600000
  11480 words of font info for 41 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  38i,11n,58p,1408b,455s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1156,7 +1158,7 @@ pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10
 pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pf
 b></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
 </usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on Report.pdf (52 pages, 747042 bytes).
+Output written on Report.pdf (52 pages, 747919 bytes).
 PDF statistics:
  380 PDF objects out of 1000 (max. 8388607)
  260 compressed objects within 3 object streams
