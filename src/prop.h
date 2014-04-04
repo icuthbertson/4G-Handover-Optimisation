@@ -41,6 +41,7 @@ extern int function;
 extern std::vector<double> handover_total[];
 extern std::vector<double> drop_total[];
 extern std::vector<double> pingpong_total[];
+extern std::vector<double> failure_total[];
 extern std::vector<int> stateChanges[];
 
 void learn(int learn);

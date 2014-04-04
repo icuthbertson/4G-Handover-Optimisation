@@ -206,6 +206,16 @@ std::vector<double> pingpong_total[] = {std::vector<double>(),
     								 	std::vector<double>(),
     								 	std::vector<double>()};
 
+std::vector<double> failure_total[] = {std::vector<double>(),
+                                       std::vector<double>(),
+                                       std::vector<double>(),
+                                       std::vector<double>(),
+                                       std::vector<double>(),
+                                       std::vector<double>(),
+                                       std::vector<double>(),
+                                       std::vector<double>(),
+                                       std::vector<double>()};
+
 std::vector<int> stateChanges[] = {std::vector<int>(),
     							   std::vector<int>(),
     							   std::vector<int>(),
@@ -219,18 +229,19 @@ std::vector<int> stateChanges[] = {std::vector<int>(),
 std::string handoverString;
 std::string dropString;
 std::string pingString;
+std::string failureString;
 std::string stateString;
 
 int main(int argc, char* argv[]) {
     int run_num = 0;
-    run_num = atoi(argv[0]);
+    run_num = atoi(argv[1]);
 
     int seed = 0;
-    seed = atoi(argv[1]);
+    seed = atoi(argv[2]);
 	srand(seed);
 
     int arg = 0;
-    arg = atoi(argv[2]);
+    arg = atoi(argv[3]);
 
 	TTTmaxindex = 15;
 	hysmaxindex = 20;
@@ -303,7 +314,7 @@ int main(int argc, char* argv[]) {
         // printf("Enter index for TTT\n");
         int tempTTTindex;
         // std::cin >> tempTTTindex;
-        tempTTTindex = atoi(argv[3]);
+        tempTTTindex = atoi(argv[4]);
         for(int j=0; j<NUM_BASESTATION; j++) {
             TTT[j] = TTTArray[tempTTTindex];
             TTTindex[j] = tempTTTindex;
@@ -311,7 +322,7 @@ int main(int argc, char* argv[]) {
         // printf("Enter index for hys\n");
         int temphysindex;
         // std::cin >> temphysindex;
-        temphysindex = atoi(argv[4]);
+        temphysindex = atoi(argv[5]);
         for(int k=0; k<NUM_BASESTATION; k++) {
             hys[k] = hysArray[temphysindex];
             hysindex[k] = temphysindex;
@@ -322,7 +333,7 @@ int main(int argc, char* argv[]) {
 		// printf("Enter index for TTT\n");
 		int tempTTTindex;
 		// std::cin >> tempTTTindex;
-        tempTTTindex = atoi(argv[3]);
+        tempTTTindex = atoi(argv[4]);
 		for(int j=0; j<NUM_BASESTATION; j++) {
 			TTT[j] = TTTArray[tempTTTindex];
 			TTTindex[j] = tempTTTindex;
@@ -330,7 +341,7 @@ int main(int argc, char* argv[]) {
 		// printf("Enter index for hys\n");
 		int temphysindex;
 		// std::cin >> temphysindex;
-        temphysindex = atoi(argv[4]);
+        temphysindex = atoi(argv[5]);
 		for(int k=0; k<NUM_BASESTATION; k++) {
 			hys[k] = hysArray[temphysindex];
 			hysindex[k] = temphysindex;
@@ -369,6 +380,10 @@ int main(int argc, char* argv[]) {
 		pString << "results/longer/mid" << run_num << "/basestation" << m << "/ping.txt";
 		pingString = pString.str();
 
+        std::stringstream fString;
+        fString << "results/longer/mid" << run_num << "/basestation" << m << "/failure.txt";
+        failureString = fString.str();
+
 		std::stringstream sString;
 		sString << "results/longer/mid" << run_num << "/basestation" << m << "/state.txt";
 		stateString = sString.str();
@@ -398,6 +413,14 @@ int main(int argc, char* argv[]) {
     		}
     	}
     	pFile.close();
+
+        std::ofstream fFile (failureString);
+        if(fFile.is_open()) {
+            for (std::vector<double>::iterator it=failure_total[m].begin() ; it!=failure_total[m].end(); it++) {
+                fFile << *it << "\n";
+            }
+        }
+        fFile.close();
 
     	std::ofstream sFile (stateString);
 		if(sFile.is_open()) {

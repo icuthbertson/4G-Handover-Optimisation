@@ -1,6 +1,6 @@
 #!/bin/bash
 #COUNTER SEED FUNCTION TTT HYS
-COUNTER=1
+COUNTER=0
 
 SEEDARRAY[0]=0
 SEEDARRAY[1]=5436
@@ -47,7 +47,7 @@ FUNCTION=3
 TTT=7
 
 HYS=10
-while [  $COUNTER -lt 31 ]; do
-             ./bin/simualtion $COUNTER $SEED $FUNCTION $TTT $HYS
-             let COUNTER=COUNTER+1
+while [  $COUNTER -lt 30 ]; do
+    ./bin/simulation $COUNTER $SEED $FUNCTION $TTT $HYS
+    let COUNTER=COUNTER+1
 done

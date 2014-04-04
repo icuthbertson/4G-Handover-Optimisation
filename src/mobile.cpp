@@ -314,6 +314,9 @@ void mobile::checkProp(int id) {
 			drop[connected]++;
 			rewardDrop[connected]++;
 			drop_total[connected].push_back(simTime[this->id]);
+            if(handingOver[this->id]) {
+                failure_total[connected].push_back(simTime[this->id]);
+            }
 			// printf("Sim Time: %f - ID: %d - Prop: %f - Basestation: %d\n",simTime[this->id],id,current_prop[id],id);
 			// fprintf(stderr, "Sim Time: %f - ID: %d - DROPPED - Basestation: %d\n",simTime[this->id],id,connected);
 			if(function == 2) {//runnning policy
