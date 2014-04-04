@@ -15,6 +15,7 @@
 #include <fstream>
 #include <string>
 #include <sstream>
+#include <cstdlib>
 
 /* Method
  ****************************
@@ -32,24 +33,24 @@ scheduler* gs = new scheduler();
 double TTTArray[16];
 double hysArray[21];
 
-int TTTindex[] = {3,
-			  	  3,
-			  	  3,
-			  	  3,
-			  	  3,
-			  	  3,
-			  	  3,
-			  	  3,
-			  	  3};
-int hysindex[] = {15,
-			  	  15,
-			  	  15,
-			  	  15,
-			  	  15,
-			  	  15,
-			  	  15,
-			  	  15,
-			  	  15};
+int TTTindex[] = {7,
+			  	  7,
+			  	  7,
+			  	  7,
+			  	  7,
+			  	  7,
+			  	  7,
+			  	  7,
+			  	  7};
+int hysindex[] = {10,
+			  	  10,
+			  	  10,
+			  	  10,
+			  	  10,
+			  	  10,
+			  	  10,
+			  	  10,
+			  	  10};
 
 int TTTmaxindex;
 int hysmaxindex;
@@ -220,8 +221,16 @@ std::string dropString;
 std::string pingString;
 std::string stateString;
 
-int main() {
-	srand(time(0));
+int main(int argc, char* argv[]) {
+    int run_num = 0;
+    run_num = atoi(argv[0]);
+
+    int seed = 0;
+    seed = atoi(argv[1]);
+	srand(seed);
+
+    int arg = 0;
+    arg = atoi(argv[2]);
 
 	TTTmaxindex = 15;
 	hysmaxindex = 20;
@@ -275,14 +284,14 @@ int main() {
 		hys[i] = hysArray[hysindex[i]];
 	}
 
-	std::cout << "Enter what operation you would like to undertake.\n";
-	std::cout << "1 for generating / updating policy\n";
-	std::cout << "2 for using the policy\n";
-	std::cout << "3 for no learning\n";
-	std:: cout << "Please enter:\n";
-
-	int arg;
-	std::cin >> arg;
+	// std::cout << "Enter what operation you would like to undertake.\n";
+	// std::cout << "1 for generating / updating policy\n";
+	// std::cout << "2 for using the policy\n";
+	// std::cout << "3 for no learning\n";
+	// std:: cout << "Please enter:\n";
+    //
+	// int arg;
+	// std::cin >> arg;
 
 	if(arg == 1) {
 		// q-learning
@@ -291,19 +300,37 @@ int main() {
 	} else if(arg == 2) {
 		// use policy
 		printf("Simulation started...\n");
+        // printf("Enter index for TTT\n");
+        int tempTTTindex;
+        // std::cin >> tempTTTindex;
+        tempTTTindex = atoi(argv[3]);
+        for(int j=0; j<NUM_BASESTATION; j++) {
+            TTT[j] = TTTArray[tempTTTindex];
+            TTTindex[j] = tempTTTindex;
+        }
+        // printf("Enter index for hys\n");
+        int temphysindex;
+        // std::cin >> temphysindex;
+        temphysindex = atoi(argv[4]);
+        for(int k=0; k<NUM_BASESTATION; k++) {
+            hys[k] = hysArray[temphysindex];
+            hysindex[k] = temphysindex;
+        }
 		function = 2;
 	}  else if(arg == 3) {
 		printf("No learning simulation...\n");
-		printf("Enter index for TTT\n");
+		// printf("Enter index for TTT\n");
 		int tempTTTindex;
-		std::cin >> tempTTTindex;
+		// std::cin >> tempTTTindex;
+        tempTTTindex = atoi(argv[3]);
 		for(int j=0; j<NUM_BASESTATION; j++) {
 			TTT[j] = TTTArray[tempTTTindex];
 			TTTindex[j] = tempTTTindex;
 		}
-		printf("Enter index for hys\n");
+		// printf("Enter index for hys\n");
 		int temphysindex;
-		std::cin >> temphysindex;
+		// std::cin >> temphysindex;
+        temphysindex = atoi(argv[4]);
 		for(int k=0; k<NUM_BASESTATION; k++) {
 			hys[k] = hysArray[temphysindex];
 			hysindex[k] = temphysindex;
@@ -331,19 +358,19 @@ int main() {
 
 	for(int m=0; m<NUM_BASESTATION; m++) {
 		std::stringstream hString;
-		hString << "results/longer/mid/basestation" << m << "/handover.txt";
+		hString << "results/longer/mid" << run_num << "/basestation" << m << "/handover.txt";
 		handoverString = hString.str();
 
 		std::stringstream dString;
-		dString<< "results/longer/mid/basestation" << m << "/drop.txt";
+		dString<< "results/longer/mid" << run_num << "/basestation" << m << "/drop.txt";
 		dropString = dString.str();
 
 		std::stringstream pString;
-		pString << "results/longer/mid/basestation" << m << "/ping.txt";
+		pString << "results/longer/mid" << run_num << "/basestation" << m << "/ping.txt";
 		pingString = pString.str();
 
 		std::stringstream sString;
-		sString << "results/longer/mid/basestation" << m << "/state.txt";
+		sString << "results/longer/mid" << run_num << "/basestation" << m << "/state.txt";
 		stateString = sString.str();
 
 
