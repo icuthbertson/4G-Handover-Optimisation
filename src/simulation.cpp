@@ -241,7 +241,78 @@ int main(int argc, char* argv[]) {
 	srand(seed);
 
     int arg = 0;
-    arg = atoi(argv[3]);
+
+    int typeTest = 0;
+    typeTest = atoi(argv[3]);
+
+    int tempTTTindex = 0;
+    int temphysindex = 0;
+
+    std::string folder = "";
+
+    switch(typeTest) {
+        case 0:
+            folder = "high";
+            tempTTTindex = 15;
+            temphysindex = 20;
+            arg = 3;
+            break;
+        case 1:
+            folder = "highys";
+            tempTTTindex = 3;
+            temphysindex = 15;
+            arg = 3;
+            break;
+        case 2:
+            folder = "low";
+            tempTTTindex = 0;
+            temphysindex = 0;
+            arg = 3;
+            break;
+        case 3:
+            folder = "mid";
+            tempTTTindex = 7;
+            temphysindex = 10;
+            arg = 3;
+            break;
+        case 4:
+            folder = "opthigh";
+            tempTTTindex = 15;
+            temphysindex = 20;
+            arg = 2;
+            break;
+        case 5:
+            folder = "opthighhys";
+            tempTTTindex = 3;
+            temphysindex = 15;
+            arg = 2;
+            break;
+        case 6:
+            folder = "optlow";
+            tempTTTindex = 0;
+            temphysindex = 0;
+            arg = 2;
+            break;
+        case 7:
+            folder = "optmid";
+            tempTTTindex = 7;
+            temphysindex = 10;
+            arg = 2;
+            break;
+        default:
+            // program should not reach here
+            break;
+    }
+
+    for(int j=0; j<NUM_BASESTATION; j++) {
+        TTT[j] = TTTArray[tempTTTindex];
+        TTTindex[j] = tempTTTindex;
+    }
+
+    for(int k=0; k<NUM_BASESTATION; k++) {
+        hys[k] = hysArray[temphysindex];
+        hysindex[k] = temphysindex;
+    }
 
 	TTTmaxindex = 15;
 	hysmaxindex = 20;
@@ -312,40 +383,40 @@ int main(int argc, char* argv[]) {
 		// use policy
 		printf("Simulation started...\n");
         // printf("Enter index for TTT\n");
-        int tempTTTindex;
-        // std::cin >> tempTTTindex;
-        tempTTTindex = atoi(argv[4]);
-        for(int j=0; j<NUM_BASESTATION; j++) {
-            TTT[j] = TTTArray[tempTTTindex];
-            TTTindex[j] = tempTTTindex;
-        }
-        // printf("Enter index for hys\n");
-        int temphysindex;
-        // std::cin >> temphysindex;
-        temphysindex = atoi(argv[5]);
-        for(int k=0; k<NUM_BASESTATION; k++) {
-            hys[k] = hysArray[temphysindex];
-            hysindex[k] = temphysindex;
-        }
+        // int tempTTTindex;
+        // // std::cin >> tempTTTindex;
+        // tempTTTindex = atoi(argv[4]);
+        // for(int j=0; j<NUM_BASESTATION; j++) {
+        //     TTT[j] = TTTArray[tempTTTindex];
+        //     TTTindex[j] = tempTTTindex;
+        // }
+        // // printf("Enter index for hys\n");
+        // int temphysindex;
+        // // std::cin >> temphysindex;
+        // temphysindex = atoi(argv[5]);
+        // for(int k=0; k<NUM_BASESTATION; k++) {
+        //     hys[k] = hysArray[temphysindex];
+        //     hysindex[k] = temphysindex;
+        // }
 		function = 2;
 	}  else if(arg == 3) {
 		printf("No learning simulation...\n");
 		// printf("Enter index for TTT\n");
-		int tempTTTindex;
-		// std::cin >> tempTTTindex;
-        tempTTTindex = atoi(argv[4]);
-		for(int j=0; j<NUM_BASESTATION; j++) {
-			TTT[j] = TTTArray[tempTTTindex];
-			TTTindex[j] = tempTTTindex;
-		}
-		// printf("Enter index for hys\n");
-		int temphysindex;
-		// std::cin >> temphysindex;
-        temphysindex = atoi(argv[5]);
-		for(int k=0; k<NUM_BASESTATION; k++) {
-			hys[k] = hysArray[temphysindex];
-			hysindex[k] = temphysindex;
-		}
+		// int tempTTTindex;
+		// // std::cin >> tempTTTindex;
+        // tempTTTindex = atoi(argv[4]);
+		// for(int j=0; j<NUM_BASESTATION; j++) {
+		// 	TTT[j] = TTTArray[tempTTTindex];
+		// 	TTTindex[j] = tempTTTindex;
+		// }
+		// // printf("Enter index for hys\n");
+		// int temphysindex;
+		// // std::cin >> temphysindex;
+        // temphysindex = atoi(argv[5]);
+		// for(int k=0; k<NUM_BASESTATION; k++) {
+		// 	hys[k] = hysArray[temphysindex];
+		// 	hysindex[k] = temphysindex;
+		// }
 		function = 4;
 	}
 
@@ -369,23 +440,23 @@ int main(int argc, char* argv[]) {
 
 	for(int m=0; m<NUM_BASESTATION; m++) {
 		std::stringstream hString;
-		hString << "results/longer/mid" << run_num << "/basestation" << m << "/handover.txt";
+		hString << "results/longer/" << folder << run_num << "/basestation" << m << "/handover.txt";
 		handoverString = hString.str();
 
 		std::stringstream dString;
-		dString<< "results/longer/mid" << run_num << "/basestation" << m << "/drop.txt";
+		dString<< "results/longer/" << folder << run_num << "/basestation" << m << "/drop.txt";
 		dropString = dString.str();
 
 		std::stringstream pString;
-		pString << "results/longer/mid" << run_num << "/basestation" << m << "/ping.txt";
+		pString << "results/longer/" << folder << run_num << "/basestation" << m << "/ping.txt";
 		pingString = pString.str();
 
         std::stringstream fString;
-        fString << "results/longer/mid" << run_num << "/basestation" << m << "/failure.txt";
+        fString << "results/longer/" << folder << run_num << "/basestation" << m << "/failure.txt";
         failureString = fString.str();
 
 		std::stringstream sString;
-		sString << "results/longer/mid" << run_num << "/basestation" << m << "/state.txt";
+		sString << "results/longer/" << folder << run_num << "/basestation" << m << "/state.txt";
 		stateString = sString.str();
 
 
