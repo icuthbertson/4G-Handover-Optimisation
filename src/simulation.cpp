@@ -32,24 +32,24 @@ scheduler* gs = new scheduler();
 double TTTArray[16];
 double hysArray[21];
 
-int TTTindex[] = {3,
-			  	  3,
-			  	  3,
-			  	  3,
-			  	  3,
-			  	  3,
-			  	  3,
-			  	  3,
-			  	  3};
-int hysindex[] = {15,
-			  	  15,
-			  	  15,
-			  	  15,
-			  	  15,
-			  	  15,
-			  	  15,
-			  	  15,
-			  	  15};
+int TTTindex[] = {7,
+			  	  7,
+			  	  7,
+			  	  7,
+			  	  7,
+			  	  7,
+			  	  7,
+			  	  7,
+			  	  7};
+int hysindex[] = {10,
+			  	  10,
+			  	  10,
+			  	  10,
+			  	  10,
+			  	  10,
+			  	  10,
+			  	  10,
+			  	  10};
 
 int TTTmaxindex;
 int hysmaxindex;
@@ -220,8 +220,9 @@ std::string dropString;
 std::string pingString;
 std::string stateString;
 
-int main() {
-	srand(time(0));
+int main(int run_num, int seed) {
+	// srand(time(0));
+    srand(seed);
 
 	TTTmaxindex = 15;
 	hysmaxindex = 20;
@@ -331,19 +332,19 @@ int main() {
 
 	for(int m=0; m<NUM_BASESTATION; m++) {
 		std::stringstream hString;
-		hString << "results/fading/opthighhys/basestation" << m << "/handover.txt";
+		hString << "results/fading/optmid" << run_num << "/basestation" << m << "/handover.txt";
 		handoverString = hString.str();
 
 		std::stringstream dString;
-		dString<< "results/fading/opthighhys/basestation" << m << "/drop.txt";
+		dString<< "results/fading/optmid" << run_num << "/basestation" << m << "/drop.txt";
 		dropString = dString.str();
 
 		std::stringstream pString;
-		pString << "results/fading/opthighhys/basestation" << m << "/ping.txt";
+		pString << "results/fading/optmid" << run_num << "/basestation" << m << "/ping.txt";
 		pingString = pString.str();
 
 		std::stringstream sString;
-		sString << "results/fading/opthighhys/basestation" << m << "/state.txt";
+		sString << "results/fading/optmid" << run_num << "/basestation" << m << "/state.txt";
 		stateString = sString.str();
 
 
@@ -352,34 +353,34 @@ int main() {
 		if(hFile.is_open()) {
 			for (std::vector<double>::iterator it=handover_total[m].begin() ; it!=handover_total[m].end(); it++) {
     		    hFile << *it << "\n";
-    		}    
-    	} 
-    	hFile.close();  
+    		}
+    	}
+    	hFile.close();
 
     	std::ofstream dFile (dropString);
 		if(dFile.is_open()) {
 			for (std::vector<double>::iterator it=drop_total[m].begin() ; it!=drop_total[m].end(); it++) {
     		    dFile << *it << "\n";
-    		}    
-    	} 
-    	dFile.close();    
+    		}
+    	}
+    	dFile.close();
 
     	std::ofstream pFile (pingString);
 		if(pFile.is_open()) {
 			for (std::vector<double>::iterator it=pingpong_total[m].begin() ; it!=pingpong_total[m].end(); it++) {
     		    pFile << *it << "\n";
-    		}    
-    	} 
-    	pFile.close();    
+    		}
+    	}
+    	pFile.close();
 
     	std::ofstream sFile (stateString);
 		if(sFile.is_open()) {
 			for (std::vector<int>::iterator it=stateChanges[m].begin() ; it!=stateChanges[m].end(); it++) {
     		    sFile << *it << "\n";
-    		}    
-    	} 
-    	sFile.close();  
-    } 
+    		}
+    	}
+    	sFile.close();
+    }
 
 	printf("end...\n");
 
