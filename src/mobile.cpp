@@ -153,7 +153,7 @@ void mobile::handler(const event* received)
 			// program should not reach here
 			break;
 	} // end switch statement
-	if(simTime[id] > 200000) {
+	if(simTime[id] > 1000) {
 		// learning->print();
 		globalScheduler->stop();
 	}
@@ -211,33 +211,27 @@ void mobile::switchBasestation(int newBasestation) {
  */
 void mobile::moveMobile() {
 	simTime[this->id] += STEPTIME;
-	if(duration>0) {
-		if((x_co+(minusX*speed*STEPTIME*sin(angle*PI/180)))>6000) {
-			minusX = -1;
-		} else if((x_co+(minusX*speed*STEPTIME*sin(angle*PI/180)))<0) {
-			minusX = -1;
-		} else {
-			x_co = x_co+(minusX*speed*STEPTIME*sin(angle*PI/180));
-		}
-		if(wall==0) {
-			if((y_co+(minusY*speed*STEPTIME*cos(angle*PI/180)))>6000) {
-				minusY = -1;
-			} else if((y_co+(minusY*speed*STEPTIME*cos(angle*PI/180)))<0) {
-				minusY = -1;
-			} else {
-				y_co = y_co+(minusY*speed*STEPTIME*cos(angle*PI/180));
-			}
-		}
-		if(duration==0) {
-			send_now(new event(MOVE));
-		} else {
-			duration -= STEPTIME;
-			send_delay(new event(STEP),STEPTIME);
-		}
-		//fprintf(stderr, "x_co:%f y_co:%f\n", x_co,y_co);
-	} else {
-		send_delay(new event(MOVE),1.0);
+	if((x_co+(minusX*speed*STEPTIME*sin(angle*PI/180)))>6000) {
+		minusX = -1;
+	} else if((x_co+(minusX*speed*STEPTIME*sin(angle*PI/180)))<0) {
+		minusX = -1;
 	}
+	x_co = x_co+(minusX*speed*STEPTIME*sin(angle*PI/180));
+	if((y_co+(minusY*speed*STEPTIME*cos(angle*PI/180)))>6000) {
+		minusY = -1;
+	} else if((y_co+(minusY*speed*STEPTIME*cos(angle*PI/180)))<0) {
+		minusY = -1;
+	}
+	y_co = y_co+(minusY*speed*STEPTIME*cos(angle*PI/180));
+	if(duration<=0) {
+		send_delay(new event(MOVE),STEPTIME);
+        fprintf(stderr, "\nSim Time: %.2f - ID %d - X_Co:%.2f Y_Co:%.2f \n",simTime[id],id,x_co,y_co);
+
+	} else {
+		duration -= STEPTIME;
+		send_delay(new event(STEP),STEPTIME);
+	}
+	//fprintf(stderr, "x_co:%f y_co:%f\n", x_co,y_co);
 }
 /* Method
  ****************************
@@ -300,7 +294,7 @@ void mobile::moveRandom() {
 
 	double deltaX = duration*speed*sin(angle*PI/180);
 	double deltaY = duration*speed*cos(angle*PI/180);
-	fprintf(stderr, "\nSim Time: %f - ID %d - X_Co:%f Y_Co:%f deltaX:%f deltaY:%f\nspeed:%f duration:%f\n",simTime[id],id,x_co,y_co,deltaX,deltaY,speed,duration);
+	fprintf(stderr, "\nSim Time: %.2f - ID %d - X_Co:%.2f Y_Co:%.2f deltaX:%.2f deltaY:%.2f\nspeed:%f duration:%f\n",simTime[id],id,x_co,y_co,deltaX,deltaY,speed,duration);
 
 	minusX = 1;
 	minusY = 1;

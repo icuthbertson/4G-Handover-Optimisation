@@ -10,7 +10,7 @@ newD = drop;
 newH = handover;
 
 for r = 1:(length(newD)+length(newH))
-    if (newD(i) < newH(j)) & (i <= length(newD))
+    if (newD(i) <= newH(j)) & (i <= length(newD))
         totdrop=totdrop+1;
         x=totdrop/tothand;
         y=[y x];

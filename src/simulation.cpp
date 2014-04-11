@@ -258,7 +258,7 @@ int main(int argc, char* argv[]) {
             arg = 3;
             break;
         case 1:
-            folder = "highys";
+            folder = "highhys";
             tempTTTindex = 3;
             temphysindex = 15;
             arg = 3;
