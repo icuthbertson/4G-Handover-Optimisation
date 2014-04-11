@@ -6,15 +6,19 @@
 \usepackage{subcaption}
 \usepackage{float}
 \usepackage{multicol}
+\usepackage[plain,chapter]{algorithm}
+\usepackage{algpseudocode}
+%\usepackage{algorithmic}
 \usepackage[printonlyused]{acronym}
+
 \usepackage[toc,page]{appendix}
 
 %\usepackage[parfill]{parskip}
 
 \usepackage{amsmath}
 
-\setcounter{secnumdepth}{3}
-\setcounter{tocdepth}{3}
+%\setcounter{secnumdepth}{3}
+%\setcounter{tocdepth}{3}
 
 \usepackage{listings}
 \usepackage{color}
@@ -83,6 +87,10 @@
 
 \listoftables
 \addcontentsline{toc}{chapter}{List of Tables}
+\pagebreak
+
+\listofalgorithms
+\addcontentsline{toc}{chapter}{List of Algorithms}
 \pagebreak
 
 \pagenumbering{arabic}

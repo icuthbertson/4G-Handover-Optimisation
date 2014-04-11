@@ -30,25 +30,25 @@ The optimisation system was tested in two scenarios. One scenario was to have 10
 Place holder for base station layout.
 
 Each base station has its own Q-Learning agent to optimise the TTT and hys values for that specific base station. The agents are given 1000000 seconds to attempt to learn the environment that are working within, with each state being given 180 seconds to gain their reward. This length of time was chosen because there are 336 state each with a maximum of 8 actions, therefore the time needed to do all actions would take approximately 483840 seconds if each action was given 180 seconds. This length of time is less than half of the total time given so even due to the randomness of selecting next actions when learning the environment there should be enough time to try all state and most of the actions available. After the agents have learned the environment they generate a policy for their base station to follow. The simulation is then run for 200000 seconds to test how well the policies perform. The results for the scenarios can be seen in Section~\ref{results}.
-\section{Results}\label{results}
-To results are assessed by how well they performed compared to not making any changes to the TTT and hys values. The comparison is made by observing how to ratio of dropped calls and ping-pong's to successful handovers changes over time. The ratio of dropped calls is given by the following equation:
+\subsection{Assessment Process}\label{results}
+The results are assessed by how well they performed compared to not making any changes to the TTT and hys values. The comparison is made by observing how to ratio of dropped calls and ping-pong's to successful handovers changes over time. The ratio of dropped calls is given by the following equation:
 \begin{equation}\label{eq:drop}
 Drop Ratio = \frac{\#Dropped Calls}{\#Successful Handovers}
 \end{equation}
 The ratio for the connection ping-ponging between base stations is given by the following equation:
 \begin{equation}\label{eq:ping}
-PingPong Ratio = \frac{\#PingPong's}{\#Successful Handovers}
+PingPong Ratio = \frac{\#PingPong's}{\#Successful Handovers + \#Attempted Handovers}
 \end{equation}
 It is also important to see how the TTT and hys values are being changes when the system is attempting to optimise them. This will allows it to be seen if the agents for the base stations come to some kind of consensus on the most optimal values of TTT and hys or if them come up with there own unique solutions. It is likely that Base Station 4 whose coverage overlaps with the coverage from every other Base Station, as seen in Figure (place holder), will come up with a different solution to the other Base Stations because it will be involved in the most handover attempts.
 
 The simulation is run for four different starting states when compiling results for the UE moving at walking or vehicle speeds. The first starting state was to have the TTT and hys both start at their maximum values, 5.12 second and 10 dB respectively, to see how the system attempted to optimise the values as it is expected that a lot of dropped calls would occur for this set of values. The second start state was to give the TTT and hys their middle values, which are 0.256 seconds for TTT and 5 dB for hys. This start state would be expected to perform relatively well without any optimisation taking place due to the values neither being very large or very small. The third start state has the TTT and hys being at their lowest possible values of 0 seconds for TTT and 0 dB for hys. This starting state is expected to cause ping-pong's to occur because a handover will be triggered as soon as a neighbouring Base Station becomes better than the serving Base Station, instead of waiting to see if the neighbouring Base Station continues to be better for a period of time. The final starting start is to have the TTT start at a low value of 0.08 seconds and the hys start at a high value of 7.5 dB. This type of state was chosen to see how the well the system can optimise the values when it is likely that one will need to be increased and the other decreased.
-\subsection{Walking Speed}
+\section{Walking Speed}
 For the walking speed testing it is expected that the first scenario of having both the TTT and hys at their highest values will produce a large number of dropped calls, with the likelihood of ping-pong's occurring being vey small, and prompt the optimisation system to reduce both values. For the second scenario with both the TTT and hys being middle values it is expected that the system will perform better than if no optimisation takes place. It is also expected that the system in likely to still reduced both values in an attempt to improve performance. For the third scenario with both the TTT and hys being their lowest possible values it is expected that no or very few dropped calls will occur and than ping-pong's are far more likely to happen. The system should compensate for this by increasing both values. In the final scenario where the TTT is a small value and the hys is a large one it is still expected that no ping-pong's will occur and that the ratio of called drops may be fairly high. It is expected that the system would attempt to improve the performance by increasing the TTT and decreasing the hys.
-\subsubsection*{Large Values}
+\subsection{Large Starting Values}
 The results of how the optimised values compared to the static values can be seen in Figure~\ref{fig:walk_high_drop} when both the TTT and hys started with their largest possible values of 5.12 seconds and 10 dB respectively. The results show that while the process of optimising the values initially generated a very large increase in the number of dropped calls. However, the system then managed to improve rapidly and ended up having a better dropped call ratio by the end to the simulation run than that of the non-optimised system.
 \begin{figure}[H]
   \begin{center}
-    	  \includegraphics[width=0.75\textwidth]{figures/walking_figures/high/long_drop.eps}
+    	  \includegraphics[width=0.66\textwidth]{figures/walking_figures/walkhigh.eps}
     \end{center}
     \caption{Graph of Optimised vs. Non-Optimised Results for Starting Point TTT=5.12s hys=10dB when UE traveling at walking speeds.}
     \label{fig:walk_high_drop}
@@ -72,11 +72,11 @@ While the changes made to the TTT value could be split up into two different gro
         \caption{Illustration of how the TTT and hys values changed over time for large values when UE traveling at walking speeds.}\label{fig:walk_high_ttthys}
 \end{figure}
 From these results it can be said that the system performed as expected by reducing both the TTT and hys in the case of all the base stations. There were also a very high number for dropped calls and no ping-pong's, which was also expected in the simulation.
-\subsubsection*{Medium Values}
+\subsection{Middle Starting Values}
 Again as seen in Figure~\ref{fig:walk_mid_drop} the optimised values performed a lot better than the static values when they were originally set to the their middle values of 0.256 seconds for TTT and 5 dB for hys. The results also show that unlike with the results seen in Figure~\ref{fig:walk_high_drop} the optimisation process did not greatly increase the number of dropped call at first. Instead it was the non-optimised values that began with the large number of dropped calls. This means that when these dropped calls began to appear the machine learning algorithm changed the value of TTT and hys in such a way that the dropped calls seen for the non-optimised values did not happen.
 \begin{figure}[H]
   \begin{center}
-    	  \includegraphics[width=0.75\textwidth]{figures/walking_figures/mid/long_drop.eps}
+    	  \includegraphics[width=0.75\textwidth]{figures/walking_figures/walkmid.eps}
     \end{center}
     \caption{Graph of Optimised vs. Non-Optimised Results for Starting Point TTT=0.256s hys=5dB when UE traveling at walking speeds.}
     \label{fig:walk_mid_drop}
@@ -103,13 +103,13 @@ It is interesting to note that base station 8 actually ended up switching betwee
         \caption{Illustration of how the TTT and hys values changed over time for medium values when UE traveling at walking speeds.}\label{fig:walk_mid_ttthys}
 \end{figure}
 The system performed as expected in this scenario with the majority of the base stations reducing both the TTT and hys to attempt to improve the performance. Some base stations, however, took an unexpected approach by actually increasing the values.
-\subsubsection*{Small Values}
+\subsection{Small Starting Values}
 It turned out that ping-pong's were a very rare occurrence in the simulation. This was most likely due to there being no fading in the simulation and that Random Direction mobility model would having the UE moving in one direction for a long time meaning that the only likely occurrence of a ping-pong would be if a handover took place and the UE then turned around and moved the other direction.
 
 Figure~\ref{fig:walk_low_ping} shows how the optimisation system performed against the static values when the simulation started with the TTT being 0 seconds and the hys being 0 dB. It can be seen that the optimised values only actually began to perform better than the static values at the very end of the simulation run. However, it can also be seen the ping-pong ratio for the static values was actually trending up while the ratio for the optimised values was trending down. This means that long term the optimised values should perform much better. 
 \begin{figure}[H]
   \begin{center}
-    	  \includegraphics[width=0.75\textwidth]{figures/walking_figures/low/long_ping.eps}
+    	  \includegraphics[width=0.75\textwidth]{figures/walking_figures/walklow.eps}
     \end{center}
     \caption{Graph of Optimised vs. Non-Optimised Results for Starting Point TTT=0s hys=0dB when UE traveling at walking speeds.}
     \label{fig:walk_low_ping}
@@ -134,11 +134,11 @@ It can also be seen in Figure~\ref{fig:walk_low_hys} that the majority of the ba
         \caption{Illustration of how the TTT and hys values changed over time for medium values when UE traveling at walking speeds.}\label{fig:walk_low_ttthys}
 \end{figure}
 This scenario played out as expected with no dropped calls occurring; instead having ping-pong’s determine the performance of the system. The system also compensated for this as expected by increase the value of the hys in most cases and by the end of the simulation run the performance of the optimised values had become better than that of the non-optimised values.
-\subsubsection*{Large hys and Small TTT Values}
+\subsection{Large hys and Small TTT Starting Values}
 Much like the first three scenarios, it can be seen in Figure~\ref{fig:walk_highhys_drop} that, the optimised values performed better than the static values when the TTT and hys started at 0.08 seconds and 7.5 dB respectively. Also much like in the second scenario the optimisation process did not begin by greatly increasing the number of dropped when trying to optimise the values.
 \begin{figure}[H]
   \begin{center}
-    	  \includegraphics[width=0.75\textwidth]{figures/walking_figures/highhys/long_drop.eps}
+    	  \includegraphics[width=0.75\textwidth]{figures/walking_figures/walkhighhys.eps}
     \end{center}
     \caption{Graph of Optimised vs. Non-Optimised Results for Starting Point TTT=0.08s hys=7.5dB when UE traveling at walking speeds.}
     \label{fig:walk_highhys_drop}
@@ -164,13 +164,13 @@ Figure~\ref{fig:walk_highhys_hys} shows that while the base stations changed the
 \end{figure}
 In this scenario the system perform as expected in terms of decreasing the value of the hys. However, the system performed unexpectedly by also decreasing the value of the TTT when it was expected to actually increase it. Even with this the system still performed better than the simulation when run with static values.
 
-\subsection{Vehicle Speed}
+\section{Vehicle Speed}
 For the vehicle speed scenarios it is expected that number of dropped calls would increase over those seen in the walking speed scenarios due to the UE moving a lot faster and therefore giving a lot less time for the decision to handover or not. It is still expected that for the first scenario the system will reduce both values for TTT and hys. In the second scenario of the middle values it can also be expected the both values for TTT and hys will be reduced as dropped calls will still be expected fairly often at the speed the UE will be moving at. For the third scenario where both values for TTT and hys are at their lowest it is expected that the system will increase these values has ping-pong's should still be likely to happen, even at the high speeds. In the fourth scenario it is expected that the system is more likely to reduce both values, unlike when the UE was moving at walking speeds, because of the speed the UE is moving at decisions need to be made quickly.
-\subsubsection*{Large Values}
+\subsection{Large Starting Values}
 It can be seen in Figure~\ref{fig:veh_high_drop} that the optimised system performed better than the system using the static values of 5.12 seconds for TTT and 10 dB for hys. 
 \begin{figure}[H]
   \begin{center}
-    	  \includegraphics[width=0.75\textwidth]{figures/vehicle_figures/high/long_drop.eps}
+    	  \includegraphics[width=0.75\textwidth]{figures/vehicle_figures/vehhigh.eps}
     \end{center}
     \caption{Graph of Optimised vs. Non-Optimised Results for Starting Point TTT=5.12s hys=10dB when UE traveling at walking speeds.}
     \label{fig:veh_high_drop}
@@ -195,11 +195,11 @@ The same kind of results seen in the TTT values can also be seen in the hys in F
         \caption{Illustration of how the TTT and hys values changed over time for large values when UE traveling at vehicle speeds.}\label{fig:veh_high_ttthys}
 \end{figure}
 For this scenario while the system performed as expected and still performed better than that of the non-optimised system, it can be seen that it still did not perform all that well and appear be being getting stuck in non-optimal states.
-\subsubsection*{Medium Values}
+\subsection{Middle Starting Values}
 In this scenario the optimised system perform much better than of the static values, where it TTT and hys values were initialised to 0.256 seconds and 5 dB respectively. The graphs of the dropped calls ratios can be seen in Figure~\ref{fig:veh_mid_drop}.
 \begin{figure}[H]
   \begin{center}
-    	  \includegraphics[width=0.75\textwidth]{figures/vehicle_figures/mid/long_drop.eps}
+    	  \includegraphics[width=0.75\textwidth]{figures/vehicle_figures/vehmid.eps}
     \end{center}
     \caption{Graph of Optimised vs. Non-Optimised Results for Starting Point TTT=0.256s hys=5dB when UE traveling at vehicle speeds.}
     \label{fig:veh_mid_drop}
@@ -224,11 +224,11 @@ The way that the value for the hys was changed by the base stations can be seen 
         \caption{Illustration of how the TTT and hys values changed over time for medium values when UE traveling at vehicle speeds.}\label{fig:veh_mid_ttthys}
 \end{figure}
 In this scenario it has been seen that the optimisation system functioned as expected with the majority of the base stations reducing both the TTT and hys values. However, there was a strange anomaly where one of the base stations greatly increased the TTT value, which was highly unexpected. 
-\subsubsection*{Small Values}
+\subsection{Small Starting Values}
 It can be seen that for this scenario the optimised system performed well and even though at the beginning of the simulation it performed worse, by the end the ratio of ping-pong's was for better than that of the non-optimised values.
 \begin{figure}[H]
   \begin{center}
-    	  \includegraphics[width=0.75\textwidth]{figures/vehicle_figures/low/long_ping.eps}
+    	  \includegraphics[width=0.75\textwidth]{figures/vehicle_figures/vehlow.eps}
     \end{center}
     \caption{Graph of Optimised vs. Non-Optimised Results for Starting Point TTT=0s hys=0dB when UE traveling at vehicle speeds.}
     \label{fig:veh_low_drop}
@@ -253,11 +253,11 @@ Figure~\ref{fig:veh_low_hys} shows that the majority of the base stations increa
         \caption{Illustration of how the TTT and hys values changed over time for medium values when UE traveling at vehicle speeds.}\label{fig:vel_low_ttthys}
 \end{figure}
 Again the optimisation system functioned as expected with increasing both the TTT and hys values due to ping-pong’s occurring. This was expected because even though the UE is travel quickly the system still has to make sure that it does not trigger a handover too quickly.
-\subsubsection*{Large hys and Small TTT Values}
+\subsection{Large hys and Small TTT Starting Values}
 As seen in the first three scenarios for the vehicle speed testing the optimised system managed to perform better than that of the non-optimised system when starting with the TTT being 0.08 seconds and the hys 7.5 dB. However, the improvement was not quite as great as seen in the other scenarios. 
 \begin{figure}[H]
   \begin{center}
-    	  \includegraphics[width=0.75\textwidth]{figures/vehicle_figures/highhys/long_drop.eps}
+    	  \includegraphics[width=0.75\textwidth]{figures/vehicle_figures/vehhighhys.eps}
     \end{center}
     \caption{Graph of Optimised vs. Non-Optimised Results for Starting Point TTT=0.08s hys=7.5dB when UE traveling at vehicle speeds.}
     \label{fig:veh_highhys_drop}
@@ -282,7 +282,7 @@ Much like with the results seen for how the TTT was changed, there is no real co
         \caption{Illustration of how the TTT and hys values changed over time for medium values when UE traveling at vehicle speeds.}\label{fig:veh_highhys_ttthys}
 \end{figure}
 Much like with the other scenarios it is seen that while the system may have been an improvement over the static values the system still could have performed far better, as base stations appeared to keep switching between values that could be considered non-optimal.
-\subsection{Evaluation}
+\section{Evaluation}
 Over the four scenarios used to test the optimisation system for walking speeds it can be seen that overall the system performed better than if no optimisation was done at all. It can also be seen that the system makes improvements to the performance very quickly. As seen in scenarios for the middle values and the large hys with small TTT the system managed to not have the large spike in dropped calls at the beginning of their simulation runs which were seen in there respective non-optimised runs.
 
 In the scenarios for vehicle speeds it was seen that the system did performed better than if no optimisation was used. However, it was seen in the ways that the TTT and hys values were changed that they did not stop dropped calls constantly happening, which means that these values were likely non-optimal. Therefore it is possible that the system could have performed a lot better if the system did not get stuck between non-optimal states.

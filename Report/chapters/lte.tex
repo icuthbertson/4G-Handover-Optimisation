@@ -2,21 +2,32 @@
 Mobile communications is on to its \ac{4G} of network infrastructure with \ac{LTE}. This network infrastructure was developed by 3GPP and is an improvement upon \ac{UMTS}, which is a \ac{3G} network. \ac{LTE} has \ac{DL} speeds of up to $300 Mbit/s$ and \ac{UL} speeds of $75 Mbit/s$ with a varying bandwidth that ranges from $1.4 MHz$ to $20 MHz$. The development of faster downloads speed was driven by the consumers want for better quality images, faster Internet browsing and smoother video streaming.~\cite{cox2012introduction}
 
 \section{Network Structure}\label{network structure}
-The structure of the LTE network can be broken down into 3 main parts, the \ac{UE}, the \ac{E-UTRAN} and the \ac{EPC}. The UE can simply be considered as a standard mobile phone or smartphone. The purpose of the E-UTRAN is to connect a UE to the EPC and is made up of just one component, the \ac{eNodeB} or simply put base station. Figure (place holder) shows an illustration of the E-UTRAN. An UE will only communicate with one eNodeB at any time and this eNodeB is known as the Serving eNodeB. An eNodeB proves two main functions within the network; the first is to send all the radio traffic for an UE on the DL as well as receiving any traffic sent from the UE on the UL. The second function of the eNodeB is to control low-level operations such as handovers as well as provide the signalling for such operations. Due to the eNodeB's having the added complexity of controlling operations such as handovers it moves more of the processing from the core network to the edge of the network, reducing the latency of decisions being made. Every eNodeB is connected to the EPC using the S1 interface. They can also be connected to other eNodeB's by the X2 interface. This interface is mainly used for signalling and forwarding data from a serving eNodeB to a neighbouring eNodeB during a handover.
+The structure of the LTE network can be broken down into 3 main parts, the \ac{UE}, the \ac{E-UTRAN} and the \ac{EPC}. The UE can simply be considered as a standard mobile phone or smartphone. The purpose of the E-UTRAN is to connect a UE to the EPC and is made up of just one component, the \ac{eNodeB} or simply put base station. Figure~\ref{fig:eutran} shows an illustration of the E-UTRAN. An UE will only communicate with one eNodeB at any time and this eNodeB is known as the Serving eNodeB. An eNodeB proves two main functions within the network; the first is to send all the radio traffic for an UE on the DL as well as receiving any traffic sent from the UE on the UL. The second function of the eNodeB is to control low-level operations such as handovers as well as provide the signalling for such operations. Due to the eNodeB's having the added complexity of controlling operations such as handovers it moves more of the processing from the core network to the edge of the network, reducing the latency of decisions being made. Every eNodeB is connected to the EPC using the S1 interface. They can also be connected to other eNodeB's by the X2 interface. This interface is mainly used for signalling and forwarding data from a serving eNodeB to a neighbouring eNodeB during a handover.
 
-Figure place holder for E-UTRAN image.
+\begin{figure}[H]
+  \begin{center}
+    	  \includegraphics[width=0.75\textwidth]{figures/lte/eutran.pdf}
+    \end{center}
+    \caption{Illustration of E-UTRAN.}
+    \label{fig:eutran}
+\end{figure}
 
-An illustration of an EPC can be seen in Figure (place holder). It can be seen that the EPC is made up of four main components, they are the: \ac{MME}, \ac{HSS}, \ac{P-GW} and \ac{S-GW}. 
+An illustration of an EPC can be seen in Figure~\ref{fig:epc}. It can be seen that the EPC is made up of four main components, they are the: \ac{MME}, \ac{HSS}, \ac{P-GW} and \ac{S-GW}. 
 The MME provide the high-level operations for a UE such as security and managing non-radio communication data streams as well as controlling other elements within the EPC. There are very few MME's within the LTE network, generally assigned to a certain geographical region. A UE will be assigned to a single MME known as the Serving MME. 
 The HSS is a central database that holds all the information about the network subscribers such as authentication and billing information.
 The P-GW is the bridge between the EPC and other packet data networks such as the Internet. The P-GW uses the SGi interface to exchange data with outside networks, such as the network operator's servers.
-The S-GW function is to forward data to and from the eNodeB's to P-GW, this means that the S-GW effectively acts like a router. Much like the MME a UE will be assigned to one S-GW and there will be very few within the network as a whole.
+The S-GW function is to forward data to and from the eNodeB's to P-GW, this means that the S-GW effectively acts like a router. Much like the MME a UE will be assigned to one S-GW and there will be very few within the network as a whole.~\cite{cox2012introduction, 3gpp2013network}
 
-Figure place holder for EPC image.
-~\cite{cox2012introduction, 3gpp2013network}
+\begin{figure}[H]
+  \begin{center}
+    	  \includegraphics[width=0.75\textwidth]{figures/lte/epc.pdf}
+    \end{center}
+    \caption{Illustration of EPC.}
+    \label{fig:epc}
+\end{figure}
 
 \section{Self-Organising Network}\label{self organising network}
-LTE, just like any other mobile network, needs to be managed. Due to LTE being more complex than its predecessors the managed of the network has also become more complex. The use of automation can simplify management of a network greatly. A technology that can be employed in LTE is that of a Self-Organising Network. This system provides three main functions, Self-configuration, Self-optimisation and Self-healing.~\cite{feng2008self,3gpp2011self}
+LTE, just like any other mobile network, needs to be managed. Due to LTE being more complex than its predecessors the management of the network has also become more complex. The use of automation can simplify management of a network greatly. A technology that can be employed in LTE is that of a Self-Organising Network. This system provides three main functions, Self-configuration, Self-optimisation and Self-healing.~\cite{feng2008self,3gpp2011self}
 \begin{itemize}
   \item \textbf{Self-configuration} allows for newly installed eNodeB to be configured automatically with the basic parameters for operation.  
 
@@ -29,65 +40,42 @@ LTE, just like any other mobile network, needs to be managed. Due to LTE being m
 The process of handover is very important in mobile telecommunications. It involves moving the resource allocation for a mobile phone or a piece of \ac{UE} from one base station to another. This process is used to provide more \ac{QoS} to customers by allowing them to continue to use provided services even after moving out of range of the original serving base station. To keep with the QoS it is important that handovers are done fast, have little-to-no disruption to the users experience and are completed with a very high success rate. If a handover is unsuccessful it is likely that an on going call will be dropped due to there not being enough resources available on a base station, known as an \ac{eNodeB} in \ac{LTE}, or the received signal strength to the \ac{UE} drops below a certain threshold needed to maintain the call. Handovers are stated to take roughly 0.25 seconds to complete after the decision has been made for a handover to take place~\cite{jansen2010handover}.
 
 \subsection{Parameters}\label{parameters}
-In LTE there are two main parameters that are used in the handover process. These parameters are the \ac{TTT} and \ac{hys}. The hys is used to define how much better the \ac{RSS} of a neighbouring base station must be than the serving base station for a handover to be considered. The values of hys are defined in \ac{dB} and range from 0 to 10 dB in 0.5 dB increments, this results in there being 20 different values of hys. The full range of hys values can be seen in Table~\ref{tab:hys}.
+In LTE there are two main parameters that are used in the handover process. These parameters are the \ac{TTT} and \ac{hys}. The hys is used to define how much better the \ac{RSS} of a neighbouring base station must be than the serving base station for a handover to be considered. The values of hys are defined in \ac{dB} and range from 0 to 10 dB in 0.5 dB increments, this results in there being 21 different values of hys. The full range of hys values can be seen in Table~\ref{tab:hys}.
 
 \begin{table}[H]
   \begin{center}
-    \begin{tabular}{| l | p{2cm} |}
+    \begin{tabular}{| l || c | c | c | c | c | c | c | c | c | c | c | c | c | c | c | c | c | c | c | c | c |}
   	  \hline
-      Parameter & Value(dB) \\ \hline
-      hys & 0.0 \newline
-	  0.5 \newline
-	  1.0 \newline
-	  1.5 \newline
-	  2.0 \newline
-	  2.5 \newline
-	  3.0 \newline
-	  3.5 \newline
-	  4.0 \newline
-	  4.5 \newline
-	  5.0 \newline
-	  5.5 \newline
-	  6.0 \newline
-	  6.5 \newline
-	  7.0 \newline
-	  7.5 \newline
-	  8.0 \newline
-	  8.5 \newline
-	  9.0 \newline
-	  9.5 \newline	  	  	  	  
-	  10.0 \\
-      \hline
+      \textbf{Index} & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
+      %\hline
+      \textbf{hys (dB)} & 0.0 & 0.5 & 1.0 & 1.5 & 2.0 & 2.5 & 3.0 & 3.5 & 4.0 & 4.5 & 5.0 \\ 
+      \hline 
+      %\cline{1-11}
+      \textbf{Index} & 11 & 12 & 13 & 14 & 15 & 16 & 17 & 18 & 19 & 20 & \multicolumn{1}{ |c  }{} \\ 
+      %\cline{1-11}
+      \textbf{hys (dB)} & 5.5 & 6.0 & 6.5 & 7.0 & 7.5 & 8.0 & 8.5 & 9.0 & 9.5 & 10 & \multicolumn{1}{ |c  }{} \\
+      \cline{1-11}
   	\end{tabular}
-  \end{center}
   \caption{Table of the different LTE hys values.}
   \label{tab:hys}
+  \end{center}
 \end{table}
 
-The TTT is a length of time, defined in seconds, that is used to define how long a neighbouring base station must look better than the serving base station for. There are 15 different values of TTT ranging from 0 to 5.12 seconds. Unlike with hys the TTT values do not increment linearly, instead they increment exponential with smaller increases at the lower values ad bigger increases at the larger values. The full list of TTT values can be seen in Table~\ref{tab:ttt} and a graph of how the TTT values increase can be seen in Figure~\ref{fig:ttt}.
+The TTT is a length of time, defined in seconds, that is used to define how long a neighbouring base station must look better than the serving base station for. There are 16 different values of TTT ranging from 0 to 5.12 seconds. Unlike with hys the TTT values do not increment linearly, instead they increment exponential with smaller increases at the lower values ad bigger increases at the larger values. The full list of TTT values can be seen in Table~\ref{tab:ttt} and a graph of how the TTT values increase can be seen in Figure~\ref{fig:ttt}.
 
 \begin{table}[H]
   \begin{center}
-    \begin{tabular}{| l | p{1.5cm} |}
+    \begin{tabular}{| l || c | c | c | c | c | c | c | c | c |}
   	  \hline
-      Parameter & Value(s) \\ \hline
-      TTT & 0.0 \newline
-      0.04 \newline
-	  0.064 \newline
-	  0.08 \newline
-	  0.1 \newline
-	  0.128 \newline
-	  0.16 \newline
-	  0.256 \newline
-	  0.32 \newline
-	  0.48 \newline
-	  0.512 \newline
-	  0.64 \newline
-	  1.024 \newline
-	  1.280 \newline
-	  2.56 \newline
-	  5.12 \\
+      \textbf{Index} & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\ 
+      %\hline
+      \textbf{TTT (s)} & 0.0 & 0.04 & 0.064 & 0.08 & 0.1 & 0.128 & 0.16 & 0.256 & 0.32 \\ 
       \hline
+      \cline{1-8}
+      \textbf{Index} & 9 & 10 & 11 & 12 & 13 & 14 & 15 & \multicolumn{2}{|c}{} \\
+      %\cline{1-8}
+	  \textbf{TTT (s)} & 0.48 & 0.512 & 0.64 & 1.024 & 1.280 & 2.56 & 5.12 & \multicolumn{2}{|c}{} \\
+      \cline{1-8}
   	\end{tabular}
   \end{center}
   \caption{Table of the different LTE TTT values.}
@@ -96,7 +84,7 @@ The TTT is a length of time, defined in seconds, that is used to define how long
 
 \begin{figure}[H]
   \begin{center}
-    	  \includegraphics[width=0.5\textwidth]{figures/lte/TTTgraph.jpg}
+    	  \includegraphics[width=0.75\textwidth]{figures/lte/TTTgraph.eps}
     \end{center}
     \caption{Graph of TTT values.}
     \label{fig:ttt}

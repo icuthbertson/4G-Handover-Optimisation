@@ -1,7 +1,13 @@
 \chapter{Introduction}
-\section{The Problem}
-\section{Solution}
+Handover is a key process in \ac{4G} cellular networks. It allows for customers to be able to continue there calls and using services while moving out of range of the base station they are currently connected to. A reinforcement learning technique known as Q-Learning was used to carry out the optimisation the handover parameters.
+
+The performance of handovers within a cellular network is very important. Initiating a handover too late can cause an on-going call to be dropped by the network. This would be viewed as poor \ac{QoS} by the customer.  However, initiating a handover too early also comes with its own problems. It can cause handover ping-pong's where a mobiles' connection switches back and forth between base stations in a short period of time and this wastes resources within the network.  
+
+It was also required that a simulation was created that would simulate mobile phones moving around a group of network base stations. This simulation would be used to determine the performance of the machine learning algorithm compared to if no optimisation was taking place. It would also supply the machine learning algorithm with rewards to tell it if it is making decision that are improving the performance or making it worse.
 \section{Project Objectives}
+The main objective of this project was to development a machine learning algorithm to fine tune the parameters used in the handover process of 4G networks.
+
+Key Objectives:
 \begin{itemize}
 	\item Research and understand the parameters used in 4G handovers.
 	\item Create a basic simulation of a 4G network with mobiles moving around a group of base stations.
@@ -9,4 +15,8 @@
 	\item Evaluate the success of the machine learning approach in 4G handovers and compare this to using static parameters
 \end{itemize}
 \section{Project Outcomes}
-During the time spent on the project all of the objectives have been met. The parameters that are used in the handover process, the \ac{TTT} and \ac{hys},
+During the time spent on the project all of the objectives have been met. The parameters that are used in the handover process, the \ac{TTT} and \ac{hys}, were researched and the ways they are used were discovered. A basic simulation of a cellular network was created and a Q-Learning algorithm was developed that optimised the handover parameters.
+
+Experiments were run to find the worth of the machine learning system against using static values for the handover parameters. It was found that the machine learning system was able to improve the performance of the network. However, the system was found to be capable of having the potential of performing even better.   
+\section{Dissertation Outline}
+The structure of this dissertation is as follows: Chapter 2 describes a basic account of a 4G network along with the handover process. Chapter 3 gives a brief discussion on the different types of machine learning and goes more in-depth into reinforcement learning and Q-Learning. Chapter 4 describes the different propagation and mobility models considered for use within the simulation, as well as giving accounts of how the simulation was designed and the testing done to make sure the simulation was functioning as required. Chapter 5 describes the approach taken to the machine learning problem and the experiments run to find the worth of the system. This chapter also gives the results of the experiments and these results are discussed. Chapter 6 discusses the possible future work that could take this project further. Finally, Chapter 7 gives an account of the conclusions drawn from the project.
