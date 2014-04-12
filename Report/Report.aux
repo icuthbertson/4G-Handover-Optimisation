@@ -34,6 +34,7 @@
 \newacro{P-GW}[\AC@hyperlink{P-GW}{P-GW}]{Packet Data Network Gateway}
 \newacro{PCell}[\AC@hyperlink{PCell}{PCell}]{Primary Cell}
 \newacro{QoS}[\AC@hyperlink{QoS}{QoS}]{Quality-of-Service}
+\newacro{RSRP}[\AC@hyperlink{RSRP}{RSRP}]{Reference Signal Received Power}
 \newacro{RSS}[\AC@hyperlink{RSS}{RSS}]{Received Signal Strength}
 \newacro{SCell}[\AC@hyperlink{SCell}{SCell}]{Secondary Cell}
 \newacro{S-GW}[\AC@hyperlink{S-GW}{S-GW}]{Serving Gateway}
@@ -42,9 +43,9 @@
 \newacro{UE}[\AC@hyperlink{UE}{UE}]{User Equipment}
 \newacro{UL}[\AC@hyperlink{UL}{UL}]{Uplink}
 \newacro{UMTS}[\AC@hyperlink{UMTS}{UMTS}]{Universal Mobile Telecommunications System}
-\@writefile{toc}{\contentsline {chapter}{List of Figures}{ix}}
-\@writefile{toc}{\contentsline {chapter}{List of Tables}{x}}
-\@writefile{toc}{\contentsline {chapter}{List of Algorithms}{xi}}
+\@writefile{toc}{\contentsline {chapter}{List of Figures}{viii}}
+\@writefile{toc}{\contentsline {chapter}{List of Tables}{ix}}
+\@writefile{toc}{\contentsline {chapter}{List of Algorithms}{x}}
 \@writefile{toc}{\contentsline {chapter}{\numberline {1}Introduction}{1}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
@@ -63,30 +64,12 @@
 \newlabel{acro:hys}{{1.2}{2}}
 \acronymused{hys}
 \@writefile{toc}{\contentsline {section}{\numberline {1.3}Dissertation Outline}{2}}
+\citation{ericsson2014}
 \citation{cox2012introduction}
 \@writefile{toc}{\contentsline {chapter}{\numberline {2}LTE}{3}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \newlabel{lte}{{2}{3}}
-\undonewlabel{acro:4G}
-\newlabel{acro:4G}{{2}{3}}
-\acronymused{4G}
-\undonewlabel{acro:LTE}
-\newlabel{acro:LTE}{{2}{3}}
-\acronymused{LTE}
-\undonewlabel{acro:UMTS}
-\newlabel{acro:UMTS}{{2}{3}}
-\acronymused{UMTS}
-\undonewlabel{acro:3G}
-\newlabel{acro:3G}{{2}{3}}
-\acronymused{3G}
-\acronymused{LTE}
-\undonewlabel{acro:DL}
-\newlabel{acro:DL}{{2}{3}}
-\acronymused{DL}
-\undonewlabel{acro:UL}
-\newlabel{acro:UL}{{2}{3}}
-\acronymused{UL}
 \@writefile{toc}{\contentsline {section}{\numberline {2.1}Network Structure}{3}}
 \newlabel{network structure}{{2.1}{3}}
 \undonewlabel{acro:UE}
@@ -132,7 +115,12 @@
 \newlabel{acro:QoS}{{2.3}{6}}
 \acronymused{QoS}
 \acronymused{eNodeB}
+\undonewlabel{acro:LTE}
+\newlabel{acro:LTE}{{2.3}{6}}
 \acronymused{LTE}
+\undonewlabel{acro:RSS}
+\newlabel{acro:RSS}{{2.3}{6}}
+\acronymused{RSS}
 \acronymused{UE}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3.1}Parameters}{6}}
 \newlabel{parameters}{{2.3.1}{6}}
@@ -142,8 +130,6 @@
 \undonewlabel{acro:hys}
 \newlabel{acro:hys}{{2.3.1}{6}}
 \acronymused{hys}
-\undonewlabel{acro:RSS}
-\newlabel{acro:RSS}{{2.3.1}{6}}
 \acronymused{RSS}
 \undonewlabel{acro:dB}
 \newlabel{acro:dB}{{2.3.1}{6}}
@@ -157,16 +143,20 @@
 \newlabel{fig:ttt}{{2.3}{7}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3.2}Procedure}{7}}
 \newlabel{procedure}{{2.3.2}{7}}
+\citation{sinclair2013handover}
 \undonewlabel{acro:PCell}
-\newlabel{acro:PCell}{{\caption@xref {acro:PCell}{ on input line 105}}{8}}
+\newlabel{acro:PCell}{{\caption@xref {acro:PCell}{ on input line 91}}{8}}
 \acronymused{PCell}
 \acronymused{PCell}
 \undonewlabel{acro:SCell}
-\newlabel{acro:SCell}{{\caption@xref {acro:SCell}{ on input line 108}}{8}}
+\newlabel{acro:SCell}{{\caption@xref {acro:SCell}{ on input line 94}}{8}}
 \acronymused{SCell}
 \acronymused{PCell}
 \@writefile{lot}{\contentsline {table}{\numberline {2.3}{\ignorespaces Table of the different LTE Trigger types and their criteria.\relax }}{8}}
 \newlabel{tab:trigger}{{2.3}{8}}
+\undonewlabel{acro:RSRP}
+\newlabel{acro:RSRP}{{2.3.2}{8}}
+\acronymused{RSRP}
 \citation{alpaydin2010introduction}
 \@writefile{toc}{\contentsline {chapter}{\numberline {3}Machine Learning}{10}}
 \@writefile{lof}{\addvspace {10\p@ }}
@@ -180,10 +170,16 @@
 \citation{barto1998reinforcement}
 \@writefile{toc}{\contentsline {section}{\numberline {3.2}Q-Learning}{12}}
 \newlabel{sec:qlearning}{{3.2}{12}}
+\newlabel{eq:av1}{{3.1}{13}}
+\newlabel{eq:av2}{{3.2}{13}}
+\newlabel{eq:av3}{{3.3}{13}}
+\newlabel{eq:av4}{{3.4}{13}}
+\newlabel{eq:av5}{{3.5}{13}}
+\newlabel{eq:av6}{{3.6}{13}}
+\newlabel{eq:qlearning}{{3.7}{13}}
 \citation{poole2010artificial}
-\newlabel{eq:qlearning}{{3.1}{13}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {3.1}{\ignorespaces Q-Learing Procedure.\relax }}{13}}
-\newlabel{alg:qlearning}{{3.1}{13}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {3.1}{\ignorespaces Q-Learing Procedure.\relax }}{14}}
+\newlabel{alg:qlearning}{{3.1}{14}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Example}{14}}
 \newlabel{example}{{3.2.1}{14}}
 \@writefile{toc}{\contentsline {chapter}{\numberline {4}Simulation Design}{15}}
@@ -314,19 +310,21 @@
 \@writefile{lot}{\addvspace {10\p@ }}
 \newlabel{conclusion}{{7}{41}}
 \bibdata{Report}
-\bibcite{cox2012introduction}{1}
-\bibcite{3gpp2013network}{2}
-\bibcite{feng2008self}{3}
-\bibcite{3gpp2011self}{4}
-\bibcite{jansen2010handover}{5}
-\bibcite{3gpp2012triggers}{6}
-\bibcite{alpaydin2010introduction}{7}
-\bibcite{barto1998reinforcement}{8}
-\bibcite{poole2010artificial}{9}
-\bibcite{roy2010handbook}{10}
-\bibcite{chebil2011comparison}{11}
+\bibcite{ericsson2014}{1}
+\bibcite{cox2012introduction}{2}
+\bibcite{3gpp2013network}{3}
+\bibcite{feng2008self}{4}
+\bibcite{3gpp2011self}{5}
+\bibcite{jansen2010handover}{6}
+\bibcite{3gpp2012triggers}{7}
+\bibcite{sinclair2013handover}{8}
+\bibcite{alpaydin2010introduction}{9}
+\bibcite{barto1998reinforcement}{10}
+\bibcite{poole2010artificial}{11}
+\bibcite{roy2010handbook}{12}
 \@writefile{toc}{\contentsline {chapter}{Bibliography}{42}}
-\bibcite{shabbir2011comparison}{12}
+\bibcite{chebil2011comparison}{13}
+\bibcite{shabbir2011comparison}{14}
 \bibstyle{ieeetr}
 \@writefile{toc}{\contentsline {chapter}{Appendices}{44}}
 \@writefile{toc}{\contentsline {chapter}{\numberline {A}System Design and Evaluation}{45}}

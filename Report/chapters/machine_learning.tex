@@ -1,6 +1,5 @@
 \chapter{Machine Learning}\label{machine learning}
 Machine learning is a form of \ac{AI} that involves designing and studying systems and algorithms with the ability to learn from data. This field of AI has many applications within research (such as system optimisation), products (such as image recognition) and advertising (such as adverts that use a users browsing history). There are many different paradigms that machine learning algorithms use. Algorithms can use training sets to train an algorithm to give appropriate outputs; other algorithms look for patterns in data; while others use the notion of rewards to find out if an action could be considered correct or not.~\cite{alpaydin2010introduction} Three of the most popular types of machine learning algorithms are:
-
 \begin{itemize}
   \item \textbf{Supervised learning} is where an algorithm is trained using a training set of data. This set of data includes inputs and the known outputs for those inputs. The training set is used to fine-tune the parameters in the algorithm. The purpose of this kind of algorithm is to learn a general mapping between inputs and outputs so that the algorithm can give an accurate result for an input with an unknown output. This type of algorithm is generally used in classification systems.  
   \item \textbf{Unsupervised learning} algorithms only know about the inputs they are given. The goal of such an algorithm is to try and find patterns or structure within the input data. Such algorithm would be given inputs and any patterns that are contained would become more and more common the more inputs the algorithm is given.
@@ -31,29 +30,44 @@ The policy is a mapping between a state and the best action to be taken from tha
 
 \section{Q-Learning}\label{sec:qlearning}
 Q-Learning is a type of reinforcement learning algorithm where an agent tries to discover an optimal policy from its history of interactions from within an environment. What makes Q-Learning so powerful is that it will always learn the optimal policy for a problem regardless of the policy (which action a to take from a state s) it follows while learning as long as there is no limit on the number of times the agent can try an action. Due to this ability to always learn the optimal policy, Q-Learning is known as an Off-Policy learner. The history of interactions of an agent can be shown as a sequence of State-Action-Rewards:
-
 \begin{center}
 $<s_{0},a_{0},r_{1},s_{1},a_{1},r_{2},s_{2},a_{2}...>$
 \end{center}
-
 This can be described as the agent was in State 0, did Action 0, received Reward 0 and transitioned into State 1; then did Action 1, received Reward 1 and transitioned into State 2; and so on.
 
 The history of interactions can be treated as a sequence of experiences, with each experience being a tuple.
-
 \begin{center}
 $<s,a,r,s'>$
 \end{center}
-
 The meaning of the tuple is that the agent was in State $s$, did Action $a$, received Reward $r$ and transitioned in State $s'$.  The experiences are what the agent uses to determine what the optimal action to take is at a given time.
 
-The basic process of a Q-Learning algorithm can be seen in Algorithm~\ref{alg:qlearning}. The general process requires that the learning agent is given a set of states, a set of actions, a discount factor $\gamma$ and step size $\alpha$. The agent also keeps a table of Q-Values, denoted by $Q(s,a)$ where $s$ is a state and $a$ is an action from that state. A Q-Value is also an average of all the experiences the agent has with a specific state-action pair. This allows for good and bad experiences to be averaged out to give a reasonable estimation of the actual value of state-action pair. The Q-Values are defined by Equation~\ref{eq:qlearning} where $\alpha$ is the step size which specifies how much the new Q-Value is averaged with the old one, $\gamma$ is the discount factor which specifies how much the agent considers the possible future rewards it will gain and the possible future rewards ($max_{a'}Q(s',a')$) is the maximum of the Q-Values of all possible state-actions pairs from the action selected.  
+The basic process of a Q-Learning algorithm can be seen in Algorithm~\ref{alg:qlearning}. The general process requires that the learning agent is given a set of states, a set of actions, a discount factor $\gamma$ and step size $\alpha$. The agent also keeps a table of Q-Values, denoted by $Q(s,a)$ where $s$ is a state and $a$ is an action from that state. A Q-Value is also an average of all the experiences the agent has with a specific state-action pair. This allows for good and bad experiences to be averaged out to giving a reasonable estimation of the actual value of state-action pair. 
 
+The process of averaging out experiences is done using Temporal Differences. It could be said that the best way to estimate the next value in a list is to take the average of all the previous values. Equation~\ref{eq:av1} shows this process.
+\begin{equation}\label{eq:av1}
+A_{k} = \frac{(v_{1}+\dots+v_{k})}{k}
+\end{equation}
+Therefore:
+\begin{align}
+kA_{k} &= v_{1}+\dots+v_{k}\label{eq:av2}\\
+ &= (k-1)A_{k-1}+v_{k}\label{eq:av3}
+\end{align}
+Then dividing by $k$ gives:
+\begin{equation}\label{eq:av4}
+A_{k}=(1-\frac{1}{k})A_{k-1}+\frac{v_{k}}{k}
+\end{equation}
+Then let $\alpha _{k}=1/k$:
+\begin{align}
+A_{k} &= (1-\alpha _{k})A{k-1}+\alpha _{k} + v_{k}\label{eq:av5}\\
+&= A_{k-1} + \alpha _{k}(v_{k}-A_{k-1})\label{eq:av6}
+\end{align}
+The part of Equation~\ref{eq:av6} where the difference $v_{k}-A_{k-1}$ is seen is known as the Temporal Difference Error or TD Error. This shows how difference the old value $A_{k-1}$ is from the new value $v_{k}$. The new value of the estimate, $A_{k}$, is then the old estimate, $A_{k-1}$, plus the TD error times $\alpha _{k}$.
+
+The Q-Values, therefore, are defined using temporal differences and Equation~\ref{eq:qlearning} shows the formula to calculate the values, where $\alpha$ is a variable between $0$ and $1$ and defines the step size of the algorithm. If the step size were $0$ then the algorithm would ignore any rewards received and if the step size were $1$ the algorithm would consider the rewards gained just as much as the previous experiences of a state-action pair. The discount factor, $\gamma$, is also a variable between $0$ and $1$ and defines how much less future rewards will be worth compared to the current reward. If the discount factor were to be $0$, then the future rewards would not be considered a lot. If the discount factor were to be $1$, then the future rewards would be worth as much as the current rewards. The possible future rewards ($max_{a’}Q(s’,a’)$) is the maximum of the Q-Values of all possible state-actions pairs from the action selected.
 \begin{equation} \label{eq:qlearning}
 Q[s,a] = Q[s,a] + {\alpha}(r+ {\gamma}max_{a'} Q[s',a'] - Q[s,a])
 \end{equation}
-
 The table of Q-Values can either be initialised as empty or with some values pre-set to try and lead the agent to a specific goal state. Once the agent has initialised these parameters it observes the starting state. The starting state can either be chosen by random or be a pre-determined start state for the problem. The agent will then choose an action. Actions are chosen either stochastically or by a policy. Once an action has been chosen the agent will carry out the action and receive a reward. This reward is used to update the table of Q-Values using Equation~\ref{eq:qlearning}. Finally the agent moves into the new state and repeats until termination; which can be either when the agent discovers a goal state or after a certain number of actions have be taken.
-
 \begin{algorithm}
 \begin{algorithmic}[1]
 \Require

@@ -2,9 +2,9 @@
 \contentsline {chapter}{Abstract}{ii}
 \contentsline {chapter}{Acknowledgements}{iii}
 \contentsline {chapter}{Nomenclature}{vi}
-\contentsline {chapter}{List of Figures}{ix}
-\contentsline {chapter}{List of Tables}{x}
-\contentsline {chapter}{List of Algorithms}{xi}
+\contentsline {chapter}{List of Figures}{viii}
+\contentsline {chapter}{List of Tables}{ix}
+\contentsline {chapter}{List of Algorithms}{x}
 \contentsline {chapter}{\numberline {1}Introduction}{1}
 \contentsline {section}{\numberline {1.1}Project Objectives}{1}
 \contentsline {section}{\numberline {1.2}Project Outcomes}{2}

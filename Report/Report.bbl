@@ -1,5 +1,9 @@
 \begin{thebibliography}{10}
 
+\bibitem{ericsson2014}
+A.~Ericsson, ``Ericsson mobility report,'' tech. rep., tech. rep., Ericsson AB,
+  2014.
+
 \bibitem{cox2012introduction}
 C.~Cox, {\em An introduction to LTE: LTE, LTE-advanced, SAE and 4G mobile
   communications}.
@@ -28,6 +32,10 @@ T.~Jansen, I.~Balan, J.~Turk, I.~Moerman, and T.~Kurner, ``Handover parameter
 3GPP TS 36.331 V10.7.0, {\em LTE; Evolved Universal Terrestrial Radio Access
   (E-UTRA); Radio Resource Control (RRC); Protocol specification (Release 10)},
   November 2012.
+
+\bibitem{sinclair2013handover}
+N.~Sinclair, {\em Handover Optimisation using Neural Networks within LTE}.
+\newblock PhD thesis, University of Strathclyde, 2013.
 
 \bibitem{alpaydin2010introduction}
 E.~Alpaydin, {\em Introduction to Machine Learning}.

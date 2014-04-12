@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.10.9)  11 APR 2014 14:58
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.10.9)  12 APR 2014 21:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -465,26 +465,26 @@ although it is yet undefined on input line 5.
 \tf@toc=\write4
 \openout4 = `Report.toc'.
 
- [5] (./acro.tex [6
+ [5] (./acro.tex) [6
 
-]) [7] (./Report.lof [8
+] (./Report.lof [7
 
 ])
 \tf@lof=\write5
 \openout5 = `Report.lof'.
 
- [9]
+ [8]
 (./Report.lot)
 \tf@lot=\write6
 \openout6 = `Report.lot'.
 
- [10
+ [9
 
 ] (./Report.loa)
 \tf@loa=\write7
 \openout7 = `Report.loa'.
 
- [11
+ [10
 
 ] (./chapters/intro.tex
 Chapter 1.
@@ -505,64 +505,53 @@ Package acronym Info: Label `acro:hys' overridden on input line 18.
 )
 (./chapters/lte.tex [2]
 Chapter 2.
-Package acronym Info: Label `acro:4G' overridden on input line 2.
-Package acronym Info: Label `acro:LTE' newly defined as it shall be overridden
-although it is yet undefined on input line 2.
-Package acronym Info: Label `acro:UMTS' newly defined as it shall be overridden
-
-although it is yet undefined on input line 2.
-Package acronym Info: Label `acro:3G' newly defined as it shall be overridden
-although it is yet undefined on input line 2.
-Package acronym Info: Label `acro:DL' newly defined as it shall be overridden
-although it is yet undefined on input line 2.
-Package acronym Info: Label `acro:UL' newly defined as it shall be overridden
-although it is yet undefined on input line 2.
 Package acronym Info: Label `acro:UE' newly defined as it shall be overridden
-although it is yet undefined on input line 5.
+although it is yet undefined on input line 4.
 Package acronym Info: Label `acro:E-UTRAN' newly defined as it shall be overrid
 den
-although it is yet undefined on input line 5.
+although it is yet undefined on input line 4.
 Package acronym Info: Label `acro:EPC' newly defined as it shall be overridden
-although it is yet undefined on input line 5.
+although it is yet undefined on input line 4.
 Package acronym Info: Label `acro:eNodeB' newly defined as it shall be overridd
 en
-although it is yet undefined on input line 5.
-<figures/lte/eutran.pdf, id=52, 844.65562pt x 596.98032pt>
+although it is yet undefined on input line 4.
+<figures/lte/eutran.pdf, id=49, 844.65562pt x 596.98032pt>
 File: figures/lte/eutran.pdf Graphic file (type pdf)
 
 <use figures/lte/eutran.pdf>
-Package pdftex.def Info: figures/lte/eutran.pdf used on input line 9.
+Package pdftex.def Info: figures/lte/eutran.pdf used on input line 7.
 (pdftex.def)             Requested size: 309.42372pt x 218.69305pt.
  [3
 
 ]
 Package acronym Info: Label `acro:MME' newly defined as it shall be overridden
-although it is yet undefined on input line 15.
+although it is yet undefined on input line 12.
 Package acronym Info: Label `acro:HSS' newly defined as it shall be overridden
-although it is yet undefined on input line 15.
+although it is yet undefined on input line 12.
 Package acronym Info: Label `acro:P-GW' newly defined as it shall be overridden
 
-although it is yet undefined on input line 15.
+although it is yet undefined on input line 12.
 Package acronym Info: Label `acro:S-GW' newly defined as it shall be overridden
 
-although it is yet undefined on input line 15.
+although it is yet undefined on input line 12.
 
-<figures/lte/epc.pdf, id=57, 844.65562pt x 596.98032pt>
+<figures/lte/epc.pdf, id=54, 844.65562pt x 596.98032pt>
 File: figures/lte/epc.pdf Graphic file (type pdf)
 
 <use figures/lte/epc.pdf>
-Package pdftex.def Info: figures/lte/epc.pdf used on input line 23.
+Package pdftex.def Info: figures/lte/epc.pdf used on input line 21.
 (pdftex.def)             Requested size: 309.42372pt x 218.69305pt.
  [4 <./figures/lte/eutran.pdf>]
-Package acronym Info: Label `acro:QoS' overridden on input line 40.
- [5 <./figures/lte/epc.pdf>]
-Package acronym Info: Label `acro:TTT' overridden on input line 43.
-Package acronym Info: Label `acro:hys' overridden on input line 43.
+Package acronym Info: Label `acro:QoS' overridden on input line 34.
+Package acronym Info: Label `acro:LTE' newly defined as it shall be overridden
+although it is yet undefined on input line 34.
 Package acronym Info: Label `acro:RSS' newly defined as it shall be overridden
-although it is yet undefined on input line 43.
+although it is yet undefined on input line 34.
+ [5 <./figures/lte/epc.pdf>]
+Package acronym Info: Label `acro:TTT' overridden on input line 36.
+Package acronym Info: Label `acro:hys' overridden on input line 36.
 Package acronym Info: Label `acro:dB' newly defined as it shall be overridden
-although it is yet undefined on input line 43.
- [6]
+although it is yet undefined on input line 36.
 Package epstopdf Info: Source file: <figures/lte/TTTgraph.eps>
 (epstopdf)                    date: 2014-04-11 14:38:50
 (epstopdf)                    size: 10477 bytes
@@ -572,23 +561,27 @@ Package epstopdf Info: Source file: <figures/lte/TTTgraph.eps>
 (epstopdf)                    size: 6864 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/lte/TTTgraph-eps-c
 onverted-to.pdf figures/lte/TTTgraph.eps>
-(epstopdf)             \includegraphics on input line 87.
+(epstopdf)             \includegraphics on input line 76.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/lte/TTTgraph-eps-converted-to.pdf, id=143, 526.96875pt x 419.5675pt>
+<figures/lte/TTTgraph-eps-converted-to.pdf, id=137, 526.96875pt x 419.5675pt>
 File: figures/lte/TTTgraph-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/lte/TTTgraph-eps-converted-to.pdf>
 Package pdftex.def Info: figures/lte/TTTgraph-eps-converted-to.pdf used on inpu
-t line 87.
+t line 76.
 (pdftex.def)             Requested size: 309.42372pt x 246.3711pt.
+ [6]
 Package acronym Info: Label `acro:PCell' newly defined as it shall be overridde
 n
-although it is yet undefined on input line 105.
+although it is yet undefined on input line 91.
 Package acronym Info: Label `acro:SCell' newly defined as it shall be overridde
 n
-although it is yet undefined on input line 108.
+although it is yet undefined on input line 94.
  [7 <./figures/lte/TTTgraph-eps-converted-to.pdf>]
+Package acronym Info: Label `acro:RSRP' newly defined as it shall be overridden
+
+although it is yet undefined on input line 103.
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ™ in font cmr12!
@@ -598,7 +591,17 @@ Package acronym Info: Label `acro:AI' newly defined as it shall be overridden
 although it is yet undefined on input line 2.
 [10
 
-] [11] [12]) (./chapters/simulation.tex [13] [14]
+] [11] [12]
+Missing character: There is no â in font cmr8!
+Missing character: There is no € in font cmr8!
+Missing character: There is no ™ in font cmr8!
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no ™ in font cmr12!
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no ™ in font cmr12!
+ [13]) (./chapters/simulation.tex [14]
 Chapter 4.
 Package acronym Info: Label `acro:DES' newly defined as it shall be overridden
 although it is yet undefined on input line 9.
@@ -621,7 +624,7 @@ s-converted-to.pdf figures/simulation/prop.eps>
 (epstopdf)             \includegraphics on input line 119.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/simulation/prop-eps-converted-to.pdf, id=194, 576.1525pt x 419.5675pt>
+<figures/simulation/prop-eps-converted-to.pdf, id=191, 576.1525pt x 419.5675pt>
 File: figures/simulation/prop-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/simulation/prop-eps-converted-to.pdf>
 Package pdftex.def Info: figures/simulation/prop-eps-converted-to.pdf used on i
@@ -649,7 +652,7 @@ lkhigh-eps-converted-to.pdf figures/walking_figures/walkhigh.eps>
 (epstopdf)             \includegraphics on input line 51.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/walking_figures/walkhigh-eps-converted-to.pdf, id=218, 505.89pt x 421.
+<figures/walking_figures/walkhigh-eps-converted-to.pdf, id=215, 505.89pt x 421.
 575pt>
 File: figures/walking_figures/walkhigh-eps-converted-to.pdf Graphic file (type 
 pdf)
@@ -671,7 +674,7 @@ gh/long_ttt-eps-converted-to.pdf figures/walking_figures/high/long_ttt.eps>
 (epstopdf)             \includegraphics on input line 61.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/walking_figures/high/long_ttt-eps-converted-to.pdf, id=222, 620.3175pt
+<figures/walking_figures/high/long_ttt-eps-converted-to.pdf, id=219, 620.3175pt
  x 483.8075pt>
 File: figures/walking_figures/high/long_ttt-eps-converted-to.pdf Graphic file (
 type pdf)
@@ -693,7 +696,7 @@ gh/long_hys-eps-converted-to.pdf figures/walking_figures/high/long_hys.eps>
 (epstopdf)             \includegraphics on input line 68.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/walking_figures/high/long_hys-eps-converted-to.pdf, id=223, 620.3175pt
+<figures/walking_figures/high/long_hys-eps-converted-to.pdf, id=220, 620.3175pt
  x 480.79625pt>
 File: figures/walking_figures/high/long_hys-eps-converted-to.pdf Graphic file (
 type pdf)
@@ -715,7 +718,7 @@ lkmid-eps-converted-to.pdf figures/walking_figures/walkmid.eps>
 (epstopdf)             \includegraphics on input line 79.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/walking_figures/walkmid-eps-converted-to.pdf, id=234, 497.86pt x 421.5
+<figures/walking_figures/walkmid-eps-converted-to.pdf, id=230, 497.86pt x 421.5
 75pt>
 File: figures/walking_figures/walkmid-eps-converted-to.pdf Graphic file (type p
 df)
@@ -737,7 +740,7 @@ d/long_ttt-eps-converted-to.pdf figures/walking_figures/mid/long_ttt.eps>
 (epstopdf)             \includegraphics on input line 92.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/walking_figures/mid/long_ttt-eps-converted-to.pdf, id=248, 620.3175pt 
+<figures/walking_figures/mid/long_ttt-eps-converted-to.pdf, id=245, 620.3175pt 
 x 474.77374pt>
 File: figures/walking_figures/mid/long_ttt-eps-converted-to.pdf Graphic file (t
 ype pdf)
@@ -757,7 +760,7 @@ d/long_hys-eps-converted-to.pdf figures/walking_figures/mid/long_hys.eps>
 (epstopdf)             \includegraphics on input line 99.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/walking_figures/mid/long_hys-eps-converted-to.pdf, id=249, 620.3175pt 
+<figures/walking_figures/mid/long_hys-eps-converted-to.pdf, id=246, 620.3175pt 
 x 474.77374pt>
 File: figures/walking_figures/mid/long_hys-eps-converted-to.pdf Graphic file (t
 ype pdf)
@@ -779,7 +782,7 @@ lklow-eps-converted-to.pdf figures/walking_figures/walklow.eps>
 (epstopdf)             \includegraphics on input line 112.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/walking_figures/walklow-eps-converted-to.pdf, id=259, 501.875pt x 421.
+<figures/walking_figures/walklow-eps-converted-to.pdf, id=256, 501.875pt x 421.
 575pt>
 File: figures/walking_figures/walklow-eps-converted-to.pdf Graphic file (type p
 df)
@@ -804,7 +807,7 @@ w/long_ttt-eps-converted-to.pdf figures/walking_figures/low/long_ttt.eps>
 (epstopdf)             \includegraphics on input line 123.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/walking_figures/low/long_ttt-eps-converted-to.pdf, id=273, 620.3175pt 
+<figures/walking_figures/low/long_ttt-eps-converted-to.pdf, id=270, 620.3175pt 
 x 474.77374pt>
 File: figures/walking_figures/low/long_ttt-eps-converted-to.pdf Graphic file (t
 ype pdf)
@@ -824,7 +827,7 @@ w/long_hys-eps-converted-to.pdf figures/walking_figures/low/long_hys.eps>
 (epstopdf)             \includegraphics on input line 130.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/walking_figures/low/long_hys-eps-converted-to.pdf, id=274, 620.3175pt 
+<figures/walking_figures/low/long_hys-eps-converted-to.pdf, id=271, 620.3175pt 
 x 474.77374pt>
 File: figures/walking_figures/low/long_hys-eps-converted-to.pdf Graphic file (t
 ype pdf)
@@ -851,7 +854,7 @@ lkhighhys-eps-converted-to.pdf figures/walking_figures/walkhighhys.eps>
 (epstopdf)             \includegraphics on input line 141.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/walking_figures/walkhighhys-eps-converted-to.pdf, id=294, 505.89pt x 4
+<figures/walking_figures/walkhighhys-eps-converted-to.pdf, id=291, 505.89pt x 4
 21.575pt>
 File: figures/walking_figures/walkhighhys-eps-converted-to.pdf Graphic file (ty
 pe pdf)
@@ -873,7 +876,7 @@ s>
 (epstopdf)             \includegraphics on input line 152.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/walking_figures/highhys/long_ttt-eps-converted-to.pdf, id=295, 620.317
+<figures/walking_figures/highhys/long_ttt-eps-converted-to.pdf, id=292, 620.317
 5pt x 474.77374pt>
 File: figures/walking_figures/highhys/long_ttt-eps-converted-to.pdf Graphic fil
 e (type pdf)
@@ -896,7 +899,7 @@ s>
 (epstopdf)             \includegraphics on input line 159.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/walking_figures/highhys/long_hys-eps-converted-to.pdf, id=296, 620.317
+<figures/walking_figures/highhys/long_hys-eps-converted-to.pdf, id=293, 620.317
 5pt x 474.77374pt>
 File: figures/walking_figures/highhys/long_hys-eps-converted-to.pdf Graphic fil
 e (type pdf)
@@ -920,7 +923,7 @@ hhigh-eps-converted-to.pdf figures/vehicle_figures/vehhigh.eps>
 (epstopdf)             \includegraphics on input line 173.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/vehicle_figures/vehhigh-eps-converted-to.pdf, id=320, 505.89pt x 421.5
+<figures/vehicle_figures/vehhigh-eps-converted-to.pdf, id=316, 505.89pt x 421.5
 75pt>
 File: figures/vehicle_figures/vehhigh-eps-converted-to.pdf Graphic file (type p
 df)
@@ -941,7 +944,7 @@ gh/long_ttt-eps-converted-to.pdf figures/vehicle_figures/high/long_ttt.eps>
 (epstopdf)             \includegraphics on input line 184.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/vehicle_figures/high/long_ttt-eps-converted-to.pdf, id=321, 620.3175pt
+<figures/vehicle_figures/high/long_ttt-eps-converted-to.pdf, id=317, 620.3175pt
  x 483.8075pt>
 File: figures/vehicle_figures/high/long_ttt-eps-converted-to.pdf Graphic file (
 type pdf)
@@ -963,7 +966,7 @@ gh/long_hys-eps-converted-to.pdf figures/vehicle_figures/high/long_hys.eps>
 (epstopdf)             \includegraphics on input line 191.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/vehicle_figures/high/long_hys-eps-converted-to.pdf, id=322, 620.3175pt
+<figures/vehicle_figures/high/long_hys-eps-converted-to.pdf, id=318, 620.3175pt
  x 483.8075pt>
 File: figures/vehicle_figures/high/long_hys-eps-converted-to.pdf Graphic file (
 type pdf)
@@ -985,7 +988,7 @@ hmid-eps-converted-to.pdf figures/vehicle_figures/vehmid.eps>
 (epstopdf)             \includegraphics on input line 202.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/vehicle_figures/vehmid-eps-converted-to.pdf, id=332, 497.86pt x 421.57
+<figures/vehicle_figures/vehmid-eps-converted-to.pdf, id=329, 497.86pt x 421.57
 5pt>
 File: figures/vehicle_figures/vehmid-eps-converted-to.pdf Graphic file (type pd
 f)
@@ -1007,7 +1010,7 @@ d/long_ttt-eps-converted-to.pdf figures/vehicle_figures/mid/long_ttt.eps>
 (epstopdf)             \includegraphics on input line 213.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/vehicle_figures/mid/long_ttt-eps-converted-to.pdf, id=346, 620.3175pt 
+<figures/vehicle_figures/mid/long_ttt-eps-converted-to.pdf, id=343, 620.3175pt 
 x 483.8075pt>
 File: figures/vehicle_figures/mid/long_ttt-eps-converted-to.pdf Graphic file (t
 ype pdf)
@@ -1027,7 +1030,7 @@ d/long_hys-eps-converted-to.pdf figures/vehicle_figures/mid/long_hys.eps>
 (epstopdf)             \includegraphics on input line 220.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/vehicle_figures/mid/long_hys-eps-converted-to.pdf, id=347, 620.3175pt 
+<figures/vehicle_figures/mid/long_hys-eps-converted-to.pdf, id=344, 620.3175pt 
 x 483.8075pt>
 File: figures/vehicle_figures/mid/long_hys-eps-converted-to.pdf Graphic file (t
 ype pdf)
@@ -1049,7 +1052,7 @@ hlow-eps-converted-to.pdf figures/vehicle_figures/vehlow.eps>
 (epstopdf)             \includegraphics on input line 231.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/vehicle_figures/vehlow-eps-converted-to.pdf, id=358, 509.905pt x 421.5
+<figures/vehicle_figures/vehlow-eps-converted-to.pdf, id=355, 509.905pt x 421.5
 75pt>
 File: figures/vehicle_figures/vehlow-eps-converted-to.pdf Graphic file (type pd
 f)
@@ -1074,7 +1077,7 @@ w/long_ttt-eps-converted-to.pdf figures/vehicle_figures/low/long_ttt.eps>
 (epstopdf)             \includegraphics on input line 242.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/vehicle_figures/low/long_ttt-eps-converted-to.pdf, id=372, 620.3175pt 
+<figures/vehicle_figures/low/long_ttt-eps-converted-to.pdf, id=369, 620.3175pt 
 x 483.8075pt>
 File: figures/vehicle_figures/low/long_ttt-eps-converted-to.pdf Graphic file (t
 ype pdf)
@@ -1094,7 +1097,7 @@ w/long_hys-eps-converted-to.pdf figures/vehicle_figures/low/long_hys.eps>
 (epstopdf)             \includegraphics on input line 249.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/vehicle_figures/low/long_hys-eps-converted-to.pdf, id=373, 620.3175pt 
+<figures/vehicle_figures/low/long_hys-eps-converted-to.pdf, id=370, 620.3175pt 
 x 483.8075pt>
 File: figures/vehicle_figures/low/long_hys-eps-converted-to.pdf Graphic file (t
 ype pdf)
@@ -1121,7 +1124,7 @@ hhighhys-eps-converted-to.pdf figures/vehicle_figures/vehhighhys.eps>
 (epstopdf)             \includegraphics on input line 260.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/vehicle_figures/vehhighhys-eps-converted-to.pdf, id=393, 505.89pt x 42
+<figures/vehicle_figures/vehhighhys-eps-converted-to.pdf, id=390, 505.89pt x 42
 1.575pt>
 File: figures/vehicle_figures/vehhighhys-eps-converted-to.pdf Graphic file (typ
 e pdf)
@@ -1143,7 +1146,7 @@ s>
 (epstopdf)             \includegraphics on input line 271.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/vehicle_figures/highhys/long_ttt-eps-converted-to.pdf, id=394, 620.317
+<figures/vehicle_figures/highhys/long_ttt-eps-converted-to.pdf, id=391, 620.317
 5pt x 483.8075pt>
 File: figures/vehicle_figures/highhys/long_ttt-eps-converted-to.pdf Graphic fil
 e (type pdf)
@@ -1166,7 +1169,7 @@ s>
 (epstopdf)             \includegraphics on input line 278.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/vehicle_figures/highhys/long_hys-eps-converted-to.pdf, id=395, 620.317
+<figures/vehicle_figures/highhys/long_hys-eps-converted-to.pdf, id=392, 620.317
 5pt x 483.8075pt>
 File: figures/vehicle_figures/highhys/long_hys-eps-converted-to.pdf Graphic fil
 e (type pdf)
@@ -1196,13 +1199,13 @@ Appendix A.
 
 ] (./Report.aux) ) 
 Here is how much of TeX's memory you used:
- 7152 strings out of 493315
- 110784 string characters out of 6137904
+ 7161 strings out of 493315
+ 110901 string characters out of 6137904
  194228 words of memory out of 5000000
- 10418 multiletter control sequences out of 15000+600000
+ 10427 multiletter control sequences out of 15000+600000
  11781 words of font info for 42 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 38i,11n,58p,1408b,455s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,12n,58p,1408b,455s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmbx12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmcsc10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfont
@@ -1217,10 +1220,10 @@ pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10
 pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pf
 b></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
 </usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on Report.pdf (57 pages, 652716 bytes).
+Output written on Report.pdf (56 pages, 655105 bytes).
 PDF statistics:
- 490 PDF objects out of 1000 (max. 8388607)
- 315 compressed objects within 4 object streams
+ 487 PDF objects out of 1000 (max. 8388607)
+ 313 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
  141 words of extra memory for PDF output out of 10000 (max. 10000000)
 
