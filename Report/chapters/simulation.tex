@@ -1,7 +1,7 @@
 \chapter{Simulation Design}
 The simulation is a very important part of the project. It is required to provide the basic functionality of a LTE network. For simplicity the simulation was broken down into two main components; the mobile (UE) and the base station (eNodeB). Due to the project revolving around the handover process in LTE it made sense for the two main components on the simulation to be the mobile and base station as it is the mobile the triggers the measurement report and the base station that makes the decision on whether a handover should take place or not. Since the A3 event trigger is the most common I decided that it would be the only trigger implemented in the simulation to reduce the complexity within the simulation.
 
-It was required for the mobile to be able to move freely around a group of base stations. It was decided that this movement should be random because if any machine learning algorithm can handle random movement then it should also be able to handle regimented movement. The movement that the mobile follows is defined by a Mobility Model and the choice of mobility model is explained in Section~\ref{mobility}.
+It was required for the mobile to be able to move freely around a group of base stations. It was decided that this movement should be random because if any machine learning algorithm can handle random movement then it should also be able to handle regimented movement. The movement that the mobile follows is defined by a Mobility Model and the choice of mobility model is explained in Section~\ref{mobility}. It was decided that when a UE would get to the point where its next step would move it beyond the bounds of the simulation area that it would just move in the reflected direction away from the wall.
 
 In wireless communications the received signal strength from a transmitter degrades the further away from the transmitter the receiver is. A propagation model can be used to define the way in which the signal strength degrades. The propagation model is very important to the simulation as it will defined how far away from a base station the mobile can be without dropping the call. A comparison and explanation of the choice of propagation model can be seen in Section~\ref{propagation}.
 \section{Simulation Parameters}
@@ -34,9 +34,7 @@ The concept of time is very important in real world simulations. A popular metho
 Another advantage to Discrete Event Simulation is that the passing of events from the scheduler not only gives a concept of time but it also allows for a message to be sent with the event to tell a different part of the simulation what to do at a given time. This message can also sent parameters for the other part of the simulation to use as well.
 
 \section{Mobility Model}\label{mobility}
-A mobility model defines the way in which an entity will move. For the purposes of the simulation the mobility model used needed to random in nature. After some reason it was decided that mobility model to be used in the simulation would either be the Random Direction or Random Waypoint model. The type of movement that could be expected from Random Mobility model can be seen in Figure (place holder)
-
-place holder
+A mobility model defines the way in which an entity will move. For the purposes of the simulation the mobility model used needed to random in nature. After some reason it was decided that mobility model to be used in the simulation would either be the Random Direction or Random Waypoint model.
 \subsection{Random Direction Model}
 The Random Direction Model is defined as follows:
 \begin{enumerate}
@@ -108,7 +106,7 @@ Where:
 \item $f$ is the frequency of the transmission $3 MHz$ to $3000 MHz$.
 \end{itemize}
 \subsection{Cost231-Hata Model}
-The Cost231-Hata model is an extension of the Okumura-Hata to work for frequnencies between 1.5 GHz and 2 GHz. The formulas for this model can be seen in Equations~\ref{eq:cost},~\ref{eq:costahr} and~\ref{eq:metro}.
+The Cost231-Hata model is an extension of the Okumura-Hata to work for frequencies between 1.5 GHz and 2 GHz. The formulas for this model can be seen in Equations~\ref{eq:cost},~\ref{eq:costahr} and~\ref{eq:metro}.
 \begin{equation}\label{eq:cost}
 L=46.3+33.9logf-13.82log{h_{B}}-a(h_{R})+[44.9-6.55log{h_{B}}]log{d}+C
 \end{equation}
@@ -142,3 +140,40 @@ A comparison of the three propagation models can be seen in Figure~\ref{fig:prop
 After comparing the three models above it was decided that the Cost231-Hata Model would be the one used in the simulation due to it working with frequencies up to $2000 MHz$ (which is the minimum operating frequency of LTE) unlike the Okumura-Hata model which only works up to $1500 MHz$. The Cost231-Hata Model was also picked over the Egli Model because the Egli Model used more parameters that would add more complexity to the simulation.~\cite{chebil2011comparison, shabbir2011comparison}
 
 \section{Simulation Testing}
+It was very important for the simulation and Q-Learning algorithm to be tested so that there was confidence that they would produce the correct results when they were run. There are many different types of testing that can take place to ensure that a piece of software is working correctly, such testing methods that were used in this project include: Unit testing, Black Box testing and White/Clear Box testing.
+
+Unit testing involves testing individual parts or processes of a program so that the stakeholders can be confident in them to be fit for use. The different parts of the simulation that were tested this way were the Mobility Model, handovers, drops, ping-pong's and the Q-learning algorithm changing the values of TTT and hys correctly.
+
+Black Box testing involves making sure that a function works as required without any knowledge of the under laying code. This type of testing is performed by giving a function an input, and comparing the output from the function with a previously determined expected output.
+
+White Box testing is used to make sure that the underlying code used in a function works as required. This type of testing is done by inserting print statements in the code to see how the respective variables are changing while the code is running. These are compared against previously determined expected values to confirm whether the function is working as intended.
+
+The test cases used to test the simulation to make sure it was working correctly were: 
+\subsection*{Movement:}
+\begin{itemize}
+\item	Positive X and Y movement.
+\item	Positive X movement and Negative Y movement.
+\item	Negative X movement and Positive Y Movement.
+\item	Negative X and Y movement.
+\item	Movement against left wall of simulation area.
+\item	Movement against bottom wall of simulation area.
+\item	Movement against right wall of simulation area.
+\item	Movement against top wall of simulation area.
+\end{itemize}
+\subsection*{Path Loss:}
+\begin{itemize}
+\item	Received Path Loss correct.
+\end{itemize}
+\subsection*{Network Functions:}
+\begin{itemize}
+\item	Handovers working correctly.
+\item	Drops working correctly.
+\item	Ping-Pong's detected correctly.
+\end{itemize}
+\subsection*{Q-Learning:}
+\begin{itemize}
+\item	Q-Values updated correctly.
+\item	Changing state correctly.
+\item	Changing TTT and hys values correctly.
+\end{itemize}
+After the simulation was testing using the test cases above it was decided that the simulation was functioning correctly and was fit for use. The results of all the test cases can be seen in Appendix~\ref{testing}.

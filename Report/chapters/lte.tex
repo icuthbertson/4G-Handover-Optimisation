@@ -31,7 +31,7 @@ LTE, just like any other mobile network, needs to be managed. Due to LTE being m
   \item \textbf{Self-healing} is designed to detect and identify failures within the network. After the self-healing system detects a failure it aims to recover from the failure without the need for human interaction with the system.
 \end{itemize}
 \section{Handover}\label{handover}
-The process of handover is very important in mobile telecommunications. It involves moving the resource allocation for a mobile phone or a piece of \ac{UE} from one base station to another. This process is used to provide more \ac{QoS} to customers by allowing them to continue to use provided services even after moving out of range of the original serving base station. To keep with the QoS it is important that handovers are done fast, have little-to-no disruption to the users experience and are completed with a very high success rate. If a handover is unsuccessful it is likely that an on-going call will be dropped due to there not being enough resources available on a base station, known as an \ac{eNodeB} in \ac{LTE}, or the \ac{RSS} to the \ac{UE} drops below a certain threshold needed to maintain the call. Handovers are stated to take roughly 0.25 seconds to complete after the decision has been made for a handover to take place~\cite{jansen2010handover}.
+The process of handover is very important in mobile telecommunications. It involves moving the resource allocation for a mobile phone or a piece of \ac{UE} from one base station to another. This process is used to provide more \ac{QoS} to customers by allowing them to continue to use provided services even after moving out of range of the original serving base station. To keep with the QoS it is important that handovers are done fast, have little-to-no disruption to the users experience and are completed with a very high success rate. If a handover is unsuccessful it is likely that an on-going call will be dropped due to there not being enough resources available on a base station, known as an \ac{eNodeB} in \ac{LTE}, or the \ac{RSS} to the \ac{UE} drops below a certain threshold needed to maintain the call. Handovers are stated to take roughly 0.25 seconds to complete after the decision has been made for a handover to take place~\cite{jansen2010handover}. A call will drop if the \ac{RSS} from the serving base station drops below the noise floor, which in LTE is $-97.5 dB$.
 \subsection{Parameters}\label{parameters}
 In LTE there are two main parameters that are used in the handover process. These parameters are the \ac{TTT} and \ac{hys}. The hys is used to define how much better the \ac{RSS} of a neighbouring base station must be than the serving base station for a handover to be considered. The values of hys are defined in \ac{dB} and range from $0$ to $10 dB$ in $0.5 dB$ increments, this results in there being 21 different values of hys. The full range of hys values can be seen in Table~\ref{tab:hys}.
 \begin{table}[H]
@@ -100,13 +100,11 @@ In LTE there are eight different triggers defined for initiating handovers withi
   \caption{Table of the different LTE Trigger types and their criteria.}
   \label{tab:trigger}
 \end{table}
-Out of the eight triggers the A3 event is the most common and its definition is that a neighbouring eNodeB must give the UE better \ac{RSRP} by an amount defined by the hys, for a length of time defined by the TTT.~\cite{sinclair2013handover} An illustration of how the signals from the serving and neighbouring eNodeB’s look in an A3 event can be seen in Figure (place holder). The A3 event can also be represented by the following equation:
+Out of the eight triggers the A3 event is the most common and its definition is that a neighbouring eNodeB must give the UE better \ac{RSRP} by an amount defined by the hys, for a length of time defined by the TTT.~\cite{sinclair2013handover} The A3 event can be represented by the following equation:
 \begin{equation}
 RSRP_{Neighbouring} + hys > RSRP_{Serving}
 \end{equation}
  
-Place holder for image of event A3
-
 When a handover event is triggered a measurement report is sent from the UE to the serving eNodeB. The measurement report contains the information required for the serving eNodeB to make a decision on whether to initiate a handover or not. If the handover is triggered the serving eNodeB will provide signalling to the neighbouring eNodeB so that it can become the new serving eNodeB. If the serving eNodeB decides not to initiate the handover then no more action is taken until another handover event is triggered.
 
 The full, high-level, procedure for a LTE handover is as follows:
