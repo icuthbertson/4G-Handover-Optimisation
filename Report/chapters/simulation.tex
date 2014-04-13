@@ -5,14 +5,38 @@ It was required for the mobile to be able to move freely around a group of base 
 
 In wireless communications the received signal strength from a transmitter degrades the further away from the transmitter the receiver is. A propagation model can be used to define the way in which the signal strength degrades. The propagation model is very important to the simulation as it will defined how far away from a base station the mobile can be without dropping the call. A comparison and explanation of the choice of propagation model can be seen in Section~\ref{propagation}.
 \section{Simulation Parameters}
-Within the simulation there are many variable parameters that need to be assigned values. Such parameters are the height of the base stations, the height of the UE's, the dimensions of the simulation area and the positioning of the base stations. Other parameters that also needed to be considered are the number of base stations and UE's. 
+Within the simulation there are many variable parameters that need to be assigned values. Such parameters are the height of the base stations, the height of the UE's, the dimensions of the simulation area and the positioning of the base stations. Other parameters that also needed to be considered are the number of base stations and UE's. The typed of environment also needed to be decided on: where the simulation would be within a rural, urban, small city, medium city or large city.
+
+The type of environment was decided to be a medium sized city. It was decided that the height of any UE would be $1 m$ as it would normally be in the possession of a human being. The height of any base station would be $60 m$ because base stations either placed upon tall buildings or structures so that they produce better coverage and since it was decided that the environment would be a medium sized city this height made sense since there would be some large multi-storey office blocks. The simulation area and positioning of the base stations both depended on the propagation model used and the area of coverage that could be expected from it. The decision of the propagation model used can be found in Section~\ref{propagation} and from Figure~\ref{fig:prop} it was found that for the chosen propagation model the Path Loss would reach the LTE noise floor of $-97.5 dB$ by around $2 km$. Therefore, from this it was decided that the area for the simulation would be $6 km$ by $6 km$. It was then decided that 9 base stations would provide good coverage in this area. Each of these base stations will also have there own Q-Learning agent since each base station has there own unique TTT and hys values. The base stations were placed in the following locations and the coverage can be seen in Figure~\ref{fig:cov}.
+\begin{enumerate}
+\item X Co-Ordinate: 500.0, Y Co-Ordinate: 500.0
+\item X Co-Ordinate: 3000.0, Y Co-Ordinate: 0.0
+\item X Co-Ordinate: 5500.0, Y Co-Ordinate: 500.0
+\item X Co-Ordinate: 0.0, Y Co-Ordinate: 3000.0
+\item X Co-Ordinate: 3000.0, Y Co-Ordinate: 3000.0
+\item X Co-Ordinate: 6000.0, Y Co-Ordinate: 3000.0
+\item X Co-Ordinate: 500.0, Y Co-Ordinate: 5500.0
+\item X Co-Ordinate: 3000.0, Y Co-Ordinate: 6000.0
+\item X Co-Ordinate: 5500.0, Y Co-Ordinate: 5500.0
+\end{enumerate}
+\begin{figure}[H]
+  \begin{center}
+    	  \includegraphics[width=0.75\textwidth]{figures/simulation/coverage.eps}
+    \end{center}
+    \caption{Illustration of Coverage within the Simulation Area.}
+    \label{fig:cov}
+\end{figure}
+
+Finally, it was decided that 10 UE’s would be used in the simulation because this would allow for the learning done by the Q-Learning agents to happen faster than if there were just 1 UE. The UE’s would also start on top of different base stations so that they will start in different places allowing for the Q-Learning agent for each base station to start learning straight away without having to wait for a UE to move into range, as at least 1 UE will start on top of it.
 \section{Discrete Event Simulation}
 The concept of time is very important in real world simulations. A popular method for creating this concept of time is \ac{DES}. It works on the basis of a scheduler where events, to be processed at a certain time, are passed to the scheduler and the scheduler then passes the event on to be processed. The way that \ac{DES} creates the concept of time is by allowing events passed in the scheduler to have a time that it should be processed at, the scheduler will keep all the events that are currently still to be processed in an ordered list, the scheduler will then "jump" to the time the first event in the list is to be processed at and passes the event on to be processed. The process of "jumping" to the next time that the first event in the list is to be processed at is what gives \ac{DES} the concept of time.
 
 Another advantage to Discrete Event Simulation is that the passing of events from the scheduler not only gives a concept of time but it also allows for a message to be sent with the event to tell a different part of the simulation what to do at a given time. This message can also sent parameters for the other part of the simulation to use as well.
 
 \section{Mobility Model}\label{mobility}
-A mobility model defines the way in which an entity will move. For the purposes of the simulation the mobility model used needed to random in nature. After some reason it was decided that mobility model to be used in the simulation would either be the Random Direction or Random Waypoint model. 
+A mobility model defines the way in which an entity will move. For the purposes of the simulation the mobility model used needed to random in nature. After some reason it was decided that mobility model to be used in the simulation would either be the Random Direction or Random Waypoint model. The type of movement that could be expected from Random Mobility model can be seen in Figure (place holder)
+
+place holder
 \subsection{Random Direction Model}
 The Random Direction Model is defined as follows:
 \begin{enumerate}
@@ -23,9 +47,6 @@ The Random Direction Model is defined as follows:
 \item Repeat until termination.
 \end{enumerate}
 
-An illustration of the movement given by the Random Direction Model can be seen in Figure (placeholder).
-
-place holder for image of random direction
 \subsection{Random Waypoint Model}
 The Random Waypoint Model if defined as follows:
 \begin{enumerate}
@@ -36,10 +57,6 @@ The Random Waypoint Model if defined as follows:
 \item Pause for the randomly selected length of time.
 \item Repeat until termination.
 \end{enumerate}
-
-An illustration of the movement given by the Random Waypoint Model can be seen in Figure (placeholder).
-
-place holder for image of random waypoint
 
 It was decided that the Random Direction Model would be used in the simulation because the Random Waypoint Model has the problem that it is possible to select the co-ordinates of a point very close to where you begin and then pause for a long period time. The possibility of that happening isn’t desired within the simulation. Random Direction does not have this problem and it is also possible to set boundaries on the parameters to make sure that a minimum distance is travelled.~\cite{roy2010handbook}
 

@@ -18,34 +18,33 @@
 \contentsline {chapter}{\numberline {3}Machine Learning}{10}
 \contentsline {section}{\numberline {3.1}Reinforcement Learning}{11}
 \contentsline {section}{\numberline {3.2}Q-Learning}{12}
-\contentsline {subsection}{\numberline {3.2.1}Example}{14}
 \contentsline {chapter}{\numberline {4}Simulation Design}{15}
-\contentsline {section}{\numberline {4.1}Simulation Parameters}{16}
-\contentsline {section}{\numberline {4.2}Discrete Event Simulation}{16}
-\contentsline {section}{\numberline {4.3}Mobility Model}{16}
-\contentsline {subsection}{\numberline {4.3.1}Random Direction Model}{16}
-\contentsline {subsection}{\numberline {4.3.2}Random Waypoint Model}{17}
-\contentsline {section}{\numberline {4.4}Propagation Model}{17}
-\contentsline {subsection}{\numberline {4.4.1}Okumura-Hata Model}{18}
-\contentsline {subsection}{\numberline {4.4.2}Egli Model}{18}
-\contentsline {subsection}{\numberline {4.4.3}Cost231-Hata Model}{19}
-\contentsline {section}{\numberline {4.5}Simulation Testing}{20}
-\contentsline {chapter}{\numberline {5}Handover Parameter Optimisation}{21}
-\contentsline {section}{\numberline {5.1}Approach}{21}
-\contentsline {subsection}{\numberline {5.1.1}Assessment Process}{23}
-\contentsline {section}{\numberline {5.2}Walking Speed}{24}
-\contentsline {subsection}{\numberline {5.2.1}Large Starting Values}{24}
-\contentsline {subsection}{\numberline {5.2.2}Middle Starting Values}{26}
-\contentsline {subsection}{\numberline {5.2.3}Small Starting Values}{28}
-\contentsline {subsection}{\numberline {5.2.4}Large hys and Small TTT Starting Values}{30}
-\contentsline {section}{\numberline {5.3}Vehicle Speed}{31}
-\contentsline {subsection}{\numberline {5.3.1}Large Starting Values}{32}
-\contentsline {subsection}{\numberline {5.3.2}Middle Starting Values}{33}
-\contentsline {subsection}{\numberline {5.3.3}Small Starting Values}{35}
-\contentsline {subsection}{\numberline {5.3.4}Large hys and Small TTT Starting Values}{37}
-\contentsline {section}{\numberline {5.4}Evaluation}{38}
-\contentsline {chapter}{\numberline {6}Future Work}{40}
-\contentsline {chapter}{\numberline {7}Conclusions}{41}
-\contentsline {chapter}{Bibliography}{42}
-\contentsline {chapter}{Appendices}{44}
-\contentsline {chapter}{\numberline {A}System Design and Evaluation}{45}
+\contentsline {section}{\numberline {4.1}Simulation Parameters}{15}
+\contentsline {section}{\numberline {4.2}Discrete Event Simulation}{17}
+\contentsline {section}{\numberline {4.3}Mobility Model}{18}
+\contentsline {subsection}{\numberline {4.3.1}Random Direction Model}{18}
+\contentsline {subsection}{\numberline {4.3.2}Random Waypoint Model}{18}
+\contentsline {section}{\numberline {4.4}Propagation Model}{19}
+\contentsline {subsection}{\numberline {4.4.1}Okumura-Hata Model}{19}
+\contentsline {subsection}{\numberline {4.4.2}Egli Model}{20}
+\contentsline {subsection}{\numberline {4.4.3}Cost231-Hata Model}{20}
+\contentsline {section}{\numberline {4.5}Simulation Testing}{21}
+\contentsline {chapter}{\numberline {5}Handover Parameter Optimisation}{22}
+\contentsline {section}{\numberline {5.1}Approach}{22}
+\contentsline {subsection}{\numberline {5.1.1}Assessment Process}{24}
+\contentsline {section}{\numberline {5.2}Walking Speed}{25}
+\contentsline {subsection}{\numberline {5.2.1}Large Starting Values}{25}
+\contentsline {subsection}{\numberline {5.2.2}Middle Starting Values}{27}
+\contentsline {subsection}{\numberline {5.2.3}Small Starting Values}{29}
+\contentsline {subsection}{\numberline {5.2.4}Large hys and Small TTT Starting Values}{31}
+\contentsline {section}{\numberline {5.3}Vehicle Speed}{33}
+\contentsline {subsection}{\numberline {5.3.1}Large Starting Values}{33}
+\contentsline {subsection}{\numberline {5.3.2}Middle Starting Values}{35}
+\contentsline {subsection}{\numberline {5.3.3}Small Starting Values}{37}
+\contentsline {subsection}{\numberline {5.3.4}Large hys and Small TTT Starting Values}{39}
+\contentsline {section}{\numberline {5.4}Evaluation}{41}
+\contentsline {chapter}{\numberline {6}Future Work}{43}
+\contentsline {chapter}{\numberline {7}Conclusions}{44}
+\contentsline {chapter}{Bibliography}{45}
+\contentsline {chapter}{Appendices}{47}
+\contentsline {chapter}{\numberline {A}System Design and Evaluation}{48}
