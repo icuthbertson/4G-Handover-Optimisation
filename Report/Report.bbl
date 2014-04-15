@@ -2,7 +2,7 @@
 
 \bibitem{ericsson2014}
 A.~Ericsson, ``Ericsson mobility report,'' tech. rep., tech. rep., Ericsson AB,
-  2014.
+  February 2014.
 
 \bibitem{cox2012introduction}
 C.~Cox, {\em An introduction to LTE: LTE, LTE-advanced, SAE and 4G mobile
@@ -22,6 +22,11 @@ S.~Feng and E.~Seidel, ``Self-organizing networks (son) in 3gpp long term
 3GPP TR 36.902 V9.3.1 Release 9, {\em LTE; Evolved Universal Terrestrial Radio
   Access Network (E-UTRAN); Self-configuring and self-optimizing network (SON)
   use cases and solutions (Release 9)}, May 2011.
+
+\bibitem{holma2009lte}
+H.~Holma and A.~Toskala, {\em LTE for UMTS-OFDMA and SC-FDMA based radio
+  access}.
+\newblock John Wiley \& Sons, 2009.
 
 \bibitem{jansen2010handover}
 T.~Jansen, I.~Balan, J.~Turk, I.~Moerman, and T.~Kurner, ``Handover parameter

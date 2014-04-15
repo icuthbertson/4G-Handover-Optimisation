@@ -1,14 +1,13 @@
 \chapter{Handover Parameter Optimisation}\label{handover parameter optimisation}
-\section{Approach}\label{approach}
 The approach taken for optimising the handover parameters in LTE uses a Q-Learning algorithm based on the process given in Section~\ref{sec:qlearning}. In the approach the model of the environment has a state for every combination of TTT and hys; giving a total number of 336 states. An action within the model can move to any other state that is different by one of the following changes to the handover parameters:
 
 \begin{enumerate}
-	\item A single increase of TTT.
-	\item A single increase of hys.
-	\item A single increase of both TTT and hys.
-	\item A single decrease of TTT.
-	\item A single decrease of hys.
-	\item A single decrease of both TTT and hys.
+	\item A single value increase of TTT.
+	\item A single value increase of hys.
+	\item A single value increase of both TTT and hys.
+	\item A single value decrease of TTT.
+	\item A single value decrease of hys.
+	\item A single value decrease of both TTT and hys.
 	\item A single value increase of TTT and a single value decrease of hys.
 	\item A single value increase of hys and a single value decrease of TTT.
 \end{enumerate}
@@ -25,13 +24,11 @@ The coefficients in Equation~\ref{eq:reward} are given the values of $10$ for dr
 
 After the agent has been given enough time to try every action at least once the Q-Learning agent generates a policy. This policy can then be used to attempt to optimise the handover parameters by changing the TTT and hys values after a call is dropped or the connection ping-pongs between base stations. The Q-Learning agent still receives rewards every time a call is dropped or the connection ping-pong's while following the generated policy. Doing this allows for the system to always be learning; even after the initial learning process that generated the policy.
 
-The optimisation system was tested in two scenarios. One scenario was to have 10 UE's moving randomly around 9 base stations, with each UE being 1 m in height and each base station being 60 m in height, with the layout as seen in Figure (Place Holder), using the Random Direction mobility model seen in Section~\ref{mobility}, where the speed of the UE is $1$ to $4 m/s$, which is walking speed and the duration of the direction is between $100$ and $200$ seconds. The other scenario is to have the UE moving at $10$ to $15 m/s$, which is roughly $30 mph$. In these scenarios each mobile begins on top of one of the base stations before it starts moving so that handovers are not required as soon as the simulation starts. These scenarios would also be run with no fading in the RSS calculations so in to make the environment easier to learn for the agents.
+The optimisation system was tested in two scenarios. One scenario was to have 10 UE's moving randomly around 9 base stations, with each UE being 1 m in height and each base station being 60 m in height, with the layout as seen in Figure~\ref{fig:cov}, using the Random Direction mobility model seen in Section~\ref{mobility}, where the speed of the UE is $1$ to $4 m/s$, which is walking speed and the duration of the direction is between $100$ and $200$ seconds. The other scenario is to have the UE moving at $10$ to $15 m/s$, which is roughly $30 mph$. In these scenarios each mobile begins on top of one of the base stations before it starts moving so that handovers are not required as soon as the simulation starts. These scenarios would also be run with no fading in the RSS calculations so in to make the environment easier to learn for the agents.
 
-Place holder for base station layout.
-
-Each base station has its own Q-Learning agent to optimise the TTT and hys values for that specific base station. The agents are given 1000000 seconds to attempt to learn the environment that are working within, with each state being given 180 seconds to gain their reward. This length of time was chosen because there are 336 state each with a maximum of 8 actions, therefore the time needed to do all actions would take approximately 483840 seconds if each action was given 180 seconds. This length of time is less than half of the total time given so even due to the randomness of selecting next actions when learning the environment there should be enough time to try all state and most of the actions available. After the agents have learned the environment they generate a policy for their base station to follow. The simulation is then run for 200000 seconds to test how well the policies perform. The results for the scenarios can be seen in Section~\ref{results}.
-\subsection{Assessment Process}\label{results}
-The results are assessed by how well they performed compared to not making any changes to the TTT and hys values. The comparison is made by observing how to ratio of dropped calls and ping-pong's to successful handovers changes over time~\cite{sinclair2013advanced}. The ratio of dropped calls is given by the following equation:
+Each base station has its own Q-Learning agent to optimise the TTT and hys values for that specific base station. The agents are given 1000000 seconds to attempt to learn the environment that are working within, with each state being given 180 seconds to gain their reward. This length of time was chosen because there are 336 state each with a maximum of 8 actions, therefore the time needed to do all actions would take approximately 483840 seconds if each action was given 180 seconds. This length of time is less than half of the total time given so even due to the randomness of selecting next actions when learning the environment there should be enough time to try all state and most of the actions available. After the agents have learned the environment they generate a policy for their base station to follow. The simulation is then run for 200000 seconds to test how well the policies perform. The results for the scenarios can be seen in Sections~\ref{walk} and~\ref{veh}.
+\section{Assessment Process}\label{results}
+The results are assessed by how well the machine learning algorithm performed compared to not making any changes to the TTT and hys values. The comparison is made by observing how to ratio of dropped calls and ping-pong's to successful handovers changes over time~\cite{sinclair2013advanced}. The ratio of dropped calls is given by the following equation:
 \begin{equation}\label{eq:drop}
 Drop Ratio = \frac{\#Dropped Calls}{\#Successful Handovers}
 \end{equation}
@@ -39,13 +36,13 @@ The ratio for the connection ping-ponging between base stations is given by the 
 \begin{equation}\label{eq:ping}
 PingPong Ratio = \frac{\#PingPong's}{\#Successful Handovers}
 \end{equation}
-It is also important to see how the TTT and hys values are being changes when the system is attempting to optimise them. This will allows it to be seen if the agents for the base stations come to some kind of consensus on the most optimal values of TTT and hys or if them come up with there own unique solutions. It is likely that Base Station 4 whose coverage overlaps with the coverage from every other Base Station, as seen in Figure (place holder), will come up with a different solution to the other Base Stations because it will be involved in the most handover attempts.
+It is also important to see how the TTT and hys values are being changes when the system is attempting to optimise them. This will allow it to be seen if the agents for the base stations come to some kind of consensus on the most optimal values of TTT and hys or if them come up with there own unique solutions. It is likely that Base Station 4, being the central base station and whose coverage overlaps with the coverage from every other base station, as seen in Figure~\ref{fig:cov}, will come up with a different solution to the other base stations because it will be involved in the most handover attempts.
 
-The simulation is run for four different starting states when compiling results for the UE moving at walking or vehicle speeds. The first starting state was to have the TTT and hys both start at their maximum values, 5.12 second and 10 dB respectively, to see how the system attempted to optimise the values as it is expected that a lot of dropped calls would occur for this set of values. The second start state was to give the TTT and hys their middle values, which are 0.256 seconds for TTT and 5 dB for hys. This start state would be expected to perform relatively well without any optimisation taking place due to the values neither being very large or very small. The third start state has the TTT and hys being at their lowest possible values of 0 seconds for TTT and 0 dB for hys. This starting state is expected to cause ping-pong's to occur because a handover will be triggered as soon as a neighbouring Base Station becomes better than the serving Base Station, instead of waiting to see if the neighbouring Base Station continues to be better for a period of time. The final starting start is to have the TTT start at a low value of 0.08 seconds and the hys start at a high value of 7.5 dB. This type of state was chosen to see how the well the system can optimise the values when it is likely that one will need to be increased and the other decreased.
-\section{Walking Speed}
+The simulation is run for four different starting states when compiling results for 10 UE's moving at walking or vehicle speeds. The first starting state was to have the TTT and hys both start at their maximum values, 5.12 second and 10 dB respectively, to see how the system attempted to optimise the values as it is expected that a lot of dropped calls would occur for this set of values. The second start state was to give the TTT and hys their middle values, which are 0.256 seconds for TTT and 5 dB for hys. This start state would be expected to perform relatively well without any optimisation taking place due to the values neither being very large or very small. The third start state has the TTT and hys being at their lowest possible values of 0 seconds for TTT and 0 dB for hys. This starting state is expected to cause ping-pong's to occur because a handover will be triggered as soon as a neighbouring base station becomes better than the serving base station, instead of waiting to see if the neighbouring base station continues to be better for a period of time. The final starting start is to have the TTT start at a low value of 0.08 seconds and the hys start at a high value of 7.5 dB. This type of state was chosen to see how the well the system could optimise the values when it is likely that one will need to be increased and the other decreased. Each of there scenarios were run 10 times so that the results could be averaged and $95\%$ confidence limits could be established. Doing this would allow it to be seen if the machine learning algorithm was likely to produce better results over multiple runs but also give indications on the best and worst possible performance according to the confidence limits.
+\section{Walking Speed}\label{walk}
 For the walking speed testing it is expected that the first scenario of having both the TTT and hys at their highest values will produce a large number of dropped calls, with the likelihood of ping-pong's occurring being vey small, and prompt the optimisation system to reduce both values. For the second scenario with both the TTT and hys being middle values it is expected that the system will perform better than if no optimisation takes place. It is also expected that the system in likely to still reduced both values in an attempt to improve performance. For the third scenario with both the TTT and hys being their lowest possible values it is expected that no or very few dropped calls will occur and than ping-pong's are far more likely to happen. The system should compensate for this by increasing both values. In the final scenario where the TTT is a small value and the hys is a large one it is still expected that no ping-pong's will occur and that the ratio of called drops may be fairly high. It is expected that the system would attempt to improve the performance by increasing the TTT and decreasing the hys.
-\subsection{Large Starting Values}
-The results of how the optimised values compared to the static values can be seen in Figure~\ref{fig:walk_high_drop} when both the TTT and hys started with their largest possible values of 5.12 seconds and 10 dB respectively. The results show that while the process of optimising the values initially generated a very large increase in the number of dropped calls. However, the system then managed to improve rapidly and ended up having a better dropped call ratio by the end to the simulation run than that of the non-optimised system.
+\subsection{Large Starting Values}\label{walk_high}
+The results of how the optimisation system compared to the static values can be seen in Figure~\ref{fig:walk_high_drop} when both the TTT and hys started with their largest possible values of 5.12 seconds and 10 dB respectively. The results show that the process of optimising the values initially generated a very large increase in the number of dropped calls. However, the system then managed to improve rapidly and ended up having a better dropped call ratio by the end to the simulation run than that of the non-optimised system.
 \begin{figure}[H]
   \begin{center}
     	  \includegraphics[width=0.66\textwidth]{figures/walking_figures/walkhigh.eps}
@@ -53,8 +50,9 @@ The results of how the optimised values compared to the static values can be see
     \caption{Graph of Optimised vs. Non-Optimised Results for Starting Point TTT=5.12s hys=10dB when UE traveling at walking speeds.}
     \label{fig:walk_high_drop}
 \end{figure}
-Figure~\ref{fig:walk_high_ttt} shows how the TTT values were optimised over the course of the simulation run. It can be seen that all the base stations were in consensus that 5.12 seconds is too large of a values of the TTT and very quickly lowered the value. After this however there were effectively two different groups. The first group made up of base stations 1, 3, 4 and 5 ended up keeping the TTT value over 1 second. While the other group made up of base stations 0, 2, 6, 7 and 8 kept reducing the value to a most 0.48 seconds. It could be said that first group of base stations may not have optimised the TTT value as well as the second group because it can be seen that base stations 1, 4 and 5 kept switching between only two values when dropped calls occurred. It can also be seen the these changes happened often meaning that these base stations were still have dropped calls occurring, so it cannot be said that these values performed as well as those the base stations is the second group were using.
-While the changes made to the TTT value could be split up into two different groups the same cannot be said for the changes made to the hys value as seen in Figure~\ref{fig:walk_high_hys}. It can be seen that while most of the base stations kept the hys value above 9 dB, base stations 0, 6, 7 and 8 lower the value more, with base station 8 settling between 5 and 5.5 dB. It can also be seen that base stations 1 and 3 appear to have gotten stuck between two non-optimal values as they keep switching between them and due to it happening often it means that dropped calls are still occurring so the system should have switched to different values to see if they had performed better.
+Figure~\ref{fig:walk_high_ttthys} shows how the TTT and hys values for base stations  5 and 8 optimised over a simulation run. It can be seen in Figure~\ref{fig:walk_high_ttt} that both base stations were in consensus to reduce the value of their TTT from the starting value of $5.12 s$. However, both base stations were not in consensus for how much the value should be reduce by. Base station 8 reduced its TTT value to as low as $0.16 s$ before settling between it and $0.256 s$. Base station 5 on the other hand reduced its TTT value a lot less, only going as low as to oscillate between $1.024 s$ and $1.28 s$. It can also be seen that Base station 5 oscillated a lot between those two values and this could be an indication that the algorithm had got stuck between two non-optimal states and was not able to optimise the value anymore. This means that even though the optimisation improved the performance there was a large window of potential for further improvement.
+ 
+While both base station 5 and 8 were in consensus about reducing their TTT values, they were not in consensus about their hys values. It can be seen in Figure~\ref{fig:walk_high_hys} that base station 5 did not try to reduce its value of hys at all and only oscillated between, the starting value of, $10 dB$ and $9.5 dB$. This is a stark contrast to base station 8 which greatly reduced its value of hys as low as $5 dB$ before oscillating between it and $5.5 dB$. Again, much like with the TTT values, base station 5 appears to oscillate between two non-optimal values as the oscillations are quite frequent and the learning agent for that base station has not tried any other values to see if they give an improvement. Also since base station 8 reduce its value greatly before oscillating between two values could mean that it reached what it thinks to be an optimal state.
 \begin{figure}[H]
         \centering
         \begin{subfigure}[b]{0.49\textwidth}
@@ -71,9 +69,9 @@ While the changes made to the TTT value could be split up into two different gro
         \end{subfigure}
         \caption{Illustration of how the TTT and hys values changed over time for large values when UE traveling at walking speeds.}\label{fig:walk_high_ttthys}
 \end{figure}
-From these results it can be said that the system performed as expected by reducing both the TTT and hys in the case of all the base stations. There were also a very high number for dropped calls and no ping-pong's, which was also expected in the simulation.
+From these results it can be said that the system performed as expected by with the base stations shown having reduced both their values of TTT and hys. There were also a very high number for dropped calls and no ping-pong's, which was also expected in the simulation. All the graphs for the optimisation of the TTT and hys values for this scenario can be found in Appendix~\ref{ap:walk_large}.
 \subsection{Middle Starting Values}
-Again as seen in Figure~\ref{fig:walk_mid_drop} the optimised values performed a lot better than the static values when they were originally set to the their middle values of 0.256 seconds for TTT and 5 dB for hys. The results also show that unlike with the results seen in Figure~\ref{fig:walk_high_drop} the optimisation process did not greatly increase the number of dropped call at first. Instead it was the non-optimised values that began with the large number of dropped calls. This means that when these dropped calls began to appear the machine learning algorithm changed the value of TTT and hys in such a way that the dropped calls seen for the non-optimised values did not happen.
+Again as seen in Figure~\ref{fig:walk_mid_drop} the optimisation process performed a lot better than the static values when they were originally set to the their middle values of 0.256 seconds for TTT and 5 dB for hys. The results also show that unlike with the results seen in Figure~\ref{fig:walk_high_drop} the optimisation process did not greatly increase the number of dropped call at first. Instead it was the non-optimised values that began with the large number of dropped calls. This means that when these dropped calls began to appear the machine learning algorithm changed the value of TTT and hys in such a way that the dropped calls seen for the non-optimised values did not happen.
 \begin{figure}[H]
   \begin{center}
     	  \includegraphics[width=0.75\textwidth]{figures/walking_figures/walkmid.eps}
@@ -81,11 +79,9 @@ Again as seen in Figure~\ref{fig:walk_mid_drop} the optimised values performed a
     \caption{Graph of Optimised vs. Non-Optimised Results for Starting Point TTT=0.256s hys=5dB when UE traveling at walking speeds.}
     \label{fig:walk_mid_drop}
 \end{figure}
-The way that the value of TTT trended during the simulation can be seen in Figure~\ref{fig:walk_mid_ttt}. It can be seen that the majority of the base stations ended up having the TTT being 0.1 seconds with those base stations having very few changes from that value when they got there meaning that it could be an optimal value. As expected base station 4 came up with a different solution to the other base stations by actually increasing the value of TTT when the majority were reducing it.
+A comparison of how base stations 4 and 8 optimised their TTT and hys values can be seen in Figure~\ref{fig:walk_mid_ttthys}. It can be seen in that the two base station took different approaches when trying to optimise their TTT and hys values. Base station 4 can be seen to have increased its TTT value and decreased its hys value, while base station 8 decreased its TTT value and increased its hys value. When looking at Figure~\ref{fig:walk_mid_ttt} it can be seen that base station 4 increases its value of TTT to $0.48 s$ and then keeps that value steady. However, it can also be seen in Figure~\ref{fig:walk_mid_hys} that its value of hys actually ends up oscillating between $4 dB$ and $4.5 dB$ and oscillating quite frequently at first before settling at $4 dB$ for the last quarter of the simulation. Therefore, while the state of TTT being $0.48 s$ and hys being $4 dB$ may not have looked like an optimal state at first, the fact that it made no changes to any values for the last quarter of the simulation means that it could be a very optimal state for the base station.
 
-Figure~\ref{fig:walk_mid_hys} shows that all but one base station were in consensus that the value of hys should be lowered from its starting value. Other than this though there was not very much consensus with the base stations finishing with any value in the range of 2.5 to 4 dB.
-
-It is interesting to note that base station 8 actually ended up switching between the same states of values TTT=0.256 seconds hys=5 dB and TTT=0.16 seconds and hys=5.5 dB by the end of both simulations for starting at large and middle values. This means that these could be the most optimal states found for the base station.
+It is interesting to see that base station 8 actually ended up oscillating between the same two states in both this scenario and the scenario seen in Section~\ref{walk_high}. With both of these scenarios finished between the same states of TTT equalling $0.16 s$, hys equalling $5 dB$ and TTT equalling $0.256 s$, hys equalling $5.5 dB$ it means that the learning agent for that base station managed to find what it thinks be an optimal set of states and end up there when starting at two different states, this is a very promising result. 
 \begin{figure}[H]
         \centering
         \begin{subfigure}[b]{0.49\textwidth}
@@ -102,11 +98,11 @@ It is interesting to note that base station 8 actually ended up switching betwee
         \end{subfigure}
         \caption{Illustration of how the TTT and hys values changed over time for medium values when UE traveling at walking speeds.}\label{fig:walk_mid_ttthys}
 \end{figure}
-The system performed as expected in this scenario with the majority of the base stations reducing both the TTT and hys to attempt to improve the performance. Some base stations, however, took an unexpected approach by actually increasing the values.
-\subsection{Small Starting Values}
+From the base stations compared above, while the performance was increased a lot, these two base stations did not optimised the values as expected. Instead of reducing both values they both opted for a split approach increased one value while decreasing the other. All the graphs for the optimisation of the TTT and hys values for this scenario can be found in Appendix~\ref{ap:walk_mid}.
+\subsection{Small Starting Values}\label{sec:walk_low}
 It turned out that ping-pong's were a very rare occurrence in the simulation. This was most likely due to there being no fading in the simulation and that Random Direction mobility model would having the UE moving in one direction for a long time meaning that the only likely occurrence of a ping-pong would be if a handover took place and the UE then turned around and moved the other direction.
 
-Figure~\ref{fig:walk_low_ping} shows how the optimisation system performed against the static values when the simulation started with the TTT being 0 seconds and the hys being 0 dB. It can be seen that the optimised values only actually began to perform better than the static values at the very end of the simulation run. However, it can also be seen the ping-pong ratio for the static values was actually trending up while the ratio for the optimised values was trending down. This means that long term the optimised values should perform much better. 
+Figure~\ref{fig:walk_low_ping} shows how the optimisation system performed against the static values when the simulation started with the TTT being 0 seconds and the hys being 0 dB. It can be seen that the optimisation process and the static values performed very similar. It can be seen though that the error bars for the optimised system become a lot smaller, than those for the static values, the longer the simulation is run. This means that the optimisation system would be expected to perform better the majority of the time.
 \begin{figure}[H]
   \begin{center}
     	  \includegraphics[width=0.75\textwidth]{figures/walking_figures/walklow.eps}
@@ -114,9 +110,7 @@ Figure~\ref{fig:walk_low_ping} shows how the optimisation system performed again
     \caption{Graph of Optimised vs. Non-Optimised Results for Starting Point TTT=0s hys=0dB when UE traveling at walking speeds.}
     \label{fig:walk_low_ping}
 \end{figure}
-As for how the TTT and hys values changed over the simulation run in can be seen in Figure~\ref{fig:walk_low_ttt} that all the base stations were in consensus to keep to the TTT value at 0 seconds. This only changed at the very end of the run when base station 5 decided to increase the value to 0.04 seconds.
-
-It can also be seen in Figure~\ref{fig:walk_low_hys} that the majority of the base stations were in consensus that the hys should have been increase to 0.5 dB. However, this change was made at differing times because due to pong-ping’s happening so rarely and the optimisation system only making changes when something goes wrong.
+A comparison of how base stations 3 and 5 changed their values of TTT and hys when a ping-pong occurred can be seen in Figure~\ref{fig:walk_low_ttthys}. It can be seen that while both base stations only encounter one ping-pong each they both reacted differently when they occurred. It can be seen that base station 5 increased both its values of TTT and hys from $0 s$ and $0 dB$ to $0.04 s$ and $0.5 dB$ respectively.  Base station 3, however, decided to keep its value of TTT as $0 s$ and only increase its hys to $0.5 dB$. It is difficult to make any assumptions on which base station made the correct changes to their values as not a lot of changes actually happened.
 \begin{figure}[H]
         \centering
         \begin{subfigure}[b]{0.49\textwidth}
@@ -133,9 +127,9 @@ It can also be seen in Figure~\ref{fig:walk_low_hys} that the majority of the ba
         \end{subfigure}
         \caption{Illustration of how the TTT and hys values changed over time for medium values when UE traveling at walking speeds.}\label{fig:walk_low_ttthys}
 \end{figure}
-This scenario played out as expected with no dropped calls occurring; instead having ping-pong’s determine the performance of the system. The system also compensated for this as expected by increase the value of the hys in most cases and by the end of the simulation run the performance of the optimised values had become better than that of the non-optimised values.
+This scenario played out as expected with no dropped calls occurring; instead having ping-pong’s determine the performance of the system. The system also compensated for this as expected by increase the values of TTT and hys as seen with base stations 3 and 5 and by the end of the simulation run the performance of the optimised values had become better than that of the non-optimised values. All the graphs for the optimisation of the TTT and hys values for this scenario can be found in Appendix~\ref{ap:walk_low}.
 \subsection{Large hys and Small TTT Starting Values}
-Much like the first three scenarios, it can be seen in Figure~\ref{fig:walk_highhys_drop} that, the optimised values performed better than the static values when the TTT and hys started at 0.08 seconds and 7.5 dB respectively. Also much like in the second scenario the optimisation process did not begin by greatly increasing the number of dropped when trying to optimise the values.
+Much like the first three scenarios, it can be seen in Figure~\ref{fig:walk_highhys_drop} that, the optimisation system performed better than the static values when the TTT and hys started at 0.08 seconds and 7.5 dB respectively.
 \begin{figure}[H]
   \begin{center}
     	  \includegraphics[width=0.75\textwidth]{figures/walking_figures/walkhighhys.eps}
@@ -143,9 +137,11 @@ Much like the first three scenarios, it can be seen in Figure~\ref{fig:walk_high
     \caption{Graph of Optimised vs. Non-Optimised Results for Starting Point TTT=0.08s hys=7.5dB when UE traveling at walking speeds.}
     \label{fig:walk_highhys_drop}
 \end{figure}
-The way in which the TTT values were changed during the optimisation process can be seen in Figure~\ref{fig:walk_highhys_ttt}. The figure shows that there was not very much consensus at all when it came to what value that TTT should be. It can also be seen that the value for the TTT for each base station was switching between the same two values a lot meaning that the optimisation system must having been making more changes to the value of the hys to try and get better performance.
+A comparison of how base stations 4 and 7 attempted to optimised the system can be seen in Figure~\ref{fig:walk_highhys_ttthys}. It can be seen in Figure~\ref{fig:walk_highhys_ttt} that both base stations were in consensus to reduce the value slightly with both base stations oscillating between the starting value of $0.08 s$ and $0.064 s$ before they both became steady at $0.064 s$.
 
-Figure~\ref{fig:walk_highhys_hys} shows that while the base stations changed their value of hys quickly after the simulation began there is no real consensus a lot for what value would be most optimal. The majority of the base stations ended up after their own unique value for hys by the end of the simulation run with the values being in the range of 3.5 to 7.5 dB. While there was no consensus on what the value for hys should be it can also be seen that when the base stations settled on their own value of hys they stayed with it meaning that there probably should have been more changes made to the TTT value to improve the performance.
+Figure~\ref{fig:walk_highhys_hys} shows that while both base stations were in consensus about their TTT values they were not in consensus about their hys values. It can be seen that base station 7 actually increased its value of hys and ended up oscillating between the starting value of $7.5 dB$ and $8 dB$. This is vastly different to the changes made by base station 4 which reduced the value all the way down to $3.5 dB$ and then stayed steady at that value.
+
+It should also be noted that base station 4 appeared to reach an optimal state of TTT being $0.064 s$ and hys being $3.5 dB$ very quickly and stayed in this state for almost three quarters of the simulation run.
 \begin{figure}[H]
         \centering
         \begin{subfigure}[b]{0.49\textwidth}
@@ -162,9 +158,9 @@ Figure~\ref{fig:walk_highhys_hys} shows that while the base stations changed the
         \end{subfigure}
         \caption{Illustration of how the TTT and hys values changed over time for medium values when UE traveling at vehicle speeds.}\label{fig:walk_highhys_ttthys}
 \end{figure}
-In this scenario the system perform as expected in terms of decreasing the value of the hys. However, the system performed unexpectedly by also decreasing the value of the TTT when it was expected to actually increase it. Even with this the system still performed better than the simulation when run with static values.
+In the comparison seen above the system did not perform entirely as expected.  While base station 4 did decrease its hys value, base station 7 actually increased it slightly, which was unexpected. Both base stations also performed expectantly decreasing their TTT values when they were expected to be increased. Even with this the system still performed better than the simulation when run with static values. All the graphs for the optimisation of the TTT and hys values for this scenario can be found in Appendix~\ref{ap:walk_highhys}.
 
-\section{Vehicle Speed}
+\section{Vehicle Speed}\label{veh}
 For the vehicle speed scenarios it is expected that number of dropped calls would increase over those seen in the walking speed scenarios due to the UE moving a lot faster and therefore giving a lot less time for the decision to handover or not. It is still expected that for the first scenario the system will reduce both values for TTT and hys. In the second scenario of the middle values it can also be expected the both values for TTT and hys will be reduced as dropped calls will still be expected fairly often at the speed the UE will be moving at. For the third scenario where both values for TTT and hys are at their lowest it is expected that the system will increase these values has ping-pong's should still be likely to happen, even at the high speeds. In the fourth scenario it is expected that the system is more likely to reduce both values, unlike when the UE was moving at walking speeds, because of the speed the UE is moving at decisions need to be made quickly.
 \subsection{Large Starting Values}
 It can be seen in Figure~\ref{fig:veh_high_drop} that the optimised system performed better than the system using the static values of 5.12 seconds for TTT and 10 dB for hys. 
@@ -175,9 +171,9 @@ It can be seen in Figure~\ref{fig:veh_high_drop} that the optimised system perfo
     \caption{Graph of Optimised vs. Non-Optimised Results for Starting Point TTT=5.12s hys=10dB when UE traveling at walking speeds.}
     \label{fig:veh_high_drop}
 \end{figure}
-Figure~\ref{fig:veh_high_ttt} shows how the TTT value for the base stations changed over time. It can be seen that the system did not appear to optimise the value very well. A lot of the base stations kept switching between the values of 5.12 seconds and 2.56 seconds, which for a UE moving at roughly 30 mph is far too high and this is shown by the fact that the base stations are switching back and forth between the values almost constantly. This same kind of results can also be seen for the base stations that lowered the values slightly more, they are still switching between values very regularly meaning that the performance could have been improved a lot more. 
+A comparison between how base stations 3 and 7 optimised their TTT and hys values can be seen in Figure~\ref{fig:veh_high_ttthys}. It can be seen in Figure~\ref{fig:veh_high_ttt} that both base stations were in consensus about what to do to their TT values which was to reduce them. However, both base stations were not in consensus about how much to reduce it by. Base station 3 reduced its value by only one single decrease to $2.56 s$ and then stayed steady at that value. Base station 7, however, reduced its value as low as $0.512 s$ before ending up oscillating between $1.024 s$ and $1.28 s$. the oscillation between those two values can be seen to be very frequent meaning the value should have been reduced more. This would make sense since the UE’s in this scenario are moving quickly meaning that there is less time for handovers to be triggered.
 
-The same kind of results seen in the TTT values can also be seen in the hys in Figure~\ref{fig:veh_high_hys}. The results show that while some base stations managed to reduce the value of the hys as far down as 6 dB, the majority of the base stations kept the hys between 9 and 10 dB. This again looks to be far too high when the UE is moving at 30 mph as the base stations are constantly switching value but the performance never really improves.
+It can be seen in Figure~\ref{fig:veh_high_hys} that while base station 3 maybe have kept its value of TTT steady, its value of hys was oscillating extremely frequently between the starting value of $10 dB$ and $9.5 dB$. This means that those states are very likely non-optimal and the learning agent for the base station should have reduced that values a lot more. As for base station 7, it reduced its value of hys a lot more that base station 3 did and ended up oscillating between $6 dB$ and $6.5 dB$. Again the oscillation is very frequent and it is likely that the learning agent should have reduced the value more.
 \begin{figure}[H]
         \centering
         \begin{subfigure}[b]{0.49\textwidth}
@@ -194,7 +190,7 @@ The same kind of results seen in the TTT values can also be seen in the hys in F
         \end{subfigure}
         \caption{Illustration of how the TTT and hys values changed over time for large values when UE traveling at vehicle speeds.}\label{fig:veh_high_ttthys}
 \end{figure}
-For this scenario while the system performed as expected and still performed better than that of the non-optimised system, it can be seen that it still did not perform all that well and appear be being getting stuck in non-optimal states.
+For this scenario while the system performed as expected and still performed better than that of the non-optimised system, it can be seen that it still did not perform all that well and appear be being getting stuck in non-optimal states. All the graphs for the optimisation of the TTT and hys values for this scenario can be found in Appendix~\ref{ap:veh_large}.
 \subsection{Middle Starting Values}
 In this scenario the optimised system perform much better than of the static values, where it TTT and hys values were initialised to 0.256 seconds and 5 dB respectively. The graphs of the dropped calls ratios can be seen in Figure~\ref{fig:veh_mid_drop}.
 \begin{figure}[H]
@@ -204,9 +200,9 @@ In this scenario the optimised system perform much better than of the static val
     \caption{Graph of Optimised vs. Non-Optimised Results for Starting Point TTT=0.256s hys=5dB when UE traveling at vehicle speeds.}
     \label{fig:veh_mid_drop}
 \end{figure}
-Figure~\ref{fig:veh_mid_ttt} shows how the TTT value for each base station changed over the time the simulation was run. It shows that most of the base stations lowered the value for TTT while base station 6 greatly increased the value. Although this large increase appears strange the base station did not have a far larger number of changes when compared to the other base stations, which means that the values performed just as well as the other values chosen by the other base stations. 
+Figure~\ref{fig:veh_mid_ttthys} shows a comparison of how base stations 5 and 6 attempted to optimised their values of TTT and hys. It can be seen in Figure~\ref{fig:veh_mid_ttt} that the two base stations took completely different approaches to optimising their TTT values. Base station 5 reduced its value of TTT and actually ended up looping between $0.08 s$, $0.1 s$ and $0.128 s$, with the frequency of the changes being fairly frequent. Base station 6, however, increased its value of TTT as high as $1.28 s$ and ended up oscillating between that value and $1.024 s$, with its movements being slightly more frequent that those of base station 5. It is difficult to say which base station may be correct since both still made changes frequently while in oscillation, but since the UE’s are moving very fast in this scenario is would be assumed that base station 5’s made changes would be more correct.
 
-The way that the value for the hys was changed by the base stations can be seen in Figure~\ref{fig:veh_mid_hys}. It can be seen that the majority of the base stations kept the value of the hys around the starting point of 5 dB. Base station 4, however, reduced the value down to a minimum of 3.5 dB and be seen in have far less switches than the other base stations which means that it could have found a more optimal value.
+Unlike with the changes base stations 5 and 6 made to their TTT values, they were in consensus about what changes should be made to their hys values. Both base stations end up oscillating between the starting value of $5 dB$ and $4.5 dB$.
 \begin{figure}[H]
         \centering
         \begin{subfigure}[b]{0.49\textwidth}
@@ -223,9 +219,9 @@ The way that the value for the hys was changed by the base stations can be seen 
         \end{subfigure}
         \caption{Illustration of how the TTT and hys values changed over time for medium values when UE traveling at vehicle speeds.}\label{fig:veh_mid_ttthys}
 \end{figure}
-In this scenario it has been seen that the optimisation system functioned as expected with the majority of the base stations reducing both the TTT and hys values. However, there was a strange anomaly where one of the base stations greatly increased the TTT value, which was highly unexpected. 
+In this scenario it has been seen that base station 5 functioned as expected reducing both its values of TTT and hys. On the other hand base station 6 made very unexpected changes to its TTT value by actually greatly increasing its value. All the graphs for the optimisation of the TTT and hys values for this scenario can be found in Appendix~\ref{ap:veh_mid}.
 \subsection{Small Starting Values}
-It can be seen that for this scenario the optimised system performed well and even though at the beginning of the simulation it performed worse, by the end the ratio of ping-pong's was for better than that of the non-optimised values.
+It can be seen that for this scenario the optimised system and static values performed identically at first, but by the end the ratio of ping-pong's was better for the optimised system than that of the non-optimised values.
 \begin{figure}[H]
   \begin{center}
     	  \includegraphics[width=0.75\textwidth]{figures/vehicle_figures/vehlow.eps}
@@ -233,9 +229,9 @@ It can be seen that for this scenario the optimised system performed well and ev
     \caption{Graph of Optimised vs. Non-Optimised Results for Starting Point TTT=0s hys=0dB when UE traveling at vehicle speeds.}
     \label{fig:veh_low_drop}
 \end{figure}
-Figure~\ref{fig:veh_low_ttt} shows of the TTT value for base stations were changed by the optimisation system. It can be seen that most of the base stations stayed with the value being 0 seconds while other tried increasing the value to 0.04 seconds, with two of the base stations actually going back down to 0 seconds afterwards.
+Figure~\ref{fig:veh_low_ttthys} shows a comparison of how base stations 0 and 3 reacted when they experienced connection ping-pong’s. It can be seen that base station 3 actually encountered two ping-pong’s during this simulation run. It actually increased is TTT value after the first ping-pong to $0.04 s$ but after the second it actually reduced it back down to $0 s$. However, the learning agent for the base station increased its value of hys both times it encountered a ping-pong reaching $1 dB$ by the end of the simulation.
 
-Figure~\ref{fig:veh_low_hys} shows that the majority of the base stations increase the hys value 0.5 dB when a ping-pong occurred. Base station 3 actually increased the hys value to 1 dB when it had experienced two ping-pong’s. Even with this it still looks like 0.5 dB my have been the most optimal value for the situation.
+Unlike base station 3, base station 0 only encountered one ping-pong and it increased both its values of TTT and hys to $0.04 s$ and $0.5 dB$ respectively. Much like the results seen for this scenario when done with walking speeds it is hard to determined which base station made the correct changes as very few changes were actually made.
 \begin{figure}[H]
         \centering
         \begin{subfigure}[b]{0.49\textwidth}
@@ -250,9 +246,9 @@ Figure~\ref{fig:veh_low_hys} shows that the majority of the base stations increa
                 \caption{Changing hys Values}
                 \label{fig:veh_low_hys}
         \end{subfigure}
-        \caption{Illustration of how the TTT and hys values changed over time for medium values when UE traveling at vehicle speeds.}\label{fig:vel_low_ttthys}
+        \caption{Illustration of how the TTT and hys values changed over time for medium values when UE traveling at vehicle speeds.}\label{fig:veh_low_ttthys}
 \end{figure}
-Again the optimisation system functioned as expected with increasing both the TTT and hys values due to ping-pong’s occurring. This was expected because even though the UE is travel quickly the system still has to make sure that it does not trigger a handover too quickly.
+Again the optimisation system functioned as expected with increasing both the TTT and hys values due to ping-pong's occurring. This was expected because even though the UE is travel quickly the system still has to make sure that it does not trigger a handover too quickly. All the graphs for the optimisation of the TTT and hys values for this scenario can be found in Appendix~\ref{ap:veh_low}.
 \subsection{Large hys and Small TTT Starting Values}
 As seen in the first three scenarios for the vehicle speed testing the optimised system managed to perform better than that of the non-optimised system when starting with the TTT being 0.08 seconds and the hys 7.5 dB. However, the improvement was not quite as great as seen in the other scenarios. 
 \begin{figure}[H]
@@ -262,9 +258,9 @@ As seen in the first three scenarios for the vehicle speed testing the optimised
     \caption{Graph of Optimised vs. Non-Optimised Results for Starting Point TTT=0.08s hys=7.5dB when UE traveling at vehicle speeds.}
     \label{fig:veh_highhys_drop}
 \end{figure}
-It can be seen in Figure~\ref{fig:veh_highhys_ttt} that the base stations did not really come to a consensus on what should be done to the TTT when a dropped call occurs. Some of the base stations increased the value while others lowered it to as low as 0 seconds. It is also hard to tell if it was correct to either increase or decrease the value as all the base stations are constantly switching between values which means calls are still being dropped.
+A comparison of how base stations 0 and 5 attempted to optimise their TTT and hys values can be seen in Figure~\ref{fig:veh_highhys_ttthys}. It can be seen that base stations 0 and 5 both took different approaches to trying to optimise values of TTT and hys. Base station 0 reduced both its values of TTT and hys end up oscillating between $0 s$ and $0.04 s$ for TTT and $4.5 dB$ and $5 dB$ for hys. The oscillations were still fairly frequent meaning that there could have been more of an improvement.
 
-Much like with the results seen for how the TTT was changed, there is no real consensus that can be seen for changed the value for the hys as seen in Figure~\ref{fig:veh_highhys_hys}. It is seen that some base stations increased the value while other decreased it and only base station 0 decreased it by a large amount.
+Unlike base station 0, base station 5 actually increased both its values of TTT and hys, which was highly unexpected. The base station ended up oscillating between $0.08 s$ and $0.1 s$ for TTT and $8 dB$ and $8.5 dB$ for hys. Due to the speeds that the UE’s are moving at it could be said that these changes are wrong because due to the speed of the UE’s the handovers need to be triggered quickly and increasing the values from their starting points in this scenario would not do that.
 \begin{figure}[H]
         \centering
         \begin{subfigure}[b]{0.49\textwidth}
@@ -281,7 +277,7 @@ Much like with the results seen for how the TTT was changed, there is no real co
         \end{subfigure}
         \caption{Illustration of how the TTT and hys values changed over time for medium values when UE traveling at vehicle speeds.}\label{fig:veh_highhys_ttthys}
 \end{figure}
-Much like with the other scenarios it is seen that while the system may have been an improvement over the static values the system still could have performed far better, as base stations appeared to keep switching between values that could be considered non-optimal.
+Much like with the other scenarios it is seen that while the system may have been an improvement over the static values the system still could have performed far better, as base stations appeared to keep switching between values that could be considered non-optimal. All the graphs for the optimisation of the TTT and hys values for this scenario can be found in Appendix~\ref{ap:veh_highhys}.
 \section{Evaluation}
 Over the four scenarios used to test the optimisation system for walking speeds it can be seen that overall the system performed better than if no optimisation was done at all. It can also be seen that the system makes improvements to the performance very quickly. As seen in scenarios for the middle values and the large hys with small TTT the system managed to not have the large spike in dropped calls at the beginning of their simulation runs which were seen in there respective non-optimised runs.
 
