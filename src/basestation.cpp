@@ -28,7 +28,7 @@ basestation::basestation(scheduler* gs) : event_handler(gs) {
 	for(int i=0; i<NUM_MOBILES; i++) {
     	connected[i] = false;
     }
-	tx = 48.0;
+	tx = 46.0;
 }
 /* Constructor
  ****************************
@@ -52,7 +52,7 @@ basestation::basestation(scheduler* gs, int idNum, int x, int y, double freq, do
     for(int i=0; i<NUM_MOBILES; i++) {
     	connected[i] = false;
     }
-    tx = 48.0;
+    tx = 46.0;
 }
 /* Destructor
  ****************************
@@ -213,13 +213,7 @@ double basestation::getProp(double d, double hm) {
 	double ahr = 0.8 + ((1.1 * log10(f) - 0.7) * hm) - (1.56 * log10(f));
 	double prop = 46.3 + (33.9 * log10(f)) - (13.82 * log10(hb)) - ahr + ((44.9 - (6.55 * log10(hb))) * log10(d/1000)); //divide by 1000 for km
 
-	// double fading = ((rand()%70)-35)/10;
-
-	//double fading = 0.0;
-
-	//fading = distribution(generator);
-
-	return (tx-prop/*+fading*/);
+	return (tx-prop);
 }
 
 void basestation::nowServing(int id) {
