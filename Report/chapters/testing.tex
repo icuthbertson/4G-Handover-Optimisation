@@ -1,14 +1,15 @@
 \chapter{Simulation Testing}\label{testing}
-\section{Movement Test Cases}
+\section{White/Clear Box Testing}
+\subsection{Movement Test Cases}
 \begin{table}[H]
   \begin{center}
     \begin{tabular}{| l | p{8cm} | c |}
   	  \hline
       \textbf{Testing Code} & \textbf{Test Description} & \textbf{Pass/Fail} \\ \hline
-      \textbf{M001} & Test the movement of a UE moving away from the origin point on both X and Y axis & Pass \\ \hline
-      \textbf{M002} & Test the movement of a UE moving away from the origin point on the X axis and towards on the Y axis & Pass \\ \hline
-      \textbf{M003} & Test the movement of a UE moving towards the origin point on the X axis and away on the Y axis & Pass \\ \hline
-      \textbf{M004} & Test the movement of a UE moving towards the origin point on both X and Y axis & Pass \\ \hline
+      \textbf{M001} & Test the movement of a UE moving in the positive direction on both X and Y axis. & Pass \\ \hline
+      \textbf{M002} & Test the movement of a UE moving in the positive direction on the X axis and negative on the Y axis. & Pass \\ \hline
+      \textbf{M003} & Test the movement of a UE moving in the negative direction on the X axis and positive on the Y axis. & Pass \\ \hline
+      \textbf{M004} & Test the movement of a UE moving in the negative direction on both X and Y axis. & Pass \\ \hline
       \textbf{M005} & Test the movement of a UE when bouncing off the left hand wall of the simulation area & Pass \\ \hline
       \textbf{M006} & Test the movement of a UE when bouncing off the bottom wall of the simulation area & Pass \\ \hline
       \textbf{M007} & Test the movement of a UE when bouncing off the right hand wall of the simulation area & Pass \\ \hline
@@ -19,45 +20,46 @@
   \label{tab:test_move}
 \end{table}
 
-\section{Path Loss Cases}
+\subsection{Path Loss Cases}
 \begin{table}[H]
   \begin{center}
     \begin{tabular}{| l | p{8cm} | c |}
   	  \hline
       \textbf{Testing Code} & \textbf{Test Description} & \textbf{Pass/Fail} \\ \hline
-      \textbf{PL001} & Test if the path loss calculated by the equations is correct & Pass \\ \hline
+      \textbf{PL001} & Test if the path loss calculated by the equations is correct. & Pass \\ \hline
   	\end{tabular}
   \end{center}
   \caption{Table of the testing and results done for testing the path loss equations.}
   \label{tab:test_pathloss}
 \end{table}
 
-\section{Network Functions Cases}
+\subsection{Q-Learning Cases}
 \begin{table}[H]
   \begin{center}
     \begin{tabular}{| l | p{8cm} | c |}
   	  \hline
       \textbf{Testing Code} & \textbf{Test Description} & \textbf{Pass/Fail} \\ \hline
-      \textbf{NF001} & Test if the handover triggering was working correctly & Pass \\ \hline
-      \textbf{NF002} & Test if dropped call detection is working correctly & Pass \\ \hline
-   	  \textbf{NF003} & Test if ping-pong detection is working correctly & Pass \\ \hline
-  	\end{tabular}
-  \end{center}
-  \caption{Table of the testing and results done for testing the network functions.}
-  \label{tab:test_network}
-\end{table}
-
-\section{Q-Learning Cases}
-\begin{table}[H]
-  \begin{center}
-    \begin{tabular}{| l | p{8cm} | c |}
-  	  \hline
-      \textbf{Testing Code} & \textbf{Test Description} & \textbf{Pass/Fail} \\ \hline
-      \textbf{QL001} & Test if the Q-Values for a state action pair are updated correctly & Pass \\ \hline
-      \textbf{QL002} & Test if states are transitioned correctly & Pass \\ \hline
-   	  \textbf{QL003} & Test if the TTT and hys values are updated correctly when the state is changed & Pass \\ \hline
+      \textbf{QL001} & Test if the Q-Values for a state action pair are updated correctly. & Pass \\ \hline
+      \textbf{QL002} & Test if states are transitioned correctly. & Pass \\ \hline
+   	  \textbf{QL003} & Test if the TTT and hys values are updated correctly when the state is changed. & Pass \\ \hline
   	\end{tabular}
   \end{center}
   \caption{Table of the testing and results done for testing the of the Q-learning Algorithm.}
   \label{tab:test_qlearning}
+\end{table}
+
+\section{Unit Testing}
+\subsection{Network Functions Cases}
+\begin{table}[H]
+  \begin{center}
+    \begin{tabular}{| l | p{8cm} | c |}
+  	  \hline
+      \textbf{Testing Code} & \textbf{Test Description} & \textbf{Pass/Fail} \\ \hline
+      \textbf{NF001} & Test if the handover triggering was working correctly. & Pass \\ \hline
+      \textbf{NF002} & Test if dropped call detection is working correctly. & Pass \\ \hline
+   	  \textbf{NF003} & Test if ping-pong detection is working correctly. & Pass \\ \hline
+  	\end{tabular}
+  \end{center}
+  \caption{Table of the testing and results done for testing the network functions.}
+  \label{tab:test_network}
 \end{table}

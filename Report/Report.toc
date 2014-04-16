@@ -53,10 +53,12 @@
 \contentsline {chapter}{Appendices}{54}
 \contentsline {chapter}{\numberline {A}Code Listings}{55}
 \contentsline {chapter}{\numberline {B}Simulation Testing}{56}
-\contentsline {section}{\numberline {B.1}Movement Test Cases}{56}
-\contentsline {section}{\numberline {B.2}Path Loss Cases}{57}
-\contentsline {section}{\numberline {B.3}Network Functions Cases}{57}
-\contentsline {section}{\numberline {B.4}Q-Learning Cases}{57}
+\contentsline {section}{\numberline {B.1}White/Clear Box Testing}{56}
+\contentsline {subsection}{\numberline {B.1.1}Movement Test Cases}{56}
+\contentsline {subsection}{\numberline {B.1.2}Path Loss Cases}{57}
+\contentsline {subsection}{\numberline {B.1.3}Q-Learning Cases}{57}
+\contentsline {section}{\numberline {B.2}Unit Testing}{57}
+\contentsline {subsection}{\numberline {B.2.1}Network Functions Cases}{57}
 \contentsline {chapter}{\numberline {C}Handover Optimisation Graphs}{58}
 \contentsline {section}{\numberline {C.1}Walking Speeds}{58}
 \contentsline {subsection}{\numberline {C.1.1}Large Starting Values}{58}

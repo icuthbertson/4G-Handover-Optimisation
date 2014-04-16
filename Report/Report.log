@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.10.9)  16 APR 2014 22:58
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.10.9)  17 APR 2014 00:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -674,7 +674,7 @@ File: figures/simulation/uml.pdf Graphic file (type pdf)
 Package pdftex.def Info: figures/simulation/uml.pdf used on input line 152.
 (pdftex.def)             Requested size: 272.29439pt x 192.44952pt.
  [22] [23 <./figures/simulation/uml.pdf>]
-[24]) [25] (./chapters/hand_opt.tex [26]
+[24] [25]) (./chapters/hand_opt.tex [26]
 Chapter 5.
 [27
 
@@ -4180,7 +4180,7 @@ texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/te
 xlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texl
 ive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texli
 ve/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Report.pdf (103 pages, 1429737 bytes).
+Output written on Report.pdf (103 pages, 1430128 bytes).
 PDF statistics:
  1546 PDF objects out of 1728 (max. 8388607)
  1025 compressed objects within 11 object streams

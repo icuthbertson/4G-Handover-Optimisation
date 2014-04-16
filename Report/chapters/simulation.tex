@@ -173,7 +173,7 @@ After all the previous components were implemented, tested and found to be funct
 The final part that needed to be implemented was the way in which the simulation recorded the results. It was decided that the best way to record the results would be to store them in arrays and then output them to appropriate text files that could then be analysed. This analysis ended up being done using MATLAB and the code for this can be found in Appendix~\ref{ap:code}. 
 
 \section{Simulation Testing}
-It was very important for the simulation and Q-Learning algorithm to be tested so that there was confidence that they would produce the correct results when executed. There are many different types of testing that can take place to ensure that a piece of software is working correctly. Testing methods that were used in this project include: Unit testing, Black Box testing and White/Clear Box testing.
+It was very important for the simulation and Q-Learning algorithm to be tested so that there was confidence that they would produce the correct results when executed. There are many different types of testing that can take place to ensure that a piece of software is working correctly. Testing methods that were considered for this project include: Unit testing, Black Box testing and White/Clear Box testing.
 
 Unit testing involves testing individual parts or processes of a program so that the stakeholders can be confident in them to be fit for use. The different parts of the simulation that were tested this way were the Mobility Model, handovers, drops, ping-pongs and the Q-learning algorithm changing the values of TTT and hys correctly.
 
@@ -181,8 +181,9 @@ Black Box testing involves making sure that a function works as required without
 
 White Box testing is used to make sure that the underlying code used in a function works as required. This type of testing is done by inserting print statements in the code to see how the respective variables are changing while the code is running. These are compared against previously determined expected values to confirm whether the function is working as intended.
 
-The test cases used to test the simulation to make sure it was working correctly were: 
-\subsection*{Movement:}
+It was decided that Unit testing and White/Clear Box testing were the most appropriate for validating this software. The test cases used to test the simulation to make sure it was working correctly were: 
+\subsection*{White/Clear Box:}
+\subsubsection*{Movement:}
 \begin{description}
 \item[M001]	Positive X and Y movement.
 \item[M002]	Positive X movement and Negative Y movement.
@@ -193,20 +194,21 @@ The test cases used to test the simulation to make sure it was working correctly
 \item[M007]	Movement against right wall of simulation area.
 \item[M008]	Movement against top wall of simulation area.
 \end{description}
-\subsection*{Path Loss:}
+\subsubsection*{Path Loss:}
 \begin{description}
 \item[PL001]	Path Loss calculated correctly.
 \end{description}
-\subsection*{Network Functions:}
-\begin{description}
-\item[NF001]	Handovers working correctly.
-\item[NF002]	Drops working correctly.
-\item[NF003]	ping-pongs detected correctly.
-\end{description}
-\subsection*{Q-Learning:}
+\subsubsection*{Q-Learning:}
 \begin{description}
 \item[QL001]	Q-Values updated correctly.
 \item[QL002]	Changing state correctly.
 \item[QL003]	Changing TTT and hys values correctly.
+\end{description}
+\subsection*{Unit Testing:}
+\subsubsection*{Network Functions:}
+\begin{description}
+\item[NF001]	Handovers working correctly.
+\item[NF002]	Drops working correctly.
+\item[NF003]	ping-pongs detected correctly.
 \end{description}
 After the simulation was tested using the test cases above it was decided that the simulation was functioning correctly and was fit for use. The results of all the test cases can be seen in Appendix~\ref{testing}.
