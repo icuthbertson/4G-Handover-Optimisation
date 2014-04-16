@@ -1,14 +1,19 @@
 \select@language {british}
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {1.1}{\ignorespaces Basic schedule of the project.\relax }}{2}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {2.1}{\ignorespaces Table of the different LTE hys values.\relax }}{6}
-\contentsline {table}{\numberline {2.2}{\ignorespaces Table of the different LTE TTT values.\relax }}{7}
-\contentsline {table}{\numberline {2.3}{\ignorespaces Table of the different LTE Trigger types and their criteria.\relax }}{8}
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\addvspace {10\p@ }
+\contentsline {table}{\numberline {2.1}{\ignorespaces Table of the different LTE hys values.\relax }}{7}
+\contentsline {table}{\numberline {2.2}{\ignorespaces Table of the different LTE TTT values.\relax }}{8}
+\contentsline {table}{\numberline {2.3}{\ignorespaces Table of the different LTE Trigger types and their criteria.\relax }}{9}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {B.1}{\ignorespaces Table of the testing and results done for the movement of the UEs.\relax }}{56}
+\contentsline {table}{\numberline {B.2}{\ignorespaces Table of the testing and results done for testing the path loss equations.\relax }}{57}
+\contentsline {table}{\numberline {B.3}{\ignorespaces Table of the testing and results done for testing the network functions.\relax }}{57}
+\contentsline {table}{\numberline {B.4}{\ignorespaces Table of the testing and results done for testing the of the Q-learning Algorithm.\relax }}{57}
 \addvspace {10\p@ }

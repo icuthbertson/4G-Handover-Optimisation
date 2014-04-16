@@ -25,11 +25,11 @@ The S-GW's function is to forward data to and from the eNodeBs to the P-GW; this
 \end{figure}
 \section{Self-Organising Network}\label{self organising network}
 LTE, just like any other mobile network, needs to be managed. Due to LTE being more complex than its predecessors the management of the network has also become more complex. The use of automation can simplify management of a network greatly. A technology that can be employed in LTE is that of a Self-Organising Network. This system provides three main functions: Self-configuration, Self-optimisation and Self-healing.~\cite{feng2008self,3gpp2011self}
-\begin{itemize}
-  \item \textbf{Self-configuration} allows for a newly installed eNodeB to be configured automatically with the basic parameters for operation.  
-  \item \textbf{Self-optimisation} is a process where measurements from the UE and eNodeB along with performance measurements are used to optimise the network to make it perform better.
-  \item \textbf{Self-healing} is designed to detect and identify failures within the network. After the self-healing system detects a failure it aims to recover from the failure without the need for human interaction with the system.
-\end{itemize}
+\begin{description}
+  \item[Self-configuration] allows for a newly installed eNodeB to be configured automatically with the basic parameters for operation.  
+  \item[Self-optimisation] is a process where measurements from the UE and eNodeB along with performance measurements are used to optimise the network to make it perform better.
+  \item[Self-healing] is designed to detect and identify failures within the network. After the self-healing system detects a failure it aims to recover from the failure without the need for human interaction with the system.
+\end{description}
 \section{Handover}\label{handover}
 The process of handover is very important in mobile telecommunications. It involves moving the resource allocation for a mobile phone or a piece of \ac{UE} from one base station to another. This process is used to provide better \ac{QoS} to customers by allowing them to continue to use provided services even after moving out of range of the original serving base station. It is important that handovers are performed quickly, cause little-to-no disruption to the user's experience and are completed with a very high success rate. If a handover is unsuccessful it is likely that an on-going call will be dropped due to there not being enough resources available on a base station (known as an \ac{eNodeB} in \ac{LTE}) or the if \ac{RSS} to the \ac{UE} drops below a certain threshold needed to maintain the call. This threshold, in LTE, is known as the noise floor and has a value of $-97.5 dB$~\cite{holma2009lte}. Handovers are stated to take roughly 0.25 seconds to complete after the decision has been made for a handover to take place~\cite{jansen2010handover}.
 \subsection{Parameters}\label{parameters}

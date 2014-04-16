@@ -139,12 +139,14 @@ A comparison of the three propagation models can be seen in Figure~\ref{fig:prop
 After comparing the three models above it was decided that the Cost231-Hata Model would be the one used in the simulation due to it working with frequencies up to $2000 MHz$ (which is the minimum operating frequency of LTE) unlike the Okumura-Hata model which only works up to $1500 MHz$. The Cost231-Hata Model was also picked over the Egli Model because the Egli Model used more parameters that would add more complexity to the simulation.~\cite{chebil2011comparison, shabbir2011comparison}
 
 \section{Simulation Implementation}
-The first step taken to implementing the simulation was to decide on the programming language to be used. After same deliberation it was decided that C++ would be used. It was chosen due to its Object Orientated nature being very powerful considering the multiple mobiles and base stations needing to be implemented.
+The first step taken to implementing the simulation was to decide on the programming language to be used. After some deliberation it was decided that C++ would be used. It was chosen due to its Object Oriented nature being very powerful in this situation considering the multiple mobiles and base stations needing to be implemented.
 
-The next step was to create the basic classes for the UEs and base stations, with basic functionality such as Accessors and Mutators for changing the basic parameters of the classes. Such parameters for the base stations would be if a mobile were currently connected to it and the X-Y co-ordinates representing its location. Such parameters for the UEs would be the ID number of the base station it is currently connected to and the X-Y co-ordinates representing its location.
+The next step was to create the base classes for the UEs and base stations, with basic functionality such as Accessors and Mutators for changing the parameters of the classes. Such parameters for the base stations would be if a mobile were currently connected to it and the X-Y co-ordinates representing its location. Such parameters for the UEs would be the ID number of the base station it is currently connected to and the X-Y co-ordinates representing its location.
 
 It was important to get the Discrete Event Simulation framework implemented early into the project. Dr. Robert C. Atkinson kindly donated a DES library for C++ that he had. This meant that a DES framework did not have to be created from scratch, which allowed more development time to be spent on other aspects of the simulation. The DES library itself was very simple to use once some experience was had with it. There were two main parts to the library; they were the Scheduler and the Event Handler. The Scheduler is the class that provides the discrete time steps in the simulation as well as passing events to the event handlers. The Event Handler is an abstract class that is the super class to the UEs, base stations and Q-Learning agents; an example of the implementation of the inheritance can be seen in Listing~\ref{list:ehand}. The characteristics that are inherited include the Handler method, which receives events from the Scheduler. The way in which the inheritance works as well as how the Scheduler and other classes interact with each other can be seen in the UML diagram in Figure~\ref{fig:uml}. 
-\lstinputlisting[language=c++, caption=Implementation of inheritance from Event Handler., firstline=20, lastline=20, label=list:ehand]{../src/mobile.cpp}
+\begin{lstlisting}[language=c++, caption=Implementation of inheritance from Event Handler., label=list:ehand]
+mobile::mobile(scheduler* gs) : event_handler(gs) {
+\end{lstlisting}
 \begin{figure}[H]
   \begin{center}
     	  \includegraphics[width=0.66\textwidth]{figures/simulation/uml.pdf}
@@ -152,22 +154,30 @@ It was important to get the Discrete Event Simulation framework implemented earl
     \caption{Illustration of UML Diagram.}
     \label{fig:uml}
 \end{figure}
-After the DES library was integrated into UE and base station classes the next part to be implemented was the Random Mobility model (decision on the model chosen can be found in Section~\ref{mobility}). The implementation of the mobility model made use of the DES library by using it to make the UEs take `steps’ by sending itself an event after each step, with a delay of 0.01 seconds, telling itself to take another step. The full implementation of the model can be found in Appendix~\ref{ap:code}. 
+After the DES library was integrated into UE and base station classes the next part to be implemented was the Random Mobility model (decision on the model chosen can be found in Section~\ref{mobility}). The implementation of the mobility model made use of the DES library by using it to make the UEs take `steps' by sending itself an event after each step. There was a delay of 0.01 seconds between each step. The full implementation of the model can be found in Appendix~\ref{ap:code}. 
 
-Once the mobility model was implemented and tested the next part that needed to be implemented was the Propagation model (decision on the model chosen can be found in Section~\ref{propagation}). The implementation of the chosen model can be seen in Listing~\ref{list:prop} where d is the distance the UE is from the base station and hm is the height of the UE, which are passed into the function. The frequency is defined by the variable f, the height of the base station by the variable hb and the transmission power from the base station of tx; all these variables are private to the base station.
-\lstinputlisting[language=c++, caption=Implementation of Cost231-Hata Propagation model., firstline=211, lastline=217, label=list:prop]{../src/basestation.cpp}
-When both the mobility and propagation models had been implemented the next part to be done was the handovers along with detection for call dropping and connection ping-pong's. These are a very important parts of the simulation and there implementation can be seen in Appendix~\ref{ap:code}. While all three of these components worked correctly the handover triggering was not implemented as efficiently as they could have been. It ended up using decrementing variables instead of the DES library due to bugs that ended up being unsolved.
+Once the mobility model was implemented and tested the next part that was to be implemented, was the Propagation model (decision on the model chosen can be found in Section~\ref{propagation}). The implementation of the chosen model can be seen in Listing~\ref{list:prop} where $d$ is the distance the UE is from the base station and $hm$ is the height of the UE, which are passed into the function. The frequency is defined by the variable $f$, the height of the base station by the variable $hb$ and the transmission power from the base station is $tx$; all these variables are private to the base station.
+\begin{lstlisting}[language=c++, caption=Implementation of Cost231-Hata Propagation model., label=list:prop]
+double basestation::getProp(double d, double hm) {
+	//for small or medium sized city
+	double ahr = 0.8 + ((1.1 * log10(f) - 0.7) * hm) - (1.56 * log10(f));
+	double prop = 46.3 + (33.9 * log10(f)) - (13.82 * log10(hb)) - ahr + ((44.9 - (6.55 * log10(hb))) * log10(d/1000)); //divide by 1000 for km
 
-After all the previous components were implemented, tested and found to be functioning correctly the Q-Learning agents were implemented. The implementation for the agent can be found in Appendix~\ref{ap:code}. The Q-Learning agent was overall implemented quite well, with the one exception being the 2D array of actions. Due to the nature of the problem having 336 states all with a maximum of 8 actions from the states, this meant that the array ended up being very large. Also due to some states having less than 8 actions from them the array needed to have -1’s added to it so that the program knew it would need to choose a different actions; this interactions adds both redundant data and wasted processing time into the simulation. 
+	return (tx-prop);
+}
+\end{lstlisting}
+When both the mobility and propagation models had been implemented the next part to be done was the handovers along with detection for call dropping and connection ping-pongs. These are very important parts of the simulation and their implementation can be seen in Appendix~\ref{ap:code}. While all three of these components worked correctly the handover triggering was not implemented as efficiently as it could have been. It ended up using decrementing variables instead of the DES library due to bugs that remained unresolved.
 
-The final part that needed to be implemented was the way in which the simulation recorded the results. It was decided that the best way to record the results would be to store them in arrays and then output them to appropriate text files that could then be analysed. This analysis ended up being done using MATLAB and then MATLAB code used to do the analysis can be found in Appendix~\ref{ap:code}. 
+After all the previous components were implemented, tested and found to be functioning correctly the Q-Learning agents were implemented. The implementation for the agent can be found in Appendix~\ref{ap:code}. The Q-Learning agent was overall implemented quite well, with the one exception being the 2D array of actions. Due to the nature of the problem having 336 states all with a maximum of 8 possible actions from the states, the array ended up being very large. Also due to some states having less than 8 actions from them, the array needed to have -1s added to it so that the program knew it would need to choose a different action; these interactions add both redundant data and wasted processing time to the simulation. 
+
+The final part that needed to be implemented was the way in which the simulation recorded the results. It was decided that the best way to record the results would be to store them in arrays and then output them to appropriate text files that could then be analysed. This analysis ended up being done using MATLAB and the code for this can be found in Appendix~\ref{ap:code}. 
 
 \section{Simulation Testing}
-It was very important for the simulation and Q-Learning algorithm to be tested so that there was confidence that they would produce the correct results when they were run. There are many different types of testing that can take place to ensure that a piece of software is working correctly. Testing methods that were used in this project include: Unit testing, Black Box testing and White/Clear Box testing.
+It was very important for the simulation and Q-Learning algorithm to be tested so that there was confidence that they would produce the correct results when executed. There are many different types of testing that can take place to ensure that a piece of software is working correctly. Testing methods that were used in this project include: Unit testing, Black Box testing and White/Clear Box testing.
 
-Unit testing involves testing individual parts or processes of a program so that the stakeholders can be confident in them to be fit for use. The different parts of the simulation that were tested this way were the Mobility Model, handovers, drops, ping-pong's and the Q-learning algorithm changing the values of TTT and hys correctly.
+Unit testing involves testing individual parts or processes of a program so that the stakeholders can be confident in them to be fit for use. The different parts of the simulation that were tested this way were the Mobility Model, handovers, drops, ping-pongs and the Q-learning algorithm changing the values of TTT and hys correctly.
 
-Black Box testing involves making sure that a function works as required without any knowledge of the under laying code. This type of testing is performed by giving a function an input, and comparing the output from the function with a previously determined expected output.
+Black Box testing involves making sure that a function works as required without any knowledge of the underlying code. This type of testing is performed by giving a function an input, and comparing the output from the function with a previously determined expected output.
 
 White Box testing is used to make sure that the underlying code used in a function works as required. This type of testing is done by inserting print statements in the code to see how the respective variables are changing while the code is running. These are compared against previously determined expected values to confirm whether the function is working as intended.
 
@@ -185,13 +195,13 @@ The test cases used to test the simulation to make sure it was working correctly
 \end{description}
 \subsection*{Path Loss:}
 \begin{description}
-\item[PL001]	Received Path Loss correct.
+\item[PL001]	Path Loss calculated correctly.
 \end{description}
 \subsection*{Network Functions:}
 \begin{description}
 \item[NF001]	Handovers working correctly.
 \item[NF002]	Drops working correctly.
-\item[NF003]	Ping-Pong's detected correctly.
+\item[NF003]	ping-pongs detected correctly.
 \end{description}
 \subsection*{Q-Learning:}
 \begin{description}

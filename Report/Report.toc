@@ -1,65 +1,69 @@
 \select@language {british}
-\contentsline {chapter}{Abstract}{ii}
-\contentsline {chapter}{Acknowledgements}{iii}
-\contentsline {chapter}{Nomenclature}{vii}
-\contentsline {chapter}{List of Figures}{xiv}
-\contentsline {chapter}{List of Tables}{xv}
-\contentsline {chapter}{List of Algorithms}{xvi}
-\contentsline {chapter}{Listings}{xvii}
+\contentsline {chapter}{Abstract}{i}
+\contentsline {chapter}{Acknowledgements}{ii}
+\contentsline {chapter}{Nomenclature}{vi}
+\contentsline {chapter}{List of Figures}{xiii}
+\contentsline {chapter}{List of Tables}{xiv}
+\contentsline {chapter}{List of Algorithms}{xv}
+\contentsline {chapter}{Listings}{xvi}
 \contentsline {chapter}{\numberline {1}Introduction}{1}
 \contentsline {section}{\numberline {1.1}Project Objectives}{1}
 \contentsline {section}{\numberline {1.2}Project Outcomes}{2}
-\contentsline {section}{\numberline {1.3}Dissertation Outline}{2}
-\contentsline {chapter}{\numberline {2}LTE}{3}
-\contentsline {section}{\numberline {2.1}Network Structure}{3}
-\contentsline {section}{\numberline {2.2}Self-Organising Network}{5}
-\contentsline {section}{\numberline {2.3}Handover}{5}
-\contentsline {subsection}{\numberline {2.3.1}Parameters}{6}
-\contentsline {subsection}{\numberline {2.3.2}Procedure}{7}
-\contentsline {chapter}{\numberline {3}Machine Learning}{9}
-\contentsline {section}{\numberline {3.1}Reinforcement Learning}{10}
-\contentsline {section}{\numberline {3.2}Q-Learning}{11}
-\contentsline {chapter}{\numberline {4}Simulation Design and Implementation}{14}
-\contentsline {section}{\numberline {4.1}Simulation Parameters}{15}
-\contentsline {section}{\numberline {4.2}Discrete Event Simulation}{16}
-\contentsline {section}{\numberline {4.3}Mobility Model}{17}
-\contentsline {subsection}{\numberline {4.3.1}Random Direction Model}{17}
-\contentsline {subsection}{\numberline {4.3.2}Random Waypoint Model}{17}
-\contentsline {section}{\numberline {4.4}Propagation Model}{18}
-\contentsline {subsection}{\numberline {4.4.1}Okumura-Hata Model}{18}
-\contentsline {subsection}{\numberline {4.4.2}Egli Model}{19}
-\contentsline {subsection}{\numberline {4.4.3}Cost231-Hata Model}{19}
-\contentsline {section}{\numberline {4.5}Simulation Implementation}{21}
-\contentsline {section}{\numberline {4.6}Simulation Testing}{23}
-\contentsline {chapter}{\numberline {5}Handover Parameter Optimisation}{26}
-\contentsline {section}{\numberline {5.1}Assessment Process}{28}
-\contentsline {section}{\numberline {5.2}Walking Speed}{29}
-\contentsline {subsection}{\numberline {5.2.1}Large Starting Values}{30}
-\contentsline {subsection}{\numberline {5.2.2}Middle Starting Values}{31}
-\contentsline {subsection}{\numberline {5.2.3}Small Starting Values}{33}
-\contentsline {subsection}{\numberline {5.2.4}Large hys and Small TTT Starting Values}{35}
-\contentsline {section}{\numberline {5.3}Vehicle Speed}{37}
-\contentsline {subsection}{\numberline {5.3.1}Large Starting Values}{38}
-\contentsline {subsection}{\numberline {5.3.2}Middle Starting Values}{39}
-\contentsline {subsection}{\numberline {5.3.3}Small Starting Values}{41}
-\contentsline {subsection}{\numberline {5.3.4}Large hys and Small TTT Starting Values}{43}
-\contentsline {section}{\numberline {5.4}Evaluation}{45}
-\contentsline {chapter}{\numberline {6}Future Work}{47}
-\contentsline {section}{\numberline {6.1}Slow Fading}{47}
-\contentsline {section}{\numberline {6.2}Limited Resources Within the Network}{47}
-\contentsline {section}{\numberline {6.3}Improved Algorithm}{48}
-\contentsline {chapter}{\numberline {7}Conclusions}{49}
-\contentsline {chapter}{Bibliography}{50}
-\contentsline {chapter}{Appendices}{52}
-\contentsline {chapter}{\numberline {A}Code Listings}{53}
-\contentsline {chapter}{\numberline {B}Simulation Testing}{54}
-\contentsline {chapter}{\numberline {C}Handover Optimisation Graphs}{55}
-\contentsline {section}{\numberline {C.1}Walking Speeds}{55}
-\contentsline {subsection}{\numberline {C.1.1}Large Starting Values}{55}
-\contentsline {subsection}{\numberline {C.1.2}Middle Starting Values}{59}
-\contentsline {subsection}{\numberline {C.1.3}Small Starting Values}{62}
-\contentsline {subsection}{\numberline {C.1.4}Large hys and Small TTT Starting Values}{66}
-\contentsline {subsection}{\numberline {C.1.5}Large Starting Values}{69}
-\contentsline {subsection}{\numberline {C.1.6}Middle Starting Values}{73}
-\contentsline {subsection}{\numberline {C.1.7}Small Starting Values}{76}
-\contentsline {subsection}{\numberline {C.1.8}Large hys and Small TTT Starting Values}{80}
+\contentsline {section}{\numberline {1.3}Dissertation Outline}{3}
+\contentsline {chapter}{\numberline {2}LTE}{4}
+\contentsline {section}{\numberline {2.1}Network Structure}{4}
+\contentsline {section}{\numberline {2.2}Self-Organising Network}{6}
+\contentsline {section}{\numberline {2.3}Handover}{6}
+\contentsline {subsection}{\numberline {2.3.1}Parameters}{7}
+\contentsline {subsection}{\numberline {2.3.2}Procedure}{8}
+\contentsline {chapter}{\numberline {3}Machine Learning}{10}
+\contentsline {section}{\numberline {3.1}Reinforcement Learning}{11}
+\contentsline {section}{\numberline {3.2}Q-Learning}{12}
+\contentsline {chapter}{\numberline {4}Simulation Design and Implementation}{15}
+\contentsline {section}{\numberline {4.1}Simulation Parameters}{16}
+\contentsline {section}{\numberline {4.2}Discrete Event Simulation}{17}
+\contentsline {section}{\numberline {4.3}Mobility Model}{18}
+\contentsline {subsection}{\numberline {4.3.1}Random Direction Model}{18}
+\contentsline {subsection}{\numberline {4.3.2}Random Waypoint Model}{18}
+\contentsline {section}{\numberline {4.4}Propagation Model}{19}
+\contentsline {subsection}{\numberline {4.4.1}Okumura-Hata Model}{19}
+\contentsline {subsection}{\numberline {4.4.2}Egli Model}{20}
+\contentsline {subsection}{\numberline {4.4.3}Cost231-Hata Model}{20}
+\contentsline {section}{\numberline {4.5}Simulation Implementation}{22}
+\contentsline {section}{\numberline {4.6}Simulation Testing}{24}
+\contentsline {chapter}{\numberline {5}Handover Parameter Optimisation}{27}
+\contentsline {section}{\numberline {5.1}Assessment Process}{29}
+\contentsline {section}{\numberline {5.2}Walking Speed}{30}
+\contentsline {subsection}{\numberline {5.2.1}Large Starting Values}{31}
+\contentsline {subsection}{\numberline {5.2.2}Middle Starting Values}{32}
+\contentsline {subsection}{\numberline {5.2.3}Small Starting Values}{34}
+\contentsline {subsection}{\numberline {5.2.4}Large hys and Small TTT Starting Values}{36}
+\contentsline {section}{\numberline {5.3}Vehicle Speed}{38}
+\contentsline {subsection}{\numberline {5.3.1}Large Starting Values}{39}
+\contentsline {subsection}{\numberline {5.3.2}Middle Starting Values}{40}
+\contentsline {subsection}{\numberline {5.3.3}Small Starting Values}{42}
+\contentsline {subsection}{\numberline {5.3.4}Large hys and Small TTT Starting Values}{44}
+\contentsline {section}{\numberline {5.4}Evaluation}{46}
+\contentsline {chapter}{\numberline {6}Future Work}{48}
+\contentsline {section}{\numberline {6.1}Slow Fading}{48}
+\contentsline {section}{\numberline {6.2}Limited Resources Within the Network}{48}
+\contentsline {section}{\numberline {6.3}Improved Algorithm}{49}
+\contentsline {chapter}{\numberline {7}Conclusions}{50}
+\contentsline {chapter}{Bibliography}{52}
+\contentsline {chapter}{Appendices}{54}
+\contentsline {chapter}{\numberline {A}Code Listings}{55}
+\contentsline {chapter}{\numberline {B}Simulation Testing}{56}
+\contentsline {section}{\numberline {B.1}Movement Test Cases}{56}
+\contentsline {section}{\numberline {B.2}Path Loss Cases}{57}
+\contentsline {section}{\numberline {B.3}Network Functions Cases}{57}
+\contentsline {section}{\numberline {B.4}Q-Learning Cases}{57}
+\contentsline {chapter}{\numberline {C}Handover Optimisation Graphs}{58}
+\contentsline {section}{\numberline {C.1}Walking Speeds}{58}
+\contentsline {subsection}{\numberline {C.1.1}Large Starting Values}{58}
+\contentsline {subsection}{\numberline {C.1.2}Middle Starting Values}{62}
+\contentsline {subsection}{\numberline {C.1.3}Small Starting Values}{65}
+\contentsline {subsection}{\numberline {C.1.4}Large hys and Small TTT Starting Values}{69}
+\contentsline {subsection}{\numberline {C.1.5}Large Starting Values}{72}
+\contentsline {subsection}{\numberline {C.1.6}Middle Starting Values}{76}
+\contentsline {subsection}{\numberline {C.1.7}Small Starting Values}{79}
+\contentsline {subsection}{\numberline {C.1.8}Large hys and Small TTT Starting Values}{83}
