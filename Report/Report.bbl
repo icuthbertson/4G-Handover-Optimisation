@@ -1,0 +1,77 @@
+\begin{thebibliography}{10}
+
+\bibitem{ericsson2014}
+A.~Ericsson, ``Ericsson mobility report,'' tech. rep., tech. rep., Ericsson AB,
+  February 2014.
+
+\bibitem{cox2012introduction}
+C.~Cox, {\em An introduction to LTE: LTE, LTE-advanced, SAE and 4G mobile
+  communications}.
+\newblock John Wiley \& Sons, 2012.
+
+\bibitem{3gpp2013network}
+3GPP TS 23.002 V11.6.0, {\em Digital cellular telecommunications system (Phase
+  2+); Universal Mobile Telecommunications System (UMTS); LTE; Network
+  architecture (Release 11)}, June 2013.
+
+\bibitem{feng2008self}
+S.~Feng and E.~Seidel, ``Self-organizing networks (son) in 3gpp long term
+  evolution,'' {\em Nomor Research GmbH, Munich, Germany}, 2008.
+
+\bibitem{3gpp2011self}
+3GPP TR 36.902 V9.3.1 Release 9, {\em LTE; Evolved Universal Terrestrial Radio
+  Access Network (E-UTRAN); Self-configuring and self-optimizing network (SON)
+  use cases and solutions (Release 9)}, May 2011.
+
+\bibitem{holma2009lte}
+H.~Holma and A.~Toskala, {\em LTE for UMTS-OFDMA and SC-FDMA based radio
+  access}.
+\newblock John Wiley \& Sons, 2009.
+
+\bibitem{jansen2010handover}
+T.~Jansen, I.~Balan, J.~Turk, I.~Moerman, and T.~Kurner, ``Handover parameter
+  optimization in lte self-organizing networks,'' in {\em Vehicular Technology
+  Conference Fall (VTC 2010-Fall), 2010 IEEE 72nd}, pp.~1--5, IEEE, 2010.
+
+\bibitem{3gpp2012triggers}
+3GPP TS 36.331 V10.7.0, {\em LTE; Evolved Universal Terrestrial Radio Access
+  (E-UTRA); Radio Resource Control (RRC); Protocol specification (Release 10)},
+  November 2012.
+
+\bibitem{sinclair2013handover}
+N.~Sinclair, {\em Handover Optimisation using Neural Networks within LTE}.
+\newblock PhD thesis, University of Strathclyde, 2013.
+
+\bibitem{alpaydin2010introduction}
+E.~Alpaydin, {\em Introduction to Machine Learning}.
+\newblock MIT press, 2~ed., 2010.
+
+\bibitem{barto1998reinforcement}
+A.~G. Barto and R.~S. Sutton, {\em Reinforcement learning: An introduction}.
+\newblock MIT press, 1998.
+
+\bibitem{poole2010artificial}
+D.~L. Poole and A.~K. Mackworth, {\em Artificial Intelligence: Foundations of
+  Computational Agents}.
+\newblock Cambridge University Press, 2010.
+
+\bibitem{roy2010handbook}
+R.~Roy, {\em Handbook of Mobile Ad Hoc Networks for Mobility Models}.
+\newblock Springer, 2010.
+
+\bibitem{chebil2011comparison}
+J.~Chebil, A.~K. Lwas, M.~R. Islam, and A.~Zyoud, ``Comparison of empirical
+  propagation path loss models for mobile communications in the suburban area
+  of kuala lumpur,'' in {\em Mechatronics (ICOM), 2011 4th International
+  Conference On}, pp.~1--5, IEEE, 2011.
+
+\bibitem{shabbir2011comparison}
+N.~Shabbir, M.~T. Sadiq, H.~Kashif, and R.~Ullah, ``Comparison of radio
+  propagation models for long term evolution (lte) network.,'' {\em
+  International Journal of Next-Generation Networks}, vol.~3, no.~3, 2011.
+
+\bibitem{sinclair2013advanced}
+N.~Sinclair, D.~Harle, I.~Glover, J.~Irvine, and R.~Atkinson, ``An advanced som
+  algorithm applied to handover management within lte,'' 2013.
+
+\end{thebibliography}

@@ -2,7 +2,7 @@
 #define _Q_H_
 
 #include "q_learning.h"
-
-extern q_learning* q;
+//External variable of the q-lerning agents array declaration.
+extern q_learning* q[];
 
 #endif

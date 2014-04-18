@@ -5,59 +5,63 @@
 #include "mobiles.h"
 #include "prop.h"
 #include "q.h"
-// #include "opt.h"
 #include <random>
 
 std::default_random_engine generator;
-std::normal_distribution<double> distribution(0.0,6.0);
+//std::normal_distribution<double> distribution(0.0,6.0);
+//Comment in the above line if using fading.
 
 /* Constructor
  ****************************
- * Return Type: N/A 
+ * Return Type: N/A
  ****************************
  * Parameters Passed in: N/A
- **************************** 
+ ****************************
  * Description: Basic class constructor that create an instance of basestation
- * with all parameters set to zero.
+ * with all parameters set to zero. Inheritance from the event_handler
+ * abstract class is also instantiated. This should never be used.
  */
 basestation::basestation(scheduler* gs) : event_handler(gs) {
-    id = 0;
-	x_co = 0;
-	y_co = 0;
-	f = 0.0;
-	hb = 0.0;
-	connected = false;
-	pingpong = false;
-	pingpongTime = 0.0;
-	tx = 48.0;
+    id = 0; //ID for this base station.
+	x_co = 0; //X-Co-Ordinate for this base station.
+	y_co = 0; //Y-Co_ordinate for this base station.
+	f = 0.0; //Frequency of this base station.
+	hb = 0.0; //Height of this base station.
+	for(int i=0; i<NUM_MOBILES; i++) {
+    	connected[i] = false; //set for no connection currently.
+    }
+	tx = 46.0; //Transmit power of the base station.
 }
 /* Constructor
  ****************************
- * Return Type: N/A 
+ * Return Type: N/A
  ****************************
- * Parameters Passed in: 
+ * Parameters Passed in:
+ * schedular* gs
  * int idNum
  * int x
  * int y
- * double t
+ * double freq
+ * double hBase
  ****************************
  * Description: Class constructor that create an instance of basestation
- * with all parameters are passed in.
+ * with all parameters are passed in. Inheritance from the event_handler
+ * abstract class is also instantiated.
  */
-basestation::basestation(scheduler* gs, int idNum, int x, int y, double freq, double hBase, bool conn) : event_handler(gs) {
-	id = idNum;
-    x_co = x;
-    y_co = y;
-    f = freq;
-    hb = hBase;
-    connected = conn;
-    pingpong = false;
-    pingpongTime = 0.0;
-    tx = 48.0;
+basestation::basestation(scheduler* gs, int idNum, int x, int y, double freq, double hBase) : event_handler(gs) {
+	id = idNum; //ID for this base station.
+    x_co = x; //X-Co-Ordinate for this base station.
+    y_co = y; //Y-Co_ordinate for this base station.
+    f = freq; //Frequency of this base station.
+    hb = hBase; //Height of this base station.
+    for(int i=0; i<NUM_MOBILES; i++) {
+    	connected[i] = false; //set for no connection currently.
+    }
+    tx = 46.0; //Transmit power of the base station.
 }
 /* Destructor
  ****************************
- * Return Type: N/A 
+ * Return Type: N/A
  ****************************
  * Parameters Passed in: N/A
  ****************************
@@ -70,7 +74,7 @@ basestation::~basestation() {
 }
 /* Method
  ****************************
- * Return Type: N/A 
+ * Return Type: N/A
  ****************************
  * Parameters Passed in:
  * const event* received
@@ -83,71 +87,102 @@ void basestation::handler(const event* received)
 
 	switch(received->label) {
 		case PRINT:
+            //Event so the information for this base station can be displayed.
 			print();
 			break;
 		case PROP:
+            //Set of classes for payloads passed with the event.
+            //Set up prop variable as well.
 			propRequestPacket* recPacket;
 			double prop;
 			propSendPacket* sendPacket;
 
+            //Get the attachment/payload of the event.
 			recPacket = reinterpret_cast<propRequestPacket*>(received->getAttachment());
 
+            //Calculate the path loss with the distance and mobile height from
+            //the payload.
 			prop = getProp(recPacket->dist,recPacket->height);
 
+            //Create the payload to return to the mobile and send it now so that
+            //it functions as if the mobile was taking signal strength reading
+            //itself.
 			sendPacket = new propSendPacket(id,prop);
-
 			send_now(new event(PROP,reinterpret_cast<payloadType<class T>*>(sendPacket), received->sender));
 			//printf("Basestation: %d\n",id);
 			delete recPacket;
 			break;
 		case REPORT:
+            //Set of classes for payloads passed with the event.
 			reportPacket* repPacket;
 			repPacket = reinterpret_cast<reportPacket*>(received->getAttachment());
 
-			// for(int i=0; i<9; i++) {
-			// 	printf("Sim Time: %f - Basestation %d: %f dbm\n",simTime,i,current_prop[i]);
-			// }
-
-			bStations[repPacket->id]->nowServing();
-			this->connected = false;
-			mobiles[0]->switchBasestation(repPacket->id);
-
-			if(handingOver) {
-				handovers++;
-				rewardHandover++;
+            //Test if the mobile that sent the measurement report to this base
+            //station is still handing over (therefore not dropped).
+            //If so initiate handover. This is done assuming all base stations
+            //have enough resources to accomodate all the mobiles in the simulation.
+			if(handingOver[repPacket->id_mob]) {
+                //Tell the neighbouring base station it is now the serving
+                //base station. Not done with the DES framework for speed of
+                //computation.
+				bStations[repPacket->id_base]->nowServing(repPacket->id_mob);
+                //Set this base station to no longer be the serving bse station.
+                //Not done with the DES framework for speed of computation.
+				this->connected[repPacket->id_mob] = false;
+                //Tell the mobile to swtich to being connected to the neighbouring
+                //base station.
+                //Not done with the DES framework for speed of computation.
+				mobiles[repPacket->id_mob]->switchBasestation(repPacket->id_base);
+                //Increment the number of successful handover and reward counter
+                //for this base station.
+				handovers[repPacket->id_base]++;
+				rewardHandover[repPacket->id_base]++;
+                //Push the sim time for the handover to the handover vector for
+                //this base station.
+				handover_total[repPacket->id_base].push_back(simTime[repPacket->id_mob]);
+                //Set the handingOver variable for the mobile to false. Not handing
+                //over anymore.
+				handingOver[repPacket->id_mob] = false;
+                //Set up pingpong packet to be sent with the id of the mobile
+                //that was just handed over to the neighbouring base station.
+				pingpongPacket* sendPacket;
+				sendPacket = new pingpongPacket(repPacket->id_mob);
+                //Send ping-pong packets to this base station for every time
+                //step in the 5 second window for a ping-pong to occur.
+				for(int j=0; j<(T_CRIT/STEPTIME); j++) {
+					send_delay(new event(PINGPONG,reinterpret_cast<payloadType<class T>*>(sendPacket)),STEPTIME*j);
+				}
 			}
-
-			handingOver = false;
-			deadzone = false;
-
-			// TTT_weighting[TTTindex] += 1;
-			// hys_weighting[hysindex] += 1;
-
-			for(int j=0; j<(T_CRIT/STEPTIME); j++) {
-				send_delay(new event(PINGPONG),STEPTIME*j);
-			}
-
 			delete repPacket;
 			break;
 		case PINGPONG:
-			if (connected) {
-				// printf("Sim Time: %f - PINGPONG! - Basestation: %d\n",simTime,id);
-				pingpongCount++;
-				rewardPing++;
-				globalScheduler->remove_from(this);
-				if(function == 2) {//runnning policy
-					send_now(new event(POLICY,q));
+            //Set of classes for payloads passed with the event.
+			pingpongPacket* pingPacket;
+			pingPacket = reinterpret_cast<pingpongPacket*>(received->getAttachment());
+            //Check if this base station is connceted to the mobile with the id
+            //in the payload.
+			if(connected[pingPacket->id]) {
+				printf("Sim Time: %f - PINGPONG! - Basestation: %d\n",simTime[pingPacket->id],id);
+                //Increment the number of ping-pong and reward counter
+                //for this base station.
+				pingpongCount[this->id]++;
+				rewardPing[this->id]++;
+                //Push the sim time for the ping-pong to the ping-pong vector for
+                //this base station.
+				pingpong_total[this->id].push_back(simTime[pingPacket->id]);
+                //Send an event to the Q-Learning agent for this base station
+                //telling it a ping-pong just occured.
+				if(function == 2) {
+					send_now(new event(POLICY,q[this->id]));
 				}
-				// TTT_weighting[TTTindex] -= 2;
-				// hys_weighting[hysindex] -= 2;
-				// learning->learn(); //call machine learning
 			}
 			break;
+			delete pingPacket;
 		default:
 			// program should not reach here
 			break;
 	} // end switch statement
-	
+
 }
 /* Method
  ****************************
@@ -159,7 +194,8 @@ void basestation::handler(const event* received)
  * parameters of the class.
  */
 void basestation::print() {
-    printf("Basestation %d\nX Co-ordinate: %d\nY Co-ordinate: %d\n\n", id, x_co, y_co);
+    fprintf(stdout, "\nBasestation ID: %d - Final Report\nHandovers: %d\nDropped: %d\nPing-Pong: %d\n", id,handovers[id],drop[id],pingpongCount[id]);
+	fprintf(stdout, "Final TTT: %f Final hys: %f\n", TTT[id],hys[id]);
 }
 /* Method
  ****************************
@@ -177,10 +213,10 @@ int basestation::getID() {
  ****************************
  * Return Type: int
  ****************************
- * Parameters Passed in: N/A 
+ * Parameters Passed in: N/A
  ****************************
  * Description: Method that returns the value of the x co-ordinate.
- */ 
+ */
 int basestation::getX() {
 	return x_co;
 }
@@ -188,7 +224,7 @@ int basestation::getX() {
  ****************************
  * Return Type: int
  ****************************
- * Parameters Passed in: N/A 
+ * Parameters Passed in: N/A
  ****************************
  * Description: Method that returns the value of the y co-ordinate.
  */
@@ -199,25 +235,32 @@ int basestation::getY() {
  ****************************
  * Return Type: int
  ****************************
- * Parameters Passed in: d, hm 
+ * Parameters Passed in: d, hm
  ****************************
- * Description: Method that returns the path loss using the 
- * Okumura-Hata for urban areas propagation model. d in km, hm in m.
+ * Description: Method that returns the path loss using the
+ * Cost231-Hata for urban areas propagation model. d in km, hm in m.
  */
 double basestation::getProp(double d, double hm) {
 	//for small or medium sized city
-	double ch = 0.8 + ((1.1 * log10(f) - 0.7) * hm) - (1.56 * log10(f));
-	double prop = 69.55 + (26.16 * log10(f)) - (13.82 * log10(hb)) - ch + ((44.9 - (6.55 * log10(hb))) * log10(d/1000)); //divide by 1000 for km
-	
-	// double fading = ((rand()%70)-35)/10;
+	double ahr = 0.8 + ((1.1 * log10(f) - 0.7) * hm) - (1.56 * log10(f));
+	double prop = 46.3 + (33.9 * log10(f)) - (13.82 * log10(hb)) - ahr + ((44.9 - (6.55 * log10(hb))) * log10(d/1000)); //divide by 1000 for km
 
-	double fading = 0.0;
+    //Comment in the 2 lines below as well as the part of the equation if
+    //using fading
+    //double fading = 0.0;
+    //fading = distribution(generator);
 
-	fading = distribution(generator);
-
-	return (tx-prop-fading);
+	return (tx-prop/*+fading*/);
 }
-
-void basestation::nowServing() {
-	connected = true;
+/* Method
+ ****************************
+ * Return Type: void
+ ****************************
+ * Parameters Passed in: id
+ ****************************
+ * Description: Method that sets the index in the connected array to true for
+ * the id of the mobile passed in.
+ */
+void basestation::nowServing(int id) {
+	connected[id] = true;
 }

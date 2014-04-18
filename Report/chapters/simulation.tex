@@ -1,0 +1,214 @@
+\chapter{Simulation Design and Implementation}
+The simulation is a very important part of the project. It is required to provide the basic functionality of a LTE network. For simplicity the simulation was broken down into two main components; the mobile (UE) and the base station (eNodeB). Due to the project revolving around the handover process in LTE, it made sense for the two main components of the simulation to be the mobile and the base station; it is the mobile that triggers the measurement report and the base station that makes the decision on whether a handover should take place or not. Each base station would also be given its own Q-Learning agent since each base station is unique. Since the A3 event trigger (Table~\ref{tab:trigger}) is the most common it was decided that it would be the only trigger implemented in the simulation to reduce the complexity within the simulation.
+
+It was required for the mobile to be able to move freely around a group of base stations. It was decided that this movement should be random because if any machine learning algorithm can handle random movement then it should also be able to handle regimented movement. The movement that the mobile follows is defined by a Mobility Model and the choice of mobility model is explained in Section~\ref{mobility}. It was decided that when a UE would get to the point where its next step would move it beyond the bounds of the simulation area that it would just move in the reflected direction away from the wall.
+
+In wireless communications the received signal strength from a transmitter degrades the further away from the transmitter the receiver is. A propagation model can be used to define the way in which the signal strength degrades. The propagation model is very important to the simulation as it will define how far away from a base station the mobile can be without dropping the call. A comparison and explanation of the choice of propagation model can be seen in Section~\ref{propagation}.
+\section{Simulation Parameters}
+Within the simulation there are many variable parameters that need to be assigned values. Such parameters are: the height of the base stations, the height of the UEs, the dimensions of the simulation area and the positioning of the base stations. Other parameters that also needed to be considered are the number of base stations and the number of UEs; as well as the transmission power of the base stations and the time limit for what would be perceived to have been a connection ping-pong. The type of environment also had to be chosen; whether the simulation would be within a rural, urban, small city, medium city or large city environment.
+
+The type of environment was decided to be a medium sized city. It was decided that the height of any UE would be $1 m$ as it would normally be in the possession of a human being. The height of any base station would be $60 m$ because base stations are either placed upon tall buildings or structures so that they produce better coverage. Since it was decided that the environment would be a medium sized city, this height made sense since there would be some large multi-storey building. It was also decided that the transmission power of the base stations would be $46 dBm$ and the time limit for ping-pongs to occur would be $5 s$ as they were the values that had been used in a similar project~\cite{jansen2010handover}. The simulation area and positioning of the base stations both depended on the propagation model used and the area of coverage that could be expected from it. The decision of the propagation model used can be found in Section~\ref{propagation}. From Figure~\ref{fig:prop} it was found that for the chosen propagation model the Path Loss would reach the LTE noise floor of $-97.5 dB$ at around $2 km$. Therefore, from this it was decided that the area for the simulation would be $6 km$ by $6 km$. It was then decided that 9 base stations would provide good coverage in this area. Each of these base stations will also have there own Q-Learning agent since each base station has there own unique TTT and hys values. The base stations were placed in the following locations and the coverage can be seen in Figure~\ref{fig:cov}.
+\begin{enumerate}
+\item X Co-Ordinate: 500.0, Y Co-Ordinate: 500.0
+\item X Co-Ordinate: 3000.0, Y Co-Ordinate: 0.0
+\item X Co-Ordinate: 5500.0, Y Co-Ordinate: 500.0
+\item X Co-Ordinate: 0.0, Y Co-Ordinate: 3000.0
+\item X Co-Ordinate: 3000.0, Y Co-Ordinate: 3000.0
+\item X Co-Ordinate: 6000.0, Y Co-Ordinate: 3000.0
+\item X Co-Ordinate: 500.0, Y Co-Ordinate: 5500.0
+\item X Co-Ordinate: 3000.0, Y Co-Ordinate: 6000.0
+\item X Co-Ordinate: 5500.0, Y Co-Ordinate: 5500.0
+\end{enumerate}
+\begin{figure}[H]
+  \begin{center}
+    	  \includegraphics[width=0.75\textwidth]{figures/simulation/coverage.eps}
+    \end{center}
+    \caption{Illustration of Coverage within the Simulation Area.}
+    \label{fig:cov}
+\end{figure}
+
+Finally, it was decided that 10 UEs would be used in the simulation because this would allow for the learning done by the Q-Learning agents to happen faster than if there were just 1 UE. The UEs would also start on top of different base stations so that they will start in different places allowing for the Q-Learning agent for each base station to start learning straight away without having to wait for a UE to move into range, as at least 1 UE will start on top of it.
+\section{Discrete Event Simulation}
+The concept of time is very important in real world simulations. A popular method for creating this concept of time is \ac{DES}. It works on the basis of a scheduler where events, to be processed at a certain time, are passed to the scheduler and the scheduler then passes the event on to be processed. The way that \ac{DES} creates the concept of time is by allowing events passed in the scheduler to have a time that it should be processed at, the scheduler will keep all the events that are currently still to be processed in an ordered list, the scheduler will then `jump' to the time the first event in the list is to be processed at and passes the event on to be processed. The process of `jumping' to the next time that the first event in the list is to be processed at is what gives \ac{DES} the concept of time.
+
+Another advantage of \ac{DES} is that the passing of events from the scheduler not only gives a concept of time but it also allows for a message to be sent with the event to tell a different part of the simulation what to do at a given time. This message can also pass parameters for the other part of the simulation to use.
+
+\section{Mobility Model}\label{mobility}
+A mobility model defines the way in which an entity will move. For the purposes of the simulation the mobility model used needed to be random in nature. After some research it was decided that the mobility model to be used in the simulation would either be the Random Direction or Random Waypoint model because they are two of the most popular random mobility models.~\cite{roy2010handbook}
+\subsection{Random Direction Model}
+The Random Direction Model is defined as follows:
+\begin{enumerate}
+\item Select a direction randomly between 0 and 359 degrees.
+\item Select a random speed to move at.
+\item Select a random duration to move for.
+\item Move in the selected direction at the selected speed for the selected duration.
+\item Repeat until termination.
+\end{enumerate}
+\subsection{Random Waypoint Model}
+The Random Waypoint Model is defined as follows:
+\begin{enumerate}
+\item Randomly select the co-ordinates for a point within the environment.
+\item Select a random speed to move at.
+\item Select a random length of time to pause for when the destination is reached.
+\item Move towards the selected co-ordinates at the selected speed
+\item Pause for the randomly selected length of time.
+\item Repeat until termination.
+\end{enumerate}
+
+It was decided that the Random Direction Model would be used in the simulation because the Random Waypoint Model has the problem that it is possible to select the co-ordinates of a point very close to where you begin and then pause for a long period time. The possibility of that happening is undesirable within the simulation. Random Direction does not have this problem and it is also possible to set boundaries on the parameters to make sure that a minimum distance is travelled.~\cite{roy2010handbook}
+
+\section{Propagation Model}\label{propagation}
+A propagation model defines how the received signal from a transmitter decays the further from the transmitter you are. There are many different models available, all with different functions and purposes. After some research three models were considered; the Okumura-Hata Model, the Egli Model and the Cost231-Hata Model.
+\subsection{Okumura-Hata Model}
+The Okumura-Hata model is very popular for simulating transmissions in built up areas. Equations~\ref{eq:okumura},~\ref{eq:oksmall} and~\ref{eq:oklarge} show the formulas for the model.
+\begin{equation}\label{eq:okumura}
+L_{u}=69.55+26.16log_{10}f-13.82log_{10}h_{B}-C_{h}+[44.9-6.55log_{10}h_{B}]log_{10}d 
+\end{equation}
+For small or medium sized cities:
+\begin{equation}\label{eq:oksmall}
+C_{H}=0.8+(1.1log_{10}f-0.7)h_{m}-1.56log_{10}f
+\end{equation}
+For large cities.
+\begin{equation}\label{eq:oklarge}
+C_{H}=
+	\begin{cases}
+	8.29(log_{10}(1.54h_{M}))^{2}-1.1 & \mbox{if } 150 \leq f \leq 200 \\
+	3.2(log_{10}(11.75h_{M}))^{2}-4.97 & \mbox{if } 200 < f \leq 1500
+	\end{cases}
+\end{equation}
+Where:
+\begin{itemize}
+\item $Lu$ is the path loss ($dB$).
+\item $H_{B}$ is the height of the base station antenna $30$ to $200 m$.
+\item $H_{R}$ is the height of the mobile antenna $1$ to $10 m$.
+\item $f$ is the frequency of the transmission $150$ to $1500 MHz$.
+\item $C_{H}$ is the antenna correction factor.
+\item $d$ is the distance between the base station and the mobile $1$ to $20 km$.
+\end{itemize}
+\subsection{Egli Model}
+The Egli Model was another model that was considered for the simulation. Equations~\ref{eq:eglis} and~\ref{eq:eglil} shows the formulas for the model.
+
+If $h_{m}$ is less than or equal to $10 m$ height:
+\begin{equation}\label{eq:eglis}
+P_{L}(dB) = 20log_{10}f_{c}+40log_{10}d-20log_{10}h_{b}+76.3-10log_{10}h_{m}
+\end{equation}
+If $h_{m}$ is greater than or equal to $10 m$ height:
+\begin{equation}\label{eq:eglil}
+P_{L}(dB) = 20log_{10}f_{c}+40log_{10}d-20log_{10}h_{b}+83.9-10log_{10}h_{m}
+\end{equation}
+Where:
+\begin{itemize}
+\item $P_{L}(dB)$ is the path loss ($dB$).
+\item $h_{B}$ is the height of the base station antenna ($m$).
+\item $h_{M}$ is the height of the mobile antenna ($m$).
+\item $d$ is the distance between the base station and the mobile ($m$).
+\item $f$ is the frequency of the transmission $3 MHz$ to $3000 MHz$.
+\end{itemize}
+\subsection{Cost231-Hata Model}
+The Cost231-Hata model is an extension of the Okumura-Hata to work for frequencies between 1.5 GHz and 2 GHz. The formulas for this model can be seen in Equations~\ref{eq:cost},~\ref{eq:costahr} and~\ref{eq:metro}.
+\begin{equation}\label{eq:cost}
+L=46.3+33.9logf-13.82log{h_{B}}-a(h_{R})+[44.9-6.55log{h_{B}}]log{d}+C
+\end{equation}
+\begin{equation}\label{eq:costahr}
+a(h_{R})=(1.1log{f}-0.7)h_{M}-(1.58log{f}-0.8)
+\end{equation}
+\begin{equation}\label{eq:metro}
+C=
+	\begin{cases}
+	0 dB & \mbox{for medium cities and suburban areas} \\
+	3 dB & \mbox{for metropolitan areas}
+	\end{cases}
+\end{equation}
+Where:
+\begin{itemize}
+\item $L$ is the path loss ($dB$).
+\item $f$ is the frequency of the transmission $1500$ to $2000 MHz$.
+\item $h_{B}$ is the height of the base station antenna $30$ to $200 m$.
+\item $h_{M}$ is the height of the mobile antenna $1$ to $10 m$.
+\item $d$ is the distance between the base station and the mobile $1$ to $20 km$.
+\item $a(h_{R})$ is the antenna correction factor.
+\end{itemize}
+A comparison of the three propagation models can be seen in Figure~\ref{fig:prop}. For the graphs the height of the mobile was said to be $1 m$, while the height of the base station was said to be $60 m$. The frequencies used in the models were $2000 MHz$ for the Egli and Cost231-Hata models and $1500 MHz$ for the Okumura-Hata model. These values for the propagation models are then taken away from a base station transmit power of $46 dBm$ so that the graphs are an estimate of the signal strength that would be received by a mobile at any distance up to $20 km$.
+\begin{figure}[H]
+  \begin{center}
+    	  \includegraphics[width=0.75\textwidth]{figures/simulation/prop.eps}
+    \end{center}
+    \caption{Graph of different Propagation Models.}
+    \label{fig:prop}
+\end{figure}
+After comparing the three models above it was decided that the Cost231-Hata Model would be the one used in the simulation due to it working with frequencies up to $2000 MHz$ (which is the minimum operating frequency of LTE), unlike the Okumura-Hata model which only works up to $1500 MHz$. The Cost231-Hata Model was also picked over the Egli Model because if the Egli Model was used it would require the simulation area to be very large, with at least $15 km$ between each base station. This would mean that the UEs would need to move over large distances before any handover attempts could occur.~\cite{chebil2011comparison, shabbir2011comparison}
+
+\section{Simulation Implementation}
+The first step taken to implementing the simulation was to decide on the programming language to be used. After some deliberation it was decided that C++ would be used. It was chosen due to its Object Oriented nature being very powerful in this situation considering the multiple mobiles and base stations needing to be implemented.
+
+The next step was to create the base classes for the UEs and base stations, with basic functionality such as Accessors and Mutators for changing the parameters of the classes. Such parameters for the base stations would be if a mobile were currently connected to it and the X-Y co-ordinates representing its location. Such parameters for the UEs would be the ID number of the base station it is currently connected to and the X-Y co-ordinates representing its location.
+
+It was important to get the Discrete Event Simulation framework implemented early into the project. Dr. Robert C. Atkinson kindly donated a DES library for C++ that he had. This meant that a DES framework did not have to be created from scratch, which allowed more development time to be spent on other aspects of the simulation. The DES library itself was very simple to use once some experience was had with it. There were two main parts to the library; they were the Scheduler and the Event Handler. The Scheduler is the class that provides the discrete time steps in the simulation as well as passing events to the event handlers. The Event Handler is an abstract class that is the super class to the UEs, base stations and Q-Learning agents; an example of the implementation of the inheritance can be seen in Listing~\ref{list:ehand}. The characteristics that are inherited include the Handler method, which receives events from the Scheduler. The way in which the inheritance works as well as how the Scheduler and other classes interact with each other can be seen in the UML diagram in Figure~\ref{fig:uml}. 
+\begin{lstlisting}[language=c++, caption=Implementation of inheritance from Event Handler., label=list:ehand]
+mobile::mobile(scheduler* gs) : event_handler(gs) {
+\end{lstlisting}
+\begin{figure}[H]
+  \begin{center}
+    	  \includegraphics[width=0.66\textwidth]{figures/simulation/uml.pdf}
+    \end{center}
+    \caption{Illustration of UML Diagram.}
+    \label{fig:uml}
+\end{figure}
+After the DES library was integrated into UE and base station classes the next part to be implemented was the Random Mobility model (decision on the model chosen can be found in Section~\ref{mobility}). The implementation of the mobility model made use of the DES library by using it to make the UEs take `steps' by sending itself an event after each step. There was a delay of 0.01 seconds between each step. The full implementation of the model can be found in Appendix~\ref{ap:code}. 
+
+Once the mobility model was implemented and tested the next part that was to be implemented, was the Propagation model (decision on the model chosen can be found in Section~\ref{propagation}). The implementation of the chosen model can be seen in Listing~\ref{list:prop} where $d$ is the distance the UE is from the base station and $hm$ is the height of the UE, which are passed into the function. The frequency is defined by the variable $f$, the height of the base station by the variable $hb$ and the transmission power from the base station is $tx$; all these variables are private to the base station.
+\begin{lstlisting}[language=c++, caption=Implementation of Cost231-Hata Propagation model., label=list:prop]
+double basestation::getProp(double d, double hm) {
+	//for small or medium sized city
+	double ahr = 0.8 + ((1.1 * log10(f) - 0.7) * hm) - (1.56 * log10(f));
+	double prop = 46.3 + (33.9 * log10(f)) - (13.82 * log10(hb)) - ahr + ((44.9 - (6.55 * log10(hb))) * log10(d/1000)); //divide by 1000 for km
+
+	return (tx-prop);
+}
+\end{lstlisting}
+When both the mobility and propagation models had been implemented the next part to be done was the handovers along with detection for call dropping and connection ping-pongs. These are very important parts of the simulation and their implementation can be seen in Appendix~\ref{ap:code}. While all three of these components worked correctly the handover triggering was not implemented as efficiently as it could have been. It ended up using decrementing variables instead of the DES library due to bugs that remained unresolved.
+
+After all the previous components were implemented, tested and found to be functioning correctly the Q-Learning agents were implemented. The implementation for the agent can be found in Appendix~\ref{ap:code}. The Q-Learning agent was overall implemented quite well, with the one exception being the 2D array of actions. Due to the nature of the problem having 336 states all with a maximum of 8 possible actions from the states, the array ended up being very large. Also due to some states having less than 8 actions from them, the array needed to have -1s added to it so that the program knew it would need to choose a different action; these interactions add both redundant data and wasted processing time to the simulation. 
+
+The final part that needed to be implemented was the way in which the simulation recorded the results. It was decided that the best way to record the results would be to store them in arrays and then output them to appropriate text files that could then be analysed. This analysis ended up being done using MATLAB and the code for this can be found in Appendix~\ref{ap:code}. 
+
+\section{Simulation Testing}
+It was very important for the simulation and Q-Learning algorithm to be tested so that there was confidence that they would produce the correct results when executed. There are many different types of testing that can take place to ensure that a piece of software is working correctly. Testing methods that were considered for this project include: Unit testing, Black Box testing and White/Clear Box testing.
+
+Unit testing involves testing individual parts or processes of a program so that the stakeholders can be confident in them to be fit for use. The different parts of the simulation that were tested this way were the Mobility Model, handovers, drops, ping-pongs and the Q-learning algorithm changing the values of TTT and hys correctly.
+
+Black Box testing involves making sure that a function works as required without any knowledge of the underlying code. This type of testing is performed by giving a function an input, and comparing the output from the function with a previously determined expected output.
+
+White Box testing is used to make sure that the underlying code used in a function works as required. This type of testing is done by inserting print statements in the code to see how the respective variables are changing while the code is running. These are compared against previously determined expected values to confirm whether the function is working as intended.
+
+It was decided that Unit testing and White/Clear Box testing were the most appropriate for validating this software. The test cases used to test the simulation to make sure it was working correctly were: 
+\subsection*{White/Clear Box:}
+\subsubsection*{Movement:}
+\begin{description}
+\item[M001]	Positive X and Y movement.
+\item[M002]	Positive X movement and Negative Y movement.
+\item[M003]	Negative X movement and Positive Y Movement.
+\item[M004]	Negative X and Y movement.
+\item[M005]	Movement against left wall of simulation area.
+\item[M006]	Movement against bottom wall of simulation area.
+\item[M007]	Movement against right wall of simulation area.
+\item[M008]	Movement against top wall of simulation area.
+\end{description}
+\subsubsection*{Path Loss:}
+\begin{description}
+\item[PL001]	Path Loss calculated correctly.
+\end{description}
+\subsubsection*{Q-Learning:}
+\begin{description}
+\item[QL001]	Q-Values updated correctly.
+\item[QL002]	Changing state correctly.
+\item[QL003]	Changing TTT and hys values correctly.
+\end{description}
+\subsection*{Unit Testing:}
+\subsubsection*{Network Functions:}
+\begin{description}
+\item[NF001]	Handovers working correctly.
+\item[NF002]	Drops working correctly.
+\item[NF003]	ping-pongs detected correctly.
+\end{description}
+After the simulation was tested using the test cases above it was decided that the simulation was functioning correctly and was fit for use. The results of all the test cases can be seen in Appendix~\ref{testing}.

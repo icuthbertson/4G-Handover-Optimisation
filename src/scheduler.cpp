@@ -1,3 +1,8 @@
+// Part of Discrete Event Simulation framework.
+// Given to me by Dr. Robert C. Atkinson.
+// 14/11/2013
+// Other than these comments the DES framework files are unchanged
+//
 // scheduler.cpp: implementation of the scheduler class.
 //
 //////////////////////////////////////////////////////////////////////
@@ -102,7 +107,7 @@ void scheduler::stop(void) {
 
 // process_events runs in a continuous loop, processing
 // each event in turn. With discrete event simulation, after
-// an event as been processed (at a specified time) the 
+// an event as been processed (at a specified time) the
 // simulation clock jumps to the time that the next event
 // is scheduled for. Hence the requirement to update the
 // scheduler's clock in this function.
@@ -123,7 +128,7 @@ void scheduler::process_events(void)  {
 		delete localEvent;
 		if(stop_flag) break;
 	} // while
- 
+
 } // process_events
 
 
@@ -137,8 +142,3 @@ void scheduler::debug() {
 			<< "\tType = " << local_event->label << "\tFrom: " << local_event->sender << "\tTo: " << local_event->target;
 	} // for
 } // debug()
-
- 
-
-
-

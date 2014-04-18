@@ -1,0 +1,134 @@
+\documentclass[12pt, oneside]{report}
+\usepackage{setspace}
+\usepackage[british]{babel}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{multicol}
+\usepackage[plain,chapter]{algorithm}
+\usepackage{algpseudocode}
+%\usepackage{algorithmic}
+\usepackage[printonlyused]{acronym}
+
+\usepackage{textpos}
+
+\usepackage[toc,page]{appendix}
+
+%\usepackage[parfill]{parskip}
+
+\usepackage{amsmath}
+
+%\setcounter{secnumdepth}{3}
+%\setcounter{tocdepth}{3}
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=C++,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=1
+}
+
+\renewcommand{\bflabel}[1]{{\textbf{#1}\hfill}}
+
+\usepackage[showframe = false, a4paper, top=2.5cm, left=4.0cm, right=2.5cm, bottom=2.5cm]{geometry}
+
+%\title{4G System Handover Optimisation}
+%\author{
+%        Iain Cuthbertson \\
+%        201015895\\
+%        Computer \& Electronic Systems\\
+%        University of Strathclyde\\
+%        \\
+%        April 2014\\
+%}
+
+\date{}
+
+\renewcommand*{\familydefault}{\rmdefault}
+\onehalfspacing
+%\doublespacing
+ 
+\begin{document}
+
+%\maketitle
+
+\input{chapters/declare.tex}
+
+\pagenumbering{roman}
+
+\input{chapters/abstract.tex}
+
+\input{chapters/ack.tex}
+
+\tableofcontents
+\pagebreak
+
+\acresetall
+\input{acro.tex}
+\pagebreak
+
+%\listoffigures
+%\addcontentsline{toc}{chapter}{List of Figures}
+%\pagebreak
+
+%\listoftables
+%\addcontentsline{toc}{chapter}{List of Tables}
+%\pagebreak
+
+%\listofalgorithms
+%\addcontentsline{toc}{chapter}{List of Algorithms}
+%\pagebreak
+
+%\lstlistoflistings
+%\addcontentsline{toc}{chapter}{Listings}
+%bebebebbbbb\pagebreak
+
+\pagenumbering{arabic}
+
+\input{chapters/intro.tex}
+
+\acresetall
+\input{chapters/lte.tex}
+
+\input{chapters/machine_learning.tex}
+
+\input{chapters/simulation.tex}
+
+\input{chapters/hand_opt.tex}
+
+\input{chapters/future.tex}
+
+\input{chapters/conclusion.tex}
+
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliography{Report}
+\bibliographystyle{ieeetr}
+
+\begin{appendices}
+\input{chapters/code.tex}
+
+\input{chapters/testing.tex}
+
+\input{chapters/graphs.tex}
+
+\end{appendices}
+
+\end{document}

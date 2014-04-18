@@ -1,3 +1,8 @@
+// Part of Discrete Event Simulation framework.
+// Given to me by Dr. Robert C. Atkinson.
+// 14/11/2013
+// Other than these comments the DES framework files are unchanged
+//
 // event_handler.cpp: implementation of the event_handler class.
 //
 //////////////////////////////////////////////////////////////////////
@@ -13,7 +18,7 @@
 //////////////////////////////////////////////////////////////////////
 
 
- 
+
 
 // Used by the programmer to send an event with an appropriate
 // associated delay. Based on the original CNCL function.
@@ -54,7 +59,7 @@ void event_handler::send_event(event* new_event) {
 //	bool canwritesched = IsBadWritePtr(globalScheduler, sizeof(scheduler));
 	// only need to modify target to _this_ if it as not
 	// already been set to a value. That is if the target
-	// field is not specified at event creation then it 
+	// field is not specified at event creation then it
 	// is assumed that this event handler object is its
 	// destination
 	if (new_event->target == 0) new_event->target = this;

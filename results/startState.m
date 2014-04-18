@@ -1,0 +1,10 @@
+function [stateB0,stateB1,stateB2,stateB3,stateB4,stateB5,stateB6,stateB7,stateB8] = startState(stateB0,stateB1,stateB2,stateB3,stateB4,stateB5,stateB6,stateB7,stateB8,start)
+stateB0 = [start;stateB0]
+stateB1 = [start;stateB1]
+stateB2 = [start;stateB2]
+stateB3 = [start;stateB3]
+stateB4 = [start;stateB4]
+stateB5 = [start;stateB5]
+stateB6 = [start;stateB6]
+stateB7 = [start;stateB7]
+stateB8 = [start;stateB8]

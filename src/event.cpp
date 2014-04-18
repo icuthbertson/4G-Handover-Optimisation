@@ -1,3 +1,8 @@
+// Part of Discrete Event Simulation framework.
+// Given to me by Dr. Robert C. Atkinson.
+// 14/11/2013
+// Other than these comments the DES framework files are unchanged
+//
 // event.cpp: implementation of the event class.
 //
 //////////////////////////////////////////////////////////////////////
@@ -14,8 +19,8 @@ unsigned event::evCount = 0;
 
 
 
-event::event(long arg_label, event_handler* arg_target, 
-			 unsigned arg_priority) : label(arg_label), target(arg_target), 
+event::event(long arg_label, event_handler* arg_target,
+			 unsigned arg_priority) : label(arg_label), target(arg_target),
 			 priority (arg_priority)
 {
 	id = evCount++;
@@ -23,7 +28,7 @@ event::event(long arg_label, event_handler* arg_target,
 	volatileFlag = false;
 
 }
- 
+
 
 event::event(long arg_label, unsigned arg_priority) : label(arg_label), priority(arg_priority)
 {
@@ -35,8 +40,8 @@ event::event(long arg_label, unsigned arg_priority) : label(arg_label), priority
 
 }
 
-event::event(long arg_label, double arg_time, 
-			 unsigned arg_priority) : label(arg_label), time_due(arg_time), 
+event::event(long arg_label, double arg_time,
+			 unsigned arg_priority) : label(arg_label), time_due(arg_time),
 			 priority(arg_priority)
 {
 	target = 0;
@@ -46,9 +51,9 @@ event::event(long arg_label, double arg_time,
 
 }
 
-event::event(long arg_label, event_handler* arg_target, double arg_time, 
+event::event(long arg_label, event_handler* arg_target, double arg_time,
 			 unsigned arg_priority) : label(arg_label), target(arg_target),
-			 time_due(arg_time), priority(arg_priority) 
+			 time_due(arg_time), priority(arg_priority)
 {
 	id = evCount++;
 	payloadFlag = false;
@@ -56,9 +61,9 @@ event::event(long arg_label, event_handler* arg_target, double arg_time,
 }
 
 
-event::event(long arg_label, payloadType<class T>* arg_payload, 
-			 unsigned arg_priority, bool volFlag) : label(arg_label), payload(arg_payload), 
-			 priority(arg_priority), volatileFlag(volFlag) 
+event::event(long arg_label, payloadType<class T>* arg_payload,
+			 unsigned arg_priority, bool volFlag) : label(arg_label), payload(arg_payload),
+			 priority(arg_priority), volatileFlag(volFlag)
 {
 	target = 0;
 	payloadFlag = true;
@@ -67,7 +72,7 @@ event::event(long arg_label, payloadType<class T>* arg_payload,
 }
 
 event::event(long arg_label, payloadType<class T>* arg_payload, event_handler* arg_target,
-			 unsigned arg_priority, bool volFlag) : label(arg_label), payload(arg_payload), 
+			 unsigned arg_priority, bool volFlag) : label(arg_label), payload(arg_payload),
 			 target(arg_target), priority(arg_priority), volatileFlag(volFlag)
 {
 	payloadFlag = true;
@@ -76,8 +81,8 @@ event::event(long arg_label, payloadType<class T>* arg_payload, event_handler* a
 }
 
 event::event(long arg_label, payloadType<class T>* arg_payload, double arg_time,
-			 unsigned arg_priority, bool volFlag) : label(arg_label), payload(arg_payload), 
-			 time_due(arg_time), priority(arg_priority), volatileFlag(volFlag) 
+			 unsigned arg_priority, bool volFlag) : label(arg_label), payload(arg_payload),
+			 time_due(arg_time), priority(arg_priority), volatileFlag(volFlag)
 {
 	target = 0;
 	payloadFlag = true;
@@ -85,9 +90,9 @@ event::event(long arg_label, payloadType<class T>* arg_payload, double arg_time,
 
 }
 
-event::event(long arg_label, payloadType<class T>* arg_payload, double arg_time, 
-			 event_handler* arg_target, unsigned arg_priority, bool volFlag) : label(arg_label), 
-			 payload(arg_payload), time_due(arg_time), target(arg_target), 
+event::event(long arg_label, payloadType<class T>* arg_payload, double arg_time,
+			 event_handler* arg_target, unsigned arg_priority, bool volFlag) : label(arg_label),
+			 payload(arg_payload), time_due(arg_time), target(arg_target),
 			 priority(arg_priority), volatileFlag(volFlag)
 {
 	payloadFlag = true;
