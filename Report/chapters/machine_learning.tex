@@ -48,19 +48,19 @@ The process of averaging out experiences is done using Temporal Differences. It 
 A_{k} = \frac{(v_{1}+\dots+v_{k})}{k}
 \end{equation}
 Therefore:
-\begin{align}
-kA_{k} &= v_{1}+\dots+v_{k}\label{eq:av2}\\
- &= (k-1)A_{k-1}+v_{k}\label{eq:av3}
-\end{align}
+\begin{eqnarray}\label{eq:av3}
+kA_{k} &= v_{1}+\dots+v_{k}\nonumber \\
+ &= (k-1)A_{k-1}+v_{k}
+\end{eqnarray}
 Then dividing by $k$ gives:
 \begin{equation}\label{eq:av4}
 A_{k}=(1-\frac{1}{k})A_{k-1}+\frac{v_{k}}{k}
 \end{equation}
 Then let $\alpha _{k}=1/k$:
-\begin{align}
-A_{k} &= (1-\alpha _{k})A{k-1}+\alpha _{k} + v_{k}\label{eq:av5}\\
-&= A_{k-1} + \alpha _{k}(v_{k}-A_{k-1})\label{eq:av6}
-\end{align}
+\begin{eqnarray}\label{eq:av6}
+A_{k} &= (1-\alpha _{k})A{k-1}+\alpha _{k} + v_{k}\nonumber \\
+&= A_{k-1} + \alpha _{k}(v_{k}-A_{k-1})
+\end{eqnarray}
 The part of Equation~\ref{eq:av6} where the difference $v_{k}-A_{k-1}$ is seen is known as the Temporal Difference Error or TD Error. This shows how different the old value $A_{k-1}$ is from the new value $v_{k}$. The new value of the estimate, $A_{k}$, is then the old estimate, $A_{k-1}$, plus the TD error times $\alpha _{k}$.
 
 The Q-Values, therefore, are defined using temporal differences and Equation~\ref{eq:qlearning} shows the formula to calculate the values, where $\alpha$ is a variable between $0$ and $1$ and defines the step size of the algorithm. If the step size were $0$ then the algorithm would ignore any rewards received and if the step size were $1$ the algorithm would consider the rewards gained just as much as the previous experiences of a state-action pair. The discount factor, $\gamma$, is also a variable between $0$ and $1$ and defines how much less future rewards will be worth compared to the current reward. If the discount factor were to be $0$, then the future rewards would not be considered a lot. If the discount factor were to be $1$, then the future rewards would be worth as much as the current rewards. The possible future rewards ($max_{a’}Q(s’,a’)$) is the maximum of the Q-Values of all possible state-action pairs from the action selected.

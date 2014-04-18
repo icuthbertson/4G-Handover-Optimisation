@@ -1,5 +1,5 @@
 #include <fstream>
-
+//This code was used to generate the actions array seen in the actions.h file.
 int main() {
 	std::ofstream fixFile ("fix.txt");
 

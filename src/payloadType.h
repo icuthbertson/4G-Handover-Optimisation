@@ -1,3 +1,8 @@
+// Part of Discrete Event Simulation framework.
+// Given to me by Dr. Robert C. Atkinson.
+// 14/11/2013
+// Other than these comments the DES framework files are unchanged
+//
 // payloadType.h: interface for the payloadType class.
 //
 //////////////////////////////////////////////////////////////////////
@@ -10,7 +15,7 @@
 
 // WARNING: This class may need a destructor to delete myObject
 
-template<class T> 
+template<class T>
 class payloadType  {
 public:
 	payloadType(T* arg) {myObject = arg; std::cerr << "\n size = " << sizeof(this);};

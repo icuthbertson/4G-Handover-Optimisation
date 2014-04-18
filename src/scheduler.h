@@ -1,3 +1,8 @@
+// Part of Discrete Event Simulation framework.
+// Given to me by Dr. Robert C. Atkinson.
+// 14/11/2013
+// Other than these comments the DES framework files are unchanged
+//
 // scheduler.h: interface for the scheduler class.
 //
 //////////////////////////////////////////////////////////////////////
@@ -67,7 +72,7 @@ public:
 		// execution outweighs other concerns.
 		if (inputa->time_due < inputb->time_due) return true;
 		else if (inputa->time_due > inputb->time_due) return false;
-		else if (inputa->priority < inputb->priority) return true; 
+		else if (inputa->priority < inputb->priority) return true;
 			else return false;
 	} // () overload
 }; // event_order
@@ -106,7 +111,7 @@ public:
 	void remove_to(event_handler* target); // remove all events to target obj
 	void start(void); // start simulation
 	void stop(void); // stop simulation
-	double get_time(void) const {return sim_time;} // return current sim time	
+	double get_time(void) const {return sim_time;} // return current sim time
 private:
 	void process_events(void) ;
 	//event* next_event(void); // remove 1st event from list & return its pointer
@@ -114,7 +119,7 @@ private:
 	eventlist event_store; // array of event pointers
 	bool stop_flag;
 	void debug();
-	
+
 };
 
 #endif // !defined(AFX_SCHEDULER_H__447AD4D5_AD20_4BAB_B5FF_2D955FDF0A49__INCLUDED_)

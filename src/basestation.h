@@ -15,12 +15,13 @@ private:
      ****************************
      * int id: Unique interger values that indentifies this instance of the class.
      * int x_co: Integer value that denotes where of the x-axis this instance of
-     *           the class is found. 
+     *           the class is found.
      * int y_co: Integer value that denotes where of the y-axis this instance of
-     *           the class is found. 
-     * double f:  Double value that denoted the frequency the transmitter transmits
+     *           the class is found.
+     * double f:  Double value that denotes the frequency the transmitter transmits
      *            at in MHz.
-	 * double hb: Double value that denoted the height of the base station.
+	 * double hb: Double value that denotes the height of the base station.
+     * double tx : Double value that denotes the transmission power of the base station.
      */
 	int id;
     int x_co;

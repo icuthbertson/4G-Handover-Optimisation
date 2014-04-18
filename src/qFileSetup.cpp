@@ -1,5 +1,5 @@
 #include <fstream>
-
+//This file was used to make text files with all zeros for the q arrays in the q-learning files
 int main() {
 	std::ofstream qFile ("q.txt");
 	if (qFile.is_open()) {

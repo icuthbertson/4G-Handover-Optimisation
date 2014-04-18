@@ -40,6 +40,8 @@
 // 15  5.12   |315|316|317|318|319|320|321|322|323|324|325|326|327|328|329|330|331|332|333|334|335
 //            ------------------------------------------------------------------------------------
 
+//Arrays of the actions for all the states as seen above.
+//The actions are to any surrounding state.
 int actions0[] = {-1,-1,1,22,21,-1,-1,-1};
 int actions1[] = {-1,-1,-1,0,2,23,22,21};
 int actions2[] = {-1,-1,-1,1,3,24,23,22};
@@ -377,7 +379,7 @@ int actions333[] = {311,312,313,332,334,-1,-1,-1};
 int actions334[] = {312,313,314,333,335,-1,-1,-1};
 int actions335[] = {314,313,334,-1,-1,-1,-1,-1};
 
-
+//Creation of a large 2D array of all the actions.
 int* actions[] = {actions0,
 				  actions1,
 				  actions2,

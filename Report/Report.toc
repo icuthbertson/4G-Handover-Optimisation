@@ -2,10 +2,6 @@
 \contentsline {chapter}{Abstract}{i}
 \contentsline {chapter}{Acknowledgements}{ii}
 \contentsline {chapter}{Nomenclature}{vi}
-\contentsline {chapter}{List of Figures}{xiii}
-\contentsline {chapter}{List of Tables}{xiv}
-\contentsline {chapter}{List of Algorithms}{xv}
-\contentsline {chapter}{Listings}{xvi}
 \contentsline {chapter}{\numberline {1}Introduction}{1}
 \contentsline {section}{\numberline {1.1}Project Objectives}{1}
 \contentsline {section}{\numberline {1.2}Project Outcomes}{2}
@@ -65,7 +61,8 @@
 \contentsline {subsection}{\numberline {C.1.2}Middle Starting Values}{62}
 \contentsline {subsection}{\numberline {C.1.3}Small Starting Values}{65}
 \contentsline {subsection}{\numberline {C.1.4}Large hys and Small TTT Starting Values}{69}
-\contentsline {subsection}{\numberline {C.1.5}Large Starting Values}{72}
-\contentsline {subsection}{\numberline {C.1.6}Middle Starting Values}{76}
-\contentsline {subsection}{\numberline {C.1.7}Small Starting Values}{79}
-\contentsline {subsection}{\numberline {C.1.8}Large hys and Small TTT Starting Values}{83}
+\contentsline {section}{\numberline {C.2}Vehicle Speeds}{72}
+\contentsline {subsection}{\numberline {C.2.1}Large Starting Values}{72}
+\contentsline {subsection}{\numberline {C.2.2}Middle Starting Values}{76}
+\contentsline {subsection}{\numberline {C.2.3}Small Starting Values}{79}
+\contentsline {subsection}{\numberline {C.2.4}Large hys and Small TTT Starting Values}{83}

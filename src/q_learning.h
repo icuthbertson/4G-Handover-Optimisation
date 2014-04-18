@@ -6,11 +6,24 @@
 
 #define ALPHA 0.9 //learning rate / step size
 #define GAMMA 0.5 //how much possible future rewards matter
-#define NUMSTATES 336
-#define LENGTH 8
+#define NUMSTATES 336 //number of states
+#define LENGTH 8 //maximum number of possible actions from a state
 
 class q_learning : public event_handler {
 private:
+	    /* Private Variables
+     ****************************
+     * int id: Unique interger values that indentifies this instance of the class.
+     * int Q[][]: 2D array that holds the q-values
+     * int policyArray: array that holds the policy if the agent is following the policy
+     * int current_state: holds the current state the agent is in
+	 * int next_state: holds the state the agent is moving into next
+     * int action: holds the action about to be done
+     * bool firstPass: used to stop certain parts of code being done on the first
+     *				   run through the code
+     * std::string qString: used for reading in the q values from external files.
+	 * std::string policyString: used for reading in the policies from external files.
+     */
 	int id;
 	double Q[NUMSTATES][NUMSTATES];
 	int policyArray[NUMSTATES];
@@ -18,7 +31,6 @@ private:
 	int next_state;
 	int action;
 	bool firstPass;
-	bool allActions;
 	std::string qString;
 	std::string policyString;
 	double maxQ(int state);
@@ -32,8 +44,8 @@ private:
 public:
 	q_learning(scheduler* gs, int id, int TTT, int hys);
 	~q_learning();
-	void print();
-	void printPolicy();
+	void saveQValues();
+	void savePolicy();
 protected:
 	virtual void handler(const event* received);
 };

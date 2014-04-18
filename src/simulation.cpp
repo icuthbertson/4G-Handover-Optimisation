@@ -28,11 +28,13 @@
  * basestations and then outputting again.
  */
 
+//instantiate the DES schedular
 scheduler* gs = new scheduler();
 
 double TTTArray[16];
 double hysArray[21];
 
+//define the indexes for the TTT and hys values for the base stations
 int TTTindex[] = {7,
 			  	  7,
 			  	  7,
@@ -55,11 +57,12 @@ int hysindex[] = {10,
 int TTTmaxindex;
 int hysmaxindex;
 
-double TTTtest[NUM_BASESTATION];
+double TTTtest[NUM_BASESTATION]; //make the TTTtest array of the size of the number of base stations
 
-double TTT[NUM_BASESTATION];
-double hys[NUM_BASESTATION];
+double TTT[NUM_BASESTATION]; //make the TTT array of the size of the number of base stations
+double hys[NUM_BASESTATION]; //make the hys array of the size of the number of base stations
 
+//set all to false cause no mobile will be handing over at first
 bool handingOver[] = {false,
 					  false,
 					  false,
@@ -70,6 +73,7 @@ bool handingOver[] = {false,
 					  false,
 					  false};
 
+//set all the drop, handover, ping-ping and reward variants to 0 for all the base stations
 int drop[] = {0,
 			  0,
 			  0,
@@ -97,7 +101,6 @@ int handovers[] = {0,
 			  	   0,
 			  	   0,
 			  	   0};
-
 int rewardDrop[] = {0,
 			  	    0,
 			  	    0,
@@ -126,8 +129,7 @@ int rewardHandover[] = {0,
 			  	        0,
 			  	        0};
 
-int previous_id = 0;
-
+//set all the simtimes to 0 at the start
 double simTime[] = {0.0,
 					0.0,
 					0.0,
@@ -141,17 +143,7 @@ double simTime[] = {0.0,
 
 int function;
 
-// basestation* bStations[] = {new basestation(gs,0,500,500,2000,60,false),
-// 							new basestation(gs,1,3750,0,2000,60,false),
-// 							new basestation(gs,2,6250,2000,2000,60,false),
-// 							new basestation(gs,3,0,4000,2000,60,false),
-// 							new basestation(gs,4,3000,3000,2000,60,true),
-// 							new basestation(gs,5,6000,5000,2000,60,false),
-// 							new basestation(gs,6,3000,6000,2000,60,false),
-// 							new basestation(gs,7,0,7500,2000,60,false),
-// 							new basestation(gs,8,3000,9000,2000,60,false),
-// 							new basestation(gs,9,6000,8000,2000,60,false)};
-
+//instantiate the base stations
 basestation* bStations[] = {new basestation(gs,0,500,500,2000,60),
 							new basestation(gs,1,3000,0,2000,60),
 							new basestation(gs,2,5500,500,2000,60),
@@ -161,7 +153,7 @@ basestation* bStations[] = {new basestation(gs,0,500,500,2000,60),
 							new basestation(gs,6,500,5500,2000,60),
 							new basestation(gs,7,3000,6000,2000,60),
 							new basestation(gs,8,5500,5500,2000,60)};
-
+//instantiate the mobiles
 mobile* mobiles[] = {new mobile(gs,0,500,500,0,1),
 				 	 new mobile(gs,1,3000,0,1,1),
 				 	 new mobile(gs,2,5500,500,2,1),
@@ -176,6 +168,7 @@ mobile* mobiles[] = {new mobile(gs,0,500,500,0,1),
 
 q_learning* q[NUM_BASESTATION];
 
+//make the vectors used for pushing the sim time to,
 std::vector<double> handover_total[] = {std::vector<double>(),
     								 	std::vector<double>(),
     								 	std::vector<double>(),
@@ -233,23 +226,24 @@ std::string failureString;
 std::string stateString;
 
 int main(int argc, char* argv[]) {
-    int run_num = 0;
-    run_num = atoi(argv[1]);
+    int run_num = 0; 
+    run_num = atoi(argv[1]); //read in the run number of this simulation
 
     int seed = 0;
-    seed = atoi(argv[2]);
+    seed = atoi(argv[2]); //read in the seed for the random number generator of this simulation
 	srand(seed);
 
     int arg = 0;
 
     int typeTest = 0;
-    typeTest = atoi(argv[3]);
+    typeTest = atoi(argv[3]); //read the type of test this simulation is doing
 
     int tempTTTindex = 0;
     int temphysindex = 0;
 
     std::string folder = "";
-
+    //case statement of the different simulation type with TTT and hys values
+    //as well as the folder to output to
     switch(typeTest) {
         case 0:
             folder = "high";
@@ -304,13 +298,12 @@ int main(int argc, char* argv[]) {
             break;
     }
 
+	//set the TTTindex array to the correct values
     for(int j=0; j<NUM_BASESTATION; j++) {
-        TTT[j] = TTTArray[tempTTTindex];
         TTTindex[j] = tempTTTindex;
     }
-
+    //set the hysindex array to the correct values
     for(int k=0; k<NUM_BASESTATION; k++) {
-        hys[k] = hysArray[temphysindex];
         hysindex[k] = temphysindex;
     }
 
@@ -356,11 +349,7 @@ int main(int argc, char* argv[]) {
 	hysArray[19] = 9.5;
 	hysArray[20] = 10.0;
 
-	// TTTindex = rand()%(TTTmaxindex+1);
-	// hysindex = rand()%(hysmaxindex+1);
-
-
-
+	//set the TTT and hys arrays to the correct values
 	for(int i=0; i<NUM_BASESTATION; i++) {
 		TTT[i] = TTTArray[TTTindex[i]];
 		hys[i] = hysArray[hysindex[i]];
@@ -375,6 +364,10 @@ int main(int argc, char* argv[]) {
 	// int arg;
 	// std::cin >> arg;
 
+	//this block set the function variable.
+	//if all the code is commented in and the code above commented out then
+	//the simulation can be run with user given parameters instead of parameters
+	//given by the bash script.
 	if(arg == 1) {
 		// q-learning
 		printf("Q-Learning started...\n");
@@ -420,6 +413,7 @@ int main(int argc, char* argv[]) {
 		function = 4;
 	}
 
+	//instantiate the q-learning agents for the base stations
 	q[0] = new q_learning(gs,0,TTTindex[0],hysindex[0]);
 	q[1] = new q_learning(gs,1,TTTindex[1],hysindex[1]);
 	q[2] = new q_learning(gs,2,TTTindex[2],hysindex[2]);
@@ -430,14 +424,18 @@ int main(int argc, char* argv[]) {
 	q[7] = new q_learning(gs,7,TTTindex[7],hysindex[7]);
 	q[8] = new q_learning(gs,8,TTTindex[8],hysindex[8]);
 
-	gs->start();
+	gs->start(); //start the scheduler
 
+	//this is where the simulation returns to when the schedulers is stopped by a mobile
+	//print the results for the base stations on screen and save the q-vaules and policy
+	//for the q-learning agents to external files
 	for (int l=0; l<NUM_BASESTATION; l++)
 	{
 		bStations[l]->print();
-		q[l]->print();
+		q[l]->saveQValues();
 	}
 
+	//This block of code writes the results out to text files in folders
 	for(int m=0; m<NUM_BASESTATION; m++) {
 		std::stringstream hString;
 		hString << "results/longer/" << folder << run_num << "/basestation" << m << "/handover.txt";
@@ -504,7 +502,7 @@ int main(int argc, char* argv[]) {
 
 	printf("end...\n");
 
-	delete gs;
+	delete gs; //delete the scheduler to clean up
 
 	return 0;
 }

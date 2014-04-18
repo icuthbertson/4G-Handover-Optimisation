@@ -1,3 +1,8 @@
+// Part of Discrete Event Simulation framework.
+// Given to me by Dr. Robert C. Atkinson.
+// 14/11/2013
+// Other than these comments the DES framework files are unchanged
+//
 // event.h: interface for the event class.
 //
 //////////////////////////////////////////////////////////////////////
@@ -14,9 +19,9 @@ class event {
 public:
 	// constructors
 	event(long arg_label, unsigned arg_priority = 0);
-	event(long arg_label, event_handler* arg_target, unsigned arg_priority = 0);	
+	event(long arg_label, event_handler* arg_target, unsigned arg_priority = 0);
 	event(long arg_label, double arg_time, unsigned arg_priority = 0);
-	event(long arg_label, event_handler* arg_target, double arg_time, 
+	event(long arg_label, event_handler* arg_target, double arg_time,
 		unsigned arg_priority = 0);
 	// use a template function for attaching an object to the event
 	event(long arg_label, payloadType<class T>* arg_payload, unsigned arg_priority = 0,
@@ -25,7 +30,7 @@ public:
 		unsigned arg_priority = 0, bool volFlag = false);
 	event(long arg_label, payloadType<class T>* arg_payload, double arg_time,
 		unsigned arg_priority = 0, bool volFlag = false);
-	event(long arg_label, payloadType<class T>* arg_payload, double arg_time, 
+	event(long arg_label, payloadType<class T>* arg_payload, double arg_time,
 		event_handler* arg_target, unsigned arg_priority = 0, bool volFlag = false);
 	event(const event& rhs);
 	virtual ~event();	// destructor
@@ -51,7 +56,7 @@ public:
 private:
 	bool payloadFlag; // indicates if event carries an attachment
 	bool volatileFlag; // indicates if attachment is deleted when event is deleted
-			
+
 };
 
 #endif // !defined(AFX_EVENT_H__E580E878_67D1_4438_AF10_1DA04917D99C__INCLUDED_)

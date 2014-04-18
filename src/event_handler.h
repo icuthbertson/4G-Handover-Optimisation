@@ -1,3 +1,8 @@
+// Part of Discrete Event Simulation framework.
+// Given to me by Dr. Robert C. Atkinson.
+// 14/11/2013
+// Other than these comments the DES framework files are unchanged
+//
 // event_handler.h: interface for the event_handler class.
 //
 //////////////////////////////////////////////////////////////////////
@@ -28,9 +33,9 @@ public:
 	virtual void handler(const event* received) = 0;
 	void send_now(event* new_event);
 	void send_delay(event* new_event, double delay_arg);
-	void send_event(event* new_event); 
+	void send_event(event* new_event);
 protected:
-	double get_time() const {return globalScheduler->get_time();}	
+	double get_time() const {return globalScheduler->get_time();}
 	scheduler* globalScheduler;
 
 };
