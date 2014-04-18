@@ -44,7 +44,7 @@ SEEDARRAY[38]=75447809235789023
 
 for (( i=0; i<=7; i++ ))
 do
-    for (( COUNTER=0; COUNTER<=4; COUNTER++ ))
+    for (( COUNTER=0; COUNTER<=9; COUNTER++ ))
     do
     	echo Type: $i Run: $COUNTER
         ./bin/simulation $COUNTER ${SEEDARRAY[$COUNTER]} $i
